@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coach Launch — How to Build Your Golden Avatar™</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/coach-launch-guide.css">
+<style>
+  .part-head { display:flex; align-items:baseline; gap:.7rem; margin-top:2.8rem; padding-top:1.4rem; border-top:1px solid var(--border); }
+  .part-head .pill { font-family:var(--font-display); font-weight:800; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:#fff; background:var(--cl-crimson); padding:.28rem .7rem; border-radius:999px; white-space:nowrap; }
+  .part-head h3 { margin:0; padding:0; border:0; }
+  .subhead { font-family:var(--font-display); font-weight:700; font-size:1.05rem; color:var(--cl-black); margin:1.6rem 0 .5rem; }
+  .formula-box { font-family:var(--font-display); font-weight:700; font-size:1.05rem; color:var(--cl-black); background:var(--cl-crimson-soft); border:1px dashed var(--cl-crimson); border-radius:var(--radius); padding:1.1rem 1.3rem; margin:1.4rem 0; text-align:center; line-height:1.5; }
+  .formula-box .v { color:var(--cl-crimson); }
+  .mistake { border:1px solid var(--border); border-left:4px solid #e08600; border-radius:var(--radius); padding:1.2rem 1.4rem; margin:1.4rem 0; background:var(--bg-panel); box-shadow:var(--shadow-sm); }
+  .mistake h4 { color:#b56b00; text-transform:none; letter-spacing:0; font-size:1.1rem; margin:0 0 .5rem; }
+  .mistake .fix { margin-top:.7rem; }
+  .mistake .fix b { color:#178048; }
+  /* ---- scoring grid ---- */
+  .sb { display:inline-flex; width:2.1rem; height:2.1rem; border-radius:50%; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:800; color:#fff; font-size:1rem; }
+  .sb-5, .sb-4 { background:#1f9d57; }
+  .sb-3 { background:#e08600; }
+  .sb-2, .sb-1, .sb-0 { background:var(--cl-crimson); }
+  table.score-rubric td:first-child { width:3.2rem; text-align:center; }
+  .bands { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:1.6rem 0; }
+  .band { border:1px solid var(--border); border-radius:var(--radius); padding:1.15rem 1.25rem; background:var(--bg-panel); box-shadow:var(--shadow-sm); }
+  .band .rng { font-family:var(--font-display); font-weight:800; font-size:1.55rem; display:block; line-height:1.1; }
+  .band .verdict { font-family:var(--font-display); font-weight:700; text-transform:uppercase; letter-spacing:.05em; font-size:.78rem; display:block; margin:.15rem 0 .5rem; }
+  .band p { margin:0; font-size:.95rem; }
+  .band.green { border-top:4px solid #1f9d57; } .band.green .rng, .band.green .verdict { color:#178048; }
+  .band.amber { border-top:4px solid #e08600; } .band.amber .rng, .band.amber .verdict { color:#b56b00; }
+  .band.red   { border-top:4px solid var(--cl-crimson); } .band.red .rng, .band.red .verdict { color:var(--cl-crimson); }
+  @media (max-width:640px){ .bands { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="cl-wrap">
+
+  <!-- ============ HERO ============ -->
+  <header class="cl-hero">
+    <img class="cl-brand-logo" src="https://assets.cdn.filesafe.space/ybe7GTcbvnTIWFX0Hos9/media/66f909a24c8d5f82216f1acd.png" alt="Coach Launch">
+    <h1 class="formula-title">The <span class="hl">$100K</span> Day Formula™</h1>
+    <div class="guide-name">The Golden <span class="hl">Avatar</span>™</div>
+    <p class="cl-eyebrow">Offer Matrix™ · Step 1 · The $Million Story™ · Part 2 of 3</p>
+    <p class="subtitle">A deep portrait of the exact buyer your promise speaks to — built from their real words, not your imagination.</p>
+    <span class="cl-badge">The $100K Day Formula™</span>
+  </header>
+
+  <!-- ============ WHAT IT IS ============ -->
+  <section>
+    <h2>What Is the Golden Avatar™?</h2>
+    <p class="cl-lead">Your Golden Avatar™ is the one real buyer your whole promise is built for — profiled in enough depth that you know exactly who to target and what to say.</p>
+
+    <p>Your $Million Promise™ named WHO you help in a few words.</p>
+    <p>The Golden Avatar™ takes that name and goes deep.</p>
+    <p>Who this person really is. Where they're stuck right now. What they've already tried that failed.</p>
+    <p>The one outcome they'd pay for today, the objections that stop them, the exact places they hang out, and the way they actually talk about all of it.</p>
+    <p>It's not a made-up character with a stock photo. It's a portrait of a real person you already serve, built from real evidence.</p>
+
+    <p>Most of the time you'll build just the Golden Avatar™.</p>
+    <p>Sometimes your market is too small to run ads to one buyer alone, and you widen out to one or two <em>overlapping</em> buyers who want the same result.</p>
+    <p>But you only do that when the numbers say you have to.</p>
+    <p>This guide covers both: how to build one avatar deeply, and how to decide whether your market needs more than one.</p>
+
+    <p>It matters because everything you do to <em>reach</em> people runs on this.</p>
+    <p>Your ad targeting is only as good as your picture of who to target and where to find them.</p>
+    <p>Your content only lands if it's written to one specific person with one specific pain.</p>
+    <p>Your sales calls only feel easy when the prospect shows up already feeling understood.</p>
+    <p>When your avatar is real and specific, the platform finds your buyer cheaply, your posts get the "are you inside my head?" reaction, and closing feels like agreeing instead of convincing.</p>
+    <p>That's the whole return on this hour of work.</p>
+
+    <p>And when your avatar is vague or invented, the opposite happens — quietly and expensively.</p>
+    <p>You target "small business owners" and the ad reaches millions of the wrong ones.</p>
+    <p>You write content for "everyone" and it lands on no one.</p>
+    <p>You get on calls where you're guessing at objections because you never actually asked.</p>
+    <p>Most people who think they have a targeting problem or a content problem really have an <em>avatar</em> problem — they never pinned down the real human, so every message downstream is aimed at a ghost.</p>
+
+    <div class="cl-stat">
+      <div class="num">1</div>
+      <div class="label">The rule that changes everything: every field comes from <strong>one real source</strong> — a call, a review, a DM, a survey, a client you've actually served. If you're making it up, you're not building an avatar. You're writing fiction.</div>
+    </div>
+
+    <p>Matthew White built Coach Launch on messages aimed at real, specific people.</p>
+    <p><strong>$24 Million in high-ticket sales generated</strong> and <strong>$5.2 Million in recurring client results delivered</strong> — all downstream of knowing exactly who the buyer was before a single ad ran.</p>
+    <p>Get this part right and your targeting, content, and closing all get easier at once.</p>
+    <p>Get it wrong — make up your customer — and you'll spend real money talking to someone who doesn't exist.</p>
+
+    <h3>What the Golden Avatar™ is NOT</h3>
+    <p>It helps to be just as clear about what this <em>isn't</em>, because most people build the wrong thing and wonder why it doesn't help.</p>
+    <p>It's not a made-up character — the "Marketing Mary, age 34, likes yoga and podcasts" stock persona is a fiction exercise that feels productive and targets no one.</p>
+    <p>It's not a demographic slice on its own — age, income, and job title tell an ad platform who to <em>show</em> the ad to, but they say nothing about what makes the person <em>stop</em> and care.</p>
+    <p>It's not your best-case dream client you'd love to attract — it's a portrait of who you actually serve now.</p>
+    <p>And it's not one giant "everyone I could help" blob — the moment you try to describe your whole market as one person, you lose the specificity that made the profile useful.</p>
+    <p>Here's a simple gut-check: if you couldn't point to a real call, review, or client behind a line in your profile, that line isn't research — it's a guess. And guesses are exactly what this tool exists to catch.</p>
+  </section>
+
+  <!-- ============ WHERE IT FITS ============ -->
+  <section>
+    <h2>Where It Fits</h2>
+    <p>The Golden Avatar™ is <strong>Part 2 of the $Million Story™</strong>, and the $Million Story™ is <strong>Step 1 of the Offer Matrix™</strong> — the first pillar of The $100K Day Formula.</p>
+    <p>This part sits directly on top of Part 1, the $Million Promise™.</p>
+    <p>You can't profile an audience you haven't chosen yet, so the promise comes first and the avatar is built on the person it names.</p>
+
+    <p>The order inside the $Million Story™ is not optional.</p>
+    <p>Part 1, the $Million Promise™, names your audience and the one outcome they buy.</p>
+    <p>Part 2 — the Golden Avatar™ — takes that named buyer and goes deep.</p>
+    <p>Part 3, the $Million Moment™, is your origin story of why you built your system, told in a way that makes this exact avatar see themselves in it — which is only possible once you know the avatar cold.</p>
+    <p>Build these out of order and you're describing a person before you've decided who they are.</p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Part</th><th>Asset</th><th>What it delivers</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>$Million Promise™</td><td>The magnetic one-liner — who you help and the outcome</td></tr>
+          <tr class="is-here"><td><strong>2</strong></td><td>The Golden Avatar™</td><td>The deep-dive on exactly who the promise speaks to — <em>you are here</em></td></tr>
+          <tr><td>3</td><td>$Million Moment™</td><td>Why you built the system — told so this avatar sees themselves in it</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cl-callout warning">
+      <div class="cl-callout-title">⚠ What breaks if this is weak</div>
+      <p>A vague or invented avatar doesn't just sit there — it poisons everything downstream that depends on knowing your buyer.</p>
+      <p>Your ad targeting misfires because you never pinned down who to reach or where they gather, so the platform burns budget finding the wrong people.</p>
+      <p>Your content gets ignored because it's written to a category instead of a person.</p>
+      <p>Your objection-handling is a guessing game because you never collected the real objections.</p>
+      <p>And your $Million Moment™ falls flat because you don't know the avatar well enough to make them see themselves in it.</p>
+      <p>Every dollar and hour you spend on reach after this step pays interest on a weak avatar. That's why we build it here, from real evidence — and only then move to <strong>Part 3 · $Million Moment™</strong>, and eventually <strong>Step 2 · Magic Formula™</strong>.</p>
+    </div>
+  </section>
+
+  <!-- ============ MARKET SIZING ============ -->
+  <section>
+    <h2>First: How Many Avatars Do You Need?</h2>
+    <p>Before you profile anyone, you answer one question — and it's a math question, not a matter of taste.</p>
+    <p><strong>How many avatars does your market actually need?</strong></p>
+    <p>The answer is driven entirely by market size, and it follows the same sizing rule as your $Million Promise™.</p>
+    <p>The target is a reachable market big enough to run paid ads to — roughly <strong>5 million+ people</strong> for a B2C offer, or about <strong>1 million+ businesses</strong> for B2B.</p>
+    <p>Here's how the count gets decided:</p>
+    <ul class="cl-checklist">
+      <li>Your <strong>Golden Avatar™</strong> — the exact buyer your promise names — always comes first.</li>
+      <li>If that one audience is already big enough (5M+ / 1M+), <strong>one avatar is all you need.</strong> A single, sharp avatar is the strongest thing you can have.</li>
+      <li>If your bullseye is smaller than that, you <strong>overlap</strong> — you add one or two related circles who want the same core outcome, until the combined, reachable market clears the bar.</li>
+      <li>You never pad the number with unrelated audiences just to hit three. Overlap only — same outcome, different flavor of person.</li>
+    </ul>
+
+    <p class="subhead">Why size drives the count</p>
+    <p>If you run ads to a market that's too small, the platform runs out of people to show your ad to, costs climb, and results stall — no matter how good your avatar is.</p>
+    <p>Widening to an overlapping avatar is how you grow the reachable pool without losing the shared message that makes your marketing work.</p>
+    <p>But widening for any other reason — because you "could help" more kinds of people — just blurs your message.</p>
+    <p>So the rule is simple: add an avatar only when the math forces it, and only if it truly overlaps.</p>
+
+    <div class="cl-callout">
+      <div class="cl-callout-title">Overlapping (concentric) vs. unrelated</div>
+      <p>Overlapping avatars share a Core Currency — they all want the same result, just from a slightly different starting point.</p>
+      <p>Course creators, coaches, and consultants can overlap because they all want more paying clients: same outcome, different person.</p>
+      <p>But busy parents, single professionals, and retirees do <em>not</em> overlap — they want different things out of life, so they'd buy different offers and need different promises.</p>
+      <p>Three unrelated avatars isn't a bigger audience; it's three different businesses wearing one coat, and it will pull your marketing in three directions at once.</p>
+      <p>The test before adding an avatar: <strong>does this next person want the same core outcome as my Golden Avatar™, just in a different situation?</strong></p>
+      <p>If yes, overlap them. If no, stop — that's a different business for a different day.</p>
+    </div>
+
+    <p>The builder walks you through this decision first.</p>
+    <p>It sizes your market with you — it will ask for your estimate, and it never makes a number up — and only then starts building.</p>
+    <p>Most coaches land on one or two. Three is the ceiling, not the goal.</p>
+  </section>
+
+  <!-- ============ HOW YOU BUILD IT ============ -->
+  <section>
+    <h2>How You'll Build It</h2>
+    <p>Once you know how many avatars you're building, you build each one the same way.</p>
+    <p>Not by imagining a person and writing down what you assume — but by pulling from evidence you already have: sales calls, reviews, DMs, surveys, real clients.</p>
+    <p>You organize that evidence into seven fields, one avatar at a time.</p>
+    <p>This is exactly what the Golden Avatar™ Builder walks you through, but seeing the whole shape first makes the build faster and far more honest.</p>
+
+    <p>For each avatar you fill in seven fields in order: <strong>Snapshot &amp; Label</strong>, <strong>Situation &amp; Demographics</strong>, <strong>Pains &amp; Failed Attempts</strong>, <strong>Desires &amp; the One Outcome</strong>, <strong>Objections &amp; Beliefs</strong>, <strong>Watering Holes</strong>, and <strong>Voice of Customer</strong>.</p>
+    <p>In the builder you can answer one field for one avatar at a time, or — if you already know a field for all of them — give them all at once.</p>
+    <p>Either way, every avatar has to pass a score before it locks (more on that at the end).</p>
+
+    <p>The rest of this guide teaches each of those seven fields in full — what it is, why it matters, how to find yours from real evidence, the right and wrong versions, and the exact trap that quietly turns a profile into fiction.</p>
+
+    <div class="formula-box">
+      One avatar = <span class="v">SNAPSHOT</span> + <span class="v">SITUATION</span> + <span class="v">PAINS &amp; FAILED ATTEMPTS</span> + <span class="v">THE ONE OUTCOME</span> + <span class="v">OBJECTIONS</span> + <span class="v">WATERING HOLES</span> + <span class="v">THEIR REAL WORDS</span>
+    </div>
+  </section>
+
+  <!-- ============ THE 7 FIELDS ============ -->
+  <section>
+    <h2>The 7 Fields, In Full</h2>
+
+    <!-- FIELD 1 -->
+    <div class="part-head"><span class="pill">Field 1</span><h3>Snapshot &amp; Label — name the person</h3></div>
+    <p>The Snapshot is a short, memorable label plus one line on who this person is — the way you'd describe them to a friend over coffee.</p>
+    <p>"Second-Year Sarah — a real estate agent two years in, closing a few deals but stuck under six figures."</p>
+    <p>A label and a one-line situation, and suddenly you can picture a real human instead of a category.</p>
+    <p><strong>Why it matters.</strong> A name makes the avatar usable.</p>
+    <p>When you sit down to write an ad or a post, "who am I talking to?" has a one-word answer you can hold in your head — Sarah — instead of a fuzzy demographic cloud.</p>
+    <p>The label is a handle for everything else in the profile, and the one-line situation forces you to commit to a specific person at a specific stage. That's where all the useful specificity comes from.</p>
+    <p class="subhead">How to find yours</p>
+    <p>Think of a real client or a real pattern of clients — not your dream buyer, the actual people who've paid you or shown up on calls.</p>
+    <p>Give them a name that captures their stage or their defining trait, then one line on where they are right now.</p>
+    <p>Keep the label human and slightly sticky so it's easy to remember.</p>
+    <p>The test: could you introduce this person to a colleague in one sentence and have them instantly picture who you mean?</p>
+    <div class="cl-compare">
+      <div class="col good"><span class="tag">✓ Do this</span><p>"Second-Year Sarah — real estate agent, 2 years in, closing a few deals, stuck under six figures" · "Burnt-Out Ben — solo bookkeeper with 12 clients, working nights, can't take on more without drowning"</p></div>
+      <div class="col bad"><span class="tag">✕ Not that</span><p>"Busy professional" · "My ideal client" · "Small business owner" · "Marketing Mary, 34, loves yoga" (a stock caricature with no real basis)</p></div>
+    </div>
+
+    <!-- FIELD 2 -->
+    <div class="part-head"><span class="pill">Field 2</span><h3>Situation &amp; Demographics — where they really are</h3></div>
+    <p>This field paints their real situation — both the practical facts and where their head is at.</p>
+    <p>The facts: rough age range, their role or title, whether they're B2B or B2C, their income level, solo or with a team, the tools they use, how busy they are.</p>
+    <p>The situation: where they are in their journey right now — just starting, plateaued, or scaling — and what a normal week actually looks like for them.</p>
+    <p><strong>Why it matters.</strong> The two halves do two different jobs, and you need both.</p>
+    <p>The demographic facts tell an ad platform who to <em>show</em> your message to — age, role, industry, location are literally the targeting inputs.</p>
+    <p>But the situation is what makes the message <em>land</em> once they see it.</p>
+    <p>Two people with the same job title but at different stages — one just starting, one plateaued — have completely different pains and buy completely different things.</p>
+    <p>Demographics without situation is a mailing list. Situation without demographics is a feeling you can't target.</p>
+    <p>Together, they're a person you can find AND move.</p>
+    <p class="subhead">How to find yours</p>
+    <p>Pull from the real clients you've served, not a stereotype of your market.</p>
+    <p>Look at who actually books calls and buys — their real ages, real roles, real stage of business.</p>
+    <p>If you catch yourself writing what you <em>assume</em> is true rather than what you've <em>seen</em>, mark it to verify and go check it against a few real people.</p>
+    <p>And keep the situation tied to the outcome your promise sells: the stage that matters most is the one where your offer is the obvious next move.</p>
+    <div class="cl-compare">
+      <div class="col good"><span class="tag">✓ Do this</span><p>"35–45, real estate agent, 2–4 years in, ~$70K/yr, solo, uses a basic CRM, works 6 days a week, plateaued and frustrated"</p></div>
+      <div class="col bad"><span class="tag">✕ Not that</span><p>"25–65, anyone in business, wants to grow" (no stage, no reality) · a pure demographic list with no sense of where they're stuck</p></div>
+    </div>
+
+    <!-- FIELD 3 -->
+    <div class="part-head"><span class="pill">Field 3</span><h3>Pains &amp; Failed Attempts — what hurts, and what flopped</h3></div>
+    <p>This is the field that makes a profile powerful.</p>
+    <p>Two things, aimed at the same target: the pain that keeps this person up at night around your core outcome, and what they've already <em>tried</em> to fix it that failed — a course, a coach, a tool, a tactic, a hire.</p>
+    <p>Not how they feel. What they did, and how it flopped.</p>
+    <p><strong>Why it matters.</strong> People don't buy because they hurt; they buy because they've tried to fix the hurt and it didn't work.</p>
+    <p>When your marketing names the exact thing they tried and hated — "you hired an agency that ghosted you," "you posted every day and got crickets" — something clicks: <em>this person actually gets my situation.</em></p>
+    <p>That recognition is what separates content people scroll past from content that stops them.</p>
+    <p>And it's the field people most often fake, because failed attempts require you to have actually asked. This is where you find out whether you know your customer or just imagine them.</p>
+    <p class="subhead">A pain is a failed attempt, not a feeling</p>
+    <p>This is the same rule that governs the pitfall in your $Million Promise™, and it's just as important here.</p>
+    <p>"Overwhelmed," "stressed," "not confident," "afraid of wasting money" — those are feelings happening <em>to</em> the person, not things they tried.</p>
+    <p>Naming a feeling proves nothing; naming the failed attempt behind it proves you understand their world.</p>
+    <p>The move is always the same: take the feeling and ask, "what did they actually <em>do</em> about this that didn't work?"</p>
+    <p>Overwhelmed becomes "tried to DIY it from YouTube and gave up." Afraid of wasting money becomes "already burned $3K on a course they never finished."</p>
+    <p>Turn every feeling into the failed attempt underneath it.</p>
+    <p class="subhead">Where to find the real ones</p>
+    <p>Go to your evidence, not your imagination.</p>
+    <p>Sales calls are the goldmine — people describe exactly what they tried when they explain why they're talking to you.</p>
+    <p>Reviews and testimonials often open with the failed path ("I'd tried three other programs before this one"). DMs and survey answers are full of it.</p>
+    <p>Collect the two or three most painful, keep them tied to your core outcome, and use their words, not yours.</p>
+    <div class="cl-compare">
+      <div class="col good"><span class="tag">✓ Do this</span><p>"Hired a VA who made it worse" · "Bought a $2K course, watched two modules, quit" · "Ran boosted posts for months and got nothing" · "Tried cold DMs till their account got flagged"</p></div>
+      <div class="col bad"><span class="tag">✕ Not that</span><p>"Overwhelmed" · "Stuck" · "Lacks confidence" · "Afraid it won't work" (feelings, not attempts) · "They've tried everything" (name two specifics)</p></div>
+    </div>
+
+    <!-- FIELD 4 -->
+    <div class="part-head"><span class="pill">Field 4</span><h3>Desires &amp; the One Outcome — what they'd pay for today</h3></div>
+    <p>Flip the pain over.</p>
+    <p>This field captures what they <em>want</em> — a few desires, then the ONE outcome they'd pay for right now.</p>
+    <p>And that one outcome has to line up with the Core Currency from your $Million Promise™.</p>
+    <p>If your promise sells "your first 50 paying students," the one outcome here is a version of that same thing, in this avatar's words.</p>
+    <p><strong>Why it matters.</strong> A profile with one clear desired outcome is a laser; a profile with five competing desires is a fog.</p>
+    <p>The one outcome is what your offer promises to deliver and what all your messaging points toward.</p>
+    <p>Keeping it matched to your promise's currency is what keeps the whole $Million Story™ coherent — the promise, the avatar, and eventually the offer all point at the same finish line.</p>
+    <p>When the avatar's real desire <em>doesn't</em> match your promise, that's not a small thing to smooth over. It's a signal that either this isn't your bullseye or your promise needs another look.</p>
+    <p class="subhead">Pick the one they'd pay for, not the one you're proudest of</p>
+    <p>Coaches love to lead with the outcome <em>they</em> find most meaningful — the deep transformation, the mindset shift.</p>
+    <p>But the one outcome here is the one that makes the <em>customer</em> lean forward and reach for a card.</p>
+    <p>Often that's more concrete and more selfish than you'd like: more clients, more revenue, more time, a specific number hit by a specific date.</p>
+    <p>Sell the outcome they'd pay for today, and deliver the deeper transformation once they're in.</p>
+    <p class="subhead">Keep it out of the guru zone</p>
+    <p>The same trap from the promise applies: "freedom," "transformation," "confidence," and "clarity" can't be counted, so they can't anchor a profile.</p>
+    <p>Trade the abstract word for the concrete result underneath it, and make sure it matches the measurable currency your promise already committed to.</p>
+    <p>If you can't measure it, you can't sell it — and you definitely can't build content and offers around it.</p>
+    <div class="cl-compare">
+      <div class="col good"><span class="tag">✓ Do this</span><p>"Their first 50 paying students" · "5 new listings a month" · "$10K months without working weekends" — one clear outcome, matched to the promise</p></div>
+      <div class="col bad"><span class="tag">✕ Not that</span><p>"Freedom" · "Confidence" · "To finally feel successful" (guru zone) · three different end goals at once · an outcome that doesn't match the promise's currency</p></div>
+    </div>
+
+    <!-- FIELD 5 -->
+    <div class="part-head"><span class="pill">Field 5</span><h3>Objections &amp; Beliefs — the brakes on the sale</h3></div>
+    <p>This field captures why this person hesitates when they're <em>this</em> close to buying.</p>
+    <p>Their real objections: "I don't have time," "I've been burned before," "this won't work in my niche," "I can't afford it right now."</p>
+    <p>Plus the limiting beliefs they hold that get in the way: "you need a big audience to launch," "ads don't work for someone like me."</p>
+    <p>Objections are what they say out loud. Beliefs are the false things underneath that make them say it.</p>
+    <p><strong>Why it matters.</strong> Every objection you can name in advance is one your marketing gets to answer before the prospect even raises it — in an ad, an email, a piece of content, a sales script.</p>
+    <p>Marketing that ignores objections leaves the prospect to talk themselves out of buying in silence.</p>
+    <p>And the limiting beliefs are even more valuable: a false belief is the thing your content gets to break, and breaking it is often what turns a follower into a buyer.</p>
+    <p>If your avatar believes "you need a huge audience to launch," a single post that shatters that belief can do more than ten posts about your offer.</p>
+    <p class="subhead">Price is usually the last mask</p>
+    <p>When someone says "I can't afford it," that's often the polite version of a deeper fear.</p>
+    <p>That it won't work for <em>them</em> specifically. That they'll fail again like they did last time. That they're not the kind of person this works for.</p>
+    <p>Don't stop at the surface objection. Dig for the real fear underneath, because that's the one your marketing actually has to release.</p>
+    <p>"I can't afford it" gets answered with a payment plan. "I've failed at this before and I'm scared to try again" gets answered with proof, empathy, and a story — which is far more powerful.</p>
+    <p class="subhead">Find them in real conversations, not your head</p>
+    <p>You cannot guess objections accurately — you have to have heard them.</p>
+    <p>They live in the second half of sales calls, in the "I'm not sure because…" emails, in the reasons people give when they say no.</p>
+    <p>If you don't have real objections yet, that's your homework: get on calls and listen for the moment they hesitate.</p>
+    <p>An invented objection sends your marketing after a fear nobody actually has.</p>
+    <div class="cl-compare">
+      <div class="col good"><span class="tag">✓ Do this</span><p>Objection: "I've bought courses before and never finished them." Belief: "I need a big following before ads make sense." — both pulled from real calls</p></div>
+      <div class="col bad"><span class="tag">✕ Not that</span><p>"They'd probably say it's too expensive" (a guess) · only surface price objections with no deeper fear · no limiting belief at all</p></div>
+    </div>
+
+    <!-- FIELD 6 -->
+    <div class="part-head"><span class="pill">Field 6</span><h3>Watering Holes — exactly where they gather</h3></div>
+    <p>Watering holes are the specific places this person actually hangs out — the ones you could point an ad or a piece of content at.</p>
+    <p>Not "social media." <em>Which</em> platform. <em>Which</em> groups.</p>
+    <p><em>Which</em> creators they follow, podcasts they play, tools they log into, events they attend, newsletters they open.</p>
+    <p>Names, not categories.</p>
+    <p><strong>Why it matters.</strong> This is the field that turns a profile into a targeting plan.</p>
+    <p>Knowing your avatar deeply is useless if you don't know where to find them — and "online" isn't an answer, because online is everywhere, which is nowhere.</p>
+    <p>Specific watering holes tell you exactly which interests to target in ad manager, which creators to get in front of, which podcasts to pitch, which communities to show up in.</p>
+    <p>The more specific and named your list, the cheaper and sharper your reach — because you're fishing where the fish already are instead of dragging a net across the whole ocean.</p>
+    <p class="subhead">Cold water, not just warm</p>
+    <p>It's tempting to list your own email list and followers — but those are people who already know you.</p>
+    <p>The watering holes that matter most are where the <em>cold</em> ones gather, the people who've never heard your name.</p>
+    <p>Those are the pools ads and content have to reach to actually grow.</p>
+    <p>Push past your owned channels to the places your future buyers already spend time without you.</p>
+    <p class="subhead">If you don't know, that's the assignment</p>
+    <p>Not knowing where your avatar hangs out isn't a gap to paper over with a guess — it's a research task.</p>
+    <p>The fastest fix is to ask five real people in your market a single question: "where do you go to learn about this?"</p>
+    <p>Their answers — the specific shows, groups, and people they name — become your targeting map.</p>
+    <p>A guessed watering hole wastes ad spend pointing at an empty room.</p>
+    <div class="cl-compare">
+      <div class="col good"><span class="tag">✓ Do this</span><p>"The [named] Facebook group for new agents" · "[Specific] real estate podcast" · "Follows [named creator] on Instagram" · "Uses [named CRM]" · "Attends [named] annual conference"</p></div>
+      <div class="col bad"><span class="tag">✕ Not that</span><p>"Social media" · "Online" · "Google" · "LinkedIn" (which part? whose content? which groups?) · only "my own email list" (that's warm, not cold)</p></div>
+    </div>
+
+    <!-- FIELD 7 -->
+    <div class="part-head"><span class="pill">Field 7</span><h3>Voice of Customer — their real words</h3></div>
+    <p>The last field is the most valuable one you'll bank: 3–5 real quotes from this person, word for word, the way <em>they</em> said it.</p>
+    <p>Straight from a call, a review, a DM, a survey. Unpolished.</p>
+    <p>"I feel like I'm working 60 hours a week and I'm still broke" — not "struggles with work-life balance and income."</p>
+    <p><strong>Why it matters.</strong> The single fastest way to write copy that converts is to use the customer's own language back to them.</p>
+    <p>When an ad or email uses the exact words a prospect uses in their own head, it slips past their skepticism and feels like recognition instead of selling.</p>
+    <p>This field is a swipe file you'll reuse for the life of your business — headlines, ad hooks, email subject lines, sales-page bullets all get easier when you're pulling from real quotes instead of inventing clever lines.</p>
+    <p>Copywriters pay for this language; you're collecting it straight from the source.</p>
+    <p class="subhead">Don't clean it up</p>
+    <p>The power is in the mess.</p>
+    <p>Real people talk in run-ons, in specifics, in slightly-off phrasing that a marketer would never write — and that's exactly why it works, because it sounds human.</p>
+    <p>The moment you "professionalize" a quote into "struggles with financial organization," you strip out the thing that made it land.</p>
+    <p>Keep their grammar, their word choices, their emphasis. If it makes you wince a little because it's so raw, it's perfect.</p>
+    <p class="subhead">Real only — never invented</p>
+    <p>This field is only powerful when it's genuine.</p>
+    <p>A quote you wrote yourself, imagining how a customer might talk, is just your own copy wearing a costume — and it usually shows.</p>
+    <p>If you don't have real quotes yet, don't fake them; mark the field as something to collect and go get three real ones from calls or reviews.</p>
+    <p>Three genuine quotes beat ten invented ones every time.</p>
+    <div class="cl-compare">
+      <div class="col good"><span class="tag">✓ Do this</span><p>"I'm doing everything the gurus say and my account's still a ghost town" · "I've spent more on courses than I've made back" · "I just want ONE month where I'm not scared to check my bank balance"</p></div>
+      <div class="col bad"><span class="tag">✕ Not that</span><p>"Struggles with lead generation" · "Desires financial stability" (you wrote that, not them) · invented quotes with no real source · fewer than three</p></div>
+    </div>
+  </section>
+
+  <!-- ============ WORKED EXAMPLE ============ -->
+  <section>
+    <h2>A Worked Profile</h2>
+    <p>Here's what building one Golden Avatar™ actually looks like, field by field.</p>
+    <p>We'll start from a locked $Million Promise™ so you can see how the profile grows straight out of it.</p>
+
+    <div class="cl-callout"><div class="cl-callout-title">The locked promise</div><p>"I help course creators land their first 50 paying students in one 5-day launch — without a big audience or paid ads." <br><em>Audience: course creators doing their first launch · Core outcome: their first 50 paying students.</em></p></div>
+
+    <p>The promise names the person.</p>
+    <p>This niche is well over 5 million people worldwide, so one avatar covers the market — no need to overlap.</p>
+    <p>Now we build the profile on that exact human, pulling every field from real calls and reviews, not imagination.</p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Field</th><th>Built from evidence — and why it works</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Snapshot &amp; Label</strong></td><td>"First-Launch Fiona — a creator with a finished course and zero sales, terrified her launch will flop." Instantly pictureable, tied to the promise's audience.</td></tr>
+          <tr><td><strong>Situation &amp; Demographics</strong></td><td>30–45, built a course on a topic she's expert in, ~800 email subscribers, solo, works evenings around a job or clients, has never launched before. Real stage, not a stereotype.</td></tr>
+          <tr><td><strong>Pains &amp; Failed Attempts</strong></td><td>"Did a quiet launch to her list and made 2 sales." "Bought a $1,500 launch course and never finished it." "Posted daily for a month and got no signups." Failed attempts, not feelings.</td></tr>
+          <tr><td><strong>Desires &amp; the One Outcome</strong></td><td>Wants proof her course is real, a repeatable launch, an audience — but the ONE outcome she'd pay for today is <em>her first 50 paying students.</em> Matches the promise exactly.</td></tr>
+          <tr><td><strong>Objections &amp; Beliefs</strong></td><td>Objection: "My list is too small to launch." Belief: "You need thousands of followers before anyone will buy." The exact belief the promise ("without a big audience") gets to break.</td></tr>
+          <tr><td><strong>Watering Holes</strong></td><td>A named course-creator Facebook group, a specific online-business podcast, follows two named creators on Instagram, uses a named course platform. Real, targetable places.</td></tr>
+          <tr><td><strong>Voice of Customer</strong></td><td>"I built this whole thing and I'm terrified no one will buy it." "Everyone says grow your audience first — I just want SALES." "I've watched a hundred launch videos and I'm more confused than ever."</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cl-callout lock">
+      <div class="cl-callout-title">✔ Why this profile locks</div>
+      <p style="color:var(--cl-black);">Every field ties back to the promise and comes from something real.</p>
+      <p style="color:var(--cl-black);">The failed attempts match the promise's pitfalls. The limiting belief ("you need a big audience") is the exact one the promise breaks.</p>
+      <p style="color:var(--cl-black);">And the voice-of-customer quotes are raw enough to drop straight into an ad.</p>
+      <p style="color:var(--cl-black);">Scored against the rubric below, this profile clears the 18/25 lock bar with a 3 or better on every field — so it's a profile you can target, write to, and sell to tomorrow, not a fiction exercise.</p>
+    </div>
+  </section>
+
+  <!-- ============ HARD RULES ============ -->
+  <section>
+    <h2>The Hard Rules</h2>
+    <p>These aren't preferences — they're the guardrails that keep a profile honest and usable, and the Golden Avatar™ Builder enforces every one.</p>
+    <p>Here's each rule and the reason behind it.</p>
+    <p><strong>Market size decides the count.</strong> You build as many avatars as it takes to reach a viable market (~5M+ people or ~1M+ businesses) — and no more. One is ideal if the bullseye already clears the bar; you overlap only when the numbers force it.</p>
+    <p><strong>Evidence, not imagination.</strong> Every field must come from a real source — a call, review, DM, survey, or client you've served. Anything you can't trace to real evidence gets flagged UNVERIFIED, because a made-up avatar is worse than none.</p>
+    <p><strong>Avatar #1 is the person your promise names.</strong> Your Golden Avatar™ is fixed by Part 1. You don't get to quietly swap in a different, easier-to-imagine person here.</p>
+    <p><strong>Three avatars maximum, and only if concentric.</strong> Any avatar beyond your Golden Avatar™ must genuinely overlap and share the same core outcome. Unrelated avatars mean unrelated promises and scattered marketing.</p>
+    <p><strong>Pains are failed attempts, not feelings.</strong> "Overwhelmed" is a feeling; "hired an agency that ghosted them" is a failed attempt. Only the failed attempt proves you understand their world.</p>
+    <p><strong>One outcome per avatar, matched to the promise.</strong> Each avatar points at a single result they'd pay for, and it must be the same currency your $Million Promise™ sells. A mismatch means either the avatar or the promise is off.</p>
+    <p><strong>Watering holes must be specific and named.</strong> "Social media" is not a targeting plan. Name the exact groups, shows, creators, tools, and events — or go collect them.</p>
+    <p><strong>Voice-of-customer stays in their real words.</strong> Never polish a customer quote into consultant-speak. The raw, unpolished language is the whole point — it's what makes copy convert.</p>
+    <p><strong>Every avatar must pass the score to lock.</strong> A profile isn't finished until it scores 18/25 or higher with a 3+ on every field. Weak or guessed profiles don't advance — that's the gate, explained in full below.</p>
+  </section>
+
+  <!-- ============ COMMON MISTAKES ============ -->
+  <section>
+    <h2>Common Mistakes &amp; Fixes</h2>
+    <p>Almost every weak avatar fails in one of the ways below.</p>
+    <p>For each, here's what it looks like, why it happens, why it quietly costs you money, and exactly how to fix it.</p>
+
+    <div class="mistake">
+      <h4>1. Inventing the customer instead of researching them</h4>
+      <p>This is the big one — sitting down and imagining your ideal client, writing down what you assume they think, want, and fear.</p>
+      <p>It happens because it's fast and it feels productive; you can fill in all seven fields in ten minutes without talking to anyone.</p>
+      <p>But an invented avatar is a fiction, and marketing built on fiction points at a person who doesn't exist.</p>
+      <p>You'll target the wrong interests, write to the wrong pains, and answer objections nobody actually has — and you won't know it's wrong until the ad spend is gone.</p>
+      <p class="fix"><b>Fix:</b> treat every field as a research question, not a creative-writing prompt. Pull from real calls, reviews, DMs, and surveys. If you don't have the evidence yet, talk to five real people in your market before you build — and mark anything unverified so you know exactly what to go prove.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>2. Building three avatars when one would do</h4>
+      <p>This looks like profiling three different groups because you've helped all of them, when your bullseye market is already plenty big.</p>
+      <p>It happens because more avatars feels like more opportunity, and turning anyone away feels like leaving money on the table.</p>
+      <p>But every extra avatar splits your message and your ad budget, and if your first audience was already viable, the extras just dilute a profile that was working.</p>
+      <p>You end up vaguer to everyone in an effort to include everyone.</p>
+      <p class="fix"><b>Fix:</b> size your market first. If your Golden Avatar™'s audience already clears ~5M people (or ~1M businesses), build that one deeply and stop. Add an overlapping avatar only when the math forces it — not because you could help more kinds of people.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>3. Demographics with no situation</h4>
+      <p>This looks like "35–50, business owner, household income $100K+" and nothing else.</p>
+      <p>It happens because demographics are easy to state and feel concrete.</p>
+      <p>But age and income tell you who to <em>show</em> an ad to, not what makes them <em>stop</em> and care.</p>
+      <p>Two people with identical demographics at different stages of their journey have completely different pains and buy completely different things, so a profile that stops at demographics can't tell you what to actually say.</p>
+      <p class="fix"><b>Fix:</b> add the stage and the daily reality. Where are they stuck right now — starting, plateaued, scaling? What does a normal week look like? The situation is what turns a mailing list into a person you can actually move.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>4. Feelings instead of failed attempts</h4>
+      <p>This is filling the pain field with "overwhelmed," "stressed," "lacks confidence," "afraid to invest."</p>
+      <p>It happens because those feelings are real and top-of-mind.</p>
+      <p>But a feeling is something happening <em>to</em> the person, not something they tried — and naming a feeling doesn't prove you understand their situation the way naming a failed attempt does.</p>
+      <p>"You feel overwhelmed" could be said to anyone; "you tried to DIY it from YouTube and gave up" could only be said to someone you actually get.</p>
+      <p class="fix"><b>Fix:</b> take each feeling and ask "what did they actually <em>do</em> about this that didn't work?" Turn "overwhelmed" into "bought three courses and finished none," and name that instead.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>5. Too many outcomes, or a guru-zone one</h4>
+      <p>This shows up as an avatar who wants "freedom, confidence, more clients, and better systems" all at once, or whose one desire is an abstract like "transformation."</p>
+      <p>It happens because your clients genuinely want many things and you don't want to leave any out.</p>
+      <p>But a profile with five competing desires can't tell you what to lead with, and a guru-zone desire can't be measured, targeted, or sold.</p>
+      <p>The result is messaging that tries to promise everything and lands on nothing.</p>
+      <p class="fix"><b>Fix:</b> pick the ONE outcome they'd pay for today, make it concrete and countable, and match it to your promise's Core Currency. The other desires become bonuses you deliver once they're in — not the hook.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>6. Guessing objections instead of hearing them</h4>
+      <p>This is writing "they'd probably think it's too expensive" without ever having had someone say it.</p>
+      <p>It happens because you can imagine objections without doing the work of collecting them.</p>
+      <p>But guessed objections send your marketing after fears nobody actually has, while the real objection — the one that's actually killing your sales — goes unanswered.</p>
+      <p>And a stopped-at-price objection usually hides a deeper fear you never surfaced.</p>
+      <p class="fix"><b>Fix:</b> get the real objections from the second half of sales calls and the reasons people give when they say no. Dig past "I can't afford it" to the real fear underneath — usually "it won't work for someone like me." Answer <em>that</em>.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>7. Vague watering holes</h4>
+      <p>This is answering "where do they hang out?" with "social media," "online," or "LinkedIn."</p>
+      <p>It happens because the broad answer feels true — they probably <em>are</em> on social media.</p>
+      <p>But broad is useless for targeting: you can't run an ad to "online," and "LinkedIn" doesn't tell you whose content they read or which groups they're in.</p>
+      <p>A vague watering hole is the same as not knowing, and it turns ad targeting back into guesswork.</p>
+      <p class="fix"><b>Fix:</b> demand names — the specific groups, podcasts, creators, tools, and events. If you don't know them, ask five real people "where do you go to learn about this?" and use their exact answers as your targeting map.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>8. Polishing the customer's words</h4>
+      <p>This is turning "I'm working 60 hours a week and still broke" into "struggles with work-life balance and income."</p>
+      <p>It happens because the polished version looks more professional and you're trained to write cleanly.</p>
+      <p>But polishing strips out the raw, specific language that made the quote land — the messy realness is exactly what slips past a prospect's skepticism.</p>
+      <p>A cleaned-up quote reads like marketing; the raw one reads like recognition.</p>
+      <p class="fix"><b>Fix:</b> keep every quote word-for-word, grammar and all. If it makes you wince because it's so raw, it's perfect. Bank 3–5 real ones per avatar and reuse them as your swipe file forever.</p>
+    </div>
+  </section>
+
+  <!-- ============ SCORE YOUR OWN ============ -->
+  <section>
+    <h2>Score Your Own — The Pass Bar</h2>
+    <p>The Golden Avatar™ Builder doesn't just score your work — it <strong>gates</strong> on it.</p>
+    <p>An avatar won't lock, and you won't move on to the next step, until it earns a passing score.</p>
+    <p>Scoring each avatar by hand before you run the builder tells you exactly where the weak spots are.</p>
+    <p>Here's the whole system in three simple pieces.</p>
+
+    <p class="subhead">1. Each field is scored 0–5</p>
+    <p>Every avatar is judged on five fields. Each field gets a score from 0 to 5.</p>
+    <p>Here's what each number means, and what good versus bad looks like:</p>
+    <div class="cl-table-wrap">
+      <table class="cl-table score-rubric">
+        <thead><tr><th>Score</th><th>What it means</th><th>What it looks like</th></tr></thead>
+        <tbody>
+          <tr><td><span class="sb sb-5">5</span></td><td><strong>Nailed it</strong></td><td>Specific, backed by real evidence, in the customer's own words, usable in an ad today.</td></tr>
+          <tr><td><span class="sb sb-4">4</span></td><td><strong>Strong</strong></td><td>Specific and real, with only minor sharpening left to do.</td></tr>
+          <tr><td><span class="sb sb-3">3</span></td><td><strong>Passable</strong> — the floor</td><td>Identifiable but still broad, or partly assumed. The minimum a single field can score and still count.</td></tr>
+          <tr><td><span class="sb sb-2">2</span></td><td><strong>Weak</strong></td><td>Vague, feeling-based, or a category ("business owners") instead of a specific person or place.</td></tr>
+          <tr><td><span class="sb sb-1">1</span></td><td><strong>Fail</strong></td><td>Generic, invented, or "everyone." No real evidence behind it.</td></tr>
+          <tr><td><span class="sb sb-0">0</span></td><td><strong>Missing</strong></td><td>Not there at all.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="subhead">2. Five fields, 25 points</p>
+    <p>The five scored fields add up to 25.</p>
+    <p>(Your Snapshot label and your voice-of-customer quotes feed these fields — they sharpen the scores rather than getting a score of their own.)</p>
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Field</th><th>A 5 looks like</th><th>A 2 looks like</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Situation &amp; Demographics</strong></td><td>Real age, role, stage, and daily reality — from actual clients</td><td>"Anyone in business who wants to grow"</td></tr>
+          <tr><td><strong>Pains &amp; Failed Attempts</strong></td><td>Two or three real things they tried that flopped</td><td>"Overwhelmed and stuck" (feelings)</td></tr>
+          <tr><td><strong>Desires &amp; the One Outcome</strong></td><td>One countable outcome that matches your promise</td><td>"Freedom" or three goals at once</td></tr>
+          <tr><td><strong>Objections &amp; Beliefs</strong></td><td>Real objections from calls + a limiting belief to break</td><td>"They'd say it's too expensive" (a guess)</td></tr>
+          <tr><td><strong>Watering Holes</strong></td><td>Named groups, shows, creators, tools, events</td><td>"Social media" / "online"</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="subhead">3. The pass bar</p>
+    <p>Add up the five fields. Where your total lands tells you what to do next:</p>
+    <div class="bands">
+      <div class="band green">
+        <span class="rng">18–25</span>
+        <span class="verdict">🔒 Locked</span>
+        <p>Green light. Evidence-backed and specific. This avatar passes — move on to the next step.</p>
+      </div>
+      <div class="band amber">
+        <span class="rng">13–17</span>
+        <span class="verdict">Almost</span>
+        <p>Real but soft. Raise every field that's under 3, then push your weakest fields up until you clear 18.</p>
+      </div>
+      <div class="band red">
+        <span class="rng">0–12</span>
+        <span class="verdict">Rebuild</span>
+        <p>You're likely guessing. Go get real evidence — calls, reviews, DMs — before you build any further.</p>
+      </div>
+    </div>
+
+    <div class="cl-callout lock">
+      <div class="cl-callout-title">✔ The hard rule</div>
+      <p>To lock, an avatar needs <strong>18 out of 25 or higher AND a 3 or better on every single field.</strong> Both conditions, not one.</p>
+      <p>A single field sitting at a 2 fails the whole avatar even if the total looks fine — because one weak spot is where your marketing will leak.</p>
+      <p>The builder won't advance you to your $Million Moment™ until every avatar you're building clears this bar.</p>
+      <p>And here's the honest part: any field you can't back with real evidence gets capped at a 3, so a profile full of guesses simply can't reach 18. That's by design — it's what stops you from spending real money on a made-up customer.</p>
+    </div>
+
+    <p class="subhead">The quick checklist</p>
+    <p>Run each avatar against this before you call it done:</p>
+    <ul class="cl-checklist">
+      <li>Avatar #1 is the exact audience your $Million Promise™ names — your Golden Avatar™.</li>
+      <li>All seven fields are filled — Snapshot &amp; Label, Situation &amp; Demographics, Pains &amp; Failed Attempts, Desires &amp; the One Outcome, Objections &amp; Beliefs, Watering Holes, and Voice of Customer.</li>
+      <li>Every field is backed by real evidence — calls, reviews, DMs, surveys — not guesses.</li>
+      <li>The pains are real failed attempts, and the desires land on ONE outcome, not a wish list.</li>
+      <li>The Voice of Customer is in their actual words, not your paraphrase.</li>
+      <li>The watering holes are specific places you can actually reach them.</li>
+      <li>If you built more than one avatar, they're concentric — related, overlapping circles — and you've capped it at three.</li>
+      <li>Every avatar scores 18 out of 25 or higher, with a 3 or better on every scored field.</li>
+      <li>No field is propped up by a guess — anything you can't back with evidence is capped at a 3.</li>
+    </ul>
+    <p>All boxes checked on every avatar? Your Golden Avatar™ is locked — and now your marketing can sound like it was written from inside their head.</p>
+  </section>
+
+  <!-- ============ NEXT STEP ============ -->
+  <section>
+    <div class="cl-cta">
+      <h2 class="cta-title">Ready to Build Your $100K Day Masterclass</h2>
+      <h3 class="cta-subtitle">The ultimate one-to-many client acquisition system</h3>
+      <p class="cta-sub">Use the Golden Avatar™ Builder tool in Coach Launch Academy™ to build yours with AI-guided tools and premium one-on-one consulting &amp; coaching.</p>
+      <a class="cta-btn" href="https://fast.coachlaunch.com" target="_blank" rel="noopener">Join the $100K Day Accelerator™</a>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING ============ -->
+  <section>
+    <div class="cl-quote">
+      <div class="q-title">Remember</div>
+      <p>You don't sell to a crowd. You sell to one person. Know them better than they know themselves, and your marketing stops sounding like marketing. When they think "how did you get inside my head?" — you've already won.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="cl-foot">
+    <p>Coach Launch · The $100K Day Formula™ — Offer Matrix™ · Step 1 · The $Million Story™ · Part 2 · The Golden Avatar™</p>
+    <p>For Coach Launch clients. Built in Matthew White's voice.</p>
+  </footer>
+
+</div>
+</body>
+</html>
+<!-- end of guide -->
+ 

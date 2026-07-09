@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coach Launch — How to Build Your Magic Formula™</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/coach-launch-guide.css">
+<style>
+  .part-head { display:flex; align-items:baseline; gap:.7rem; margin-top:2.8rem; padding-top:1.4rem; border-top:1px solid var(--border); }
+  .part-head .pill { font-family:var(--font-display); font-weight:800; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:#fff; background:var(--cl-crimson); padding:.28rem .7rem; border-radius:999px; white-space:nowrap; }
+  .part-head h3 { margin:0; padding:0; border:0; }
+  .subhead { font-family:var(--font-display); font-weight:700; font-size:1.05rem; color:var(--cl-black); margin:1.6rem 0 .5rem; }
+  .formula-box { font-family:var(--font-display); font-weight:700; font-size:1.12rem; color:var(--cl-black); background:var(--cl-crimson-soft); border:1px dashed var(--cl-crimson); border-radius:var(--radius); padding:1.1rem 1.3rem; margin:1.4rem 0; text-align:center; line-height:1.5; }
+  .formula-box .v { color:var(--cl-crimson); }
+  .mistake { border:1px solid var(--border); border-left:4px solid #e08600; border-radius:var(--radius); padding:1.2rem 1.4rem; margin:1.4rem 0; background:var(--bg-panel); box-shadow:var(--shadow-sm); }
+  .mistake h4 { color:#b56b00; text-transform:none; letter-spacing:0; font-size:1.1rem; margin:0 0 .5rem; }
+  .mistake .fix { margin-top:.7rem; }
+  .mistake .fix b { color:#178048; }
+  /* 3x3 stage grid */
+  .stage3 { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:1.6rem 0; }
+  .stage3 .cl-card ol { margin:.6rem 0 0; padding-left:1.15rem; color:var(--text-muted); font-size:.95rem; }
+  .stage3 .cl-card ol li { margin:.35rem 0; }
+  @media (max-width:720px){ .stage3 { grid-template-columns:1fr; } }
+  /* numeric score badges */
+  .sb { display:inline-block; min-width:2em; text-align:center; font-family:var(--font-display); font-weight:800; color:#fff; border-radius:999px; padding:.05em .5em; font-size:.8rem; }
+  .s-green{ background:#1f9d57; } .s-amber{ background:#e08600; } .s-red{ background:var(--cl-crimson); }
+  /* ===== formula map (3 pillars / 9 steps) ===== */
+  .map-intro { text-align:center; font-size:1.05rem; color:var(--text-muted); max-width:640px; margin:0 auto 1.2rem; }
+  .map { border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-panel); box-shadow:var(--shadow); padding:1.3rem 1.3rem 1.5rem; }
+  .map-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+  .pillar-cat { display:flex; align-items:center; gap:.45rem; justify-content:center; margin-bottom:.5rem; }
+  .pillar-cat .cnum { width:1.7em; height:1.7em; border-radius:50%; background:var(--cl-crimson); color:#fff; font-family:var(--font-display); font-weight:800; font-size:.8rem; display:flex; align-items:center; justify-content:center; }
+  .pillar-cat .cword { font-family:var(--font-display); font-weight:800; font-size:1.1rem; letter-spacing:.02em; text-transform:uppercase; color:var(--cl-black); }
+  .pillar-bar { background:#2b2b2b; color:#fff; font-family:var(--font-display); font-weight:800; text-transform:uppercase; letter-spacing:.04em; font-size:.68rem; text-align:center; padding:.45rem .4rem; border-radius:6px; margin-bottom:.7rem; }
+  .step { position:relative; border:1px solid var(--border); border-radius:10px; padding:.55rem .6rem .6rem 2.4rem; margin-bottom:.5rem; background:var(--bg-panel-2); }
+  .step .snum { position:absolute; left:.5rem; top:.55rem; width:1.5em; height:1.5em; border-radius:50%; background:#2b2b2b; color:#fff; font-family:var(--font-display); font-weight:800; font-size:.7rem; display:flex; align-items:center; justify-content:center; }
+  .step .sname { font-family:var(--font-display); font-weight:800; font-size:.82rem; text-transform:uppercase; letter-spacing:.01em; color:var(--cl-black); line-height:1.15; }
+  .step .stag { font-size:.7rem; color:var(--cl-dark); background:#fff3a8; display:inline-block; padding:.04em .35em; margin-top:.28rem; border-radius:3px; }
+  .step.here { border:2px solid var(--cl-crimson); background:var(--cl-crimson-soft); padding-top:.8rem; }
+  .step.here .snum { background:var(--cl-crimson); }
+  .step .here-tag { display:inline-block; background:var(--cl-crimson); color:#fff; font-family:var(--font-display); font-weight:800; font-size:.56rem; letter-spacing:.07em; text-transform:uppercase; padding:.12em .45em; border-radius:999px; margin-bottom:.3rem; }
+  @media (max-width:720px){ .map-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="cl-wrap">
+
+  <!-- ============ HERO ============ -->
+  <header class="cl-hero">
+    <img class="cl-brand-logo" src="https://assets.cdn.filesafe.space/ybe7GTcbvnTIWFX0Hos9/media/66f909a24c8d5f82216f1acd.png" alt="Coach Launch">
+    <h1 class="formula-title">The <span class="hl">$100K</span> Day Formula™</h1>
+    <div class="guide-name">The Magic <span class="hl">Formula</span>™</div>
+    <p class="cl-eyebrow">Offer Matrix™ · Step 2 · The $100K Day Formula™</p>
+    <p class="subtitle">The branded 3-stage, 9-step system that turns your promise into a product only YOU can deliver.</p>
+    <span class="cl-badge">The $100K Day Formula™</span>
+  </header>
+
+  <!-- ============ THE MAP (3 PILLARS / 9 STEPS) ============ -->
+  <section>
+    <p class="cl-eyebrow" style="text-align:center;">The $100K Day Formula™ · 3 Pillars · 9 Steps</p>
+    <p class="map-intro">Here's the whole system at a glance. Your <strong>Magic Formula™</strong> is Step 2, inside the Offer Matrix™ — the first pillar.</p>
+    <div class="map">
+      <div class="map-grid">
+
+        <div class="pillar">
+          <div class="pillar-cat"><span class="cnum">1</span><span class="cword">Offer</span></div>
+          <div class="pillar-bar">Offer Matrix™</div>
+          <div class="step"><span class="snum">1</span><div class="sname">$Million Story™</div><span class="stag">Be the voice in their head</span></div>
+          <div class="step here"><span class="snum">2</span><span class="here-tag">You are here</span><div class="sname">Magic Formula™</div><span class="stag">Make competition irrelevant</span></div>
+          <div class="step"><span class="snum">3</span><div class="sname">Red Diamond Offer™</div><span class="stag">Offers they can't say no to</span></div>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-cat"><span class="cnum">2</span><span class="cword">Money</span></div>
+          <div class="pillar-bar">Money Magnet™</div>
+          <div class="step"><span class="snum">4</span><div class="sname">The Sniper Close™</div><span class="stag">The audience closes themselves</span></div>
+          <div class="step"><span class="snum">5</span><div class="sname">Cash Flow Engine™</div><span class="stag">Profit before anyone shows up</span></div>
+          <div class="step"><span class="snum">6</span><div class="sname">Genie X Converter™</div><span class="stag">Close sales while you sleep</span></div>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-cat"><span class="cnum">3</span><span class="cword">Clients</span></div>
+          <div class="pillar-bar">Client Flywheel™</div>
+          <div class="step"><span class="snum">7</span><div class="sname">Goliath Content™</div><span class="stag">10X output, zero overwhelm</span></div>
+          <div class="step"><span class="snum">8</span><div class="sname">Pixie Dust Social™</div><span class="stag">Premium buyers for $5 a day</span></div>
+          <div class="step"><span class="snum">9</span><div class="sname">Dragon Fire Ads™</div><span class="stag">Fill every event on demand</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT IT IS ============ -->
+  <section>
+    <h2>What Is the Magic Formula™?</h2>
+    <p class="cl-lead">Your Magic Formula™ is the system that delivers on your $Million Promise™ — packaged so it looks and feels like something only you can do.</p>
+
+    <p>Your $Million Promise™ said WHO you help and WHAT they get.</p>
+    <p>Your Magic Formula™ shows HOW you get them there.</p>
+
+    <p>It's a 3-stage, 9-step system with a name, so your way of getting results stops being "advice" and starts being a product.</p>
+    <p>Most coaches sound exactly the same. "I help people get healthy." "I help businesses grow."</p>
+    <p>Those promises vanish in a crowd, because there's nothing to hold on to.</p>
+
+    <p>Your Magic Formula™ fixes that by giving your method a shape and a name.</p>
+    <p>When someone sees your 9-step system — with catchy names and real outcomes — they stop comparing you to other coaches.</p>
+    <p>They start comparing your system to doing nothing. And doing nothing loses.</p>
+
+    <p>This is also where your marketing gets easy.</p>
+    <p>Every step is a quick win, and every quick win is a piece of content, an email, or a talk.</p>
+    <p>Build the system once and you've built the source of nearly everything you'll ever post or say.</p>
+
+    <div class="cl-stat">
+      <div class="num">100%</div>
+      <div class="label">Once it's built, almost all of your marketing flows from this one system. Every post, email, workshop, and sales page points back to your <strong>Magic Formula™</strong>.</div>
+    </div>
+
+    <p>Matthew White built Coach Launch on systems like this — <strong>$24 Million in high-ticket sales generated</strong> and <strong>$5.2 Million in recurring client results delivered</strong>, all sitting on top of offers that were built, not winged.</p>
+
+    <h3>What the Magic Formula™ is NOT</h3>
+    <p>It's not a course curriculum or a content dump — you're not trying to teach everything you know, you're mapping the path that gets the result.</p>
+    <p>It's not a list of every service you offer — the moment you cram it all in, the system stops being clear enough to sell.</p>
+    <p>It's not generic advice with your name on it — if a competitor could paste your system onto their site and nobody would blink, it isn't yours yet.</p>
+    <p>It's not your pricing or your offer — that's the next step, your Red Diamond Offer™.</p>
+    <p>And it's not your lead magnet — that free asset is your Event Magnet™, built later from one hot step of this system.</p>
+    <p>The Magic Formula™ is the system itself: named, staged, and specific enough that it could only belong to you.</p>
+  </section>
+
+  <!-- ============ WHERE IT FITS ============ -->
+  <section>
+    <h2>Where It Fits</h2>
+    <p>The Magic Formula™ is <strong>Step 2 of the Offer Matrix™</strong> — the first pillar of The $100K Day Formula™.</p>
+    <p>It sits right between your message and your offer.</p>
+
+    <p>Upstream is your <strong>$Million Story™</strong> (Step 1), and you need it locked before you start here.</p>
+    <p>Your $Million Promise™ is the result this system has to deliver.</p>
+    <p>Your Golden Avatar™ is the person it's built for.</p>
+    <p>And in your $Million Moment™, you named the system you discovered — that name is the seed this tool turns into a real, structured Magic Formula™.</p>
+
+    <p>Downstream is your <strong>Red Diamond Offer™</strong> (Step 3), where this system gets priced and packaged into an offer people can't say no to.</p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Step</th><th>Tool</th><th>What it creates</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>$Million Story™</td><td>WHO you help, WHAT outcome, and why the system exists</td></tr>
+          <tr class="is-here"><td><strong>2</strong></td><td>Magic Formula™ <em>(you are here)</em></td><td><strong>HOW you deliver — your unique 3×3 system</strong></td></tr>
+          <tr><td>3</td><td>Red Diamond Offer™</td><td>Pricing and packaging — the offer where the only answer is yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cl-callout warning">
+      <div class="cl-callout-title">⚠ What breaks if this is weak</div>
+      <p>The Magic Formula™ is the product. If it's generic or muddy, everything downstream inherits the weakness.</p>
+      <p>Your offer gets hard to price, because there's nothing distinct to charge a premium for.</p>
+      <p>Your content dries up, because a vague system gives you nothing specific to teach.</p>
+      <p>And your sales conversations get harder, because prospects can't picture what they're actually buying.</p>
+      <p>That's why we build it carefully here — then move to <strong>Step 3 · Red Diamond Offer™</strong>.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOW YOU BUILD IT ============ -->
+  <section>
+    <h2>How You'll Build It</h2>
+    <p>You don't build a Magic Formula™ by brainstorming a big list of everything you do.</p>
+    <p>You build it in order, one piece at a time, and the Magic Formula™ Builder walks you through each one.</p>
+
+    <p>First you confirm the promise this system has to deliver, and you confirm your business type — because that changes how your outcomes get written.</p>
+    <p>Then you name the system, capture your method, and shape it into 3 stages and 9 steps.</p>
+    <p>Then you name every step, write a real outcome for each one, and pick the single hottest step to seed your Event Magnet™.</p>
+
+    <div class="formula-box">
+      Your <span class="v">$Million Promise™</span> (the WHAT) &nbsp;→&nbsp; Your <span class="v">Magic Formula™</span> (the HOW) &nbsp;=&nbsp; <span class="v">3 Stages × 3 Steps</span> = 9 quick wins
+    </div>
+
+    <p>The rest of this guide teaches each part in full — what it is, why it matters, how to get yours right, and the trap that quietly kills it.</p>
+  </section>
+
+  <!-- ============ THE 3x3 ============ -->
+  <section>
+    <h2>The 3×3 Structure</h2>
+    <p>Every Magic Formula™ has the same shape: 3 stages, 9 steps, three steps per stage.</p>
+    <p>This isn't random. It's the rule of threes — memorable, teachable, and easy to sell.</p>
+
+    <div class="stage3">
+      <div class="cl-card">
+        <div class="n">Stage 1</div>
+        <h4>The first phase</h4>
+        <ol><li>Step 1</li><li>Step 2</li><li>Step 3</li></ol>
+      </div>
+      <div class="cl-card">
+        <div class="n">Stage 2</div>
+        <h4>The middle phase</h4>
+        <ol start="4"><li>Step 4</li><li>Step 5</li><li>Step 6</li></ol>
+      </div>
+      <div class="cl-card">
+        <div class="n">Stage 3</div>
+        <h4>The final phase</h4>
+        <ol start="7"><li>Step 7</li><li>Step 8</li><li>Step 9</li></ol>
+      </div>
+    </div>
+
+    <p class="subhead">Every step is a "mini promise"</p>
+    <p>The whole system solves the big problem — your $Million Promise™.</p>
+    <p>Each stage solves a major piece of it. Each step solves one smaller problem and delivers one quick win.</p>
+    <p>That's why every step can become content on its own: a post, an email, a workshop, a lead magnet.</p>
+
+    <p class="subhead">The timeline has to match</p>
+    <p>Your 9 steps must realistically deliver your $Million Promise™ inside the promise's timeline.</p>
+    <p>If your promise says "in 90 days," the nine steps need to add up to 90 days or less.</p>
+
+    <div class="cl-callout tip">
+      <div class="cl-callout-title">✔ The quick check</div>
+      <p>Add up the honest time for all 9 steps.</p>
+      <p>If it blows past your promise timeline, tighten the steps or fix the timeline — don't pretend the gap isn't there.</p>
+    </div>
+  </section>
+
+  <!-- ============ ARCHETYPE ============ -->
+  <section>
+    <h2>Know Your Business Type</h2>
+    <p>Before you write a single outcome, you need to know what kind of business you have.</p>
+    <p>It decides how your step outcomes are written and what language is allowed.</p>
+
+    <div class="cl-cards three">
+      <div class="cl-card">
+        <div class="n">Type 1</div>
+        <h4>Product Creator</h4>
+        <p>You teach or build; the client implements. Coaches, consultants, course creators, memberships, done-for-you.</p>
+      </div>
+      <div class="cl-card">
+        <div class="n">Type 2</div>
+        <h4>Journey Professional</h4>
+        <p>You guide a client through a high-stakes transition — you do it with or for them. Attorneys, medical, financial advisors.</p>
+      </div>
+      <div class="cl-card">
+        <div class="n">Type 3</div>
+        <h4>Hybrid</h4>
+        <p>You do both — teach AND guide through a defined transition. Career coaches, test prep, condition-specific health coaches.</p>
+      </div>
+    </div>
+
+    <p>Here's the fast way to tell which you are.</p>
+    <p>Ask: is my client packaging expertise into something they implement — or am I guiding them through a high-stakes transition?</p>
+    <p>If you say "I teach them how to…" you're a Product Creator. If you say "I guide them through…" or "I represent them in…" you're a Journey Professional.</p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Type</th><th>Your step outcomes are…</th><th>Language</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Product Creator</strong></td><td>Assets the client BUILDS — documents, frameworks, scripts, plans</td><td>"You" — they implement</td></tr>
+          <tr><td><strong>Journey Professional</strong></td><td>Milestones REACHED, decisions MADE, positions PROTECTED</td><td>"We" is correct — you do it with them</td></tr>
+          <tr><td><strong>Hybrid</strong></td><td>Early = milestones, later = deliverables</td><td>Both, depending on the step</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cl-callout warning">
+      <div class="cl-callout-title">⚠ The most common archetype mistake</div>
+      <p>Forcing Product Creator rules onto a Journey Professional.</p>
+      <p>A divorce attorney doesn't hand the client "an asset in a folder" at every step — they reach milestones and protect positions.</p>
+      <p>Force the wrong framework and you invent fake deliverables that don't match how the business really works.</p>
+    </div>
+  </section>
+
+  <!-- ============ QUALITY FILTERS ============ -->
+  <section>
+    <h2>The Quality Filters</h2>
+    <p>Run your whole system — and each step — through these eight filters.</p>
+    <p>They're the difference between a system that sells and one that flops.</p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>#</th><th>Filter</th><th>What it means</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><strong>Singular</strong></td><td>One clear outcome, not a buffet of benefits</td></tr>
+          <tr><td>2</td><td><strong>Sequential</strong></td><td>Each step leads logically to the next</td></tr>
+          <tr><td>3</td><td><strong>Essential</strong></td><td>Skipping the step would break the system</td></tr>
+          <tr><td>4</td><td><strong>Tangible</strong></td><td>You can picture what they GET or what's TRUE at the end</td></tr>
+          <tr><td>5</td><td><strong>Central</strong></td><td>Your content and marketing can be built around it</td></tr>
+          <tr><td>6</td><td><strong>Unique mechanism</strong></td><td>It hints at YOUR way of doing it, not generic advice</td></tr>
+          <tr><td>7</td><td><strong>Proven market</strong></td><td>Real people already pay to solve this (competition = validation)</td></tr>
+          <tr><td>8</td><td><strong>Hungry audience</strong></td><td>A large, active crowd wants it — not an obscure niche</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cl-callout tip">
+      <div class="cl-callout-title">✔ The tangible test</div>
+      <p>If you can't clearly say what someone HAS or what's TRUE at the end of a step, the step isn't tangible enough yet.</p>
+      <p>Go back and sharpen it before you move on.</p>
+    </div>
+  </section>
+
+  <!-- ============ NAMING THE SYSTEM ============ -->
+  <section>
+    <h2>Naming Your System</h2>
+    <p>Your Magic Formula™ needs a name — the thing people repeat when they tell a friend about you.</p>
+    <p>Without it, you're "a coach who helps with X." With it, you're the creator of a system.</p>
+
+    <p>Start with the name you discovered in your $Million Moment™.</p>
+    <p>That "[Name] System" is your seed — sometimes it's already the final name, sometimes it points you to a stronger one.</p>
+
+    <p class="subhead">Avoid commoditized words</p>
+    <p>For smart buyers, words like "webinar," "funnel," "course," and "program" feel generic.</p>
+    <p>Name the OUTCOME, not the format.</p>
+
+    <div class="cl-compare">
+      <div class="col bad">
+        <span class="tag">✕ Commoditized</span>
+        <p>"Webinar Launch System"</p>
+        <p>"Client Funnel Program"</p>
+        <p>"Divorce Support Course"</p>
+      </div>
+      <div class="col good">
+        <span class="tag">✓ Outcome-focused</span>
+        <p>"The 90-Minute Sales Machine"</p>
+        <p>"The Booked-Out Blueprint"</p>
+        <p>"The Strategic Divorce Method"</p>
+      </div>
+    </div>
+
+    <p class="subhead">Formats that work</p>
+    <p>Pick the one that fits your style: The [Name] Method, System, Formula, Machine, Engine, Protocol (strong for Journey Professionals), or Blueprint.</p>
+
+    <p class="subhead">Then write the subtitle</p>
+    <p>Your subtitle is your $Million Promise™ turned into marketing copy.</p>
+    <p>Don't use "I help [avatar]…" — that's how you define the offer, not how you sell it.</p>
+    <p>Use "How [avatar] [outcome] — without [obstacles]."</p>
+
+    <div class="cl-callout tip">
+      <div class="cl-callout-title">✔ Name + subtitle, together</div>
+      <p><strong>The 90-Minute Sales Machine™</strong></p>
+      <p><em>How coaches launch a high-converting webinar in 90 minutes — without blank screens or slide decks.</em></p>
+    </div>
+  </section>
+
+  <!-- ============ STAGE NAMING ============ -->
+  <section>
+    <h2>Stage Naming</h2>
+    <p>Your three stages need names that are consistent, memorable, and hint at the progression.</p>
+
+    <p class="subhead">The taxonomy rule</p>
+    <p>Stage names must be all verbs OR all nouns — never mixed.</p>
+    <p>Mixing them feels off, even if the reader can't say why.</p>
+
+    <div class="cl-compare">
+      <div class="col bad">
+        <span class="tag">✕ Mixed (feels off)</span>
+        <p>Stage 1: Foundation <em>(noun)</em></p>
+        <p>Stage 2: Build <em>(verb)</em></p>
+        <p>Stage 3: Success <em>(noun)</em></p>
+      </div>
+      <div class="col good">
+        <span class="tag">✓ Consistent (all nouns)</span>
+        <p>Stage 1: Foundation</p>
+        <p>Stage 2: Framework</p>
+        <p>Stage 3: Fuel</p>
+      </div>
+    </div>
+
+    <p>Alliteration is optional but powerful — stages that start with the same letter stick.</p>
+    <p>"Message, Machine, Momentum" or "Design, Develop, Deploy" are easy to remember and repeat.</p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Your type</th><th>Stage 1</th><th>Stage 2</th><th>Stage 3</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Product Creator</strong></td><td>Foundation / Learn</td><td>Build / Create</td><td>Launch / Scale</td></tr>
+          <tr><td><strong>Journey Professional</strong></td><td>Assess / Discover</td><td>Execute / Act</td><td>Complete / Protect</td></tr>
+          <tr><td><strong>Hybrid</strong></td><td>Assess + Foundation</td><td>Build + Navigate</td><td>Deliver + Complete</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ STEP NAMING ============ -->
+  <section>
+    <h2>Step Naming</h2>
+    <p>Boring step names don't sell.</p>
+    <p>"Define your avatar" sounds like homework. "The Bullseye Buyer" sounds like something you want.</p>
+
+    <p>Good step names are short (2–4 words), intriguing, benefit-hinting, and brandable.</p>
+
+    <div class="cl-compare">
+      <div class="col bad">
+        <span class="tag">✕ Generic (boring)</span>
+        <p>"Define your customer"</p>
+        <p>"Create your outline"</p>
+        <p>"Build your funnel"</p>
+      </div>
+      <div class="col good">
+        <span class="tag">✓ Catchy (sells)</span>
+        <p>"The Bullseye Buyer"</p>
+        <p>"The Brain Dump"</p>
+        <p>"The Money Machine"</p>
+      </div>
+    </div>
+
+    <p>The same rules hold for Journey Professionals — the language just shifts to fit the context.</p>
+    <p>"Initial case assessment" becomes "The Full Picture Review." "Financial discovery" becomes "The Asset Audit."</p>
+
+    <div class="cl-callout tip">
+      <div class="cl-callout-title">✔ The click test</div>
+      <p>Would someone click on this step name if it were a free lead magnet?</p>
+      <p>If not, make it more specific and more intriguing.</p>
+    </div>
+  </section>
+
+  <!-- ============ OUTCOMES ============ -->
+  <section>
+    <h2>Step Outcomes by Business Type</h2>
+    <p>Every step needs an outcome — the specific win at the end.</p>
+    <p>What counts as a valid outcome depends on your business type.</p>
+
+    <p class="subhead">Product Creator — "What do they HAVE at the end?"</p>
+    <p>Assets built: documents, frameworks, scripts, plans, checklists.</p>
+    <p>Shorter than the whole system — minutes, hours, or days — and it feels like a real quick win.</p>
+
+    <p class="subhead">Journey Professional — "What is TRUE now that wasn't before?"</p>
+    <p>Milestones reached, decisions made, or positions established.</p>
+    <p>"We" language is correct here — you ARE doing it with them.</p>
+
+    <p class="subhead">The outcome quality scale</p>
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Score</th><th>Type</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><span class="sb s-green">5</span></td><td>Deliverable / Milestone</td><td>"Your complete financial discovery is documented and filed."</td></tr>
+          <tr><td><span class="sb s-green">4</span></td><td>Decision / Specific awareness</td><td>"Know exactly where you stand — legally, financially, personally."</td></tr>
+          <tr><td><span class="sb s-amber">3</span></td><td>Vague awareness — push to sharpen</td><td>"Understand your options."</td></tr>
+          <tr><td><span class="sb s-red">2</span></td><td>Feeling — blocked</td><td>"Feel confident about your case."</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cl-callout warning">
+      <div class="cl-callout-title">⚠ Feelings are never valid outcomes</div>
+      <p>"Feel confident," "feel ready," "feel protected" — blocked for every business type.</p>
+      <p>Ask what they'd HAVE or what would be TRUE that makes them feel that way, and write that instead.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOT STEP / EVENT MAGNET ============ -->
+  <section>
+    <h2>The Hot Step → Your Event Magnet™</h2>
+    <p>You don't need the whole system live to start pulling people in.</p>
+    <p>One step in your Magic Formula™ is the hottest — the single ingredient people would happily take for free.</p>
+
+    <p>That's your <strong>hot step</strong>. We flag it here as the seed of your <strong>Event Magnet™</strong>.</p>
+    <p>Your Event Magnet™ is the free lead magnet built from that hot step — its own tool, further down the road.</p>
+    <p>Down the line it fills your paid events — that's Pillar 2, your Money Magnet™.</p>
+
+    <div class="cl-callout tip">
+      <div class="cl-callout-title">✔ Don't confuse the two</div>
+      <p><strong>Money Magnet™</strong> is a whole pillar (Pillar 2) — how you turn attention into cash.</p>
+      <p><strong>Event Magnet™</strong> is the single free lead magnet you build from one hot step to feed it.</p>
+      <p>In this tool, you're only picking the hot step. You're not building either one yet.</p>
+    </div>
+
+    <p class="subhead">What makes a strong hot step</p>
+    <ul class="cl-checklist">
+      <li>One clear win — it solves one specific problem from your system.</li>
+      <li>Teachable fast — you could walk someone through it in a short video or PDF.</li>
+      <li>Quick to consume — real value in about 10 minutes or one sitting.</li>
+      <li>Incomplete by design — it solves one piece and leaves them wanting the full system.</li>
+      <li>Obvious next step — the path to your paid offer is clear once they've used it.</li>
+    </ul>
+
+    <p>Avoid the obvious, boring, foundational steps — nobody opts in for "Define your avatar."</p>
+    <p>The best hot steps usually come from Stage 1 or early Stage 2, where the first "aha" lives.</p>
+  </section>
+
+  <!-- ============ WORKED EXAMPLE ============ -->
+  <section>
+    <h2>A Full Example, Start to Finish</h2>
+    <p>Here's a complete Magic Formula™ built from a promise, so you can see the whole thing come together.</p>
+    <p>These examples are illustrative — made up to show the shape, not real client results.</p>
+
+    <div class="part-head"><span class="pill">Example 1</span><h3>Product Creator — a baby-sleep coach</h3></div>
+
+    <div class="cl-callout quote">
+      "I help exhausted new parents get their baby sleeping through the night in 14 days — without cry-it-out or living by the monitor."
+    </div>
+
+    <p><strong>System name:</strong> The Gentle Nights Method™</p>
+    <p><em>How exhausted new parents get their baby sleeping through the night in 14 days — without cry-it-out or living by the monitor.</em></p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Stage</th><th>Step</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="3"><strong>1 · Foundation</strong></td><td>The Sleep Snapshot</td><td>"Your baby's real sleep patterns mapped on one page — you finally see what's going on."</td></tr>
+          <tr><td>The Nursery Reset</td><td>"The room set up for sleep — light, sound, and temperature dialed in."</td></tr>
+          <tr><td>The Wind-Down Blueprint</td><td>"A step-by-step bedtime routine written out and ready to run tonight."</td></tr>
+          <tr><td rowspan="3"><strong>2 · Rhythm</strong></td><td>The Day-Night Switch</td><td>"Day and night sorted, so the longest stretch of sleep happens after dark."</td></tr>
+          <tr><td>The Self-Settle Ladder</td><td>"A gentle, staged plan that teaches your baby to fall asleep without being held."</td></tr>
+          <tr><td>The 2AM Playbook</td><td>"Know exactly what to do at every night waking — no guessing, no half-asleep forum scrolling."</td></tr>
+          <tr><td rowspan="3"><strong>3 · Freedom</strong></td><td>The 12-Hour Night</td><td>"Your baby sleeping through — a full night, on repeat."</td></tr>
+          <tr><td>The Nap Lock</td><td>"Predictable daytime naps you can plan your life around."</td></tr>
+          <tr><td>The Regression Shield</td><td>"A simple plan that protects sleep through teething, travel, and growth spurts."</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>Hot step → Event Magnet™ seed:</strong> Step 1, The Sleep Snapshot. It's a fast, tangible win that creates the "aha" — and it leaves parents wanting the full method.</p>
+
+    <div class="part-head"><span class="pill">Example 2</span><h3>Journey Professional — an immigration attorney</h3></div>
+
+    <div class="cl-callout quote">
+      "I help skilled workers get a US green card in under 18 months — without a denied petition or a five-figure agency retainer."
+    </div>
+
+    <p><strong>System name:</strong> The Direct Path Method™</p>
+    <p><em>How skilled workers get a US green card in under 18 months — without a denied petition or a five-figure retainer.</em></p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Stage</th><th>Step</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td rowspan="3"><strong>1 · Assessment</strong></td><td>The Eligibility Map</td><td>"Know exactly which green-card path fits your case — no more guessing."</td></tr>
+          <tr><td>The Evidence Vault</td><td>"Every document you'll need identified and organized before we file."</td></tr>
+          <tr><td>The Risk Read</td><td>"Know your weak points and how we'll shore them up — before an officer sees them."</td></tr>
+          <tr><td rowspan="3"><strong>2 · Action</strong></td><td>The Airtight Petition</td><td>"We file a complete, evidence-backed petition — nothing missing, nothing rushed."</td></tr>
+          <tr><td>The Response Shield</td><td>"Any government request answered fast and fully, with your case protected."</td></tr>
+          <tr><td>The Status Tracker</td><td>"Always know exactly where your case stands and what happens next."</td></tr>
+          <tr><td rowspan="3"><strong>3 · Approval</strong></td><td>The Interview Prep</td><td>"Walk into your interview knowing every question and your best answer."</td></tr>
+          <tr><td>The Green Light</td><td>"Your green card approved — your status secured."</td></tr>
+          <tr><td>The Next Chapter</td><td>"A clear plan for what comes after — work, travel, and the path to citizenship."</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>Hot step → Event Magnet™ seed:</strong> Step 1, The Eligibility Map. It delivers instant clarity, builds trust, and makes the right people want to retain you.</p>
+  </section>
+
+  <!-- ============ SCORING ============ -->
+  <section>
+    <h2>The Scoring Rubric</h2>
+    <p>Your Magic Formula™ is scored on 5 elements, 5 points each — 25 total.</p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Element</th><th><span class="sb s-green">5</span></th><th><span class="sb s-amber">3</span></th><th><span class="sb s-red">1</span></th></tr></thead>
+        <tbody>
+          <tr><td><strong>3×3 Structure</strong></td><td>3 stages, 9 steps, clear progression</td><td>Structure exists but progression unclear</td><td>Missing stages or steps</td></tr>
+          <tr><td><strong>Stage Names</strong></td><td>Consistent taxonomy, memorable</td><td>Mixed taxonomy or generic</td><td>No names or fully generic</td></tr>
+          <tr><td><strong>Step Names</strong></td><td>2–4 words, catchy, brandable</td><td>Names exist but boring</td><td>Homework-style labels</td></tr>
+          <tr><td><strong>Step Outcomes</strong></td><td>All 9 specific, type-appropriate</td><td>Vague or mixed feelings</td><td>Missing or all feelings</td></tr>
+          <tr><td><strong>Promise / Delivery</strong></td><td>Delivers the $Million Promise™ in its timeline</td><td>Mostly aligned, minor gaps</td><td>Doesn't deliver the promise</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="subhead">What your score means</p>
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Score</th><th>Status</th><th>What to do</th></tr></thead>
+        <tbody>
+          <tr><td><span class="sb s-green">20–25</span></td><td>Green light</td><td>Proceed to your Red Diamond Offer™</td></tr>
+          <tr><td><span class="sb s-amber">18–19</span></td><td>Quick fix</td><td>Polish the weakest element, then proceed</td></tr>
+          <tr><td><span class="sb s-red">Below 18</span></td><td>Needs work</td><td>Refine before building downstream</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ COMMON MISTAKES ============ -->
+  <section>
+    <h2>Common Mistakes &amp; Fixes</h2>
+
+    <div class="mistake">
+      <h4>1. Feeling outcomes instead of real wins</h4>
+      <p><strong>What it looks like:</strong> "Feel confident about your pricing." "Feel ready to launch."</p>
+      <p><strong>Why it happens:</strong> Feelings are easy to write and sound nice, so they slip in when a step is fuzzy.</p>
+      <p><strong>Why it costs you:</strong> Feelings can't be proven, pictured, or sold — clients buy results, not moods.</p>
+      <p class="fix"><b>The fix:</b> Ask what they'd HAVE or what would be TRUE that creates the feeling. "Your pricing locked in — you know exactly what to charge."</p>
+    </div>
+
+    <div class="mistake">
+      <h4>2. Boring step names</h4>
+      <p><strong>What it looks like:</strong> "Define your avatar." "Create your outline." "Build your offer."</p>
+      <p><strong>Why it happens:</strong> You're describing the task instead of the payoff.</p>
+      <p><strong>Why it costs you:</strong> Homework-style names kill curiosity, and a step nobody wants can't become a lead magnet.</p>
+      <p class="fix"><b>The fix:</b> Make the name hint at the win and create curiosity. "Define your avatar" → "The Bullseye Buyer."</p>
+    </div>
+
+    <div class="mistake">
+      <h4>3. Mixed stage taxonomy</h4>
+      <p><strong>What it looks like:</strong> Stage 1: Foundation, Stage 2: Build, Stage 3: Success — noun, verb, noun.</p>
+      <p><strong>Why it happens:</strong> You name each stage on its own instead of as a set.</p>
+      <p><strong>Why it costs you:</strong> It feels disjointed and slightly unprofessional, even if nobody can name why.</p>
+      <p class="fix"><b>The fix:</b> Pick all nouns or all verbs. "Foundation, Framework, Fuel" or "Design, Develop, Deploy."</p>
+    </div>
+
+    <div class="mistake">
+      <h4>4. The timeline doesn't match the promise</h4>
+      <p><strong>What it looks like:</strong> Your promise says "90 days," but the nine steps would really take six months.</p>
+      <p><strong>Why it happens:</strong> You build the system without checking it against the clock you already promised.</p>
+      <p><strong>Why it costs you:</strong> You're making a promise you can't keep — the client fails, or your promise was a lie.</p>
+      <p class="fix"><b>The fix:</b> Add up the honest time for all 9 steps. If it's over, tighten the steps or fix the timeline.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>5. Forcing the wrong business type</h4>
+      <p><strong>What it looks like:</strong> Asking a divorce attorney "what asset does the client have in a folder?" for every step.</p>
+      <p><strong>Why it happens:</strong> You apply Product Creator rules to a Journey Professional out of habit.</p>
+      <p><strong>Why it costs you:</strong> You invent fake deliverables that don't match how the business really works.</p>
+      <p class="fix"><b>The fix:</b> Classify your type first. Use milestones, decisions, and positions for Journey Professionals.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>6. Confusing the hot step with the Money Magnet™</h4>
+      <p><strong>What it looks like:</strong> Calling the one hot step "my Money Magnet™" and trying to build it here.</p>
+      <p><strong>Why it happens:</strong> The names are close, and the hot step really does feed the Money Magnet™ pillar.</p>
+      <p><strong>Why it costs you:</strong> You blur two different things and try to build a pillar during a system-building step.</p>
+      <p class="fix"><b>The fix:</b> The hot step seeds your Event Magnet™ (the free lead magnet). Money Magnet™ is the whole Pillar 2, built later.</p>
+    </div>
+  </section>
+
+  <!-- ============ IS IT READY ============ -->
+  <section>
+    <h2>Is It Ready?</h2>
+    <p>Before you move on, run your Magic Formula™ through this quick check.</p>
+    <ul class="cl-checklist">
+      <li>Exactly 3 stages and 9 steps, in a clear order.</li>
+      <li>Stage names are all verbs or all nouns — never mixed.</li>
+      <li>Every step name is 2–4 words, catchy, and brandable.</li>
+      <li>Every step has a specific outcome you could picture or prove — no feelings.</li>
+      <li>The outcomes match your business type (built assets, or milestones and positions).</li>
+      <li>The nine steps realistically deliver your $Million Promise™ inside its timeline.</li>
+      <li>Your system has a name that points at the outcome, plus a subtitle from your promise.</li>
+      <li>You've flagged one hot step as the seed of your Event Magnet™.</li>
+      <li>Scored 18+ out of 25 (20+ is a green light).</li>
+    </ul>
+    <p>All boxes checked? Your Magic Formula™ is ready to sell — and ready to price.</p>
+  </section>
+
+  <!-- ============ NEXT STEP ============ -->
+  <section>
+    <div class="cl-cta">
+      <h2 class="cta-title">Ready to Build Your $100K Day Masterclass</h2>
+      <h3 class="cta-subtitle">The ultimate one-to-many client acquisition system</h3>
+      <p class="cta-sub">Use the Magic Formula™ Builder tool in Coach Launch Academy™ to build yours with AI-guided tools and premium one-on-one consulting &amp; coaching.</p>
+      <a class="cta-btn" href="https://fast.coachlaunch.com" target="_blank" rel="noopener">Join the $100K Day Accelerator™</a>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING ============ -->
+  <section>
+    <div class="cl-quote">
+      <div class="q-title">Remember</div>
+      <p>A one-time win is luck. A system is a business. Name your method and own your steps, and you stop competing on price — because nobody else can sell what only you built.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="cl-foot">
+    <p>Coach Launch · The $100K Day Formula™ — Offer Matrix™ · Step 2 · Magic Formula™</p>
+    <p>For Coach Launch clients. Built in Matthew White's voice.</p>
+  </footer>
+
+</div>
+</body>
+</html>
+<!-- end of guide -->
+
+
