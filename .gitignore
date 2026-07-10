@@ -11,3 +11,7 @@ node_modules/
 
 # sandbox artifacts (safe to delete)
 *-synctest.txt
+hdr
+
+# Claude Code local settings (machine-specific)
+.claude/settings.local.json

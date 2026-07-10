@@ -349,3 +349,24 @@ table.cl-table { width: 100%; border-collapse: collapse; font-size: 0.97rem; bac
 .cl-cta .cta-btn { display: inline-block; background: var(--cl-crimson); color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 1rem; text-decoration: none; padding: .95rem 1.9rem; border-radius: 10px; box-shadow: var(--shadow-sm); transition: background .15s, transform .15s; }
 .cl-cta .cta-btn:hover { background: var(--cl-crimson-deep); transform: translateY(-1px); }
 .cl-cta p.cta-next { margin: 1.2rem 0 0; font-size: .85rem; color: var(--text-dim); }
+
+/* ============================================================
+   FORMULA MAP — 3 PILLARS / 9 STEPS  ("you are here" journey marker)
+   Standard block shown near the top of every Formula-step guide.
+   Add class .here to the current <div class="step"> to mark position.
+   ============================================================ */
+.map-intro { text-align:center; font-size:1.05rem; color:var(--text-muted); max-width:640px; margin:0 auto 1.2rem; }
+.map { border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-panel); box-shadow:var(--shadow); padding:1.3rem 1.3rem 1.5rem; }
+.map-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+.pillar-cat { display:flex; align-items:center; gap:.45rem; justify-content:center; margin-bottom:.5rem; }
+.pillar-cat .cnum { width:1.7em; height:1.7em; border-radius:50%; background:var(--cl-crimson); color:#fff; font-family:var(--font-display); font-weight:800; font-size:.8rem; display:flex; align-items:center; justify-content:center; }
+.pillar-cat .cword { font-family:var(--font-display); font-weight:800; font-size:1.1rem; letter-spacing:.02em; text-transform:uppercase; color:var(--cl-black); }
+.pillar-bar { background:#2b2b2b; color:#fff; font-family:var(--font-display); font-weight:800; text-transform:uppercase; letter-spacing:.04em; font-size:.68rem; text-align:center; padding:.45rem .4rem; border-radius:6px; margin-bottom:.7rem; }
+.step { position:relative; border:1px solid var(--border); border-radius:10px; padding:.55rem .6rem .6rem 2.4rem; margin-bottom:.5rem; background:var(--bg-panel-2); }
+.step .snum { position:absolute; left:.5rem; top:.55rem; width:1.5em; height:1.5em; border-radius:50%; background:#2b2b2b; color:#fff; font-family:var(--font-display); font-weight:800; font-size:.7rem; display:flex; align-items:center; justify-content:center; }
+.step .sname { font-family:var(--font-display); font-weight:800; font-size:.82rem; text-transform:uppercase; letter-spacing:.01em; color:var(--cl-black); line-height:1.15; }
+.step .stag { font-size:.7rem; color:var(--cl-dark); background:#fff3a8; display:inline-block; padding:.04em .35em; margin-top:.28rem; border-radius:3px; }
+.step.here { border:2px solid var(--cl-crimson); background:var(--cl-crimson-soft); padding-top:.8rem; }
+.step.here .snum { background:var(--cl-crimson); }
+.step .here-tag { display:inline-block; background:var(--cl-crimson); color:#fff; font-family:var(--font-display); font-weight:800; font-size:.56rem; letter-spacing:.07em; text-transform:uppercase; padding:.12em .45em; border-radius:999px; margin-bottom:.3rem; }
+@media (max-width:720px){ .map-grid { grid-template-columns:1fr; } }

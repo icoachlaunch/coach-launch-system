@@ -22,9 +22,9 @@ coach-launch-system/
 ├── templates/
 │   └── guide-template.html       Copy this to start any new companion guide
 ├── guides/
-│   └── step-01-million-story-guide.html   Worked example (Step 1)
+│   └── million-story-guide.html   Worked example (Step 1)
 ├── prompts/
-│   └── step-01-million-story-message-prompt.md   Builder prompt 1 of 3 (the Message)
+│   └── million-promise-prompt.md   Builder prompt · Part 1 of 3 (the $Million Promise)
 ├── index.html                    Library home page — links to everything
 └── SETUP-GITHUB.md               One-time GitHub setup steps
 ```

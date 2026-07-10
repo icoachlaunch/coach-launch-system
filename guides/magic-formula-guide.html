@@ -27,22 +27,7 @@
   /* numeric score badges */
   .sb { display:inline-block; min-width:2em; text-align:center; font-family:var(--font-display); font-weight:800; color:#fff; border-radius:999px; padding:.05em .5em; font-size:.8rem; }
   .s-green{ background:#1f9d57; } .s-amber{ background:#e08600; } .s-red{ background:var(--cl-crimson); }
-  /* ===== formula map (3 pillars / 9 steps) ===== */
-  .map-intro { text-align:center; font-size:1.05rem; color:var(--text-muted); max-width:640px; margin:0 auto 1.2rem; }
-  .map { border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-panel); box-shadow:var(--shadow); padding:1.3rem 1.3rem 1.5rem; }
-  .map-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
-  .pillar-cat { display:flex; align-items:center; gap:.45rem; justify-content:center; margin-bottom:.5rem; }
-  .pillar-cat .cnum { width:1.7em; height:1.7em; border-radius:50%; background:var(--cl-crimson); color:#fff; font-family:var(--font-display); font-weight:800; font-size:.8rem; display:flex; align-items:center; justify-content:center; }
-  .pillar-cat .cword { font-family:var(--font-display); font-weight:800; font-size:1.1rem; letter-spacing:.02em; text-transform:uppercase; color:var(--cl-black); }
-  .pillar-bar { background:#2b2b2b; color:#fff; font-family:var(--font-display); font-weight:800; text-transform:uppercase; letter-spacing:.04em; font-size:.68rem; text-align:center; padding:.45rem .4rem; border-radius:6px; margin-bottom:.7rem; }
-  .step { position:relative; border:1px solid var(--border); border-radius:10px; padding:.55rem .6rem .6rem 2.4rem; margin-bottom:.5rem; background:var(--bg-panel-2); }
-  .step .snum { position:absolute; left:.5rem; top:.55rem; width:1.5em; height:1.5em; border-radius:50%; background:#2b2b2b; color:#fff; font-family:var(--font-display); font-weight:800; font-size:.7rem; display:flex; align-items:center; justify-content:center; }
-  .step .sname { font-family:var(--font-display); font-weight:800; font-size:.82rem; text-transform:uppercase; letter-spacing:.01em; color:var(--cl-black); line-height:1.15; }
-  .step .stag { font-size:.7rem; color:var(--cl-dark); background:#fff3a8; display:inline-block; padding:.04em .35em; margin-top:.28rem; border-radius:3px; }
-  .step.here { border:2px solid var(--cl-crimson); background:var(--cl-crimson-soft); padding-top:.8rem; }
-  .step.here .snum { background:var(--cl-crimson); }
-  .step .here-tag { display:inline-block; background:var(--cl-crimson); color:#fff; font-family:var(--font-display); font-weight:800; font-size:.56rem; letter-spacing:.07em; text-transform:uppercase; padding:.12em .45em; border-radius:999px; margin-bottom:.3rem; }
-  @media (max-width:720px){ .map-grid { grid-template-columns:1fr; } }
+  /* formula map (3 pillars / 9 steps) styles now live in the shared stylesheet */
 </style>
 </head>
 <body>
@@ -61,7 +46,7 @@
   <!-- ============ THE MAP (3 PILLARS / 9 STEPS) ============ -->
   <section>
     <p class="cl-eyebrow" style="text-align:center;">The $100K Day Formula™ · 3 Pillars · 9 Steps</p>
-    <p class="map-intro">Here's the whole system at a glance. Your <strong>Magic Formula™</strong> is Step 2, inside the Offer Matrix™ — the first pillar.</p>
+    <p class="map-intro">Here's the whole system at a glance. Your <strong>Magic Formula™</strong> is Step 2 — the second step of the Offer Matrix™, the first pillar.</p>
     <div class="map">
       <div class="map-grid">
 
