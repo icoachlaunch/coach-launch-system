@@ -49,7 +49,7 @@ STEP_BY_FILE = {
     "magic-formula":2,
     "money-model":3, "score-card":3, "enrollment-doc":3, "event-magnet":3,
     "cash-flow-max":3, "cashflow-max":3,
-    "sniper-close":4, "the-sniper-close":4,
+    "sniper-close":4, "the-sniper-close":4, "sniper-presentation":4,
     "presentation-engine":4, "the-presentation-engine":4,
     "cash-flow-engine":5, "cashflow-engine":5,
     "genie-x-converter":6, "genie-x":6,
@@ -64,7 +64,7 @@ ASSET_BY_FILE = {
     "magic-formula":"Magic Formula™",
     "money-model":"Money Model", "score-card":"SCORE™ Card",
     "enrollment-doc":"Enrollment Doc", "event-magnet":"Event Magnet™",
-    "cash-flow-max":"Cash Flow Max™",
+    "cash-flow-max":"Cash Flow Max™", "sniper-presentation":"Sniper Presentation™",
     "presentation-engine":"The Presentation Engine™",
 }
 
