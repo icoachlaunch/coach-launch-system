@@ -293,5 +293,17 @@ All repo files (both prompts, the money-model guide's tables, index.html) refer 
 - Other live pages: `/index.html` (internal hub), `/slide-viewer.html`, `/guides/<name>-guide.html`. Raw prompts under `/prompts/`.
 - **To publish future changes:** `git add -A; git commit -m "…"; git push origin main` (Pages redeploys automatically). Can be run via Desktop Commander from the real machine.
 - Tidied out the `.bak` backups + temp helper scripts in a cleanup commit. (Older note: steps also in `SETUP-GITHUB.md`.)
+- ⚠️ **Added `.nojekyll` at repo root (required):** GitHub Pages runs Jekyll by default, which (a) converts any `.md` with YAML front matter to `.html` (so `skills/presentation-engine/SKILL.md` 404'd as raw) and (b) excludes `_`-prefixed files/folders (the `bits/_*` files). `.nojekyll` makes Pages serve everything raw. Keep it.
+
+## Sniper Presentation™ Slides — Step 4 · Part 2 of The Sniper Close™ (CLIENT KIT = 3 DELIVERABLES)
+> **⚠️ RENAMED + PACKAGED (Matthew, 2026-07-14):** "The Presentation Engine™" is **RETIRED** — the tool is now **Sniper Presentation™ Slides**, framed as **Step 4 · Part 2** of The Sniper Close™ (Part 1 = the Sniper Presentation™ / the live pitch + script from the Sniper Close™ Builder; Part 2 = this, which turns that script into the slide deck). So **Step 4 is now a 2-part sequence.** ™ sits on "Sniper Presentation™"; "Slides" is a plain descriptor. All files packaged into a **self-contained kit folder `/sniper-presentation-slides/`**: `guide.html`, `SKILL.md`, `slide-viewer.html`, `images/` (deck-sample sources), `README.md`. The standalone `prompts/presentation-engine-prompt.md` was **retired** (SKILL.md is the canonical brain). Dashboard `#prompt-data` key renamed → `sniper-presentation-slides-skill`. `apply_formula_map` note: guide keeps its Step-4 map (already stamped); new filename stem is `guide` so pass `--step 4` if re-running. **TODO (not yet done):** update the Sniper Close™ (Part 1) guide/prompt to reference this as Part 2, and consider showing Step 4 as 2 parts on the dashboard/map.
+>
+> Paths below now live under `/sniper-presentation-slides/`.
+
+Per Matthew, this section ships **three** client deliverables on the dashboard, all live:
+1. **Companion Guide** — `guides/presentation-engine-guide.html`.
+2. **Slide Builder Skill** — `skills/presentation-engine/SKILL.md` (skill-format: YAML frontmatter `name: presentation-engine` + description + execution instructions, then the full A–J builder body; modeled on the Fletcher `slide-builder-skill.md` Matthew supplied, rebuilt in canon). Installable at `.claude/skills/presentation-engine/SKILL.md` or paste-able. Embedded in dashboard `#prompt-data` under key `presentation-engine-skill` for offline copy/download (Copy skill / Download .md → `presentation-engine-SKILL.md`). The house prompt `prompts/presentation-engine-prompt.md` remains as the source (same content).
+3. **Slide Viewer Template** — `slide-viewer.html` (the single-file offline player; ships with the 11-slide sample deck; Open/Download).
+- Dashboard Presentation Engine™ card now shows these 3 action rows; index.html mirrors them. Verified: 15 `#prompt-data` keys, all data-copy/data-dl map, all guide links resolve, SKILL.md serves raw 200.
 
 <!-- end of progress log -->
