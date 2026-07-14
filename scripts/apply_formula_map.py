@@ -46,8 +46,8 @@ PILLAR_ORDINAL = ["first","second","third"]
 # filename stem (without -guide.html) -> step number
 STEP_BY_FILE = {
     "million-story":1, "million-promise":1, "golden-avatar":1, "million-moment":1,
-    "magic-formula":2,
-    "money-model":3, "score-card":3, "enrollment-doc":3, "event-magnet":3,
+    "magic-formula":2, "score-card":2,
+    "money-model":3, "enrollment-doc":3, "event-magnet":3,
     "cash-flow-max":3, "cashflow-max":3,
     "sniper-close":4, "the-sniper-close":4, "sniper-presentation":4,
     "presentation-engine":4, "the-presentation-engine":4,
