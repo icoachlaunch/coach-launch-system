@@ -288,6 +288,10 @@ All repo files (both prompts, the money-model guide's tables, index.html) refer 
 ---
 
 ## GitHub
-- Not yet published. Steps are in `SETUP-GITHUB.md` (GitHub Desktop = easiest). This folder is clean — no sandbox leftovers to delete here.
+- ✅ **PUBLISHED (2026-07-14):** repo **`icoachlaunch/coach-launch-system`** (remote origin, branch `main`), **GitHub Pages LIVE** (root). Committed + pushed all work via the Desktop Commander MCP (git on the real machine) and confirmed HTTP 200 on the live pages.
+- **Live dashboard (Training Portal):** https://icoachlaunch.github.io/coach-launch-system/dashboard.html
+- Other live pages: `/index.html` (internal hub), `/slide-viewer.html`, `/guides/<name>-guide.html`. Raw prompts under `/prompts/`.
+- **To publish future changes:** `git add -A; git commit -m "…"; git push origin main` (Pages redeploys automatically). Can be run via Desktop Commander from the real machine.
+- Tidied out the `.bak` backups + temp helper scripts in a cleanup commit. (Older note: steps also in `SETUP-GITHUB.md`.)
 
 <!-- end of progress log -->
