@@ -2,7 +2,7 @@
   Coach Launch — Agent Headshot Generator (Kie.ai)
   --------------------------------------------------
   Generates FRESH versions of the 6 agent profile photos and saves them into
-  ..\assets\agents\ so the Training Portal (dashboard.html) picks them up.
+  ..\assets\agents images\ so the Training Portal (dashboard.html) picks them up.
 
   Use this if you want to regenerate the team (new faces) or if the quick
   download_agent_photos.ps1 links have expired.
@@ -13,7 +13,7 @@
        (If blocked, open PowerShell and run:
           powershell -ExecutionPolicy Bypass -File "generate_agent_photos.ps1")
     3. Paste your Kie.ai API key when asked.
-    4. Wait ~1 min. Six .jpg files appear in assets\agents\. Refresh the dashboard.
+    4. Wait ~1 min. Six .jpg files appear in assets\agents images\. Refresh the dashboard.
 
   Model: google/nano-banana (imagen4 was returning 500s as of 2026-07-11).
   Your API key is NOT stored — it is only held in memory while the script runs.
@@ -26,7 +26,7 @@ $key = Read-Host "Paste your Kie.ai API key"
 if ([string]::IsNullOrWhiteSpace($key)) { Write-Host "No key entered. Exiting."; exit 1 }
 
 $base   = "https://api.kie.ai"
-$outDir = Join-Path $PSScriptRoot "..\assets\agents"
+$outDir = Join-Path $PSScriptRoot "..\assets\agents images"
 New-Item -ItemType Directory -Force -Path $outDir | Out-Null
 
 # Shared studio style — keeps all six a matched set.
@@ -74,7 +74,7 @@ foreach ($name in $subjects.Keys) {
 
   $dest = Join-Path $outDir "$name.jpg"
   Invoke-WebRequest -Uri $url -OutFile $dest -UseBasicParsing
-  Write-Host "  saved -> assets\agents\$name.jpg"
+  Write-Host "  saved -> assets\agents images\$name.jpg"
 }
 
 Write-Host ""

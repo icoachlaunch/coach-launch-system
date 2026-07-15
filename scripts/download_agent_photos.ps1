@@ -1,5 +1,5 @@
 # =====================================================================
-#  Coach Launch - Download the six agent headshots into assets/agents/
+#  Coach Launch - Download the six agent headshots into assets/agents images/
 #  These are the exact photos generated on 2026-07-11 (Kie.ai nano-banana).
 #  No API key needed. Right-click this file -> Run with PowerShell.
 #  NOTE: the source links are temporary - run this soon. If a link has
@@ -11,7 +11,7 @@ $ErrorActionPreference = 'Stop'
 
 # repo root = this script's parent folder
 $root   = Split-Path -Parent $PSScriptRoot
-$outDir = Join-Path $root 'assets\agents'
+$outDir = Join-Path $root 'assets\agents images'
 if (-not (Test-Path $outDir)) { New-Item -ItemType Directory -Path $outDir | Out-Null }
 
 $photos = [ordered]@{
