@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WIREFRAME — Sniper Close · Part 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --crimson:#db0063; --crimson-deep:#a80049; --crimson-soft:rgba(219,0,99,.08);
+    --bg:#ffffff; --bg-tint:#f5f6f7; --border:#e6e7ea;
+    --text:#26272b; --text-muted:#55565b; --text-dim:#8a8b90;
+    --display:'Montserrat','Segoe UI',system-ui,sans-serif;
+    --body:'Lato','Segoe UI',system-ui,sans-serif;
+    --radius:14px; --radius-sm:8px; --maxw:1040px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg-tint);color:var(--text);font-family:var(--body);line-height:1.6}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+  /* wireframe banner ribbon */
+  .wf-flag{background:#1a1a1a;color:#fff;font-family:var(--display);font-weight:700;
+    font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;text-align:center;
+    padding:8px 12px}
+  .wf-flag b{color:var(--crimson)}
+
+  /* placeholder headline zone (represents the EXISTING page headlines above the band) */
+  .headzone{background:var(--bg);border-bottom:1px dashed #c9cbd1;padding:34px 0 30px}
+  .headzone .tag{font-family:var(--display);font-weight:700;font-size:.7rem;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--text-dim)}
+  .headzone h1{font-family:var(--display);font-weight:900;letter-spacing:-.02em;text-transform:uppercase;
+    font-size:clamp(1.5rem,3.6vw,2.4rem);margin:.5rem 0 .3rem;color:#1a1a1a}
+  .headzone p{margin:0;color:var(--text-muted);max-width:640px}
+  .ghost-line{display:block;height:11px;border-radius:6px;background:repeating-linear-gradient(90deg,#e9eaee 0 14px,#f4f5f7 14px 22px)}
+  .ghost-line.short{width:52%}
+
+  /* annotation chips */
+  .note{font-family:var(--display);font-weight:700;font-size:.62rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--crimson);background:var(--crimson-soft);
+    display:inline-block;padding:3px 9px;border-radius:999px;margin-bottom:10px}
+
+  /* ===== THE FULL-WIDTH BAND: "Sniper Close · Part 1" ===== */
+  .band{background:var(--bg);border-top:3px solid var(--crimson);
+    border-bottom:1px solid var(--border);padding:30px 0 44px;position:relative}
+  .band-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .band-label{font-family:var(--display);font-weight:900;letter-spacing:.04em;text-transform:uppercase;
+    font-size:1.15rem;color:#1a1a1a}
+  .band-label .pt{color:var(--crimson)}
+  .band-sub{color:var(--text-muted);font-size:.98rem;margin:2px 0 22px}
+
+  /* 3 sections, side by side (whole level across the top) */
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .close-card{background:var(--bg);border:1px solid var(--border);border-top:3px solid var(--crimson);
+    border-radius:var(--radius);padding:22px 20px 20px;display:flex;flex-direction:column;
+    box-shadow:0 1px 2px rgba(17,17,17,.04),0 6px 20px rgba(17,17,17,.05)}
+  .close-num{font-family:var(--display);font-weight:900;font-size:.82rem;color:var(--crimson);
+    letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+  .close-card h3{font-family:var(--display);font-weight:800;letter-spacing:-.01em;text-transform:uppercase;
+    font-size:1.12rem;margin:0 0 8px;color:#1a1a1a}
+  .close-card .what{color:var(--text-muted);font-size:.94rem;margin:0 0 14px;flex:1}
+  .close-card .ph{display:block;height:9px;border-radius:5px;margin:6px 0;
+    background:repeating-linear-gradient(90deg,#eceef1 0 12px,#f6f7f9 12px 18px)}
+  .close-card .ph.s{width:70%}
+  .btn{margin-top:16px;align-self:flex-start;font-family:var(--display);font-weight:800;
+    text-transform:uppercase;letter-spacing:.06em;font-size:.74rem;color:#fff;background:var(--crimson);
+    border:0;border-radius:2px;padding:11px 18px;cursor:pointer;text-decoration:none;display:inline-block}
+  .btn.ghost{background:transparent;color:var(--crimson);border:1px solid var(--crimson)}
+  .soon{font-family:var(--display);font-weight:700;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--text-dim);margin-top:10px}
+
+  /* callout under the band explaining the structure */
+  .legend{background:var(--bg-tint);padding:22px 0 30px}
+  .legend ul{margin:8px 0 0;padding-left:18px;color:var(--text-muted);font-size:.92rem}
+  .legend li{margin:4px 0}
+  .legend b{color:var(--text)}
+
+  @media(max-width:760px){.three{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+  <div class="wf-flag">Wireframe · not final content — <b>Money Magnet™ · Step 4 · The Sniper Close™ · Part 1</b></div>
+
+  <!-- EXISTING HEADLINE ZONE (shown greyed so you can see the band sits UNDER the headlines) -->
+  <div class="headzone">
+    <div class="wrap">
+      <span class="tag">Money Magnet™ · Step 4</span>
+      <h1>The Sniper Close<span style="color:var(--crimson)">™</span></h1>
+      <p><span class="ghost-line"></span><span class="ghost-line short" style="margin-top:8px"></span></p>
+      <div style="margin-top:14px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);font-family:var(--display);font-weight:700">↑ existing step headlines sit here</div>
+    </div>
+  </div>
+
+  <!-- ===== THE FULL-WIDTH "SNIPER CLOSE · PART 1" BAND ===== -->
+  <section class="band">
+    <div class="wrap">
+      <span class="note">Full-width band · one level across the top</span>
+      <div class="band-head">
+        <span class="band-label">Sniper Close <span class="pt">· Part 1</span></span>
+      </div>
+      <p class="band-sub">The three ways to close — pick the close that matches your event and phase. <em>(Guides only for now — one explainer per close.)</em></p>
+
+      <div class="three">
+        <!-- Section 1 -->
+        <article class="close-card">
+          <div class="close-num">Close 01</div>
+          <h3>The Enrollment Close</h3>
+          <p class="what">The one-day offer, closed live in the room — no sales call needed.</p>
+          <span class="ph"></span><span class="ph"></span><span class="ph s"></span>
+          <a class="btn ghost" href="#">Open Guide →</a>
+          <span class="soon">Guide · in build</span>
+        </article>
+
+        <!-- Section 2 -->
+        <article class="close-card">
+          <div class="close-num">Close 02</div>
+          <h3>The Strategy Close</h3>
+          <p class="what">A booked strategy / audit session — run free early, paid later — that closes the high-ticket.</p>
+          <span class="ph"></span><span class="ph"></span><span class="ph s"></span>
+          <a class="btn ghost" href="#">Open Guide →</a>
+          <span class="soon">Guide · in build</span>
+        </article>
+
+        <!-- Section 3 -->
+        <article class="close-card">
+          <div class="close-num">Close 03</div>
+          <h3>The Deposit Close</h3>
+          <p class="what">A deposit taken in the room to lock the high-ticket — closed without a call.</p>
+          <span class="ph"></span><span class="ph"></span><span class="ph s"></span>
+          <a class="btn ghost" href="#">Open Guide →</a>
+          <span class="soon">Guide · in build</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- what this wireframe is showing -->
+  <div class="legend">
+    <div class="wrap">
+      <span class="note">What this wireframe shows</span>
+      <ul>
+        <li><b>Placement:</b> a full-width band sitting directly under the Step-4 headlines, spanning the whole level.</li>
+        <li><b>Label:</b> the band is titled <b>“Sniper Close · Part 1.”</b></li>
+        <li><b>3 sections:</b> one per close type — <b>Enrollment · Strategy · Deposit</b> — each opening its own explainer guide.</li>
+        <li><b>Scope now:</b> guides only (no builder prompts yet). Buttons are placeholders.</li>
+      </ul>
+      <p style="margin-top:14px;color:var(--text-dim);font-size:.86rem">Tell me what to change — the close names, the number of sections, the copy, the order, or how it wires into the dashboard — and I’ll adjust.</p>
+    </div>
+  </div>
+
+</body>
+</html>
