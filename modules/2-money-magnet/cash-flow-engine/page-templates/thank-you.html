@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank-You Page Template · Cash Flow Engine™</title>
+
+<!-- FONTS (swap for the client's brand fonts + update brand.css :root) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brand.css">
+
+<!--
+  ═══════════════════════════════════════════════════════════════
+  THANK-YOU / CONFIRMATION PAGE — TEMPLATE  (Phase 1)
+  Congruent with registration.html (same brand.css / fonts / look).
+
+  THE JOB: confirm the registration, get the show-up VIDEO watched, and
+  drive the show-up actions (add to calendar · join community · survey).
+  Phase 1 = show-up focus (no VIP upsell). Later Accelerator phases may
+  swap the middle for a VIP-UPSELL variant (that's the Cash Flow Engine™
+  cash-in mechanic — a separate variant of this page).
+
+  Buttons/links are behaviour-agnostic — wire them (calendar link, group
+  link, survey action) in the vibe-code funnel builder. Fill every SLOT.
+  ═══════════════════════════════════════════════════════════════
+-->
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- 1 · HERO (dark) — confirmation + show-up video ─────────────────────── -->
+<header class="hero section--dark">
+  <div class="container center" style="padding-block:var(--space-7) var(--space-6)">
+    <!-- SLOT: confirmation eyebrow -->
+    <span class="eyebrow" style="color:#fff">Congrats! <span class="hl">You’re in!</span></span>
+    <!-- SLOT: headline ← tell them to watch the video now -->
+    <h1 style="max-width:900px; margin-inline:auto">Now watch this short video to <span class="hl">maximise your experience</span> — free</h1>
+    <!-- SLOT: watch-now nudge -->
+    <p class="ty-once"><span class="ar">↓</span> You’ll only see this video once — play it now <span class="ar">↓</span></p>
+
+    <!-- SLOT: show-up VIDEO ← replace .media with your embed (<iframe>/<video>).
+         Keep the play badge over a poster image if you prefer. -->
+    <div class="ty-video reveal">
+      <div class="media">
+        <div class="play" aria-hidden="true"></div>
+        <div class="media-label">▶ You have registered for the [$100K Day] Masterclass — watch this first</div>
+      </div>
+    </div>
+
+    <div class="ty-chevrons" aria-hidden="true"><span>⌄</span><span>⌄</span><span>⌄</span></div>
+  </div>
+</header>
+
+<!-- 2 · COMPLETE THESE 3 STEPS (light) ─────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal" style="max-width:880px">
+      <!-- SLOT: steps headline -->
+      <h2 style="font-size:clamp(1.6rem,1.2rem+1.6vw,2.2rem)">Complete these 3 steps right now</h2>
+      <p class="lede" style="margin-top:.75rem">Don’t close this page until you’ve completed the steps below.</p>
+    </div>
+
+    <div class="ty-steps reveal">
+      <!-- STEP 1 · Add to Calendar -->
+      <div class="ty-step">
+        <span class="ty-num">1</span>
+        <h3>Add to Calendar</h3>
+        <!-- SLOT: step 1 copy -->
+        <p>This is a live event and there are no replays. Put it in your calendar right now so you don’t miss it.</p>
+        <!-- LINK SLOT: point this at your "add to calendar" link -->
+        <a href="#calendar" class="btn">📅 Add to Calendar</a>
+      </div>
+
+      <!-- STEP 2 · Join the community -->
+      <div class="ty-step ty-blue">
+        <span class="ty-num">2</span>
+        <h3>Join the VIP Community</h3>
+        <!-- SLOT: step 2 copy -->
+        <p>Come introduce yourself in our private group — connect with other members and get pre-training materials.</p>
+        <!-- LINK SLOT: point this at your group/community link -->
+        <a href="#group" class="btn btn-fb">Join The Community</a>
+      </div>
+
+      <!-- STEP 3 · Survey -->
+      <div class="ty-step ty-green">
+        <span class="ty-num">3</span>
+        <h3>Complete Your Survey</h3>
+        <div class="ty-survey">
+          <!-- SLOT: survey intro -->
+          <h3>Please fill in this quick 60-second survey</h3>
+          <p>We want to serve you at the highest level — this helps us look after you and make sure you get the best out of this event.</p>
+          <p>Your info is confidential and only for our internal purposes, to make sure we deliver the best value for you.</p>
+          <p>We’re looking forward to meeting you — this takes less than 60 seconds. Thank you! 🙏</p>
+          <!-- SLOT: survey field(s) ← wire the form/action in the builder -->
+          <label for="country">What country will you be joining us from?</label>
+          <select id="country">
+            <option>Select your country…</option>
+            <option>United States</option><option>United Kingdom</option>
+            <option>Australia</option><option>Canada</option><option>Other</option>
+          </select>
+          <p class="note">Wherever you’re from, you’re welcome — this is for anyone who wants a breakthrough and to have fun doing it.</p>
+          <a href="#survey-next" class="btn btn--block" style="margin-top:var(--space-4)">Next →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · SHARE ──────────────────────────────────────────────────────────── -->
+<section class="section section--alt center">
+  <div class="container narrow reveal">
+    <!-- SLOT: share prompt -->
+    <h3>Know someone who needs this?</h3>
+    <p class="lede" style="margin:.5rem auto 1.5rem">Friends don’t let friends run broken funnels — share this masterclass with them.</p>
+    <a href="#share" class="btn btn--ghost">🔗 Share the Masterclass</a>
+  </div>
+</section>
+
+<!-- FOOTER ─────────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container center">
+    <!-- SLOT: footer -->
+    <p style="font-family:var(--font-display); font-weight:700; color:#fff; margin-bottom:.5rem">[Brand Name]</p>
+    <p><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></p>
+    <p class="disclaimer">This site is not affiliated with any social media platform. Results shown are illustrative and are not a guarantee of your results. [Insert the client’s earnings/results disclaimer here.] © [Year] [Brand Name]. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

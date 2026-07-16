@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Page Template · Cash Flow Engine™</title>
+
+<!-- ============================================================
+     FONTS  (← swap for the client's brand fonts, then update
+     --font-display / --font-body in brand.css to match)
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- The one shared stylesheet. All branding lives in brand.css :root -->
+<link rel="stylesheet" href="brand.css">
+
+<!--
+  ═══════════════════════════════════════════════════════════════
+  TICKET / EVENT REGISTRATION PAGE — TEMPLATE  (Brunson model)
+  Cash Flow Engine™ funnel page library.
+
+  THE JOB: convert a visitor into a registrant. Works for a FREE
+  opt-in OR a PAID ticket — button/form behaviour is wired
+  downstream (see "PAYMENT / OPT-IN SLOT"). This template only has
+  to LOOK the part and drive the click.
+
+  STRUCTURE = the proven Russell Brunson registration skeleton,
+  copy flowing on the SCORE™ arc:
+    1  Urgency bar               8  Value / "what you get" stack
+    2  Dark hero (form-first)    9  Before → After (Hell→Heaven)
+       + countdown + VSL        10  GUARANTEE  (paid only)
+    3  Long-form founder letter 11  Meet your host + stats
+       + results proof box      12  Social proof / testimonials
+    4  Agenda / step-by-step    13  Time-sensitive urgency
+    5  What you'll walk away    14  FAQ
+    6  (bullets)                15  Final CTA + P.S. + footer
+
+  EVERY <!-- SLOT --> marks copy for the funnel builder / vibe-code
+  tool to fill. Placeholder copy is illustrative — replace it all.
+
+  ── TEMPLATE MODES — this ONE page covers all four ──────────────
+  Set BOTH axes before filling copy:
+
+  A) FORMAT — MASTERCLASS or CHALLENGE
+     • Masterclass (single session): agenda = timed segments;
+       event/date line + button subline = one date & time.
+     • Challenge (multi-day, e.g. 3-day): in the AGENDA section (#4)
+       relabel the numbers "Day 1 / Day 2 / Day 3"; event line +
+       button subline = the date RANGE (+ "X min/day").
+     • Global: swap the word "Masterclass" → "Challenge" everywhere
+       (headline, kicker, letter, FAQ, CTA sublines).
+
+  B) PRICE — FREE or PAID
+     • FREE: keep "FREE" wording; value stack ends "You pay: FREE";
+       button notes say "no credit card required"; DELETE the
+       GUARANTEE section (#10).
+     • PAID: KEEP the GUARANTEE section (money-back / risk reversal);
+       value stack = "Normally $X → Today $Y"; change the
+       "no credit card" notes to the price/terms; button copy may
+       become "Get My Ticket →".
+  ────────────────────────────────────────────────────────────────
+  ═══════════════════════════════════════════════════════════════
+-->
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- 1 · URGENCY BAR  ── SLOT: one short urgency line ─────────────────────── -->
+<div class="topbar">⚡ FREE Live Masterclass · Limited seats · Register before the countdown hits zero</div>
+
+<!-- 2 · HERO (dark) ─────────────────────────────────────────────────────
+     Full-width headline + subhead across the top; a two-column row below
+     (CTA cluster left · video right). Single button — NO form fields. -->
+<header class="hero section--dark">
+  <div class="container" style="padding-block:var(--space-7) var(--space-8)">
+    <!-- SLOT: audience callout ← who this is for. Swap the image for your own. -->
+    <div class="hero-callout">
+      <img src="images/avatar1.jpg" alt="">
+      <span>For Coaches &amp; Experts Charging <b>$3K+</b> 👇</span>
+    </div>
+
+    <!-- FULL-WIDTH HEADLINE BLOCK (spans over both columns) -->
+    <div class="hero-top reveal">
+      <!-- SLOT: eyebrow ← event category / format -->
+      <span class="eyebrow">◆ Free Live Masterclass</span>
+      <!-- SLOT: headline ← $Million Promise™ (Step 1). Wrap the payoff in
+           <span class="mark"> for a highlighter, or <span class="hl"> for accent. -->
+      <h1>Run a $100K Day Every 28 Days — Without a Single Sales Call</h1>
+      <!-- SLOT: subhead ← the promise expanded (who + mechanism) -->
+      <p class="lede">The “Cash Flow Engine™” we use to fill the room with premium buyers, make ads pay for themselves, and close 8–12 high-ticket clients every 28 days.</p>
+    </div>
+
+    <!-- TWO-COLUMN ROW: CTA cluster (left) · video (right) -->
+    <div class="hero-grid">
+      <div class="hero-cta">
+        <!-- SLOT: kicker ← the "no X, no Y, no Z" pattern (what they avoid) -->
+        <p class="kicker">Join the FREE $100K Day “Cash Flow Engine™” Masterclass
+          <small>No day-long sales calls. No events that flop. No chasing a broke audience.</small></p>
+
+        <!-- countdown (auto-updates from data-deadline; edit the date) -->
+        <div class="countdown" data-deadline="2026-03-14T12:00:00-04:00" aria-label="Countdown to event">
+          <div class="unit"><div class="n" data-cd="d">00</div><div class="l">Days</div></div>
+          <div class="unit"><div class="n" data-cd="h">00</div><div class="l">Hrs</div></div>
+          <div class="unit"><div class="n" data-cd="m">00</div><div class="l">Min</div></div>
+          <div class="unit"><div class="n" data-cd="s">00</div><div class="l">Sec</div></div>
+        </div>
+
+        <!-- PAYMENT / OPT-IN SLOT ────────────────────────────────────────────
+             A SINGLE button. It opens your registration popup, which you build
+             in the vibe-code funnel builder. Point href at your popup trigger
+             (e.g. #popup / a modal id / your builder's onClick). No form here. -->
+        <a href="#popup" class="btn btn--lg" data-cta><span class="btn-main">Join The FREE Masterclass →</span><span class="btn-sub">Thu, Mar 14 · 12:00pm ET</span></a>
+        <p class="btn-note">Free to register · Takes 20 seconds</p>
+        <!-- SLOT: micro-proof ← registrant count / rating (use real numbers only) -->
+        <div class="microproof">
+          <div class="mp-top">
+            <span class="proof-avatars"><i style="background-image:url('images/avatar1.jpg')"></i><i style="background-image:url('images/avatar2.jpg')"></i><i style="background-image:url('images/avatar3.jpg')"></i><i style="background-image:url('images/avatar4.jpg')"></i></span>
+            <span class="mp-stars">★★★★★</span>
+          </div>
+          <span class="mp-text"><b>[2,000+]</b> coaches already registered</span>
+        </div>
+      </div>
+
+      <!-- SLOT: hero media ── IMAGE or VIDEO ──────────────────────────────
+           Phase 1 (Launch): use a strong IMAGE (promise/result visual,
+           product mockup, hero graphic). Later phases (Execute/Growth/
+           Mastery) MAY use a VSL video instead, based on the client's choice.
+             • IMAGE → replace .media contents with:  <img src="…" alt="…">
+             • VIDEO → replace with an embed (<iframe>/<video>); to show a
+               poster + play badge, keep <div class="play"></div> over it. -->
+      <div class="hero-media reveal">
+        <!-- SLOT: system name ← the client's signature system (Magic Formula™ / Brand Profile) -->
+        <div class="system-name"><small>Introducing</small>[Your System Name]™</div>
+        <div class="media">
+          <img src="images/hero.jpg" alt="Masterclass preview">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 3 · THE LETTER ──────────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <article class="letter reveal">
+      <!-- SLOT: author ← host name + the $Million Promise™ (Step 1) as the subline -->
+      <div class="author">
+        <img alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'/>">
+        <div><div class="name">[Coach Name]</div><div class="sub">[Your $Million Promise™ — your one-line core promise]</div></div>
+      </div>
+
+      <span class="eyebrow">The $100K Day “Cash Flow Engine™” Masterclass 🎉</span>
+      <!-- SLOT: hook headline ← the pattern-interrupt promise -->
+      <h2>Stop throwing money at a leaky bucket.</h2>
+      <!-- SLOT: promise line -->
+      <p><strong>Let’s build your high-converting “Cash Flow Engine™” so you can close 8–12 high-ticket clients every 28 days — with confidence.</strong></p>
+
+      <!-- SLOT: story body ← $Million Moment™ (Step 1). Tell the personal story:
+           the pain, the identity crisis, the discovery, the transformation.
+           Keep paragraphs short (1–2 sentences). This is the heart of the page. -->
+      <p>Dear friend,</p>
+      <p>If you’re running events and pouring money into ads but the sales aren’t showing up, it isn’t your fault — the model is broken.</p>
+      <p>I want you to listen up. When your money model is broken, you feel stuck and overwhelmed, and it left me totally burned out too. Until I discovered something that changed everything.</p>
+
+      <!-- SLOT: results proof ← the host's OWN verified numbers only. Leave blank until real. -->
+      <div class="result-callout">
+        <div class="row">
+          <div class="item"><div class="n">[$ in]</div><div class="l">Ad spend</div></div>
+          <div class="item"><div class="n">[#]</div><div class="l">In the room</div></div>
+          <div class="item"><div class="n">[time]</div><div class="l">Time to close</div></div>
+          <div class="item"><div class="n">[$ out]</div><div class="l">Closed</div></div>
+        </div>
+        <p class="cap">Use only the host’s own real, verified numbers here.</p>
+      </div>
+
+      <h3>In this masterclass, you’ll discover the “Cash Flow Engine™”</h3>
+      <!-- SLOT: discover bullets ← core reveals (Magic Formula™) -->
+      <ul class="bullets">
+        <li><span class="tick">✓</span><span><b>The counter-intuitive reason</b> most funnels quietly lose money — and the one change that flips them profitable.</span></li>
+        <li><span class="tick">✓</span><span><b>The exact “Cash Flow Engine™”</b> that makes your ads pay for themselves <em>before</em> the event even starts.</span></li>
+        <li><span class="tick">✓</span><span><b>How to pack a room with premium buyers</b> — not the broke, freebie-seeking crowd that never buys.</span></li>
+        <li><span class="tick">✓</span><span><b>The #1 mistake</b> that empties your room (nearly everyone makes it — and it’s fixable in minutes).</span></li>
+        <li><span class="tick">✓</span><span><b>The live-close framework</b> that enrolls clients from the “stage” — with zero 1-on-1 sales calls.</span></li>
+        <li><span class="tick">✓</span><span><b>The simple daily rhythm</b> that turns one event into a repeatable monthly payday.</span></li>
+      </ul>
+
+      <div class="signature">
+        <p>See you inside,</p>
+        <p class="sig">[Coach Name]</p>
+      </div>
+      <div style="margin-top:2rem"><a href="#popup" class="btn btn--lg"><span class="btn-main">Join The FREE Masterclass →</span><span class="btn-sub">Thu, Mar 14 · 12:00pm ET</span></a></div>
+    </article>
+  </div>
+</section>
+
+<!-- 3b · IS THIS FOR YOU? (qualification) — image beside bullets + copy ──────
+     A problem-agitate checklist that mirrors the avatar's pain and filters the
+     right buyer in, with a supporting image alongside (host on stage / mockup). -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="split reveal">
+      <!-- SLOT: qualification image ← host on stage, event mockup, or a result visual. Replace with <img>. -->
+      <div class="split-img"><img src="images/qualification.jpg" alt="Host presenting live"></div>
+
+      <div>
+        <span class="eyebrow">Is this for you?</span>
+        <h2 style="margin-bottom:1.25rem">This masterclass is for you if…</h2>
+        <!-- SLOT: qualification bullets ← Golden Avatar™ pains + desires. Bold lead + context line. -->
+        <ul class="bullets">
+          <li><span class="tick">✓</span><span><b>You’re fed up doing all the “right” things</b> — and still not collecting the profits you want.</span></li>
+          <li><span class="tick">✓</span><span><b>What you’ve tried isn’t converting</b> — the effort’s there, the results aren’t.</span></li>
+          <li><span class="tick">✓</span><span><b>You want to go from chasing to attracting</b> — premium clients who come to you.</span></li>
+          <li><span class="tick">✓</span><span><b>You want a repeatable system</b> — not another one-off that fizzles out.</span></li>
+          <li><span class="tick">✓</span><span><b>You’re ready to be paid what you’re worth</b> — without endless sales calls.</span></li>
+        </ul>
+        <!-- SLOT: NOT-for-you filter ← disqualify the wrong people (raises desire + screens tire-kickers) -->
+        <p style="margin-top:1.5rem"><b>This is NOT for you if…</b></p>
+        <ul class="bullets no">
+          <li><span class="tick">✕</span><span>You want a push-button shortcut with no work involved.</span></li>
+          <li><span class="tick">✕</span><span>You’re not willing to run a simple live event to enroll clients.</span></li>
+        </ul>
+        <!-- SLOT: qualification close ← "yes to any = this is for you" + skeptic handle -->
+        <p style="margin-top:1.5rem">If you nodded “yes” to the list above, then this masterclass is 100% for you.</p>
+        <p>And if you’re sitting there thinking <em>“this sounds too good to be true”</em> — then it’s doubly important you’re in the room. We’ll prove it to you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · AGENDA / WHAT YOU'LL LEARN — dark-header step cards ──────────────────
+     Each step = a dark header (label + headline) + a white body (copy left,
+     image + CTA right).
+     MASTERCLASS → labels "Step 1 / Step 2 / Step 3" (usually 3 steps).
+     CHALLENGE   → labels "Day #1 / Day #2 / Day #3" (add cards as needed). -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <!-- SLOT: eyebrow -->
+      <span class="eyebrow">What you’ll learn</span>
+      <!-- SLOT: headline -->
+      <h2>Here’s what we’re covering, step by step</h2>
+      <!-- SLOT: subheadline ← complements the headline (the core promise of the sessions) -->
+      <p class="lede" style="margin:1rem auto 0; max-width:660px">[I’ll reveal the core fundamentals that take you from stuck to a system that actually pays — in just a few short sessions.]</p>
+    </div>
+
+    <div class="agenda reveal">
+      <!-- STEP / DAY 1 -->
+      <article class="step">
+        <div class="step-head">
+          <span class="step-label">📅 Step 1:</span> <!-- CHALLENGE → "Day #1:" -->
+          <h3>[Step 1 headline — the first breakthrough]</h3>
+        </div>
+        <div class="step-body">
+          <div class="step-copy">
+            <!-- SLOT: step 1 blocks ← Theme / Paradigm Shift / Pain Addressed -->
+            <div class="step-block step-theme"><span class="lbl">Theme</span><p>[The theme of session 1 in a few words.]</p></div>
+            <div class="step-block step-shift"><span class="lbl">Paradigm Shift</span><p>“[The belief that flips for them in this session.]”</p></div>
+            <div class="step-block step-pain"><span class="lbl">Pain Addressed</span><p>“[The fear or objection this session resolves.]”</p></div>
+          </div>
+          <div class="step-side">
+            <!-- SLOT: step 1 image ← a visual for this session. Replace with <img>. -->
+            <div class="step-img"><img src="images/step1.jpg" alt=""></div>
+            <a href="#popup" class="btn btn--block" data-cta><span class="btn-main">Join The FREE Masterclass →</span><span class="btn-sub">Thu, Mar 14 · 12:00pm ET</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- STEP / DAY 2 -->
+      <article class="step">
+        <div class="step-head">
+          <span class="step-label">📅 Step 2:</span> <!-- CHALLENGE → "Day #2:" -->
+          <h3>[Step 2 headline — the core system]</h3>
+        </div>
+        <div class="step-body">
+          <div class="step-copy">
+            <!-- SLOT: step 2 blocks ← Theme / Paradigm Shift / Pain Addressed -->
+            <div class="step-block step-theme"><span class="lbl">Theme</span><p>[The theme of session 2 in a few words.]</p></div>
+            <div class="step-block step-shift"><span class="lbl">Paradigm Shift</span><p>“[The belief that flips for them in this session.]”</p></div>
+            <div class="step-block step-pain"><span class="lbl">Pain Addressed</span><p>“[The fear or objection this session resolves.]”</p></div>
+          </div>
+          <div class="step-side">
+            <!-- SLOT: step 2 image -->
+            <div class="step-img"><img src="images/step2.jpg" alt=""></div>
+            <a href="#popup" class="btn btn--block" data-cta><span class="btn-main">Join The FREE Masterclass →</span><span class="btn-sub">Thu, Mar 14 · 12:00pm ET</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- STEP / DAY 3 -->
+      <article class="step">
+        <div class="step-head">
+          <span class="step-label">📅 Step 3:</span> <!-- CHALLENGE → "Day #3:" -->
+          <h3>[Step 3 headline — where it all comes together]</h3>
+        </div>
+        <div class="step-body">
+          <div class="step-copy">
+            <!-- SLOT: step 3 blocks ← Theme / Paradigm Shift / Pain Addressed -->
+            <div class="step-block step-theme"><span class="lbl">Theme</span><p>[The theme of session 3 in a few words.]</p></div>
+            <div class="step-block step-shift"><span class="lbl">Paradigm Shift</span><p>“[The belief that flips for them in this session.]”</p></div>
+            <div class="step-block step-pain"><span class="lbl">Pain Addressed</span><p>“[The fear or objection this session resolves.]”</p></div>
+          </div>
+          <div class="step-side">
+            <!-- SLOT: step 3 image -->
+            <div class="step-img"><img src="images/step3.jpg" alt=""></div>
+            <a href="#popup" class="btn btn--block" data-cta><span class="btn-main">Join The FREE Masterclass →</span><span class="btn-sub">Thu, Mar 14 · 12:00pm ET</span></a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- CTA BOX under the steps (urgency callout) -->
+    <div class="cta-box reveal" style="margin-top:var(--space-6)">
+      <!-- SLOT: urgency headline -->
+      <h2>But hurry — seats are filling up fast…</h2>
+      <!-- SLOT: urgency subtext ← tie it to a REAL reason (capacity + the go-live date) -->
+      <p class="sub">Live capacity is limited, and registration closes the moment we go live on [Thu, Mar 14]. When it’s full, it’s full.</p>
+      <!-- SLOT: reminder strip -->
+      <p class="strip"><b>So don’t wait!</b> Save your spot for the masterclass today — before it’s too late.</p>
+      <a href="#popup" class="btn btn--lg btn--block" data-cta><span class="btn-main">Join The FREE Masterclass →</span><span class="btn-sub">Thu, Mar 14 · 12:00pm ET</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · VALUE STACK / "WHAT YOU GET" ─────────────────────────────────────── -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">What you’ll get</span>
+      <h2>Everything included when you register</h2>
+    </div>
+    <!-- SLOT: value stack ← deliverables + honest $ values (Cash Flow Max™).
+         FREE event → keep "Today's Price: FREE!".  PAID → "Normally $X → Today $Y". -->
+    <div class="value-stack reveal">
+      <!-- SLOT: value image ← product / deliverables mockup that stacks the value. Replace with <img>. -->
+      <div class="vs-img"><img src="images/valuestack.jpg" alt="Everything you get"></div>
+
+      <div class="vs-line">
+        <span class="vs-tick">✓</span>
+        <div class="vs-desc"><b>[The live masterclass]</b> — [what they get from attending live].</div>
+        <div class="vs-val"><span class="free">FREE!</span><span class="amt">($497 Value)</span></div>
+      </div>
+      <div class="vs-line">
+        <span class="vs-tick">✓</span>
+        <div class="vs-desc"><b>[Done-for-you templates]</b> — [so they can implement without starting from scratch].</div>
+        <div class="vs-val"><span class="free">FREE!</span><span class="amt">($297 Value)</span></div>
+      </div>
+      <div class="vs-line">
+        <span class="vs-tick">✓</span>
+        <div class="vs-desc"><b>[The core framework / planner]</b> — [the exact system they follow].</div>
+        <div class="vs-val"><span class="free">FREE!</span><span class="amt">($197 Value)</span></div>
+      </div>
+      <div class="vs-line">
+        <span class="vs-tick">✓</span>
+        <div class="vs-desc"><b>[Live Q&amp;A with the host]</b> — [their questions answered in real time].</div>
+        <div class="vs-val"><span class="free">FREE!</span><span class="amt">(Priceless!)</span></div>
+      </div>
+
+      <!-- SLOT: FAST-ACTION BONUS ← an extra reason to register NOW (register-today gift) -->
+      <div class="vs-bonus">
+        <span class="vs-tick">★</span>
+        <div class="vs-desc"><span class="bonus-tag">🎁 Fast-Action Bonus</span><b>[Register today and also get: your bonus]</b> — [the quick win they get just for signing up now].</div>
+        <div class="vs-val"><span class="free">FREE!</span><span class="amt">($197 Value)</span></div>
+      </div>
+
+      <div class="vs-total">
+        <div class="normally">Normally: <s>$991</s></div>
+        <div class="today">Today’s Price: <span class="hl">FREE!</span></div>
+      </div>
+
+      <a href="#popup" class="btn btn--lg btn--block" data-cta><span class="btn-main">Join The FREE Masterclass →</span><span class="btn-sub">Thu, Mar 14 · 12:00pm ET</span></a>
+    </div>
+
+    <!-- WHAT / WHEN / WHY event details ── SLOT: fill each card -->
+    <div class="wwwy reveal">
+      <div class="col">
+        <h3>What</h3><div class="rule"></div>
+        <p>[The event in one line — the format, length, and the outcome they’ll get.]</p>
+      </div>
+      <div class="col">
+        <h3>When</h3><div class="rule"></div>
+        <p>[Date] · [Time + timezone]</p>
+        <p class="note">[Short note — e.g. show up live; it’s [X] minutes, so set the time aside.]</p>
+      </div>
+      <div class="col">
+        <h3>Why</h3><div class="rule"></div>
+        <p>[Why it matters — the proof or transformation they walk away with.]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · BEFORE → AFTER (Hell → Heaven) — images + rich bullets ──────────────
+     Each side shows an IMAGE (the emotional state) + two-part bullets
+     (bold problem/win + a line of context). -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="section-head reveal" style="max-width:840px">
+      <!-- SLOT: pre-headline ← the transformation hook -->
+      <span class="eyebrow">The transformation</span>
+      <!-- SLOT: headline -->
+      <h2>What you can expect from the <span class="hl">Cash Flow Engine™</span> Masterclass</h2>
+    </div>
+
+    <div class="compare reveal">
+      <!-- BEFORE -->
+      <div class="col bad">
+        <h3><span class="hi-bad">BEFORE</span> the Masterclass:</h3>
+        <!-- SLOT: before image ← a "pain" photo (stuck / frustrated). Replace with <img>. -->
+        <div class="ba-img"><img src="images/before.jpg" alt="Before"></div>
+        <!-- SLOT: before bullets ← Golden Avatar™ pains. Bold problem + context line. -->
+        <ul>
+          <li><span class="ic">✕</span><span><b>Ads that never pay for themselves</b> — you spend more than you make back.</span></li>
+          <li><span class="ic">✕</span><span><b>Events that flop</b> — a half-empty room and nothing to show for it.</span></li>
+          <li><span class="ic">✕</span><span><b>Stuck on endless sales calls</b> — trading all your time for a “maybe.”</span></li>
+          <li><span class="ic">✕</span><span><b>Chasing the wrong audience</b> — freebie-seekers who never buy.</span></li>
+        </ul>
+      </div>
+
+      <!-- AFTER -->
+      <div class="col good">
+        <h3><span class="hi-good">AFTER</span> the Masterclass:</h3>
+        <!-- SLOT: after image ← a "win" photo (confident / celebrating). Replace with <img>. -->
+        <div class="ba-img"><img src="images/after.jpg" alt="After"></div>
+        <!-- SLOT: after bullets ← the outcomes. Bold win + context line. -->
+        <ul>
+          <li><span class="ic">✓</span><span><b>Ads that self-liquidate</b> — your traffic pays for itself before the event.</span></li>
+          <li><span class="ic">✓</span><span><b>Rooms full of premium buyers</b> — the right people, ready to invest.</span></li>
+          <li><span class="ic">✓</span><span><b>Clients closed live</b> — no calls, no chasing, no convincing.</span></li>
+          <li><span class="ic">✓</span><span><b>A predictable monthly rhythm</b> — repeatable, again and again.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="center" style="margin-top:2.5rem">
+      <a href="#popup" class="btn btn--lg" data-cta><span class="btn-main">Join The FREE Masterclass →</span><span class="btn-sub">Thu, Mar 14 · 12:00pm ET</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · GUARANTEE  (PAID EVENTS ONLY — delete this whole section for a free opt-in) -->
+<section class="section">
+  <div class="container">
+    <!-- SLOT: guarantee ← the money-back / risk-reversal terms for a PAID ticket -->
+    <div class="guarantee reveal">
+      <div class="badge">100%<br>MONEY-BACK<br>GUARANTEE</div>
+      <div>
+        <h3>Show up and you’re covered.</h3>
+        <p>If you attend live and don’t leave with a Cash Flow Engine™ plan you can use, just ask and we’ll refund your ticket in full. Zero risk. [Set the client’s exact guarantee terms here.]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · MEET YOUR HOST ──────────────────────────────────────────────────── -->
+<section class="section section--alt">
+  <div class="container host reveal">
+    <!-- SLOT: host photo ← the host's real photo. Filler headshot for now. -->
+    <div class="photo"><img src="images/host.jpg" alt="[Coach Name]"></div>
+    <div>
+      <span class="eyebrow">Meet your host</span>
+      <!-- SLOT: host name + signature system ← Business Brand Profile -->
+      <h2 style="margin-bottom:.4rem">Hosted by [Coach Name]</h2>
+      <p style="color:var(--color-muted); margin-bottom:1.1rem">Creator of [Your Signature System]</p>
+      <!-- SLOT: host intro ← one or two sentences on who you help and why you built this -->
+      <p>[One or two sentences — who you help, and why you built this. Specific and true, no hype.]</p>
+      <!-- SLOT: credibility bullets ← the host's OWN points (Business Brand Profile). No borrowed results. -->
+      <ul class="bullets">
+        <li><span class="tick">✓</span><span>[Credibility point — experience, background, or who you’ve helped]</span></li>
+        <li><span class="tick">✓</span><span>[A signature result or transformation you’re known for]</span></li>
+        <li><span class="tick">✓</span><span>[What makes your approach different]</span></li>
+        <li><span class="tick">✓</span><span>[Your mission — why you teach this]</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · SOCIAL PROOF ───────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Stories of success</span>
+      <h2>Don’t just take my word for it</h2>
+    </div>
+    <!-- SLOT: VIDEO testimonial ← replace .media with a real video embed (<iframe>/<video>),
+         or keep the play badge over a poster image. Video proof converts hardest. -->
+    <div class="video-testi reveal">
+      <div class="media"><div class="play" aria-hidden="true"></div><div class="media-label">▶ Watch [Client]’s story (2 min)</div></div>
+    </div>
+    <!-- SLOT: testimonials ← real, specific, results-based. Aim for 4–6. Use real names/photos. -->
+    <div class="grid grid-2 reveal">
+      <figure class="testimonial"><div class="stars">★★★★★</div>
+        <p>“I ran my first event with this and closed 9 clients in an afternoon. I’ve never had a day like it.”</p>
+        <figcaption class="who"><img class="av" alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'/>"><span><span class="name">Jordan M.</span><br><span class="role">Business Coach</span></span></figcaption></figure>
+      <figure class="testimonial"><div class="stars">★★★★★</div>
+        <p>“My ads finally pay for themselves. The room fills with the right people and the closing takes care of itself.”</p>
+        <figcaption class="who"><img class="av" alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'/>"><span><span class="name">Priya S.</span><br><span class="role">Leadership Consultant</span></span></figcaption></figure>
+      <figure class="testimonial"><div class="stars">★★★★★</div>
+        <p>“I stopped doing sales calls completely. One event a month now does more than my whole old funnel did in a quarter.”</p>
+        <figcaption class="who"><img class="av" alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'/>"><span><span class="name">Marcus T.</span><br><span class="role">Fitness Coach</span></span></figcaption></figure>
+      <figure class="testimonial"><div class="stars">★★★★★</div>
+        <p>“The self-liquidating part is real. My registrations covered the ad spend before we even went live.”</p>
+        <figcaption class="who"><img class="av" alt="" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'/>"><span><span class="name">Elena R.</span><br><span class="role">Marketing Consultant</span></span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · TIME-SENSITIVE URGENCY (dark) ──────────────────────────────────── -->
+<section class="section section--dark center">
+  <div class="container narrow reveal">
+    <span class="eyebrow">This is time-sensitive — here’s why</span>
+    <h2>Doors close when we go live on [Thu, Mar 14]</h2>
+    <p class="lede" style="margin:1rem auto 2rem; max-width:620px">Seats are limited and the replay isn’t guaranteed. Register now and show up live to get the full value while it’s open.</p>
+    <div class="countdown on-light" style="justify-content:center" data-deadline="2026-03-14T12:00:00-04:00">
+      <div class="unit"><div class="n" data-cd="d">00</div><div class="l">Days</div></div>
+      <div class="unit"><div class="n" data-cd="h">00</div><div class="l">Hrs</div></div>
+      <div class="unit"><div class="n" data-cd="m">00</div><div class="l">Min</div></div>
+      <div class="unit"><div class="n" data-cd="s">00</div><div class="l">Sec</div></div>
+    </div>
+    <div style="margin-top:2rem"><a href="#popup" class="btn btn--lg"><span class="btn-main">Join The FREE Masterclass →</span><span class="btn-sub">Thu, Mar 14 · 12:00pm ET</span></a></div>
+  </div>
+</section>
+
+<!-- 12 · FAQ ────────────────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">Questions</span><h2>Frequently asked questions</h2></div>
+    <!-- SLOT: faq ← top objections for this avatar -->
+    <div class="faq reveal">
+      <details open><summary>Is it really free?</summary><p>Yes — registration is free. [Adjust if the page sells a paid ticket.]</p></details>
+      <details><summary>Will there be a replay?</summary><p>Show up live for the full value — replay access isn’t guaranteed.</p></details>
+      <details><summary>Who is this for?</summary><p>Coaches and consultants with real expertise who want to enroll premium clients without endless 1-on-1 calls.</p></details>
+      <details><summary>How long is it?</summary><p>About three hours, live online. Bring a notepad.</p></details>
+      <details><summary>What if I can’t attend live?</summary><p>Do your best to be there live — that’s where the value is. [State your replay policy here if you offer one.]</p></details>
+      <details><summary>Will this work for my niche or business?</summary><p>If you have a high-value offer and can host a simple event, yes — it’s worked across coaching, consulting, and services.</p></details>
+      <details><summary>What happens after I register?</summary><p>You’ll get a confirmation email with the link and a calendar invite. Add it, then show up ready to take notes.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 13 · FINAL CTA + P.S. ───────────────────────────────────────────────── -->
+<section class="section section--alt cta-band" id="register">
+  <div class="container reveal">
+    <span class="eyebrow">Save your seat</span>
+    <!-- SLOT: final headline ← the promise, one more time -->
+    <h2>Get confident. Fill the room. Get paid.</h2>
+    <p class="lede" style="margin:0 auto 2rem; max-width:560px">Register now — I’ll see you live.</p>
+    <!-- PAYMENT / OPT-IN SLOT (repeat) — same popup as the hero button -->
+    <a href="#popup" class="btn btn--lg" data-cta><span class="btn-main">Join The FREE Masterclass →</span><span class="btn-sub">Thu, Mar 14 · 12:00pm ET</span></a>
+    <p class="btn-note">No credit card required to register</p>
+    <!-- what happens next (reduces friction at the decision point) -->
+    <div class="nextsteps">
+      <span>1 · <b>Register</b></span><span>2 · <b>Check your email</b></span><span>3 · <b>Add to calendar</b></span><span>4 · <b>Show up live</b></span>
+    </div>
+    <!-- SLOT: P.S. ← the direct-response P.S. (restate stakes or bonus) -->
+    <div class="ps narrow" style="margin:2.5rem auto 0; text-align:left">
+      <strong>P.S.</strong> — One afternoon could change your entire year. Seats are limited, so grab yours now before the countdown hits zero.
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER ──────────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container center">
+    <!-- SLOT: footer ← brand name, links, required disclaimers -->
+    <p style="font-family:var(--font-display); font-weight:700; color:#fff; margin-bottom:.5rem">[Brand Name]</p>
+    <p><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></p>
+    <p class="disclaimer">This site is not affiliated with any social media platform. Results shown are illustrative and are not a guarantee of your results. [Insert the client’s earnings/results disclaimer here.] © [Year] [Brand Name]. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA ───────────────────────────────────────────────────── -->
+<div class="sticky-cta"><a href="#popup" class="btn btn--block" data-cta><span class="btn-main">Join The FREE Masterclass →</span><span class="btn-sub">Thu, Mar 14 · 12:00pm ET</span></a></div>
+
+<!-- SCRIPTS: scroll-reveal + countdown (progressive enhancement) ─────────── -->
+<script>
+  // reveal on scroll
+  const io = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // countdown(s) — reads data-deadline (ISO). Falls back gracefully.
+  function tick(){
+    document.querySelectorAll('.countdown[data-deadline]').forEach(cd=>{
+      const end = new Date(cd.getAttribute('data-deadline')).getTime();
+      let diff = Math.max(0, end - Date.now());
+      const d = Math.floor(diff/8.64e7); diff -= d*8.64e7;
+      const h = Math.floor(diff/3.6e6);  diff -= h*3.6e6;
+      const m = Math.floor(diff/6e4);     diff -= m*6e4;
+      const s = Math.floor(diff/1e3);
+      const set=(k,v)=>{const el=cd.querySelector('[data-cd="'+k+'"]'); if(el) el.textContent=String(v).padStart(2,'0');};
+      set('d',d); set('h',h); set('m',m); set('s',s);
+    });
+  }
+  tick(); setInterval(tick,1000);
+</script>
+</body>
+</html>

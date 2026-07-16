@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP Upsell (Single Option) · Cash Flow Engine™</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brand.css">
+
+<!--
+  ═══════════════════════════════════════════════════════════════
+  VIP UPSELL — SINGLE OPTION  (one-time offer / OTO)
+  Congruent with registration.html + thank-you.html (same brand.css).
+
+  WHERE IT SITS: shown immediately AFTER the registration button, BEFORE
+  the thank-you page — the paid cash-in that self-liquidates ad spend.
+  This is the SINGLE-OPTION variant (one VIP). A tiered / double-VIP
+  variant can follow the same pattern.
+
+  THE JOB: get a yes/no decision on ONE upgrade. Classic OTO anatomy —
+  "wait" hook → the offer → single value stack + price anchor → guarantee
+  → YES button + a plain "no thanks" decline link.
+
+  PAID. Every button is behaviour-agnostic — wire the "add VIP" (1-click
+  upsell) and "decline" (skip to thank-you) actions in the vibe-code
+  builder. Fill every SLOT. Use only the host's own real numbers/claims.
+  ═══════════════════════════════════════════════════════════════
+-->
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- 1 · WARNING BAR ── SLOT: confirm + don't-close -->
+<div class="topbar oto-warn">⚠ WAIT! Your seat is confirmed — don’t close this page, your order isn’t quite finished…</div>
+
+<!-- 2 · HERO (dark) — the "wait, one-time offer" hook ──────────────────── -->
+<header class="hero section--dark">
+  <div class="container center" style="padding-block:var(--space-7) var(--space-6)">
+    <span class="oto-note">✓ You’re registered — one-time offer</span>
+    <!-- SLOT: headline ← the VIP upgrade + its big payoff -->
+    <h1 style="max-width:900px; margin:var(--space-3) auto 0">Add <span class="hl">[VIP Access]</span> and get [the VIP outcome] — for a one-time [$47]</h1>
+    <!-- SLOT: subhead ← what the VIP is, in one line -->
+    <p class="lede" style="max-width:720px; margin:var(--space-4) auto 0">This upgrade is only offered here, once. It won’t be shown again after you leave this page.</p>
+
+    <!-- SLOT: VIP explainer VIDEO (optional) ← light-grey placeholder; swap for embed/image -->
+    <div class="ty-video reveal">
+      <div class="media">
+        <div class="play" aria-hidden="true"></div>
+        <div class="media-label">▶ [Watch: what the VIP upgrade gives you] (60 sec)</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 3 · WHAT IS THE VIP (light) ────────────────────────────────────────── -->
+<section class="section">
+  <div class="container narrow center reveal">
+    <span class="eyebrow">The VIP upgrade</span>
+    <!-- SLOT: what-it-is + the VIP's own $Million Promise™ -->
+    <h2>[The VIP Access™] — [the promise of the upgrade in one line]</h2>
+    <p class="lede" style="margin-top:1rem">[One or two sentences on what the VIP gives them and why it’s worth it — the shortcut, the extra access, the faster result.]</p>
+  </div>
+</section>
+
+<!-- 4 · THE VIP OFFER — single value stack + price + decision (dark) ─────── -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="section-head reveal" style="max-width:820px">
+      <span class="eyebrow">Here’s everything in your VIP upgrade</span>
+      <h2>One upgrade. Everything you need to go faster.</h2>
+    </div>
+
+    <div class="value-stack reveal">
+      <!-- SLOT: VIP image ← product/deliverables mockup. Replace with <img>. -->
+      <div class="vs-img"><img src="images/valuestack.jpg" alt="VIP upgrade"></div>
+
+      <!-- SLOT: VIP components ← the real inclusions + honest values (Cash Flow Max™) -->
+      <div class="vs-line">
+        <span class="vs-tick">✓</span>
+        <div class="vs-desc"><b>[Recordings / replays of the event]</b> — [watch back anytime, keep forever].</div>
+        <div class="vs-val"><span class="val-amt">$97</span><span class="val-lbl">value</span></div>
+      </div>
+      <div class="vs-line">
+        <span class="vs-tick">✓</span>
+        <div class="vs-desc"><b>[VIP-only live Q&amp;A / hot seat]</b> — [extra time to get your questions answered].</div>
+        <div class="vs-val"><span class="val-amt">$97</span><span class="val-lbl">value</span></div>
+      </div>
+      <div class="vs-line">
+        <span class="vs-tick">✓</span>
+        <div class="vs-desc"><b>[Inner-circle community access]</b> — [connect with the room and get support].</div>
+        <div class="vs-val"><span class="val-amt">$97</span><span class="val-lbl">value</span></div>
+      </div>
+
+      <!-- SLOT: FAST-ACTION BONUS (optional) -->
+      <div class="vs-bonus">
+        <span class="vs-tick">★</span>
+        <div class="vs-desc"><span class="bonus-tag">🎁 VIP Fast-Action Bonus</span><b>[Add-on they only get by upgrading now]</b> — [the quick win].</div>
+        <div class="vs-val"><span class="val-amt">$47</span><span class="val-lbl">value</span></div>
+      </div>
+
+      <div class="vs-total">
+        <div class="normally">Total value: <s>$338</s></div>
+        <div class="today">Yours today for just <span class="hl">$47</span></div>
+      </div>
+
+      <!-- DECISION: yes + decline -->
+      <div class="decision">
+        <!-- PAYMENT SLOT: 1-click add-VIP action -->
+        <a href="#yes-vip" class="btn btn--lg btn--block" data-cta><span class="btn-main">✅ Yes! Add VIP — $47</span><span class="btn-sub">One-time offer · instant access</span></a>
+        <!-- DECLINE SLOT: skip to the thank-you page -->
+        <a href="#decline" class="decline">No thanks — I’ll pass on this one-time upgrade and continue.</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · WHAT VIP UNLOCKS (light) ────────────────────────────────────────── -->
+<section class="section section--alt">
+  <div class="container narrow reveal">
+    <div class="section-head" style="margin-bottom:var(--space-5)">
+      <span class="eyebrow">Why upgrade</span>
+      <h2>Here’s what VIP unlocks for you</h2>
+    </div>
+    <!-- SLOT: VIP benefit bullets -->
+    <ul class="bullets">
+      <li><span class="tick">✓</span><span><b>[Never miss a thing]</b> — keep the recordings and revisit the training anytime.</span></li>
+      <li><span class="tick">✓</span><span><b>[Get your questions answered]</b> — VIP-only live time so you leave with clarity.</span></li>
+      <li><span class="tick">✓</span><span><b>[Move faster]</b> — the shortcut most attendees won’t have.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 6 · GUARANTEE ──────────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <!-- SLOT: guarantee ← risk reversal on the VIP -->
+    <div class="guarantee reveal">
+      <div class="badge">100%<br>MONEY-BACK<br>GUARANTEE</div>
+      <div>
+        <h3>Zero risk to upgrade.</h3>
+        <p>If the VIP upgrade isn’t everything we promised, just ask and we’ll refund the VIP price in full — you keep your seat either way. [Set the client’s exact guarantee terms here.]</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · SOCIAL PROOF ───────────────────────────────────────────────────── -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">VIP members say</span><h2>The upgrade people are glad they took</h2></div>
+    <div class="grid grid-2 reveal">
+      <figure class="testimonial"><div class="stars">★★★★★</div>
+        <p>“Getting the recordings alone was worth it — I’ve gone back through them three times.”</p>
+        <figcaption class="who"><img class="av" alt="" src="images/avatar2.jpg"><span><span class="name">Elena R.</span><br><span class="role">Consultant</span></span></figcaption></figure>
+      <figure class="testimonial"><div class="stars">★★★★★</div>
+        <p>“The VIP Q&amp;A answered the exact question that was holding me back. Easy yes.”</p>
+        <figcaption class="who"><img class="av" alt="" src="images/avatar1.jpg"><span><span class="name">Marcus T.</span><br><span class="role">Coach</span></span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · FINAL DECISION (dark) ──────────────────────────────────────────── -->
+<section class="section section--dark center">
+  <div class="container narrow reveal">
+    <span class="oto-note">This offer won’t be shown again</span>
+    <h2 style="margin:var(--space-3) auto 0; max-width:640px">Add VIP now — before you leave this page</h2>
+    <p class="lede" style="margin:1rem auto 2rem; max-width:560px">You’re one click away. Upgrade now and lock in everything above for a one-time $47.</p>
+    <div class="decision">
+      <a href="#yes-vip" class="btn btn--lg" data-cta><span class="btn-main">✅ Yes! Add VIP — $47</span><span class="btn-sub">One-time offer · instant access</span></a>
+      <a href="#decline" class="decline">No thanks — I’ll pass on this one-time upgrade.</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER ─────────────────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container center">
+    <p style="font-family:var(--font-display); font-weight:700; color:#fff; margin-bottom:.5rem">[Brand Name]</p>
+    <p><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></p>
+    <p class="disclaimer">Results shown are illustrative and are not a guarantee of your results. [Insert the client’s earnings/results disclaimer here.] © [Year] [Brand Name]. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
