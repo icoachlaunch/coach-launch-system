@@ -1,6 +1,6 @@
 # Coach Launch — System Library
 
-The single source of truth for Coach Launch builder prompts, companion guides, and the brand style system. Everything here is on-brand by default and ready to reference from other platforms.
+The single source of truth for Coach Launch builder prompts, companion guides, and the brand style system. Everything here is on-brand by default.
 
 Brand: **Coach Launch** · System: **The $100K Day Formula™** + **The $100K Day Accelerator™**
 
@@ -10,51 +10,42 @@ Brand: **Coach Launch** · System: **The $100K Day Formula™** + **The $100K Da
 
 ```
 coach-launch-system/
-├── style-guide/                  ★ CORE — the locked brand standard
-│   ├── visual-style-guide.html   How every doc LOOKS (colors, type, logo, components)
-│   ├── voice-guide.html          Brand Voice — how you SOUND when selling & connecting
-│   ├── teaching-voice-guide.html Teaching Voice — how you SOUND in guides & prompts
-│   └── README.md
-├── assets/                       Shared design system — do not fork per guide
+├── modules/                      Every module = its own folder (prompt + guide + extras), grouped by pillar
+│   ├── 0-foundations/            Brand Profile · Visual Style · Brand Voice (built before the Formula)
+│   ├── 1-offer-matrix/           Pillar 1 · Steps 1–3 — Million Story, Magic Formula, Red Diamond Offer (9 modules)
+│   └── 2-money-magnet/           Pillar 2 · Step 4+ — sniper-close, sniper-presentation (+ bits/), sniper-presentation-slides
+├── assets/
 │   ├── coach-launch-guide.css    The locked stylesheet every guide links to
-│   ├── logo-icon.svg             Icon mark (white on crimson) — dark contexts
-│   └── logo-icon-light.svg       Icon mark (crimson on light) — light contexts
-├── templates/
-│   └── guide-template.html       Copy this to start any new companion guide
-├── guides/
-│   └── million-story-guide.html   Worked example (Step 1)
-├── prompts/
-│   └── million-promise-prompt.md   Builder prompt · Part 1 of 3 (the $Million Promise)
-├── index.html                    Library home page — links to everything
+│   └── agents images/            Agent headshots used on the portal
+├── scripts/                      apply_formula_map.py (stamps the 3-pillar/9-step map onto guides) + helpers
+├── guides/                       Legacy demo pages only (million-story-guide, style-system)
+├── dashboard.html                The Training Portal — the single entry point to every guide + prompt
+├── PROGRESS.md                   Build log — read this FIRST; the source of truth for where the build is
 └── SETUP-GITHUB.md               One-time GitHub setup steps
 ```
 
+**Live portal:** <https://icoachlaunch.github.io/coach-launch-system/dashboard.html>
+
 ## The one rule
 
-Never restyle a guide by hand. The look lives in **one** stylesheet (`assets/coach-launch-guide.css`). To build a new guide, copy `templates/guide-template.html`, keep the CSS link exactly, and fill in only the content. It's on-brand the moment it's created.
+Never restyle a guide by hand. The look lives in **one** stylesheet (`assets/coach-launch-guide.css`). To build a new guide, copy an existing module guide, keep the CSS link exactly (`../../../assets/coach-launch-guide.css`), and fill in only the content. It's on-brand the moment it's created.
 
 ## Brand quick reference
 
 | | |
 |---|---|
 | Primary color | Crimson Pink `#db0063` (the only accent) |
-| Background | White `#ffffff` — light theme (approved override of the Style Guide's dark default) |
+| Background | White `#ffffff` — light theme |
 | Text | Charcoal `#26272b` / near-black `#111111` for headings |
 | Display font | Montserrat (700 / 800) |
 | Body font | Lato |
 | Feel | Clean, bold, premium, high-contrast, zero clutter |
 
-Full spec: open `style-guide/visual-style-guide.html` in a browser.
+## Naming + layout
 
-## Naming convention
-
-Guides: `step-0N-[short-name]-guide.html` · Prompts: `step-0N-[short-name]-prompt.md`
+Each module is its own folder under its pillar:
+`modules/<pillar>/<module>/<module>-guide.html` + `<module>-prompt.md` (plus any related files). The only grouping level is the pillar. Formula-step guides carry the shared CSS + the 3-pillar/9-step map (stamped by `scripts/apply_formula_map.py`).
 
 ## How to view
 
-Open any `.html` file in a browser, or serve the folder locally:
-
-```bash
-cd coach-launch-system
-python3 -m http.server 8000    # then visit http://localhost:8000
-```
+Open `dashboard.html` in a browser (works offline — prompts are embedded), or visit the live portal above.
