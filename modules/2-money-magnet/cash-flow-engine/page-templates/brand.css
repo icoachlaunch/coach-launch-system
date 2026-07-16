@@ -350,10 +350,29 @@ strong{ font-weight:700; }
 .section--dark .oto-note{ color:#5be08a; }
 .oto-warn{ background:#b91c1c; }   /* red warning bar variant of .topbar */
 .decision{ text-align:center; }
-.decision .decline{ display:inline-block; margin-top:var(--space-4); color:var(--color-muted); font-size:.92rem; text-decoration:underline; }
+.decision .decline{ display:block; margin-top:var(--space-4); color:var(--color-muted); font-size:.92rem; text-decoration:underline; }
 .section--dark .decision .decline{ color:var(--color-dark-muted); }
 .value-stack .vs-val .val-amt{ display:block; font-family:var(--font-display); font-weight:800; color:#5be08a; }
 .value-stack .vs-val .val-lbl{ display:block; font-size:.78rem; color:var(--color-dark-muted); }
+
+/* VIP component deep-dive rows (alternating image + text) */
+.features{ display:grid; gap:var(--space-4); }
+.feature{ display:grid; grid-template-columns:1fr 1.1fr; gap:var(--space-6); align-items:center; }
+/* each deliverable = a clean white card with subtle border + shadow */
+.features .feature{ padding:var(--space-6); border-radius:var(--radius-lg); background:var(--color-paper); border:1px solid var(--color-line); box-shadow:var(--shadow-sm); }
+.feature.rev .feature-img{ order:2; }
+.feature-img{ aspect-ratio:4/3; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md);
+  background:linear-gradient(135deg,#eef0f3,#dfe2e7); display:grid; place-items:center; color:#6b7280; text-align:center; font-size:.85rem; }
+.feature-img img{ width:100%; height:100%; object-fit:cover; border-radius:inherit; }
+.feature .val-badge{ display:inline-block; font-family:var(--font-display); font-weight:800; font-size:.8rem; color:var(--color-accent);
+  background:color-mix(in srgb, var(--color-accent) 12%, transparent); padding:.28rem .7rem; border-radius:var(--radius-pill); margin-bottom:.6rem; }
+.feature h3{ margin-bottom:var(--space-2); }
+.feature > div > p{ color:var(--color-muted); margin-bottom:var(--space-3); }
+/* limited-spots scarcity strip */
+.spots{ max-width:var(--maxw-narrow); margin-inline:auto; text-align:center; border:2px dashed var(--color-bad);
+  border-radius:var(--radius-lg); padding:var(--space-5); background:#fbeeee; }
+.spots .n{ font-family:var(--font-display); font-weight:800; color:var(--color-bad); }
+@media (max-width:860px){ .feature{ grid-template-columns:1fr; } .feature.rev .feature-img{ order:-1; } }
 @media (max-width:640px){
   .value-stack .vs-line{ grid-template-columns:auto 1fr; }
   .value-stack .vs-val{ grid-column:2; text-align:left; margin-top:.2rem; }
