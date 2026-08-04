@@ -11,227 +11,154 @@
 <link rel="stylesheet" href="brand.css">
 
 <!--
-  ═══════════════════════════════════════════════════════════════
-  VIP UPSELL — SINGLE OPTION  (one-time offer / OTO)
-  Congruent with registration.html + thank-you.html (same brand.css).
-  Modelled section-for-section on two proven $1M+ OTO pages
-  (Russell Brunson "Backstage Pass" + Dan Henry "WLDC VIP").
+  ============================================================================
+  VIP UPSELL - SINGLE OPTION (OTO). Congruent with the other Cash Flow Engine
+  funnel pages. Follows Russell Brunson's "Backstage Pass" OTO framework,
+  section by section (single-column, centered, letter-style flow):
 
-  FULL SKELETON (their winning long-form OTO):
-    1  warning bar (order not finished)
-    2  hero: countdown "closes in" + price-anchor headline + "see this
-       video once" + VSL + CTA#1
-    3  founder letter: congrats → "you've done the hardest part" →
-       "unfair advantage" → fast-pass framing → go-all-in
-    4  CTA#2 + decline
-    5  "when you say yes, here's everything you unlock" →
-       PER-COMPONENT DEEP-DIVES (each: image + headline + benefits + value)
-    6  physical product showcase (optional — delete if digital-only)
-    7  CTA#3 + decline
-    8  keep-it-all guarantee
-    9  full "everything you get" value-stack RECAP + price + CTA#4
-   10  limited-spots scarcity
-   11  go-all-in commitment + signature
-   12  final "the rundown" recap + countdown + CTA#5
-   13  footer + earnings disclaimer
+    1  LIGHT hero  - "Step 2 of 2" pill + "Congrats! You're in!" + headline
+       (blue .script accent) + "Upgrade closes in" countdown + red PLAY-bar VSL
+    2  "Dear friend" - white 2-column letter card on the navy band
+    3  "Hardest part" - centered head + 2-col (image / text)
+    4  "The unfair advantage" - centered block + inline image
+    5  Deliverables - 3 centered blocks (emoji kicker + copy + image)
+    6  DARK value-stack box #1 - product image + checklist w/ value pills +
+       fast-action bonus + Normally->Today + YES button + decline link
+    7  "What I've learned" - centered block + inline image
+    8  DARK value-stack box #2 - the SAME stack, repeated
+    9  "One more thing..." - centered close + final YES button + decline
+    10 Footer + disclaimer
 
-  PAID. Buttons are behaviour-agnostic: wire the 1-click "add VIP" and the
-  "decline → thank-you" in the vibe-code builder. Fill every SLOT; use only
-  the host's real inclusions/values. NOTE (per the models): an OTO is lean
-  on proof — no testimonials / FAQ; it runs on urgency + value + decision.
-  ═══════════════════════════════════════════════════════════════
+  PAID template. Every [bracket] is a SLOT to fill; buttons are behaviour-
+  agnostic (wire your own payment popup). Set the timer via the data-deadline
+  attribute on .countdown. Never add a ?v= cache-buster to the brand.css link.
+  ============================================================================
 -->
 </head>
 <body>
 <script>document.documentElement.classList.add('js');</script>
 
-<!-- 1 · WARNING BAR -->
-<div class="topbar oto-warn">⚠ WAIT! Your seat is confirmed — but your order isn’t finished. Don’t close this page…</div>
-
-<!-- 2 · HERO — countdown + price anchor + "see once" video + CTA#1 ───────── -->
-<header class="hero section--dark">
-  <div class="container center" style="padding-block:var(--space-7) var(--space-6)">
-    <span class="oto-note">✓ You’re in — one-time upgrade</span>
-    <!-- SLOT: headline ← VIP + price anchor -->
-    <h1 style="max-width:920px; margin:var(--space-3) auto 0">Add <span class="hl">[VIP Access]</span> for <s>$297</s> — just [$47] today</h1>
-    <p class="lede" style="max-width:720px; margin:var(--space-4) auto 0">This upgrade is only offered here, once. When you leave this page, it’s gone for good.</p>
-
-    <p class="oto-note" style="margin-top:var(--space-5)">⏳ This upgrade closes in</p>
-    <div class="countdown" data-deadline="2026-03-14T12:00:00-04:00" style="justify-content:center; margin-top:.5rem">
-      <div class="unit"><div class="n" data-cd="h">00</div><div class="l">Hrs</div></div>
-      <div class="unit"><div class="n" data-cd="m">00</div><div class="l">Min</div></div>
-      <div class="unit"><div class="n" data-cd="s">00</div><div class="l">Sec</div></div>
-    </div>
-
-    <p class="ty-once" style="margin-top:var(--space-5)"><span class="ar">↓</span> You’ll only see this video once — play it now <span class="ar">↓</span></p>
-    <div class="ty-video reveal">
-      <div class="media">
-        <div class="play" aria-hidden="true"></div>
-        <div class="media-label">▶ [Watch: the unfair advantage the VIP gives you] (60 sec)</div>
+<!-- 1 · HERO (LIGHT) — step pill + congrats + headline + countdown + VSL ────── -->
+<header class="oto-hero">
+  <div class="container">
+    <!-- SLOT: funnel step + don't-exit -->
+    <div class="step-pill"><span class="sp-badge">STEP 2 OF 2</span> Don’t exit this page or click “Back”</div>
+    <!-- SLOT: confirmation -->
+    <p class="congrats">Congrats! <span class="red">You’re in!</span></p>
+    <!-- SLOT: headline — wrap the emphasis words in <span class="script"> -->
+    <h1>Now watch this short video to help <span class="script">maximise your experience</span> — free</h1>
+    <!-- countdown (light pill) -->
+    <div class="cd-box">
+      <span class="cd-label">Upgrade closes in</span>
+      <div class="countdown on-light" data-deadline="2026-03-14T12:00:00-04:00">
+        <div class="unit"><div class="n" data-cd="h">00</div><div class="l">Hrs</div></div>
+        <div class="unit"><div class="n" data-cd="m">00</div><div class="l">Min</div></div>
+        <div class="unit"><div class="n" data-cd="s">00</div><div class="l">Sec</div></div>
       </div>
     </div>
-
-    <div class="decision" style="margin-top:var(--space-6)">
-      <a href="#yes-vip" class="btn btn--lg" data-cta><span class="btn-main">✅ Yes! Upgrade Me To VIP — [$47]</span><span class="btn-sub">One-time offer · instant access · keep it all</span></a>
-      <a href="#decline" class="decline">No thanks — take me to my confirmation.</a>
+    <!-- SLOT: VSL ← red bar + video. Swap .media for your embed. -->
+    <div class="vsl reveal">
+      <div class="vsl-bar">⌄ You’ll only see this video ONCE — <b>PLAY NOW!</b> ⌄</div>
+      <div class="media"><div class="play" aria-hidden="true"></div><div class="media-label">▶ [Watch this before you go]</div></div>
     </div>
   </div>
 </header>
 
-<!-- 3 · FOUNDER LETTER — congrats / hardest part / unfair advantage / all-in -->
-<section class="section">
+<!-- 2 · "DEAR FRIEND" — white 2-column card on the navy band ─────────────────── -->
+<section class="section section--dark oto-letter">
   <div class="container">
-    <article class="letter reveal">
-      <div class="author">
-        <img alt="" src="images/host.jpg">
-        <div><div class="name">From: [Coach Name]</div><div class="sub">[Your $Million Promise™]</div></div>
-      </div>
-      <span class="eyebrow">A quick note before you go…</span>
-      <!-- SLOT: congrats + hardest-part-done (identity/commitment) -->
-      <h2>You’ve already done the hardest part.</h2>
-      <p>First — congratulations for registering. Most people never even get this far. You’re here, you’re in, and you’re ready.</p>
-      <!-- SLOT: the "unfair advantage" question -->
-      <p><strong>So here’s a question:</strong> how would you like the unfair advantage that gets you up and running in <em>minutes instead of weeks</em>?</p>
-      <!-- SLOT: fast-pass framing -->
-      <p>Think of the VIP upgrade like a fast-pass at a theme park. Same event — but you skip the line, go straight to the front, and get the shortcuts most attendees never see.</p>
-      <!-- SLOT: go-all-in -->
-      <p>The people who say “yes” to VIP are the ones who go <strong>all in</strong> — and going all in is exactly what gets you the result. For a one-time [$47], you can lock it in right now.</p>
-      <div class="signature">
-        <p>See you in the VIP room,</p>
-        <p class="sig">[Coach Name]</p>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- 4 · CTA#2 -->
-<section class="section section--alt">
-  <div class="container decision reveal">
-    <a href="#yes-vip" class="btn btn--lg" data-cta><span class="btn-main">✅ Yes! Upgrade Me To VIP — [$47]</span><span class="btn-sub">One-time offer · instant access</span></a>
-    <a href="#decline" class="decline">No thanks — I’ll figure it out on my own.</a>
-  </div>
-</section>
-
-<!-- 5 · WHEN YOU SAY YES — per-component DEEP-DIVES ─────────────────────────── -->
-<section class="section">
-  <div class="container">
-    <div class="section-head reveal" style="max-width:820px">
-      <span class="eyebrow">When you say yes today…</span>
-      <h2>You unlock everything below</h2>
-    </div>
-
-    <div class="features reveal">
-      <!-- DEEP-DIVE 1 -->
-      <div class="feature">
-        <!-- SLOT: component 1 image -->
-        <div class="feature-img"><img src="images/step2.jpg" alt=""></div>
-        <div>
-          <span class="val-badge">[$297] value</span>
-          <!-- SLOT: component 1 name + benefit -->
-          <h3>[VIP-only live Q&amp;A / hot seat]</h3>
-          <p>[One or two sentences on what this is and why it matters — extra live time to get your exact questions answered.]</p>
-          <ul class="bullets">
-            <li><span class="tick">✓</span><span>[Benefit 1]</span></li>
-            <li><span class="tick">✓</span><span>[Benefit 2]</span></li>
-            <li><span class="tick">✓</span><span>[Benefit 3]</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- DEEP-DIVE 2 (image on the right) -->
-      <div class="feature rev">
-        <div class="feature-img"><img src="images/valuestack.jpg" alt=""></div>
-        <div>
-          <span class="val-badge">[$297] value</span>
-          <h3>[Done-for-you templates &amp; toolkit]</h3>
-          <p>[What it is + the shortcut it gives them — implement in minutes, not weeks.]</p>
-          <ul class="bullets">
-            <li><span class="tick">✓</span><span>[Benefit 1]</span></li>
-            <li><span class="tick">✓</span><span>[Benefit 2]</span></li>
-            <li><span class="tick">✓</span><span>[Benefit 3]</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- DEEP-DIVE 3 -->
-      <div class="feature">
-        <div class="feature-img"><img src="images/step1.jpg" alt=""></div>
-        <div>
-          <span class="val-badge">[$197] value</span>
-          <h3>[Lifetime recordings &amp; replays]</h3>
-          <p>[Rewatch the whole event anytime, forever — never miss a thing.]</p>
-          <ul class="bullets">
-            <li><span class="tick">✓</span><span>[Benefit 1]</span></li>
-            <li><span class="tick">✓</span><span>[Benefit 2]</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- DEEP-DIVE 4 (bonus, image on the right) -->
-      <div class="feature rev">
-        <div class="feature-img"><img src="images/step3.jpg" alt=""></div>
-        <div>
-          <span class="val-badge">🎁 [$97] bonus</span>
-          <h3>[Fast-Action Bonus — only if you upgrade now]</h3>
-          <p>[The extra quick win they get for going all in today.]</p>
-          <ul class="bullets">
-            <li><span class="tick">✓</span><span>[Benefit 1]</span></li>
-            <li><span class="tick">✓</span><span>[Benefit 2]</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 6 · PHYSICAL SHOWCASE (OPTIONAL — delete if the VIP is digital-only) ──── -->
-<section class="section section--alt">
-  <div class="container">
-    <div class="feature reveal">
-      <!-- SLOT: physical product image (the box / kit) -->
-      <div class="feature-img"><img src="images/valuestack.jpg" alt=""></div>
-      <div>
-        <span class="val-badge">Shipped to your door</span>
-        <!-- SLOT: physical kit name -->
-        <h3>[Your VIP Welcome Kit]</h3>
-        <p>[Describe the physical package you ship — the box and what’s inside.]</p>
+    <div class="letter-card reveal">
+      <div class="lc-text">
+        <!-- SLOT: letter + what-just-happened bullets -->
+        <p>Dear friend,</p>
+        <p>[Coach Name] here — and first off… <b>congratulations!</b> 🎉</p>
+        <p>You just did something most people never do — you stopped “thinking about it” and <b>took action.</b></p>
+        <p><b>Here’s what just happened when you registered…</b></p>
         <ul class="bullets">
-          <li><span class="tick">✓</span><span>[Physical item 1]</span></li>
-          <li><span class="tick">✓</span><span>[Physical item 2]</span></li>
+          <li><span class="tick">✓</span><span>You went from <em>[the old way]</em> to <b>[the new identity].</b></span></li>
+          <li><span class="tick">✓</span><span>You went from <em>[worry]</em> to <b>[positioned for the win].</b></span></li>
+          <li><span class="tick">✓</span><span>You went from <em>“I don’t know where to start”</em> to <b>a clear path.</b></span></li>
         </ul>
       </div>
+      <!-- SLOT: product / challenge image -->
+      <div class="lc-media"><img src="images/valuestack.jpg" alt=""></div>
     </div>
   </div>
 </section>
 
-<!-- 7 · CTA#3 -->
+<!-- 3 · "HARDEST PART" — light, centered head + 2-col image/text ─────────────── -->
 <section class="section">
-  <div class="container decision reveal">
-    <a href="#yes-vip" class="btn btn--lg" data-cta><span class="btn-main">✅ Yes! Upgrade Me To VIP — [$47]</span><span class="btn-sub">One-time offer · instant access</span></a>
-    <a href="#decline" class="decline">No thanks — I’ll pass on this one-time upgrade.</a>
-  </div>
-</section>
-
-<!-- 8 · KEEP-IT-ALL GUARANTEE -->
-<section class="section section--alt">
   <div class="container">
-    <div class="guarantee reveal">
-      <div class="badge">KEEP<br>IT ALL<br>GUARANTEE</div>
-      <div>
-        <h3>Zero risk — and everything is yours to keep.</h3>
-        <p>Upgrade today, and if the VIP isn’t everything we promised, just ask and we’ll refund the VIP price in full — and you still keep everything you’ve downloaded. You keep your seat either way. [Set the client’s exact terms here.]</p>
+    <div class="center narrow" style="margin-inline:auto">
+      <span class="eyebrow">And here’s the truth…</span>
+      <h2>You’ve already done <span class="script">the hardest part.</span></h2>
+    </div>
+    <div class="sec-divider" aria-hidden="true">◆</div>
+    <div class="two-col reveal">
+      <!-- SLOT: image -->
+      <div class="tc-img"><img src="images/qualification.jpg" alt=""></div>
+      <!-- SLOT: body -->
+      <div class="tc-text">
+        <p>Most people <u>never</u> get this far.</p>
+        <p>They stay stuck in “research mode” — watching, reading, scrolling — waiting for the “perfect moment” to finally take the leap.</p>
+        <p><b>But the moment never comes.</b></p>
+        <p>So they watch from the sidelines while others build thriving businesses.</p>
+        <p><b>But not you. You’re here. You’re in. And you’re ready.</b></p>
+        <p>Now, with that said, <em>let me ask you a question…</em></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 9 · "EVERYTHING YOU GET" full value-stack RECAP + price + CTA#4 (dark) ─── -->
+<!-- 5 · "THE UNFAIR ADVANTAGE" (centered block) ──────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="block reveal">
+      <span class="kick">The “unfair advantage”</span>
+      <!-- SLOT: headline + subhead -->
+      <h2>How would you like to get up and running in <span class="hl">minutes instead of weeks</span>?</h2>
+      <p>[…so you can get the result 10× faster and easier than doing it the slow way, alone.]</p>
+      <div class="inline-img"><img src="images/host.jpg" alt=""></div>
+      <p>Here’s exactly what the VIP upgrade gives you when you say yes today…</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · DELIVERABLES — centered blocks (emoji heading + text + image) ──────── -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="block reveal">
+      <span class="kick">🎟️ Included with VIP</span>
+      <h2>[VIP-only live Q&amp;A / hot seat]</h2>
+      <p>[What it is and why it matters — extra live time to get your exact questions answered so you never stay stuck.]</p>
+      <div class="inline-img"><img src="images/step2.jpg" alt=""></div>
+    </div>
+
+    <div class="block reveal">
+      <span class="kick">🧰 Included with VIP</span>
+      <h2>[Done-for-you templates &amp; toolkit]</h2>
+      <p>[Implement in minutes, not weeks — everything filled in and ready to plug into your funnel.]</p>
+      <ul class="bullets">
+        <li><span class="tick">✓</span><span>[What’s inside 1]</span></li>
+        <li><span class="tick">✓</span><span>[What’s inside 2]</span></li>
+        <li><span class="tick">✓</span><span>[What’s inside 3]</span></li>
+      </ul>
+      <div class="inline-img"><img src="images/valuestack.jpg" alt=""></div>
+    </div>
+
+    <div class="block reveal">
+      <span class="kick">🎥 Included with VIP</span>
+      <h2>[Lifetime recordings &amp; replays]</h2>
+      <p>[Rewatch the whole event anytime, forever — never miss a thing.]</p>
+      <div class="inline-img"><img src="images/step1.jpg" alt=""></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · VALUE-STACK BOX #1 (dark) ────────────────────────────────────────── -->
 <section class="section section--dark">
   <div class="container">
-    <div class="section-head reveal" style="max-width:820px">
-      <span class="eyebrow">When you upgrade to VIP right now, you’ll get</span>
-      <h2>Here’s everything in one place</h2>
-    </div>
+    <div class="section-head reveal" style="max-width:760px"><h2>Here’s everything you get when you upgrade to VIP today</h2></div>
     <div class="value-stack reveal">
       <div class="vs-img"><img src="images/valuestack.jpg" alt="VIP upgrade"></div>
       <div class="vs-line"><span class="vs-tick">✓</span><div class="vs-desc"><b>[VIP-only live Q&amp;A / hot seat]</b></div><div class="vs-val"><span class="val-amt">$297</span><span class="val-lbl">value</span></div></div>
@@ -240,61 +167,66 @@
       <div class="vs-line"><span class="vs-tick">✓</span><div class="vs-desc"><b>[Inner-circle community access]</b></div><div class="vs-val"><span class="val-amt">$197</span><span class="val-lbl">value</span></div></div>
       <div class="vs-bonus"><span class="vs-tick">★</span><div class="vs-desc"><span class="bonus-tag">🎁 VIP Fast-Action Bonus</span><b>[Only if you upgrade now]</b></div><div class="vs-val"><span class="val-amt">$97</span><span class="val-lbl">value</span></div></div>
       <div class="vs-total">
-        <div class="normally">Total value: <s>$1,085</s></div>
-        <div class="today">Yours today for just <span class="hl">[$47]</span></div>
+        <div class="normally">Normally: <s>$1,085</s></div>
+        <div class="today">Today just <span class="hl">[$47]</span></div>
       </div>
       <div class="decision">
         <a href="#yes-vip" class="btn btn--lg btn--block" data-cta><span class="btn-main">✅ Yes! Upgrade Me To VIP — [$47]</span><span class="btn-sub">One-time offer · instant access · keep it all</span></a>
-        <a href="#decline" class="decline">No thanks — I understand this is the only time I’ll be offered the VIP shortcut at this price, but I’d rather do it the slow way on my own. Take me to my confirmation.</a>
+        <a href="#decline" class="decline">No thanks — I understand this is the only time I’ll be offered this, but I’d rather do it the slow way on my own. Take me to my confirmation.</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 10 · LIMITED-SPOTS SCARCITY -->
+<!-- 8 · "WHAT I'VE LEARNED IN 20+ YEARS" (centered block) ─────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="block reveal">
+      <span class="kick">One last thing…</span>
+      <!-- SLOT: headline -->
+      <h2>Here’s what I’ve learned after doing this for years</h2>
+      <p>The people who go <strong>all in</strong> are the ones who actually get the result. Every single time. It’s not about talent — it’s about the decision.</p>
+      <div class="inline-img"><img src="images/step3.jpg" alt=""></div>
+      <p>So the only question is: are you going to give yourself the best possible chance — or try to figure it out the slow way?</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · VALUE-STACK BOX #2 — REPEATED (dark) ─────────────────────────────── -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="section-head reveal" style="max-width:760px"><h2>Upgrade to VIP now and you’ll get</h2></div>
+    <div class="value-stack reveal">
+      <div class="vs-img"><img src="images/valuestack.jpg" alt="VIP upgrade"></div>
+      <div class="vs-line"><span class="vs-tick">✓</span><div class="vs-desc"><b>[VIP-only live Q&amp;A / hot seat]</b></div><div class="vs-val"><span class="val-amt">$297</span><span class="val-lbl">value</span></div></div>
+      <div class="vs-line"><span class="vs-tick">✓</span><div class="vs-desc"><b>[Done-for-you templates &amp; toolkit]</b></div><div class="vs-val"><span class="val-amt">$297</span><span class="val-lbl">value</span></div></div>
+      <div class="vs-line"><span class="vs-tick">✓</span><div class="vs-desc"><b>[Lifetime recordings &amp; replays]</b></div><div class="vs-val"><span class="val-amt">$197</span><span class="val-lbl">value</span></div></div>
+      <div class="vs-line"><span class="vs-tick">✓</span><div class="vs-desc"><b>[Inner-circle community access]</b></div><div class="vs-val"><span class="val-amt">$197</span><span class="val-lbl">value</span></div></div>
+      <div class="vs-bonus"><span class="vs-tick">★</span><div class="vs-desc"><span class="bonus-tag">🎁 VIP Fast-Action Bonus</span><b>[Only if you upgrade now]</b></div><div class="vs-val"><span class="val-amt">$97</span><span class="val-lbl">value</span></div></div>
+      <div class="vs-total">
+        <div class="normally">Normally: <s>$1,085</s></div>
+        <div class="today">Today just <span class="hl">[$47]</span></div>
+      </div>
+      <div class="decision">
+        <a href="#yes-vip" class="btn btn--lg btn--block" data-cta><span class="btn-main">✅ Yes! Upgrade Me To VIP — [$47]</span><span class="btn-sub">One-time offer · instant access · keep it all</span></a>
+        <a href="#decline" class="decline">No thanks — take me to my confirmation and I’ll figure it out on my own.</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · "ONE MORE THING" (centered block) + final CTA ────────────────────── -->
 <section class="section section--alt">
-  <div class="container reveal">
-    <div class="spots">
-      <!-- SLOT: real scarcity reason + number -->
-      <p><span class="n">⚠ Only [500] VIP spots are available.</span></p>
-      <p style="margin:.5rem 0 0; color:var(--color-muted)">VIP is capped so we can keep the live sessions intimate. Once they’re gone, they’re gone — and this page won’t be shown again.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 11 · GO ALL IN + SIGNATURE -->
-<section class="section center">
-  <div class="container narrow reveal">
-    <span class="eyebrow">One decision</span>
-    <h2 style="max-width:640px; margin-inline:auto">Are you going to stay on the sidelines — or give yourself the best possible chance?</h2>
-    <p class="lede" style="margin:1rem auto 1.5rem; max-width:560px">The people who go all in are the ones who get the result. This is your fast-pass. Grab it before you leave this page.</p>
-    <p class="sig">— [Coach Name]</p>
-  </div>
-</section>
-
-<!-- 12 · FINAL "THE RUNDOWN" RECAP + countdown + CTA#5 ────────────────────── -->
-<section class="section section--alt center" style="padding-top:0">
-  <div class="container narrow reveal">
-    <div class="section-head" style="max-width:700px"><span class="eyebrow">Here’s the rundown of what you get</span><h2>Everything, one more time</h2></div>
-    <!-- SLOT: quick recap bullets -->
-    <ul class="bullets" style="max-width:520px; margin:0 auto var(--space-5); text-align:left">
-      <li><span class="tick">✓</span><span>[VIP-only live Q&amp;A / hot seat]</span></li>
-      <li><span class="tick">✓</span><span>[Done-for-you templates &amp; toolkit]</span></li>
-      <li><span class="tick">✓</span><span>[Lifetime recordings &amp; replays]</span></li>
-      <li><span class="tick">✓</span><span>[Inner-circle community access]</span></li>
-      <li><span class="tick">✓</span><span>🎁 [Fast-action bonus]</span></li>
-    </ul>
-    <p class="today" style="font-family:var(--font-display); font-weight:800; font-size:clamp(1.6rem,1.2rem+2vw,2.4rem); color:var(--color-ink); margin-bottom:var(--space-4)">Normally <s style="opacity:.5">$1,085</s> — today just <span class="hl">[$47]</span></p>
-
-    <div class="countdown on-light" data-deadline="2026-03-14T12:00:00-04:00" style="justify-content:center; margin-bottom:var(--space-5)">
-      <div class="unit"><div class="n" data-cd="h">00</div><div class="l">Hrs</div></div>
-      <div class="unit"><div class="n" data-cd="m">00</div><div class="l">Min</div></div>
-      <div class="unit"><div class="n" data-cd="s">00</div><div class="l">Sec</div></div>
-    </div>
-
-    <div class="decision">
-      <a href="#yes-vip" class="btn btn--lg" data-cta><span class="btn-main">✅ Yes! Upgrade Me To VIP — [$47]</span><span class="btn-sub">One-time offer · instant access · keep it all</span></a>
-      <a href="#decline" class="decline">No thanks — take me to my confirmation and I’ll figure it out on my own.</a>
+  <div class="container">
+    <div class="block reveal">
+      <span class="kick">One more thing…</span>
+      <!-- SLOT: closing -->
+      <h2>This is the only time you’ll see this offer</h2>
+      <p>Once you leave this page, the VIP upgrade is gone — and it won’t be offered again at this price. You’re one click away from going all in.</p>
+      <div class="decision" style="margin-top:var(--space-5)">
+        <a href="#yes-vip" class="btn btn--lg" data-cta><span class="btn-main">✅ Yes! Upgrade Me To VIP — [$47]</span><span class="btn-sub">One-time offer · instant access · keep it all</span></a>
+        <a href="#decline" class="decline">No thanks — take me to my confirmation.</a>
+      </div>
     </div>
   </div>
 </section>

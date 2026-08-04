@@ -355,12 +355,54 @@ strong{ font-weight:700; }
 .value-stack .vs-val .val-amt{ display:block; font-family:var(--font-display); font-weight:800; color:#5be08a; }
 .value-stack .vs-val .val-lbl{ display:block; font-size:.78rem; color:var(--color-dark-muted); }
 
-/* VIP component deep-dive rows (alternating image + text) */
-.features{ display:grid; gap:var(--space-4); }
-.feature{ display:grid; grid-template-columns:1fr 1.1fr; gap:var(--space-6); align-items:center; }
-/* each deliverable = a clean white card with subtle border + shadow */
-.features .feature{ padding:var(--space-6); border-radius:var(--radius-lg); background:var(--color-paper); border:1px solid var(--color-line); box-shadow:var(--shadow-sm); }
-.feature.rev .feature-img{ order:2; }
+/* Russell-style CENTERED single-column content blocks (the actual framework) */
+.block{ max-width:680px; margin-inline:auto; text-align:center; }
+.block + .block{ margin-top:var(--space-7); }
+.block .kick{ display:block; font-family:var(--font-display); font-weight:800; font-size:.85rem; text-transform:uppercase; letter-spacing:.14em; color:var(--color-accent); margin-bottom:.6rem; }
+.block h2{ margin-bottom:var(--space-4); }
+.block p{ color:var(--color-muted); }
+.block p + p{ margin-top:var(--space-3); }
+.inline-img{ max-width:540px; aspect-ratio:16/11; margin:var(--space-5) auto 0; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); }
+.inline-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+.block ul.bullets{ text-align:left; max-width:500px; margin:var(--space-4) auto 0; }
+
+/* ===== VIP OTO — Russell-style TOP sections ================================= */
+/* light hero */
+.oto-hero{ position:relative; background:#f4f7fb; color:var(--color-ink); text-align:center; padding:var(--space-5) var(--space-4) 40px; }
+.oto-hero .container{ position:relative; z-index:2; }
+.step-pill{ display:inline-flex; align-items:center; gap:.7rem; border:1px dashed #c3d0e3; border-radius:var(--radius-pill); padding:.6rem 1.3rem; font-family:var(--font-display); font-weight:700; font-size:1.1rem; color:var(--color-ink); margin-bottom:var(--space-4); }
+.step-pill .sp-badge{ background:var(--color-bad); color:#fff; border-radius:var(--radius-pill); padding:.3rem .9rem; font-size:.92rem; letter-spacing:.04em; }
+.congrats{ font-family:var(--font-display); font-weight:800; letter-spacing:.07em; text-transform:uppercase; font-size:1.6rem; margin-bottom:var(--space-3); color:#16233f; }
+.congrats .red{ color:var(--color-bad); }
+.oto-hero h1{ color:#16233f; max-width:900px; margin:0 auto var(--space-4); }
+.script{ font-style:italic; color:#5b8fd0; }
+.cd-box{ display:inline-flex; align-items:center; gap:1.2rem; flex-wrap:wrap; justify-content:center; background:#fff; border:1px solid #dbe3ef; border-radius:10px; padding:.85rem 2rem; box-shadow:var(--shadow-sm); }
+.cd-label{ font-family:var(--font-display); font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--color-muted); font-size:1.05rem; }
+.cd-box .countdown .unit{ border-radius:6px; }
+.cd-box .countdown .unit .n{ font-size:1.9rem; }
+/* VSL: red bar + video, overlapping down into the navy band below (≈40px gap to card) */
+.vsl{ max-width:820px; margin:var(--space-5) auto 0; border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-lg); position:relative; z-index:3; }
+.vsl-bar{ background:var(--color-bad); color:#fff; font-family:var(--font-display); font-weight:700; text-align:center; padding:.55rem 1rem; font-size:.92rem; }
+.vsl .media{ border-radius:0; aspect-ratio:16/9; box-shadow:none; border:0; }
+
+/* navy letter section with a white 2-column card */
+.oto-letter{ padding-block:var(--space-6); }
+.letter-card{ background:#fff; color:var(--color-ink); border-radius:var(--radius-lg); box-shadow:var(--shadow-lg); padding:var(--space-6); max-width:960px; margin-inline:auto; display:grid; grid-template-columns:1.15fr .85fr; gap:var(--space-6); align-items:center; }
+.letter-card .lc-text p{ margin-bottom:var(--space-3); }
+.letter-card .lc-media img{ width:100%; border-radius:var(--radius-md); }
+
+/* generic two-column (image + text) */
+.two-col{ display:grid; grid-template-columns:1fr 1fr; gap:var(--space-6); align-items:center; }
+.two-col .tc-text p{ color:var(--color-muted); margin-bottom:var(--space-3); }
+.two-col .tc-img{ aspect-ratio:4/3; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); }
+.two-col .tc-img img{ width:100%; height:100%; object-fit:cover; }
+.sec-divider{ display:flex; align-items:center; gap:1rem; justify-content:center; max-width:320px; margin:var(--space-4) auto var(--space-6); color:var(--color-accent); font-size:1.1rem; }
+.sec-divider::before,.sec-divider::after{ content:""; height:1px; background:var(--color-line); flex:1; }
+
+@media (max-width:860px){
+  .letter-card{ grid-template-columns:1fr; }
+  .two-col{ grid-template-columns:1fr; }
+}
 .feature-img{ aspect-ratio:4/3; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md);
   background:linear-gradient(135deg,#eef0f3,#dfe2e7); display:grid; place-items:center; color:#6b7280; text-align:center; font-size:.85rem; }
 .feature-img img{ width:100%; height:100%; object-fit:cover; border-radius:inherit; }
@@ -446,9 +488,8 @@ strong{ font-weight:700; }
   background:var(--color-paper); border-top:1px solid var(--color-line); padding:.7rem var(--space-4); box-shadow:0 -6px 24px rgba(15,20,32,.14); }
 
 /* ---------- scroll reveal ---------- */
-.js .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
-.js .reveal.in{ opacity:1; transform:none; }
-@media (prefers-reduced-motion:reduce){ .js .reveal{ opacity:1; transform:none; transition:none; } }
+/* reveal: content is ALWAYS visible; add a gentle rise only once revealed */
+.js .reveal{ opacity:1; transform:none; transition:opacity .5s ease, transform .5s ease; }
 
 /* ---------- brand bar ---------- */
 .brandbar{ background:var(--color-paper); border-bottom:1px solid var(--color-line); padding:.55rem var(--space-4); display:flex; align-items:center; justify-content:center; gap:.6rem; }
