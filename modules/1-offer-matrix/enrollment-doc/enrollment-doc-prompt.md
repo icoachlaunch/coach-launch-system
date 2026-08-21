@@ -225,7 +225,7 @@ CLIENT's avatar. Never put Matthew's story, numbers, or results inside a client'
 
 ### RULE 11 — PRESENT THE OFFER AT THE EVENT; THE DOC AMPLIFIES (adapted for no-call closes)
 - The Enrollment Doc gets you MORE sales on top of the offer you make at your event — it does NOT replace running the event and making the offer live.
-- Adapt to the close: for the Enrollment Close and the Strategy/Audit Close, present the offer live and the doc catches the rest. For the Deposit Close (no call, Phase 4), the doc carries more of the weight — but it still supports a real event.
+- Adapt to the close: for the Expert Close and the Strategy/Audit Close, present the offer live and the doc catches the rest. For the Deposit Close (no call, Phase 4), the doc carries more of the weight — but it still supports a real event.
 - WHY: Hiding the price and sending people to "go read the doc" tanks live conversions. The doc is the amplifier, not the whole engine.
 
 ### RULE 12 — LINK INTEGRITY
@@ -261,7 +261,7 @@ so those assets must exist first.
 
 **What each asset feeds into the Enrollment Doc:**
 - **The SCORE™ Card** → the narrative of the letter: the headline (Offer Name), the 3 Key Problems, the Discovery Story, the Testimonials, the Secret Ingredients (system reveal), and the stakes. You reproduce these; you don't rewrite them.
-- **The Money Model** → the core price and the close. The chosen close (Enrollment / Strategy-Audit / Deposit) sets the CTA and orders the letter.
+- **The Money Model** → the core price and the close. The chosen close (Expert / Strategy-Audit / Deposit) sets the CTA and orders the letter.
 
 **If the SCORE™ Card is missing or incomplete:**
 > "Your Enrollment Doc is built FROM your SCORE™ Card — it arranges those blocks and adds the offer
@@ -350,7 +350,7 @@ proximity to you is the core value of the top tier. That's by design, not a conf
 
 ### THE THREE CLOSES (canon — the CTA uses the one locked in the Money Model)
 There are exactly three closes. Do NOT invent a fourth. Pull the client's chosen close from their locked Money Model, and order the letter's CTA to it.
-1. **Enrollment Close** — the offer is made and they enroll on the spot (One Day Offer, no call). Default Phase 1. → CTA = enrollment link + "what happens when you join" + final choice.
+1. **The Expert Close** — the offer is made and they enroll on the spot (One Day Offer, no call). Default Phase 1. → CTA = enrollment link + "what happens when you join" + final choice.
 2. **Strategy / Audit Close** — they book a session and close there. Free early (Phase 2), paid as the pitch sharpens (Phase 3). High-ticket. → CTA = book the session; stack what they walk away with either way; plant the seed of working together.
 3. **Deposit Close** — a $997 deposit buys the high-ticket offer with no call. Default Phase 4. → CTA = place the deposit; make the terms and what-happens-next crystal clear; the doc carries the close.
 
@@ -432,7 +432,7 @@ Start with this:
 > • Your Testimonials (O-3): [count] — [names]
 >
 > **From your Money Model**
-> • Phase: [ ] · Core offer + price: [ ] · Your close: [Enrollment / Strategy-Audit / Deposit]
+> • Phase: [ ] · Core offer + price: [ ] · Your close: [Expert / Strategy-Audit / Deposit]
 >
 > Is all of this current? Anything to update before we build?"
 
@@ -631,7 +631,7 @@ splitting. Build every REQUIRED block; skip OPTIONAL blocks honestly.
 > ---
 >
 > **YOUR CTA** — [built to the locked close]
-> [Enrollment Close: offer + price, [YOUR ENROLLMENT LINK], "what happens when you join" (3 steps
+> [The Expert Close: offer + price, [YOUR ENROLLMENT LINK], "what happens when you join" (3 steps
 > starting at Stage 1 of the Magic Formula™), final choice. / Strategy-Audit Close: book the session
 > (free or paid per the Money Model), stack what they walk away with either way, [YOUR BOOKING LINK],
 > plant the seed. / Deposit Close: place the $997 deposit toward the [price] offer, no call, terms and
@@ -728,7 +728,7 @@ so nothing truncates. Then proceed to STEP 7 (deployment) and STEP 8 (maintenanc
 > 4. **Let it work after.** Everyone who didn't buy in the room now has everything they need to decide on
 >    their own time.
 >
-> **[Adapt to your close]:** with the Enrollment Close and the Strategy/Audit Close, present live and the
+> **[Adapt to your close]:** with the Expert Close and the Strategy/Audit Close, present live and the
 > doc catches the rest. With the Deposit Close (no call), the doc carries more of the weight — but it
 > still runs alongside a real event.
 >
@@ -912,7 +912,7 @@ to the client's close. Output every block IN FULL — no compression. If the pla
 >
 > ## DEPLOYMENT NOTES
 > - Present your offer at your event; drop this doc after; let it catch everyone who didn't buy in the room.
-> - Adapt to your close: Enrollment / Strategy-Audit = present live, doc amplifies; Deposit (no call) = doc carries more weight, still runs alongside a real event.
+> - Adapt to your close: Expert / Strategy-Audit = present live, doc amplifies; Deposit (no call) = doc carries more weight, still runs alongside a real event.
 > - Reuse it: after a session, in email, in DMs, in your replay description, for referrals.
 > - Keep the price in the doc so your event recordings stay evergreen.
 >

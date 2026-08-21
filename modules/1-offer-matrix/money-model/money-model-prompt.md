@@ -220,7 +220,7 @@ Each phase is a complete little money model. Match the user to where they ARE, n
 
 | Phase | Validates | Event | Cash-in (tickets/VIP) | Close / CTA | Core offer | Goal |
 |---|---|---|---|---|---|---|
-| **1 · Launch** | Message | Micro Event:<br>(60–90 min) | Free + Survey + Bribe | Enrollment Close | One Day Offer | First 3–5 paying clients |
+| **1 · Launch** | Message | Micro Event:<br>(60–90 min) | Free + Survey + Bribe | The Expert Close | One Day Offer | First 3–5 paying clients |
 | **2 · Execute** | Offer | Single-Day Event:<br>(90–120 min) | Free + VIP $47 | Strategy/Audit Close (free) | Beta Offer $3K+ | First $25,000/month |
 | **3 · Growth** | Pitch | Single-Day Event:<br>(180–240 min) | $27 + 1 bump + $97 VIP | Strategy/Audit Close (paid) | Full Offer $5K+ | First $50,000/month |
 | **4 · Mastery** | Scale | Multi-Day Event:<br>(60–180 min/day) | $97 + 2 bumps + 2-option VIP | Deposit Close ($997, no call) | Full Offer $10K+ | First $100,000/month |
@@ -230,11 +230,11 @@ The deeper the event, the higher the price and close rate. Never sell the Master
 
 ### THE THREE CLOSES (canon) — the user picks the one that fits their offer/phase; it deepens as they climb
 There are exactly three closes. Do NOT invent a fourth.
-1. **Enrollment Close** — you make the offer and they enroll on the spot. Closes a **One Day Offer**. No sales call (direct). Default for Phase 1.
+1. **The Expert Close** — you make the offer and they enroll on the spot. Closes a **One Day Offer**. No sales call (direct). Default for Phase 1.
 2. **Strategy / Audit Close** — they book a strategy or audit session and you close there. **Free** early (Phase 2, Beta $3K+), **Paid** as the pitch sharpens (Phase 3, Full $5K+). Closes **high-ticket**. A paid session filters for serious buyers who show and close far better.
 3. **Deposit Close** — they put down a **$997 deposit** and buy the high-ticket offer **without a sales call**. Default for Phase 4 (Full $10K+).
 
-Default phase ladder: Enrollment (P1) → Strategy/Audit free (P2) → Strategy/Audit paid (P3) → Deposit (P4). The user CHOOSES the close that fits — default to the phase's, allow a different one if it fits their offer, and rerun the model when the phase (and close) changes.
+Default phase ladder: Expert (P1) → Strategy/Audit free (P2) → Strategy/Audit paid (P3) → Deposit (P4). The user CHOOSES the close that fits — default to the phase's, allow a different one if it fits their offer, and rerun the model when the phase (and close) changes.
 
 ### Benchmark ranges — GENERAL starting-points only, [CONFIRM] with Matthew before client use
 Present these as "typical ranges — use your own numbers as you get them," NOT as Coach Launch promises.
@@ -419,7 +419,7 @@ in plain language. Never place them above where they are.
 ---
 
 Phase reference (from canon — fill the brackets above):
-- **Phase 1 · Launch** — Micro Event (60–90 min); Free + Survey + Bribe; **Enrollment Close**; One Day Offer; goal first 3–5 clients. Validates the MESSAGE.
+- **Phase 1 · Launch** — Micro Event (60–90 min); Free + Survey + Bribe; **The Expert Close**; One Day Offer; goal first 3–5 clients. Validates the MESSAGE.
 - **Phase 2 · Execute** — Single-Day Event 90–120 min; Free + VIP $47; **Strategy/Audit Close (free)**; Beta Offer $3K+; goal first $25K/month. Validates the OFFER.
 - **Phase 3 · Growth** — Single-Day Event 180–240 min; $27 + 1 bump + $97 VIP; **Strategy/Audit Close (paid)**; Full Offer $5K+; goal first $50K/month. Validates the PITCH.
 - **Phase 4 · Mastery** — Multi-Day Event 60–180 min/day; $97 + 2 bumps + 2-option VIP; **Deposit Close ($997, no call)**; Full Offer $10K+; goal first $100K/month. Validates SCALE.
@@ -509,13 +509,13 @@ choice (one of the three), not an afterthought. Default to the phase's close; al
 > price, and any order bumps.
 >
 > **The close — you've got three, and you pick the one that fits your offer and phase:**
-> 1. **Enrollment Close** — you make the offer and they enroll on the spot. Closes a **One Day Offer**. No sales call.
+> 1. **The Expert Close** — you make the offer and they enroll on the spot. Closes a **One Day Offer**. No sales call.
 > 2. **Strategy / Audit Close** — they book a strategy or audit session and you close there. **Free** early, **paid**
 >    as your pitch sharpens. Closes **high-ticket ($3K–$5K+)**.
 > 3. **Deposit Close** — they put down a **$997 deposit** and buy — **high ticket without a call**. Closes **$10K+**.
 >
 > For **Phase [N]**, your natural default is the **[phase default close]** into your **[phase offer]**.
-> The close deepens as you climb: Enrollment → Strategy/Audit (free) → Strategy/Audit (paid) → Deposit. When you
+> The close deepens as you climb: Expert → Strategy/Audit (free) → Strategy/Audit (paid) → Deposit. When you
 > graduate a phase, you rerun this model and lock the new close.
 >
 > **Which close are you running?** (Confirm the default, or pick the one that fits your offer.)
@@ -530,7 +530,7 @@ choice (one of the three), not an afterthought. Default to the phase's close; al
 
 ---
 
-Phase-default close (fill [phase default close] above): P1 **Enrollment Close** · P2 **Strategy/Audit Close (free)** ·
+Phase-default close (fill [phase default close] above): P1 **The Expert Close** · P2 **Strategy/Audit Close (free)** ·
 P3 **Strategy/Audit Close (paid)** · P4 **Deposit Close ($997, no call)**. Default to the phase's; allow the user to
 choose a different one of the three if it fits their offer. NEVER invent a fourth close.
 
@@ -591,7 +591,7 @@ After they confirm mechanics, deliver this report inline:
 > |---|---|
 > | Event | [format] |
 > | Cash-in (self-liquidation) | [tickets/VIP/bumps + prices] |
-> | Close | [Enrollment Close / Strategy-Audit Close (free or paid) / Deposit Close] |
+> | Close | [The Expert Close / Strategy-Audit Close (free or paid) / Deposit Close] |
 > | Core offer | [name] at **[$PRICE]** |
 > | 90-day goal | [$GOAL] |
 >
