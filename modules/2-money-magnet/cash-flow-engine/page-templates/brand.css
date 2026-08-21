@@ -375,7 +375,11 @@ strong{ font-weight:700; }
 .congrats{ font-family:var(--font-display); font-weight:800; letter-spacing:.07em; text-transform:uppercase; font-size:1.6rem; margin-bottom:var(--space-3); color:#16233f; }
 .congrats .red{ color:var(--color-bad); }
 .oto-hero h1{ color:#16233f; max-width:900px; margin:0 auto var(--space-4); }
-.script{ font-style:italic; color:#5b8fd0; }
+.script{ font-family:"Playfair Display", Georgia, serif; font-style:italic; font-weight:500; color:#5b8fd0; }
+.section--dark .script, .oto-hero .script{ color:#7fb0e6; }
+.countdown .sep{ font-family:var(--font-display); font-weight:800; font-size:1.5rem; line-height:1; align-self:center; color:var(--color-dark-muted); }
+.countdown.on-light .sep{ color:#aab2c0; }
+.feature-emoji{ display:block; font-size:2.4rem; line-height:1; margin-bottom:.4rem; }
 .cd-box{ display:inline-flex; align-items:center; gap:1.2rem; flex-wrap:wrap; justify-content:center; background:#fff; border:1px solid #dbe3ef; border-radius:10px; padding:.85rem 2rem; box-shadow:var(--shadow-sm); }
 .cd-label{ font-family:var(--font-display); font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--color-muted); font-size:1.05rem; }
 .cd-box .countdown .unit{ border-radius:6px; }
@@ -406,7 +410,7 @@ strong{ font-weight:700; }
 .feature-img{ aspect-ratio:4/3; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md);
   background:linear-gradient(135deg,#eef0f3,#dfe2e7); display:grid; place-items:center; color:#6b7280; text-align:center; font-size:.85rem; }
 .feature-img img{ width:100%; height:100%; object-fit:cover; border-radius:inherit; }
-.feature .val-badge{ display:inline-block; font-family:var(--font-display); font-weight:800; font-size:.8rem; color:var(--color-accent);
+.val-badge{ display:inline-block; font-family:var(--font-display); font-weight:800; font-size:.8rem; color:var(--color-accent);
   background:color-mix(in srgb, var(--color-accent) 12%, transparent); padding:.28rem .7rem; border-radius:var(--radius-pill); margin-bottom:.6rem; }
 .feature h3{ margin-bottom:var(--space-2); }
 .feature > div > p{ color:var(--color-muted); margin-bottom:var(--space-3); }
@@ -546,3 +550,14 @@ strong{ font-weight:700; }
   .agenda .step-side{ order:-1; }
   .sticky-cta{ display:block; }
 }
+
+/* ---------- persistent sticky bottom bar (countdown + CTA), Russell-style ---------- */
+.sticky-bar{ position:fixed; left:0; right:0; bottom:0; z-index:50; background:var(--color-paper);
+  border-top:1px solid var(--color-line); box-shadow:0 -6px 24px rgba(15,20,32,.14); padding:.5rem var(--space-4); }
+.sticky-bar .inner{ max-width:var(--maxw); margin-inline:auto; display:flex; align-items:center; justify-content:center; gap:var(--space-5); flex-wrap:wrap; }
+.sticky-bar .sb-label{ font-family:var(--font-display); font-weight:700; text-transform:uppercase; letter-spacing:.05em; font-size:.9rem; color:var(--color-muted); }
+.sticky-bar .countdown .unit{ padding:.3rem .5rem; min-width:46px; }
+.sticky-bar .countdown .unit .n{ font-size:1.15rem; }
+.sticky-bar .btn{ padding:.7rem 1.7rem; font-size:1.02rem; }
+body:has(.sticky-bar){ padding-bottom:88px; }
+@media (max-width:640px){ .sticky-bar .sb-label{ display:none; } .sticky-bar .inner{ gap:var(--space-3); } .sticky-bar .btn{ flex:1 1 auto; } }

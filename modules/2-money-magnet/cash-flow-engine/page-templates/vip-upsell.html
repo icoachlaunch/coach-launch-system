@@ -7,7 +7,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500;1,600&family=Sora:wght@400;600;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="brand.css">
 
 <!--
@@ -51,9 +51,11 @@
     <div class="cd-box">
       <span class="cd-label">Upgrade closes in</span>
       <div class="countdown on-light" data-deadline="2026-03-14T12:00:00-04:00">
-        <div class="unit"><div class="n" data-cd="h">00</div><div class="l">Hrs</div></div>
-        <div class="unit"><div class="n" data-cd="m">00</div><div class="l">Min</div></div>
-        <div class="unit"><div class="n" data-cd="s">00</div><div class="l">Sec</div></div>
+        <div class="unit"><div class="n" data-cd="h">00</div><div class="l">Hours</div></div>
+        <div class="sep">:</div>
+        <div class="unit"><div class="n" data-cd="m">00</div><div class="l">Minutes</div></div>
+        <div class="sep">:</div>
+        <div class="unit"><div class="n" data-cd="s">00</div><div class="l">Seconds</div></div>
       </div>
     </div>
     <!-- SLOT: VSL ← red bar + video. Swap .media for your embed. -->
@@ -110,48 +112,65 @@
   </div>
 </section>
 
-<!-- 5 · "THE UNFAIR ADVANTAGE" (centered block) ──────────────────────────── -->
-<section class="section">
+<!-- 4 · "THE UNFAIR ADVANTAGE" - dark navy band + white invite box (Russell) -->
+<section class="section section--dark">
   <div class="container">
-    <div class="block reveal">
-      <span class="kick">The “unfair advantage”</span>
-      <!-- SLOT: headline + subhead -->
-      <h2>How would you like to get up and running in <span class="hl">minutes instead of weeks</span>?</h2>
-      <p>[…so you can get the result 10× faster and easier than doing it the slow way, alone.]</p>
-      <div class="inline-img"><img src="images/host.jpg" alt=""></div>
-      <p>Here’s exactly what the VIP upgrade gives you when you say yes today…</p>
+    <div class="section-head reveal" style="max-width:880px">
+      <span class="eyebrow">The "unfair advantage"</span>
+      <h2>How would you like the <span class="script">unfair advantage</span> that gets you up and running in <span class="hl">minutes instead of weeks</span>?</h2>
+    </div>
+    <div class="reveal" style="max-width:720px;margin:0 auto var(--space-6);background:#fff;color:var(--color-ink);border-radius:var(--radius-lg);padding:var(--space-5) var(--space-6);box-shadow:var(--shadow-lg);text-align:center">
+      <p style="margin:0">If that's what you want, then I want to <b>exclusively invite you</b> to upgrade to the <b>[VIP Experience]</b> today &mdash; so you get the result <b>10&times; faster and easier</b> than doing it the slow way, alone.</p>
+    </div>
+    <div class="two-col reveal">
+      <div class="tc-img"><img src="images/host.jpg" alt=""></div>
+      <div class="tc-text">
+        <p style="color:var(--color-dark-ink)">During the event you get everything you need to succeed. But the VIP upgrade? <b>That's where it all clicks.</b></p>
+        <p style="color:var(--color-dark-ink)">Here's exactly what it unlocks the moment you say yes today&hellip;</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 6 · DELIVERABLES — centered blocks (emoji heading + text + image) ──────── -->
+<!-- 5 · DELIVERABLES - 2-column alternating (image + text), Russell-style -->
 <section class="section section--alt">
-  <div class="container">
-    <div class="block reveal">
-      <span class="kick">🎟️ Included with VIP</span>
-      <h2>[VIP-only live Q&amp;A / hot seat]</h2>
-      <p>[What it is and why it matters — extra live time to get your exact questions answered so you never stay stuck.]</p>
-      <div class="inline-img"><img src="images/step2.jpg" alt=""></div>
+  <div class="container stack" style="gap:var(--space-7)">
+
+    <div class="two-col reveal">
+      <div class="tc-text">
+        <span class="feature-emoji">🎟️</span>
+        <span class="val-badge">$297 value</span>
+        <h2>Exclusive <span class="script">VIP-only Q&amp;A</span> &amp; hot seats</h2>
+        <p>[What it is and why it matters &mdash; extra live time to get your exact questions answered, so you never stay stuck.]</p>
+      </div>
+      <div class="tc-img"><img src="images/step2.jpg" alt=""></div>
     </div>
 
-    <div class="block reveal">
-      <span class="kick">🧰 Included with VIP</span>
-      <h2>[Done-for-you templates &amp; toolkit]</h2>
-      <p>[Implement in minutes, not weeks — everything filled in and ready to plug into your funnel.]</p>
-      <ul class="bullets">
-        <li><span class="tick">✓</span><span>[What’s inside 1]</span></li>
-        <li><span class="tick">✓</span><span>[What’s inside 2]</span></li>
-        <li><span class="tick">✓</span><span>[What’s inside 3]</span></li>
-      </ul>
-      <div class="inline-img"><img src="images/valuestack.jpg" alt=""></div>
+    <div class="two-col reveal">
+      <div class="tc-img"><img src="images/valuestack.jpg" alt=""></div>
+      <div class="tc-text">
+        <span class="feature-emoji">🧰</span>
+        <span class="val-badge">$297 value</span>
+        <h2>Done-for-you <span class="script">templates &amp; toolkit</span></h2>
+        <p>[Implement in minutes, not weeks &mdash; everything filled in and ready to plug into your funnel.]</p>
+        <ul class="bullets">
+          <li><span class="tick">✓</span><span>[What's inside 1]</span></li>
+          <li><span class="tick">✓</span><span>[What's inside 2]</span></li>
+          <li><span class="tick">✓</span><span>[What's inside 3]</span></li>
+        </ul>
+      </div>
     </div>
 
-    <div class="block reveal">
-      <span class="kick">🎥 Included with VIP</span>
-      <h2>[Lifetime recordings &amp; replays]</h2>
-      <p>[Rewatch the whole event anytime, forever — never miss a thing.]</p>
-      <div class="inline-img"><img src="images/step1.jpg" alt=""></div>
+    <div class="two-col reveal">
+      <div class="tc-text">
+        <span class="feature-emoji">🎥</span>
+        <span class="val-badge">$197 value</span>
+        <h2>Lifetime <span class="script">recordings &amp; replays</span></h2>
+        <p>[Rewatch the whole event anytime, forever &mdash; never miss a thing.]</p>
+      </div>
+      <div class="tc-img"><img src="images/step1.jpg" alt=""></div>
     </div>
+
   </div>
 </section>
 
@@ -239,6 +258,21 @@
     <p class="disclaimer">Results shown are illustrative and are not a guarantee of your results. [Insert the client’s earnings/results disclaimer here.] © [Year] [Brand Name]. All rights reserved.</p>
   </div>
 </footer>
+
+<!-- STICKY BOTTOM BAR — persistent countdown + CTA (Russell) -->
+<div class="sticky-bar">
+  <div class="inner">
+    <span class="sb-label">Upgrade closes in</span>
+    <div class="countdown on-light" data-deadline="2026-03-14T12:00:00-04:00">
+      <div class="unit"><div class="n" data-cd="h">00</div><div class="l">Hrs</div></div>
+      <div class="sep">:</div>
+      <div class="unit"><div class="n" data-cd="m">00</div><div class="l">Min</div></div>
+      <div class="sep">:</div>
+      <div class="unit"><div class="n" data-cd="s">00</div><div class="l">Sec</div></div>
+    </div>
+    <a href="#yes-vip" class="btn" data-cta><span class="btn-main">Upgrade Me To VIP &mdash; [$47] &rarr;</span></a>
+  </div>
+</div>
 
 <script>
   const io = new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
