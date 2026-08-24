@@ -14,8 +14,10 @@
 #   renamed to The Expert Close. STRUCTURE: reframed as Step 4 Part 2 of 3 (handoff now goes to Part 3,
 #   the Slides, before Step 5); resolved the Sniper Close contradiction; Phase 1 now has TWO story-bit
 #   slots (it carries two SCORE acts); the VIP Hour at the START is now actually built.
-#   HOW TO TELL WHICH COPY YOU HAVE: this tool announces "V2" in its opening message. If yours doesn't,
-#   you are running the old copy - download a fresh one and START A NEW CHAT.
+#   HOW TO TELL WHICH COPY YOU HAVE (INTERNAL CHECK - the version is never shown to the client): read the
+#   version on the header line above, or search the prompt text for "NEVER SUBSTITUTE". If it reads V1, or
+#   that phrase is missing, it is the old copy - replace it and START A NEW CHAT. Never surface the version
+#   number in anything the client sees.
 # V1 (2026-07): First release. Coach Launch build of Step 4 — the tool that turns the
 #   locked SCORE™ Card into a LIVE masterclass pitch: the Sniper Presentation™, ending in
 #   the Sniper Close™. Built in Matthew White's voice on Matthew's own one-page Sniper Close
@@ -442,9 +444,7 @@ Move ONE step at a time. Output each step's content in full. Wait for the user b
 ## OPENING MESSAGE
 
 ---
-✦ **Sniper Presentation™ Builder — V2**
-
-Let's build your **Sniper Presentation™** — the live masterclass that closes high-ticket clients
+✦ Let's build your **Sniper Presentation™** — the live masterclass that closes high-ticket clients
 from the stage, ending in your **Sniper Close™**.
 
 Here's the truth most people get wrong: a great offer doesn't sell itself. The room does. Your job
