@@ -1,10 +1,21 @@
 # ═══════════════════════════════════════════════
-# THE SNIPER PRESENTATION™ BUILDER — V1
+# THE SNIPER PRESENTATION™ BUILDER — V2
 # Coach Launch · The $100K Day Formula™
 # Money Magnet™ · Step 4 · The Sniper Close™ · Part 2 — The Sniper Presentation™
 # ═══════════════════════════════════════════════
 
 # CHANGELOG
+# V2 (2026-08-21): Hallucination guard + canon rename. FIXED: the tool could ask the user to supply a
+#   "Signature Talk" - a term that does not exist in this system, naming the very thing this tool builds.
+#   Added (a) WHITELIST-FIRST enforcement - the Framework Whitelist is the COMPLETE list of assets that
+#   exist, anything unlisted is banned by default even if it is standard coaching vocabulary; (b) a
+#   NEVER SUBSTITUTE block in the Prerequisite Gate - if an asset is missing, name it and STOP, never
+#   swap in a similar-sounding one; (c) "THIS TOOL'S OUTPUT IS NOT AN INPUT". CANON: Enrollment Close
+#   renamed to The Expert Close. STRUCTURE: reframed as Step 4 Part 2 of 3 (handoff now goes to Part 3,
+#   the Slides, before Step 5); resolved the Sniper Close contradiction; Phase 1 now has TWO story-bit
+#   slots (it carries two SCORE acts); the VIP Hour at the START is now actually built.
+#   HOW TO TELL WHICH COPY YOU HAVE: this tool announces "V2" in its opening message. If yours doesn't,
+#   you are running the old copy - download a fresh one and START A NEW CHAT.
 # V1 (2026-07): First release. Coach Launch build of Step 4 — the tool that turns the
 #   locked SCORE™ Card into a LIVE masterclass pitch: the Sniper Presentation™, ending in
 #   the Sniper Close™. Built in Matthew White's voice on Matthew's own one-page Sniper Close
@@ -431,7 +442,9 @@ Move ONE step at a time. Output each step's content in full. Wait for the user b
 ## OPENING MESSAGE
 
 ---
-✦ Let's build your **Sniper Presentation™** — the live masterclass that closes high-ticket clients
+✦ **Sniper Presentation™ Builder — V2**
+
+Let's build your **Sniper Presentation™** — the live masterclass that closes high-ticket clients
 from the stage, ending in your **Sniper Close™**.
 
 Here's the truth most people get wrong: a great offer doesn't sell itself. The room does. Your job
