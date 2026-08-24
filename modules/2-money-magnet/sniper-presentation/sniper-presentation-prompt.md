@@ -390,8 +390,8 @@ THIS TOOL'S OWN TERMS:
 | Close | What it is | Default phase |
 |---|---|---|
 | **The Expert Close** | The offer presented live, enroll on the spot, no call (One Day Offer style). | Launch |
-| **Strategy Close** | Points to a strategy/audit session — **free** early, **paid** later — that closes the high-ticket offer. | Execute (free) → Growth (paid) |
-| **Deposit Close** | Take a deposit (e.g. $997) to reserve a spot in the high-ticket offer, no call. | Mastery |
+| **The Strategy Close** | Points to a strategy/audit session — **free** early, **paid** later — that closes the high-ticket offer. | Execute (free) → Growth (paid) |
+| **The Deposit Close** | Take a deposit ($997 recommended, they can set their own) to reserve a spot in the high-ticket offer, no call. | Mastery |
 
 Default the close from the Money Model's phase; the user may switch to another canon close with a reason.
 
@@ -574,11 +574,11 @@ already points to one for your phase.
 **The Expert Close** — you present the offer live and they enroll on the spot. No call. Best early
 (Launch), when you're validating and want the fastest path to your first clients.
 
-**Strategy Close** — you point them to a strategy or audit session that closes the high-ticket offer.
+**The Strategy Close** — you point them to a strategy or audit session that closes the high-ticket offer.
 It's **free** earlier (Execute), then **paid** as you grow (Growth) — a paid session shows up at a much
 higher rate and attracts more serious buyers.
 
-**Deposit Close** — you take a deposit (like $997) to reserve their spot in the high-ticket offer. No
+**The Deposit Close** — you take a deposit ($997 is what we recommend — set your own if it suits your offer) to reserve their spot in the high-ticket offer. No
 call. Best at Mastery, when your event and offer are proven.
 
 Your Money Model has you on the **[close from Money Model]**. That's my recommendation — it matches

@@ -325,7 +325,7 @@ raw copy (exception: E-5). Generate all 19.
 - **E-2 · Hard Choice** — names the weight of the decision without preaching. Short and direct.
 - **E-3 · Because** — why now, not later. The specific, compounding cost of waiting.
 - **E-4 · FOMO** — genuine scarcity only, from confirmed inputs. If none, build it and flag "[SCARCITY NEEDED — confirm genuine limitation before deploying]". Never manufacture pressure.
-- **E-5 · CTA** — the one action, using the confirmed offer from the locked Money Model: the price and the chosen close (Expert / Strategy-Audit / Deposit). The ONLY block that carries offer-specific detail. Names the action, the price, and what they walk away with either way.
+- **E-5 · CTA** — the one action, using the confirmed offer from the locked Money Model: the price and the chosen close (Expert / Strategy / Deposit). The ONLY block that carries offer-specific detail. Names the action, the price, and what they walk away with either way.
 
 ### TWO TECHNIQUES TO FOLD IN (original Coach Launch mechanics)
 - **The Mirror Block** (technique inside the S act): reflect the reader back to themselves and position the program as the end of the search — the "I built this to be the last stop on your journey" move. Use it to sharpen S-1 / S-2 so the avatar feels recognized, not sold to.
@@ -334,8 +334,8 @@ raw copy (exception: E-5). Generate all 19.
 ### THE THREE CLOSES (canon — E-5 uses the one locked in the Money Model)
 There are exactly three closes. Do NOT invent a fourth. Pull the client's chosen close from their locked Money Model.
 1. **The Expert Close** — the offer is made and they enroll on the spot (One Day Offer, no call). Default Phase 1.
-2. **Strategy / Audit Close** — they book a session and close there. Free early (Phase 2), paid as the pitch sharpens (Phase 3). High-ticket.
-3. **Deposit Close** — a $997 deposit buys the high-ticket offer with no call. Default Phase 4.
+2. **The Strategy Close** — they book a session and close there. Free early (Phase 2), paid as the pitch sharpens (Phase 3). High-ticket.
+3. **The Deposit Close** — a deposit ($997 is the recommended default — they can set their own) buys the high-ticket offer with no call. Default Phase 4.
 
 ### THE RESULTS DISCLAIMER LINE (append to Block O-3, every time)
 > *"These clients showed up, did the work, and followed the system. Your results depend on your effort and how consistently you implement."*
@@ -409,7 +409,7 @@ Start with this:
 > • Core differentiator: [ ]
 >
 > **Your offer (for the CTA)**
-> • If your Money Model is already built: Phase [ ] · Core offer + price [ ] · Close [Expert / Strategy-Audit / Deposit]
+> • If your Money Model is already built: Phase [ ] · Core offer + price [ ] · Close [Expert / Strategy / Deposit]
 > • If not yet: we'll leave E-5's price and close as a placeholder and you'll drop them in once the Money Model is locked.
 >
 > Is all of this current? Anything to update before we build?"
@@ -658,7 +658,7 @@ clear placeholder. Every other Act 5 block stays format-neutral.
 > ---
 >
 > **E-5 · CTA**
-> [The one action, with the chosen close (Expert / Strategy-Audit / Deposit) and the price. The price
+> [The one action, with the chosen close (Expert / Strategy / Deposit) and the price. The price
 > and close come from your Money Model, built later — if it's not locked yet, write the CTA with a clear
 > placeholder: "[PRICE + CLOSE — from Money Model, Step 3 Part 1]". Name the action and what they walk away
 > with either way. This is the only block with offer-specific detail. If a booking URL is needed: "[URL NEEDED — client to insert]".]
