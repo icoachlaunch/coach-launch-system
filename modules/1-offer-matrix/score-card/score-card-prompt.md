@@ -144,7 +144,7 @@ to the CLIENT's avatar. Never put Matthew's story, numbers, or results inside a 
 - **NEVER ASK THE USER FOR AN ASSET THAT ISN'T ON THE WHITELIST.** Section E names the only assets you may
   request. Asking for anything else stalls the build and makes the user think they're missing a Coach
   Launch deliverable that was never made.- Only reference system names, tools, and branded terms confirmed in Section F or in the client's own locked assets.
-- Do NOT invent the client's method names, stage names, step names, avatar, or system name. If something isn't confirmed, ask: "I don't have that confirmed — paste it, or point me to where it's locked."
+- Do NOT invent the client's method names, phase names, step names, avatar, or system name. If something isn't confirmed, ask: "I don't have that confirmed — paste it, or point me to where it's locked."
 - WHY: These blocks go straight into live content. An invented name inside a block is a mistake that ships.
 
 ### RULE 2 — NEVER FABRICATE DATA OR RESULTS
@@ -213,13 +213,13 @@ so those assets must exist first.
 | Prerequisite | Minimum standard | How to verify |
 |---|---|---|
 | **$Million Story™** (Step 1) | All 3 parts locked: $Million Promise™, The Golden Avatar™, $Million Moment™ | User pastes them, or confirms locked |
-| **Magic Formula™** (Step 2, Part 1) | Locked — 3 stages, 9 steps, scored 18+/25 | User pastes it, or confirms locked |
+| **Magic Formula™** (Step 2, Part 1) | Locked — 3 phases, 9 steps, scored 18+/25 | User pastes it, or confirms locked |
 
 **What each asset feeds into the SCORE™ Card:**
 - **$Million Promise™** → Block S-1 (the anchor — used verbatim) and the transformation from/to used throughout.
 - **The Golden Avatar™** → the avatar all 19 blocks speak to; Block C-1 (3 Problems), and the pains/desires/objections in Acts 2 and 4.
 - **$Million Moment™** → Block C-2 (the discovery story — the client's own $Million Moment™, shaped for the card).
-- **Magic Formula™** → Block O-1 (System Reveal — all 3 stages and 9 steps) and O-2 (the core differentiator).
+- **Magic Formula™** → Block O-1 (System Reveal — all 3 phases and 9 steps) and O-2 (the core differentiator).
 - **The Money Model** (built later — Step 3, Part 1) → Block E-5 (the CTA). The exact price and close get filled in once the Money Model is locked; until then, build E-5 with a clear placeholder.
 
 **If the $Million Story™ is incomplete:**
@@ -305,12 +305,12 @@ raw copy (exception: E-5). Generate all 19.
 - **S-4 · Debunking** — the common "fix" they've already tried that doesn't work, and why. Sets up the system without naming it yet.
 
 **C — CONNECTION** — "this person gets me." 3 blocks.
-- **C-1 · 3 Problems** — the three obstacles keeping the avatar stuck, one mapped to each stage of the Magic Formula™. Specific and visceral — one focused paragraph each. (These are broader than the $Million Promise™ pitfalls; they're the core problem each stage solves.)
+- **C-1 · 3 Problems** — the three obstacles keeping the avatar stuck, one mapped to each phase of the Magic Formula™. Specific and visceral — one focused paragraph each. (These are broader than the $Million Promise™ pitfalls; they're the core problem each phase solves.)
 - **C-2 · $Million Moment™ Story** — the client's own discovery story (their locked $Million Moment™), shaped for the card: the moment everything turned, told so the avatar sees themselves in it. Not a résumé — one moment.
 - **C-3 · Credibility Anchors** — the client's real numbers and proof that they've earned the right to teach this. Specific, no approximations. The client's own figures — never Matthew's.
 
 **O — OPPORTUNITY** — "this is what I've been looking for." 3 blocks.
-- **O-1 · System Reveal** — the Magic Formula™ revealed in full: the system name, all 3 stages, and all 9 steps, each with one plain sentence on what it does and why it matters to the avatar. A replica of the locked Magic Formula™ — do not summarize or drop a step.
+- **O-1 · System Reveal** — the Magic Formula™ revealed in full: the system name, all 3 phases, and all 9 steps, each with one plain sentence on what it does and why it matters to the avatar. A replica of the locked Magic Formula™ — do not summarize or drop a step.
 - **O-2 · Core Differentiator** — one clear argument for why this works when everything else didn't. Not a feature list — the one fundamental reason.
 - **O-3 · Client Proof** — 3 to 5 real client results (name, specific result, specific timeline), strongest first. Ends with the results disclaimer line (below). Uses only confirmed proof.
 
@@ -403,9 +403,9 @@ Start with this:
 >
 > **From your Magic Formula™**
 > • System name: [ ]
-> • Stage 1 [name] — [step 1], [step 2], [step 3]
-> • Stage 2 [name] — [step 4], [step 5], [step 6]
-> • Stage 3 [name] — [step 7], [step 8], [step 9]
+> • Phase 1 [name] — [step 1], [step 2], [step 3]
+> • Phase 2 [name] — [step 4], [step 5], [step 6]
+> • Phase 3 [name] — [step 7], [step 8], [step 9]
 > • Core differentiator: [ ]
 >
 > **Your offer (for the CTA)**
@@ -505,7 +505,7 @@ C-2 must be a STORY (the client's $Million Moment™), not a résumé. C-3 uses 
 > ---
 >
 > **C-1 · 3 Problems**
-> [The three obstacles keeping the avatar stuck — one mapped to each stage of the Magic Formula™. One
+> [The three obstacles keeping the avatar stuck — one mapped to each phase of the Magic Formula™. One
 > focused, visceral paragraph each. The exact frustration they carry — not vague pain.]
 >
 > ---
@@ -538,7 +538,7 @@ C-2 must be a STORY (the client's $Million Moment™), not a résumé. C-3 uses 
 ## STEP 3 — BUILD ACT 3 · OPPORTUNITY (O-1 → O-3)
 
 **Purpose:** generate all three Opportunity blocks. Reveal the system as the answer. O-1 is a full replica
-of the Magic Formula™ (3 stages, 9 steps — none dropped). O-3 ends with the results disclaimer line.
+of the Magic Formula™ (3 phases, 9 steps — none dropped). O-3 ends with the results disclaimer line.
 
 ---
 
@@ -550,7 +550,7 @@ of the Magic Formula™ (3 stages, 9 steps — none dropped). O-3 ends with the 
 > ---
 >
 > **O-1 · System Reveal**
-> [Name the system, then walk the full Magic Formula™: each of the 3 stages, and under each, all 3 steps
+> [Name the system, then walk the full Magic Formula™: each of the 3 phases, and under each, all 3 steps
 > with one plain sentence on what it does and why it matters to the avatar. The complete system, not a
 > summary. Open with the transformation (from → to). 300–450 words.]
 >
@@ -705,13 +705,13 @@ first. Vague in, vague out. This is the single most important quality control in
 - No deployment-specific language anywhere.
 
 **Connection (C-1→C-3 + Gap)**
-- C-1 gives three distinct problems, one per Magic Formula™ stage.
+- C-1 gives three distinct problems, one per Magic Formula™ phase.
 - C-2 is a STORY (a specific moment with a turn and a decision) — the client's real $Million Moment™, not a résumé.
 - C-3 uses the client's own real numbers only.
 - The Universal Gap bridges cleanly into Opportunity.
 
 **Opportunity (O-1→O-3)**
-- O-1 shows all 3 stages and all 9 steps of the Magic Formula™ — none dropped or summarized.
+- O-1 shows all 3 phases and all 9 steps of the Magic Formula™ — none dropped or summarized.
 - O-2 makes ONE clear differentiation argument, not a feature list.
 - O-3 uses only confirmed results, strongest first, and ends with the disclaimer line.
 

@@ -477,9 +477,9 @@ Wait for the user's response. Then run the INTAKE / EXTRACT sequence.
 >
 > **From your Magic Formula™**
 > • System name: [extracted]
-> • Stage 1 ([name]): [Step 1] · [Step 2] · [Step 3]
-> • Stage 2 ([name]): [Step 4] · [Step 5] · [Step 6]
-> • Stage 3 ([name]): [Step 7] · [Step 8] · [Step 9]
+> • Phase 1 ([name]): [Step 1] · [Step 2] · [Step 3]
+> • Phase 2 ([name]): [Step 4] · [Step 5] · [Step 6]
+> • Phase 3 ([name]): [Step 7] · [Step 8] · [Step 9]
 >
 > **From your $Million Promise™**
 > • Avatar: [extracted] · Currency + metric: [extracted] · Timeline: [extracted] · Obstacle(s): [extracted]
@@ -711,7 +711,7 @@ For each bump, produce:
 
 > **ORDER BUMP — [working name]**
 >
-> **Built from:** Stage [X], Step [Y] — [source in the Magic Formula™]
+> **Built from:** Phase [X], Step [Y] — [source in the Magic Formula™]
 > **Format:** [template / swipe file / cheat sheet / checklist / scorecard / mini-training / recording / tool kit / calculator]
 >
 > **Its $Million Promise™:** [Name] — [specific result] in [timeline/effort] — without [obstacle]

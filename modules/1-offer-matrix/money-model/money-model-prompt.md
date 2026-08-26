@@ -55,7 +55,7 @@ The **Red Diamond Offer™** (Step 3) is built in two parts, each with its own b
 2. **The Offer / Enrollment Document** — the written offer that packages the model and doubles as the enrollment asset.
 
 WHERE THIS SITS:
-- **Upstream (required):** the **Magic Formula™** (Step 2) — the 3-stage, 9-step signature system this model sells — and the **$Million Promise™** it delivers.
+- **Upstream (required):** the **Magic Formula™** (Step 2) — the 3-phase, 9-step signature system this model sells — and the **$Million Promise™** it delivers.
 - **This tool builds:** the Money Model + Offer Mechanics — one tangible win: a priced, profitable, phase-matched model with the math shown.
 - **Downstream:** it feeds **Part 2 · the Offer / Enrollment Document**, and the whole Money Magnet™ pillar (the events, the Cash Flow Engine™, the closes). If the model doesn't pay, everything built on top of it burns money faster.
 
@@ -181,7 +181,7 @@ The Money Model is Part 1 of the Red Diamond Offer™ (Step 3 of the Offer Matri
 | Prerequisite | Minimum standard | How to verify |
 |---|---|---|
 | **$Million Promise™** (Step 1) | Locked — a clear who / outcome / metric / timeline / pitfall | User pastes it, or confirms it's locked |
-| **Magic Formula™** (Step 2) | Locked — 3 stages, 9 steps, scored 18+/25 | User pastes it, or confirms it's locked |
+| **Magic Formula™** (Step 2) | Locked — 3 phases, 9 steps, scored 18+/25 | User pastes it, or confirms it's locked |
 
 **If the Magic Formula™ is missing:**
 > "Before we build your Money Model, I need your Magic Formula™ — your signature system. The model

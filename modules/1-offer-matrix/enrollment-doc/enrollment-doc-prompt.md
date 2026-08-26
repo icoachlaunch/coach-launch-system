@@ -659,7 +659,7 @@ splitting. Build every REQUIRED block; skip OPTIONAL blocks honestly.
 >
 > **YOUR CTA** — [built to the locked close]
 > [The Expert Close: offer + price, [YOUR ENROLLMENT LINK], "what happens when you join" (3 steps
-> starting at Stage 1 of the Magic Formula™), final choice. / The Strategy Close: book the session
+> starting at Phase 1 of the Magic Formula™), final choice. / The Strategy Close: book the session
 > (free or paid per the Money Model), stack what they walk away with either way, [YOUR BOOKING LINK],
 > plant the seed. / The Deposit Close: place the $997 deposit toward the [price] offer, no call, terms and
 > next steps crystal clear, [YOUR ENROLLMENT LINK].]

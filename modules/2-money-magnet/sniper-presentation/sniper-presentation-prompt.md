@@ -74,7 +74,7 @@ separate tool and NOT a separate document — you build it right here, in STEP 6
 the user the close is built somewhere else.
 
 THE KEY IDEA — THE SNIPER PRESENTATION™ IS YOUR SCORE™ CARD, DELIVERED LIVE.
-You already built the SCORE™ Card (Red Diamond Offer™ · Part 2) — the master content source,
+You already built the SCORE™ Card (Magic Formula™ · Step 2 · Part 3) — the master content source,
 5 acts, 19 blocks of core copy. The Enrollment Doc was that card arranged as a written sales
 letter. The Sniper Presentation™ is that SAME card arranged as a SPOKEN pitch for a live room.
 You are NOT re-writing their message. You are ARRANGING what's already locked into a stage
@@ -294,7 +294,7 @@ project, pull from there; otherwise ask them to paste each in.
 
 REQUIRED (gate on all of these):
 
-1. **The SCORE™ Card** (Red Diamond Offer™ · Part 2) — the master content source: all 5 acts and the
+1. **The SCORE™ Card** (Magic Formula™ · Step 2 · Part 3) — the master content source: all 5 acts and the
    19 blocks. This is the spine you arrange. Extract: S-1 $Million Promise™ anchor · S-2/S-3/S-4
    (question, symbolism, debunk) · C-1 the 3 Problems · C-2 the $Million Moment™ story · C-3 credibility
    · O-1 the System Reveal (Magic Formula™ 9 steps) · O-2 core differentiator · O-3 proof · R-1…R-4
@@ -474,7 +474,7 @@ Echo format:
 - **$Million Promise™:** [verbatim]
 - **Avatar (who's in the room):** [Golden Avatar™ snapshot]
 - **$Million Moment™:** [one-line summary of the discovery story]
-- **Magic Formula™:** [system name + the 3 stages / 9 steps]
+- **Magic Formula™:** [system name + the 3 phases / 9 steps]
 - **Offer + price:** [Red Diamond Offer™ + price]
 - **Phase / event / close (from your Money Model):** [phase] · [event] · [close]
 Right? Anything changed?"
@@ -725,8 +725,8 @@ SPEAKER: ["The reason [problem] keeps happening isn't [what they think] — it's
 your SCORE™ Card. This reframes everything that follows.]
 
 **② THE SYSTEM REVEAL — your Magic Formula™**
-SLIDE: [the full Magic Formula™ — 3 stages, 9 steps]
-SPEAKER: ["This is why… and we call it [system name]." Walk the 3 stages / 9 steps, each as an OUTCOME
+SLIDE: [the full Magic Formula™ — 3 phases, 9 steps]
+SPEAKER: ["This is why… and we call it [system name]." Walk the 3 phases / 9 steps, each as an OUTCOME
 (what it gets them), not a lecture. From SCORE™ Card O-1.]
 
 **③ HELL → HEAVEN** (per core step)
@@ -792,7 +792,7 @@ SPEAKER: [Show why the old ways don't work, with logic. This creates the need fo
 
 **③ PROCESS — how your system solves each**
 SLIDE: [your system → solves each broken model]
-SPEAKER: [Map your Magic Formula™ stages to each broken model. "You tried X — here's why [your system]
+SPEAKER: [Map your Magic Formula™ phases to each broken model. "You tried X — here's why [your system]
 fixes it."]
 
 **④ PROOF**
