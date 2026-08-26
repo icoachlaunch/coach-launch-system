@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coach Launch — Pick the Look for Your Magic Formula™</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Lato:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   PAGE CHROME — the instructions around the styles.
+   Brand tokens match assets/coach-launch-guide.css; kept local
+   so this page travels with the module as one file.
+   ============================================================ */
+* { box-sizing:border-box; margin:0; padding:0 }
+:root{
+  --cl-crimson:#db0063;
+  --ink:#1a1c20; --soft:#5c6270; --line:#e3e5ea; --bg:#f6f7f9;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --disp:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  --body:"Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+}
+body{ background:var(--bg); color:var(--ink); font-family:var(--body); -webkit-font-smoothing:antialiased; line-height:1.65 }
+.wrap{ max-width:1200px; margin:0 auto; padding:0 28px }
+
+.hero{ padding:58px 0 6px }
+.eyebrow{ font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.24em; text-transform:uppercase; color:var(--cl-crimson); margin-bottom:16px }
+.hero h1{ font-family:var(--disp); font-weight:800; font-size:42px; letter-spacing:-.028em; line-height:1.06 }
+.hero h1 .hl{ color:var(--cl-crimson) }
+.lead{ margin-top:16px; font-size:18px; line-height:1.6; color:var(--soft); max-width:70ch }
+
+section{ padding:38px 0 0 }
+h2{ font-family:var(--disp); font-weight:800; font-size:25px; letter-spacing:-.02em; margin-bottom:16px }
+h3{ font-family:var(--disp); font-weight:800; font-size:17px; letter-spacing:-.01em; margin-bottom:8px }
+p{ font-size:16px; margin-bottom:11px; max-width:74ch }
+p:last-child{ margin-bottom:0 }
+.rule{ height:1px; background:var(--line); margin:40px 0 0 }
+
+.steps-how{ counter-reset:hw; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:6px }
+.steps-how > li{ list-style:none; counter-increment:hw; background:#fff; border:1px solid var(--line); padding:22px 22px 20px; position:relative }
+.steps-how > li::before{ content:counter(hw,decimal-leading-zero); font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.2em; color:var(--cl-crimson); display:block; margin-bottom:12px }
+.steps-how p{ font-size:15px; color:var(--soft); margin:0 }
+@media (max-width:860px){ .steps-how{ grid-template-columns:1fr } }
+
+.need{ background:#fff; border:1px solid var(--line); border-left:3px solid var(--cl-crimson); padding:24px 26px; margin-top:6px }
+.need ul{ margin:12px 0 0; padding-left:0; list-style:none }
+.need li{ position:relative; padding-left:26px; font-size:15.5px; margin-bottom:9px; color:var(--soft) }
+.need li:last-child{ margin-bottom:0 }
+.need li::before{ content:""; position:absolute; left:4px; top:.62em; width:7px; height:7px; background:var(--cl-crimson) }
+.need li b{ color:var(--ink) }
+
+.ways{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:6px }
+.way{ background:#fff; border:1px solid var(--line); padding:22px 22px 20px }
+.way .tag{ font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--cl-crimson); margin-bottom:11px }
+.way p{ font-size:15px; color:var(--soft); margin:0 }
+@media (max-width:860px){ .ways{ grid-template-columns:1fr } }
+
+.note{ background:#fff; border:1px solid var(--line); padding:18px 22px; margin-top:16px; font-size:15px; color:var(--soft) }
+.note b{ color:var(--ink) }
+
+/* style block header */
+.sty{ padding-top:46px }
+.sty-top{ display:flex; justify-content:space-between; align-items:flex-end; gap:24px; border-top:1px solid var(--line); padding-top:28px; flex-wrap:wrap }
+.sty-id{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--cl-crimson) }
+.sty-top h2{ font-size:29px; margin:9px 0 0 }
+.sty-top h2 em{ color:var(--soft); font-weight:500; font-style:normal }
+.replay{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#fff; background:var(--ink); border:0; padding:12px 18px; cursor:pointer; transition:background .18s }
+.replay:hover{ background:var(--cl-crimson) }
+.replay:focus-visible{ outline:2px solid var(--cl-crimson); outline-offset:3px }
+.sty-facts{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:20px }
+.sty-facts > dl{ background:#fff; padding:16px 18px }
+.sty-facts dt{ font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:#98a0ae; margin-bottom:8px }
+.sty-facts dd{ font-size:14.5px; line-height:1.55 }
+@media (max-width:860px){ .sty-facts{ grid-template-columns:1fr } }
+.fit{ position:relative; width:100%; overflow:hidden; border:1px solid var(--line); box-shadow:0 26px 64px -34px rgba(20,25,40,.34); margin-top:22px }
+.frame{ position:relative; width:1320px; height:880px; overflow:hidden; transform-origin:top left }
+/* Frames are self-contained designs. Reset the page-chrome element rules so
+   nothing above this line leaks in — each style owns every value inside it. */
+.frame p{ margin:0; max-width:none; font-size:inherit }
+
+.next{ background:#fff; border:1px solid var(--line); border-top:3px solid var(--cl-crimson); padding:30px 32px; margin:46px 0 0 }
+.next h2{ margin-bottom:12px }
+.next .say{ font-family:var(--mono); font-size:15px; background:var(--bg); border:1px solid var(--line); padding:14px 18px; margin-top:16px; color:var(--ink) }
+.page-foot{ padding:26px 0 70px; font-size:14px; color:#8b92a0 }
+
+/* shared icon rendering for every style */
+.ic{ width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; display:block }
+
+/* System mark — a logo or icon for the SYSTEM itself, not the coach's
+   business logo. Sits left of the system name and subheadline. The
+   placeholder below is a square SVG; a real mark drops in as
+   <img class="lg" src="…"> and the slot flexes to its width, so a wide
+   mark works as well as a square one. */
+.frame .mast{ display:flex; align-items:center }   /* logo centres on the name + subheadline, not the eyebrow */
+.frame .mast-txt{ min-width:0; flex:1 }
+.frame .logo{ flex:0 0 auto; display:flex; align-items:center; justify-content:center }
+.lg{ height:50px; width:auto; min-width:50px; display:block }
+
+/* Call to action. The button is a real link — the coach supplies the URL,
+   so it can point at a booking page, a checkout, a form, anything. */
+.frame .cta{ display:flex; flex-direction:column; align-items:flex-end; gap:9px; text-align:right }
+.frame .cta-txt{ font-family:var(--disp); font-weight:700; letter-spacing:-.01em; white-space:nowrap }
+.cta-btn{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--disp);
+  font-weight:800; white-space:nowrap; background:var(--ac); color:#fff; cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease, filter .18s ease }
+.cta-btn:hover{ transform:translateY(-2px); filter:brightness(1.07) }
+.cta-btn:active{ transform:translateY(0) }
+.cta-btn:focus-visible{ outline:2px solid #fff; outline-offset:3px }
+.cta-btn .ic{ width:16px; height:16px; stroke-width:2.1 }
+
+/* ============================================================
+   STYLE 01 — BLUEPRINT
+   ============================================================ */
+.bp{
+  --ac:#db0063;
+  --ink2:#101720; --soft2:#4e5a6b; --mute:#8b95a4;
+  --pap:#eef1f4;
+  --hair:rgba(18,42,72,.20); --hair2:rgba(18,42,72,.10);
+  background:var(--pap); font-family:var(--body); color:var(--ink2); line-height:1.5;
+}
+.bp .grid{ position:absolute; inset:0; z-index:0; opacity:0;
+  background-image:
+    linear-gradient(rgba(18,42,72,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(18,42,72,.055) 1px,transparent 1px),
+    linear-gradient(rgba(18,42,72,.075) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(18,42,72,.075) 1px,transparent 1px);
+  background-size:11px 11px, 11px 11px, 88px 88px, 88px 88px }
+.bp.playing .grid{ animation:bpFade .7s ease forwards }
+.bp .tick{ position:absolute; width:26px; height:26px; z-index:3; opacity:0 }
+.bp .tick::before, .bp .tick::after{ content:""; position:absolute; background:var(--ink2) }
+.bp .tick::before{ width:26px; height:1px }
+.bp .tick::after{ width:1px; height:26px }
+.bp .tick.tl{ top:26px; left:28px }
+.bp .tick.tr{ top:26px; right:28px }
+.bp .tick.bl{ bottom:26px; left:28px }
+.bp .tick.br{ bottom:26px; right:28px }
+.bp .tick.tr::before, .bp .tick.br::before{ right:0 }
+.bp .tick.tr::after,  .bp .tick.br::after { right:0 }
+.bp .tick.bl::before, .bp .tick.br::before{ bottom:0 }
+.bp .tick.bl::after,  .bp .tick.br::after { bottom:0 }
+.bp.playing .tick{ animation:bpSnap .34s cubic-bezier(.2,1.5,.4,1) forwards .35s }
+.bp .sheet{ position:relative; z-index:2; height:100%; padding:42px 56px 34px; display:flex; flex-direction:column }
+.bp .mast{ gap:20px; margin-top:12px }
+.bp .logo{ width:74px; height:74px; padding:8px; border:1px solid var(--hair); background:#fff; color:var(--ac); opacity:0 }
+.bp .lg{ height:56px; min-width:56px }
+.bp.playing .logo{ animation:bpFade .5s ease forwards .45s }
+.bp .eb{ font-family:var(--mono); font-size:10.5px; font-weight:500; letter-spacing:.26em; text-transform:uppercase; color:var(--soft2); display:flex; align-items:center; gap:12px; opacity:0 }
+.bp .eb i{ display:block; width:30px; height:1px; background:var(--ac) }
+.bp.playing .eb{ animation:bpFade .5s ease forwards .5s }
+.bp .h1{ font-family:var(--disp); font-weight:800; font-size:41px; letter-spacing:-.028em; line-height:1.03; opacity:0 }
+.bp .h1 sup{ font-size:.3em; font-weight:700; top:-1.35em; color:var(--ac) }
+.bp.playing .h1{ animation:bpRise .6s cubic-bezier(.2,.9,.3,1) forwards .6s }
+.bp .sub{ margin-top:11px; font-size:14.8px; line-height:1.5; color:var(--soft2); max-width:70ch; opacity:0 }
+.bp.playing .sub{ animation:bpFade .55s ease forwards .78s }
+.bp .dim{ position:relative; margin:22px 0 15px; height:24px; display:flex; align-items:center }
+.bp .dim-rule{ position:relative; flex:1; height:1px; background:var(--ink2); transform:scaleX(0) }
+.bp.playing .dim-rule{ animation:bpSpanX .8s cubic-bezier(.3,.9,.2,1) forwards 1s }
+.bp .dim-rule::before, .bp .dim-rule::after{ content:""; position:absolute; top:-4.5px; width:1px; height:10px; background:var(--ink2) }
+.bp .dim-rule::before{ left:0 }
+.bp .dim-rule::after{ right:0 }
+.bp .dim-val{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); background:var(--pap); padding:0 16px;
+  font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--ac); white-space:nowrap; opacity:0 }
+.bp.playing .dim-val{ animation:bpFade .4s ease forwards 1.5s }
+.bp .plates{ display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:minmax(0,1fr); gap:22px; flex:1; min-height:0 }
+.bp .plate{ border:1px solid var(--hair); background:rgba(255,255,255,.62); display:flex; flex-direction:column; clip-path:inset(0 100% 0 0) }
+.bp.playing .plate{ animation:bpWipe .62s cubic-bezier(.35,.9,.25,1) forwards }
+.bp.playing .plate:nth-child(1){ animation-delay:1.26s }
+.bp.playing .plate:nth-child(2){ animation-delay:1.42s }
+.bp.playing .plate:nth-child(3){ animation-delay:1.58s }
+.bp .plate-head{ padding:14px 18px 12px; border-bottom:1px solid var(--hair) }
+.bp .plate-id{ font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--mute) }
+.bp .plate-name{ font-family:var(--disp); font-weight:800; font-size:20px; letter-spacing:-.015em; margin-top:7px }
+.bp .plate-tag{ margin-top:7px; font-size:12.2px; line-height:1.45; color:var(--soft2); min-height:35px }
+.bp .rows{ flex:1; display:flex; flex-direction:column }
+.bp .row{ position:relative; padding:10px 16px; border-bottom:1px solid var(--hair2); flex:1; opacity:0;
+  display:flex; align-items:center; gap:12px }
+.bp .row:last-child{ border-bottom:0 }
+.bp.playing .row{ animation:bpFade .45s ease forwards }
+/* steps settle in reading order: down column 1, then 2, then 3 */
+.bp.playing .plate:nth-child(1) .row:nth-child(1){ animation-delay:1.90s }
+.bp.playing .plate:nth-child(1) .row:nth-child(2){ animation-delay:2.00s }
+.bp.playing .plate:nth-child(1) .row:nth-child(3){ animation-delay:2.10s }
+.bp.playing .plate:nth-child(2) .row:nth-child(1){ animation-delay:2.06s }
+.bp.playing .plate:nth-child(2) .row:nth-child(2){ animation-delay:2.16s }
+.bp.playing .plate:nth-child(2) .row:nth-child(3){ animation-delay:2.26s }
+.bp.playing .plate:nth-child(3) .row:nth-child(1){ animation-delay:2.22s }
+.bp.playing .plate:nth-child(3) .row:nth-child(2){ animation-delay:2.32s }
+.bp.playing .plate:nth-child(3) .row:nth-child(3){ animation-delay:2.42s }
+.bp .ricon{ flex:0 0 auto; width:32px; height:32px; border:1px solid var(--hair); background:#fff;
+  display:flex; align-items:center; justify-content:center; color:var(--ac) }
+.bp .rbody{ flex:1; min-width:0 }
+.bp .row-top{ display:flex; align-items:center }
+.bp .row-n{ font-family:var(--mono); font-size:10px; font-weight:700; color:var(--soft2); border:1px solid var(--hair); padding:3px 6px; line-height:1; flex:0 0 auto }
+.bp .row-lead{ height:1px; background:var(--hair); width:12px; flex:0 0 auto }
+.bp .row-name{ font-family:var(--disp); font-weight:700; font-size:14.2px; letter-spacing:-.008em }
+.bp .row-out{ margin-top:5px; font-size:12px; line-height:1.44; color:var(--soft2) }
+.bp .row.hot{ background:rgba(219,0,99,.05); box-shadow:inset 3px 0 0 var(--ac) }
+.bp .row.hot .row-n{ border-color:var(--ac); color:var(--ac) }
+.bp .row.hot .ricon{ border-color:var(--ac) }
+.bp .hot-flag{ position:absolute; right:15px; top:13px; font-family:var(--mono); font-size:8.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ac) }
+.bp .foot{ display:flex; justify-content:space-between; align-items:flex-end; gap:26px; margin-top:14px }
+.bp .cta{ opacity:0 }
+.bp.playing .cta{ animation:bpFade .5s ease forwards 2.5s }
+.bp .cta-txt{ font-size:14.5px; color:var(--ink2) }
+.bp .cta-btn{ padding:13px 22px; border-radius:3px; font-size:13.5px; letter-spacing:-.005em;
+  box-shadow:0 8px 20px -10px var(--ac) }
+.bp .tblock{ border:1px solid var(--ink2); display:grid; grid-template-columns:auto auto; opacity:0 }
+.bp.playing .tblock{ animation:bpFade .5s ease forwards 2.55s }
+.bp .tblock span{ padding:8px 15px; border-right:1px solid var(--hair); border-bottom:1px solid var(--hair);
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--mute) }
+.bp .tblock span:nth-child(2n){ border-right:0 }
+.bp .tblock span:nth-last-child(-n+2){ border-bottom:0 }
+.bp .tblock .wm{ font-family:var(--disp); font-weight:800; font-size:14px; letter-spacing:-.01em; text-transform:none; color:var(--ink2); grid-column:1 / -1; border-right:0 }
+@keyframes bpFade{ to{ opacity:1 } }
+@keyframes bpRise{ from{ opacity:0; transform:translateY(11px) } to{ opacity:1; transform:none } }
+@keyframes bpSnap{ from{ opacity:0; transform:scale(.4) } to{ opacity:1; transform:none } }
+@keyframes bpSpanX{ to{ transform:scaleX(1) } }
+@keyframes bpWipe{ to{ clip-path:inset(0 0 0 0) } }
+
+/* ============================================================
+   STYLE 02 — MARQUEE
+   ============================================================ */
+.mq{
+  --ac:#db0063;
+  --ink2:#f5f5f7; --soft2:#a2a2ad; --mute:#63636e;
+  --bg2:#0a0a0c; --hair:rgba(255,255,255,.10);
+  background:var(--bg2); font-family:var(--body); color:var(--ink2); line-height:1.5;
+}
+.mq::before{ content:""; position:absolute; inset:0; z-index:0;
+  background:radial-gradient(120% 68% at 50% -14%, rgba(219,0,99,.16), transparent 62%) }
+.mq .rail{ position:absolute; left:0; right:0; z-index:4; height:44px; display:flex; align-items:center; justify-content:space-between;
+  padding:0 40px; font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--mute); opacity:0 }
+.mq .rail.top{ top:0; border-bottom:1px solid var(--hair) }
+.mq .rail.bot{ bottom:0; border-top:1px solid var(--hair) }
+.mq .rail b{ color:var(--soft2); font-weight:700 }
+.mq.playing .rail{ animation:mqFade .5s ease forwards .15s }
+.mq .body{ position:relative; z-index:3; height:100%; padding:74px 40px 66px; display:flex; flex-direction:column }
+.mq .title{ padding:0 4px 18px }
+.mq .mast{ gap:26px; margin-top:10px }
+.mq .cta{ margin-top:16px; padding:0 4px; opacity:0 }
+.mq.playing .cta{ animation:mqFade .55s ease forwards 2.5s }
+.mq .cta-txt{ font-size:14.5px; color:var(--soft2) }
+.mq .cta-btn{ padding:15px 28px; border-radius:2px; font-size:14px; text-transform:uppercase; letter-spacing:.05em }
+.mq .logo{ width:96px; height:96px; color:var(--ac); opacity:0 }
+.mq .lg{ height:88px; min-width:88px }
+.mq.playing .logo{ animation:mqFade .5s ease forwards .46s }
+.mq .eb{ font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--ac); opacity:0 }
+.mq.playing .eb{ animation:mqFade .45s ease forwards .5s }
+.mq .h1{ font-family:var(--disp); font-weight:900; font-size:55px; line-height:.96; letter-spacing:-.035em; text-transform:uppercase;
+  clip-path:inset(0 0 100% 0) }
+.mq .h1 sup{ font-size:.26em; font-weight:700; top:-1.55em; color:var(--ac) }
+.mq.playing .h1{ animation:mqMask .66s cubic-bezier(.22,.95,.2,1) forwards .62s }
+.mq .accent-rule{ height:4px; width:0; background:var(--ac); margin-top:18px }
+.mq.playing .accent-rule{ animation:mqGrow .6s cubic-bezier(.3,.9,.2,1) forwards 1.02s }
+.mq .sub{ margin-top:15px; font-size:16px; line-height:1.48; color:var(--soft2); max-width:64ch; opacity:0 }
+.mq.playing .sub{ animation:mqFade .5s ease forwards 1.2s }
+.mq .cols{ display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:minmax(0,1fr); gap:26px; flex:1; min-height:0 }
+.mq .col{ display:flex; flex-direction:column; clip-path:inset(0 100% 0 0) }
+.mq.playing .col{ animation:mqWipe .5s cubic-bezier(.4,.9,.2,1) forwards }
+.mq.playing .col:nth-child(1){ animation-delay:1.5s }
+.mq.playing .col:nth-child(2){ animation-delay:1.72s }
+.mq.playing .col:nth-child(3){ animation-delay:1.94s }
+.mq .bar{ background:var(--ac); padding:12px 16px; display:flex; align-items:baseline; gap:12px }
+.mq .bar .n{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.2em; color:rgba(255,255,255,.72) }
+.mq .bar .nm{ font-family:var(--disp); font-weight:900; font-size:19px; letter-spacing:.01em; text-transform:uppercase; color:#fff }
+.mq .tag{ padding:13px 16px 15px; min-height:57px; font-size:13px; line-height:1.45; color:var(--soft2); border-bottom:1px solid var(--hair) }
+/* the steps sit on a white card under the phase bar — dark frame, light content */
+.mq .steps{ flex:1; display:flex; flex-direction:column; background:#fff }
+.mq .st{ position:relative; flex:1; padding:14px 16px; border-bottom:1px solid #e7e7ec; display:flex; gap:14px; align-items:center }
+.mq .st:last-child{ border-bottom:0 }
+.mq .sicon{ flex:0 0 auto; width:38px; height:38px; background:#f5f5f8; border:1px solid #e4e4ea;
+  display:flex; align-items:center; justify-content:center; color:var(--ac) }
+.mq .sbody{ flex:1; min-width:0 }
+.mq .st .num{ font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.2em; color:#9a9aa6 }
+.mq .st .nm{ font-family:var(--disp); font-weight:800; font-size:14px; letter-spacing:.005em; text-transform:uppercase; line-height:1.2; margin-top:5px; color:#101014 }
+.mq .st .out{ margin-top:6px; font-size:12.3px; line-height:1.44; color:#5c5c68 }
+.mq .st.hot{ background:var(--ac) }
+.mq .st.hot .num{ color:rgba(255,255,255,.72) }
+.mq .st.hot .nm, .mq .st.hot .out{ color:#fff }
+.mq .st.hot .sicon{ background:#fff; border-color:#fff; color:var(--ac) }
+.mq .st .flag{ position:absolute; right:14px; top:13px; font-family:var(--mono); font-size:8.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.85) }
+.mq .sweep{ position:absolute; top:0; bottom:0; width:120px; z-index:6; pointer-events:none; left:-160px;
+  background:linear-gradient(90deg, transparent, rgba(219,0,99,.30) 42%, var(--ac) 68%, rgba(255,255,255,.9) 76%, transparent 88%) }
+.mq.playing .sweep{ animation:mqSweep 1.45s cubic-bezier(.5,.05,.3,1) forwards 1.32s }
+@keyframes mqFade{ to{ opacity:1 } }
+@keyframes mqMask{ to{ clip-path:inset(0 0 0 0) } }
+@keyframes mqGrow{ to{ width:132px } }
+@keyframes mqWipe{ to{ clip-path:inset(0 0 0 0) } }
+@keyframes mqSweep{ to{ left:1420px } }
+
+/* ============================================================
+   STYLE 03 — MONOLITH
+   ============================================================ */
+.mo{
+  --ac:#db0063;
+  --ink2:#f2f3f5; --soft2:#9aa0ab; --mute:#666c78;
+  --bg2:#0d0f12; --slab:#15181d; --hair:rgba(255,255,255,.075);
+  background:var(--bg2); font-family:var(--body); color:var(--ink2); line-height:1.5;
+}
+.mo::before{ content:""; position:absolute; inset:0; z-index:0;
+  background:radial-gradient(90% 60% at 50% 8%, rgba(255,255,255,.045), transparent 60%) }
+.mo .body{ position:relative; z-index:3; height:100%; padding:54px 58px 44px; display:flex; flex-direction:column }
+.mo .top{ display:flex; justify-content:space-between; align-items:flex-start; gap:36px }
+.mo .mast{ gap:20px; margin-top:13px }
+.mo .mast-col{ flex:1; min-width:0 }         /* shares the top row with the wordmark chip */
+.mo .logo{ width:80px; height:80px; color:var(--ac); opacity:0 }
+.mo .lg{ height:72px; min-width:72px }
+.mo.playing .logo{ animation:moFade .5s ease forwards .26s }
+.mo .eb{ font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:var(--ac); display:flex; align-items:center; gap:11px; opacity:0 }
+.mo .eb i{ display:block; width:26px; height:1px; background:var(--ac) }
+.mo.playing .eb{ animation:moFade .5s ease forwards .2s }
+.mo .h1{ font-family:var(--disp); font-weight:800; font-size:45px; letter-spacing:-.03em; line-height:1.03; opacity:0 }
+.mo .h1 sup{ font-size:.28em; font-weight:700; top:-1.5em; color:var(--ac) }
+.mo.playing .h1{ animation:moRise .62s cubic-bezier(.2,.9,.3,1) forwards .34s }
+.mo .sub{ margin-top:14px; font-size:15.5px; line-height:1.5; color:var(--soft2); max-width:62ch; opacity:0 }
+.mo.playing .sub{ animation:moFade .55s ease forwards .54s }
+.mo .chip{ flex:0 0 auto; text-align:right; opacity:0 }
+.mo.playing .chip{ animation:moFade .5s ease forwards .44s }
+.mo .chip .wm{ font-family:var(--disp); font-weight:800; font-size:19px; letter-spacing:-.01em }
+.mo .chip .ct{ margin-top:7px; font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--mute) }
+.mo .slabs{ display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:minmax(0,1fr); gap:20px; flex:1; min-height:0; margin-top:30px }
+.mo .slab{ position:relative; background:#fff; border-radius:2px;
+  display:flex; flex-direction:column; overflow:hidden; opacity:0; transform:translateY(26px) }
+.mo.playing .slab{ animation:moStand .68s cubic-bezier(.2,.95,.25,1) forwards }
+.mo.playing .slab:nth-child(1){ animation-delay:1.16s }
+.mo.playing .slab:nth-child(2){ animation-delay:1.3s }
+.mo.playing .slab:nth-child(3){ animation-delay:1.44s }
+.mo .seam{ position:absolute; left:0; top:0; width:3px; height:100%; background:var(--ac); transform:scaleY(0); transform-origin:top }
+.mo.playing .seam{ animation:moSeam .62s cubic-bezier(.3,.9,.2,1) forwards }
+.mo.playing .slab:nth-child(1) .seam{ animation-delay:1.62s }
+.mo.playing .slab:nth-child(2) .seam{ animation-delay:1.76s }
+.mo.playing .slab:nth-child(3) .seam{ animation-delay:1.9s }
+.mo .slab-head{ padding:21px 22px 18px }
+.mo .slab-id{ font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:#98a0ae }
+.mo .slab-name{ font-family:var(--disp); font-weight:800; font-size:24px; letter-spacing:-.02em; margin-top:10px; color:#101014 }
+.mo .slab-tag{ margin-top:9px; font-size:12.8px; line-height:1.46; color:#5c6270; min-height:38px }
+.mo .slab-steps{ flex:1; display:flex; flex-direction:column; border-top:1px solid #e7e7ec }
+.mo .ms{ position:relative; flex:1; padding:14px 22px; border-bottom:1px solid #e7e7ec; opacity:0;
+  display:flex; align-items:center; gap:14px }
+.mo .ms:last-child{ border-bottom:0 }
+.mo.playing .ms{ animation:moFade .45s ease forwards }
+/* steps fill each slab top-down, slab by slab */
+.mo.playing .slab:nth-child(1) .ms:nth-child(1){ animation-delay:2.00s }
+.mo.playing .slab:nth-child(1) .ms:nth-child(2){ animation-delay:2.10s }
+.mo.playing .slab:nth-child(1) .ms:nth-child(3){ animation-delay:2.20s }
+.mo.playing .slab:nth-child(2) .ms:nth-child(1){ animation-delay:2.14s }
+.mo.playing .slab:nth-child(2) .ms:nth-child(2){ animation-delay:2.24s }
+.mo.playing .slab:nth-child(2) .ms:nth-child(3){ animation-delay:2.34s }
+.mo.playing .slab:nth-child(3) .ms:nth-child(1){ animation-delay:2.28s }
+.mo.playing .slab:nth-child(3) .ms:nth-child(2){ animation-delay:2.38s }
+.mo.playing .slab:nth-child(3) .ms:nth-child(3){ animation-delay:2.48s }
+.mo .micon{ flex:0 0 auto; width:38px; height:38px; border-radius:2px; background:#f5f5f8; border:1px solid #e4e4ea;
+  display:flex; align-items:center; justify-content:center; color:var(--ac) }
+.mo .mbody{ flex:1; min-width:0 }
+.mo .ms .n{ font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--ac) }
+.mo .ms .nm{ font-family:var(--disp); font-weight:700; font-size:14.4px; letter-spacing:-.01em; margin-top:5px; color:#101014 }
+.mo .ms .out{ margin-top:6px; font-size:12.2px; line-height:1.45; color:#5c5c68 }
+.mo .ms.hot{ background:rgba(219,0,99,.07) }
+.mo .ms.hot .micon{ border-color:var(--ac) }
+.mo .ms .flag{ position:absolute; right:18px; top:14px; font-family:var(--mono); font-size:8.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ac) }
+.mo .base{ height:2px; background:var(--ac); margin-top:24px; transform:scaleX(0); transform-origin:left }
+.mo.playing .base{ animation:moSpanX .82s cubic-bezier(.3,.9,.2,1) forwards .78s }
+.mo .promise{ display:flex; align-items:center; gap:16px; margin-top:15px; opacity:0 }
+.mo.playing .promise{ animation:moFade .55s ease forwards 2.35s }
+.mo .promise .lbl{ flex:0 0 auto; font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--mute); align-self:flex-start; padding-top:5px }
+.mo .promise .txt{ flex:1; font-family:var(--disp); font-weight:500; font-size:15.5px; line-height:1.46; color:var(--ink2); max-width:62ch }
+.mo .cta{ flex:0 0 auto; margin-left:auto }
+.mo .cta-txt{ font-size:13px; color:var(--soft2) }
+.mo .cta-btn{ padding:14px 26px; border-radius:5px; font-size:14px; letter-spacing:-.005em;
+  box-shadow:0 12px 28px -14px var(--ac) }
+@keyframes moFade{ to{ opacity:1 } }
+@keyframes moRise{ from{ opacity:0; transform:translateY(12px) } to{ opacity:1; transform:none } }
+@keyframes moStand{ to{ opacity:1; transform:none } }
+@keyframes moSeam{ to{ transform:scaleY(1) } }
+@keyframes moSpanX{ to{ transform:scaleX(1) } }
+
+@media (prefers-reduced-motion: reduce){
+  .bp *, .mq *, .mo *{ animation:none !important; transition:none !important }
+  .bp .grid, .bp .tick, .bp .eb, .bp .h1, .bp .sub, .bp .dim-val, .bp .row, .bp .logo, .bp .cta, .bp .tblock,
+  .mq .rail, .mq .eb, .mq .sub, .mq .logo, .mq .cta,
+  .mo .eb, .mo .h1, .mo .sub, .mo .chip, .mo .logo, .mo .slab, .mo .ms, .mo .promise{ opacity:1 !important }
+  .cta-btn:hover{ transform:none }
+  .bp .plate, .mq .h1, .mq .col{ clip-path:none !important }
+  .bp .dim-rule, .mo .base{ transform:scaleX(1) !important }
+  .mo .seam{ transform:scaleY(1) !important }
+  .mo .slab{ transform:none !important }
+  .mq .accent-rule{ width:132px !important }
+  .mq .sweep{ display:none }
+}
+</style>
+</head>
+<body>
+
+<!-- Placeholder marks. All of these are swapped for the coach's own at build time. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <symbol id="logo-mark" viewBox="0 0 48 48"><rect x="1" y="1" width="46" height="46" rx="11" fill="currentColor"/><path d="M32 30.8A11.4 11.4 0 0 1 19.2 18a9.4 9.4 0 1 0 12.8 12.8z" fill="#fff"/></symbol>
+  <symbol id="ic-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><polyline points="7.5 15 11 10.5 14 13.5 19 7.5"/></symbol>
+  <symbol id="ic-room" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17"/><path d="M8 14h5"/></symbol>
+  <symbol id="ic-list" viewBox="0 0 24 24"><path d="M10 6.5h10M10 12h10M10 17.5h10"/><polyline points="3.5 6.5 5 8 7.5 5"/><polyline points="3.5 12 5 13.5 7.5 10.5"/></symbol>
+  <symbol id="ic-switch" viewBox="0 0 24 24"><circle cx="7.5" cy="12" r="3.2"/><path d="M16.5 6.8a5.2 5.2 0 1 0 0 10.4 6.4 6.4 0 0 1 0-10.4z"/></symbol>
+  <symbol id="ic-steps" viewBox="0 0 24 24"><polyline points="3.5 20 3.5 15.5 9.5 15.5 9.5 11 15 11 15 6.5 20.5 6.5"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.2"/><polyline points="12 7 12 12 15.5 13.8"/></symbol>
+  <symbol id="ic-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.4 8.4 0 0 1 9.8 4 8.4 8.4 0 1 0 20 14.2z"/></symbol>
+  <symbol id="ic-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="9.5" rx="2"/><path d="M8.2 10.5V7.8a3.8 3.8 0 0 1 7.6 0v2.7"/></symbol>
+  <symbol id="ic-shield" viewBox="0 0 24 24"><path d="M12 3.4l7.6 2.8v5.6c0 4.3-3 7.5-7.6 8.6-4.6-1.1-7.6-4.3-7.6-8.6V6.2z"/></symbol>
+  <symbol id="ic-arrow" viewBox="0 0 24 24"><path d="M4.5 12h14"/><polyline points="12.5 5.8 18.8 12 12.5 18.2"/></symbol>
+</defs></svg>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="eyebrow">Coach Launch · The $100K Day Formula™ · Offer Matrix™ · Step 2</div>
+    <h1>Pick the look for your <span class="hl">Magic Formula™</span></h1>
+    <p class="lead">Your Magic Formula™ is the 3-phase, 9-step system only you deliver. This turns it into a graphic you can put in front of people.</p>
+  </div>
+
+  <section>
+    <h2>What you're looking at</h2>
+    <p>Below are three finished designs. Same system, same words, three different looks.</p>
+    <p>The example is a made-up baby-sleep coach. It's there so you can see how a real system sits inside each design, instead of guessing from a blank template.</p>
+    <p>Your job on this page is simple. Pick the one that feels like your brand.</p>
+  </section>
+
+  <section>
+    <h2>How this works</h2>
+    <ol class="steps-how">
+      <li><h3>Choose a style</h3><p>Scroll through the three below and pick one. Go with the look, not the sample words — those get replaced with yours.</p></li>
+      <li><h3>Hand over your details</h3><p>The builder asks for your Magic Formula™, your brand colour, your fonts and your business name. It asks one thing at a time.</p></li>
+      <li><h3>Get your file</h3><p>You get one HTML file. Double-click it and it opens in any browser. Screenshot it for an ad, or put it on a page.</p></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>What you'll need before you start</h2>
+    <div class="need">
+      <ul>
+        <li><b>Your locked Magic Formula™.</b> Three phase names, nine step names, and the one-line outcome for each step. If it isn't built yet, build it first — this tool won't write it for you.</li>
+        <li><b>Your $Million Promise™.</b> It goes on the graphic word for word.</li>
+        <li><b>Your brand colour and fonts.</b> Straight from your Visual Style Guide. One colour is enough.</li>
+        <li><b>A mark for your system.</b> Not your business logo — a small icon or mark that stands for this system on its own. It sits at the top, left of your system name. Send an SVG if you have one, a PNG if you don't. No mark yet? Say so, and you'll get a simple one built from your system's initials.</li>
+        <li><b>Your business name.</b> It sits in the corner of the graphic.</li>
+        <li><b>Your call to action, and the link it goes to.</b> A short line and a button label — "Ready for full nights?" and "Book a free sleep call". The link can point anywhere you like: a booking calendar, a checkout, an application form, a waitlist.</li>
+        <li><b>Your step icons.</b> Optional — see below. There's a built-in set if you'd rather skip it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>About the icons</h2>
+    <p>Every step gets its own small icon, sitting to the left of the step name. The icons on this page are placeholders.</p>
+    <p>You've got three ways to get yours.</p>
+    <div class="ways">
+      <div class="way"><div class="tag">Option 1</div><h3>Send your own</h3><p>Already have an icon set you use? Hand the files over and they go straight in. SVG works best, PNG is fine.</p></div>
+      <div class="way"><div class="tag">Option 2</div><h3>Connect a library</h3><p>Plug in an icon service like Streamline with your own account key. The builder picks nine that match your steps and shows you the list before it uses them.</p></div>
+      <div class="way"><div class="tag">Option 3</div><h3>Use the built-in set</h3><p>Plain line icons that sit quietly next to any brand. Nothing to buy, nothing to set up. This is the default.</p></div>
+    </div>
+    <div class="note"><b>Either way, you approve every icon.</b> The builder shows you all nine picks with the step each one belongs to, and you can swap any of them before it builds.</div>
+  </section>
+
+  <section>
+    <h2>One more thing to know</h2>
+    <p>Your step outcomes are written as full sentences. That's right for a document, but too long for a graphic — nine long sentences turn into a wall of text nobody reads.</p>
+    <p>So the builder will show you a shorter version of each outcome and ask you to approve it. Your words, just tighter.</p>
+    <p>It won't shorten anything without showing you first.</p>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ============ STYLE 01 · BLUEPRINT ============ -->
+  <div class="sty">
+    <div class="sty-top">
+      <div>
+        <div class="sty-id">Style 01</div>
+        <h2>Blueprint <em>— precise and technical</em></h2>
+      </div>
+      <button type="button" class="replay" data-play="s-bp">Play again</button>
+    </div>
+    <div class="sty-facts">
+      <dl><dt>Best for</dt><dd>Work where being exact is the whole point. Attorneys, financial advisors, medical, technical consulting.</dd></dl>
+      <dl><dt>The feel</dt><dd>An engineering drawing. Fine lines, measured, nothing shouted. The bar across the top is your promise timeline.</dd></dl>
+      <dl><dt>Use it on</dt><dd>Proposals, PDFs, printed handouts, slides. Prints well because it's light.</dd></dl>
+    </div>
+  </div>
+</div>
+<div class="wrap"><div class="fit">
+  <div class="frame bp" id="s-bp">
+    <div class="grid"></div>
+    <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+    <div class="sheet">
+      <div class="eb"><i></i>A signature system · 3 phases / 9 steps</div>
+      <div class="mast">
+        <span class="logo"><svg class="lg"><use href="#logo-mark"/></svg></span>
+        <div class="mast-txt">
+          <div class="h1">The Gentle Nights Method<sup>™</sup></div>
+          <p class="sub">How exhausted new parents get their baby sleeping through the night in 14 days — without cry-it-out or living by the monitor.</p>
+        </div>
+      </div>
+      <div class="dim"><div class="dim-rule"></div><div class="dim-val">14 days, start to finish</div></div>
+      <div class="plates">
+        <div class="plate">
+          <div class="plate-head"><div class="plate-id">Phase 01</div><div class="plate-name">Foundation</div><div class="plate-tag">See what's really happening, and set the room up to work with you.</div></div>
+          <div class="rows">
+            <div class="row hot"><div class="hot-flag">Hot step</div>
+              <span class="ricon"><svg class="ic"><use href="#ic-chart"/></svg></span>
+              <div class="rbody"><div class="row-top"><span class="row-n">01</span><span class="row-lead"></span><span class="row-name">The Sleep Snapshot</span></div>
+              <div class="row-out">Your baby's real sleep patterns mapped on one page.</div></div></div>
+            <div class="row">
+              <span class="ricon"><svg class="ic"><use href="#ic-room"/></svg></span>
+              <div class="rbody"><div class="row-top"><span class="row-n">02</span><span class="row-lead"></span><span class="row-name">The Nursery Reset</span></div>
+              <div class="row-out">The room set up for sleep — light, sound and temperature dialed in.</div></div></div>
+            <div class="row">
+              <span class="ricon"><svg class="ic"><use href="#ic-list"/></svg></span>
+              <div class="rbody"><div class="row-top"><span class="row-n">03</span><span class="row-lead"></span><span class="row-name">The Wind-Down Blueprint</span></div>
+              <div class="row-out">A bedtime routine written out and ready to run tonight.</div></div></div>
+          </div>
+        </div>
+        <div class="plate">
+          <div class="plate-head"><div class="plate-id">Phase 02</div><div class="plate-name">Rhythm</div><div class="plate-tag">Get days and nights in the right order, so sleep starts to hold.</div></div>
+          <div class="rows">
+            <div class="row">
+              <span class="ricon"><svg class="ic"><use href="#ic-switch"/></svg></span>
+              <div class="rbody"><div class="row-top"><span class="row-n">04</span><span class="row-lead"></span><span class="row-name">The Day-Night Switch</span></div>
+              <div class="row-out">The longest stretch of sleep happens after dark.</div></div></div>
+            <div class="row">
+              <span class="ricon"><svg class="ic"><use href="#ic-steps"/></svg></span>
+              <div class="rbody"><div class="row-top"><span class="row-n">05</span><span class="row-lead"></span><span class="row-name">The Self-Settle Ladder</span></div>
+              <div class="row-out">A staged plan that teaches your baby to fall asleep unheld.</div></div></div>
+            <div class="row">
+              <span class="ricon"><svg class="ic"><use href="#ic-clock"/></svg></span>
+              <div class="rbody"><div class="row-top"><span class="row-n">06</span><span class="row-lead"></span><span class="row-name">The 2AM Playbook</span></div>
+              <div class="row-out">Know exactly what to do at every night waking.</div></div></div>
+          </div>
+        </div>
+        <div class="plate">
+          <div class="plate-head"><div class="plate-id">Phase 03</div><div class="plate-name">Freedom</div><div class="plate-tag">Lock in full nights, and protect them when life happens.</div></div>
+          <div class="rows">
+            <div class="row">
+              <span class="ricon"><svg class="ic"><use href="#ic-moon"/></svg></span>
+              <div class="rbody"><div class="row-top"><span class="row-n">07</span><span class="row-lead"></span><span class="row-name">The 12-Hour Night</span></div>
+              <div class="row-out">Your baby sleeping through — a full night, on repeat.</div></div></div>
+            <div class="row">
+              <span class="ricon"><svg class="ic"><use href="#ic-lock"/></svg></span>
+              <div class="rbody"><div class="row-top"><span class="row-n">08</span><span class="row-lead"></span><span class="row-name">The Nap Lock</span></div>
+              <div class="row-out">Predictable daytime naps you can plan around.</div></div></div>
+            <div class="row">
+              <span class="ricon"><svg class="ic"><use href="#ic-shield"/></svg></span>
+              <div class="rbody"><div class="row-top"><span class="row-n">09</span><span class="row-lead"></span><span class="row-name">The Regression Shield</span></div>
+              <div class="row-out">Sleep protected through teething, travel and growth spurts.</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="tblock"><span class="wm">Gentle Nights</span><span>System 3 × 9</span><span>Sheet 01 of 01</span><span>Phase 01–03</span><span>Step 01–09</span></div>
+        <div class="cta">
+          <span class="cta-txt">Ready for full nights?</span>
+          <a class="cta-btn" href="https://example.com/book" target="_blank" rel="noopener">Book a free sleep call <svg class="ic"><use href="#ic-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ============ STYLE 02 · MARQUEE ============ -->
+<div class="wrap">
+  <div class="sty">
+    <div class="sty-top">
+      <div>
+        <div class="sty-id">Style 02</div>
+        <h2>Marquee <em>— loud and hard to scroll past</em></h2>
+      </div>
+      <button type="button" class="replay" data-play="s-mq">Play again</button>
+    </div>
+    <div class="sty-facts">
+      <dl><dt>Best for</dt><dd>Getting attention in a busy feed. Bold personal brands, live events, anyone running ads.</dd></dl>
+      <dl><dt>The feel</dt><dd>A title card. Your system name set huge, solid colour bars, hard edges. Nothing subtle about it.</dd></dl>
+      <dl><dt>Use it on</dt><dd>Ads, social posts, thumbnails, the top of a registration page.</dd></dl>
+    </div>
+  </div>
+</div>
+<div class="wrap"><div class="fit">
+  <div class="frame mq" id="s-mq">
+    <div class="rail top"><span>A signature system</span><span><b>Gentle Nights</b></span></div>
+    <div class="sweep"></div>
+    <div class="body">
+      <div class="title">
+        <div class="eb">Three phases · Nine steps</div>
+        <div class="mast">
+          <span class="logo"><svg class="lg"><use href="#logo-mark"/></svg></span>
+          <div class="mast-txt">
+            <div class="h1">The Gentle<br>Nights Method<sup>™</sup></div>
+            <div class="accent-rule"></div>
+            <p class="sub">Sleeping through the night in 14 days — without cry-it-out or living by the monitor.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cols">
+        <div class="col">
+          <div class="bar"><span class="n">01</span><span class="nm">Foundation</span></div>
+          <div class="tag">See what's really happening, and set the room up to work with you.</div>
+          <div class="steps">
+            <div class="st hot"><span class="flag">Hot step</span>
+              <span class="sicon"><svg class="ic"><use href="#ic-chart"/></svg></span>
+              <div class="sbody"><div class="num">Step 01</div><div class="nm">The Sleep Snapshot</div><div class="out">Real sleep patterns mapped on one page.</div></div></div>
+            <div class="st">
+              <span class="sicon"><svg class="ic"><use href="#ic-room"/></svg></span>
+              <div class="sbody"><div class="num">Step 02</div><div class="nm">The Nursery Reset</div><div class="out">Light, sound and temperature dialed in.</div></div></div>
+            <div class="st">
+              <span class="sicon"><svg class="ic"><use href="#ic-list"/></svg></span>
+              <div class="sbody"><div class="num">Step 03</div><div class="nm">The Wind-Down Blueprint</div><div class="out">A bedtime routine ready to run tonight.</div></div></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bar"><span class="n">02</span><span class="nm">Rhythm</span></div>
+          <div class="tag">Get days and nights in the right order, so sleep starts to hold.</div>
+          <div class="steps">
+            <div class="st">
+              <span class="sicon"><svg class="ic"><use href="#ic-switch"/></svg></span>
+              <div class="sbody"><div class="num">Step 04</div><div class="nm">The Day-Night Switch</div><div class="out">The longest stretch happens after dark.</div></div></div>
+            <div class="st">
+              <span class="sicon"><svg class="ic"><use href="#ic-steps"/></svg></span>
+              <div class="sbody"><div class="num">Step 05</div><div class="nm">The Self-Settle Ladder</div><div class="out">Falling asleep without being held.</div></div></div>
+            <div class="st">
+              <span class="sicon"><svg class="ic"><use href="#ic-clock"/></svg></span>
+              <div class="sbody"><div class="num">Step 06</div><div class="nm">The 2AM Playbook</div><div class="out">Know what to do at every night waking.</div></div></div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bar"><span class="n">03</span><span class="nm">Freedom</span></div>
+          <div class="tag">Lock in full nights, and protect them when life happens.</div>
+          <div class="steps">
+            <div class="st">
+              <span class="sicon"><svg class="ic"><use href="#ic-moon"/></svg></span>
+              <div class="sbody"><div class="num">Step 07</div><div class="nm">The 12-Hour Night</div><div class="out">Sleeping through — a full night, on repeat.</div></div></div>
+            <div class="st">
+              <span class="sicon"><svg class="ic"><use href="#ic-lock"/></svg></span>
+              <div class="sbody"><div class="num">Step 08</div><div class="nm">The Nap Lock</div><div class="out">Naps you can plan your life around.</div></div></div>
+            <div class="st">
+              <span class="sicon"><svg class="ic"><use href="#ic-shield"/></svg></span>
+              <div class="sbody"><div class="num">Step 09</div><div class="nm">The Regression Shield</div><div class="out">Sleep protected through teething and travel.</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="cta">
+        <span class="cta-txt">Ready for full nights?</span>
+        <a class="cta-btn" href="https://example.com/book" target="_blank" rel="noopener">Book a free sleep call <svg class="ic"><use href="#ic-arrow"/></svg></a>
+      </div>
+    </div>
+    <div class="rail bot"><span>Foundation <b>→</b> Rhythm <b>→</b> Freedom</span><span>gentlenights.com</span></div>
+  </div>
+</div></div>
+
+<!-- ============ STYLE 03 · MONOLITH ============ -->
+<div class="wrap">
+  <div class="sty">
+    <div class="sty-top">
+      <div>
+        <div class="sty-id">Style 03</div>
+        <h2>Monolith <em>— quiet and premium</em></h2>
+      </div>
+      <button type="button" class="replay" data-play="s-mo">Play again</button>
+    </div>
+    <div class="sty-facts">
+      <dl><dt>Best for</dt><dd>Selling high-ticket. Coaches and consultants whose price does the talking, not the volume.</dd></dl>
+      <dl><dt>The feel</dt><dd>Three solid blocks standing on one line. That line is your promise — the whole system sits on top of it.</dd></dl>
+      <dl><dt>Use it on</dt><dd>Sales pages, pitch decks, your about page, anywhere you want it to look expensive.</dd></dl>
+    </div>
+  </div>
+</div>
+<div class="wrap"><div class="fit">
+  <div class="frame mo" id="s-mo">
+    <div class="body">
+      <div class="top">
+        <div class="mast-col">
+          <div class="eb"><i></i>A signature system</div>
+          <div class="mast">
+            <span class="logo"><svg class="lg"><use href="#logo-mark"/></svg></span>
+            <div class="mast-txt">
+              <div class="h1">The Gentle Nights Method<sup>™</sup></div>
+              <p class="sub">How exhausted new parents get their baby sleeping through the night in 14 days — without cry-it-out or living by the monitor.</p>
+            </div>
+          </div>
+        </div>
+        <div class="chip"><div class="wm">Gentle Nights</div><div class="ct">3 phases · 9 steps</div></div>
+      </div>
+      <div class="slabs">
+        <div class="slab"><span class="seam"></span>
+          <div class="slab-head"><div class="slab-id">Phase 01</div><div class="slab-name">Foundation</div><div class="slab-tag">See what's really happening, and set the room up to work with you.</div></div>
+          <div class="slab-steps">
+            <div class="ms hot"><span class="flag">Hot step</span>
+              <span class="micon"><svg class="ic"><use href="#ic-chart"/></svg></span>
+              <div class="mbody"><div class="n">Step 01</div><div class="nm">The Sleep Snapshot</div><div class="out">Your baby's real sleep patterns mapped on one page.</div></div></div>
+            <div class="ms">
+              <span class="micon"><svg class="ic"><use href="#ic-room"/></svg></span>
+              <div class="mbody"><div class="n">Step 02</div><div class="nm">The Nursery Reset</div><div class="out">The room set up for sleep — light, sound and temperature dialed in.</div></div></div>
+            <div class="ms">
+              <span class="micon"><svg class="ic"><use href="#ic-list"/></svg></span>
+              <div class="mbody"><div class="n">Step 03</div><div class="nm">The Wind-Down Blueprint</div><div class="out">A bedtime routine written out and ready to run tonight.</div></div></div>
+          </div>
+        </div>
+        <div class="slab"><span class="seam"></span>
+          <div class="slab-head"><div class="slab-id">Phase 02</div><div class="slab-name">Rhythm</div><div class="slab-tag">Get days and nights in the right order, so sleep starts to hold.</div></div>
+          <div class="slab-steps">
+            <div class="ms">
+              <span class="micon"><svg class="ic"><use href="#ic-switch"/></svg></span>
+              <div class="mbody"><div class="n">Step 04</div><div class="nm">The Day-Night Switch</div><div class="out">The longest stretch of sleep happens after dark.</div></div></div>
+            <div class="ms">
+              <span class="micon"><svg class="ic"><use href="#ic-steps"/></svg></span>
+              <div class="mbody"><div class="n">Step 05</div><div class="nm">The Self-Settle Ladder</div><div class="out">A staged plan that teaches your baby to fall asleep without being held.</div></div></div>
+            <div class="ms">
+              <span class="micon"><svg class="ic"><use href="#ic-clock"/></svg></span>
+              <div class="mbody"><div class="n">Step 06</div><div class="nm">The 2AM Playbook</div><div class="out">Know exactly what to do at every night waking.</div></div></div>
+          </div>
+        </div>
+        <div class="slab"><span class="seam"></span>
+          <div class="slab-head"><div class="slab-id">Phase 03</div><div class="slab-name">Freedom</div><div class="slab-tag">Lock in full nights, and protect them when life happens.</div></div>
+          <div class="slab-steps">
+            <div class="ms">
+              <span class="micon"><svg class="ic"><use href="#ic-moon"/></svg></span>
+              <div class="mbody"><div class="n">Step 07</div><div class="nm">The 12-Hour Night</div><div class="out">Your baby sleeping through — a full night, on repeat.</div></div></div>
+            <div class="ms">
+              <span class="micon"><svg class="ic"><use href="#ic-lock"/></svg></span>
+              <div class="mbody"><div class="n">Step 08</div><div class="nm">The Nap Lock</div><div class="out">Predictable daytime naps you can plan your life around.</div></div></div>
+            <div class="ms">
+              <span class="micon"><svg class="ic"><use href="#ic-shield"/></svg></span>
+              <div class="mbody"><div class="n">Step 09</div><div class="nm">The Regression Shield</div><div class="out">Sleep protected through teething, travel and growth spurts.</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="base"></div>
+      <div class="promise">
+        <div class="lbl">The promise</div>
+        <div class="txt">"I help exhausted new parents get their baby sleeping through the night in 14 days — without cry-it-out or living by the monitor."</div>
+        <div class="cta">
+          <span class="cta-txt">Ready for full nights?</span>
+          <a class="cta-btn" href="https://example.com/book" target="_blank" rel="noopener">Book a free sleep call <svg class="ic"><use href="#ic-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <div class="next">
+    <h2>Made your pick?</h2>
+    <p>Open the Magic Formula™ Visual Builder and tell it which style you want. Use the name, not the number, so there's no mix-up.</p>
+    <div class="say">Build my Magic Formula™ Visual in the Monolith style.</div>
+    <p style="margin-top:16px">It'll take it from there, one question at a time.</p>
+  </div>
+
+  <div class="page-foot">
+    The baby-sleep coach in these examples is made up. It's here to show the shape of a finished system, not a real client result. The system mark and the step icons are placeholders — yours replace them.
+  </div>
+</div>
+
+<script>
+(function () {
+  var NAT_W = 1320, NAT_H = 880;
+
+  var frames = Array.prototype.slice.call(document.querySelectorAll(".frame"));
+
+  function fit(frame) {
+    var wrap = frame.parentElement;
+    var s = wrap.clientWidth / NAT_W;
+    frame.style.transform = "scale(" + s + ")";
+    wrap.style.height = Math.round(NAT_H * s) + "px";
+  }
+  function fitAll() { frames.forEach(fit); }
+  fitAll();
+  window.addEventListener("resize", fitAll);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(fitAll); }
+
+  function play(frame) {
+    frame.classList.remove("playing");
+    void frame.offsetWidth;               // force reflow so the animations restart
+    frame.classList.add("playing");
+  }
+
+  document.querySelectorAll("[data-play]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      play(document.getElementById(btn.getAttribute("data-play")));
+    });
+  });
+
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { play(e.target); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.3 });
+    frames.forEach(function (f) { io.observe(f); });
+  } else {
+    frames.forEach(play);
+  }
+})();
+</script>
+</body>
+</html>
