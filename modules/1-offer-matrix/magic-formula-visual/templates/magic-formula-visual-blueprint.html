@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  MAGIC FORMULA(TM) VISUAL - BLUEPRINT (light, precise)
+  Coach Launch - The $100K Day Formula(TM) - Offer Matrix(TM) - Step 2
+
+  Fill every {{TOKEN}} below, then DELETE this comment block.
+  Change nothing else. The CSS and the animation work as they are.
+
+  BRAND      {{ACCENT}} {{FONT_LINK}} {{FONT_DISPLAY}} {{FONT_BODY}} {{FONT_MONO}}
+  HEADER     {{SYSTEM_MARK}} {{EYEBROW}} {{SYSTEM_NAME}} {{SUBTITLE}}
+  PHASES     {{PHASE_1_NAME}}..{{PHASE_3_NAME}}  {{PHASE_1_TAG}}..{{PHASE_3_TAG}}
+  STEPS      {{STEP_1_NAME}}..{{STEP_9_NAME}}    {{STEP_1_OUT}}..{{STEP_9_OUT}}
+             {{STEP_1_ICON}}..{{STEP_9_ICON}}    (inline <svg class="ic">)
+  HOT STEP   {{HOT_1}}..{{HOT_9}} - put the word  hot  on the ONE hot step,
+             leave the other eight EMPTY. That step is the seed of the
+             Event Magnet(TM).
+  FOOTER     {{BRAND_NAME}} {{WEBSITE}} {{CTA_TEXT}} {{CTA_LABEL}} {{CTA_URL}}
+  TIMELINE   {{TIMELINE}} - the promise timeline on the dimension line
+
+  Phase and step numbers (01..09) are fixed by the 3x9 structure.
+  ============================================================================
+--><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{SYSTEM_NAME_PLAIN}}</title>
+{{FONT_LINK}}
+<style>
+*{ box-sizing:border-box; margin:0; padding:0 }
+:root{
+  --mono:{{FONT_MONO}};
+  --disp:{{FONT_DISPLAY}};
+  --body:{{FONT_BODY}};
+}
+html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content:center; min-height:100vh }
+.frame{ position:relative; width:1320px; height:880px; overflow:hidden; transform-origin:center center; flex:0 0 auto }
+.frame p{ margin:0; max-width:none; font-size:inherit }
+
+/* one line icon per step */
+.ic{ width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; display:block }
+
+/* System mark - a mark for the SYSTEM, not the business logo. A square SVG or a
+   wide wordmark both work; the slot sizes itself to whatever is dropped in. */
+.frame .mast{ display:flex; align-items:center }
+.frame .mast-txt{ min-width:0; flex:1 }
+.frame .logo{ flex:0 0 auto; display:flex; align-items:center; justify-content:center }
+.lg{ height:50px; width:auto; min-width:50px; display:block }
+
+/* Call to action. The button is a real link to whatever the coach chooses. */
+.frame .cta{ display:flex; flex-direction:column; align-items:flex-end; gap:9px; text-align:right }
+.frame .cta-txt{ font-family:var(--disp); font-weight:700; letter-spacing:-.01em; white-space:nowrap }
+.cta-btn{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--disp);
+  font-weight:800; white-space:nowrap; background:var(--ac); color:#fff; cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease, filter .18s ease }
+.cta-btn:hover{ transform:translateY(-2px); filter:brightness(1.07) }
+.cta-btn:active{ transform:translateY(0) }
+.cta-btn:focus-visible{ outline:2px solid #fff; outline-offset:3px }
+.cta-btn .ic{ width:16px; height:16px; stroke-width:2.1 }
+
+/* the hot-step flag only shows on the one step marked hot */
+.hot-flag{ display:none }
+.hot .hot-flag{ display:block }
+/* ============================================================
+   STYLE 01 — BLUEPRINT
+   ============================================================ */
+.bp{
+  --ac:#db0063;
+  --ink2:#101720; --soft2:#4e5a6b; --mute:#8b95a4;
+  --pap:#eef1f4;
+  --hair:rgba(18,42,72,.20); --hair2:rgba(18,42,72,.10);
+  background:var(--pap); font-family:var(--body); color:var(--ink2); line-height:1.5;
+}
+.bp .grid{ position:absolute; inset:0; z-index:0; opacity:0;
+  background-image:
+    linear-gradient(rgba(18,42,72,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(18,42,72,.055) 1px,transparent 1px),
+    linear-gradient(rgba(18,42,72,.075) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(18,42,72,.075) 1px,transparent 1px);
+  background-size:11px 11px, 11px 11px, 88px 88px, 88px 88px }
+.bp.playing .grid{ animation:bpFade .7s ease forwards }
+.bp .tick{ position:absolute; width:26px; height:26px; z-index:3; opacity:0 }
+.bp .tick::before, .bp .tick::after{ content:""; position:absolute; background:var(--ink2) }
+.bp .tick::before{ width:26px; height:1px }
+.bp .tick::after{ width:1px; height:26px }
+.bp .tick.tl{ top:26px; left:28px }
+.bp .tick.tr{ top:26px; right:28px }
+.bp .tick.bl{ bottom:26px; left:28px }
+.bp .tick.br{ bottom:26px; right:28px }
+.bp .tick.tr::before, .bp .tick.br::before{ right:0 }
+.bp .tick.tr::after,  .bp .tick.br::after { right:0 }
+.bp .tick.bl::before, .bp .tick.br::before{ bottom:0 }
+.bp .tick.bl::after,  .bp .tick.br::after { bottom:0 }
+.bp.playing .tick{ animation:bpSnap .34s cubic-bezier(.2,1.5,.4,1) forwards .35s }
+.bp .sheet{ position:relative; z-index:2; height:100%; padding:42px 56px 34px; display:flex; flex-direction:column }
+.bp .mast{ gap:20px; margin-top:12px }
+.bp .logo{ width:74px; height:74px; padding:8px; border:1px solid var(--hair); background:#fff; color:var(--ac); opacity:0 }
+.bp .lg{ height:56px; min-width:56px }
+.bp.playing .logo{ animation:bpFade .5s ease forwards .45s }
+.bp .eb{ font-family:var(--mono); font-size:10.5px; font-weight:500; letter-spacing:.26em; text-transform:uppercase; color:var(--soft2); display:flex; align-items:center; gap:12px; opacity:0 }
+.bp .eb i{ display:block; width:30px; height:1px; background:var(--ac) }
+.bp.playing .eb{ animation:bpFade .5s ease forwards .5s }
+.bp .h1{ font-family:var(--disp); font-weight:800; font-size:41px; letter-spacing:-.028em; line-height:1.03; opacity:0 }
+.bp .h1 sup{ font-size:.3em; font-weight:700; top:-1.35em; color:var(--ac) }
+.bp.playing .h1{ animation:bpRise .6s cubic-bezier(.2,.9,.3,1) forwards .6s }
+.bp .sub{ margin-top:11px; font-size:14.8px; line-height:1.5; color:var(--soft2); max-width:70ch; opacity:0 }
+.bp.playing .sub{ animation:bpFade .55s ease forwards .78s }
+.bp .dim{ position:relative; margin:22px 0 15px; height:24px; display:flex; align-items:center }
+.bp .dim-rule{ position:relative; flex:1; height:1px; background:var(--ink2); transform:scaleX(0) }
+.bp.playing .dim-rule{ animation:bpSpanX .8s cubic-bezier(.3,.9,.2,1) forwards 1s }
+.bp .dim-rule::before, .bp .dim-rule::after{ content:""; position:absolute; top:-4.5px; width:1px; height:10px; background:var(--ink2) }
+.bp .dim-rule::before{ left:0 }
+.bp .dim-rule::after{ right:0 }
+.bp .dim-val{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); background:var(--pap); padding:0 16px;
+  font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--ac); white-space:nowrap; opacity:0 }
+.bp.playing .dim-val{ animation:bpFade .4s ease forwards 1.5s }
+.bp .plates{ display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:minmax(0,1fr); gap:22px; flex:1; min-height:0 }
+.bp .plate{ border:1px solid var(--hair); background:rgba(255,255,255,.62); display:flex; flex-direction:column; clip-path:inset(0 100% 0 0) }
+.bp.playing .plate{ animation:bpWipe .62s cubic-bezier(.35,.9,.25,1) forwards }
+.bp.playing .plate:nth-child(1){ animation-delay:1.26s }
+.bp.playing .plate:nth-child(2){ animation-delay:1.42s }
+.bp.playing .plate:nth-child(3){ animation-delay:1.58s }
+.bp .plate-head{ padding:14px 18px 12px; border-bottom:1px solid var(--hair) }
+.bp .plate-id{ font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--mute) }
+.bp .plate-name{ font-family:var(--disp); font-weight:800; font-size:20px; letter-spacing:-.015em; margin-top:7px }
+.bp .plate-tag{ margin-top:7px; font-size:12.2px; line-height:1.45; color:var(--soft2); min-height:35px }
+.bp .rows{ flex:1; display:flex; flex-direction:column }
+.bp .row{ position:relative; padding:10px 16px; border-bottom:1px solid var(--hair2); flex:1; opacity:0;
+  display:flex; align-items:center; gap:12px }
+.bp .row:last-child{ border-bottom:0 }
+.bp.playing .row{ animation:bpFade .45s ease forwards }
+/* steps settle in reading order: down column 1, then 2, then 3 */
+.bp.playing .plate:nth-child(1) .row:nth-child(1){ animation-delay:1.90s }
+.bp.playing .plate:nth-child(1) .row:nth-child(2){ animation-delay:2.00s }
+.bp.playing .plate:nth-child(1) .row:nth-child(3){ animation-delay:2.10s }
+.bp.playing .plate:nth-child(2) .row:nth-child(1){ animation-delay:2.06s }
+.bp.playing .plate:nth-child(2) .row:nth-child(2){ animation-delay:2.16s }
+.bp.playing .plate:nth-child(2) .row:nth-child(3){ animation-delay:2.26s }
+.bp.playing .plate:nth-child(3) .row:nth-child(1){ animation-delay:2.22s }
+.bp.playing .plate:nth-child(3) .row:nth-child(2){ animation-delay:2.32s }
+.bp.playing .plate:nth-child(3) .row:nth-child(3){ animation-delay:2.42s }
+.bp .ricon{ flex:0 0 auto; width:32px; height:32px; border:1px solid var(--hair); background:#fff;
+  display:flex; align-items:center; justify-content:center; color:var(--ac) }
+.bp .rbody{ flex:1; min-width:0 }
+.bp .row-top{ display:flex; align-items:center }
+.bp .row-n{ font-family:var(--mono); font-size:10px; font-weight:700; color:var(--soft2); border:1px solid var(--hair); padding:3px 6px; line-height:1; flex:0 0 auto }
+.bp .row-lead{ height:1px; background:var(--hair); width:12px; flex:0 0 auto }
+.bp .row-name{ font-family:var(--disp); font-weight:700; font-size:14.2px; letter-spacing:-.008em }
+.bp .row-out{ margin-top:5px; font-size:12px; line-height:1.44; color:var(--soft2) }
+.bp .row.hot{ background:rgba(219,0,99,.05); box-shadow:inset 3px 0 0 var(--ac) }
+.bp .row.hot .row-n{ border-color:var(--ac); color:var(--ac) }
+.bp .row.hot .ricon{ border-color:var(--ac) }
+.bp .hot-flag{ position:absolute; right:15px; top:13px; font-family:var(--mono); font-size:8.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ac) }
+.bp .foot{ display:flex; justify-content:space-between; align-items:flex-end; gap:26px; margin-top:14px }
+.bp .cta{ opacity:0 }
+.bp.playing .cta{ animation:bpFade .5s ease forwards 2.5s }
+.bp .cta-txt{ font-size:14.5px; color:var(--ink2) }
+.bp .cta-btn{ padding:13px 22px; border-radius:3px; font-size:13.5px; letter-spacing:-.005em;
+  box-shadow:0 8px 20px -10px var(--ac) }
+.bp .tblock{ border:1px solid var(--ink2); display:grid; grid-template-columns:auto auto; opacity:0 }
+.bp.playing .tblock{ animation:bpFade .5s ease forwards 2.55s }
+.bp .tblock span{ padding:8px 15px; border-right:1px solid var(--hair); border-bottom:1px solid var(--hair);
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--mute) }
+.bp .tblock span:nth-child(2n){ border-right:0 }
+.bp .tblock span:nth-last-child(-n+2){ border-bottom:0 }
+.bp .tblock .wm{ font-family:var(--disp); font-weight:800; font-size:14px; letter-spacing:-.01em; text-transform:none; color:var(--ink2); grid-column:1 / -1; border-right:0 }
+@keyframes bpFade{ to{ opacity:1 } }
+@keyframes bpRise{ from{ opacity:0; transform:translateY(11px) } to{ opacity:1; transform:none } }
+@keyframes bpSnap{ from{ opacity:0; transform:scale(.4) } to{ opacity:1; transform:none } }
+@keyframes bpSpanX{ to{ transform:scaleX(1) } }
+@keyframes bpWipe{ to{ clip-path:inset(0 0 0 0) } }
+
+@media (prefers-reduced-motion: reduce){
+  .bp *, .mq *, .mo *{ animation:none !important; transition:none !important }
+  .bp .grid, .bp .tick, .bp .eb, .bp .h1, .bp .sub, .bp .dim-val, .bp .row, .bp .logo, .bp .cta, .bp .tblock,
+  .mq .rail, .mq .eb, .mq .sub, .mq .logo, .mq .cta,
+  .mo .eb, .mo .h1, .mo .sub, .mo .chip, .mo .logo, .mo .slab, .mo .ms, .mo .promise{ opacity:1 !important }
+  .cta-btn:hover{ transform:none }
+  .bp .plate, .mq .h1, .mq .col{ clip-path:none !important }
+  .bp .dim-rule, .mo .base{ transform:scaleX(1) !important }
+  .mo .seam{ transform:scaleY(1) !important }
+  .mo .slab{ transform:none !important }
+  .mq .accent-rule{ width:132px !important }
+  .mq .sweep{ display:none }
+}
+</style>
+</head>
+<body>
+<div class="frame bp">
+  <div class="grid"></div>
+  <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+  <div class="sheet">
+    <div class="eb"><i></i>{{EYEBROW}}</div>
+    <div class="mast">
+      <span class="logo">{{SYSTEM_MARK}}</span>
+      <div class="mast-txt">
+        <div class="h1">{{SYSTEM_NAME}}</div>
+        <p class="sub">{{SUBTITLE}}</p>
+      </div>
+    </div>
+
+    <div class="dim"><div class="dim-rule"></div><div class="dim-val">{{TIMELINE}}</div></div>
+
+    <div class="plates">
+      <div class="plate">
+        <div class="plate-head"><div class="plate-id">Phase 01</div><div class="plate-name">{{PHASE_1_NAME}}</div><div class="plate-tag">{{PHASE_1_TAG}}</div></div>
+        <div class="rows">
+          <div class="row {{HOT_1}}"><div class="hot-flag">Hot step</div><span class="ricon">{{STEP_1_ICON}}</span><div class="rbody"><div class="row-top"><span class="row-n">01</span><span class="row-lead"></span><span class="row-name">{{STEP_1_NAME}}</span></div><div class="row-out">{{STEP_1_OUT}}</div></div></div>
+          <div class="row {{HOT_2}}"><div class="hot-flag">Hot step</div><span class="ricon">{{STEP_2_ICON}}</span><div class="rbody"><div class="row-top"><span class="row-n">02</span><span class="row-lead"></span><span class="row-name">{{STEP_2_NAME}}</span></div><div class="row-out">{{STEP_2_OUT}}</div></div></div>
+          <div class="row {{HOT_3}}"><div class="hot-flag">Hot step</div><span class="ricon">{{STEP_3_ICON}}</span><div class="rbody"><div class="row-top"><span class="row-n">03</span><span class="row-lead"></span><span class="row-name">{{STEP_3_NAME}}</span></div><div class="row-out">{{STEP_3_OUT}}</div></div></div>
+        </div>
+      </div>
+      <div class="plate">
+        <div class="plate-head"><div class="plate-id">Phase 02</div><div class="plate-name">{{PHASE_2_NAME}}</div><div class="plate-tag">{{PHASE_2_TAG}}</div></div>
+        <div class="rows">
+          <div class="row {{HOT_4}}"><div class="hot-flag">Hot step</div><span class="ricon">{{STEP_4_ICON}}</span><div class="rbody"><div class="row-top"><span class="row-n">04</span><span class="row-lead"></span><span class="row-name">{{STEP_4_NAME}}</span></div><div class="row-out">{{STEP_4_OUT}}</div></div></div>
+          <div class="row {{HOT_5}}"><div class="hot-flag">Hot step</div><span class="ricon">{{STEP_5_ICON}}</span><div class="rbody"><div class="row-top"><span class="row-n">05</span><span class="row-lead"></span><span class="row-name">{{STEP_5_NAME}}</span></div><div class="row-out">{{STEP_5_OUT}}</div></div></div>
+          <div class="row {{HOT_6}}"><div class="hot-flag">Hot step</div><span class="ricon">{{STEP_6_ICON}}</span><div class="rbody"><div class="row-top"><span class="row-n">06</span><span class="row-lead"></span><span class="row-name">{{STEP_6_NAME}}</span></div><div class="row-out">{{STEP_6_OUT}}</div></div></div>
+        </div>
+      </div>
+      <div class="plate">
+        <div class="plate-head"><div class="plate-id">Phase 03</div><div class="plate-name">{{PHASE_3_NAME}}</div><div class="plate-tag">{{PHASE_3_TAG}}</div></div>
+        <div class="rows">
+          <div class="row {{HOT_7}}"><div class="hot-flag">Hot step</div><span class="ricon">{{STEP_7_ICON}}</span><div class="rbody"><div class="row-top"><span class="row-n">07</span><span class="row-lead"></span><span class="row-name">{{STEP_7_NAME}}</span></div><div class="row-out">{{STEP_7_OUT}}</div></div></div>
+          <div class="row {{HOT_8}}"><div class="hot-flag">Hot step</div><span class="ricon">{{STEP_8_ICON}}</span><div class="rbody"><div class="row-top"><span class="row-n">08</span><span class="row-lead"></span><span class="row-name">{{STEP_8_NAME}}</span></div><div class="row-out">{{STEP_8_OUT}}</div></div></div>
+          <div class="row {{HOT_9}}"><div class="hot-flag">Hot step</div><span class="ricon">{{STEP_9_ICON}}</span><div class="rbody"><div class="row-top"><span class="row-n">09</span><span class="row-lead"></span><span class="row-name">{{STEP_9_NAME}}</span></div><div class="row-out">{{STEP_9_OUT}}</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <div class="tblock"><span class="wm">{{BRAND_NAME}}</span><span>System 3 &times; 9</span><span>Sheet 01 of 01</span><span>Phase 01&ndash;03</span><span>Step 01&ndash;09</span></div>
+      <div class="cta">
+        <span class="cta-txt">{{CTA_TEXT}}</span>
+        <a class="cta-btn" href="{{CTA_URL}}" target="_blank" rel="noopener">{{CTA_LABEL}} <svg class="ic" viewBox="0 0 24 24"><path d="M4.5 12h14"/><polyline points="12.5 5.8 18.8 12 12.5 18.2"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var f = document.querySelector(".frame");
+  function fit() {
+    var s = Math.min(window.innerWidth / 1320, window.innerHeight / 880, 1);
+    f.style.transform = "scale(" + s + ")";
+  }
+  fit();
+  window.addEventListener("resize", fit);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(fit); }
+  requestAnimationFrame(function () { f.classList.add("playing"); });
+})();
+</script>
+</body>
+</html>

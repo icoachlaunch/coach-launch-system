@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  MAGIC FORMULA(TM) VISUAL - MONOLITH (dark, premium)
+  Coach Launch - The $100K Day Formula(TM) - Offer Matrix(TM) - Step 2
+
+  Fill every {{TOKEN}} below, then DELETE this comment block.
+  Change nothing else. The CSS and the animation work as they are.
+
+  BRAND      {{ACCENT}} {{FONT_LINK}} {{FONT_DISPLAY}} {{FONT_BODY}} {{FONT_MONO}}
+  HEADER     {{SYSTEM_MARK}} {{EYEBROW}} {{SYSTEM_NAME}} {{SUBTITLE}}
+  PHASES     {{PHASE_1_NAME}}..{{PHASE_3_NAME}}  {{PHASE_1_TAG}}..{{PHASE_3_TAG}}
+  STEPS      {{STEP_1_NAME}}..{{STEP_9_NAME}}    {{STEP_1_OUT}}..{{STEP_9_OUT}}
+             {{STEP_1_ICON}}..{{STEP_9_ICON}}    (inline <svg class="ic">)
+  HOT STEP   {{HOT_1}}..{{HOT_9}} - put the word  hot  on the ONE hot step,
+             leave the other eight EMPTY. That step is the seed of the
+             Event Magnet(TM).
+  FOOTER     {{BRAND_NAME}} {{WEBSITE}} {{CTA_TEXT}} {{CTA_LABEL}} {{CTA_URL}}
+  PROMISE    {{PROMISE}} - the \ Promise(TM), word for word
+
+  Phase and step numbers (01..09) are fixed by the 3x9 structure.
+  ============================================================================
+--><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{SYSTEM_NAME_PLAIN}}</title>
+{{FONT_LINK}}
+<style>
+*{ box-sizing:border-box; margin:0; padding:0 }
+:root{
+  --mono:{{FONT_MONO}};
+  --disp:{{FONT_DISPLAY}};
+  --body:{{FONT_BODY}};
+}
+html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content:center; min-height:100vh }
+.frame{ position:relative; width:1320px; height:880px; overflow:hidden; transform-origin:center center; flex:0 0 auto }
+.frame p{ margin:0; max-width:none; font-size:inherit }
+
+/* one line icon per step */
+.ic{ width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; display:block }
+
+/* System mark - a mark for the SYSTEM, not the business logo. A square SVG or a
+   wide wordmark both work; the slot sizes itself to whatever is dropped in. */
+.frame .mast{ display:flex; align-items:center }
+.frame .mast-txt{ min-width:0; flex:1 }
+.frame .logo{ flex:0 0 auto; display:flex; align-items:center; justify-content:center }
+.lg{ height:50px; width:auto; min-width:50px; display:block }
+
+/* Call to action. The button is a real link to whatever the coach chooses. */
+.frame .cta{ display:flex; flex-direction:column; align-items:flex-end; gap:9px; text-align:right }
+.frame .cta-txt{ font-family:var(--disp); font-weight:700; letter-spacing:-.01em; white-space:nowrap }
+.cta-btn{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--disp);
+  font-weight:800; white-space:nowrap; background:var(--ac); color:#fff; cursor:pointer;
+  transition:transform .18s ease, box-shadow .18s ease, filter .18s ease }
+.cta-btn:hover{ transform:translateY(-2px); filter:brightness(1.07) }
+.cta-btn:active{ transform:translateY(0) }
+.cta-btn:focus-visible{ outline:2px solid #fff; outline-offset:3px }
+.cta-btn .ic{ width:16px; height:16px; stroke-width:2.1 }
+
+/* the hot-step flag only shows on the one step marked hot */
+.hot-flag{ display:none }
+.hot .hot-flag{ display:block }
+/* ============================================================
+   STYLE 03 — MONOLITH
+   ============================================================ */
+.mo{
+  --ac:#db0063;
+  --ink2:#f2f3f5; --soft2:#9aa0ab; --mute:#666c78;
+  --bg2:#0d0f12; --slab:#15181d; --hair:rgba(255,255,255,.075);
+  background:var(--bg2); font-family:var(--body); color:var(--ink2); line-height:1.5;
+}
+.mo::before{ content:""; position:absolute; inset:0; z-index:0;
+  background:radial-gradient(90% 60% at 50% 8%, rgba(255,255,255,.045), transparent 60%) }
+.mo .body{ position:relative; z-index:3; height:100%; padding:54px 58px 44px; display:flex; flex-direction:column }
+.mo .top{ display:flex; justify-content:space-between; align-items:flex-start; gap:36px }
+.mo .mast{ gap:20px; margin-top:13px }
+.mo .mast-col{ flex:1; min-width:0 }         /* shares the top row with the wordmark chip */
+.mo .logo{ width:80px; height:80px; color:var(--ac); opacity:0 }
+.mo .lg{ height:72px; min-width:72px }
+.mo.playing .logo{ animation:moFade .5s ease forwards .26s }
+.mo .eb{ font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:var(--ac); display:flex; align-items:center; gap:11px; opacity:0 }
+.mo .eb i{ display:block; width:26px; height:1px; background:var(--ac) }
+.mo.playing .eb{ animation:moFade .5s ease forwards .2s }
+.mo .h1{ font-family:var(--disp); font-weight:800; font-size:45px; letter-spacing:-.03em; line-height:1.03; opacity:0 }
+.mo .h1 sup{ font-size:.28em; font-weight:700; top:-1.5em; color:var(--ac) }
+.mo.playing .h1{ animation:moRise .62s cubic-bezier(.2,.9,.3,1) forwards .34s }
+.mo .sub{ margin-top:14px; font-size:15.5px; line-height:1.5; color:var(--soft2); max-width:62ch; opacity:0 }
+.mo.playing .sub{ animation:moFade .55s ease forwards .54s }
+.mo .chip{ flex:0 0 auto; text-align:right; opacity:0 }
+.mo.playing .chip{ animation:moFade .5s ease forwards .44s }
+.mo .chip .wm{ font-family:var(--disp); font-weight:800; font-size:19px; letter-spacing:-.01em }
+.mo .chip .ct{ margin-top:7px; font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--mute) }
+.mo .slabs{ display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:minmax(0,1fr); gap:20px; flex:1; min-height:0; margin-top:30px }
+.mo .slab{ position:relative; background:#fff; border-radius:2px;
+  display:flex; flex-direction:column; overflow:hidden; opacity:0; transform:translateY(26px) }
+.mo.playing .slab{ animation:moStand .68s cubic-bezier(.2,.95,.25,1) forwards }
+.mo.playing .slab:nth-child(1){ animation-delay:1.16s }
+.mo.playing .slab:nth-child(2){ animation-delay:1.3s }
+.mo.playing .slab:nth-child(3){ animation-delay:1.44s }
+.mo .seam{ position:absolute; left:0; top:0; width:3px; height:100%; background:var(--ac); transform:scaleY(0); transform-origin:top }
+.mo.playing .seam{ animation:moSeam .62s cubic-bezier(.3,.9,.2,1) forwards }
+.mo.playing .slab:nth-child(1) .seam{ animation-delay:1.62s }
+.mo.playing .slab:nth-child(2) .seam{ animation-delay:1.76s }
+.mo.playing .slab:nth-child(3) .seam{ animation-delay:1.9s }
+.mo .slab-head{ padding:21px 22px 18px }
+.mo .slab-id{ font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:#98a0ae }
+.mo .slab-name{ font-family:var(--disp); font-weight:800; font-size:24px; letter-spacing:-.02em; margin-top:10px; color:#101014 }
+.mo .slab-tag{ margin-top:9px; font-size:12.8px; line-height:1.46; color:#5c6270; min-height:38px }
+.mo .slab-steps{ flex:1; display:flex; flex-direction:column; border-top:1px solid #e7e7ec }
+.mo .ms{ position:relative; flex:1; padding:14px 22px; border-bottom:1px solid #e7e7ec; opacity:0;
+  display:flex; align-items:center; gap:14px }
+.mo .ms:last-child{ border-bottom:0 }
+.mo.playing .ms{ animation:moFade .45s ease forwards }
+/* steps fill each slab top-down, slab by slab */
+.mo.playing .slab:nth-child(1) .ms:nth-child(1){ animation-delay:2.00s }
+.mo.playing .slab:nth-child(1) .ms:nth-child(2){ animation-delay:2.10s }
+.mo.playing .slab:nth-child(1) .ms:nth-child(3){ animation-delay:2.20s }
+.mo.playing .slab:nth-child(2) .ms:nth-child(1){ animation-delay:2.14s }
+.mo.playing .slab:nth-child(2) .ms:nth-child(2){ animation-delay:2.24s }
+.mo.playing .slab:nth-child(2) .ms:nth-child(3){ animation-delay:2.34s }
+.mo.playing .slab:nth-child(3) .ms:nth-child(1){ animation-delay:2.28s }
+.mo.playing .slab:nth-child(3) .ms:nth-child(2){ animation-delay:2.38s }
+.mo.playing .slab:nth-child(3) .ms:nth-child(3){ animation-delay:2.48s }
+.mo .micon{ flex:0 0 auto; width:38px; height:38px; border-radius:2px; background:#f5f5f8; border:1px solid #e4e4ea;
+  display:flex; align-items:center; justify-content:center; color:var(--ac) }
+.mo .mbody{ flex:1; min-width:0 }
+.mo .ms .n{ font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--ac) }
+.mo .ms .nm{ font-family:var(--disp); font-weight:700; font-size:14.4px; letter-spacing:-.01em; margin-top:5px; color:#101014 }
+.mo .ms .out{ margin-top:6px; font-size:12.2px; line-height:1.45; color:#5c5c68 }
+.mo .ms.hot{ background:rgba(219,0,99,.07) }
+.mo .ms.hot .micon{ border-color:var(--ac) }
+.mo .ms .flag{ position:absolute; right:18px; top:14px; font-family:var(--mono); font-size:8.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ac) }
+.mo .base{ height:2px; background:var(--ac); margin-top:24px; transform:scaleX(0); transform-origin:left }
+.mo.playing .base{ animation:moSpanX .82s cubic-bezier(.3,.9,.2,1) forwards .78s }
+.mo .promise{ display:flex; align-items:center; gap:16px; margin-top:15px; opacity:0 }
+.mo.playing .promise{ animation:moFade .55s ease forwards 2.35s }
+.mo .promise .lbl{ flex:0 0 auto; font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--mute); align-self:flex-start; padding-top:5px }
+.mo .promise .txt{ flex:1; font-family:var(--disp); font-weight:500; font-size:15.5px; line-height:1.46; color:var(--ink2); max-width:62ch }
+.mo .cta{ flex:0 0 auto; margin-left:auto }
+.mo .cta-txt{ font-size:13px; color:var(--soft2) }
+.mo .cta-btn{ padding:14px 26px; border-radius:5px; font-size:14px; letter-spacing:-.005em;
+  box-shadow:0 12px 28px -14px var(--ac) }
+@keyframes moFade{ to{ opacity:1 } }
+@keyframes moRise{ from{ opacity:0; transform:translateY(12px) } to{ opacity:1; transform:none } }
+@keyframes moStand{ to{ opacity:1; transform:none } }
+@keyframes moSeam{ to{ transform:scaleY(1) } }
+@keyframes moSpanX{ to{ transform:scaleX(1) } }
+
+@media (prefers-reduced-motion: reduce){
+  .bp *, .mq *, .mo *{ animation:none !important; transition:none !important }
+  .bp .grid, .bp .tick, .bp .eb, .bp .h1, .bp .sub, .bp .dim-val, .bp .row, .bp .logo, .bp .cta, .bp .tblock,
+  .mq .rail, .mq .eb, .mq .sub, .mq .logo, .mq .cta,
+  .mo .eb, .mo .h1, .mo .sub, .mo .chip, .mo .logo, .mo .slab, .mo .ms, .mo .promise{ opacity:1 !important }
+  .cta-btn:hover{ transform:none }
+  .bp .plate, .mq .h1, .mq .col{ clip-path:none !important }
+  .bp .dim-rule, .mo .base{ transform:scaleX(1) !important }
+  .mo .seam{ transform:scaleY(1) !important }
+  .mo .slab{ transform:none !important }
+  .mq .accent-rule{ width:132px !important }
+  .mq .sweep{ display:none }
+}
+</style>
+</head>
+<body>
+<div class="frame mo">
+  <div class="body">
+    <div class="top">
+      <div class="mast-col">
+        <div class="eb"><i></i>{{EYEBROW}}</div>
+        <div class="mast">
+          <span class="logo">{{SYSTEM_MARK}}</span>
+          <div class="mast-txt">
+            <div class="h1">{{SYSTEM_NAME}}</div>
+            <p class="sub">{{SUBTITLE}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="chip"><div class="wm">{{BRAND_NAME}}</div><div class="ct">3 phases &middot; 9 steps</div></div>
+    </div>
+
+    <div class="slabs">
+      <div class="slab"><span class="seam"></span>
+        <div class="slab-head"><div class="slab-id">Phase 01</div><div class="slab-name">{{PHASE_1_NAME}}</div><div class="slab-tag">{{PHASE_1_TAG}}</div></div>
+        <div class="slab-steps">
+          <div class="ms {{HOT_1}}"><span class="flag hot-flag">Hot step</span><span class="micon">{{STEP_1_ICON}}</span><div class="mbody"><div class="n">Step 01</div><div class="nm">{{STEP_1_NAME}}</div><div class="out">{{STEP_1_OUT}}</div></div></div>
+          <div class="ms {{HOT_2}}"><span class="flag hot-flag">Hot step</span><span class="micon">{{STEP_2_ICON}}</span><div class="mbody"><div class="n">Step 02</div><div class="nm">{{STEP_2_NAME}}</div><div class="out">{{STEP_2_OUT}}</div></div></div>
+          <div class="ms {{HOT_3}}"><span class="flag hot-flag">Hot step</span><span class="micon">{{STEP_3_ICON}}</span><div class="mbody"><div class="n">Step 03</div><div class="nm">{{STEP_3_NAME}}</div><div class="out">{{STEP_3_OUT}}</div></div></div>
+        </div>
+      </div>
+      <div class="slab"><span class="seam"></span>
+        <div class="slab-head"><div class="slab-id">Phase 02</div><div class="slab-name">{{PHASE_2_NAME}}</div><div class="slab-tag">{{PHASE_2_TAG}}</div></div>
+        <div class="slab-steps">
+          <div class="ms {{HOT_4}}"><span class="flag hot-flag">Hot step</span><span class="micon">{{STEP_4_ICON}}</span><div class="mbody"><div class="n">Step 04</div><div class="nm">{{STEP_4_NAME}}</div><div class="out">{{STEP_4_OUT}}</div></div></div>
+          <div class="ms {{HOT_5}}"><span class="flag hot-flag">Hot step</span><span class="micon">{{STEP_5_ICON}}</span><div class="mbody"><div class="n">Step 05</div><div class="nm">{{STEP_5_NAME}}</div><div class="out">{{STEP_5_OUT}}</div></div></div>
+          <div class="ms {{HOT_6}}"><span class="flag hot-flag">Hot step</span><span class="micon">{{STEP_6_ICON}}</span><div class="mbody"><div class="n">Step 06</div><div class="nm">{{STEP_6_NAME}}</div><div class="out">{{STEP_6_OUT}}</div></div></div>
+        </div>
+      </div>
+      <div class="slab"><span class="seam"></span>
+        <div class="slab-head"><div class="slab-id">Phase 03</div><div class="slab-name">{{PHASE_3_NAME}}</div><div class="slab-tag">{{PHASE_3_TAG}}</div></div>
+        <div class="slab-steps">
+          <div class="ms {{HOT_7}}"><span class="flag hot-flag">Hot step</span><span class="micon">{{STEP_7_ICON}}</span><div class="mbody"><div class="n">Step 07</div><div class="nm">{{STEP_7_NAME}}</div><div class="out">{{STEP_7_OUT}}</div></div></div>
+          <div class="ms {{HOT_8}}"><span class="flag hot-flag">Hot step</span><span class="micon">{{STEP_8_ICON}}</span><div class="mbody"><div class="n">Step 08</div><div class="nm">{{STEP_8_NAME}}</div><div class="out">{{STEP_8_OUT}}</div></div></div>
+          <div class="ms {{HOT_9}}"><span class="flag hot-flag">Hot step</span><span class="micon">{{STEP_9_ICON}}</span><div class="mbody"><div class="n">Step 09</div><div class="nm">{{STEP_9_NAME}}</div><div class="out">{{STEP_9_OUT}}</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="base"></div>
+    <div class="promise">
+      <div class="lbl">The promise</div>
+      <div class="txt">{{PROMISE}}</div>
+      <div class="cta">
+        <span class="cta-txt">{{CTA_TEXT}}</span>
+        <a class="cta-btn" href="{{CTA_URL}}" target="_blank" rel="noopener">{{CTA_LABEL}} <svg class="ic" viewBox="0 0 24 24"><path d="M4.5 12h14"/><polyline points="12.5 5.8 18.8 12 12.5 18.2"/></svg></a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var f = document.querySelector(".frame");
+  function fit() {
+    var s = Math.min(window.innerWidth / 1320, window.innerHeight / 880, 1);
+    f.style.transform = "scale(" + s + ")";
+  }
+  fit();
+  window.addEventListener("resize", fit);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(fit); }
+  requestAnimationFrame(function () { f.classList.add("playing"); });
+})();
+</script>
+</body>
+</html>
