@@ -96,7 +96,7 @@ forward, so the Enrollment Doc must obey it:
 Never reorder the acts. The offer only lands if the reader travels S → C → O → R → E first.
 
 WHERE THIS SITS:
-- **Upstream (required):** the locked **SCORE™ Card** (Part 2 — the 19 blocks of core copy) and the locked **Money Model** (Part 1 — the phase, the price, the close). This tool assembles the narrative from those; it does not re-collect it.
+- **Upstream (required):** the locked **SCORE™ Card** (Part 3 — the 19 blocks of core copy) and the locked **Money Model** (Part 1 — the phase, the price, the close). This tool assembles the narrative from those; it does not re-collect it.
 - **This tool builds:** the Enrollment Doc — one tangible win: a complete, ready-to-deploy sales letter that carries the full Red Diamond Offer™ and enrolls the client.
 - **Downstream:** it feeds the whole **Money Magnet™** pillar — it's the document that turns event attention into paid clients, the asset the Genie X Converter™ (Step 6) sends in follow-up, and the thing your ads and content point to once the room is warm.
 
@@ -262,7 +262,7 @@ so those assets must exist first.
 
 | Prerequisite | Minimum standard | How to verify |
 |---|---|---|
-| **The SCORE™ Card** (Part 2) | Locked — all 19 blocks built and approved (5 acts) | User pastes it, or confirms it's locked |
+| **The SCORE™ Card** (Part 3) | Locked — all 19 blocks built and approved (5 acts) | User pastes it, or confirms it's locked |
 | **The Money Model** (Part 1) | Locked — phase, price, and chosen close; cleared the Day-7 gate | User pastes it, or confirms it's locked |
 
 **What each asset feeds into the Enrollment Doc:**

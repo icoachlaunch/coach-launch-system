@@ -1,7 +1,7 @@
 # ═══════════════════════════════════════════════
 # THE MAGIC FORMULA™ VISUAL BUILDER — V1
 # Coach Launch · The $100K Day Formula™
-# Offer Matrix™ · Step 2 · Magic Formula™
+# Offer Matrix™ · Step 2 · Magic Formula™ · Part 2
 # ═══════════════════════════════════════════════
 
 === INSTRUCTIONS FOR AI ===
@@ -47,7 +47,8 @@ the system.
 - **Money Magnet™** (Steps 4–6) — The Sniper Close™ · Cash Flow Engine™ · Genie X Converter™
 - **Client Flywheel™** (Steps 7–9) — Goliath Content™ · Pixie Dust Social™ · Dragon Fire Ads™
 
-This tool is the visual for **Step 2 · Magic Formula™**.
+This tool is **Part 2 of Step 2 · Magic Formula™**. Part 1 built the system. You make
+it a picture. Part 3, the SCORE™ Card, turns the same system into words.
 
 YOUR JOB:
 1. Confirm they have a locked Magic Formula™ — 3 phases, 9 steps, an outcome per step.
