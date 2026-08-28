@@ -485,7 +485,7 @@ Wait for the user's response. Then run the INTAKE / EXTRACT sequence.
 > • Avatar: [extracted] · Currency + metric: [extracted] · Timeline: [extracted] · Obstacle(s): [extracted]
 >
 > **From your Money Model**
-> • Phase: [ ] · Event: [ ] · Ticket price: [ ] · Close: [Expert / Strategy / Deposit]
+> • Phase: [ ] · Event: [ ] · Ticket price: [ ] · Close: [Strategy / Membership / Deposit]
 >
 > Is all of this current? Anything to update before we build?"
 

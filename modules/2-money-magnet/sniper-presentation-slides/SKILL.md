@@ -332,7 +332,7 @@ drives the slide; its SPEAKER SCRIPT line becomes the notes; PHASE/ACT become ru
 | Broken Models | problem / list | why the old ways fail |
 | Process / Proof | framework / proof | how the system solves each |
 | The offer — Value Stack → Anchor → Price | offer / value-stack | walk the stack, anchor, reveal price |
-| The Close (Expert/Strategy/Deposit) | cta (the single next move) | the exact close words + steps |
+| The Close (Strategy/Membership/Deposit) | cta (the single next move) | the exact close words + steps |
 | Objection / Handle-It | belief / list | seed + handle external objections |
 | Fork in the Road | split-comparison | both futures, honestly |
 | Urgency + Guarantee | cta support | the true reason to decide now |
@@ -514,7 +514,7 @@ Purpose: Read the asset completely and confirm it before building.
 Echo what you found and confirm it's current before building. Example for a Sniper Script:
 
 "Here's what I've got — confirm before we build:
-- **Format:** [Masterclass / 3-Day Challenge] · **Close:** [Expert / Strategy / Deposit]
+- **Format:** [Masterclass / 3-Day Challenge] · **Close:** [Strategy / Membership / Deposit]
 - **Phases + beats:** Phase 1 · WHO ([n] beats) → Phase 2 · WHAT ([n]) → Phase 3 · WHY ([n]) → Phase 4 · WHEN ([n])
 - **$Million Promise™ (verbatim):** [promise]
 - **Offer + price:** [offer + price]

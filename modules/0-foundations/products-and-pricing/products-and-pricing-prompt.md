@@ -61,7 +61,7 @@ If you're still figuring this out, no problem. We'll capture where you are today
 ### Questions (ask one at a time, in order)
 
 1. What do you sell or plan to sell? Name, a short description, who it's for, and the price.
-2. If you've built your Money Model already, which **$100K Day Accelerator™ phase** are you in — Launch, Execute, Growth, or Mastery — and which of the **Three Closes** are you running (Expert, Strategy, or Deposit)? (If you haven't done the Money Model yet, we'll note "TBD — set in the Money Model" and move on.)
+2. If you've built your Money Model already, which **$100K Day Accelerator™ phase** are you in — Launch, Execute, Growth, or Mastery — and which of the **Three Closes** are you running (Strategy, Membership, or Deposit)? (If you haven't done the Money Model yet, we'll note "TBD — set in the Money Model" and move on.)
 3. What are your revenue goals? A monthly recurring target, an annual goal, or a number of clients you're working toward?
 4. How do you deliver it? One-to-one coaching, a group program, a course, a community, live events, or a mix?
 
@@ -107,7 +107,7 @@ status: complete
 
 ## Accelerator Phase & Close
 
-[From Q2 — the $100K Day Accelerator™ phase (Launch / Execute / Growth / Mastery) and the close (Expert / Strategy / Deposit). If not set: "TBD — determined in the Money Model."]
+[From Q2 — the $100K Day Accelerator™ phase (Launch / Execute / Growth / Mastery) and the close (Strategy / Membership / Deposit). If not set: "TBD — determined in the Money Model."]
 
 ## Pricing
 

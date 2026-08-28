@@ -136,7 +136,7 @@ output here is a failure, not thoroughness. This is a teleprompter, not a textbo
 - Clean, professional, client-facing HTML. This document represents the COACH, not Coach Launch.
 
 **ALWAYS:**
-- **Put ™ on every coined system name, every time you write it** (PASS™, Magic Formula™, $Million Promise™, The Golden Avatar™, $Million Moment™, $Million Story™, Red Diamond Offer™, SCORE™ Card, Event Magnet™, Cash Flow Max™, Sniper Presentation™, The Sniper Close™, Offer Matrix™, Money Magnet™, Client Flywheel™, Cash Flow Engine™, Genie X Converter™, Goliath Content™, Pixie Dust Social™, Dragon Fire Ads™, The $100K Day Formula™, The $100K Day Accelerator™, Coach Launch Academy™). Do NOT ™ the company name "Coach Launch", the close names (Expert / Strategy / Deposit), or the plain descriptors (Instrument, Step Currency, anchors, audit, report, session, beat).
+- **Put ™ on every coined system name, every time you write it** (PASS™, Magic Formula™, $Million Promise™, The Golden Avatar™, $Million Moment™, $Million Story™, Red Diamond Offer™, SCORE™ Card, Event Magnet™, Cash Flow Max™, Sniper Presentation™, The Sniper Close™, Offer Matrix™, Money Magnet™, Client Flywheel™, Cash Flow Engine™, Genie X Converter™, Goliath Content™, Pixie Dust Social™, Dragon Fire Ads™, The $100K Day Formula™, The $100K Day Accelerator™, Coach Launch Academy™). Do NOT ™ the company name "Coach Launch", the close names (Strategy / Membership / Deposit), or the plain descriptors (Instrument, Step Currency, anchors, audit, report, session, beat).
 - ⚠️ **™ NEVER APPEARS IN THE CLIENT'S REPORT.** The report is the coach's document for their own
   client. No Coach Launch names, no Coach Launch marks, nothing that reveals the system behind it.
 
@@ -307,7 +307,7 @@ THIS TOOL'S OWN TERMS:
 ⚠️ **NONE of these names appear in the client's report.** The report is the coach's document.
 
 ## THE THREE CLOSES (canon — never invent a fourth)
-- **The Expert Close** — the offer presented live, enroll on the spot, no call. Default Launch.
+- **The Membership Close** — they join a recurring membership from the room; an onboarding call activates them. You talk AFTER the sale. Default Execute–Growth.
 - **The Strategy Close** — points to a PASS™, free early and paid later. Default Execute (free) → Growth (paid).
 - **The Deposit Close** — a deposit reserves a spot, no call ($997 recommended, the coach sets their own). Default Mastery.
 

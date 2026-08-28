@@ -111,7 +111,7 @@ This is the full system your workspace grows into: 3 pillars, 9 steps, each buil
 | 8. Pixie Dust Social™ | `Formula/8-pixie-dust-social/` | Organic social system | *In development* |
 | 9. Dragon Fire Ads™ | `Formula/9-dragon-fire-ads/` | Paid traffic system | *In development* |
 
-**The Money Model (Step 3a) sets the "path"** — the Accelerator phase (Launch / Execute / Growth / Mastery) and the close (**the Three Closes**: Expert · Strategy · Deposit). That path shapes event format, pricing, and which downstream assets matter most. Record it in the `phase:` frontmatter field once the Money Model completes.
+**The Money Model (Step 3a) sets the "path"** — the Accelerator phase (Launch / Execute / Growth / Mastery) and the close (**the Three Closes**: Strategy · Membership · Deposit). That path shapes event format, pricing, and which downstream assets matter most. Record it in the `phase:` frontmatter field once the Money Model completes.
 
 ---
 
