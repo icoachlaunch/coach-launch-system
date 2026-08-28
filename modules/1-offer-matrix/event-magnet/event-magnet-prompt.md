@@ -721,9 +721,9 @@ Purpose: build the call to action to the event (Rule 10), teach the pairing (Rul
 > This goes on the final page of your Event Magnet™, after the tool itself.
 
 Guidance for framing by phase/close (use the user's real phase + close from the Money Model):
-- **Launch / Execute (Expert or free Strategy close):** CTA registers them for your free event/masterclass. "Come to [event] and I'll walk you through the whole system."
-- **Growth ($27 ticket / paid Strategy close):** CTA registers them for your paid event or books your paid strategy session. The Event Magnet™ warms them to pay a small ticket.
-- **Mastery ($97 ticket / Deposit close):** CTA registers them for your premium multi-day event.
+- **Launch / Execute (free or paid Strategy close):** CTA registers them for your free event/masterclass. "Come to [event] and I'll walk you through the whole system."
+- **Growth ($27 ticket / Membership close):** CTA registers them for your paid event or books your paid strategy session. The Event Magnet™ warms them to pay a small ticket.
+- **Mastery ($97 ticket / Deposit close, no call):** CTA registers them for your premium multi-day event.
 If they have no Money Model yet, use "[YOUR EVENT]" as a placeholder and flag the CTA as provisional (Section E).
 
 **NEVER** use "book a free call," "schedule a chat," or "learn more." If the user asks for one, redirect to the event CTA (Rule 10).

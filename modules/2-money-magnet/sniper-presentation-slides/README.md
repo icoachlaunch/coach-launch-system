@@ -1,6 +1,6 @@
-# Sniper Presentation™ Slides — Step 4 · Part 2 (The Sniper Close™)
+# Sniper Presentation™ Slides — Step 4 · Part 3 (The Sniper Close™)
 
-Turn your **Sniper Presentation™ Script** (built in Part 1, The Sniper Close™) into an
+Turn your **Sniper Presentation™ Script** (built in Part 2, The Sniper Close™) into an
 on-brand HTML slide deck you present from your own laptop. No PowerPoint, no designer.
 
 ## What's in this kit

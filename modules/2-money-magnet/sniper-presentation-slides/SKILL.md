@@ -77,9 +77,9 @@ There are **two pieces** in the kit:
    You write the user's slides straight into it.
 
 WHERE THIS SITS IN THE SYSTEM:
-Sniper Presentation™ Slides is **Part 2 of Step 4 · The Sniper Close™** (Part 1 builds the Sniper Presentation™ script; Part 2 turns it into slides). It
+Sniper Presentation™ Slides is **Part 3 of Step 4 · The Sniper Close™** (Part 2 builds the Sniper Presentation™ script; Part 3 turns it into slides). It
 takes what the Formula already built and turns it into the thing you stand up and deliver.
-It lives closest to the **Money Magnet™** pillar and **is Part 2 of Step 4 — The Sniper Close™**:
+It lives closest to the **Money Magnet™** pillar and **is Part 3 of Step 4 — The Sniper Close™**:
 the Sniper Close™ Builder writes your **Sniper Presentation™ Script**; The Presentation
 Engine™ turns that script into slides you can present.
 
