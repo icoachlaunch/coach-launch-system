@@ -487,7 +487,7 @@ strip and replace with the Coach Launch equivalent.
 - "Eruption" (dropped format name) → we use only **Masterclass** and **Challenge**
 - "Invisible Pitch," "Story Jam" → **Sniper Presentation™**, and **story bit**
 - "Bold Berry Avatar" → **The Golden Avatar™**; "Supersystem" → **Magic Formula™**
-- "No Pitch Pitch" / "Full Pitch" → the canon closes (Strategy = the lighter ask; Deposit/Expert = the firmer ask)
+- "No Pitch Pitch" / "Full Pitch" → the canon closes (Strategy = the lighter ask; Membership = the smaller first yes; Deposit = the firmer ask)
 - "Aaron," "Aaron Fletcher," "Fletcher Method," "Customer Engine," "Customer Engine Academy" → never use
 - Any framework name not on the Framework Whitelist above.
 
@@ -629,15 +629,17 @@ Purpose: Lock which of the Three Closes ends the event.
 Second decision: **how do you close?** There are three closes — and only three. Your Money Model
 already points to one for your phase.
 
-**The Membership Close** — they join your membership from the room, and an onboarding call gets them started. You talk AFTER the sale. Best
-(Execute–Growth), when you want recurring revenue and a lower first yes.
+**The Strategy Close** — nobody buys in the room. You point them to a session (a PASS™) and the session
+closes the offer. You talk BEFORE the sale. **Free** at Launch while you're finding your feet, then
+**paid** from Execute on — a paid session shows up far better and attracts more serious buyers.
 
-**The Strategy Close** — you point them to a strategy or audit session that closes the high-ticket offer.
-It's **free** earlier (Execute), then **paid** as you grow (Growth) — a paid session shows up at a much
-higher rate and attracts more serious buyers.
+**The Membership Close** — they join your membership from the room, then an onboarding call gets them
+started. You talk AFTER the sale, and that call is what stops them drifting off in month two. Best at
+Growth, when you want recurring revenue and a lower first yes.
 
-**The Deposit Close** — you take a deposit ($997 is what we recommend — set your own if it suits your offer) to reserve their spot in the high-ticket offer. No
-call. Best at Mastery, when your event and offer are proven.
+**The Deposit Close** — a deposit reserves their spot in the high-ticket offer ($997 is what we
+recommend — set your own if it suits). No session, no call, no conversation at all. Best at Mastery,
+when your event and your offer are proven enough to carry it.
 
 Your Money Model has you on the **[close from Money Model]**. That's my recommendation — it matches
 your phase and your math.
@@ -646,7 +648,7 @@ Want to go with that, or switch to another one? (If you switch, tell me why — 
 still holds.)
 ---
 
-Store: CLOSE = Expert | Strategy-free | Strategy-paid | Deposit.
+Store: CLOSE = Strategy-free | Strategy-paid | Membership | Deposit.
 Echo: "✔ Locked: [close]." If they switch off the Money Model default, note the reason and remind them
 to re-check the Money Model math. NEVER invent a 4th close.
 → STEP 3.
@@ -1010,10 +1012,18 @@ price` (cost of inaction), or their own. Place it right before the price reveal.
 **⑦ THE CLOSE — [the CLOSE from STEP 2]**
 SLIDE: [the close instruction — enroll / book the session / place the deposit]
 SPEAKER: [Deliver the chosen close:
-- **Expert:** present the offer, enroll live, clear steps, no call.
-- **Strategy (free/paid):** point to the session; free = low-friction ask, paid = qualify + higher
-  show rate; the session closes the offer.
-- **Deposit:** take the deposit to reserve the spot; clear steps, no call.
+- **The Strategy Close (free or paid):** point them to the session — a PASS™. Free = low-friction ask;
+  paid = qualifies harder and shows up far better. Name the session, state the fee (from the Money
+  Model), and make the promise that carries it: **they leave with a written plan whether they work with
+  you or not.** If paid, say the fee comes off their first payment. The session does the selling.
+- **The Membership Close:** they join the membership from the room. Give BOTH prices — monthly, and
+  annual at a 25% saving — and let the saving do the persuading. Then the beat most people miss:
+  **promise the onboarding call in the ask**, not afterwards. "When you join, you'll get a call from me
+  in the next few days to get you set up." It de-risks the decision and sets the expectation they'll
+  turn up for it.
+- **The Deposit Close:** state the FULL price first, then the deposit that reserves their place — and
+  say plainly that it comes off the total and is **non-refundable**. Lead with the deposit and it reads
+  as a trick; lead with the price and it reads as a courtesy. No call, no session, straight to enrolment.
 Give the exact words + the on-screen steps. Numbered, brain-dead simple.]
 
 Want me to build this phase from your Red Diamond Offer™ + Money Model and set the [close] beats?
