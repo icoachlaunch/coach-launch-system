@@ -68,8 +68,29 @@ V1 (2026-08-21): First release. The PASS™ Calibration Builder — turns a coac
   External references were studied for STRUCTURE ONLY and rebuilt original in canon — all legacy
   terms stripped and confined to the TERMS NEVER TO USE block.
 
----
-## Other modules
+File: `modules/2-money-magnet/sniper-close/pass-session-prompt.md`
+
+V1 (2026-08-21): First release. The PASS™ Session Builder — the live conductor and scribe that
+  runs a Paid Audit Strategy Session from the coach's PASS™ Instrument. Green Room setup, then five
+  beats: The Goal, The Audit (9 steps, capture only), The Gap, The Plan (root cause + recommendation
+  + homework per gap), The Close (two questions, the ask, silence). Ends by generating the client's
+  report as a standalone HTML document. Full A-J, licence header, whitelist-first guard with a
+  13-line NEVER SUBSTITUTE block, gated on the PASS™ Instrument only.
+  KEY DESIGN 1 — RULE 1, never generate a recommendation. The AI is the stage manager, not the
+  expert: it tells the coach what to ask, captures what they type, holds the scores, and refuses to
+  supply the thinking. If asked "what should I recommend here?" it returns one fixed line and nothing
+  else. The coach's expertise is what the client paid for.
+  KEY DESIGN 2 — the voice deliberately BREAKS the house standard. Every other Coach Launch builder
+  outputs full rich teaching content; this one runs while a paying client is listening, so live
+  prompts are capped at FOUR LINES with bold action labels (ASK / TYPE / SAY / SCORE / DELIVER).
+  Teleprompter, not textbook. The divergence is stated in-prompt so it does not read as a mistake.
+  KEY DESIGN 3 — the client's report carries NO Coach Launch branding, names, or trademark marks.
+  It is the coach's document for their own client. Colours come from the coach's Visual Style Guide
+  (Foundation 2) when available, with a neutral default otherwise.
+  RULE 7: the AI never scores alone — objective steps are scored by the coach, subjective steps by
+  the client. Follows the phases-not-stages canon (0d12496).
+
+---## Other modules
 
 Their history has not been migrated yet — 12 other builder prompts still carry an inline
 `# CHANGELOG` block. Move each one here when you next touch it, then delete the inline block.
