@@ -16,6 +16,35 @@ version up here to see what changed.
 ## Money Magnet™ · Step 4 · Part 2 — The Sniper Presentation™
 File: `modules/2-money-magnet/sniper-presentation/sniper-presentation-prompt.md`
 
+V3 (2026-08-26): THE COPY LAYER + the Tour + borrowed proof. Three external builder prompts were
+  studied for STRUCTURE ONLY and rebuilt original in canon. The governing insight taken from them:
+  structure without copywriting writes a flat script — arrangement decides where a beat goes, but
+  nothing in V2 governed the sentences themselves.
+  ADDED — THE COPY LAYER (Section G, binding on every build step): a SKELETON BANK of spoken
+  sentence patterns keyed to the SCORE™ acts, each with slot rules (e.g. blame-words are only what
+  people accuse THEMSELVES of — never an object, never a market condition); a six-filter WRITE-PASS
+  (say-it / picture / one-job-per-line / their-words-first / rhythm / AI sweep) run on every line
+  before the user sees it; and a KILL LIST of AI fingerprint words and pattern tells with zero
+  tolerance. Plus CHOICE MOMENTS — two drafts on exactly three high-leverage lines (the hook, the
+  belief bust, the Fork), one draft everywhere else, because two drafts everywhere is a slog.
+  ADDED — THE TOUR, a new Phase 4 beat (2 of 9, after objections, before the Fork). Walks their
+  first two weeks INSIDE the offer. Slot rule: every sentence starts with "you'll", never "you get"
+  — a "you get" sentence is the value stack leaking into a beat that already happened. Phase 4
+  renumbered to 9 beats.
+  ADDED — RULE 16, borrowed proof. A Launch-phase coach has no client results; V2 forbade
+  fabrication (right) but offered no alternative (gap). Industry statistics are now legitimate proof,
+  marked [VERIFY BEFORE DELIVERING] and re-listed at hand-off. Never an empty proof beat, never an
+  invented number.
+  ADDED — RULE 14 (Copy Layer is binding), RULE 15 (extract -> probe once -> offer A/B/C, nothing
+  enters the script until they pick or edit), THE MATERIAL CHECK (a pre-flight audit of six room
+  beliefs before writing, deliberately unnumbered so no step renumbering was needed), the TEACHING
+  TEST (if they could leave and DO the step, you taught it and turned a buyer into a DIY-er), the
+  quiet-room fallback on the Confidence Check (silence means the belief did not install — re-land
+  it), the read-aloud test before hand-off, and a stamped `cl_asset: sniper-presentation-script`
+  frontmatter block so Part 3 (Slides) reads the script instead of parsing prose.
+  NOT TAKEN: S.C.R.I.P.T., the 8 Buying Beliefs, Mortar, the 18 blocks, Winning Workshop, the fixed
+  25/38 slide counts, and every metric and name from the references. Coach Launch already has SCORE™,
+  its 19 blocks, and the story-bit library; the format flexes by Masterclass/Challenge.
 V2 (2026-08-21): Hallucination guard + canon rename. FIXED: the tool could ask the user to supply a
   "Signature Talk" - a term that does not exist in this system, naming the very thing this tool builds.
   Added (a) WHITELIST-FIRST enforcement - the Framework Whitelist is the COMPLETE list of assets that
