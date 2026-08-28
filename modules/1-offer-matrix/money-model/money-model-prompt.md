@@ -247,10 +247,10 @@ Each phase is a complete little money model. Match the user to where they ARE, n
 
 | Phase | Validates | Event | Cash-in (tickets/VIP) | Close / CTA | Core offer | Goal |
 |---|---|---|---|---|---|---|
-| **1 · Launch** | Message | Micro Event:<br>(60–90 min) | Free + Survey + Bribe | The Strategy Close (free) | One Day Offer | First 3–5 paying clients |
-| **2 · Execute** | Offer | Single-Day Event:<br>(90–120 min) | Free + VIP $47 | The Strategy Close (paid) | Beta Offer $3K+ | First $25,000/month |
-| **3 · Growth** | Pitch | Single-Day Event:<br>(180–240 min) | $27 + 1 bump + $97 VIP | The Membership Close | Full Offer $5K+ | First $50,000/month |
-| **4 · Mastery** | Scale | Multi-Day Event:<br>(60–180 min/day) | $97 + 2 bumps + 2-option VIP | The Deposit Close ($997 recommended, no call) | Full Offer $10K+ | First $100,000/month |
+| **1 · Launch** | Message | Micro Event:<br>(60–90 min) | Free + Survey + Bribe | The Strategy Close (free) | One Day Offer ($997) | First 3–5 paying clients |
+| **2 · Execute** | Offer | Single-Day Event:<br>(90–120 min) | Free + VIP $47 | The Strategy Close (paid) | Medium-to-high ticket ($3K–$10K) | First $25,000/month |
+| **3 · Growth** | Pitch | Single-Day Event:<br>(180–240 min) | $27 + 1 bump + $97 VIP | The Membership Close | Membership → high ticket ($5K–$15K) | First $50,000/month |
+| **4 · Mastery** | Scale | Multi-Day Event:<br>(60–180 min/day) | $97 + 2 bumps + 2-option VIP | The Deposit Close ($997 recommended, no call) | Full Offer ($10K–$25K) | First $100,000/month |
 
 Rules: the ticket/VIP cash-in exists to **self-liquidate ad spend** (that's the Cash Flow Engine™ principle — built in full in Step 5).
 The deeper the event, the higher the price and close rate. Never sell the Mastery offer with a Launch event.
@@ -261,7 +261,7 @@ There are exactly three closes. Do NOT invent a fourth.
 2. **The Membership Close** — they join a recurring membership from the room, and an onboarding call activates them. The conversation happens AFTER the sale. Its job is retention, not persuasion. Default Phase 2–3. Closes the **membership**. A paid session filters for serious buyers who show and close far better.
 3. **The Deposit Close** — they put down a deposit (**$997 is the recommended default — they can set their own**) and buy the high-ticket offer **without a sales call**. Default for Phase 4 (Full $10K+).
 
-Default phase bands: Strategy free (P1) → Strategy paid (P2) → Membership (P2–P3) → Deposit (P3–P4). The user CHOOSES the close that fits — default to the phase's, allow a different one if it fits their offer, and rerun the model when the phase (and close) changes.
+Default phase ladder: Strategy free (P1, One Day Offer $997) → Strategy paid (P2, $3K–$10K) → Membership (P3, $5K–$15K) → Deposit (P4, $10K–$25K). ⚠️ THIS IS A PRICING GUIDE, NOT A RULE. The phases, closes and price bands are interchangeable and use cases vary — the user CHOOSES the close that fits their offer and their room. What never changes are the fundamentals of each close: Strategy talks BEFORE the sale, Membership talks AFTER it, Deposit has no conversation at all. Default to the phase's, allow a different one if it fits their offer, and rerun the model when the phase (and close) changes.
 
 ### Benchmark ranges — GENERAL starting-points only, [CONFIRM] with Matthew before client use
 Present these as "typical ranges — use your own numbers as you get them," NOT as Coach Launch promises.
@@ -446,10 +446,10 @@ in plain language. Never place them above where they are.
 ---
 
 Phase reference (from canon — fill the brackets above):
-- **Phase 1 · Launch** — Micro Event (60–90 min); Free + Survey + Bribe; **The Strategy Close (free)**; One Day Offer; goal first 3–5 clients. Validates the MESSAGE.
-- **Phase 2 · Execute** — Single-Day Event 90–120 min; Free + VIP $47; **The Strategy Close (paid)** or **The Membership Close**; Beta Offer $3K+; goal first $25K/month. Validates the OFFER.
-- **Phase 3 · Growth** — Single-Day Event 180–240 min; $27 + 1 bump + $97 VIP; **The Membership Close** or **The Deposit Close**; Full Offer $5K+; goal first $50K/month. Validates the PITCH.
-- **Phase 4 · Mastery** — Multi-Day Event 60–180 min/day; $97 + 2 bumps + 2-option VIP; **The Deposit Close ($997 recommended, no call)**; Full Offer $10K+; goal first $100K/month. Validates SCALE.
+- **Phase 1 · Launch** — Micro Event (60–90 min); Free + Survey + Bribe; **The Strategy Close (free)**; One Day Offer ($997); goal first 3–5 clients. Validates the MESSAGE.
+- **Phase 2 · Execute** — Single-Day Event 90–120 min; Free + VIP $47; **The Strategy Close (paid)**; medium-to-high ticket ($3K–$10K); goal first $25K/month. Validates the OFFER.
+- **Phase 3 · Growth** — Single-Day Event 180–240 min; $27 + 1 bump + $97 VIP; **The Membership Close**; membership → high ticket ($5K–$15K); goal first $50K/month. Validates the PITCH.
+- **Phase 4 · Mastery** — Multi-Day Event 60–180 min/day; $97 + 2 bumps + 2-option VIP; **The Deposit Close ($997 recommended, no call)**; Full Offer ($10K–$25K); goal first $100K/month. Validates SCALE.
 
 ---
 
@@ -558,7 +558,7 @@ choice (one of the three), not an afterthought. Default to the phase's close; al
 ---
 
 Phase-default close (fill [phase default close] above): P1 **The Strategy Close (free)** · P2 **The Strategy Close (paid)** ·
-P3 **The Membership Close** or **The Deposit Close** · P4 **The Deposit Close ($997 recommended, no call)**. Default to the phase's; allow the user to
+P3 **The Membership Close** · P4 **The Deposit Close ($997 recommended, no call)**. These are defaults, not rules — any close can fit any phase if the offer and the room suit it. Default to the phase's; allow the user to
 choose a different one of the three if it fits their offer. NEVER invent a fourth close.
 
 ---
