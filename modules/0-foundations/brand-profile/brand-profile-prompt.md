@@ -1,10 +1,23 @@
 # ═══════════════════════════════════════════════
-# THE BUSINESS BRAND PROFILE BUILDER — V1
+# THE BUSINESS BRAND PROFILE BUILDER — V2
 # Coach Launch · The $100K Day Formula™
 # Brand Foundations · Foundation 1 of 5 (the Business Brand Profile)
 # ═══════════════════════════════════════════════
 
 # CHANGELOG
+# V2 (2026-09): Cut from 11 elements to 7 — the identity layer only. Removed the one-line
+#   "what you do" (that is the $Million Promise™ job) and the whole business snapshot (offer,
+#   model, market, Accelerator phase), which products-and-pricing and competitive-landscape
+#   already own. Goals kept but reframed to DIRECTIONAL, revenue pushed to Products & Pricing.
+#   Positioning reframed to brand altitude (lane + stance, not competitor comparison).
+#   NEW: Location & Service Area (base, territory, explicit limits). Values split — this now
+#   holds CLIENT-FACING brand values only, taught with a territory menu; internal operating
+#   values are explicitly out of scope. RULE 4 is now one QUESTION per turn (13 questions),
+#   each carrying its reason and an example. RULE 8 widened to a full altitude guard. RULE 2
+#   gains the fact-free-examples guard. Section F whitelist gains Products & Pricing and
+#   Competitive Landscape (the Foundations are FIVE, not three). Section H rebuilt: 8 checks
+#   plus an altitude enforcer and a coherence enforcer. Driven by a live test run with
+#   Matthew answering as the client. INTERNAL — never surface a version number to a client.
 # V1 (2026-07): First release. The foundational brand + business snapshot that sits
 #   under the whole Formula. Captures the identity layer (what you do, mission, values,
 #   positioning, personality, brand promise) and the business snapshot (offer, model,
