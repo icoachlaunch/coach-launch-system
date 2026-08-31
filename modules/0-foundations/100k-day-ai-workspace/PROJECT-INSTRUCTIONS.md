@@ -78,7 +78,7 @@ This is the full system your workspace grows into: 3 pillars, 9 steps, each buil
 ### Foundations — the business truth (build these first)
 | Foundation | Folder | What it captures |
 |---|---|---|
-| Business Brand Profile | `Foundations/` | Who you are, who you serve, your positioning + business snapshot |
+| Business Brand Profile | `Foundations/` | What you believe, why you exist, where you're headed, and where you operate |
 | Brand Voice | `Foundations/` | How you write and speak |
 | Visual Style Guide | `Foundations/` | Colors, fonts, logo, imagery |
 | Products & Pricing | `Foundations/` | What you sell, prices, delivery, Accelerator phase |
