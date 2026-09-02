@@ -581,6 +581,9 @@ skill** handles generation, preview-and-approve and downloading — point them a
 hand-rolling an API call. Six ready-made backgrounds already ship in `images/`, desaturated to work
 under all six themes.
 
+⚠️ **An image that must be SEEN belongs on a dark or accent surface.** On a light surface the veil
+washes it almost away — correct for a faint texture, wrong for an image carrying a point.
+
 **Default to base64** when inlining, so the deck survives bad venue wifi.
 
 

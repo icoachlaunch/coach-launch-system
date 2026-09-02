@@ -138,19 +138,19 @@ h1 .hl{color:var(--accent)}
 .bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
 .s > *:not(.mark):not(.bg){position:relative;z-index:1}
 .s{flex-direction:row;justify-content:center;align-items:center;gap:4.5vw;text-align:left}
-.photo{flex:0 0 32%;aspect-ratio:4/5;border-radius:var(--r-lg);background:var(--panel) center/cover no-repeat;border:1px solid var(--line)}
-.col{flex:0 1 auto;max-width:54ch}
-h1{font-size:clamp(30px,3.3vw,50px)}
-.sup{margin:.8em 0 0;max-width:40ch}
-.magnet{margin-top:1.4em;width:100%;max-width:430px;aspect-ratio:16/10;border-radius:var(--r-md);background:var(--panel) center/contain no-repeat;border:1px solid var(--line)}
+.photo{flex:0 0 33%;aspect-ratio:4/5;border-radius:var(--r-lg);background:var(--panel) center/cover no-repeat;border:1px solid var(--line)}
+.col{flex:1 1 auto;max-width:56ch;display:flex;flex-direction:column}
+h1{font-size:clamp(26px,2.9vw,44px);max-width:22ch}
+.system{margin-top:1.5em;width:100%;aspect-ratio:16/9;border-radius:var(--r-md);background:var(--panel) center/contain no-repeat;border:1px solid var(--line)}
+.sysname{margin-top:.7em;font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(13px,1.2vw,17px);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 </style></head><body><div class="s">
   <div class="bg" data-slot="bg"></div>
   <div class="photo" data-slot="photo"></div>
   <div class="col">
     <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
-    <h1 data-slot="headline">Their system name</h1>
-    <p class="sup" data-slot="support">Their $Million Promise&trade;, verbatim.</p>
-    <div class="magnet" data-slot="magnet"></div>
+    <h1 data-slot="headline">Their $Million Promise&trade;, verbatim.</h1>
+    <div class="system" data-slot="system"></div>
+    <div class="sysname" data-slot="sysname">THEIR SYSTEM NAME</div>
   </div>
   <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
 </div></body></html>

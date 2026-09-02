@@ -274,6 +274,10 @@ picture, usually the half you wanted.
    won't notice repetition; they will notice inconsistency.
 4. **Dark slides need dark images.** The veil helps, but a bright image behind a dark slide fights
    it and the text loses.
+5. **If the image has to be SEEN, put it on a dark or accent slide.** On a light slide the veil
+   washes the picture almost away — deliberately, so your dark text stays readable. That is right for
+   a background you only want as a faint texture, and wrong for an image that is carrying a point.
+   Backgrounds can go anywhere; point-makers want a dark surface.
 5. **Look at them full size before you commit.** An image that reads fine as a thumbnail can be a
    mess at 1600×900 on a projector.
 
