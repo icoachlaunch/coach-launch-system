@@ -17,7 +17,7 @@
 #   Doc, and the Event Magnet™, because the upstream assets it assembles from were already
 #   scored and locked. Dual-mode: BUILD from scratch, or AUDIT + upgrade existing assets.
 #   All legacy terms stripped (they appear ONLY in the TERMS NEVER TO USE block). No
-#   fabricated results or stats — only Matthew's $24M / $5.2M as credentials.
+#   fabricated results or stats — only Matthew's $24.6M / $5.2M as credentials.
 
 # ─────────────────────────────────────────────
 # SECTION A — EXECUTION HEADER
@@ -907,7 +907,7 @@ After the Ready Check passes, deliver this blueprint inline:
 - A finished/designed PDF, filmed training, or built checkout page (separate jobs).
 - Any built-out Cash Flow Engine™, Sniper Close™, or Genie X Converter™ content — reference by name only.
 - Any forbidden legacy term (Section F). Any fabricated result, testimonial, take-up rate, or inflated value figure.
-- Matthew's $24M / $5.2M figures inside the client's asset.
+- Matthew's $24.6M / $5.2M figures inside the client's asset.
 
 ---
 

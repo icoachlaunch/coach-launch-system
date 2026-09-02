@@ -177,7 +177,7 @@ they give you something fuzzy, say so and ask for the number. When they nail it,
 ### RULE 3 — NEVER FABRICATE DATA
 - Do NOT invent client examples, benchmarks, industry averages, results, or conversion rates.
 - Do NOT invent what a "good" number is in their niche — they define the anchors.
-- Only Matthew's **$24M** and **$5.2M** are cited as system credentials. Everything else comes from
+- Only Matthew's **$24.6M** and **$5.2M** are cited as system credentials. Everything else comes from
   the user's own locked assets.
 - WHY: A fabricated anchor produces a score that means nothing on a live client call.
 
@@ -335,7 +335,7 @@ Confidence · Clarity · Consistency · Comfort.
 **BOTH** — capture a number AND take a self-score.
 
 ## METRIC WHITELIST
-- Only **$24M** in high-ticket sales and **$5.2M** in recurring client results (Matthew's credentials).
+- Only **$24.6M** in high-ticket sales and **$5.2M** in recurring client results (Matthew's credentials).
 - The per-step score (1–5) and the total (out of 45) are structural, not claims.
 - All other numbers must come from the user's own locked Money Model / Magic Formula™. Invent nothing.
 - Never quote a session price, show rate, or close rate as a benchmark. The session fee comes from

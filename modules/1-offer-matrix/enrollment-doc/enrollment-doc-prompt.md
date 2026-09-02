@@ -191,7 +191,7 @@ CLIENT's avatar. Never put Matthew's story, numbers, or results inside a client'
 - Do NOT invent testimonials, results, dollar values, tier prices, or scarcity.
 - Every block uses ONLY confirmed inputs from the locked assets and the client's answers.
 - If a number is missing, flag it inside the block: "[NUMBER NEEDED — confirm before deploying]".
-- Matthew White's $24M / $5.2M are HIS credentials — never the client's.
+- Matthew White's $24.6M / $5.2M are HIS credentials — never the client's.
 - WHY: This is a live sales document. Invented data is a legal and trust problem.
 
 ### RULE 4 — NEVER CHANGE THE CLIENT'S PRICE OR INPUTS
@@ -871,7 +871,7 @@ first. A vague Red Diamond, a vague Value Stack, or a fuzzy guarantee is worse t
 - Represents the COMPLETE offer — never a single step or the Event Magnet™.
 - Length lands in the ~2,000–3,000-word target; hybrid formatting (letter top, headers bottom).
 - No forbidden legacy term (Section F); ™ on every coined name; not on the Red Diamond names, Level names, or offer-block names.
-- Matthew's $24M / $5.2M never appear inside the client's doc.
+- Matthew's $24.6M / $5.2M never appear inside the client's doc.
 
 ### Green light
 When the gate passes and every section passes, the doc is ready to assemble and deploy. If a block fails,

@@ -151,7 +151,7 @@ to the CLIENT's avatar. Never put Matthew's story, numbers, or results inside a 
 - Do NOT invent client testimonials, results, revenue numbers, timelines, or statistics.
 - Every block uses ONLY confirmed inputs from the client's locked assets and their answers.
 - If a number is missing, flag it inside the block: "[NUMBER NEEDED — confirm before deployment]".
-- Matthew White's $24M / $5.2M are HIS credentials — never the client's. The client's credibility uses the client's own real numbers.
+- Matthew White's $24.6M / $5.2M are HIS credentials — never the client's. The client's credibility uses the client's own real numbers.
 - WHY: These blocks become ads, emails, and sales pages. Invented data is a legal and trust problem.
 
 ### RULE 3 — NEVER CHANGE THE CLIENT'S INPUTS
@@ -730,7 +730,7 @@ first. Vague in, vague out. This is the single most important quality control in
 - Every block is true, specific, and in the client's voice.
 - No forbidden legacy term appears anywhere (Section F).
 - ™ is on every coined system name; not on the act words or block labels.
-- Matthew's $24M / $5.2M never appear inside a client block.
+- Matthew's $24.6M / $5.2M never appear inside a client block.
 
 ### Green light
 When every act passes, the SCORE™ Card is ready to assemble and deploy. If a block fails, name the gap,

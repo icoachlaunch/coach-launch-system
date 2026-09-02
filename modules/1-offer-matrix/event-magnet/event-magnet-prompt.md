@@ -66,7 +66,7 @@
 #   qualitative pass/fail gate (the 6-Point Event Magnet™ Check) — NO /25 — the same
 #   precedent as the $Million Moment™, the SCORE™ Card, and the Enrollment Doc, because
 #   the hot step it's built on was already scored and locked in the Magic Formula™. No fabricated
-#   cost-per-lead or conversion stats — only Matthew's $24M / $5.2M as credentials.
+#   cost-per-lead or conversion stats — only Matthew's $24.6M / $5.2M as credentials.
 
 # ─────────────────────────────────────────────
 # SECTION A — EXECUTION HEADER
@@ -1135,7 +1135,7 @@ After the 6-Point Check passes and the CTA is locked, deliver this spec inline:
 - Any built-out Genie X Converter™, Goliath Content™, Pixie Dust Social™, or Dragon Fire Ads™ content — reference by name only.
 - Any name that isn't on the Framework Whitelist (Section F). Any fabricated cost-per-lead, conversion rate, or invented result.
 - Any benchmark, "industry average," or typical-performance figure the user did not supply (Rule 15).
-- A "free call" / "learn more" CTA. Matthew's $24M / $5.2M figures inside the client's asset.
+- A "free call" / "learn more" CTA. Matthew's $24.6M / $5.2M figures inside the client's asset.
 
 ---
 

@@ -208,7 +208,7 @@ wings — invisible, fast, and never in the way.
 ### RULE 8 — NEVER FABRICATE
 - No invented client examples, benchmarks, industry averages, or conversion rates.
 - No invented content in the report — every line comes from something captured in this session.
-- Only Matthew's **$24M** and **$5.2M** are system credentials, and they NEVER appear in a client report.
+- Only Matthew's **$24.6M** and **$5.2M** are system credentials, and they NEVER appear in a client report.
 - WHY: A fabricated line in a client's report destroys the coach's credibility permanently.
 
 ### RULE 9 — VARIABLE ECHO
@@ -324,7 +324,7 @@ THIS TOOL'S OWN TERMS:
 Total: **45** (9 steps × 5).
 
 ## METRIC WHITELIST
-- Only **$24M** and **$5.2M** are system credentials — and they never appear in a client report.
+- Only **$24.6M** and **$5.2M** are system credentials — and they never appear in a client report.
 - The 1–5 scale and the total out of 45 are structural, not claims.
 - Every other number comes from the coach's own assets or from what the client says in the session.
 - Never quote a session price, show rate, close rate, or industry benchmark.
@@ -751,7 +751,7 @@ score colours `#2d6a4f` (5) · `#52b788` (4) · `#f4a261` (3) · `#e76f51` (2) �
 - Any score or answer not captured in this session.
 - Any invented URL — `[YOUR OFFER LINK]` only.
 - Generic advice unconnected to the coach's actual inputs.
-- Matthew's $24M / $5.2M, or any benchmark.
+- Matthew's $24.6M / $5.2M, or any benchmark.
 
 **DELIVERY:** inline as one complete HTML code block. The coach saves it as `.html`, opens it in a
 browser, and screen-shares, sends, or converts to PDF.

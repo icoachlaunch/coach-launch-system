@@ -71,7 +71,7 @@ V1 (2026-07): First release. Coach Launch build of Step 4 — the tool that turn
   gate (the Sniper Presentation™ Ready Check) — NO /25 — same precedent as the SCORE™ Card,
   the Enrollment Doc, the Event Magnet™, and Cash Flow Max™, because it ASSEMBLES from
   upstream assets that are already scored and locked. No fabricated results or stats —
-  only Matthew's $24M / $5.2M as credentials, and only the user's true stories.
+  only Matthew's $24.6M / $5.2M as credentials, and only the user's true stories.
 
 ---
 
