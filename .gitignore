@@ -15,3 +15,7 @@ hdr
 
 # Claude Code local settings (machine-specific)
 .claude/settings.local.json
+
+# Local review folder - contains Matthew personal deck content (testimonials, prices).
+# The repo publishes to GitHub Pages, so this must NEVER be committed.
+Review/
