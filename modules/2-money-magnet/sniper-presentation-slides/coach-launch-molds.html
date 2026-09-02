@@ -55,7 +55,13 @@ slots &mdash; it never writes markup of its own.</p>
     <li><b>Delete every surplus item, then scan for leftovers.</b> After filling a repeater, search the
       finished slide for the mold's own placeholder words &mdash; <code>Item</code>, <code>Title</code>,
       <code>Name</code>, <code>The step</code>, <code>Supporting line</code>, <code>$0,000</code>. A stale
-      item left behind still renders, and it renders as if it were the client's copy.</li>
+      item left behind still renders, and it renders as if it were the client's copy. Fill a slot by
+      replacing the element's <b>whole</b> content: matching to the first <code>&lt;/</code> strands the
+      tail of any placeholder containing nested markup.</li>
+    <li><b>Every mold has a <code>bg</code> layer</b>, so an image can go behind ANY slide. Set a
+      <code>background-image</code> on it; the veil over it is a theme token that adapts to the surface,
+      so it works under dark text as well as light. <b>Delete the element when no image is supplied</b>
+      &mdash; that is the normal case, and it must never render as an empty box.</li>
   </ol>
 </div>
 
@@ -67,9 +73,9 @@ slots &mdash; it never writes markup of its own.</p>
 <!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -78,10 +84,17 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 h1{font-size:clamp(34px,4vw,58px);max-width:20ch}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
   <h1 data-slot="headline">The headline</h1>
   <p class="sup" data-slot="support">One line of support &mdash; the idea, not the talk track.</p>
@@ -100,9 +113,9 @@ h1{font-size:clamp(34px,4vw,58px);max-width:20ch}
 <!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -111,8 +124,14 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 .s{flex-direction:row;justify-content:center;align-items:center;gap:4.5vw;text-align:left}
 .photo{flex:0 0 32%;aspect-ratio:4/5;border-radius:var(--r-lg);background:var(--panel) center/cover no-repeat;border:1px solid var(--line)}
 .col{flex:0 1 auto;max-width:54ch}
@@ -120,6 +139,7 @@ h1{font-size:clamp(30px,3.3vw,50px)}
 .sup{margin:.8em 0 0;max-width:40ch}
 .magnet{margin-top:1.4em;width:100%;max-width:430px;aspect-ratio:16/10;border-radius:var(--r-md);background:var(--panel) center/contain no-repeat;border:1px solid var(--line)}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="photo" data-slot="photo"></div>
   <div class="col">
     <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
@@ -140,9 +160,9 @@ h1{font-size:clamp(30px,3.3vw,50px)}
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -151,11 +171,18 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 h1{font-size:clamp(34px,4.2vw,62px);line-height:1.06;max-width:20ch}
 .sup{margin-top:1em}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="eyebrow" data-slot="eyebrow">THE PROMISE</div>
   <h1 data-slot="headline">Their $Million Promise&trade;, word for word.</h1>
   <p class="sup" data-slot="support">The one-line support, if the beat carries one.</p>
@@ -172,9 +199,9 @@ h1{font-size:clamp(34px,4.2vw,62px);line-height:1.06;max-width:20ch}
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -183,8 +210,14 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 h1{font-size:clamp(28px,3.2vw,48px)}
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;width:100%;max-width:1150px;margin:1.5em auto 0;text-align:left}
 .c{border:1px solid var(--line);border-radius:var(--r-lg);padding:1.7rem 1.9rem;background:var(--panel)}
@@ -195,6 +228,7 @@ h1{font-size:clamp(28px,3.2vw,48px)}
 .c li{font-size:clamp(15px,1.4vw,21px);color:var(--ink-soft);margin:.55em 0;line-height:1.45;padding-left:1.2em;position:relative}
 .c li::before{content:"\2014";position:absolute;left:0;color:var(--ink-faint)}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="eyebrow" data-slot="eyebrow">WHO THIS IS FOR</div>
   <h1 data-slot="headline">Are you in the room?</h1>
   <div class="cols">
@@ -217,9 +251,9 @@ h1{font-size:clamp(28px,3.2vw,48px)}
 <!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -228,12 +262,19 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 .s{padding:7vh 8vw}
 h1{font-size:clamp(36px,4.6vw,66px);line-height:1.05;max-width:18ch}
 .sup{margin-top:1em;max-width:44ch}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
   <h1 data-slot="headline">The one <span class="hl">bold</span> statement.</h1>
   <p class="sup" data-slot="support">Optional single line of support.</p>
@@ -250,9 +291,9 @@ h1{font-size:clamp(36px,4.6vw,66px);line-height:1.05;max-width:18ch}
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -261,12 +302,19 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 h1{font-size:clamp(30px,3.4vw,50px);max-width:22ch}
 .rows{width:100%;max-width:1000px;margin:1.5em auto 0;text-align:left;display:grid;gap:.85rem}
 .r{border-left:4px solid var(--accent);background:var(--panel);border-radius:0 var(--r-md) var(--r-md) 0;padding:1.15rem 1.5rem;font-size:clamp(16px,1.5vw,23px);color:var(--ink-soft);line-height:1.45}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="eyebrow" data-slot="eyebrow">THE PROBLEM</div>
   <h1 data-slot="headline">The pain, in their words.</h1>
   <div class="rows" data-max="3">
@@ -288,9 +336,9 @@ h1{font-size:clamp(30px,3.4vw,50px);max-width:22ch}
 <!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -299,12 +347,15 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
 .bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
-.bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.7))}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
 .s > *:not(.mark):not(.bg){position:relative;z-index:1}
-.mark{z-index:2}
+.bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.7))}
 .s{padding:7vh 9vw}
 h1{font-size:clamp(32px,4.2vw,60px);line-height:1.08;max-width:19ch;font-style:italic;font-weight:700}
 .eyebrow{opacity:.9}
@@ -326,9 +377,9 @@ h1{font-size:clamp(32px,4.2vw,60px);line-height:1.08;max-width:19ch;font-style:i
 <!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -337,13 +388,16 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
-.bg{position:absolute;inset:0;z-index:0;background:var(--panel) center/cover no-repeat}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.35))}
 .s{align-items:flex-start;text-align:left;padding:7vh 7vw}
-.s > *:not(.mark):not(.bg){position:relative;z-index:1}
-.mark{z-index:2}
 .box{border-left:5px solid var(--accent);background:rgba(16,16,20,.72);border-radius:0 var(--r-lg) var(--r-lg) 0;padding:1.6rem 1.9rem;max-width:56ch}
 h1{font-size:clamp(28px,3.4vw,50px);line-height:1.1}
 .sup{margin:.7em 0 0;max-width:48ch}
@@ -367,9 +421,9 @@ h1{font-size:clamp(28px,3.4vw,50px);line-height:1.1}
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -378,8 +432,14 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 .s{display:grid;grid-template-columns:1fr 1.15fr;align-items:center;gap:3.5vw;text-align:left}
 .img{width:100%;aspect-ratio:3/4;border-radius:var(--r-lg);background:var(--panel) center/cover no-repeat;border:1px solid var(--line)}
 h1{font-size:clamp(26px,2.9vw,42px)}
@@ -387,6 +447,7 @@ h1{font-size:clamp(26px,2.9vw,42px)}
 .p{counter-increment:p;border:1px solid var(--line);border-radius:var(--r-md);background:var(--panel);padding:1.15rem 1.35rem 1.15rem 3.5rem;position:relative;font-size:clamp(15px,1.4vw,20px);color:var(--ink-soft);line-height:1.45}
 .p::before{content:counter(p);position:absolute;left:1.1rem;top:.95rem;font-family:var(--font-display);font-weight:800;color:var(--accent);font-size:clamp(15px,1.4vw,20px)}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="img" data-slot="image"></div>
   <div>
     <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
@@ -411,9 +472,9 @@ h1{font-size:clamp(26px,2.9vw,42px)}
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -422,8 +483,14 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 h1{font-size:clamp(28px,3.2vw,46px)}
 .grid{display:grid;gap:1rem;width:100%;max-width:1220px;margin:1.5em auto 0;text-align:left}
 .grid[data-cells="3"],.grid[data-cells="5"],.grid[data-cells="6"],.grid[data-cells="9"]{grid-template-columns:repeat(3,1fr)}
@@ -432,6 +499,7 @@ h1{font-size:clamp(28px,3.2vw,46px)}
 .cell .lb{font-family:var(--font-display);font-weight:800;font-size:clamp(14px,1.3vw,19px);margin-bottom:.4em}
 .cell .ln{font-size:clamp(13px,1.2vw,18px);color:var(--ink-soft);line-height:1.42}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="eyebrow" data-slot="eyebrow">THE SYSTEM</div>
   <h1 data-slot="headline">Their system name</h1>
   <div class="grid" data-cells="9" data-max="9">
@@ -453,9 +521,9 @@ h1{font-size:clamp(28px,3.2vw,46px)}
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -464,8 +532,14 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 h1{font-size:clamp(28px,3.2vw,46px)}
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;width:100%;max-width:1150px;margin:1.4em auto 0;text-align:left}
 .c{border:1px solid var(--line);border-radius:var(--r-lg);padding:1.7rem 1.9rem;background:var(--panel)}
@@ -477,6 +551,7 @@ h1{font-size:clamp(28px,3.2vw,46px)}
 .c li::before{content:"\2014";position:absolute;left:0;color:var(--ink-faint)}
 .foot{margin:1.3em auto 0;font-family:var(--font-display);font-weight:800;font-size:clamp(18px,1.9vw,29px);color:var(--accent);max-width:40ch}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
   <h1 data-slot="headline">The contrast</h1>
   <div class="cols">
@@ -500,9 +575,9 @@ h1{font-size:clamp(28px,3.2vw,46px)}
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -511,8 +586,14 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 h1{font-size:clamp(28px,3.2vw,46px)}
 .rows{width:100%;max-width:1180px;margin:1.5em auto 0;display:grid;gap:.9rem;text-align:left}
 .r{display:grid;grid-template-columns:1fr auto 1.15fr;align-items:center;gap:1.3rem;border:1px solid var(--line);border-radius:var(--r-md);background:var(--panel);padding:1.15rem 1.5rem}
@@ -520,6 +601,7 @@ h1{font-size:clamp(28px,3.2vw,46px)}
 .r .arw{font-family:var(--font-display);font-weight:800;color:var(--accent);font-size:clamp(17px,1.6vw,24px)}
 .r .tru{font-size:clamp(14px,1.3vw,20px);color:var(--ink);font-weight:700;line-height:1.4}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="eyebrow" data-slot="eyebrow">WHAT'S IN THE WAY</div>
   <h1 data-slot="headline">The headline</h1>
   <div class="rows" data-max="5">
@@ -541,9 +623,9 @@ h1{font-size:clamp(28px,3.2vw,46px)}
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -552,8 +634,14 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 h1{font-size:clamp(28px,3.2vw,46px)}
 .grid{display:grid;gap:1.2rem;width:100%;max-width:1180px;margin:1.5em auto 0;text-align:left}
 .grid[data-cells="2"]{grid-template-columns:repeat(2,1fr)}
@@ -563,6 +651,7 @@ h1{font-size:clamp(28px,3.2vw,46px)}
 .card .t{font-family:var(--font-display);font-weight:800;font-size:clamp(16px,1.6vw,25px);margin-bottom:.45em}
 .card .l{font-size:clamp(14px,1.3vw,19px);color:var(--ink-soft);line-height:1.45}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
   <h1 data-slot="headline">The headline</h1>
   <div class="grid" data-cells="3" data-max="6">
@@ -584,9 +673,9 @@ h1{font-size:clamp(28px,3.2vw,46px)}
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -595,8 +684,14 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 h1{font-size:clamp(28px,3.2vw,46px)}
 .grid{display:grid;gap:1.2rem;width:100%;max-width:1180px;margin:1.5em auto 0;text-align:left;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .pc{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--panel);padding:1.6rem 1.7rem;display:flex;flex-direction:column;gap:1.1rem}
@@ -606,6 +701,7 @@ h1{font-size:clamp(28px,3.2vw,46px)}
 .pc .nm{font-family:var(--font-display);font-weight:800;font-size:clamp(13px,1.2vw,16px)}
 .pc .rs{font-size:clamp(12px,1.1vw,15px);color:var(--accent);font-weight:700}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="eyebrow" data-slot="eyebrow">PROOF</div>
   <h1 data-slot="headline">Real people, real numbers.</h1>
   <div class="grid" data-max="3">
@@ -628,9 +724,9 @@ h1{font-size:clamp(28px,3.2vw,46px)}
 <!DOCTYPE html><html data-surface="A"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -639,12 +735,19 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 .num{font-family:var(--font-display);font-weight:800;font-size:clamp(72px,12vw,190px);line-height:.92;letter-spacing:-.04em}
 .lbl{font-family:var(--font-display);font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:clamp(14px,1.5vw,22px);margin-top:.5em}
 .sup{margin-top:.9em;max-width:42ch}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
   <div class="num" data-slot="number">$0,000</div>
   <div class="lbl" data-slot="label">What the number means</div>
@@ -662,9 +765,9 @@ h1 .hl{color:var(--accent)}
 <!DOCTYPE html><html data-surface="A"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -673,12 +776,19 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 .s{padding:7vh 8vw}
 h1{font-size:clamp(34px,4.4vw,64px);line-height:1.06;max-width:18ch}
 .prompt{margin-top:1.2em;border:2px solid var(--line);border-radius:var(--r-pill);padding:.65em 1.9em;font-family:var(--font-display);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:clamp(14px,1.5vw,21px)}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="eyebrow" data-slot="eyebrow">CONFIDENCE CHECK</div>
   <h1 data-slot="headline">Can you see how this changes things?</h1>
   <div class="prompt" data-slot="prompt">Drop a YES</div>
@@ -696,9 +806,9 @@ h1{font-size:clamp(34px,4.4vw,64px);line-height:1.06;max-width:18ch}
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -707,8 +817,14 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 h1{font-size:clamp(28px,3.2vw,46px)}
 .tl{width:100%;max-width:760px;margin:1.6em auto 0;display:grid;gap:0;text-align:left;position:relative}
 .st{display:grid;grid-template-columns:auto 1fr;gap:1.3rem;padding:0 0 1.4rem 0;position:relative}
@@ -717,6 +833,7 @@ h1{font-size:clamp(28px,3.2vw,46px)}
 .st .when{font-family:var(--font-display);font-weight:800;font-size:clamp(15px,1.45vw,22px);margin-bottom:.25em}
 .st .what{font-size:clamp(14px,1.35vw,20px);color:var(--ink-soft);line-height:1.45}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="eyebrow" data-slot="eyebrow">THE TOUR</div>
   <h1 data-slot="headline">Your first two weeks</h1>
   <div class="tl" data-max="5">
@@ -738,9 +855,9 @@ h1{font-size:clamp(28px,3.2vw,46px)}
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -749,8 +866,14 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 h1{font-size:clamp(26px,3vw,44px)}
 .stack{width:100%;max-width:1040px;margin:1.4em auto 0;text-align:left;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--panel)}
 .li{display:flex;justify-content:space-between;align-items:baseline;gap:1.2rem;padding:.95rem 1.6rem;border-bottom:1px solid var(--line)}
@@ -761,6 +884,7 @@ h1{font-size:clamp(26px,3vw,44px)}
 .tot .vl{font-family:var(--font-display);font-weight:800;font-size:clamp(19px,2vw,30px)}
 .anchor{margin-top:1.1em;font-size:clamp(15px,1.4vw,21px);color:var(--ink-soft);max-width:46ch}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="eyebrow" data-slot="eyebrow">WHAT YOU GET</div>
   <h1 data-slot="headline">Everything inside</h1>
   <div class="stack" data-max="8">
@@ -784,9 +908,9 @@ h1{font-size:clamp(26px,3vw,44px)}
 <!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -795,14 +919,21 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 h1{font-size:clamp(30px,3.6vw,52px);max-width:20ch}
 .steps{display:grid;gap:.8rem;width:100%;max-width:860px;margin:1.4em auto 0;text-align:left;counter-reset:s}
 .sp{counter-increment:s;border:1px solid var(--line);border-radius:var(--r-md);background:var(--panel);padding:1rem 1.3rem 1rem 3.5rem;position:relative;font-size:clamp(15px,1.4vw,21px);line-height:1.45}
 .sp::before{content:counter(s);position:absolute;left:1.3rem;top:.95rem;font-family:var(--font-display);font-weight:800;color:var(--accent)}
 .cta{margin-top:1.3em;background:var(--accent);color:#fff;border-radius:var(--r-pill);padding:.75em 2.2em;font-family:var(--font-display);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:clamp(14px,1.5vw,21px)}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="eyebrow" data-slot="eyebrow">YOUR NEXT MOVE</div>
   <h1 data-slot="headline">Here&rsquo;s exactly what to do.</h1>
   <div class="steps" data-max="4">
@@ -825,9 +956,9 @@ h1{font-size:clamp(30px,3.6vw,52px);max-width:20ch}
 <!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
-:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
-[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
-[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800;--bg-veil:rgba(255,255,255,.88)}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21;--bg-veil:rgba(16,16,20,.68)}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12);--bg-veil:rgba(219,0,99,.86)}
 /* == END CL-THEME-TOKENS == */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
@@ -836,10 +967,17 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 h1{font-size:clamp(40px,5.4vw,84px);line-height:1.02;max-width:16ch}
 </style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
   <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
   <h1 data-slot="headline">The section</h1>
   <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>

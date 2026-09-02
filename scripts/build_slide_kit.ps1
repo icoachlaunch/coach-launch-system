@@ -54,8 +54,14 @@ html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(
 h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
 h1 .hl{color:var(--accent)}
 .sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
-.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);z-index:2}
 .mark b{color:var(--ink)}
+/* Optional background layer. EVERY mold carries one so any slide can take an image.
+   Delete the element when no image is supplied - it must never render as an empty box.
+   The veil is a theme token, so a background works under light text as well as dark. */
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:var(--bg-veil)}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
 '@
 
 # ---------- read the themes ----------

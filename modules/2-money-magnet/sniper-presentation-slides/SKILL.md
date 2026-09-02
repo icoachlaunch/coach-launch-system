@@ -550,20 +550,36 @@ get their own colour.
 `✔ Locked: theme = [name][ + their brand overlay] · mark: [presenter · brand]`
 
 ## IMAGES — OPTIONAL, NEVER ASKED
-**The prompt pack is `image-prompts.md`, shipped with this tool.** It carries the per-slot
-recipes, ratios, the shared style suffix, and the wiring rules. Point the user there rather than
-improvising prompts; if they ask you to write one, follow its formula (subject · treatment ·
-palette · avoid) and append the same style suffix to every image in the deck.
 
-⚠️ **Two slots must never be generated:** `02-intro-split`'s `photo` should be a real photograph
-of the presenter, and its `magnet` should be their real Event Magnet™ from Step 3. A generated
-face on the intro slide costs them the room the moment they walk on stage. Only the three
-atmospheric slots — `07-story-bit` `bg`, `08-image-hero` `bg`, `09-image-points` `image` — are
-candidates for generation.
+**EVERY mold carries a `bg` layer**, so an image can go behind ANY slide — the value stack, the
+framework, the price, the close. The veil over it is a theme token (`--bg-veil`) that adapts to the
+surface, so a background works under dark text on a light slide as well as it does on a dark one.
+You never need to write markup to add one; the layer is already there.
 
-Any generator works; the pack is tool-agnostic. In Cowork/Claude Code the **`kie-image-gen`
-skill** handles Kie.ai generation, preview-and-approve and downloading — point them at it rather
-than hand-rolling an API call.
+**If no image is supplied, DELETE the `bg` element.** It must never render as an empty box. That
+is the default state for almost every slide.
+
+⚠️ **Restraint is the rule.** A background on every slide is exhausting and hurts readability.
+Three or four across a 35-slide deck is plenty. If an image only fills space, leave it out — and
+say so if the user asks for more.
+
+**The framework is `image-prompts.md`, shipped with this tool.** It is organised by what the image
+DOES, not by which slot it fills — six copy-paste templates (background · hero · make a point ·
+object · texture · people), the four-part formula (subject · treatment · palette · avoid), the
+shared style suffix, ratios, and the wiring rules. Point the user there rather than improvising.
+If they ask you to write a prompt, follow the template shape and append the same style suffix to
+every image in the deck.
+
+⚠️ **Never generate a person.** `02-intro-split`'s `photo` must be a real photograph of the
+presenter — a generated face costs them the room the moment they walk on stage. Its `magnet` must
+be their real Event Magnet™ from Step 3. And a generated "client" on a proof slide is a fabricated
+testimonial whatever the intent (RULE 4). Anonymous, face-not-visible human presence is the only
+legitimate generated use.
+
+Any generator works; the framework is tool-agnostic. In Cowork/Claude Code the **`kie-image-gen`
+skill** handles generation, preview-and-approve and downloading — point them at it rather than
+hand-rolling an API call. Six ready-made backgrounds already ship in `images/`, desaturated to work
+under all six themes.
 
 **Default to base64** when inlining, so the deck survives bad venue wifi.
 
