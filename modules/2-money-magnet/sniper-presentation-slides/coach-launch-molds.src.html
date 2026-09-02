@@ -21,7 +21,18 @@
   .tag{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--brand);color:#fff;border-radius:var(--r-pill);padding:.32em .85em}
   .tag.cap{background:#55565b}
   .meta{color:var(--faint);font-size:13.5px;line-height:1.7;margin-bottom:1.1rem}
+  .howto{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.5rem 1.7rem;margin:1.8rem 0 2.5rem;color:var(--soft);line-height:1.7}
+  .howto h2{font-family:'Montserrat',sans-serif;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);margin:1.4rem 0 .5rem}
+  .howto h2:first-child{margin-top:0}
+  .howto p{margin:0 0 .7rem}
+  .howto b{color:var(--ink)}
+  .howto .say{background:var(--panel);border-left:3px solid var(--brand);border-radius:0 8px 8px 0;padding:.8rem 1rem;font-style:italic;color:var(--ink)}
+  .contract.tech{margin-top:3rem;background:#fbfbfc;border-left-color:var(--faint)}
+  .contract.tech h2{color:var(--faint)}
+  .contract.tech .tech-lede{margin-bottom:.9rem;font-size:14px}
   .meta b{color:var(--soft)}
+  .meta .slots{display:block;margin-top:.45rem;font-size:12px;color:#b3b4b9}
+  .meta .slots b{color:#9a9ba0}
   .previews{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
   .pv{border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
   .pv .cap{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);padding:.55rem .8rem;border-bottom:1px solid var(--line)}
@@ -30,44 +41,38 @@
 </style></head><body><div class="wrap">
 
 <h1 class="pg">Coach Launch · <span>Slide Mold Library</span></h1>
-<p class="lede">Twenty slide molds. Every mold is a complete, standalone 16:9 HTML document. The
-Sniper Presentation&trade; Slides builder clones one per row of the plan table and fills its marked
-slots &mdash; it never writes markup of its own.</p>
+<p class="lede">These are the twenty slide designs your deck is built from. Every slide you present
+is one of these, with your words in it.</p>
 
-<div class="contract">
-  <h2>The clone contract</h2>
-  <ol>
-    <li><b>Match on <code>data-type</code> exactly.</b> Never fuzzy-match a display label. Copy the matched
-      block's text verbatim &mdash; it is the whole document.</li>
-    <li><b>Set the surface</b> from the plan table's Surf column: <code>&lt;html data-surface="L|D|A"&gt;</code>.
-      One mold, three surfaces. Never restyle to fake a surface.</li>
-    <li><b>Fill only <code>data-slot</code> elements</b>, matching by attribute &mdash; never by guessing at
-      placeholder wording. Delete surplus <code>data-slot="item"</code> elements; never leave placeholder text.</li>
-    <li><b>Auto-brand overwrites only the <code>CL-THEME-TOKENS</code> block</b> &mdash; byte-identical in all
-      twenty molds. Nothing else in the CSS is ever touched.</li>
-    <li><b>Respect <code>data-max</code>.</b> Overflow is a STOP, not a trim &mdash; the copy goes back to the Script.</li>
-    <li><b>Set <code>data-cells</code> on the ELEMENT only.</b> The same token appears inside the
-      stylesheet's selectors (<code>.grid[data-cells="9"]</code>), so a blind find-and-replace rewrites
-      the CSS and the grid silently renders the wrong column count. Anchor the edit to the opening tag.
-      Same care with <code>data-surface</code>: it belongs on <code>&lt;html&gt;</code>, and the CSS
-      matches it unquoted, so only ever change the quoted attribute.</li>
-    <li><b>Delete every surplus item, then scan for leftovers.</b> After filling a repeater, search the
-      finished slide for the mold's own placeholder words &mdash; <code>Item</code>, <code>Title</code>,
-      <code>Name</code>, <code>The step</code>, <code>Supporting line</code>, <code>$0,000</code>. A stale
-      item left behind still renders, and it renders as if it were the client's copy. Fill a slot by
-      replacing the element's <b>whole</b> content: matching to the first <code>&lt;/</code> strands the
-      tail of any placeholder containing nested markup.</li>
-    <li><b>Every mold has a <code>bg</code> layer</b>, so an image can go behind ANY slide. Set a
-      <code>background-image</code> on it; the veil over it is a theme token that adapts to the surface,
-      so it works under dark text as well as light. <b>Delete the element when no image is supplied</b>
-      &mdash; that is the normal case, and it must never render as an empty box.</li>
-  </ol>
+<div class="howto">
+  <h2>How to use this page</h2>
+  <p><b>You don't have to do anything with it.</b> When you build a deck, the builder picks the right
+  design for each beat automatically &mdash; you never choose from this list slide by slide.</p>
+  <p>It's here so you can <b>see what's available</b>. Scroll through, get a feel for the shapes, and if
+  you ever want a particular slide to look different, you'll know what to ask for.</p>
+  <p><b>To ask for one by name,</b> just say it in plain English:</p>
+  <p class="say">&ldquo;Make slide 12 a side-by-side comparison instead.&rdquo;<br>
+     &ldquo;Put the pricing on the big-number design.&rdquo;<br>
+     &ldquo;Use the timeline layout for the Tour.&rdquo;</p>
+  <h2>What you're looking at</h2>
+  <p>Each design is shown <b>three times</b> &mdash; light, dark, and in your accent colour. Same design,
+  three moods. Which one a slide uses is decided by the plan table, so your deck alternates instead of
+  going flat.</p>
+  <p>The grey tag next to a name tells you <b>how much it holds</b> &mdash; &ldquo;max 5 per column&rdquo;,
+  &ldquo;exactly 3&rdquo;, &ldquo;one line only&rdquo;. If your copy runs longer than that, the builder
+  stops and shows you rather than shrinking your words to fit. You then trim it in your Script, and it
+  rebuilds that slide.</p>
+  <p><b>Every design can take a background image</b>, and none of them need one. See
+  <code>image-prompts.md</code> if you want to add one.</p>
+  <p>The grey text under each name is a note for the builder. You can ignore it.</p>
 </div>
+
+
 
 <section>
   <div class="hd"><h3>Cover</h3><span class="tag">01-cover</span></div>
   <p class="meta"><b>Use:</b> the opener when the deck is not built from a Sniper Presentation&trade; Script.
-    <b>Slots:</b> eyebrow &middot; headline &middot; support &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> eyebrow &middot; headline &middot; support &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="01-cover">
 <!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -87,8 +92,8 @@ h1{font-size:clamp(34px,4vw,58px);max-width:20ch}
   <div class="hd"><h3>Intro split</h3><span class="tag">02-intro-split</span></div>
   <p class="meta"><b>Use:</b> slide 1 &mdash; MC intro + price anchor. Founder photo one side; the system name,
     the $Million Promise&trade;, and the Event Magnet&trade; the other.
-    <b>Slots:</b> photo &middot; eyebrow &middot; headline &middot; support &middot; magnet &middot; presenter &middot; brand.
-    Image slots take a <code>background-image</code>; absent images leave a clean panel.</p>
+    <span class="slots"><b>Slots:</b> photo &middot; eyebrow &middot; headline &middot; support &middot; magnet &middot; presenter &middot; brand.
+    Image slots take a <code>background-image</code>; absent images leave a clean panel.</span></p>
   <script type="text/plain" data-type="02-intro-split">
 <!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -116,7 +121,7 @@ h1{font-size:clamp(30px,3.3vw,50px)}
 <section>
   <div class="hd"><h3>Promise</h3><span class="tag">03-promise</span></div>
   <p class="meta"><b>Use:</b> the $Million Promise&trade; as the headline &mdash; verbatim, never reworded.
-    <b>Slots:</b> eyebrow &middot; headline &middot; support &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> eyebrow &middot; headline &middot; support &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="03-promise">
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -136,7 +141,7 @@ h1{font-size:clamp(34px,4.2vw,62px);line-height:1.06;max-width:20ch}
 <section>
   <div class="hd"><h3>Qualify</h3><span class="tag">04-qualify</span><span class="tag cap">max 5 per column</span></div>
   <p class="meta"><b>Use:</b> the binary &mdash; this is for you if / not for you if.
-    <b>Slots:</b> eyebrow &middot; headline &middot; yes-title &middot; no-title &middot; item (per column) &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> eyebrow &middot; headline &middot; yes-title &middot; no-title &middot; item (per column) &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="04-qualify">
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -169,7 +174,7 @@ h1{font-size:clamp(28px,3.2vw,48px)}
   <div class="hd"><h3>Reveal</h3><span class="tag">05-reveal</span><span class="tag cap">headline &le; 12 words</span></div>
   <p class="meta"><b>Use:</b> one bold statement &mdash; the open loop, the Big Shift, the Pitch Primer, Urgency,
     the Guarantee. Wrap the pivot word in <code>&lt;span class="hl"&gt;</code>.
-    <b>Slots:</b> eyebrow &middot; headline &middot; support &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> eyebrow &middot; headline &middot; support &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="05-reveal">
 <!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -190,7 +195,7 @@ h1{font-size:clamp(36px,4.6vw,66px);line-height:1.05;max-width:18ch}
 <section>
   <div class="hd"><h3>Problem</h3><span class="tag">06-problem</span><span class="tag cap">max 3 items</span></div>
   <p class="meta"><b>Use:</b> the pain, and Broken Models. Headline + up to three supporting lines.
-    <b>Slots:</b> eyebrow &middot; headline &middot; item &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> eyebrow &middot; headline &middot; item &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="06-problem">
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -216,7 +221,7 @@ h1{font-size:clamp(30px,3.4vw,50px);max-width:22ch}
   <div class="hd"><h3>Story bit</h3><span class="tag">07-story-bit</span><span class="tag cap">one line only</span></div>
   <p class="meta"><b>Use:</b> every story-bit slot. Deliberately a change of pace &mdash; one line on screen,
     the whole bit in the presenter notes. Optional mood image via the <code>bg</code> slot.
-    <b>Slots:</b> bg &middot; eyebrow &middot; headline &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> bg &middot; eyebrow &middot; headline &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="07-story-bit">
 <!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -238,7 +243,7 @@ h1{font-size:clamp(32px,4.2vw,60px);line-height:1.08;max-width:19ch;font-style:i
   <div class="hd"><h3>Image hero</h3><span class="tag">08-image-hero</span></div>
   <p class="meta"><b>Use:</b> the $Million Moment&trade; story and the Story-Jam send-off. Full-bleed image
     behind a single headline box holding ONE key point.
-    <b>Slots:</b> bg &middot; eyebrow &middot; headline &middot; support &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> bg &middot; eyebrow &middot; headline &middot; support &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="08-image-hero">
 <!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -263,7 +268,7 @@ h1{font-size:clamp(28px,3.4vw,50px);line-height:1.1}
 <section>
   <div class="hd"><h3>Image points</h3><span class="tag">09-image-points</span><span class="tag cap">exactly 3</span></div>
   <p class="meta"><b>Use:</b> an image one side, three numbered points the other.
-    <b>Slots:</b> image &middot; eyebrow &middot; headline &middot; item &times;3 &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> image &middot; eyebrow &middot; headline &middot; item &times;3 &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="09-image-points">
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -295,7 +300,7 @@ h1{font-size:clamp(26px,2.9vw,42px)}
   <div class="hd"><h3>Framework</h3><span class="tag">10-framework</span><span class="tag cap">3&ndash;9 &middot; data-cells</span></div>
   <p class="meta"><b>Use:</b> the System Reveal (their Magic Formula&trade;) and Process. Set
     <code>data-cells</code> to the step count; the grid reflows.
-    <b>Slots:</b> eyebrow &middot; headline &middot; item (label + line) &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> eyebrow &middot; headline &middot; item (label + line) &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="10-framework">
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -325,7 +330,7 @@ h1{font-size:clamp(28px,3.2vw,46px)}
   <div class="hd"><h3>Split comparison</h3><span class="tag">11-split-compare</span><span class="tag cap">max 5 per column</span></div>
   <p class="meta"><b>Use:</b> the enemy &amp; the guide, Hell &rarr; Heaven, Two Identities, Fork in the Road.
     Two columns and an optional full-width closing line.
-    <b>Slots:</b> eyebrow &middot; headline &middot; a-title &middot; b-title &middot; item (per column) &middot; footline &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> eyebrow &middot; headline &middot; a-title &middot; b-title &middot; item (per column) &middot; footline &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="11-split-compare">
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -360,7 +365,7 @@ h1{font-size:clamp(28px,3.2vw,46px)}
   <div class="hd"><h3>Belief</h3><span class="tag">12-belief</span><span class="tag cap">max 5 rows</span></div>
   <p class="meta"><b>Use:</b> Belief / Bust-It (internal) and Objection / Handle-It (external). One row per
     belief &rarr; the truth that busts it.
-    <b>Slots:</b> eyebrow &middot; headline &middot; item (belief + truth) &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> eyebrow &middot; headline &middot; item (belief + truth) &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="12-belief">
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -389,7 +394,7 @@ h1{font-size:clamp(28px,3.2vw,46px)}
   <div class="hd"><h3>Card grid</h3><span class="tag">13-card-grid</span><span class="tag cap">2&ndash;6 &middot; data-cells</span></div>
   <p class="meta"><b>Use:</b> any set of parallel items. Also carries the <b>Membership Close</b> two-price
     comparison &mdash; two cards, monthly and annual at the 25% saving.
-    <b>Slots:</b> eyebrow &middot; headline &middot; item (title + line) &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> eyebrow &middot; headline &middot; item (title + line) &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="13-card-grid">
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -420,7 +425,7 @@ h1{font-size:clamp(28px,3.2vw,46px)}
   <div class="hd"><h3>Proof</h3><span class="tag">14-proof</span><span class="tag cap">max 3 &middot; real only</span></div>
   <p class="meta"><b>Use:</b> client results. <b>Only the user's real, named results</b> &mdash; never a fabricated
     quote, name, or number. No photo is fine; initials render in the monogram.
-    <b>Slots:</b> eyebrow &middot; headline &middot; item (quote + name + result) &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> eyebrow &middot; headline &middot; item (quote + name + result) &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="14-proof">
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -452,7 +457,7 @@ h1{font-size:clamp(28px,3.2vw,46px)}
   <div class="hd"><h3>Stat</h3><span class="tag">15-stat</span><span class="tag cap">one number</span></div>
   <p class="meta"><b>Use:</b> one big real number &mdash; and the Price reveal. For the Deposit Close this
     carries the <b>full price</b>, never the deposit.
-    <b>Slots:</b> eyebrow &middot; number &middot; label &middot; support &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> eyebrow &middot; number &middot; label &middot; support &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="15-stat">
 <!DOCTYPE html><html data-surface="A"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -474,7 +479,7 @@ h1{font-size:clamp(28px,3.2vw,46px)}
 <section>
   <div class="hd"><h3>Engagement</h3><span class="tag">16-engagement</span><span class="tag cap">one line + prompt</span></div>
   <p class="meta"><b>Use:</b> the Confidence Check. One question and the instruction that answers it.
-    <b>Slots:</b> eyebrow &middot; headline &middot; prompt &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> eyebrow &middot; headline &middot; prompt &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="16-engagement">
 <!DOCTYPE html><html data-surface="A"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -496,7 +501,7 @@ h1{font-size:clamp(34px,4.4vw,64px);line-height:1.06;max-width:18ch}
   <div class="hd"><h3>Timeline</h3><span class="tag">17-timeline</span><span class="tag cap">max 5 stops</span></div>
   <p class="meta"><b>Use:</b> <b>The Tour</b> &mdash; their first two weeks inside. Every line starts with
     &ldquo;you&rsquo;ll&rdquo;; the moment it names deliverables it has collapsed back into the value stack.
-    <b>Slots:</b> eyebrow &middot; headline &middot; item (when + what) &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> eyebrow &middot; headline &middot; item (when + what) &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="17-timeline">
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -526,7 +531,7 @@ h1{font-size:clamp(28px,3.2vw,46px)}
   <div class="hd"><h3>Value stack</h3><span class="tag">18-value-stack</span><span class="tag cap">max 8 rows</span></div>
   <p class="meta"><b>Use:</b> the Red Diamond Offer&trade; stack &rarr; running total &rarr; anchor. Every figure comes
     from the locked offer and Money Model.
-    <b>Slots:</b> eyebrow &middot; headline &middot; item (thing + value) &middot; total &middot; anchor &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> eyebrow &middot; headline &middot; item (thing + value) &middot; total &middot; anchor &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="18-value-stack">
 <!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -560,7 +565,7 @@ h1{font-size:clamp(26px,3vw,44px)}
   <div class="hd"><h3>CTA</h3><span class="tag">19-cta</span><span class="tag cap">max 4 steps</span></div>
   <p class="meta"><b>Use:</b> the Close, and the Re-Pitch. The single next move, in numbered steps a tired
     person can follow. The close beats come from the Script's chosen close &mdash; never invented.
-    <b>Slots:</b> eyebrow &middot; headline &middot; item (step) &middot; cta &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> eyebrow &middot; headline &middot; item (step) &middot; cta &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="19-cta">
 <!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -589,7 +594,7 @@ h1{font-size:clamp(30px,3.6vw,52px);max-width:20ch}
   <div class="hd"><h3>Divider</h3><span class="tag">20-divider</span></div>
   <p class="meta"><b>Use:</b> section transitions, Q&amp;A holding slide, the VIP Hour block, and the
     Challenge day opens and recaps.
-    <b>Slots:</b> eyebrow &middot; headline &middot; presenter &middot; brand.</p>
+    <span class="slots"><b>Slots:</b> eyebrow &middot; headline &middot; presenter &middot; brand.</span></p>
   <script type="text/plain" data-type="20-divider">
 <!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
 <!--CLFONTS-->
@@ -604,6 +609,36 @@ h1{font-size:clamp(40px,5.4vw,84px);line-height:1.02;max-width:16ch}
   </script>
 </section>
 
+<div class="contract tech">
+  <h2>Technical notes &mdash; for the builder</h2>
+  <p class="tech-lede">You can stop reading here. This part is written for the AI that assembles your
+  deck, so that it clones these designs exactly rather than inventing its own.</p><ol>
+    <li><b>Match on <code>data-type</code> exactly.</b> Never fuzzy-match a display label. Copy the matched
+      block's text verbatim &mdash; it is the whole document.</li>
+    <li><b>Set the surface</b> from the plan table's Surf column: <code>&lt;html data-surface="L|D|A"&gt;</code>.
+      One mold, three surfaces. Never restyle to fake a surface.</li>
+    <li><b>Fill only <code>data-slot</code> elements</b>, matching by attribute &mdash; never by guessing at
+      placeholder wording. Delete surplus <code>data-slot="item"</code> elements; never leave placeholder text.</li>
+    <li><b>Auto-brand overwrites only the <code>CL-THEME-TOKENS</code> block</b> &mdash; byte-identical in all
+      twenty molds. Nothing else in the CSS is ever touched.</li>
+    <li><b>Respect <code>data-max</code>.</b> Overflow is a STOP, not a trim &mdash; the copy goes back to the Script.</li>
+    <li><b>Set <code>data-cells</code> on the ELEMENT only.</b> The same token appears inside the
+      stylesheet's selectors (<code>.grid[data-cells="9"]</code>), so a blind find-and-replace rewrites
+      the CSS and the grid silently renders the wrong column count. Anchor the edit to the opening tag.
+      Same care with <code>data-surface</code>: it belongs on <code>&lt;html&gt;</code>, and the CSS
+      matches it unquoted, so only ever change the quoted attribute.</li>
+    <li><b>Delete every surplus item, then scan for leftovers.</b> After filling a repeater, search the
+      finished slide for the mold's own placeholder words &mdash; <code>Item</code>, <code>Title</code>,
+      <code>Name</code>, <code>The step</code>, <code>Supporting line</code>, <code>$0,000</code>. A stale
+      item left behind still renders, and it renders as if it were the client's copy. Fill a slot by
+      replacing the element's <b>whole</b> content: matching to the first <code>&lt;/</code> strands the
+      tail of any placeholder containing nested markup.</li>
+    <li><b>Every mold has a <code>bg</code> layer</b>, so an image can go behind ANY slide. Set a
+      <code>background-image</code> on it; the veil over it is a theme token that adapts to the surface,
+      so it works under dark text as well as light. <b>Delete the element when no image is supplied</b>
+      &mdash; that is the normal case, and it must never render as an empty box.</li>
+  </ol>
+</div>
 </div>
 <script>
 /* Gallery preview only — not part of any mold. Renders each mold at all three surfaces. */
