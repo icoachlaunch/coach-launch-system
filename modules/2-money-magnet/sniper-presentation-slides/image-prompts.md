@@ -42,7 +42,7 @@ That's the flexibility. The templates below are organised by **what the image is
 which slide it sits on — so once you know the job, you can put it anywhere.
 
 ⚠️ **Restraint is the whole skill here.** An image behind every slide is exhausting to sit through
-and makes your deck harder to read, not easier. Three or four across a 35-slide deck is plenty.
+and makes your deck harder to read, not easier. Three or four across a full-length deck is plenty.
 If an image is only filling space, cut it.
 
 ---
