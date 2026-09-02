@@ -1,0 +1,38 @@
+{
+  "_comment": "Placeholder image set for the Sniper Presentation Slides kit. Deliberately neutral and desaturated so they sit under ANY of the six themes' dark overlays. No faces, no text, no logos. Generate with: powershell -File scripts/kie_generate.ps1 -Spec modules/2-money-magnet/sniper-presentation-slides/images/placeholder-spec.json -OutDir modules/2-money-magnet/sniper-presentation-slides/images",
+  "_style_suffix": "photographic, shallow depth of field, soft directional light, muted desaturated neutral palette, cinematic colour grade, generous negative space. Avoid: any text, letters, numbers, logos, watermarks, faces, people looking at camera, cheesy stock-photo posing, clip art, busy backgrounds, collage, borders, oversaturated colour.",
+  "model": "google/nano-banana",
+  "aspect_ratio": "16:9",
+  "images": [
+    {
+      "name": "mood-auditorium",
+      "aspect_ratio": "16:9",
+      "prompt": "A large empty auditorium photographed from the back before the doors open, rows of seats receding into darkness, one shaft of light falling across the middle. Low key, deep shadows, single soft light source. Wide shot, nobody present. Lots of empty space through the centre of the frame for text. photographic, shallow depth of field, soft directional light, muted desaturated neutral palette, cinematic colour grade, generous negative space. Avoid: any text, letters, numbers, logos, watermarks, faces, people looking at camera, cheesy stock-photo posing, clip art, busy backgrounds, collage, borders, oversaturated colour."
+    },
+    {
+      "name": "mood-nightdesk",
+      "aspect_ratio": "16:9",
+      "prompt": "A single desk lamp lit on a plain wooden desk late at night, the rest of the room falling away into darkness, a closed notebook just visible at the edge of the pool of light. Low key, deep shadows. Wide shot, nobody present. Uncluttered space through the centre of the frame for text. photographic, shallow depth of field, soft directional light, muted desaturated neutral palette, cinematic colour grade, generous negative space. Avoid: any text, letters, numbers, logos, watermarks, faces, people looking at camera, cheesy stock-photo posing, clip art, busy backgrounds, collage, borders, oversaturated colour."
+    },
+    {
+      "name": "mood-firstlight",
+      "aspect_ratio": "16:9",
+      "prompt": "An empty coastal road at first light, low mist sitting over the tarmac, the horizon soft and open ahead. Wide shot, nobody present, no vehicles. Calm and quiet rather than dramatic. Uncluttered sky through the centre of the frame for text. photographic, shallow depth of field, soft directional light, muted desaturated neutral palette, cinematic colour grade, generous negative space. Avoid: any text, letters, numbers, logos, watermarks, faces, people looking at camera, cheesy stock-photo posing, clip art, busy backgrounds, collage, borders, oversaturated colour."
+    },
+    {
+      "name": "hero-stage",
+      "aspect_ratio": "16:9",
+      "prompt": "An empty stage viewed from the back of a darkened room, a single lectern lit from above, the left third of the frame in deep uncluttered shadow. Atmospheric, shot from a distance, nobody present. photographic, shallow depth of field, soft directional light, muted desaturated neutral palette, cinematic colour grade, generous negative space. Avoid: any text, letters, numbers, logos, watermarks, faces, people looking at camera, cheesy stock-photo posing, clip art, busy backgrounds, collage, borders, oversaturated colour."
+    },
+    {
+      "name": "hero-room",
+      "aspect_ratio": "16:9",
+      "prompt": "A hotel function room set with rows of empty chairs before an event, warm window light entering from the right, the left third of the frame darker and uncluttered. Wide atmospheric shot, nobody present. photographic, shallow depth of field, soft directional light, muted desaturated neutral palette, cinematic colour grade, generous negative space. Avoid: any text, letters, numbers, logos, watermarks, faces, people looking at camera, cheesy stock-photo posing, clip art, busy backgrounds, collage, borders, oversaturated colour."
+    },
+    {
+      "name": "side-notebook",
+      "aspect_ratio": "3:4",
+      "prompt": "A closed notebook and a pen resting on a plain surface, vertical composition, subject centred with clean empty space above and below. Soft even light, plain uncluttered background. photographic, shallow depth of field, soft directional light, muted desaturated neutral palette, cinematic colour grade, generous negative space. Avoid: any text, letters, numbers, logos, watermarks, faces, people looking at camera, cheesy stock-photo posing, clip art, busy backgrounds, collage, borders, oversaturated colour."
+    }
+  ]
+}

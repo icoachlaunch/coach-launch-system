@@ -1,0 +1,890 @@
+<!-- BUILT FILE - do not edit. Edit coach-launch-molds.src.html and re-run scripts/build_slide_kit.ps1 -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coach Launch · Slide Mold Library</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--brand:#db0063;--ink:#111;--soft:#55565b;--faint:#8a8b90;--line:#e6e7ea;--panel:#fafafb;
+        --r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#f4f4f6;color:var(--ink);font-family:'Lato',system-ui,sans-serif;padding:3rem 2rem 6rem}
+  .wrap{max-width:1180px;margin:0 auto}
+  h1.pg{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(28px,3vw,40px);letter-spacing:-.02em}
+  h1.pg span{color:var(--brand)}
+  .lede{color:var(--soft);font-size:18px;line-height:1.6;max-width:70ch;margin:.9rem 0 0}
+  .contract{background:#fff;border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:var(--r-md);padding:1.4rem 1.6rem;margin:2rem 0 3rem}
+  .contract h2{font-family:'Montserrat',sans-serif;font-size:15px;letter-spacing:.18em;text-transform:uppercase;color:var(--brand);margin-bottom:.8rem}
+  .contract ol{margin:0;padding-left:1.3em;color:var(--soft);line-height:1.8}
+  code{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-xs);padding:.1em .4em;font-size:.9em;color:var(--ink)}
+  section{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:1.5rem;margin-bottom:2rem}
+  .hd{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;margin-bottom:.4rem}
+  .hd h3{font-family:'Montserrat',sans-serif;font-size:20px}
+  .tag{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--brand);color:#fff;border-radius:var(--r-pill);padding:.32em .85em}
+  .tag.cap{background:#55565b}
+  .meta{color:var(--faint);font-size:13.5px;line-height:1.7;margin-bottom:1.1rem}
+  .meta b{color:var(--soft)}
+  .previews{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+  .pv{border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
+  .pv .cap{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);padding:.55rem .8rem;border-bottom:1px solid var(--line)}
+  .pv .frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden}
+  .pv iframe{position:absolute;top:0;left:0;width:1600px;height:900px;transform-origin:0 0;border:0}
+</style></head><body><div class="wrap">
+
+<h1 class="pg">Coach Launch · <span>Slide Mold Library</span></h1>
+<p class="lede">Twenty slide molds. Every mold is a complete, standalone 16:9 HTML document. The
+Sniper Presentation&trade; Slides builder clones one per row of the plan table and fills its marked
+slots &mdash; it never writes markup of its own.</p>
+
+<div class="contract">
+  <h2>The clone contract</h2>
+  <ol>
+    <li><b>Match on <code>data-type</code> exactly.</b> Never fuzzy-match a display label. Copy the matched
+      block's text verbatim &mdash; it is the whole document.</li>
+    <li><b>Set the surface</b> from the plan table's Surf column: <code>&lt;html data-surface="L|D|A"&gt;</code>.
+      One mold, three surfaces. Never restyle to fake a surface.</li>
+    <li><b>Fill only <code>data-slot</code> elements</b>, matching by attribute &mdash; never by guessing at
+      placeholder wording. Delete surplus <code>data-slot="item"</code> elements; never leave placeholder text.</li>
+    <li><b>Auto-brand overwrites only the <code>CL-THEME-TOKENS</code> block</b> &mdash; byte-identical in all
+      twenty molds. Nothing else in the CSS is ever touched.</li>
+    <li><b>Respect <code>data-max</code>.</b> Overflow is a STOP, not a trim &mdash; the copy goes back to the Script.</li>
+    <li><b>Set <code>data-cells</code> on the ELEMENT only.</b> The same token appears inside the
+      stylesheet's selectors (<code>.grid[data-cells="9"]</code>), so a blind find-and-replace rewrites
+      the CSS and the grid silently renders the wrong column count. Anchor the edit to the opening tag.
+      Same care with <code>data-surface</code>: it belongs on <code>&lt;html&gt;</code>, and the CSS
+      matches it unquoted, so only ever change the quoted attribute.</li>
+    <li><b>Delete every surplus item, then scan for leftovers.</b> After filling a repeater, search the
+      finished slide for the mold's own placeholder words &mdash; <code>Item</code>, <code>Title</code>,
+      <code>Name</code>, <code>The step</code>, <code>Supporting line</code>, <code>$0,000</code>. A stale
+      item left behind still renders, and it renders as if it were the client's copy.</li>
+  </ol>
+</div>
+
+<section>
+  <div class="hd"><h3>Cover</h3><span class="tag">01-cover</span></div>
+  <p class="meta"><b>Use:</b> the opener when the deck is not built from a Sniper Presentation&trade; Script.
+    <b>Slots:</b> eyebrow &middot; headline &middot; support &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="01-cover">
+<!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+h1{font-size:clamp(34px,4vw,58px);max-width:20ch}
+</style></head><body><div class="s">
+  <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
+  <h1 data-slot="headline">The headline</h1>
+  <p class="sup" data-slot="support">One line of support &mdash; the idea, not the talk track.</p>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Intro split</h3><span class="tag">02-intro-split</span></div>
+  <p class="meta"><b>Use:</b> slide 1 &mdash; MC intro + price anchor. Founder photo one side; the system name,
+    the $Million Promise&trade;, and the Event Magnet&trade; the other.
+    <b>Slots:</b> photo &middot; eyebrow &middot; headline &middot; support &middot; magnet &middot; presenter &middot; brand.
+    Image slots take a <code>background-image</code>; absent images leave a clean panel.</p>
+  <script type="text/plain" data-type="02-intro-split">
+<!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+.s{flex-direction:row;justify-content:center;align-items:center;gap:4.5vw;text-align:left}
+.photo{flex:0 0 32%;aspect-ratio:4/5;border-radius:var(--r-lg);background:var(--panel) center/cover no-repeat;border:1px solid var(--line)}
+.col{flex:0 1 auto;max-width:54ch}
+h1{font-size:clamp(30px,3.3vw,50px)}
+.sup{margin:.8em 0 0;max-width:40ch}
+.magnet{margin-top:1.4em;width:100%;max-width:430px;aspect-ratio:16/10;border-radius:var(--r-md);background:var(--panel) center/contain no-repeat;border:1px solid var(--line)}
+</style></head><body><div class="s">
+  <div class="photo" data-slot="photo"></div>
+  <div class="col">
+    <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
+    <h1 data-slot="headline">Their system name</h1>
+    <p class="sup" data-slot="support">Their $Million Promise&trade;, verbatim.</p>
+    <div class="magnet" data-slot="magnet"></div>
+  </div>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Promise</h3><span class="tag">03-promise</span></div>
+  <p class="meta"><b>Use:</b> the $Million Promise&trade; as the headline &mdash; verbatim, never reworded.
+    <b>Slots:</b> eyebrow &middot; headline &middot; support &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="03-promise">
+<!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+h1{font-size:clamp(34px,4.2vw,62px);line-height:1.06;max-width:20ch}
+.sup{margin-top:1em}
+</style></head><body><div class="s">
+  <div class="eyebrow" data-slot="eyebrow">THE PROMISE</div>
+  <h1 data-slot="headline">Their $Million Promise&trade;, word for word.</h1>
+  <p class="sup" data-slot="support">The one-line support, if the beat carries one.</p>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Qualify</h3><span class="tag">04-qualify</span><span class="tag cap">max 5 per column</span></div>
+  <p class="meta"><b>Use:</b> the binary &mdash; this is for you if / not for you if.
+    <b>Slots:</b> eyebrow &middot; headline &middot; yes-title &middot; no-title &middot; item (per column) &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="04-qualify">
+<!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+h1{font-size:clamp(28px,3.2vw,48px)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;width:100%;max-width:1150px;margin:1.5em auto 0;text-align:left}
+.c{border:1px solid var(--line);border-radius:var(--r-lg);padding:1.7rem 1.9rem;background:var(--panel)}
+.c.yes{border-top:4px solid var(--pos)}.c.no{border-top:4px solid var(--accent)}
+.c h3{font-family:var(--font-display);font-size:clamp(16px,1.6vw,24px);margin-bottom:.7em;text-align:center}
+.c.yes h3{color:var(--pos)}.c.no h3{color:var(--accent)}
+.c ul{list-style:none}
+.c li{font-size:clamp(15px,1.4vw,21px);color:var(--ink-soft);margin:.55em 0;line-height:1.45;padding-left:1.2em;position:relative}
+.c li::before{content:"\2014";position:absolute;left:0;color:var(--ink-faint)}
+</style></head><body><div class="s">
+  <div class="eyebrow" data-slot="eyebrow">WHO THIS IS FOR</div>
+  <h1 data-slot="headline">Are you in the room?</h1>
+  <div class="cols">
+    <div class="c yes"><h3 data-slot="yes-title">This is for you if</h3>
+      <ul data-max="5"><li data-slot="item">Item</li><li data-slot="item">Item</li><li data-slot="item">Item</li></ul></div>
+    <div class="c no"><h3 data-slot="no-title">This is not for you if</h3>
+      <ul data-max="5"><li data-slot="item">Item</li><li data-slot="item">Item</li><li data-slot="item">Item</li></ul></div>
+  </div>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Reveal</h3><span class="tag">05-reveal</span><span class="tag cap">headline &le; 12 words</span></div>
+  <p class="meta"><b>Use:</b> one bold statement &mdash; the open loop, the Big Shift, the Pitch Primer, Urgency,
+    the Guarantee. Wrap the pivot word in <code>&lt;span class="hl"&gt;</code>.
+    <b>Slots:</b> eyebrow &middot; headline &middot; support &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="05-reveal">
+<!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+.s{padding:7vh 8vw}
+h1{font-size:clamp(36px,4.6vw,66px);line-height:1.05;max-width:18ch}
+.sup{margin-top:1em;max-width:44ch}
+</style></head><body><div class="s">
+  <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
+  <h1 data-slot="headline">The one <span class="hl">bold</span> statement.</h1>
+  <p class="sup" data-slot="support">Optional single line of support.</p>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Problem</h3><span class="tag">06-problem</span><span class="tag cap">max 3 items</span></div>
+  <p class="meta"><b>Use:</b> the pain, and Broken Models. Headline + up to three supporting lines.
+    <b>Slots:</b> eyebrow &middot; headline &middot; item &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="06-problem">
+<!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+h1{font-size:clamp(30px,3.4vw,50px);max-width:22ch}
+.rows{width:100%;max-width:1000px;margin:1.5em auto 0;text-align:left;display:grid;gap:.85rem}
+.r{border-left:4px solid var(--accent);background:var(--panel);border-radius:0 var(--r-md) var(--r-md) 0;padding:1.15rem 1.5rem;font-size:clamp(16px,1.5vw,23px);color:var(--ink-soft);line-height:1.45}
+</style></head><body><div class="s">
+  <div class="eyebrow" data-slot="eyebrow">THE PROBLEM</div>
+  <h1 data-slot="headline">The pain, in their words.</h1>
+  <div class="rows" data-max="3">
+    <div class="r" data-slot="item">Supporting line</div>
+    <div class="r" data-slot="item">Supporting line</div>
+    <div class="r" data-slot="item">Supporting line</div>
+  </div>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Story bit</h3><span class="tag">07-story-bit</span><span class="tag cap">one line only</span></div>
+  <p class="meta"><b>Use:</b> every story-bit slot. Deliberately a change of pace &mdash; one line on screen,
+    the whole bit in the presenter notes. Optional mood image via the <code>bg</code> slot.
+    <b>Slots:</b> bg &middot; eyebrow &middot; headline &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="07-story-bit">
+<!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+.bg{position:absolute;inset:0;z-index:0;background:center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.7))}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
+.mark{z-index:2}
+.s{padding:7vh 9vw}
+h1{font-size:clamp(32px,4.2vw,60px);line-height:1.08;max-width:19ch;font-style:italic;font-weight:700}
+.eyebrow{opacity:.9}
+</style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
+  <div class="eyebrow" data-slot="eyebrow">A STORY</div>
+  <h1 data-slot="headline">The one line the room remembers.</h1>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Image hero</h3><span class="tag">08-image-hero</span></div>
+  <p class="meta"><b>Use:</b> the $Million Moment&trade; story and the Story-Jam send-off. Full-bleed image
+    behind a single headline box holding ONE key point.
+    <b>Slots:</b> bg &middot; eyebrow &middot; headline &middot; support &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="08-image-hero">
+<!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+.bg{position:absolute;inset:0;z-index:0;background:var(--panel) center/cover no-repeat}
+.bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.35))}
+.s{align-items:flex-start;text-align:left;padding:7vh 7vw}
+.s > *:not(.mark):not(.bg){position:relative;z-index:1}
+.mark{z-index:2}
+.box{border-left:5px solid var(--accent);background:rgba(16,16,20,.72);border-radius:0 var(--r-lg) var(--r-lg) 0;padding:1.6rem 1.9rem;max-width:56ch}
+h1{font-size:clamp(28px,3.4vw,50px);line-height:1.1}
+.sup{margin:.7em 0 0;max-width:48ch}
+</style></head><body><div class="s">
+  <div class="bg" data-slot="bg"></div>
+  <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
+  <div class="box">
+    <h1 data-slot="headline">The one key point.</h1>
+    <p class="sup" data-slot="support">A line of context.</p>
+  </div>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Image points</h3><span class="tag">09-image-points</span><span class="tag cap">exactly 3</span></div>
+  <p class="meta"><b>Use:</b> an image one side, three numbered points the other.
+    <b>Slots:</b> image &middot; eyebrow &middot; headline &middot; item &times;3 &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="09-image-points">
+<!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+.s{display:grid;grid-template-columns:1fr 1.15fr;align-items:center;gap:3.5vw;text-align:left}
+.img{width:100%;aspect-ratio:3/4;border-radius:var(--r-lg);background:var(--panel) center/cover no-repeat;border:1px solid var(--line)}
+h1{font-size:clamp(26px,2.9vw,42px)}
+.pts{display:grid;gap:.85rem;margin-top:1.3em;counter-reset:p}
+.p{counter-increment:p;border:1px solid var(--line);border-radius:var(--r-md);background:var(--panel);padding:1.15rem 1.35rem 1.15rem 3.5rem;position:relative;font-size:clamp(15px,1.4vw,20px);color:var(--ink-soft);line-height:1.45}
+.p::before{content:counter(p);position:absolute;left:1.1rem;top:.95rem;font-family:var(--font-display);font-weight:800;color:var(--accent);font-size:clamp(15px,1.4vw,20px)}
+</style></head><body><div class="s">
+  <div class="img" data-slot="image"></div>
+  <div>
+    <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
+    <h1 data-slot="headline">The headline</h1>
+    <div class="pts" data-max="3">
+      <div class="p" data-slot="item">Point one</div>
+      <div class="p" data-slot="item">Point two</div>
+      <div class="p" data-slot="item">Point three</div>
+    </div>
+  </div>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Framework</h3><span class="tag">10-framework</span><span class="tag cap">3&ndash;9 &middot; data-cells</span></div>
+  <p class="meta"><b>Use:</b> the System Reveal (their Magic Formula&trade;) and Process. Set
+    <code>data-cells</code> to the step count; the grid reflows.
+    <b>Slots:</b> eyebrow &middot; headline &middot; item (label + line) &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="10-framework">
+<!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+h1{font-size:clamp(28px,3.2vw,46px)}
+.grid{display:grid;gap:1rem;width:100%;max-width:1220px;margin:1.5em auto 0;text-align:left}
+.grid[data-cells="3"],.grid[data-cells="5"],.grid[data-cells="6"],.grid[data-cells="9"]{grid-template-columns:repeat(3,1fr)}
+.grid[data-cells="4"],.grid[data-cells="7"],.grid[data-cells="8"]{grid-template-columns:repeat(4,1fr)}
+.cell{border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--r-md);background:var(--panel);padding:1.15rem 1.3rem}
+.cell .lb{font-family:var(--font-display);font-weight:800;font-size:clamp(14px,1.3vw,19px);margin-bottom:.4em}
+.cell .ln{font-size:clamp(13px,1.2vw,18px);color:var(--ink-soft);line-height:1.42}
+</style></head><body><div class="s">
+  <div class="eyebrow" data-slot="eyebrow">THE SYSTEM</div>
+  <h1 data-slot="headline">Their system name</h1>
+  <div class="grid" data-cells="9" data-max="9">
+    <div class="cell" data-slot="item"><div class="lb" data-slot="label">Step</div><div class="ln" data-slot="line">The outcome it delivers.</div></div>
+    <div class="cell" data-slot="item"><div class="lb" data-slot="label">Step</div><div class="ln" data-slot="line">The outcome it delivers.</div></div>
+    <div class="cell" data-slot="item"><div class="lb" data-slot="label">Step</div><div class="ln" data-slot="line">The outcome it delivers.</div></div>
+  </div>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Split comparison</h3><span class="tag">11-split-compare</span><span class="tag cap">max 5 per column</span></div>
+  <p class="meta"><b>Use:</b> the enemy &amp; the guide, Hell &rarr; Heaven, Two Identities, Fork in the Road.
+    Two columns and an optional full-width closing line.
+    <b>Slots:</b> eyebrow &middot; headline &middot; a-title &middot; b-title &middot; item (per column) &middot; footline &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="11-split-compare">
+<!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+h1{font-size:clamp(28px,3.2vw,46px)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;width:100%;max-width:1150px;margin:1.4em auto 0;text-align:left}
+.c{border:1px solid var(--line);border-radius:var(--r-lg);padding:1.7rem 1.9rem;background:var(--panel)}
+.c.a{border-top:4px solid var(--ink-faint)}.c.b{border-top:4px solid var(--accent)}
+.c h3{font-family:var(--font-display);font-size:clamp(16px,1.6vw,24px);margin-bottom:.7em;text-align:center}
+.c.a h3{color:var(--ink-faint)}.c.b h3{color:var(--accent)}
+.c ul{list-style:none}
+.c li{font-size:clamp(15px,1.4vw,21px);color:var(--ink-soft);margin:.55em 0;line-height:1.45;padding-left:1.2em;position:relative}
+.c li::before{content:"\2014";position:absolute;left:0;color:var(--ink-faint)}
+.foot{margin:1.3em auto 0;font-family:var(--font-display);font-weight:800;font-size:clamp(18px,1.9vw,29px);color:var(--accent);max-width:40ch}
+</style></head><body><div class="s">
+  <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
+  <h1 data-slot="headline">The contrast</h1>
+  <div class="cols">
+    <div class="c a"><h3 data-slot="a-title">Without it</h3>
+      <ul data-max="5"><li data-slot="item">Item</li><li data-slot="item">Item</li><li data-slot="item">Item</li></ul></div>
+    <div class="c b"><h3 data-slot="b-title">With it</h3>
+      <ul data-max="5"><li data-slot="item">Item</li><li data-slot="item">Item</li><li data-slot="item">Item</li></ul></div>
+  </div>
+  <div class="foot" data-slot="footline">The line that lands it.</div>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Belief</h3><span class="tag">12-belief</span><span class="tag cap">max 5 rows</span></div>
+  <p class="meta"><b>Use:</b> Belief / Bust-It (internal) and Objection / Handle-It (external). One row per
+    belief &rarr; the truth that busts it.
+    <b>Slots:</b> eyebrow &middot; headline &middot; item (belief + truth) &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="12-belief">
+<!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+h1{font-size:clamp(28px,3.2vw,46px)}
+.rows{width:100%;max-width:1180px;margin:1.5em auto 0;display:grid;gap:.9rem;text-align:left}
+.r{display:grid;grid-template-columns:1fr auto 1.15fr;align-items:center;gap:1.3rem;border:1px solid var(--line);border-radius:var(--r-md);background:var(--panel);padding:1.15rem 1.5rem}
+.r .bel{font-size:clamp(14px,1.3vw,20px);color:var(--ink-faint);font-style:italic;line-height:1.4}
+.r .arw{font-family:var(--font-display);font-weight:800;color:var(--accent);font-size:clamp(17px,1.6vw,24px)}
+.r .tru{font-size:clamp(14px,1.3vw,20px);color:var(--ink);font-weight:700;line-height:1.4}
+</style></head><body><div class="s">
+  <div class="eyebrow" data-slot="eyebrow">WHAT'S IN THE WAY</div>
+  <h1 data-slot="headline">The headline</h1>
+  <div class="rows" data-max="5">
+    <div class="r" data-slot="item"><div class="bel" data-slot="belief">The belief</div><div class="arw">&rarr;</div><div class="tru" data-slot="truth">The truth that busts it</div></div>
+    <div class="r" data-slot="item"><div class="bel" data-slot="belief">The belief</div><div class="arw">&rarr;</div><div class="tru" data-slot="truth">The truth that busts it</div></div>
+    <div class="r" data-slot="item"><div class="bel" data-slot="belief">The belief</div><div class="arw">&rarr;</div><div class="tru" data-slot="truth">The truth that busts it</div></div>
+  </div>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Card grid</h3><span class="tag">13-card-grid</span><span class="tag cap">2&ndash;6 &middot; data-cells</span></div>
+  <p class="meta"><b>Use:</b> any set of parallel items. Also carries the <b>Membership Close</b> two-price
+    comparison &mdash; two cards, monthly and annual at the 25% saving.
+    <b>Slots:</b> eyebrow &middot; headline &middot; item (title + line) &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="13-card-grid">
+<!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+h1{font-size:clamp(28px,3.2vw,46px)}
+.grid{display:grid;gap:1.2rem;width:100%;max-width:1180px;margin:1.5em auto 0;text-align:left}
+.grid[data-cells="2"]{grid-template-columns:repeat(2,1fr)}
+.grid[data-cells="3"],.grid[data-cells="5"],.grid[data-cells="6"]{grid-template-columns:repeat(3,1fr)}
+.grid[data-cells="4"]{grid-template-columns:repeat(2,1fr)}
+.card{border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--r-md);background:var(--panel);padding:1.5rem 1.6rem}
+.card .t{font-family:var(--font-display);font-weight:800;font-size:clamp(16px,1.6vw,25px);margin-bottom:.45em}
+.card .l{font-size:clamp(14px,1.3vw,19px);color:var(--ink-soft);line-height:1.45}
+</style></head><body><div class="s">
+  <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
+  <h1 data-slot="headline">The headline</h1>
+  <div class="grid" data-cells="3" data-max="6">
+    <div class="card" data-slot="item"><div class="t" data-slot="title">Title</div><div class="l" data-slot="line">The line.</div></div>
+    <div class="card" data-slot="item"><div class="t" data-slot="title">Title</div><div class="l" data-slot="line">The line.</div></div>
+    <div class="card" data-slot="item"><div class="t" data-slot="title">Title</div><div class="l" data-slot="line">The line.</div></div>
+  </div>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Proof</h3><span class="tag">14-proof</span><span class="tag cap">max 3 &middot; real only</span></div>
+  <p class="meta"><b>Use:</b> client results. <b>Only the user's real, named results</b> &mdash; never a fabricated
+    quote, name, or number. No photo is fine; initials render in the monogram.
+    <b>Slots:</b> eyebrow &middot; headline &middot; item (quote + name + result) &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="14-proof">
+<!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+h1{font-size:clamp(28px,3.2vw,46px)}
+.grid{display:grid;gap:1.2rem;width:100%;max-width:1180px;margin:1.5em auto 0;text-align:left;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.pc{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--panel);padding:1.6rem 1.7rem;display:flex;flex-direction:column;gap:1.1rem}
+.pc .q{font-size:clamp(14px,1.3vw,19px);color:var(--ink-soft);line-height:1.5;font-style:italic}
+.pc .who{display:flex;align-items:center;gap:.7rem;margin-top:auto}
+.pc .mono{width:2.4rem;height:2.4rem;flex:none;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:.85rem}
+.pc .nm{font-family:var(--font-display);font-weight:800;font-size:clamp(13px,1.2vw,16px)}
+.pc .rs{font-size:clamp(12px,1.1vw,15px);color:var(--accent);font-weight:700}
+</style></head><body><div class="s">
+  <div class="eyebrow" data-slot="eyebrow">PROOF</div>
+  <h1 data-slot="headline">Real people, real numbers.</h1>
+  <div class="grid" data-max="3">
+    <div class="pc" data-slot="item"><div class="q" data-slot="quote">Their words.</div>
+      <div class="who"><div class="mono" data-slot="monogram">AB</div><div><div class="nm" data-slot="name">Name</div><div class="rs" data-slot="result">The result</div></div></div></div>
+    <div class="pc" data-slot="item"><div class="q" data-slot="quote">Their words.</div>
+      <div class="who"><div class="mono" data-slot="monogram">CD</div><div><div class="nm" data-slot="name">Name</div><div class="rs" data-slot="result">The result</div></div></div></div>
+  </div>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Stat</h3><span class="tag">15-stat</span><span class="tag cap">one number</span></div>
+  <p class="meta"><b>Use:</b> one big real number &mdash; and the Price reveal. For the Deposit Close this
+    carries the <b>full price</b>, never the deposit.
+    <b>Slots:</b> eyebrow &middot; number &middot; label &middot; support &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="15-stat">
+<!DOCTYPE html><html data-surface="A"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+.num{font-family:var(--font-display);font-weight:800;font-size:clamp(72px,12vw,190px);line-height:.92;letter-spacing:-.04em}
+.lbl{font-family:var(--font-display);font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:clamp(14px,1.5vw,22px);margin-top:.5em}
+.sup{margin-top:.9em;max-width:42ch}
+</style></head><body><div class="s">
+  <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
+  <div class="num" data-slot="number">$0,000</div>
+  <div class="lbl" data-slot="label">What the number means</div>
+  <p class="sup" data-slot="support">Optional line of context.</p>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Engagement</h3><span class="tag">16-engagement</span><span class="tag cap">one line + prompt</span></div>
+  <p class="meta"><b>Use:</b> the Confidence Check. One question and the instruction that answers it.
+    <b>Slots:</b> eyebrow &middot; headline &middot; prompt &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="16-engagement">
+<!DOCTYPE html><html data-surface="A"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+.s{padding:7vh 8vw}
+h1{font-size:clamp(34px,4.4vw,64px);line-height:1.06;max-width:18ch}
+.prompt{margin-top:1.2em;border:2px solid var(--line);border-radius:var(--r-pill);padding:.65em 1.9em;font-family:var(--font-display);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:clamp(14px,1.5vw,21px)}
+</style></head><body><div class="s">
+  <div class="eyebrow" data-slot="eyebrow">CONFIDENCE CHECK</div>
+  <h1 data-slot="headline">Can you see how this changes things?</h1>
+  <div class="prompt" data-slot="prompt">Drop a YES</div>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Timeline</h3><span class="tag">17-timeline</span><span class="tag cap">max 5 stops</span></div>
+  <p class="meta"><b>Use:</b> <b>The Tour</b> &mdash; their first two weeks inside. Every line starts with
+    &ldquo;you&rsquo;ll&rdquo;; the moment it names deliverables it has collapsed back into the value stack.
+    <b>Slots:</b> eyebrow &middot; headline &middot; item (when + what) &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="17-timeline">
+<!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+h1{font-size:clamp(28px,3.2vw,46px)}
+.tl{width:100%;max-width:760px;margin:1.6em auto 0;display:grid;gap:0;text-align:left;position:relative}
+.st{display:grid;grid-template-columns:auto 1fr;gap:1.3rem;padding:0 0 1.4rem 0;position:relative}
+.st:not(:last-child)::before{content:"";position:absolute;left:.52rem;top:1.3rem;bottom:0;width:2px;background:var(--line)}
+.st .dot{width:1.1rem;height:1.1rem;border-radius:50%;background:var(--accent);margin-top:.35rem;position:relative;z-index:1}
+.st .when{font-family:var(--font-display);font-weight:800;font-size:clamp(15px,1.45vw,22px);margin-bottom:.25em}
+.st .what{font-size:clamp(14px,1.35vw,20px);color:var(--ink-soft);line-height:1.45}
+</style></head><body><div class="s">
+  <div class="eyebrow" data-slot="eyebrow">THE TOUR</div>
+  <h1 data-slot="headline">Your first two weeks</h1>
+  <div class="tl" data-max="5">
+    <div class="st" data-slot="item"><div class="dot"></div><div><div class="when" data-slot="when">Day one</div><div class="what" data-slot="what">You&rsquo;ll&hellip;</div></div></div>
+    <div class="st" data-slot="item"><div class="dot"></div><div><div class="when" data-slot="when">Week one</div><div class="what" data-slot="what">You&rsquo;ll&hellip;</div></div></div>
+    <div class="st" data-slot="item"><div class="dot"></div><div><div class="when" data-slot="when">Week two</div><div class="what" data-slot="what">You&rsquo;ll&hellip;</div></div></div>
+  </div>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Value stack</h3><span class="tag">18-value-stack</span><span class="tag cap">max 8 rows</span></div>
+  <p class="meta"><b>Use:</b> the Red Diamond Offer&trade; stack &rarr; running total &rarr; anchor. Every figure comes
+    from the locked offer and Money Model.
+    <b>Slots:</b> eyebrow &middot; headline &middot; item (thing + value) &middot; total &middot; anchor &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="18-value-stack">
+<!DOCTYPE html><html data-surface="L"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+h1{font-size:clamp(26px,3vw,44px)}
+.stack{width:100%;max-width:1040px;margin:1.4em auto 0;text-align:left;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--panel)}
+.li{display:flex;justify-content:space-between;align-items:baseline;gap:1.2rem;padding:.95rem 1.6rem;border-bottom:1px solid var(--line)}
+.li .th{font-size:clamp(14px,1.35vw,21px);line-height:1.4}
+.li .vl{font-family:var(--font-display);font-weight:800;font-size:clamp(14px,1.35vw,21px);color:var(--ink-soft);white-space:nowrap}
+.tot{display:flex;justify-content:space-between;align-items:baseline;gap:1.2rem;padding:1.05rem 1.6rem;background:var(--accent);color:#fff}
+.tot .th{font-family:var(--font-display);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:clamp(13px,1.2vw,18px)}
+.tot .vl{font-family:var(--font-display);font-weight:800;font-size:clamp(19px,2vw,30px)}
+.anchor{margin-top:1.1em;font-size:clamp(15px,1.4vw,21px);color:var(--ink-soft);max-width:46ch}
+</style></head><body><div class="s">
+  <div class="eyebrow" data-slot="eyebrow">WHAT YOU GET</div>
+  <h1 data-slot="headline">Everything inside</h1>
+  <div class="stack" data-max="8">
+    <div class="li" data-slot="item"><div class="th" data-slot="thing">The thing</div><div class="vl" data-slot="value">$0,000</div></div>
+    <div class="li" data-slot="item"><div class="th" data-slot="thing">The thing</div><div class="vl" data-slot="value">$0,000</div></div>
+    <div class="li" data-slot="item"><div class="th" data-slot="thing">The thing</div><div class="vl" data-slot="value">$0,000</div></div>
+    <div class="tot"><div class="th">Total value</div><div class="vl" data-slot="total">$00,000</div></div>
+  </div>
+  <p class="anchor" data-slot="anchor">If you hired this out, you&rsquo;d pay&hellip;</p>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>CTA</h3><span class="tag">19-cta</span><span class="tag cap">max 4 steps</span></div>
+  <p class="meta"><b>Use:</b> the Close, and the Re-Pitch. The single next move, in numbered steps a tired
+    person can follow. The close beats come from the Script's chosen close &mdash; never invented.
+    <b>Slots:</b> eyebrow &middot; headline &middot; item (step) &middot; cta &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="19-cta">
+<!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+h1{font-size:clamp(30px,3.6vw,52px);max-width:20ch}
+.steps{display:grid;gap:.8rem;width:100%;max-width:860px;margin:1.4em auto 0;text-align:left;counter-reset:s}
+.sp{counter-increment:s;border:1px solid var(--line);border-radius:var(--r-md);background:var(--panel);padding:1rem 1.3rem 1rem 3.5rem;position:relative;font-size:clamp(15px,1.4vw,21px);line-height:1.45}
+.sp::before{content:counter(s);position:absolute;left:1.3rem;top:.95rem;font-family:var(--font-display);font-weight:800;color:var(--accent)}
+.cta{margin-top:1.3em;background:var(--accent);color:#fff;border-radius:var(--r-pill);padding:.75em 2.2em;font-family:var(--font-display);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:clamp(14px,1.5vw,21px)}
+</style></head><body><div class="s">
+  <div class="eyebrow" data-slot="eyebrow">YOUR NEXT MOVE</div>
+  <h1 data-slot="headline">Here&rsquo;s exactly what to do.</h1>
+  <div class="steps" data-max="4">
+    <div class="sp" data-slot="item">The step</div>
+    <div class="sp" data-slot="item">The step</div>
+    <div class="sp" data-slot="item">The step</div>
+  </div>
+  <div class="cta" data-slot="cta">The call to action</div>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+<section>
+  <div class="hd"><h3>Divider</h3><span class="tag">20-divider</span></div>
+  <p class="meta"><b>Use:</b> section transitions, Q&amp;A holding slide, the VIP Hour block, and the
+    Challenge day opens and recaps.
+    <b>Slots:</b> eyebrow &middot; headline &middot; presenter &middot; brand.</p>
+  <script type="text/plain" data-type="20-divider">
+<!DOCTYPE html><html data-surface="D"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>/* == CL-THEME-TOKENS == a theme swap rewrites ONLY this block == */
+:root{--brand:#db0063;--canvas:#ffffff;--ink:#111111;--ink-soft:#55565b;--ink-faint:#8a8b90;--accent:var(--brand);--line:#e6e7ea;--panel:#fafafb;--pos:#1f9d57;--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--track:-.02em;--eyebrow-track:.22em;--weight:800}
+[data-surface=D]{--canvas:#101014;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--panel:#191a21}
+[data-surface=A]{--canvas:var(--brand);--ink:#ffffff;--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--accent:#ffffff;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.12)}
+/* == END CL-THEME-TOKENS == */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--canvas);color:var(--ink);font-family:var(--font-body);overflow:hidden}
+.s{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7vh 6vw}
+.eyebrow{font-family:var(--font-display);font-weight:var(--weight);letter-spacing:var(--eyebrow-track);text-transform:uppercase;color:var(--accent);font-size:clamp(13px,1.15vw,17px);margin-bottom:.75em}
+h1{font-family:var(--font-display);font-weight:var(--weight);font-size:clamp(32px,3.6vw,56px);line-height:1.1;letter-spacing:var(--track)}
+h1 .hl{color:var(--accent)}
+.sup{font-size:clamp(17px,1.5vw,24px);line-height:1.55;color:var(--ink-soft);margin:.9em auto 0;max-width:46ch}
+.mark{position:absolute;bottom:3vh;right:3vw;font-family:var(--font-display);font-size:clamp(11px,.9vw,14px);font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint)}
+.mark b{color:var(--ink)}
+h1{font-size:clamp(40px,5.4vw,84px);line-height:1.02;max-width:16ch}
+</style></head><body><div class="s">
+  <div class="eyebrow" data-slot="eyebrow">EYEBROW</div>
+  <h1 data-slot="headline">The section</h1>
+  <div class="mark"><b data-slot="presenter">Presenter</b> &middot; <span data-slot="brand">Brand</span></div>
+</div></body></html>
+  </script>
+</section>
+
+</div>
+<script>
+/* Gallery preview only — not part of any mold. Renders each mold at all three surfaces. */
+(function(){
+  var SURF = { L:'Light', D:'Dark', A:'Accent' };
+  document.querySelectorAll('section').forEach(function(sec){
+    var src = sec.querySelector('script[type="text/plain"][data-type]');
+    if (!src) return;
+    var doc = src.textContent.trim();
+    var wrap = document.createElement('div');
+    wrap.className = 'previews';
+    Object.keys(SURF).forEach(function(s){
+      var pv = document.createElement('div');
+      pv.className = 'pv';
+      var cap = document.createElement('div');
+      cap.className = 'cap';
+      cap.textContent = s + ' · ' + SURF[s];
+      var frame = document.createElement('div');
+      frame.className = 'frame';
+      var f = document.createElement('iframe');
+      f.setAttribute('sandbox','allow-same-origin');
+      f.srcdoc = doc.replace(/data-surface="[LDA]"/, 'data-surface="' + s + '"');
+      frame.appendChild(f);
+      pv.appendChild(cap); pv.appendChild(frame);
+      wrap.appendChild(pv);
+      requestAnimationFrame(function(){
+        var k = frame.clientWidth / 1600;
+        f.style.transform = 'scale(' + k + ')';
+      });
+    });
+    sec.appendChild(wrap);
+  });
+  window.addEventListener('resize', function(){
+    document.querySelectorAll('.pv .frame').forEach(function(frame){
+      var f = frame.querySelector('iframe');
+      if (f) f.style.transform = 'scale(' + (frame.clientWidth / 1600) + ')';
+    });
+  });
+})();
+</script>
+</body></html>

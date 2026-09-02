@@ -19,6 +19,27 @@
   .setup-step h4 { margin:.25rem 0 .4rem; color:var(--cl-black); text-transform:none; letter-spacing:0; font-size:1.08rem; }
   .setup-step p { margin:0; color:var(--text-muted); font-size:.98rem; }
   code { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:.9em; background:var(--bg-tint); border:1px solid var(--border); border-radius:5px; padding:.08em .4em; color:var(--cl-crimson-deep); }
+  /* the plan table */
+  .plan td { font-size:.93rem; }
+  .plan .num { font-family:var(--font-display); font-weight:800; color:var(--text-muted); width:3em; text-align:center; }
+  .plan thead th.num { color:#fff; }
+  .plan tr.ph td { background:var(--bg-tint); font-family:var(--font-display); font-weight:800; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--cl-crimson); }
+  .plan tr.skip td { color:var(--text-muted); font-style:italic; }
+  .mold { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:.84em; color:var(--cl-crimson-deep); white-space:nowrap; }
+  .surf { display:inline-block; min-width:1.7em; padding:.15em 0; text-align:center; border-radius:5px; font-family:var(--font-display); font-weight:800; font-size:.72rem; }
+  .surf.l { background:#fff; border:1px solid var(--cl-light); color:var(--cl-black); }
+  .surf.d { background:#101014; color:#fff; }
+  .surf.a { background:var(--cl-crimson); color:#fff; }
+  .surf-key { display:flex; flex-wrap:wrap; gap:1.2rem; align-items:center; justify-content:center; margin:1.2rem 0; font-size:.92rem; color:var(--text-muted); }
+  /* themes */
+  .themes { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.1rem; margin:1.6rem 0; }
+  .theme-card { border:1px solid var(--border); border-radius:var(--radius); padding:1.2rem 1.3rem; background:var(--bg-panel); }
+  .theme-card h4 { margin:0 0 .1rem; color:var(--cl-black); text-transform:none; letter-spacing:0; font-size:1.15rem; }
+  .theme-card .key { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:.76rem; color:var(--text-muted); }
+  .theme-card p { margin:.55rem 0 0; color:var(--text-muted); font-size:.95rem; line-height:1.6; }
+  .theme-card .fits { display:block; margin-top:.5rem; color:var(--cl-black); font-weight:700; font-size:.9rem; }
+  .sws { display:flex; gap:.35rem; margin-top:.85rem; }
+  .sws i { width:1.7rem; height:1.7rem; border-radius:6px; border:1px solid rgba(0,0,0,.14); display:block; }
 </style>
 </head>
 <body>
@@ -30,7 +51,7 @@
     <h1 class="formula-title">The <span class="hl">$100K</span> Day Formula™</h1>
     <div class="guide-name">Sniper Presentation™ <span class="hl">Slides</span></div>
     <p class="cl-eyebrow">Money Magnet™ · Step 4 · The Sniper Close™ · Part 3</p>
-    <p class="subtitle">Turn a finished asset — best of all, your Sniper Presentation™ Script — into an on-brand slide deck you present from your own laptop. No PowerPoint, no designer, no monthly software.</p>
+    <p class="subtitle">Turn your approved Sniper Presentation™ Script into an on-brand slide deck you present from your own laptop — your words, untouched, on twenty designed slides. No PowerPoint, no designer, no monthly software.</p>
   </header>
 
   <!-- ============ THE MAP (3 PILLARS / 9 STEPS) ============ -->
@@ -71,13 +92,13 @@
   <!-- ============ 1. WHAT IT IS ============ -->
   <section class="cl-section">
     <h2>What This Is (and Why It Matters)</h2>
-    <p class="cl-lead">Sniper Presentation™ Slides takes something you've already built — your Sniper Presentation™ Script, a masterclass outline, a training — and turns it into a full slide deck. On-brand. In minutes. Built by AI, presented from your own laptop.</p>
+    <p class="cl-lead">Sniper Presentation™ Slides takes the Script you already built and approved in Part 2 and turns it into a full slide deck. Your words, your brand, in minutes — presented from your own laptop.</p>
 
     <p>Here's the shift. Most people treat slides as a design project. You open PowerPoint, fight with templates, drag boxes around for hours, and end up with a deck you use once. Next launch, you start over from a blank file. Nothing carries forward.</p>
 
     <p>You don't have a slide problem. You have a <strong>template problem</strong>.</p>
 
-    <p>Slides are just HTML. And once they're HTML, you build them once and reuse them forever. Your cover, your bio, your value stack, your close — build each once, save it, and the AI assembles any new deck from your asset. Your slide work compounds for the first time.</p>
+    <p>Slides are just HTML. And once the design lives in twenty reusable molds instead of in one disposable file, your slide work finally compounds. A new event is a new Script through the same molds. A rebrand is one block of colour and type. Neither one is a design project any more.</p>
 
     <div class="cl-callout tip">
       <div class="cl-callout-title">✦ The one that makes this special</div>
@@ -90,18 +111,39 @@
   <!-- ============ 2. WHAT'S IN THE KIT ============ -->
   <section class="cl-section">
     <h2>What's in the Kit</h2>
-    <p>Sniper Presentation™ Slides has two pieces you keep, plus two things you bring.</p>
+    <p>Three pieces you keep, plus two things you bring.</p>
 
     <div class="cl-cards two">
       <div class="cl-card kit-card">
         <div class="n">1</div>
         <h4>Sniper Presentation™ Slides Skill</h4>
-        <p>The "brain." It's the skill (one file) that teaches your AI exactly how to turn your asset into on-brand slides — picking the right layout for each section, using your colors and fonts, writing each slide as clean HTML, and assembling the deck. Install it once (or paste it into any chat).</p>
+        <p>The "brain." One file that teaches your AI exactly how to assemble your deck — which mold each beat lands on, which surface it sits on, and how your brand gets stamped into every slide. Install it once, or paste it into any chat.</p>
       </div>
       <div class="cl-card kit-card">
         <div class="n">2</div>
+        <h4>The Mold Library</h4>
+        <p>One HTML file (<code>coach-launch-molds.html</code>) holding <strong>twenty designed slide molds</strong>. Open it in your browser and you can see every one, in light, dark, and accent. The Builder <em>clones</em> these — it never writes slide markup of its own, which is why your deck can't come out broken or off-brand.</p>
+      </div>
+    </div>
+
+    <div class="cl-cards two">
+      <div class="cl-card kit-card">
+        <div class="n">3</div>
+        <h4>The Theme Library</h4>
+        <p>One HTML file (<code>coach-launch-themes.html</code>) holding <strong>six themes</strong>. Open it and you'll see all six applied to real slides, side by side, so you can pick by eye. A theme is colour, type and corner treatment — the <em>look</em>, separate from the structure.</p>
+      </div>
+    </div>
+
+    <div class="cl-cards two">
+      <div class="cl-card kit-card">
+        <div class="n">4</div>
         <h4>The Slide Viewer</h4>
-        <p>One HTML file (<code>slide-viewer.html</code>) — your presentation player. The Builder writes your slides straight into it. You double-click it to present: arrow keys to move, <span class="kbd">F</span> for fullscreen, a menu for all slides. No server, no database, no internet once it's built.</p>
+        <p>One HTML file (<code>slide-viewer.html</code>) — your presentation player. Your slides get written straight into it. Double-click to present: arrow keys move, <span class="kbd">F</span> for fullscreen, <span class="kbd">P</span> for Presenter View. No server, no database, no internet once it's built.</p>
+      </div>
+      <div class="cl-card kit-card" style="border-left:4px solid var(--cl-crimson);">
+        <div class="n">!</div>
+        <h4>Why four files, not one</h4>
+        <p>Your <strong>words</strong> live in the Script. The <strong>structure</strong> lives in the molds. The <strong>look</strong> lives in the themes. Your deck is the three of them assembled — and because they're separate, you can change any one without touching the others.</p>
       </div>
     </div>
 
@@ -110,17 +152,32 @@
     <div class="cl-cards two">
       <div class="cl-card">
         <div class="n">A</div>
-        <h4>A finished asset</h4>
-        <p>Best of all, your <strong>Sniper Presentation™ Script</strong> (Step 4). Or another completed asset — a Masterclass or Challenge outline, a client training, a talk. Don't have one yet? The Builder points you to the tool that makes it first.</p>
+        <h4>Your approved Script</h4>
+        <p>Your <strong>Sniper Presentation™ Script</strong> from Step 4 · Part 2 — <em>approved</em>. That approval is what makes the file safe to build from. Not approved yet, or still carrying unverified figures? The Builder stops and sends you back to finish it. That's the point, not a bug.</p>
       </div>
       <div class="cl-card">
         <div class="n">B</div>
         <h4>Your brand</h4>
-        <p>Your <strong>Business Brand Profile</strong> + <strong>Visual Style Guide</strong> (your Brand Foundations). This is what makes the deck <em>yours</em> instead of generic — your colors, your fonts, your logo, your voice.</p>
+        <p>Your <strong>Business Brand Profile</strong> + <strong>Visual Style Guide</strong>. This is what makes the deck <em>yours</em> instead of generic — your colors, your fonts, your presenter mark. Every mold reads from one token block, so your whole deck rebrands in one move.</p>
       </div>
     </div>
+  </section>
 
-    <p>The whole packet is small on purpose. A builder, a viewer, your asset, your brand. That's it. No complicated folder of files to manage.</p>
+  <!-- ============ 2b. CHURCH AND STATE ============ -->
+  <section class="cl-section">
+    <h2>The Rule That Protects Your Script</h2>
+    <p class="cl-lead">This tool <strong>never writes or changes a single word of your copy.</strong> Every word on every slide comes out of your Script, exactly as you approved it.</p>
+
+    <p>That matters more than it sounds. Your Sniper Presentation™ Script was built, coached, and put through an 8-check Ready Check in Part 2. If a slide tool quietly reworded a headline to make it fit, your approved script would no longer be approved — and nobody would know.</p>
+
+    <p>So the line is hard. The Builder's <strong>only</strong> freedom is where a line breaks. It never tightens a phrase, fixes a typo, reorders a sentence, or trims a list to make it fit.</p>
+
+    <div class="cl-callout warning">
+      <div class="cl-callout-title">When copy doesn't fit</div>
+      <p>It stops and shows you exactly what overflows — "slide 22 has nine value-stack rows, the mold holds eight" — and you decide what to cut, <em>in your Script</em>. Then it rebuilds that slide. It will not choose which of your points to drop.</p>
+    </div>
+
+    <p>Want a line changed? Change it in the Script (or re-run Part 2), tell the Builder what moved, and it rebuilds the affected slides. Your copy stays yours.</p>
   </section>
 
   <!-- ============ 3. THE BIG UPGRADE — PRESENTER VIEW ============ -->
@@ -180,7 +237,7 @@
 
     <h3>Claude or ChatGPT Projects (web)</h3>
     <p>No project folder? Run the Builder as a saved project on the web. It works the same — it just can't auto-generate images (you'll add those by hand; see below).</p>
-    <div class="setup-step"><div class="sk">Step 1</div><h4>Create a project</h4><p>Make a new Project (or Custom GPT). Name it "Presentation Engine" or "[Your Business] Slides."</p></div>
+    <div class="setup-step"><div class="sk">Step 1</div><h4>Create a project</h4><p>Make a new Project (or Custom GPT). Name it "Sniper Presentation™ Slides" or "[Your Business] Slides."</p></div>
     <div class="setup-step"><div class="sk">Step 2</div><h4>Paste the Builder as your instructions</h4><p>Open the builder prompt, select all, copy it, and paste it into the project's custom instructions. Now the AI always knows how to build your slides.</p></div>
     <div class="setup-step"><div class="sk">Step 3</div><h4>Add the Viewer + your brand</h4><p>Upload <code>slide-viewer.html</code> and your Brand Foundations (Business Brand Profile, Visual Style Guide) so the AI can use them.</p></div>
     <div class="setup-step"><div class="sk">Step 4</div><h4>Start building</h4><p>Open a chat and say: <strong>"Build my slides from my Sniper Presentation™ Script."</strong></p></div>
@@ -196,64 +253,190 @@
     <h2>Build Your First Deck (~20–30 Minutes)</h2>
     <p>Once you're set up, building a deck is a guided conversation. Here's exactly how it goes.</p>
 
-    <div class="setup-step"><div class="sk">1</div><h4>Have your asset ready</h4><p>Best case: your finished Sniper Presentation™ Script. Don't have one? The Builder points you to <strong>The Sniper Close™ Builder</strong> (Step 4) — or the matching builder for another asset — then you come back. Building the asset first is the rule that makes everything else work.</p></div>
-    <div class="setup-step"><div class="sk">2</div><h4>Point it at your brand</h4><p>The Builder reads your Business Brand Profile + Visual Style Guide — colors, fonts, logo, voice — and maps them onto every slide. This is what makes the deck look like <em>yours</em>.</p></div>
-    <div class="setup-step"><div class="sk">3</div><h4>Say "build my slides"</h4><p>It reads your asset and brand, then shows you a quick plan — which slide type each section becomes, and which slides could use an image. You approve the plan or tweak it.</p></div>
-    <div class="setup-step"><div class="sk">4</div><h4>Choose: walk through, or build it all</h4><p>Walk-through if you want to confirm each slide as it's built; as-is if you trust the asset and just want the deck. One slide at a time, or straight through.</p></div>
-    <div class="setup-step"><div class="sk">5</div><h4>Preview in the Viewer</h4><p>It writes your slides into <code>slide-viewer.html</code>. Double-click it, read through the deck. Arrow keys to move, <span class="kbd">F</span> for fullscreen, <span class="kbd">P</span> to check your presenter view.</p></div>
-    <div class="setup-step"><div class="sk">6</div><h4>Refine in plain English</h4><p>Tell the AI what to fix the way you'd tell a person: "tighten slide 6," "make slide 4 a comparison," "make that story slide darker," "swap the accent." No design software — you edit with words.</p></div>
-    <div class="setup-step"><div class="sk">7</div><h4>Present</h4><p>Save the file and present from your browser, full-screen, with your notes on your own screen. It's yours — share the file, host it, or keep it. No license, no lock-in, no expiring export.</p></div>
+    <div class="setup-step"><div class="sk">1</div><h4>It reads your Script and checks it</h4><p>Hand it your Script and the mold library. It reads the stamp at the top of your Script — your format, your close, your VIP Hour, your name, your system — so it never asks you for anything the file already says. Then it runs two gates: <strong>is this Script approved?</strong> and <strong>does it still carry any unverified figures?</strong> If either fails, it stops and tells you what to fix. Nothing gets built from an unapproved Script.</p></div>
+    <div class="setup-step"><div class="sk">2</div><h4>You pick your look</h4><p>The one real choice in the whole build. Six themes — Crimson, Ink, Ember, Sovereign, Voltage, Meadow — each suited to a different kind of business. Open <code>coach-launch-themes.html</code> to see them on real slides and pick by eye. If you have Brand Foundations, the Builder then lays your own colours and fonts over whichever theme you chose, and shows you what it pulled. One question, not twenty.</p></div>
+    <div class="setup-step"><div class="sk">3</div><h4>You approve the build plan</h4><p>Before a single slide is built, you see the whole deck on one page: every slide, the beat it carries, the mold it lands on, and the surface it sits on. Every decision it made from your Script is shown with the evidence. So are any <strong>fit flags</strong> — anywhere your copy overruns a mold's capacity — so you fix them in the Script <em>before</em> the build rather than halfway through it.</p></div>
+    <div class="setup-step"><div class="sk">4</div><h4>It builds, one phase per turn</h4><p>WHO, then WHAT, then WHY, then WHEN — or day by day for a Challenge. After each phase you get a receipt: every slide number, its beat, and the headline it carries, word for word, so you can check it against your Script at a glance. No walls of code in your chat.</p></div>
+    <div class="setup-step"><div class="sk">5</div><h4>It assembles and hands you the deck</h4><p>Your slides go into <code>slide-viewer.html</code> as one self-contained file, with every SPEAKER SCRIPT line loaded as presenter-only notes. Double-click it and present. <span class="kbd">←</span> <span class="kbd">→</span> move · <span class="kbd">F</span> fullscreen · <span class="kbd">P</span> Presenter View · <span class="kbd">T</span> timer · <span class="kbd">☰</span> run sheet.</p></div>
   </section>
 
   <!-- ============ 6. SLIDE-TYPE LIBRARY + SNIPER MAP ============ -->
   <section class="cl-section">
-    <h2>How Each Beat Becomes a Slide</h2>
-    <p>The Builder doesn't guess. It maps each part of your asset to a proven slide type. For a Sniper Presentation™, the map is nearly one-to-one with your Script's beats.</p>
+    <h2>Your Deck, Slide by Slide</h2>
+    <p class="cl-lead">The Builder doesn't guess its way through your Script. The whole deck is decided in advance — every beat has a mold, and every mold has a surface. This is that plan.</p>
+
+    <p>A <strong>Masterclass</strong> comes out at <strong>35 slides</strong>. Each row below is one slide: the beat it carries from your Script, the mold it's cloned from, and whether it sits on a light, dark, or accent background.</p>
+
+    <div class="surf-key">
+      <span><span class="surf l">L</span> &nbsp;Light</span>
+      <span><span class="surf d">D</span> &nbsp;Dark</span>
+      <span><span class="surf a">A</span> &nbsp;Accent — your brand color, full bleed</span>
+    </div>
 
     <div class="cl-table-wrap">
-      <table class="cl-table">
-        <thead><tr><th>Beat in your Sniper Script</th><th>Becomes this slide</th><th>Image?</th></tr></thead>
+      <table class="cl-table plan">
+        <thead><tr><th class="num">#</th><th>The beat from your Script</th><th>Mold</th><th>Surface</th></tr></thead>
         <tbody>
-          <tr><td>Hook + $Million Promise™</td><td><strong>Promise</strong> — the big headline</td><td>Mood</td></tr>
-          <tr><td>Who this is for</td><td><strong>Qualify</strong> — "for you / not for you"</td><td>No</td></tr>
-          <tr><td>The $Million Moment™ story</td><td><strong>Story-bit</strong> — styled as a change of pace</td><td>Mood</td></tr>
-          <tr><td>System Reveal (Magic Formula™)</td><td><strong>Framework</strong> — your 3×3 / 9 steps</td><td>No</td></tr>
-          <tr><td>Hell → Heaven · Two Identities · Fork</td><td><strong>Split-comparison</strong> — A vs B</td><td>No</td></tr>
-          <tr><td>Belief / Bust-It · objections</td><td><strong>Belief</strong> — belief → the truth</td><td>No</td></tr>
-          <tr><td>The offer — value stack → price</td><td><strong>Offer / value-stack</strong></td><td>No</td></tr>
-          <tr><td>Proof / results</td><td><strong>Proof</strong> — real testimonials only</td><td>No</td></tr>
-          <tr><td>The Close (Strategy / Membership / Deposit)</td><td><strong>CTA</strong> — the single next move</td><td>Yes</td></tr>
+          <tr class="ph"><td colspan="4">Phase 1 · WHO — Serendipity + Connection</td></tr>
+          <tr><td class="num">1</td><td>MC intro + price anchor</td><td class="mold">02-intro-split</td><td><span class="surf d">D</span></td></tr>
+          <tr class="skip"><td class="num">↳</td><td>No founder photo? This slide becomes a centred cover instead</td><td class="mold">01-cover</td><td><span class="surf d">D</span></td></tr>
+          <tr><td class="num">2</td><td>The hook + your $Million Promise™</td><td class="mold">03-promise</td><td><span class="surf l">L</span></td></tr>
+          <tr><td class="num">3</td><td>Who this is for</td><td class="mold">04-qualify</td><td><span class="surf l">L</span></td></tr>
+          <tr><td class="num">4</td><td>The open loop — teasing the Token</td><td class="mold">05-reveal</td><td><span class="surf d">D</span></td></tr>
+          <tr><td class="num">5</td><td>Story bit · engagement</td><td class="mold">07-story-bit</td><td><span class="surf d">D</span></td></tr>
+          <tr><td class="num">6</td><td>The enemy &amp; the guide</td><td class="mold">11-split-compare</td><td><span class="surf l">L</span></td></tr>
+          <tr><td class="num">7</td><td>The pain</td><td class="mold">06-problem</td><td><span class="surf l">L</span></td></tr>
+          <tr><td class="num">8</td><td>Your $Million Moment™ story</td><td class="mold">08-image-hero</td><td><span class="surf d">D</span></td></tr>
+          <tr><td class="num">9</td><td>Story bit · empowering belief</td><td class="mold">07-story-bit</td><td><span class="surf d">D</span></td></tr>
+
+          <tr class="ph"><td colspan="4">Phase 2 · WHAT — Opportunity</td></tr>
+          <tr><td class="num">10</td><td>The Big Shift</td><td class="mold">05-reveal</td><td><span class="surf a">A</span></td></tr>
+          <tr><td class="num">11</td><td>System Reveal — your Magic Formula™</td><td class="mold">10-framework</td><td><span class="surf l">L</span></td></tr>
+          <tr><td class="num">12</td><td>Hell → Heaven, across your 3 core steps</td><td class="mold">11-split-compare</td><td><span class="surf l">L</span></td></tr>
+          <tr><td class="num">13</td><td>Two Identities</td><td class="mold">11-split-compare</td><td><span class="surf d">D</span></td></tr>
+          <tr><td class="num">14</td><td>Results / proof</td><td class="mold">14-proof</td><td><span class="surf d">D</span></td></tr>
+          <tr><td class="num">15</td><td>Confidence Check</td><td class="mold">16-engagement</td><td><span class="surf a">A</span></td></tr>
+          <tr class="skip"><td class="num">—</td><td>Seed the Token — you say it, no slide needed</td><td>—</td><td>—</td></tr>
+          <tr><td class="num">16</td><td>Story bit · hype / desire</td><td class="mold">07-story-bit</td><td><span class="surf d">D</span></td></tr>
+
+          <tr class="ph"><td colspan="4">Phase 3 · WHY — Remove Risk → the offer (your Sniper Close™)</td></tr>
+          <tr><td class="num">17</td><td>Belief / Bust-It — the internal objections</td><td class="mold">12-belief</td><td><span class="surf l">L</span></td></tr>
+          <tr><td class="num">18</td><td>Story bit · belief-break</td><td class="mold">07-story-bit</td><td><span class="surf d">D</span></td></tr>
+          <tr><td class="num">19</td><td>Broken Models</td><td class="mold">06-problem</td><td><span class="surf d">D</span></td></tr>
+          <tr><td class="num">20</td><td>Process — how your system solves each</td><td class="mold">10-framework</td><td><span class="surf l">L</span></td></tr>
+          <tr><td class="num">21</td><td>Proof</td><td class="mold">14-proof</td><td><span class="surf l">L</span></td></tr>
+          <tr><td class="num">22</td><td>The Pitch Primer — asking permission</td><td class="mold">05-reveal</td><td><span class="surf d">D</span></td></tr>
+          <tr><td class="num">23</td><td>Value Stack → Anchor → Bridge</td><td class="mold">18-value-stack</td><td><span class="surf l">L</span></td></tr>
+          <tr><td class="num">24</td><td>Story bit · money / close-prime</td><td class="mold">07-story-bit</td><td><span class="surf d">D</span></td></tr>
+          <tr><td class="num">25</td><td>The Price</td><td class="mold">15-stat</td><td><span class="surf a">A</span></td></tr>
+          <tr><td class="num">26</td><td><strong>The Close</strong> — branches on your close</td><td class="mold">19-cta</td><td><span class="surf d">D</span></td></tr>
+
+          <tr class="ph"><td colspan="4">Phase 4 · WHEN — Execution</td></tr>
+          <tr><td class="num">27</td><td>Objection / Handle-It — the external ones</td><td class="mold">12-belief</td><td><span class="surf l">L</span></td></tr>
+          <tr><td class="num">28</td><td>Story bit · objection-break</td><td class="mold">07-story-bit</td><td><span class="surf d">D</span></td></tr>
+          <tr><td class="num">29</td><td>The Tour — their first two weeks inside</td><td class="mold">17-timeline</td><td><span class="surf l">L</span></td></tr>
+          <tr><td class="num">30</td><td>Fork in the Road</td><td class="mold">11-split-compare</td><td><span class="surf l">L</span></td></tr>
+          <tr><td class="num">31</td><td>Urgency</td><td class="mold">05-reveal</td><td><span class="surf a">A</span></td></tr>
+          <tr><td class="num">32</td><td>Guarantee — <em>dropped if your offer has none</em></td><td class="mold">05-reveal</td><td><span class="surf l">L</span></td></tr>
+          <tr><td class="num">33</td><td>The Re-Pitch + CTA cadence</td><td class="mold">19-cta</td><td><span class="surf d">D</span></td></tr>
+          <tr><td class="num">34</td><td>Q&amp;A</td><td class="mold">20-divider</td><td><span class="surf d">D</span></td></tr>
+          <tr><td class="num">35</td><td>Story-Jam close — the send-off</td><td class="mold">08-image-hero</td><td><span class="surf d">D</span></td></tr>
         </tbody>
       </table>
     </div>
 
-    <p>Story-bit slides get a <strong>distinct look on purpose</strong> — a darker background, a full-bleed mood image, one line of text — so a story feels like a change of pace and the room leans in. The story itself lives in your presenter notes, not on the slide.</p>
+    <h3>Where your deck differs from this</h3>
+    <p>Three things change the table, and the Builder reads all three from your Script rather than asking you.</p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Your close</th><th>Slide 25 becomes</th><th>Slide 26 becomes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>The Strategy Close</strong> (free)</td><td>Your offer price</td><td>The session, that it's free, and the promise that carries it — they leave with a written plan either way</td></tr>
+          <tr><td><strong>The Strategy Close</strong> (paid)</td><td>Your offer price</td><td>As above, plus the fee and that it comes off their first payment</td></tr>
+          <tr><td><strong>The Membership Close</strong></td><td>Monthly and annual side by side, with the 25% saving doing the persuading</td><td>The join steps — and the onboarding call promised <em>in</em> the ask, not after it</td></tr>
+          <tr><td><strong>The Deposit Close</strong></td><td>Your <strong>full price</strong> — never the deposit</td><td>The deposit that reserves the place, that it comes off the total, and that it's non-refundable</td></tr>
+        </tbody>
+      </table>
+    </div>
 
     <div class="cl-callout warning">
-      <div class="cl-callout-title">One idea per slide</div>
-      <p>If a section holds three ideas, it becomes three slides — not one busy slide with three columns of text. Fewer, richer slides beat more, thinner ones. The slide is a visual anchor for the point you're making out loud.</p>
+      <div class="cl-callout-title">Price first, deposit second</div>
+      <p>On a Deposit Close the full price always leads. Lead with the deposit and it reads as a trick; lead with the price and it reads as a courtesy. The Builder will not reorder those two slides.</p>
     </div>
+
+    <p><strong>A 3-Day Challenge</strong> runs the same beats in the same order, split across three days with a day-open and a day-recap around each block — Day 1 is WHO, Day 2 is WHAT, Day 3 is WHY and WHEN. That comes out around 40 slides.</p>
+
+    <p><strong>A VIP Hour</strong> adds an accent divider — at the front if you run it before the event, at the back if you run it after. The VIP Hour never carries the offer.</p>
+
+    <div class="cl-callout tip">
+      <div class="cl-callout-title">✦ Why the surfaces alternate</div>
+      <p>Look down the surface column: it never runs more than two of the same in a row, and the accent colour is spent only four times — the Big Shift, the Confidence Check, the Price, and Urgency. That rhythm is deliberate. A deck that's all one shade goes flat about fifteen minutes in, and when everything is emphasised nothing is.</p>
+    </div>
+
+    <p>Story-bit slides are styled as a change of pace on purpose — dark, one line of text, the story itself in your presenter notes. The room leans in because the screen suddenly stopped competing with you.</p>
   </section>
 
   <!-- ============ 7. AUTO-BRAND ============ -->
   <section class="cl-section">
-    <h2>Making It Look Like Yours (Auto-Brand)</h2>
-    <p>You don't answer twenty questions about colors and fonts. The Builder reads your Brand Foundations and maps them straight onto the slides.</p>
+    <h2>Pick Your Look — Six Themes</h2>
+    <p class="cl-lead">Your Script decides what the deck <em>says</em>. The plan table decides what it <em>does</em>. The theme decides what it <em>feels like</em> — and that's the one choice the Builder can't make for you, because only you know the room you're standing in front of.</p>
 
-    <p>From your <strong>Visual Style Guide</strong>: your hero color and neutrals, your two fonts and size feel, your logo and wordmark rules, your imagery mood. From your <strong>Business Brand Profile</strong>: your presenter name and brand name (the mark in the corner of every slide), your positioning and personality (the mood of any images), and your voice (how the on-slide copy reads).</p>
+    <p>All six themes run the same twenty molds and the same 35-slide plan. What changes is colour, type, and corner treatment. A serif on warm paper says something very different from electric cyan on slate, even with identical words on the slide.</p>
 
-    <p>It echoes back what it pulled and asks you to confirm before it builds. If something's missing, it asks once — and if it still can't find it, it uses a clean default and tells you it did. You're never guessing what your deck will look like.</p>
+    <div class="themes">
+      <div class="theme-card">
+        <h4>Crimson</h4><span class="key">the default</span>
+        <p>The Coach Launch house look. Confident, modern, high contrast — Montserrat headlines over Lato, generous corners, the signature crimson.</p>
+        <span class="fits">Fits: anyone who doesn't want to think about it.</span>
+        <div class="sws"><i style="background:#db0063"></i><i style="background:#ffffff"></i><i style="background:#101014"></i><i style="background:#fafafb"></i></div>
+      </div>
+      <div class="theme-card">
+        <h4>Ink</h4><span class="key">editorial restraint</span>
+        <p>A serif headline on warm paper, square corners, one deep oxblood accent used sparingly. Reads like a considered document rather than a pitch.</p>
+        <span class="fits">Fits: consultants, advisors, authors — anyone selling judgement rather than energy.</span>
+        <div class="sws"><i style="background:#9e2b25"></i><i style="background:#fbfaf8"></i><i style="background:#14110f"></i><i style="background:#f4f1ec"></i></div>
+      </div>
+      <div class="theme-card">
+        <h4>Ember</h4><span class="key">warm and approachable</span>
+        <p>Terracotta on a cream canvas, soft rounded corners, a friendly geometric headline. Feels like a conversation, not a sales page.</p>
+        <span class="fits">Fits: life, health and relationship coaches — where trust matters more than swagger.</span>
+        <div class="sws"><i style="background:#d2582f"></i><i style="background:#fffaf6"></i><i style="background:#241a14"></i><i style="background:#fdf3ec"></i></div>
+      </div>
+      <div class="theme-card">
+        <h4>Sovereign</h4><span class="key">navy and gold</span>
+        <p>A high serif, near-square corners, gold as a precious accent rather than a highlighter. Your accent slides go navy, not gold — so the money slides read expensive instead of loud.</p>
+        <span class="fits">Fits: high-ticket finance, wealth, legacy and executive work.</span>
+        <div class="sws"><i style="background:#b8912f"></i><i style="background:#ffffff"></i><i style="background:#0d1728"></i><i style="background:#f6f8fb"></i></div>
+      </div>
+      <div class="theme-card">
+        <h4>Voltage</h4><span class="key">dark throughout</span>
+        <p>A slate deck with an electric cyan accent and a technical grotesque headline. The whole presentation runs dark, which reads sharp on a big screen and stops a bright room washing you out.</p>
+        <span class="fits">Fits: technical, operations, agency and B2B audiences.</span>
+        <div class="sws"><i style="background:#21d4fd"></i><i style="background:#131820"></i><i style="background:#080b0f"></i><i style="background:#1b232e"></i></div>
+      </div>
+      <div class="theme-card">
+        <h4>Meadow</h4><span class="key">bright and optimistic</span>
+        <p>A clean green on white with a rounded modern headline and open spacing. High energy without shouting.</p>
+        <span class="fits">Fits: fitness, wellness, nutrition — and any audience that skews younger.</span>
+        <div class="sws"><i style="background:#1fa85c"></i><i style="background:#ffffff"></i><i style="background:#10231a"></i><i style="background:#f3f9f5"></i></div>
+      </div>
+    </div>
 
     <div class="cl-callout tip">
-      <div class="cl-callout-title">✦ Keep your Brand Foundations current</div>
-      <p>The more your Business Brand Profile and Visual Style Guide know your real colors, fonts, and voice, the more every deck looks like you and not a template. Update those docs and every future deck upgrades with them.</p>
+      <div class="cl-callout-title">✦ See them before you choose</div>
+      <p>Open <code>coach-launch-themes.html</code> in your browser. Every theme is rendered on three real slides — a light one, a dark one, and an accent one — so you're comparing actual slides, not colour swatches. Pick the one that looks like the business you're selling.</p>
+    </div>
+
+    <h3>Then your own colours go over the top</h3>
+    <p>A theme is the starting point, not the finish. If your <strong>Visual Style Guide</strong> has your own hero colour and fonts, the Builder lays them over whichever theme you picked. You keep that theme's proportions, corners and character — and you get your palette.</p>
+
+    <p>So pick on <em>feel</em>. The colour can follow you. And if you haven't built your Brand Foundations yet, the theme ships exactly as designed, which is a perfectly good place to start.</p>
+
+    <div class="cl-callout warning">
+      <div class="cl-callout-title">Changing your mind is cheap</div>
+      <p>Every one of the twenty molds reads its colours and fonts from a single block of tokens. Switching theme rewrites that one block in every slide and nothing else — so <strong>"rebuild it in Sovereign"</strong> is a couple of minutes, and every headline stays exactly as you approved it. Build in one theme, present in another, and nobody has to re-approve a word.</p>
     </div>
   </section>
 
   <!-- ============ 8. IMAGES ============ -->
   <section class="cl-section">
-    <h2>Adding Images (Optional)</h2>
-    <p>Most teaching, framework, and data slides look best as clean HTML — no image needed. But a few slides pop with one: your cover, section dividers, problem slides, story-bits, and your closing CTA. Images are optional. You turn them on only if you want them.</p>
+    <h2>Adding Images (Genuinely Optional)</h2>
+    <p class="cl-lead">You need <strong>zero artwork</strong> to build this deck. Every one of the twenty molds works from words alone — and the Builder will never ask you for a photo, a logo, or a diagram.</p>
+
+    <p>That's deliberate. Nothing stalls a launch like being told you need artwork before you can present. If you don't supply an image, the slot is removed and the slide reflows — it doesn't sit there as an empty grey box.</p>
+
+    <p>But a few slides do lift with one: your intro, story-bits, your $Million Moment™, and the send-off. If you <em>want</em> images, here's how they work.</p>
+
+    <div class="cl-callout tip">
+      <div class="cl-callout-title">✦ The prompt pack does this for you</div>
+      <p><code>image-prompts.md</code> ships with your kit. It has the ratio each slot needs, a fill-in-the-blank recipe per slot, and the shared style suffix that makes a set of images look like one deck instead of a scrapbook. It works with any image generator — it's prompts, not a product. The <code>images/</code> folder also ships with neutral placeholder backgrounds you can use as-is.</p>
+    </div>
+
+    <h3>Two images you should never generate</h3>
+    <p><strong>Your founder photo should be you.</strong> A generated face on your own intro slide is the fastest way to lose a room that later meets you in person. And <strong>your Event Magnet™ should be the real asset</strong> you built in Step 3 — that's the thing that filled the room, so put the actual thing on the screen.</p>
+
+    <p>That leaves three atmospheric slots — story-bit backgrounds, the full-bleed hero, and the side image — and those are the ones worth generating.</p>
 
     <p><strong>The rule is hybrid:</strong> the text stays in HTML — crisp, on-brand, perfectly spelled — and the AI generates only the picture behind it. Never let AI put words inside an image; it misspells and goes off-brand. Text in HTML, picture from AI.</p>
 
@@ -267,14 +450,25 @@
 
   <!-- ============ 9. REUSABLE TEMPLATES ============ -->
   <section class="cl-section">
-    <h2>Build Once, Reuse Forever</h2>
-    <p>This is where slides stop being a chore. Ask the Builder to save the slides you'll reuse on every deck — your <strong>cover</strong>, your <strong>bio / credibility</strong>, your <strong>value stack</strong>, and your <strong>CTA</strong>.</p>
+    <h2>Changing It Later</h2>
+    <p>Because your words and your design live in separate files, you can change either one without touching the other. There are only two kinds of change, and they work differently on purpose.</p>
 
-    <p>Each one gets saved as a small labelled block. On your next deck, the Builder pulls the template, swaps the words, and moves on. Your first deck takes about half an hour. Every deck after that takes minutes — because these carry forward.</p>
+    <div class="cl-cards two">
+      <div class="cl-card">
+        <div class="n">A</div>
+        <h4>New look, same words</h4>
+        <p>Name another theme and say <strong>"rebuild."</strong> Crimson to Sovereign, Ember to Voltage — every mold reads from one token block, so the whole deck changes character at once. Minutes, not an afternoon, and not a single word re-approved.</p>
+      </div>
+      <div class="cl-card">
+        <div class="n">B</div>
+        <h4>New words</h4>
+        <p>Edit your <strong>Script</strong> — or re-run Part 2 — then tell the Builder what changed. It rebuilds only the affected slides. It won't edit copy for you, which is exactly why you can trust that what's on the screen is what you approved.</p>
+      </div>
+    </div>
 
     <div class="cl-stat">
       <div class="num">1×</div>
-      <div class="label">Build your core slides <strong>once</strong>. Reuse them across every launch, every event, every deck — that's how your slide work finally compounds.</div>
+      <div class="label">Your first deck is the slow one. After that, a new event is a new Script through the same twenty molds — and a rebrand is a single token block. That's how slide work finally compounds.</div>
     </div>
   </section>
 
@@ -285,7 +479,7 @@
     <p><strong>Feed it your real Brand Foundations.</strong> The more it knows your colors, fonts, and voice, the more the deck looks like you and not a template.</p>
     <p><strong>Fewer, richer slides beat more, thinner ones.</strong> Let each slide carry one real idea, and talk through it. The teaching is in your mouth, not crammed on the wall.</p>
     <p><strong>Use your presenter view.</strong> Rehearse with <span class="kbd">S</span>; present with <span class="kbd">P</span> on a second screen. Your script is right there — you never have to memorise or read off the wall.</p>
-    <p><strong>Save your templates.</strong> Cover, bio, value stack, CTA. Build them once and every future deck pulls from them.</p>
+    <p><strong>Fix fit flags in the Script, not the slide.</strong> When the Builder says a beat overruns its mold, that's your copy telling you it's carrying too much for one screen. Cutting it in the Script usually makes the spoken version better too.</p>
   </section>
 
   <!-- ============ 11. COMMON MISTAKES ============ -->
@@ -299,7 +493,12 @@
 
     <div class="cl-compare">
       <div class="col bad"><span class="tag">✗ Don't</span><p>Expect it to invent testimonials, stats, or results to fill a proof slide. It won't make those up — and you wouldn't want it to.</p></div>
-      <div class="col good"><span class="tag">✓ Do</span><p>Give it your real proof. No results yet? Tell it — it uses your own story as the proof point instead.</p></div>
+      <div class="col good"><span class="tag">✓ Do</span><p>Put your real proof in the Script. If there's none there yet, it drops the proof slide and tells you — rather than quietly filling it with something that isn't true.</p></div>
+    </div>
+
+    <div class="cl-compare">
+      <div class="col bad"><span class="tag">✗ Don't</span><p>Ask it to "tighten slide 6" or reword a headline that doesn't quite fit. It will refuse, and it should.</p></div>
+      <div class="col good"><span class="tag">✓ Do</span><p>Change the line in your <strong>Script</strong>, then say what moved. It rebuilds those slides. Your approved words stay approved.</p></div>
     </div>
 
     <div class="cl-compare">
@@ -309,7 +508,7 @@
 
     <div class="cl-compare">
       <div class="col bad"><span class="tag">✗ Don't</span><p>Treat every deck as a from-scratch design project — the PowerPoint habit.</p></div>
-      <div class="col good"><span class="tag">✓ Do</span><p>Save your templates once and reuse them. The second deck takes a fraction of the time.</p></div>
+      <div class="col good"><span class="tag">✓ Do</span><p>Reuse the molds. A new event is a new Script through the same twenty molds; a rebrand is one token block.</p></div>
     </div>
 
     <div class="cl-callout warning">

@@ -209,7 +209,7 @@ care about the room's experience AND the close.
 - Any story told as the user's OWN experience must be TRUE and theirs. Never write them a personal
   story they didn't live. Borrowed teaching parables (the ten in the Section F catalogue) are fine — retell them
   and credit the source; never pass a borrowed story off as the user's own life.
-- If data or a story is missing, ASK. Only Matthew's $24M / $5.2M are cited as system credentials.
+- If data or a story is missing, ASK. Only Matthew's $24.6M / $5.2M are cited as system credentials.
 - WHY: Fake claims and borrowed-as-personal stories destroy trust with a live room that can tell.
 
 ### RULE 3 — NEVER CHANGE THE USER'S INPUTS
@@ -409,7 +409,7 @@ THIS TOOL'S OWN TERMS:
 | Close | What it is | Default phase |
 |---|---|---|
 | **The Strategy Close** | Points to a session (a PASS™) that closes the offer — you talk BEFORE the sale. **Free** early, **paid** later. | Launch (free) → Execute (paid) |
-| **The Strategy Close** | Points to a strategy/audit session — **free** early, **paid** later — that closes the high-ticket offer. | Execute (free) → Growth (paid) |
+| **The Membership Close** | They join the membership from the room, then an onboarding call gets them started — you talk AFTER the sale. Give BOTH prices: monthly, and annual at a 25% saving. | Growth |
 | **The Deposit Close** | Take a deposit ($997 recommended, they can set their own) to reserve a spot in the high-ticket offer, no call. | Mastery |
 
 Default the close from the Money Model's phase; the user may switch to another canon close with a reason.
@@ -467,7 +467,7 @@ fits, help them craft an original to the 6-part anatomy instead.
    as the **Story-Bit Library** download. If the user wants the complete written version of a bit,
    point them there. But you can build a whole presentation from the table above.
 ## METRIC WHITELIST
-- Only **$24M** in high-ticket sales and **$5.2M** in recurring client results (Matthew's credentials).
+- Only **$24.6M** in high-ticket sales and **$5.2M** in recurring client results (Matthew's credentials).
 - All other numbers must come from the user's own locked Money Model / offer. Invent nothing.
 
 ---
@@ -843,7 +843,7 @@ For each beat I'll give you the **SLIDE** (what's on screen) and the **SPEAKER S
 **① MC INTRO + PRICE ANCHOR** (the frame)
 SLIDE: [your name + one-line authority]
 SPEAKER: [MC introduces you using your credibility — drops the price anchor: what you normally charge
-/ what you've generated ($24M-level positioning if it's yours), so your offer later feels small next
+/ what you've generated ($24.6M-level positioning if it's yours), so your offer later feels small next
 to your value. Adapted from SCORE™ Card C-3.]
 
 **② SERENDIPITY — THE HOOK + $Million Promise™**
