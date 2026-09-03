@@ -6,7 +6,18 @@ Use with `VIP Upsell Wireframe.dc.html` / `vip-upsell-wireframe-standalone.html`
 
 ## THE PROMPT
 
-Build a single-page VIP upsell / one-time-offer page following the 15-section framework below. Same visual system as the registration page (same fonts, palette, green CTA buttons, orange accents). Single conversion goal: submit the checkout form at the bottom (#checkout anchor). No nav, no exits except the "no thanks" downsell link.
+Build a single-page VIP upsell / one-time-offer page following the 15-section framework below. Single conversion goal: submit the checkout form at the bottom (#checkout anchor). No nav, no exits except the "no thanks" downsell link.
+
+### STYLING — MATCH THE TEMPLATE EXACTLY (non-negotiable)
+Replicate the reference template's styling identically. Do NOT invent your own theme, do NOT make the page dark, do NOT change button colors.
+- **Page theme: LIGHT.** Base background `#f2f1ed`; alternate sections `#f8f7f3`; checkout section `#eceae4`; body text `#17150f`; muted text `#5c584e`. Only TWO dark inversion sections (near-black `#17150f` with white text): The Pitch (section 6) and the Footer. Everything else stays light.
+- **Font: Lato** (Google Fonts, weights 400/700/900) for ALL text — headlines, body, buttons, form fields. Monospace only for countdown digits.
+- **Buttons: GREEN, never orange.** Every CTA button: solid `#1e9e46` background, white text, 15px border-radius, no border, padding ~14px 38px, subtle green glow shadow (`0 8px 20px -8px rgba(30,158,70,.55)`).
+- **Accent orange `#f14e1c`** ONLY for: italic key-phrase emphasis with translucent orange highlight-marker, value-stack callouts, small labels. NEVER on buttons or backgrounds.
+- **Cards/checkout:** white background, 1px hairline border `rgba(0,0,0,.09)`, 16px radius, soft shadow. Order bumps: dashed amber border `#d9a441` on cream `#fffdf6`. Inputs: white, 1px border `#d8d5cc`, 10px radius.
+- **Countdown timers:** dark near-black pills (`#17150f`) with white digits.
+- **Image placeholders: REQUIRED.** Every image slot named in the spec (hero video, celebration image, each benefit's side image, bump thumbnails) renders as a visible labeled placeholder block (light diagonal-stripe background, dashed border `#c9c5ba`, 14px radius, small mono label) until real assets are supplied. Benefit images alternate sides: 7 right, 8 left, 9 right, 10 left.
+- "No thanks" links: small, muted gray, underlined plain text.
 
 ### Variables
 - {VIP_OFFER_NAME}: e.g. "VIP Backstage Pass"
@@ -45,6 +56,7 @@ Build a single-page VIP upsell / one-time-offer page following the 15-section fr
 - Alternate light sections with exactly two dark inversions (6 and 15).
 - Benefits ordered: status → more status → mechanism → tool. Price is always "just $97" against big anchors — never "free", never trial or recurring-billing language.
 - Each benefit section (7–10) pairs its description with a side image, alternating right/left (7 right, 8 left, 9 right, 10 left).
-- All imagery as labeled placeholders until real assets are supplied.
+- All imagery as labeled placeholders until real assets are supplied (see STYLING block — placeholders are mandatory).
+- Final check before delivering: page is LIGHT, font is Lato, every button is GREEN #1e9e46 with 15px radius, orange appears only as accent, every image slot has a labeled placeholder.
 
 Section numbers match the numbered tags on the wireframe.

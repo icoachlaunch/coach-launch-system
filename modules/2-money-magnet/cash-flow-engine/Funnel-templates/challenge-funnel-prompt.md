@@ -6,7 +6,18 @@ Use this prompt in your vibe-coding tool alongside the wireframe (`Challenge Fun
 
 ## THE PROMPT
 
-Build a single-page, long-form challenge-registration landing page following the 22-section direct-response funnel framework below. Every section stacks vertically, full-width, mobile-responsive. The single conversion goal is registration via an opt-in popup (name, email, optional phone) — every CTA button on the page opens that same popup. Use a warm, high-contrast style: dark navy or near-black accents, one hot CTA color used ONLY on buttons and "FREE!" callouts, generous whitespace, very large headlines with italic/underline emphasis on the key phrase.
+Build a single-page, long-form challenge-registration landing page following the 21-section direct-response funnel framework below. Every section stacks vertically, full-width, mobile-responsive. The single conversion goal is registration via an opt-in popup (name, email, optional phone) — every CTA button on the page opens that same popup.
+
+### STYLING — MATCH THE TEMPLATE EXACTLY (non-negotiable)
+Replicate the reference template's styling identically. Do NOT invent your own theme, do NOT make the page dark, do NOT change button colors.
+- **Page theme: LIGHT.** Base background `#f2f1ed`; alternate sections `#f8f7f3`; body text `#17150f`; muted text `#5c584e`. Only THREE dark inversion sections (near-black `#17150f` with white text): Big Reveal, Tangible Symbol, and Footer. Everything else stays light.
+- **Font: Lato** (Google Fonts, weights 400/700/900) for ALL text — headlines, body, buttons. Monospace only for countdown digits.
+- **Buttons: GREEN, never orange.** Every CTA button: solid `#1e9e46` background, white text, 15px border-radius, no border, padding ~14px 38px, subtle green glow shadow (`0 8px 20px -8px rgba(30,158,70,.55)`). Two-line buttons: bold main line + small lighter logistics line.
+- **Accent orange `#f14e1c`** is used ONLY for: headline emphasis (italic key phrase with a translucent orange highlight-marker underline), "FREE!"/value callouts in the value stack, and small labels. NEVER on buttons or backgrounds.
+- **Cards:** white background, 1px hairline border `rgba(0,0,0,.09)`, 16px border-radius, soft shadow.
+- **Countdown timers:** dark near-black pills (`#17150f`) with white digits, rounded ~9px.
+- **Image placeholders: REQUIRED.** Every image slot in the section spec below must be rendered as a visible labeled placeholder block (light diagonal-stripe background, 1px dashed border `#c9c5ba`, 14px radius, centered small mono label describing what goes there, e.g. "HERO IMAGE — host or avatar moment") until real assets are supplied. Do not skip or substitute them.
+- Generous whitespace; very large headlines with the ONE key phrase italicized + orange-highlighted.
 
 ### Variables (fill these in first)
 - {EVENT_NAME}: name of the challenge, e.g. "One Comma Club Challenge"
@@ -53,7 +64,8 @@ Build a single-page, long-form challenge-registration landing page following the
 - Headline rhythm: alternate huge H1 claims with supporting H2s; italicize/underline the ONE key phrase per headline.
 - Keep paragraphs 1–2 sentences; long-form letter uses one-line paragraphs.
 - Max 2 background colors (light + dark inversion sections at big reveal, tangible symbol, footer).
-- All imagery as labeled placeholders until real assets are supplied.
+- All imagery as labeled placeholders until real assets are supplied (see STYLING block — placeholders are mandatory, one per image slot named in the spec).
+- Final check before delivering: page is LIGHT, font is Lato, every button is GREEN #1e9e46 with 15px radius, orange appears only as accent, every image slot has a labeled placeholder.
 
 ---
 
