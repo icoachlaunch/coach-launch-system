@@ -1,0 +1,108 @@
+/* ═══════════════════════════════════════════════════════════
+   VOLTAGE — a Coach Launch Brand Kit theme
+   Dark-first and technical. Near-black ground, electric cyan,
+   a geometric grotesk. Built for tech, SaaS and performance.
+   FONTS: https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=IBM+Plex+Sans:wght@400;600&display=swap
+   ═══════════════════════════════════════════════════════════
+
+   THIS THEME IS DARK BY DEFAULT. Its base surface is near-black, so
+   data-surface=D goes DARKER still rather than flipping. There is no
+   light surface — that is the theme's character, not an omission.
+
+   CONTRAST NOTE: white on this cyan is 1.8:1 and is unreadable. Cyan is a
+   very bright colour, so text on it must be near-black — that pairing is
+   10:1 and is what --ink-on-brand carries. */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=IBM+Plex+Sans:wght@400;600&display=swap");
+
+:root, [data-surface=L] {
+  /* ---- Brand ------------------------------------------------ */
+  --brand:            #21d4fd;
+  --brand-deep:       #12a8cc;
+  --brand-soft:       rgba(33,212,253,.10);
+  --ink-on-brand:     #04212b;   /* near-black on cyan — 10:1         */
+
+  /* ---- Surface + text --------------------------------------- */
+  --canvas:           #131820;
+  --panel:            #1b232e;
+  --ink:              #eaf2f8;
+  --ink-soft:         #93a3b3;
+  --ink-faint:        #7a8794;
+  --line:             #26303c;
+
+  /* ---- Paper --------------------------------------------- */
+  /* An elevated card that keeps its own ground whatever surface it
+     sits on - a light slab floating on a dark band. NOT redefined
+     by [data-surface], which is the whole point. */
+  /* dark-native: paper is dark here, on purpose */
+  --paper:            #1b232e;
+  --paper-ink:        #eaf2f8;
+  --paper-soft:       #93a3b3;
+  --paper-line:       #26303c;
+  --accent:           var(--brand);
+
+  /* ---- Signals ---------------------------------------------- */
+  --pos:              #3ddc97;
+  --neg:              #ff5d73;
+  --highlight:        #f7e967;
+  --ink-on-highlight: #131820;
+
+  /* ---- Effects ---------------------------------------------- */
+  --bg-veil:          rgba(19,24,32,.74);
+  --ring:             0 0 0 3px rgba(33,212,253,.40);
+
+  /* ---- Type ------------------------------------------------- */
+  --font-display:     'Space Grotesk', system-ui, sans-serif;
+  --font-body:        'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono:        ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --weight-display:   700;
+  --weight-body:      400;
+  --weight-body-strong: 600;
+  --track-display:    -.02em;
+  --track-eyebrow:    .3em;
+  --leading-display:  1.04;
+  --leading-body:     1.6;
+  --scale:            1.25;
+
+  /* ---- Shape ------------------------------------------------ */
+  --r-lg:  8px;
+  --r-md:  6px;
+  --r-xs:  3px;
+  --r-pill: 999px;
+  --border-w: 1px;
+  --shadow-sm: 0 0 0 1px rgba(33,212,253,.10);
+  --shadow-md: 0 8px 30px rgba(0,0,0,.45);
+  --shadow-lg: 0 24px 70px rgba(0,0,0,.60);
+
+  /* ---- Back-compat aliases ---------------------------------- */
+  --track:        var(--track-display);
+  --weight:       var(--weight-display);
+  --eyebrow-track: var(--track-eyebrow);
+}
+
+/* Darker still, not lighter — Voltage's base is already dark. */
+[data-surface=D] {
+  --canvas:   #080b0f;
+  --panel:    #12171e;
+  --ink:      #f2f8fc;
+  --ink-soft: #8b9aa9;
+  --ink-faint:#7c8996;
+  --line:     #1e262f;
+  --bg-veil:  rgba(8,11,15,.76);
+}
+
+[data-surface=A] {
+  --canvas:   var(--brand);
+  --panel:    rgba(4,33,43,.1);
+  --ink:      var(--ink-on-brand);
+  --ink-soft: rgba(4,33,43,.82);
+  --ink-faint:rgba(4,33,43,.58);
+  --line:     rgba(4,33,43,.26);
+  --accent:   #04212b;
+  --bg-veil:  rgba(33,212,253,.84);
+  --highlight: #04212b;
+  --ink-on-highlight: var(--brand);
+  --shadow-sm: none;
+  --shadow-md: 0 8px 30px rgba(4,33,43,.25);
+  --shadow-lg: 0 24px 70px rgba(4,33,43,.3);
+}

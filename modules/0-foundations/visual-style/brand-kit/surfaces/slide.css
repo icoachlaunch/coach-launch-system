@@ -1,0 +1,81 @@
+/* ═══════════════════════════════════════════════════════════
+   SLIDE — Coach Launch Brand Kit · Layer 3 (surface adapter)
+   A 16:9 stage read from the back of a room.
+   ═══════════════════════════════════════════════════════════
+
+   Load AFTER a theme and blocks.css.
+
+   WHY THE SIZES ARE IN cqw
+     A slide is a fixed shape at an unpredictable physical size — full
+     screen on a projector, a third of the width in a contact sheet, a
+     thumbnail in a viewer. Sizing against the SLIDE's own width (cqw)
+     rather than the viewport means one slide renders identically at
+     every one of those sizes. Set container-type on .cl-slide and the
+     whole thing scales as one object.
+
+   READ FROM THE BACK OF THE ROOM
+     The base here is deliberately large. A slide is not a document —
+     if a line needs more than about 12 words, it is a note, not a slide.
+   ─────────────────────────────────────────────────────────── */
+
+.cl-stage {
+  container-type: inline-size;
+  container-name: slide;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.cl-slide {
+  --fs-base: 2.05cqw;
+
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 7cqw 8cqw;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-0);
+  line-height: var(--leading-body);
+}
+
+/* Headlines run bigger on a slide than the shared scale allows,
+   because there is no body copy competing with them. */
+.cl-slide .cl-h1 { font-size: calc(var(--fs-4) * 1.35); max-width: 16ch; }
+.cl-slide .cl-h2 { font-size: calc(var(--fs-3) * 1.2);  max-width: 20ch; }
+.cl-slide .cl-lede { max-width: 40ch; }
+.cl-slide .cl-body { max-width: 46ch; }
+
+.cl-slide--center { align-items: center; text-align: center; }
+.cl-slide--center .cl-h1,
+.cl-slide--center .cl-lede { margin-inline: auto; }
+
+.cl-slide--split {
+  flex-direction: row;
+  align-items: center;
+  gap: 5cqw;
+  text-align: left;
+}
+
+/* the presenter mark — sits outside the flow, never veiled */
+.cl-slide__mark {
+  position: absolute;
+  right: 3cqw;
+  bottom: 2.4cqw;
+  z-index: 2;
+  font-family: var(--font-display);
+  font-size: 1.1cqw;
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* Everything except the mark and the photo layer rides above the veil. */
+.cl-slide > *:not(.cl-slide__mark):not(.cl-bg) { position: relative; z-index: 1; }
+
+.cl-slide .cl-grid { gap: 3cqw; }
+.cl-slide .cl-card { padding: 3cqw; }

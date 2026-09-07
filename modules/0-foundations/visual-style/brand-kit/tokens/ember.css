@@ -1,0 +1,113 @@
+/* ═══════════════════════════════════════════════════════════
+   EMBER — a Coach Launch Brand Kit theme
+   Warm and approachable. Burnt orange, generous round corners,
+   soft shadows. Friendly without being childish.
+   FONTS: https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Karla:wght@400;700&display=swap
+   ═══════════════════════════════════════════════════════════
+
+   CONTRAST CEILING — READ THIS BEFORE USING THE ACCENT SURFACE.
+   Pure white on this orange is 4.06:1, and that is the best ANY text can
+   manage on it. It clears the bar for large text (headlines, button labels
+   at 17px+ bold) but not for small text, and no colour choice fixes that —
+   the orange is simply mid-luminance.
+
+   So on Ember's accent surface:
+     · headlines and buttons — fine
+     · body copy and captions — put them on the light or dark surface
+   The faint text tier is collapsed to full white there on purpose. There is
+   no room for a third tier, and a legible caption beats a pretty one. */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Karla:wght@400;700&display=swap");
+
+:root, [data-surface=L] {
+  /* ---- Brand ------------------------------------------------ */
+  --brand:            #d2582f;
+  --brand-deep:       #b8481f;
+  --brand-soft:       rgba(210,88,47,.09);
+  --ink-on-brand:     #ffffff;   /* 4.06:1 — large text only          */
+
+  /* ---- Surface + text --------------------------------------- */
+  --canvas:           #fffaf6;
+  --panel:            #fdf3ec;
+  --ink:              #241a14;
+  --ink-soft:         #6b5648;
+  --ink-faint:        #7f6a5c;
+  --line:             #f0e0d3;
+
+  /* ---- Paper --------------------------------------------- */
+  /* An elevated card that keeps its own ground whatever surface it
+     sits on - a light slab floating on a dark band. NOT redefined
+     by [data-surface], which is the whole point. */
+  --paper:            #fffaf6;
+  --paper-ink:        #241a14;
+  --paper-soft:       #6b5648;
+  --paper-line:       #f0e0d3;
+  --accent:           var(--brand);
+
+  /* ---- Signals ---------------------------------------------- */
+  --pos:              #4f8a4a;
+  --neg:              #9e2718;
+  --highlight:        #ffd79a;
+  --ink-on-highlight: #241a14;
+
+  /* ---- Effects ---------------------------------------------- */
+  --bg-veil:          rgba(255,250,246,.88);
+  --ring:             0 0 0 3px rgba(210,88,47,.35);
+
+  /* ---- Type ------------------------------------------------- */
+  --font-display:     'Poppins', system-ui, sans-serif;
+  --font-body:        'Karla', system-ui, sans-serif;
+  --font-mono:        ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --weight-display:   700;
+  --weight-body:      400;
+  --weight-body-strong: 700;
+  --track-display:    -.01em;
+  --track-eyebrow:    .2em;
+  --leading-display:  1.08;
+  --leading-body:     1.62;
+  --scale:            1.25;
+
+  /* ---- Shape ------------------------------------------------ */
+  --r-lg:  24px;
+  --r-md:  18px;
+  --r-xs:  8px;
+  --r-pill: 999px;
+  --border-w: 1px;
+  --shadow-sm: 0 2px 4px rgba(88,40,18,.07);
+  --shadow-md: 0 14px 34px rgba(88,40,18,.12);
+  --shadow-lg: 0 30px 70px rgba(88,40,18,.18);
+
+  /* ---- Back-compat aliases ---------------------------------- */
+  --track:        var(--track-display);
+  --weight:       var(--weight-display);
+  --eyebrow-track: var(--track-eyebrow);
+}
+
+[data-surface=D] {
+  --canvas:   #241a14;
+  --panel:    #2f221a;
+  --ink:      #fffaf6;
+  --ink-soft: #c6b3a5;
+  --ink-faint:#93806f;
+  --line:     #3d2d22;
+  --bg-veil:  rgba(36,26,20,.70);
+  --shadow-sm: 0 2px 4px rgba(0,0,0,.4);
+  --shadow-md: 0 14px 34px rgba(0,0,0,.5);
+  --shadow-lg: 0 30px 70px rgba(0,0,0,.6);
+}
+
+[data-surface=A] {
+  --canvas:   var(--brand);
+  --panel:    rgba(255,250,246,.14);
+  --ink:      var(--ink-on-brand);
+  --ink-soft: rgba(255,250,246,.9);
+  --ink-faint:#fffaf6;
+  --line:     rgba(255,250,246,.3);
+  --accent:   #fffaf6;
+  --bg-veil:  rgba(210,88,47,.86);
+  --highlight: #fffaf6;
+  --ink-on-highlight: var(--brand);
+  --shadow-sm: none;
+  --shadow-md: 0 14px 34px rgba(0,0,0,.16);
+  --shadow-lg: 0 30px 70px rgba(0,0,0,.22);
+}

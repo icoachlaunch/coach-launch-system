@@ -1,0 +1,95 @@
+/* ═══════════════════════════════════════════════════════════
+   INK — a Coach Launch Brand Kit theme
+   Editorial and considered. Oxblood on warm paper, square corners,
+   no shadows. Reads like a serious book, not a landing page.
+   FONTS: https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600&display=swap
+   ═══════════════════════════════════════════════════════════ */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600&display=swap");
+
+:root, [data-surface=L] {
+  /* ---- Brand ------------------------------------------------ */
+  --brand:            #9e2b25;
+  --brand-deep:       #7a1f1b;
+  --brand-soft:       rgba(158,43,37,.08);
+  --ink-on-brand:     #fdf9f6;   /* 7.4:1 */
+
+  /* ---- Surface + text --------------------------------------- */
+  --canvas:           #fbfaf8;
+  --panel:            #f4f1ec;
+  --ink:              #14110f;
+  --ink-soft:         #5b524a;
+  --ink-faint:        #7a7065;
+  --line:             #e2dbd2;
+
+  /* ---- Paper --------------------------------------------- */
+  /* An elevated card that keeps its own ground whatever surface it
+     sits on - a light slab floating on a dark band. NOT redefined
+     by [data-surface], which is the whole point. */
+  --paper:            #fbfaf8;
+  --paper-ink:        #14110f;
+  --paper-soft:       #5b524a;
+  --paper-line:       #e2dbd2;
+  --accent:           var(--brand);
+
+  /* ---- Signals ---------------------------------------------- */
+  --pos:              #4a6b3f;
+  --neg:              #b3402f;
+  --highlight:        #efd9a0;
+  --ink-on-highlight: #14110f;
+
+  /* ---- Effects ---------------------------------------------- */
+  --bg-veil:          rgba(251,250,248,.88);
+  --ring:             0 0 0 3px rgba(158,43,37,.35);
+
+  /* ---- Type ------------------------------------------------- */
+  --font-display:     'Playfair Display', Georgia, serif;
+  --font-body:        'Inter', system-ui, sans-serif;
+  --font-mono:        ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --weight-display:   700;
+  --weight-body:      400;
+  --weight-body-strong: 600;
+  --track-display:    -.015em;
+  --track-eyebrow:    .3em;
+  --leading-display:  1.1;       /* serif headlines need more air     */
+  --leading-body:     1.68;
+  --scale:            1.333;     /* editorial — a dramatic hierarchy  */
+
+  /* ---- Shape ------------------------------------------------ */
+  --r-lg:  0px;                  /* square. The whole point.          */
+  --r-md:  0px;
+  --r-xs:  0px;
+  --r-pill: 3px;
+  --border-w: 2px;               /* heavier rules stand in for shadow */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+
+  /* ---- Back-compat aliases ---------------------------------- */
+  --track:        var(--track-display);
+  --weight:       var(--weight-display);
+  --eyebrow-track: var(--track-eyebrow);
+}
+
+[data-surface=D] {
+  --canvas:   #14110f;
+  --panel:    #1e1a17;
+  --ink:      #fbfaf8;
+  --ink-soft: #bdb3a7;
+  --ink-faint:#877d72;
+  --line:     #332d27;
+  --bg-veil:  rgba(20,17,15,.70);
+}
+
+[data-surface=A] {
+  --canvas:   var(--brand);
+  --panel:    rgba(253,249,246,.1);
+  --ink:      var(--ink-on-brand);
+  --ink-soft: rgba(253,249,246,.86);
+  --ink-faint:rgba(253,249,246,.6);
+  --line:     rgba(253,249,246,.26);
+  --accent:   #fdf9f6;
+  --bg-veil:  rgba(158,43,37,.86);
+  --highlight: #efd9a0;
+  --ink-on-highlight: #14110f;
+}

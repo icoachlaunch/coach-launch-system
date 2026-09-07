@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your Brand Kit — Coach Launch</title>
+<style>
+  /* ── the gallery's own chrome. Deliberately neutral so it never
+       competes with the theme being previewed. ─────────────────── */
+  :root{--k-ink:#16171b;--k-soft:#5a5c66;--k-faint:#8e909a;--k-line:#e4e5ea;--k-bg:#f4f4f7;--k-panel:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--k-bg);color:var(--k-ink);
+       font:16px/1.6 'Segoe UI',system-ui,-apple-system,sans-serif}
+  .k-wrap{max-width:1180px;margin:0 auto;padding:2.6rem 1.5rem 5rem}
+  h1{font-size:2rem;margin:0 0 .4rem;letter-spacing:-.02em}
+  .k-sub{color:var(--k-soft);margin:0 0 2rem;max-width:60ch}
+  h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;
+     color:var(--k-faint);margin:2.6rem 0 .9rem;font-weight:700}
+
+  .k-note{background:var(--k-panel);border:1px solid var(--k-line);border-radius:10px;
+          padding:1rem 1.2rem;color:var(--k-soft);font-size:14.5px;margin:0 0 2rem}
+  .k-note b{color:var(--k-ink)}
+
+  /* theme picker */
+  .k-themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:.7rem;margin-bottom:.9rem}
+  .k-theme{display:flex;align-items:center;gap:.7rem;background:var(--k-panel);cursor:pointer;
+           border:1px solid var(--k-line);border-radius:11px;padding:.75rem .85rem;text-align:left;
+           font:inherit;font-size:14px;transition:border-color .12s,box-shadow .12s}
+  .k-theme:hover{border-color:#bfc1cb}
+  .k-theme[aria-pressed=true]{border-color:var(--k-ink);box-shadow:0 0 0 1px var(--k-ink)}
+  .k-chip{width:30px;height:30px;border-radius:8px;flex:0 0 auto;border:1px solid rgba(0,0,0,.12)}
+  .k-tname{display:block;font-weight:700}
+  .k-tdesc{display:block;color:var(--k-faint);font-size:12.5px;line-height:1.35}
+
+  /* surface toggle */
+  .k-surf{display:inline-flex;gap:0;border:1px solid var(--k-line);border-radius:999px;
+          background:var(--k-panel);padding:3px;margin-bottom:1.6rem}
+  .k-surf button{border:0;background:none;cursor:pointer;font:inherit;font-size:13px;font-weight:600;
+                 color:var(--k-soft);padding:.35rem 1rem;border-radius:999px}
+  .k-surf button[aria-pressed=true]{background:var(--k-ink);color:#fff}
+
+  /* preview panels */
+  .k-panels{display:grid;gap:1.4rem;grid-template-columns:1fr}
+  @media(min-width:900px){.k-panels{grid-template-columns:1.55fr 1fr}}
+  .k-panel{background:var(--k-panel);border:1px solid var(--k-line);border-radius:12px;overflow:hidden}
+  .k-cap{font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+         color:var(--k-faint);padding:.6rem .85rem;border-bottom:1px solid var(--k-line)}
+  .k-panel iframe{display:block;width:100%;border:0;background:#fff}
+  .k-stackcol{display:grid;gap:1.4rem;align-content:start}
+</style></head><body>
+
+<div class="k-wrap">
+
+  <h1>Your Brand Kit</h1>
+  <p class="k-sub">Six looks. Pick the one that fits your business — then every single thing
+  you build runs on it. Slides, funnel pages, ads, social posts, your guides. Same colours,
+  same fonts, same buttons, automatically.</p>
+
+  <div class="k-note">
+    <b>Every panel below is showing the same words.</b> The only thing that changes when you
+    switch theme is one small file of colour and type values. That is the whole idea — you
+    choose once, here, and you never pick a colour again.
+  </div>
+
+  <h2>1 · Pick your look</h2>
+  <div class="k-themes" id="themes"></div>
+
+  <h2>2 · Check it on light, dark and your brand colour</h2>
+  <div class="k-surf" id="surf">
+    <button data-s="" aria-pressed="true">Light</button>
+    <button data-s="D" aria-pressed="false">Dark</button>
+    <button data-s="A" aria-pressed="false">Brand</button>
+  </div>
+
+  <div class="k-panels">
+    <div class="k-stackcol">
+      <div class="k-panel"><div class="k-cap">Funnel / sales page</div>
+        <iframe id="f-page" height="560" title="Page preview"></iframe></div>
+      <div class="k-panel"><div class="k-cap">Presentation slide</div>
+        <iframe id="f-slide" height="380" title="Slide preview"></iframe></div>
+    </div>
+    <div class="k-stackcol">
+      <div class="k-panel"><div class="k-cap">Social post — 4:5</div>
+        <iframe id="f-social" height="620" title="Social preview"></iframe></div>
+      <div class="k-panel"><div class="k-cap">The building blocks</div>
+        <iframe id="f-blocks" height="620" title="Blocks preview"></iframe></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const THEMES = [
+  ['crimson',  '#db0063', 'Crimson',  'Confident, modern, high-energy'],
+  ['ink',      '#9e2b25', 'Ink',      'Editorial, considered, premium'],
+  ['ember',    '#d2582f', 'Ember',    'Warm, approachable, friendly'],
+  ['sovereign','#b8912f', 'Sovereign','Restrained, high-ticket, classic'],
+  ['voltage',  '#21d4fd', 'Voltage',  'Dark, technical, performance'],
+  ['meadow',   '#1fa85c', 'Meadow',   'Calm, natural, wellness']
+];
+
+// One shared head for every preview: the theme, the blocks, the surface.
+const head = (theme, surface) => `
+  <link rel="stylesheet" href="tokens/${theme}.css">
+  <link rel="stylesheet" href="blocks.css">
+  <link rel="stylesheet" href="surfaces/${surface}.css">`;
+
+const BODY = {
+  page: `
+  <section class="cl-section cl-hero">
+    <div class="cl-container cl-split cl-split--wide-left">
+      <div>
+        <p class="cl-eyebrow">Free live masterclass</p>
+        <h1 class="cl-h1">The <span class="cl-mark">one shift</span> that fills your calendar</h1>
+        <p class="cl-lede">Ninety minutes. No pitch until the end, and you'll know
+          exactly why it's there when it comes.</p>
+        <a class="cl-btn" href="#">Save my seat</a>
+        <p class="cl-btn-note">Thursday 7pm · Replay for 48 hours</p>
+      </div>
+      <div class="cl-card cl-card--raised">
+        <p class="cl-eyebrow">What you'll walk out with</p>
+        <ul class="cl-list cl-list--tick">
+          <li>The reason your offer isn't landing</li>
+          <li>A model you can run next week</li>
+          <li>The numbers that make it work</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="cl-section cl-section--tight" data-surface="D">
+    <div class="cl-container cl-grid cl-grid--3">
+      <div class="cl-stat"><span class="cl-stat__n">3x</span><span class="cl-stat__label">Show-up rate</span></div>
+      <div class="cl-stat"><span class="cl-stat__n">$52</span><span class="cl-stat__label">Cost per registration</span></div>
+      <div class="cl-stat"><span class="cl-stat__n">21%</span><span class="cl-stat__label">Take rate</span></div>
+    </div>
+  </section>`,
+
+  slide: `
+  <div class="cl-stage"><div class="cl-slide cl-slide--center" data-surface="A">
+    <p class="cl-eyebrow">The Big Shift</p>
+    <h1 class="cl-h1">You don't have a traffic problem</h1>
+    <p class="cl-lede">Wrong diagnosis, wrong fix.</p>
+    <div class="cl-slide__mark">Your Brand</div>
+  </div></div>`,
+
+  social: `
+  <div class="cl-canvas cl-canvas--portrait cl-canvas--center">
+    <div class="cl-canvas__bar"></div>
+    <p class="cl-eyebrow">The hard truth</p>
+    <h1 class="cl-h1">Most offers fail before anyone sees the price</h1>
+    <p class="cl-lede">And it's almost never the price.</p>
+    <div class="cl-canvas__sig">@yourhandle</div>
+  </div>`,
+
+  blocks: `
+  <section class="cl-section cl-section--tight">
+    <div class="cl-container">
+      <p class="cl-eyebrow">Eyebrow</p>
+      <h2 class="cl-h2">A heading</h2>
+      <p class="cl-body">Body copy sits at a comfortable reading size and never runs
+        wider than about 68 characters.</p>
+      <p><a class="cl-btn" href="#">Primary</a> <a class="cl-btn cl-btn--ghost" href="#">Ghost</a></p>
+      <hr class="cl-rule">
+      <div class="cl-callout"><p class="cl-body" style="margin:0">A callout, for the thing
+        they must not miss.</p></div>
+      <hr class="cl-rule">
+      <div class="cl-compare">
+        <div class="cl-compare__side cl-compare__side--before">
+          <p class="cl-compare__title">Before</p>
+          <ul class="cl-list cl-list--cross"><li>Guessing</li><li>Discounting</li></ul>
+        </div>
+        <div class="cl-compare__side cl-compare__side--after">
+          <p class="cl-compare__title">After</p>
+          <ul class="cl-list cl-list--tick"><li>Measuring</li><li>Holding price</li></ul>
+        </div>
+      </div>
+      <hr class="cl-rule">
+      <blockquote class="cl-quote">
+        <p class="cl-quote__text">"I stopped rewriting the offer and fixed the one number.
+          It changed everything."</p>
+        <footer class="cl-quote__by"><span class="cl-quote__name">A client</span> · their business</footer>
+      </blockquote>
+      <hr class="cl-rule">
+      <div class="cl-price">
+        <span class="cl-price__was">$4,000</span>
+        <span class="cl-price__now">$1,997</span>
+        <p class="cl-price__terms">or 3 payments of $699</p>
+      </div>
+      <hr class="cl-rule">
+      <p class="cl-eyebrow">Funnel pieces</p>
+      <div class="cl-countdown">
+        <span class="cl-countdown__unit"><span class="cl-countdown__n">02</span><span class="cl-countdown__label">days</span></span>
+        <span class="cl-countdown__unit"><span class="cl-countdown__n">14</span><span class="cl-countdown__label">hrs</span></span>
+        <span class="cl-countdown__unit"><span class="cl-countdown__n">37</span><span class="cl-countdown__label">min</span></span>
+      </div>
+      <div style="height:1rem"></div>
+      <div class="cl-imgslot cl-imgslot--wide">Hero image &mdash; host or avatar moment</div>
+      <div style="height:1rem"></div>
+      <div class="cl-bump">
+        <p class="cl-bump__title">Yes, add the workbook &mdash; $27</p>
+        <p class="cl-meta" style="margin:0">The one-time offer that interrupts the checkout.</p>
+      </div>
+      <hr class="cl-rule">
+      <div class="cl-faq">
+        <details open><summary>Is there a replay?</summary>
+          <p class="cl-faq__a">Yes, for 48 hours. Live is where the work happens though.</p></details>
+        <details><summary>What if I'm a total beginner?</summary>
+          <p class="cl-faq__a">That's who it's built for.</p></details>
+      </div>
+    </div>
+  </section>`
+};
+
+const SURFACE_FILE = {page:'page', slide:'slide', social:'social', blocks:'page'};
+let theme = new URLSearchParams(location.search).get('theme') || 'crimson';
+let surf  = new URLSearchParams(location.search).get('surface') || '';
+
+function render(){
+  for (const key of Object.keys(BODY)) {
+    // the slide demo pins its own surface; the rest follow the toggle
+    const s = key === 'slide' ? '' : surf;
+    const fr = document.getElementById('f-'+key);
+    // Each theme has its own type scale, so content height differs per
+    // theme. Measure after load rather than guessing a fixed height.
+    fr.onload = () => {
+      try { fr.style.height = (fr.contentDocument.documentElement.scrollHeight + 2) + 'px'; }
+      catch (e) { /* leave the fallback height attribute in place */ }
+    };
+    fr.srcdoc =
+      `<!DOCTYPE html><html${s?` data-surface="${s}"`:''}><head><meta charset="utf-8">` +
+      head(theme, SURFACE_FILE[key]) +
+      `<style>body{margin:0}${key==='social'?'body{display:grid;place-items:center;padding:14px;background:var(--panel)}.cl-canvas{width:100%}':''}` +
+      `${key==='slide'?'body{padding:14px;background:var(--panel)}':''}</style>` +
+      `</head><body>${BODY[key]}</body></html>`;
+  }
+  document.querySelectorAll('#themes .k-theme').forEach(b =>
+    b.setAttribute('aria-pressed', String(b.dataset.t === theme)));
+  document.querySelectorAll('#surf button').forEach(b =>
+    b.setAttribute('aria-pressed', String(b.dataset.s === surf)));
+}
+
+document.getElementById('themes').innerHTML = THEMES.map(([id,hex,name,desc]) =>
+  `<button class="k-theme" data-t="${id}" aria-pressed="false">
+     <span class="k-chip" style="background:${hex}"></span>
+     <span><span class="k-tname">${name}</span><span class="k-tdesc">${desc}</span></span>
+   </button>`).join('');
+
+document.getElementById('themes').addEventListener('click', e => {
+  const b = e.target.closest('.k-theme'); if (!b) return;
+  theme = b.dataset.t; render();
+});
+document.getElementById('surf').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  surf = b.dataset.s; render();
+});
+
+render();
+</script>
+</body></html>

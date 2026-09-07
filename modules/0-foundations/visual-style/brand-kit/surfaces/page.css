@@ -1,0 +1,129 @@
+/* ═══════════════════════════════════════════════════════════
+   PAGE — Coach Launch Brand Kit · Layer 3 (surface adapter)
+   For anything read in a browser at arm's length: funnel pages,
+   registration and thank-you pages, sales pages, long-form guides.
+   ═══════════════════════════════════════════════════════════
+
+   Load AFTER a theme and blocks.css. This file owns layout and the
+   base reading size for this medium — and nothing else. No colours,
+   no fonts, no radii. Those come from the theme.
+   ─────────────────────────────────────────────────────────── */
+
+:root {
+  /* the body size for a page; every heading scales up from here */
+  --fs-base: clamp(1rem, .95rem + .25vw, 1.125rem);
+
+  --maxw:        1120px;
+  --maxw-narrow:  760px;
+  --maxw-letter:  680px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: var(--weight-body);
+  font-size: var(--fs-0);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg, video { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--accent); }
+
+/* ---------- structure --------------------------------------- */
+
+.cl-section {
+  position: relative;
+  background: var(--canvas);
+  color: var(--ink);
+  padding-block: var(--sp-7);
+}
+.cl-section--tight { padding-block: var(--sp-5); }
+
+/* A band that flips surface mid-page. Put data-surface on the section
+   itself and every block inside it re-reads its colours. */
+.cl-section[data-surface] { background: var(--canvas); }
+
+.cl-container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--sp-4);
+}
+.cl-container--narrow { max-width: var(--maxw-narrow); }
+.cl-container--letter { max-width: var(--maxw-letter); }
+
+.cl-center { text-align: center; }
+.cl-center .cl-lede,
+.cl-center .cl-body { margin-inline: auto; }
+
+/* ---------- grids ------------------------------------------- */
+
+.cl-grid {
+  display: grid;
+  gap: var(--sp-4);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.cl-grid--2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.cl-grid--3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+.cl-split {
+  display: grid;
+  gap: var(--sp-6);
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 860px) {
+  .cl-split { grid-template-columns: 1fr 1fr; }
+  .cl-split--wide-left  { grid-template-columns: 1.3fr 1fr; }
+  .cl-split--wide-right { grid-template-columns: 1fr 1.3fr; }
+}
+
+/* ---------- hero -------------------------------------------- */
+
+.cl-hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--sp-7);
+}
+.cl-hero .cl-h1 { max-width: 18ch; }
+.cl-center.cl-hero .cl-h1 { max-width: 22ch; margin-inline: auto; }
+
+/* ---------- form -------------------------------------------- */
+
+.cl-field {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--fs-0);
+  color: var(--ink);
+  background: var(--canvas);
+  border: var(--border-w) solid var(--line);
+  border-radius: var(--r-md);
+  padding: .85em 1em;
+  margin-bottom: var(--sp-2);
+}
+.cl-field::placeholder { color: var(--ink-faint); }
+.cl-field:focus-visible { outline: none; border-color: var(--accent); box-shadow: var(--ring); }
+
+.cl-label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: var(--weight-body-strong);
+  font-size: var(--fs--1);
+  color: var(--ink-soft);
+  margin-bottom: var(--sp-1);
+}
+
+/* ---------- print ------------------------------------------- */
+
+@media print {
+  .cl-section { padding-block: var(--sp-4); break-inside: avoid; }
+  .cl-btn { display: none; }
+}

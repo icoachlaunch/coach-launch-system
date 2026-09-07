@@ -1,0 +1,105 @@
+/* ═══════════════════════════════════════════════════════════
+   MEADOW — a Coach Launch Brand Kit theme
+   Calm and natural. Fresh green, soft round corners, an open
+   geometric sans. Built for health, wellness and coaching.
+   FONTS: https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=Inter:wght@400;600&display=swap
+   ═══════════════════════════════════════════════════════════
+
+   CONTRAST NOTE: white on this green is only 3.1:1 and is marginal even
+   for large text. Text on the green must be the dark forest tone —
+   that pairing is 5.5:1 and is what --ink-on-brand carries. */
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=Inter:wght@400;600&display=swap");
+
+:root, [data-surface=L] {
+  /* ---- Brand ------------------------------------------------ */
+  --brand:            #1fa85c;
+  --brand-deep:       #168145;
+  --brand-soft:       rgba(31,168,92,.09);
+  --ink-on-brand:     #0b2114;   /* dark forest on green — 5.5:1      */
+
+  /* ---- Surface + text --------------------------------------- */
+  --canvas:           #ffffff;
+  --panel:            #f3f9f5;
+  --ink:              #10231a;
+  --ink-soft:         #4e6357;
+  --ink-faint:        #64776b;
+  --line:             #dfeae3;
+
+  /* ---- Paper --------------------------------------------- */
+  /* An elevated card that keeps its own ground whatever surface it
+     sits on - a light slab floating on a dark band. NOT redefined
+     by [data-surface], which is the whole point. */
+  --paper:            #ffffff;
+  --paper-ink:        #10231a;
+  --paper-soft:       #4e6357;
+  --paper-line:       #dfeae3;
+  --accent:           var(--brand);
+
+  /* ---- Signals ---------------------------------------------- */
+  --pos:              #1fa85c;
+  --neg:              #c0392b;
+  --highlight:        #d8f2a8;
+  --ink-on-highlight: #10231a;
+
+  /* ---- Effects ---------------------------------------------- */
+  --bg-veil:          rgba(255,255,255,.88);
+  --ring:             0 0 0 3px rgba(31,168,92,.35);
+
+  /* ---- Type ------------------------------------------------- */
+  --font-display:     'Outfit', system-ui, sans-serif;
+  --font-body:        'Inter', system-ui, sans-serif;
+  --font-mono:        ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --weight-display:   800;
+  --weight-body:      400;
+  --weight-body-strong: 600;
+  --track-display:    -.025em;
+  --track-eyebrow:    .2em;
+  --leading-display:  1.05;
+  --leading-body:     1.6;
+  --scale:            1.2;
+
+  /* ---- Shape ------------------------------------------------ */
+  --r-lg:  20px;
+  --r-md:  14px;
+  --r-xs:  6px;
+  --r-pill: 999px;
+  --border-w: 1px;
+  --shadow-sm: 0 2px 5px rgba(16,35,26,.06);
+  --shadow-md: 0 12px 30px rgba(16,35,26,.10);
+  --shadow-lg: 0 28px 66px rgba(16,35,26,.16);
+
+  /* ---- Back-compat aliases ---------------------------------- */
+  --track:        var(--track-display);
+  --weight:       var(--weight-display);
+  --eyebrow-track: var(--track-eyebrow);
+}
+
+[data-surface=D] {
+  --canvas:   #10231a;
+  --panel:    #183024;
+  --ink:      #ffffff;
+  --ink-soft: #a8bfb2;
+  --ink-faint:#76907f;
+  --line:     #22392c;
+  --bg-veil:  rgba(16,35,26,.70);
+  --shadow-sm: 0 2px 5px rgba(0,0,0,.4);
+  --shadow-md: 0 12px 30px rgba(0,0,0,.5);
+  --shadow-lg: 0 28px 66px rgba(0,0,0,.6);
+}
+
+[data-surface=A] {
+  --canvas:   var(--brand);
+  --panel:    rgba(11,33,20,.10);
+  --ink:      var(--ink-on-brand);
+  --ink-soft: rgba(11,33,20,.82);
+  --ink-faint:rgba(11,33,20,.58);
+  --line:     rgba(11,33,20,.24);
+  --accent:   #0b2114;
+  --bg-veil:  rgba(31,168,92,.86);
+  --highlight: #0b2114;
+  --ink-on-highlight: var(--brand);
+  --shadow-sm: none;
+  --shadow-md: 0 12px 30px rgba(11,33,20,.22);
+  --shadow-lg: 0 28px 66px rgba(11,33,20,.28);
+}

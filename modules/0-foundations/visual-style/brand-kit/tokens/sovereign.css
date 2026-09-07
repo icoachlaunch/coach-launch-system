@@ -1,0 +1,108 @@
+/* ═══════════════════════════════════════════════════════════
+   SOVEREIGN — a Coach Launch Brand Kit theme
+   Premium and restrained. Navy and gold, a Garamond serif,
+   tight corners. Built for high-ticket.
+   FONTS: https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Lato:wght@400;700&display=swap
+   ═══════════════════════════════════════════════════════════
+
+   CONTRAST NOTE: white on this gold is only 2.9:1 and fails. Gold is a
+   mid-luminance colour, so text on it must be the DARK navy — that pairing
+   is 5.8:1 and is what --ink-on-brand carries. The accent surface goes the
+   other way round on purpose: navy ground, gold type. Gold as a full-bleed
+   background is loud, and this theme is the opposite of loud. */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Lato:wght@400;700&display=swap");
+
+:root, [data-surface=L] {
+  /* ---- Brand ------------------------------------------------ */
+  --brand:            #b8912f;
+  --brand-deep:       #8f6f21;
+  --brand-soft:       rgba(184,145,47,.10);
+  --ink-on-brand:     #0f1c33;   /* navy on gold — 5.8:1              */
+
+  /* ---- Surface + text --------------------------------------- */
+  --canvas:           #ffffff;
+  --panel:            #f6f8fb;
+  --ink:              #0f1c33;
+  --ink-soft:         #4a5872;
+  --ink-faint:        #626f86;
+  --line:             #dfe3ea;
+
+  /* ---- Paper --------------------------------------------- */
+  /* An elevated card that keeps its own ground whatever surface it
+     sits on - a light slab floating on a dark band. NOT redefined
+     by [data-surface], which is the whole point. */
+  --paper:            #ffffff;
+  --paper-ink:        #0f1c33;
+  --paper-soft:       #4a5872;
+  --paper-line:       #dfe3ea;
+  --accent:           var(--brand);
+
+  /* ---- Signals ---------------------------------------------- */
+  --pos:              #2f7d55;
+  --neg:              #a33a2e;
+  --highlight:        #f0e2b8;
+  --ink-on-highlight: #0f1c33;
+
+  /* ---- Effects ---------------------------------------------- */
+  --bg-veil:          rgba(255,255,255,.88);
+  --ring:             0 0 0 3px rgba(184,145,47,.40);
+
+  /* ---- Type ------------------------------------------------- */
+  --font-display:     'Cormorant Garamond', Georgia, serif;
+  --font-body:        'Lato', system-ui, sans-serif;
+  --font-mono:        ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --weight-display:   700;
+  --weight-body:      400;
+  --weight-body-strong: 700;
+  --track-display:    -.005em;
+  --track-eyebrow:    .28em;
+  --leading-display:  1.08;
+  --leading-body:     1.65;
+  --scale:            1.333;
+
+  /* ---- Shape ------------------------------------------------ */
+  --r-lg:  6px;
+  --r-md:  4px;
+  --r-xs:  2px;
+  --r-pill: 999px;
+  --border-w: 1px;
+  --shadow-sm: 0 1px 2px rgba(15,28,51,.05);
+  --shadow-md: 0 10px 30px rgba(15,28,51,.09);
+  --shadow-lg: 0 26px 64px rgba(15,28,51,.16);
+
+  /* ---- Back-compat aliases ---------------------------------- */
+  --track:        var(--track-display);
+  --weight:       var(--weight-display);
+  --eyebrow-track: var(--track-eyebrow);
+}
+
+[data-surface=D] {
+  --canvas:   #0d1728;
+  --panel:    #16223a;
+  --ink:      #ffffff;
+  --ink-soft: #a9b6cb;
+  --ink-faint:#7d8ca6;
+  --line:     #24334d;
+  --bg-veil:  rgba(13,23,40,.72);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+  --shadow-md: 0 10px 30px rgba(0,0,0,.5);
+  --shadow-lg: 0 26px 64px rgba(0,0,0,.6);
+}
+
+/* Sovereign inverts its accent surface: navy ground, gold type. */
+[data-surface=A] {
+  --canvas:   #0d1728;
+  --panel:    rgba(184,145,47,.12);
+  --ink:      #ffffff;
+  --ink-soft: rgba(255,255,255,.84);
+  --ink-faint:rgba(255,255,255,.58);
+  --line:     rgba(184,145,47,.4);
+  --accent:   #b8912f;
+  --bg-veil:  rgba(13,23,40,.80);
+  --highlight: #b8912f;
+  --ink-on-highlight: #0d1728;
+  --shadow-sm: none;
+  --shadow-md: 0 10px 30px rgba(0,0,0,.5);
+  --shadow-lg: 0 26px 64px rgba(0,0,0,.6);
+}

@@ -1,0 +1,107 @@
+/* ═══════════════════════════════════════════════════════════
+   CRIMSON — a Coach Launch Brand Kit theme
+   Confident, modern, high-energy. The Coach Launch house look.
+   FONTS: https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap
+   ═══════════════════════════════════════════════════════════
+
+   This file is the ONLY place this theme's colour and type live.
+   Slides, funnel pages, guides, ads and social posts all read from it.
+   Change a value here and every one of them changes together.
+
+   Three surfaces. Put data-surface on <html> or any wrapper:
+     (none) = light   ·   D = dark   ·   A = accent (the brand colour) */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap");
+
+:root, [data-surface=L] {
+  /* ---- Brand ------------------------------------------------ */
+  --brand:            #db0063;   /* the hero colour. One per brand.   */
+  --brand-deep:       #a80049;   /* hovers, pressed states, gradients */
+  --brand-soft:       rgba(219,0,99,.08);  /* quiet tinted fills      */
+  --ink-on-brand:     #ffffff;   /* text ON the hero colour — 5.0:1   */
+
+  /* ---- Surface + text --------------------------------------- */
+  --canvas:           #ffffff;
+  --panel:            #fafafb;
+  --ink:              #111111;
+  --ink-soft:         #55565b;
+  --ink-faint:        #6f7076;
+  --line:             #e6e7ea;
+
+  /* ---- Paper --------------------------------------------- */
+  /* An elevated card that keeps its own ground whatever surface it
+     sits on - a light slab floating on a dark band. NOT redefined
+     by [data-surface], which is the whole point. */
+  --paper:            #ffffff;
+  --paper-ink:        #111111;
+  --paper-soft:       #55565b;
+  --paper-line:       #e6e7ea;
+  --accent:           var(--brand);
+
+  /* ---- Signals ---------------------------------------------- */
+  --pos:              #1f9d57;   /* ticks, "after", gains             */
+  --neg:              #c0392b;   /* crosses, "before", losses         */
+  --highlight:        #ffe066;   /* marker behind a headline word     */
+  --ink-on-highlight: #111111;
+
+  /* ---- Effects ---------------------------------------------- */
+  --bg-veil:          rgba(255,255,255,.88);  /* wash over a photo    */
+  --ring:             0 0 0 3px rgba(219,0,99,.35);
+
+  /* ---- Type ------------------------------------------------- */
+  --font-display:     'Montserrat', system-ui, sans-serif;
+  --font-body:        'Lato', system-ui, sans-serif;
+  --font-mono:        ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --weight-display:   800;
+  --weight-body:      400;
+  --weight-body-strong: 700;
+  --track-display:    -.02em;
+  --track-eyebrow:    .22em;
+  --leading-display:  1.06;
+  --leading-body:     1.6;
+  --scale:            1.25;      /* each type step is 1.25x the last  */
+
+  /* ---- Shape ------------------------------------------------ */
+  --r-lg:  16px;
+  --r-md:  12px;
+  --r-xs:  4px;
+  --r-pill: 999px;
+  --border-w: 1px;
+  --shadow-sm: 0 1px 2px rgba(17,17,17,.06);
+  --shadow-md: 0 8px 24px rgba(17,17,17,.08);
+  --shadow-lg: 0 24px 60px rgba(17,17,17,.14);
+
+  /* ---- Back-compat aliases (the slide molds use these) ------- */
+  --track:        var(--track-display);
+  --weight:       var(--weight-display);
+  --eyebrow-track: var(--track-eyebrow);
+}
+
+[data-surface=D] {
+  --canvas:   #101014;
+  --panel:    #191a21;
+  --ink:      #ffffff;
+  --ink-soft: #b8b9c0;
+  --ink-faint:#7e7f88;
+  --line:     #2a2b33;
+  --bg-veil:  rgba(16,16,20,.68);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+  --shadow-md: 0 10px 30px rgba(0,0,0,.5);
+  --shadow-lg: 0 28px 70px rgba(0,0,0,.6);
+}
+
+[data-surface=A] {
+  --canvas:   var(--brand);
+  --panel:    rgba(255,255,255,.12);
+  --ink:      var(--ink-on-brand);
+  --ink-soft: rgba(255,255,255,.88);
+  --ink-faint:rgba(255,255,255,.62);
+  --line:     rgba(255,255,255,.28);
+  --accent:   #ffffff;
+  --bg-veil:  rgba(219,0,99,.86);
+  --highlight: #ffffff;
+  --ink-on-highlight: var(--brand);
+  --shadow-sm: none;
+  --shadow-md: 0 10px 30px rgba(0,0,0,.18);
+  --shadow-lg: 0 28px 70px rgba(0,0,0,.24);
+}

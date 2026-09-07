@@ -1,0 +1,483 @@
+/* ═══════════════════════════════════════════════════════════
+   THE BUILDING BLOCKS — Coach Launch Brand Kit · Layer 2
+   ═══════════════════════════════════════════════════════════
+
+   The small repeating pieces, defined ONCE. A button, a card, a tick
+   list, a testimonial, a price box. They read their colour, type and
+   shape from whichever theme file is loaded — so the same block looks
+   right on a funnel page, a slide and a social post without being
+   rebuilt for each one.
+
+   HOW TO USE IT
+     <link rel="stylesheet" href="tokens/sovereign.css">   <- Layer 1: the look
+     <link rel="stylesheet" href="blocks.css">             <- Layer 2: this file
+     <link rel="stylesheet" href="surfaces/page.css">      <- Layer 3: the medium
+
+   NOTHING IN THIS FILE NAMES A COLOUR, A FONT OR A PIXEL RADIUS.
+   If you find yourself typing a hex code here, it belongs in a theme.
+
+   THE TYPE SCALE
+     A surface sets --fs-base (the body size for that medium). The theme
+     sets --scale (the ratio between steps). Every heading size below is
+     computed from those two, so a page, a slide and a 1080px post share
+     one hierarchy at three different physical sizes.
+   ─────────────────────────────────────────────────────────── */
+
+:root {
+  --fs-base: 1rem;               /* a surface overrides this          */
+
+  --fs--1: calc(var(--fs-base) / var(--scale));
+  --fs-0:  var(--fs-base);
+  --fs-1:  calc(var(--fs-0) * var(--scale));
+  --fs-2:  calc(var(--fs-1) * var(--scale));
+  --fs-3:  calc(var(--fs-2) * var(--scale));
+  --fs-4:  calc(var(--fs-3) * var(--scale));
+
+  --sp-1: .35rem;  --sp-2: .6rem;   --sp-3: 1rem;
+  --sp-4: 1.5rem;  --sp-5: 2.25rem; --sp-6: 3.5rem;  --sp-7: 5rem;
+}
+
+/* ---------- text ------------------------------------------- */
+
+.cl-eyebrow {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs--1);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--sp-2);
+}
+
+.cl-h1, .cl-h2, .cl-h3 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  letter-spacing: var(--track-display);
+  line-height: var(--leading-display);
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+  text-wrap: balance;
+}
+.cl-h1 { font-size: var(--fs-4); }
+.cl-h2 { font-size: var(--fs-3); }
+.cl-h3 { font-size: var(--fs-1); }
+
+.cl-lede {
+  font-family: var(--font-body);
+  font-size: var(--fs-1);
+  line-height: var(--leading-body);
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin: 0 0 var(--sp-4);
+  text-wrap: pretty;
+}
+
+.cl-body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-body);
+  font-size: var(--fs-0);
+  line-height: var(--leading-body);
+  color: var(--ink-soft);
+  max-width: 68ch;
+  margin: 0 0 var(--sp-3);
+}
+
+.cl-meta {
+  font-family: var(--font-body);
+  font-size: var(--fs--1);
+  line-height: 1.5;
+  color: var(--ink-faint);
+}
+
+/* accent-coloured run of text */
+.cl-hl { color: var(--accent); }
+
+/* The highlighter. A full fill, not the classic bottom-half marker stripe.
+   The stripe only works when the page behind the uncovered top half is light —
+   on a dark surface (or a dark-first theme) the recoloured text sits on the dark
+   page and disappears. A full fill reads on all three surfaces and all six themes. */
+.cl-mark {
+  background: var(--highlight);
+  color: var(--ink-on-highlight);
+  padding: .04em .22em;
+  border-radius: var(--r-xs);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.cl-rule {
+  border: 0;
+  border-top: var(--border-w) solid var(--line);
+  margin: var(--sp-5) 0;
+}
+
+/* ---------- the call to action ------------------------------ */
+
+.cl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs-0);
+  letter-spacing: .01em;
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  padding: .95em 1.9em;
+  border: var(--border-w) solid transparent;
+  border-radius: var(--r-pill);
+  background: var(--brand);
+  color: var(--ink-on-brand);
+  box-shadow: var(--shadow-sm);
+  transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+.cl-btn:hover  { background: var(--brand-deep); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.cl-btn:active { transform: translateY(0); }
+.cl-btn:focus-visible { outline: none; box-shadow: var(--ring); }
+
+.cl-btn--ghost {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--line);
+  box-shadow: none;
+}
+.cl-btn--ghost:hover { background: var(--brand-soft); border-color: var(--accent); box-shadow: none; }
+
+.cl-btn--block { display: flex; width: 100%; }
+
+/* the reassurance line that lives under a button */
+.cl-btn-note {
+  font-family: var(--font-body);
+  font-size: var(--fs--1);
+  color: var(--ink-faint);
+  margin-top: var(--sp-2);
+}
+
+/* ---------- containers -------------------------------------- */
+
+.cl-card {
+  background: var(--panel);
+  border: var(--border-w) solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--sp-4);
+}
+.cl-card--raised { box-shadow: var(--shadow-md); }
+.cl-card--feature { border-color: var(--accent); box-shadow: var(--shadow-lg); }
+
+.cl-callout {
+  background: var(--brand-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--r-xs);
+  padding: var(--sp-3) var(--sp-4);
+}
+
+.cl-badge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs--1);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  padding: .45em 1em;
+  border-radius: var(--r-pill);
+  background: var(--brand);
+  color: var(--ink-on-brand);
+}
+.cl-badge--quiet { background: var(--brand-soft); color: var(--accent); }
+
+/* ---------- lists ------------------------------------------- */
+
+.cl-list {
+  list-style: none;
+  margin: 0 0 var(--sp-4);
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-0);
+  line-height: var(--leading-body);
+  color: var(--ink-soft);
+}
+.cl-list li {
+  position: relative;
+  padding-left: 1.9em;
+  margin-bottom: var(--sp-2);
+}
+.cl-list li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: var(--weight-body-strong);
+}
+.cl-list--tick  li::before { content: "\2713"; color: var(--pos); }
+.cl-list--cross li::before { content: "\2715"; color: var(--neg); }
+.cl-list--num { counter-reset: cl; }
+.cl-list--num li { counter-increment: cl; }
+.cl-list--num li::before {
+  content: counter(cl);
+  font-family: var(--font-display);
+  color: var(--accent);
+}
+
+/* ---------- before / after ---------------------------------- */
+
+.cl-compare {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--sp-4);
+}
+.cl-compare__side { border-top: 3px solid var(--line); padding-top: var(--sp-3); }
+.cl-compare__side--before { border-top-color: var(--neg); }
+.cl-compare__side--after  { border-top-color: var(--pos); }
+.cl-compare__title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs--1);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  margin: 0 0 var(--sp-3);
+}
+.cl-compare__side--before .cl-compare__title { color: var(--neg); }
+.cl-compare__side--after  .cl-compare__title { color: var(--pos); }
+
+/* ---------- proof ------------------------------------------- */
+
+.cl-stat { text-align: center; }
+.cl-stat__n {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs-4);
+  line-height: 1;
+  letter-spacing: var(--track-display);
+  color: var(--accent);
+}
+.cl-stat__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs--1);
+  color: var(--ink-faint);
+  margin-top: var(--sp-2);
+}
+
+.cl-quote {
+  background: var(--panel);
+  border: var(--border-w) solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--sp-4);
+  margin: 0;
+}
+.cl-quote__text {
+  font-family: var(--font-body);
+  font-size: var(--fs-0);
+  line-height: var(--leading-body);
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+}
+.cl-quote__by {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-body);
+  font-size: var(--fs--1);
+  color: var(--ink-faint);
+}
+.cl-quote__by img {
+  width: 2.6em;
+  height: 2.6em;
+  border-radius: var(--r-pill);
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+.cl-quote__name { font-weight: var(--weight-body-strong); color: var(--ink-soft); }
+
+/* ---------- the offer --------------------------------------- */
+
+.cl-price { text-align: center; }
+.cl-price__was {
+  font-family: var(--font-body);
+  font-size: var(--fs-0);
+  color: var(--ink-faint);
+  text-decoration: line-through;
+}
+.cl-price__now {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs-4);
+  line-height: 1;
+  letter-spacing: var(--track-display);
+  color: var(--ink);
+}
+.cl-price__terms {
+  font-family: var(--font-body);
+  font-size: var(--fs--1);
+  color: var(--ink-faint);
+  margin-top: var(--sp-2);
+}
+
+.cl-stack { list-style: none; margin: 0; padding: 0; }
+.cl-stack li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--sp-3);
+  font-family: var(--font-body);
+  font-size: var(--fs-0);
+  color: var(--ink-soft);
+  padding: var(--sp-2) 0;
+  border-bottom: var(--border-w) solid var(--line);
+}
+.cl-stack__value { font-weight: var(--weight-body-strong); color: var(--ink); white-space: nowrap; }
+.cl-stack__total {
+  border-bottom: 0;
+  padding-top: var(--sp-3);
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  color: var(--ink);
+}
+
+/* ---------- background image layer -------------------------- */
+/* Any block can sit over a photo. The veil keeps text readable and
+   adapts to the surface automatically.                            */
+
+.cl-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: center / cover no-repeat;
+}
+.cl-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg-veil);
+}
+.cl-over { position: relative; z-index: 1; }
+
+/* ---------- funnel pieces ----------------------------------- */
+/* Long-form registration and upsell pages need a few parts a slide never
+   does. They live here, not in one page, so every funnel gets them and
+   they change colour with the theme like everything else.            */
+
+/* the sticky strip across the top — dates, "LIVE", scarcity */
+.cl-announce {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--ink);
+  color: var(--canvas);
+  font-family: var(--font-body);
+  font-size: var(--fs--1);
+  text-align: center;
+  padding: var(--sp-2) var(--sp-3);
+}
+.cl-announce b { color: var(--canvas); }
+
+/* countdown — maximum-contrast pills, readable on any surface */
+.cl-countdown {
+  display: inline-flex;
+  gap: var(--sp-2);
+  align-items: flex-end;
+}
+.cl-countdown__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .3em;
+  background: var(--ink);
+  color: var(--canvas);
+  border-radius: var(--r-md);
+  padding: .5em .7em;
+  min-width: 3.2em;
+}
+.cl-countdown__n {
+  font-family: var(--font-mono);
+  font-size: var(--fs-1);
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.cl-countdown__label {
+  font-size: calc(var(--fs--1) * .8);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  opacity: .7;
+}
+
+/* labelled image placeholder — mandatory until real assets arrive */
+.cl-imgslot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 12rem;
+  padding: var(--sp-4);
+  border: 2px dashed var(--line);
+  border-radius: var(--r-lg);
+  background: var(--panel);
+  background-image: repeating-linear-gradient(
+    45deg, transparent 0 10px, var(--line) 10px 11px);
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: var(--fs--1);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.cl-imgslot--wide { aspect-ratio: 16 / 9; min-height: 0; }
+.cl-imgslot--tall { aspect-ratio: 3 / 4; min-height: 0; }
+
+/* the order bump in a checkout — must interrupt, not blend */
+.cl-bump {
+  border: 2px dashed var(--accent);
+  border-radius: var(--r-md);
+  background: var(--brand-soft);
+  padding: var(--sp-3) var(--sp-4);
+}
+.cl-bump__title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs-0);
+  color: var(--ink);
+  margin: 0 0 var(--sp-1);
+}
+
+/* FAQ — built on <details>, so it works with no JavaScript at all */
+.cl-faq { border-top: var(--border-w) solid var(--line); }
+.cl-faq details {
+  border-bottom: var(--border-w) solid var(--line);
+}
+.cl-faq summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) 0;
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs-0);
+  color: var(--ink);
+}
+.cl-faq summary::-webkit-details-marker { display: none; }
+.cl-faq summary::after {
+  content: "+";
+  flex: 0 0 auto;
+  font-size: var(--fs-1);
+  line-height: 1;
+  color: var(--accent);
+}
+.cl-faq details[open] summary::after { content: "\2212"; }
+.cl-faq summary:focus-visible { outline: none; box-shadow: var(--ring); }
+.cl-faq__a {
+  font-family: var(--font-body);
+  font-size: var(--fs-0);
+  line-height: var(--leading-body);
+  color: var(--ink-soft);
+  max-width: 68ch;
+  margin: 0 0 var(--sp-3);
+}

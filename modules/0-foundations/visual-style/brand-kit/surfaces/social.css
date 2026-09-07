@@ -1,0 +1,116 @@
+/* ═══════════════════════════════════════════════════════════
+   SOCIAL & ADS — Coach Launch Brand Kit · Layer 3 (surface adapter)
+   Fixed-ratio canvases you screenshot or export as an image.
+   ═══════════════════════════════════════════════════════════
+
+   Load AFTER a theme and blocks.css.
+
+   THE FOUR SHAPES
+     .cl-canvas--square    1:1     1080x1080   feed post
+     .cl-canvas--portrait  4:5     1080x1350   feed post, most real estate
+     .cl-canvas--story     9:16    1080x1920   stories and reels
+     .cl-canvas--wide      1.91:1  1200x628    link previews and ad images
+
+   Sizes are in cqw against the canvas, so a canvas exports at full
+   resolution and previews at any size without reflowing.
+
+   SAFE AREAS
+     Story canvases carry --safe-top / --safe-bottom padding because the
+     platform draws its own controls over those bands. Anything you put
+     there gets covered. The other three shapes have no such band.
+
+   EXPORTING
+     Screenshot the .cl-canvas element at 1x (it is already at final pixel
+     size), or open the file at that width and capture the element.
+   ─────────────────────────────────────────────────────────── */
+
+.cl-canvas {
+  container-type: inline-size;
+  container-name: canvas;
+
+  --fs-base: 3.4cqw;
+  --safe-top: 0cqw;
+  --safe-bottom: 0cqw;
+
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1080px;
+  max-width: 100%;
+  padding: calc(8cqw + var(--safe-top)) 8cqw calc(8cqw + var(--safe-bottom));
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-0);
+  line-height: var(--leading-body);
+}
+
+.cl-canvas--square   { aspect-ratio: 1 / 1; }
+.cl-canvas--portrait { aspect-ratio: 4 / 5; }
+.cl-canvas--wide     { aspect-ratio: 1200 / 628; --fs-base: 3cqw; padding: 6cqw 7cqw; }
+.cl-canvas--story {
+  aspect-ratio: 9 / 16;
+  --fs-base: 4.2cqw;
+  --safe-top: 14cqw;
+  --safe-bottom: 18cqw;
+}
+
+/* A post has one job. Headlines run large and copy stays short. */
+.cl-canvas .cl-h1 { font-size: calc(var(--fs-3) * 1.15); max-width: 15ch; }
+.cl-canvas .cl-h2 { font-size: var(--fs-2); max-width: 18ch; }
+.cl-canvas .cl-lede { font-size: var(--fs-0); max-width: 30ch; }
+.cl-canvas .cl-body { font-size: var(--fs--1); max-width: 34ch; }
+
+.cl-canvas--center { align-items: center; text-align: center; }
+.cl-canvas--center .cl-h1,
+.cl-canvas--center .cl-lede { margin-inline: auto; }
+
+.cl-canvas > *:not(.cl-bg) { position: relative; z-index: 1; }
+
+/* ---------- the signature strip ------------------------------ */
+/* Handle, wordmark or URL. Same place on every post — this is most of
+   what makes a feed of separate posts read as one brand.            */
+
+.cl-canvas__sig {
+  position: absolute;
+  left: 8cqw;
+  right: 8cqw;
+  bottom: calc(4cqw + var(--safe-bottom));
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 2cqw;
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: calc(var(--fs--1) * .85);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.cl-canvas__sig img { height: 4cqw; width: auto; }
+.cl-canvas--wide .cl-canvas__sig { bottom: 4cqw; }
+
+/* ---------- the accent rule --------------------------------- */
+/* A short brand-coloured bar. Cheap, and it ties a set together.   */
+
+.cl-canvas__bar {
+  width: 12cqw;
+  height: .9cqw;
+  border-radius: var(--r-pill);
+  background: var(--accent);
+  margin-bottom: 4cqw;
+  flex: 0 0 auto;
+}
+.cl-canvas--center .cl-canvas__bar { margin-inline: auto; }
+
+/* ---------- carousel ---------------------------------------- */
+
+.cl-carousel {
+  display: flex;
+  gap: var(--sp-4);
+  overflow-x: auto;
+  padding-bottom: var(--sp-3);
+}
+.cl-carousel > .cl-canvas { flex: 0 0 auto; }
