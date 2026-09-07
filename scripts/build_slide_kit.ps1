@@ -16,8 +16,12 @@
 # hand guarantees drift, so the sources keep ONE copy behind markers and this script stamps
 # them in.
 #
-# SINGLE SOURCE OF TRUTH: every theme - including the default - is defined ONCE, in
-# coach-launch-themes.src.html. This script reads them from there. Do not define tokens here.
+# SINGLE SOURCE OF TRUTH: themes are NOT defined here and NOT in the slide module. They live
+# in the Brand Kit, at modules/0-foundations/visual-style/brand-kit/tokens/<name>.css, which
+# is the same file the client's funnel pages, ads and social posts read. This script inlines
+# those tokens into the molds because a mold is a standalone sandboxed document and cannot
+# link a stylesheet - but the VALUES exist in exactly one place. Never edit tokens here or in
+# coach-launch-themes.src.html; edit the Kit and re-run this script.
 #
 # MARKERS
 #   /*CLBASE*/      in a mold  -> default theme tokens + the shared base CSS
@@ -64,27 +68,71 @@ h1 .hl{color:var(--accent)}
 .s > *:not(.mark):not(.bg){position:relative;z-index:1}
 '@
 
-# ---------- read the themes ----------
+# ---------- read the themes from the BRAND KIT ----------
+# The Kit is the single source of truth for the whole business - slides, funnel pages,
+# ads and social all read the same six files. Slides cannot LINK a stylesheet (each mold
+# is a standalone sandboxed document), so this script inlines the Kit's tokens instead.
+# The values still live in exactly one place.
 $themeText = [IO.File]::ReadAllText($themeSrc)
-$rxTheme = [regex]'(?s)<script type="text/plain" data-theme="([^"]+)" data-fonts="([^"]+)">(.*?)</script>'
-$themes = @{}
-$order  = @()
-foreach ($m in $rxTheme.Matches($themeText)) {
-  $k = $m.Groups[1].Value
-  $themes[$k] = @{ fonts = $m.Groups[2].Value; tokens = $m.Groups[3].Value.Trim() }
-  $order += $k
+$kitDir = Join-Path $root 'modules\0-foundations\visual-style\brand-kit\tokens'
+if (-not (Test-Path $kitDir)) { throw "Brand Kit not found: $kitDir" }
+
+function Read-KitTheme([string]$path) {
+  $raw = [IO.File]::ReadAllText($path)
+  $fm = [regex]::Match($raw, '@import\s+url\(["'']([^"'']+)["'']\)')
+  if (-not $fm.Success) { throw "No @import font URL in $path" }
+  # strip comments and the @import, then compact - this block repeats in all 20 molds
+  $css = [regex]::Replace($raw, '(?s)/\*.*?\*/', '')
+  # match the whole url(...) - a Google Fonts URL contains ';' (wght@700;800),
+  # so stopping at the first ';' would leave half the URL in the stylesheet
+  $css = [regex]::Replace($css, '@import\s+url\([^)]*\)\s*;', '')
+  $css = [regex]::Replace($css, '\s*\r?\n\s*', ' ')
+  $css = [regex]::Replace($css, '\s{2,}', ' ')
+  $css = [regex]::Replace($css, '\s*([{};:,])\s*', '$1')
+  return @{ fonts = $fm.Groups[1].Value; tokens = $css.Trim() }
 }
-if ($themes.Count -eq 0) { throw 'No themes found in the themes source.' }
+
+$order  = @('crimson','ink','ember','sovereign','voltage','meadow')
+$themes = @{}
+foreach ($k in $order) {
+  $p = Join-Path $kitDir "$k.css"
+  if (-not (Test-Path $p)) { throw "Brand Kit theme missing: $p" }
+  $themes[$k] = Read-KitTheme $p
+}
 if (-not $themes.ContainsKey($DEFAULT_THEME)) { throw "Default theme '$DEFAULT_THEME' not defined." }
 
 # every theme must declare the full token contract
-$required = @('--brand','--canvas','--ink','--ink-soft','--ink-faint','--line','--panel','--pos',
-              '--font-display','--font-body','--r-lg','--r-md','--r-xs','--r-pill',
+$required = @('--brand','--brand-deep','--brand-soft','--ink-on-brand',
+              '--canvas','--panel','--ink','--ink-soft','--ink-faint','--line','--accent',
+              '--paper','--paper-ink','--paper-soft','--paper-line',
+              '--pos','--neg','--highlight','--ink-on-highlight','--bg-veil','--ring',
+              '--font-display','--font-body','--font-mono','--weight-display','--weight-body',
+              '--weight-body-strong','--track-display','--track-eyebrow',
+              '--leading-display','--leading-body','--scale',
+              '--r-lg','--r-md','--r-xs','--r-pill','--border-w',
+              '--shadow-sm','--shadow-md','--shadow-lg',
               '--track','--eyebrow-track','--weight')
 foreach ($k in $order) {
   $tok = $themes[$k].tokens
+  # The block must START at :root. Anything before it - a half-stripped @import, a stray
+  # brace - invalidates the first rule, and CSS error recovery then silently discards the
+  # ENTIRE :root block. The slide still renders; it just renders with no theme at all.
+  if (-not $tok.StartsWith(':root,[data-surface=L]{')) {
+    throw ("Theme '$k' does not start at :root - the token block is contaminated. Starts: '" +
+           $tok.Substring(0, [Math]::Min(60, $tok.Length)) + "'")
+  }
+  if ($tok.Contains('@import') -or $tok.Contains('googleapis')) {
+    throw "Theme '$k' still contains @import or a font URL in its token block"
+  }
   foreach ($r in $required) { if ($tok -notmatch [regex]::Escape($r + ':')) { throw "Theme '$k' is missing $r" } }
   foreach ($s in @('[data-surface=D]','[data-surface=A]')) { if (-not $tok.Contains($s)) { throw "Theme '$k' is missing $s" } }
+}
+
+# the themes preview page keeps its human descriptions and takes only the tokens
+# from the Kit, one <!--CLTHEME:name--> marker per section
+function New-ThemeBlock([string]$k) {
+  return '  <script type="text/plain" data-theme="' + $k + '" data-fonts="' + $themes[$k].fonts + '">' +
+         "`r`n" + $themes[$k].tokens + "`r`n" + '  </script>'
 }
 
 # ---------- build the molds ----------
@@ -118,6 +166,7 @@ foreach ($name in $PREVIEW_MOLDS) {
 
 $themeBuilt = $themeText.Replace('<!--CLBASECSS-->', $baseCss)
 $themeBuilt = $themeBuilt.Replace('<!--CLMOLDS-->', $sb.ToString().TrimEnd())
+foreach ($k in $order) { $themeBuilt = $themeBuilt.Replace('<!--CLTHEME:' + $k + '-->', (New-ThemeBlock $k)) }
 $themeBuilt = "<!-- BUILT FILE - do not edit. Edit coach-launch-themes.src.html and re-run scripts/build_slide_kit.ps1 -->`r`n" + $themeBuilt
 [IO.File]::WriteAllText($themeOut, $themeBuilt, $utf8)
 
@@ -126,11 +175,14 @@ $m2 = [IO.File]::ReadAllText($moldOut)
 $t2 = [IO.File]::ReadAllText($themeOut)
 $molds     = ([regex]::Matches($m2, 'script type="text/plain" data-type=')).Count
 $moldLeft  = ([regex]::Matches($m2, [regex]::Escape('/*CLBASE*/'))).Count + ([regex]::Matches($m2, [regex]::Escape('<!--CLFONTS-->'))).Count
-$themeLeft = ([regex]::Matches($t2, [regex]::Escape('<!--CLBASECSS-->'))).Count + ([regex]::Matches($t2, [regex]::Escape('<!--CLMOLDS-->'))).Count
+$themeLeft = ([regex]::Matches($t2, [regex]::Escape('<!--CLBASECSS-->'))).Count + ([regex]::Matches($t2, [regex]::Escape('<!--CLMOLDS-->'))).Count + ([regex]::Matches($t2, '<!--CLTHEME:')).Count
+$themesOut = ([regex]::Matches($t2, 'data-theme="')).Count
 $nul       = ([regex]::Matches($m2, "`0")).Count + ([regex]::Matches($t2, "`0")).Count
 $prevMolds = ([regex]::Matches($t2, 'data-mold=')).Count
 
 Write-Output ("themes defined : " + $themes.Count + "  [" + ($order -join ', ') + "]")
+Write-Output ("  source       : " + $kitDir)
+Write-Output ("themes stamped : $themesOut  (expected " + $order.Count + ")")
 Write-Output ("default theme  : " + $DEFAULT_THEME)
 Write-Output ("molds built    : $molds  (expected 20)")
 Write-Output ("mold markers   : $moldLeft  (expected 0)")
@@ -140,7 +192,8 @@ Write-Output ("NUL bytes      : $nul  (expected 0)")
 Write-Output ("-> " + $moldOut)
 Write-Output ("-> " + $themeOut)
 
-if ($molds -ne 20 -or $moldLeft -ne 0 -or $themeLeft -ne 0 -or $nul -ne 0 -or $prevMolds -ne $PREVIEW_MOLDS.Count) {
+if ($molds -ne 20 -or $moldLeft -ne 0 -or $themeLeft -ne 0 -or $nul -ne 0 -or
+    $prevMolds -ne $PREVIEW_MOLDS.Count -or $themesOut -ne $order.Count) {
   throw 'Verification FAILED.'
 }
 Write-Output 'OK'

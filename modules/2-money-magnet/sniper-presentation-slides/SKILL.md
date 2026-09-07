@@ -2,8 +2,9 @@
 name: sniper-presentation-slides
 description: >
   Sniper Presentation™ Slides — build an on-brand HTML slide deck from the APPROVED
-  Sniper Presentation™ Script (stamped by Step 4), twenty designed slide molds, and a
-  choice of six themes to match the business. One self-contained deck, presented from
+  Sniper Presentation™ Script (stamped by Step 4), twenty designed slide molds, and the
+  client's Brand Kit — the same six-theme system their funnel pages, ads and social posts
+  run on, so the deck matches everything else they own. One self-contained deck, presented from
   the Slide Viewer on your own laptop, with the speaker script riding along as
   presenter-only notes. Use whenever the user wants to turn their Script into slides,
   a deck, or a presentation, or wants an existing deck rebuilt in a different look.
@@ -94,7 +95,10 @@ structure because a table said so.
 1. **The Script** — stamped `cl_asset: sniper-presentation-script`, `status: approved`.
    The ONLY source of copy.
 2. **The mold library** — `coach-launch-molds.html`. The ONLY source of markup.
-3. **The theme library** — `coach-launch-themes.html`. The ONLY source of colour and type.
+3. **The Brand Kit** — `modules/0-foundations/visual-style/brand-kit/tokens/<name>.css`.
+   The ONLY source of colour and type, and **not a slide asset** — it is the same file the
+   client's funnel pages, ads and social posts read. `coach-launch-themes.html` is a preview
+   of those six, built from them; it is not a second copy you may edit.
 
 Plus the **Slide Viewer** (`slide-viewer.html`), the player the finished deck is assembled into.
 
@@ -108,17 +112,30 @@ That is what lets the user say "rebuild it in Sovereign" and get a completely di
 in minutes, with every headline still exactly as they approved it.
 
 Everything else — the format, the close, the VIP Hour, the presenter, their system name — is
-read from the Script's stamp. You do not ask for what the file already tells you. **The theme is
-the one genuine choice the user makes here**, because only they know what their business should
-look like.
+read from the Script's stamp. You do not ask for what the file already tells you.
+
+**The theme is not a choice you make here either.** It was made once, upstream, in the client's
+**Visual Style Guide** (Brand Foundation 2), which ends with a block like this:
+
+```
+BRAND KIT: sovereign
+FILE: modules/0-foundations/visual-style/brand-kit/tokens/sovereign.css
+OVERRIDES: none
+```
+
+Ask for that block, and use the Kit it names. A deck in a different look from the client's funnel
+pages and posts is the exact problem this system exists to stop. Only offer the six as a fresh
+choice when the client genuinely has no Visual Style Guide yet — and say plainly that whatever
+they pick here becomes their look everywhere, so it is worth building the Guide properly.
 
 ## WHAT MAKES THIS DECK DIFFERENT
 
 - **A real Presenter View.** The SPEAKER SCRIPT rides along as presenter-only notes with a run
   sheet and a timer, on a second screen the room never sees. The talk track never lands on the wall.
-- **Six themes, not one house style.** The user picks the look that matches their business —
-  editorial, warm, luxury, technical, bright, or the Coach Launch default — and their own colours
-  go over the top. Changing theme later is one instruction, not a rebuild.
+- **It already matches everything else they own.** The deck is built on the client's Brand Kit —
+  the same six-theme system their funnel pages, ads and social posts run on. The deck doesn't
+  merely look designed; it looks like *them*, because it is reading the same file. Changing their
+  look later is one instruction, not a rebuild — and it changes the funnel too.
 - **Zero artwork required.** Every mold works from words alone. You never ask for a photo.
 - **One file, offline.** Double-click, present. No PowerPoint, no designer, no subscription.
 
@@ -551,10 +568,15 @@ glance. Overflow → STOP and show the user (RULE 1). Never trim silently.
   `02-intro-split`. No photo → `01-cover`**, which is centred and designed to carry text alone. Decide
   it from what the user actually gave you; never ask for a photo to justify the mold (RULE 5).
 
-## THE THEMES — six looks, one set of molds
+## THE THEMES — the client's Brand Kit, not a slide setting
 
-Read them from `coach-launch-themes.html`. Each `data-theme` block is a complete token set and
-carries its own `data-fonts` URL. This table is the summary; the file is the source.
+These six are the **Brand Kit**, at `modules/0-foundations/visual-style/brand-kit/tokens/`. They are
+the client's whole visual identity, not a deck skin — the same files their funnel pages, ads and
+social posts load. `coach-launch-themes.html` shows the six on real molds and is generated from
+them by `scripts/build_slide_kit.ps1`. **Never edit tokens in the slide module.** Edit the Kit and
+re-run that script, or you will have two versions of the client's brand.
+
+This table is the summary; the Kit files are the source.
 
 | `data-theme` | The look | Suits |
 |---|---|---|
@@ -573,25 +595,34 @@ URL. Nothing else changes. One theme across the whole deck — never mix.
 "dark" surface is near-black. The plan table's L/D/A rhythm still holds — the contrast is just
 carried differently. Don't "fix" it by lightening it.
 
-## AUTO-BRAND — the theme first, then their colours over it
+## AUTO-BRAND — the Kit is already their brand
 
-A theme is the starting point, not the finish. If the user has a **Visual Style Guide**, overlay
-their palette onto the theme they chose — they keep its proportions, corners and character, and
-get their own colour.
+**Start from the `BRAND KIT:` block in their Visual Style Guide.** In the normal case its
+`OVERRIDES:` line says `none`, and there is nothing to overlay — the Kit *is* their palette. Ship
+it as-is. Do not ask twenty colour questions about a decision that has already been made.
 
-- **Overlay only these:** `--brand` (their hero colour), `--canvas`, `--ink`, `--ink-soft`, and
+Only when `OVERRIDES:` names something do you change a token, and only that token. The usual case
+is a client with existing brand equity who kept their own hero colour.
+
+- **Overlay only what the Guide lists** — typically `--brand` and its partners, and
   `--font-display` / `--font-body` (updating the fonts `<link>` to match). Leave the radii, the
-  tracking, the weight and the surface blocks as the theme set them — those are what make the
-  theme a theme.
-- ⚠️ **If you change `--canvas` or `--ink`, check the dark and accent surfaces still read.** A
-  theme whose accent surface assumes a dark brand colour will fail with a pale one. When the
-  overlay breaks contrast, say so and offer the theme unmodified instead.
+  tracking, the weights and the surface blocks exactly as the Kit set them. Those are what make a
+  theme a theme, and they are also what keeps the deck matching the client's funnel.
+- ⚠️ **If you override `--brand`, you MUST re-check `--ink-on-brand`.** That token is the text
+  colour that sits on the hero colour, and white is not a safe default: white on gold is 2.9:1 and
+  white on cyan is 1.8:1 — both unreadable. Sovereign, Voltage and Meadow ship **dark** text on
+  their hero for exactly this reason. If their colour is mid-brightness (gold, orange, green,
+  cyan), set `--ink-on-brand` to their dark ink tone and say why. If you cannot make it read,
+  say so and offer the Kit unmodified.
+- ⚠️ **Changing `--canvas` or `--ink` means re-checking the dark and accent surfaces.** When an
+  overlay breaks contrast, the Kit unmodified is the better deck. Say so.
 - From the **Business Brand Profile**: presenter name and brand name → the bottom-right mark;
   positioning and personality → the mood of any images.
-- No Visual Style Guide? Then the theme ships as-is. That is a perfectly good outcome — say so
-  rather than asking twenty colour questions.
+- **No Visual Style Guide?** Offer the six, and tell them what they are choosing: not a deck
+  theme, but the look their funnel pages, ads and posts will carry too. Then point them at the
+  Visual Style Guide builder so the choice gets recorded where everything else can read it.
 
-`✔ Locked: theme = [name][ + their brand overlay] · mark: [presenter · brand]`
+`✔ Locked: Brand Kit = [name][ + the overrides their Guide lists] · mark: [presenter · brand]`
 
 ## IMAGES — OPTIONAL, NEVER ASKED
 
@@ -745,8 +776,14 @@ fit, I'll show you and you'll decide.
 
 That's a **[n]-slide deck** — one slide per beat in your Script, so that number comes from your Script, not from a template.
 
-Now the one thing only you can answer — **which look?** Open `coach-launch-themes.html` in your
-browser to see all six on real slides, or pick from here:
+Now the look — and if you've built your **Visual Style Guide**, this is already decided. Paste me
+the `BRAND KIT:` block from it and I'll use that, so your deck matches your funnel pages and your
+posts rather than being its own island.
+
+**Haven't built the Guide yet?** Then pick from the six below — but know what you're picking. This
+isn't a deck theme; it's the look everything you publish will carry. Open
+`brand-kit/brand-kit.html` to see each one on a real funnel page, a real slide and a real post
+side by side, or `coach-launch-themes.html` to see all six on real slides:
 
 • **Crimson** — the Coach Launch house look. Confident, modern, high contrast.
 • **Ink** — editorial restraint. Serif on warm paper. For selling judgement, not energy.
