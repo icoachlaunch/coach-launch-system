@@ -7,6 +7,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Lato:wght@400;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- The Brand Kit. This gallery previews the three styles in the Coach Launch
+     house look; a client sees them in THEIR kit. Every frame below carries an
+     explicit data-surface, so the Kit wins on the artwork and these chrome
+     tokens stay confined to the page around it. -->
+<link rel="stylesheet" href="../../0-foundations/visual-style/brand-kit/tokens/crimson.css">
 <style>
 /* ============================================================
    PAGE CHROME — the instructions around the styles.
@@ -15,11 +20,11 @@
    ============================================================ */
 * { box-sizing:border-box; margin:0; padding:0 }
 :root{
-  --cl-crimson:#db0063;
+  --cl-crimson:var(--brand);
   --ink:#1a1c20; --soft:#5c6270; --line:#e3e5ea; --bg:#f6f7f9;
-  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  --disp:"Montserrat",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  --body:"Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  --mono:var(--font-mono);
+  --disp:var(--font-display);
+  --body:var(--font-body);
 }
 body{ background:var(--bg); color:var(--ink); font-family:var(--body); -webkit-font-smoothing:antialiased; line-height:1.65 }
 .wrap{ max-width:1200px; margin:0 auto; padding:0 28px }
@@ -68,6 +73,15 @@ p:last-child{ margin-bottom:0 }
 .replay{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#fff; background:var(--ink); border:0; padding:12px 18px; cursor:pointer; transition:background .18s }
 .replay:hover{ background:var(--cl-crimson) }
 .replay:focus-visible{ outline:2px solid var(--cl-crimson); outline-offset:3px }
+.sty-actions{ display:flex; align-items:center; gap:10px; flex-wrap:wrap }
+.theme-sw{ display:inline-flex; border:1px solid var(--line); border-radius:2px; overflow:hidden }
+.theme-sw button{ font-family:var(--mono); font-size:10.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  padding:12px 15px; border:0; background:#fff; color:var(--soft); cursor:pointer; transition:background .15s, color .15s }
+.theme-sw button + button{ border-left:1px solid var(--line) }
+.theme-sw button:hover{ background:var(--bg) }
+.theme-sw button.on{ background:var(--ink); color:#fff }
+.theme-sw button.on:hover{ background:var(--ink) }
+.theme-sw button:focus-visible{ outline:2px solid var(--cl-crimson); outline-offset:-3px }
 .sty-facts{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:20px }
 .sty-facts > dl{ background:#fff; padding:16px 18px }
 .sty-facts dt{ font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:#98a0ae; margin-bottom:8px }
@@ -102,29 +116,41 @@ p:last-child{ margin-bottom:0 }
 .frame .cta{ display:flex; flex-direction:column; align-items:flex-end; gap:9px; text-align:right }
 .frame .cta-txt{ font-family:var(--disp); font-weight:700; letter-spacing:-.01em; white-space:nowrap }
 .cta-btn{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--disp);
-  font-weight:800; white-space:nowrap; background:var(--ac); color:#fff; cursor:pointer;
+  font-weight:800; white-space:nowrap; background:var(--ac); color:var(--ink-on-brand); cursor:pointer;
   transition:transform .18s ease, box-shadow .18s ease, filter .18s ease }
 .cta-btn:hover{ transform:translateY(-2px); filter:brightness(1.07) }
 .cta-btn:active{ transform:translateY(0) }
-.cta-btn:focus-visible{ outline:2px solid #fff; outline-offset:3px }
+.cta-btn:focus-visible{ outline:none; box-shadow:var(--ring) }
 .cta-btn .ic{ width:16px; height:16px; stroke-width:2.1 }
 
 /* ============================================================
    STYLE 01 — BLUEPRINT
    ============================================================ */
+/* Blueprint on paper, or blueprint on ink - and it is the SAME block either way.
+   Light and dark are the Kit's own surfaces: put data-surface="L" or "D" on the
+   .frame element and every value below follows. No second palette to maintain. */
 .bp{
-  --ac:#db0063;
-  --ink2:#101720; --soft2:#4e5a6b; --mute:#8b95a4;
-  --pap:#eef1f4;
-  --hair:rgba(18,42,72,.20); --hair2:rgba(18,42,72,.10);
+  --ac:      var(--brand);
+  --ink2:    var(--ink);
+  --soft2:   var(--ink-soft);
+  --mute:    var(--ink-faint);
+  --pap:     var(--canvas);
+  --hair:    color-mix(in srgb, var(--ink) 24%, transparent);
+  --hair2:   color-mix(in srgb, var(--ink) 11%, transparent);
+  --grid1:   color-mix(in srgb, var(--ink)  6%, transparent);
+  --grid2:   color-mix(in srgb, var(--ink)  9%, transparent);
+  --plate:   color-mix(in srgb, var(--paper) 62%, transparent);
+  --chip:    var(--paper);
+  --hot:     var(--brand-soft);
+  --btn-shadow: var(--shadow-md);
   background:var(--pap); font-family:var(--body); color:var(--ink2); line-height:1.5;
 }
 .bp .grid{ position:absolute; inset:0; z-index:0; opacity:0;
   background-image:
-    linear-gradient(rgba(18,42,72,.055) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(18,42,72,.055) 1px,transparent 1px),
-    linear-gradient(rgba(18,42,72,.075) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(18,42,72,.075) 1px,transparent 1px);
+    linear-gradient(var(--grid1) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid1) 1px,transparent 1px),
+    linear-gradient(var(--grid2) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid2) 1px,transparent 1px);
   background-size:11px 11px, 11px 11px, 88px 88px, 88px 88px }
 .bp.playing .grid{ animation:bpFade .7s ease forwards }
 .bp .tick{ position:absolute; width:26px; height:26px; z-index:3; opacity:0 }
@@ -142,7 +168,7 @@ p:last-child{ margin-bottom:0 }
 .bp.playing .tick{ animation:bpSnap .34s cubic-bezier(.2,1.5,.4,1) forwards .35s }
 .bp .sheet{ position:relative; z-index:2; height:100%; padding:42px 56px 34px; display:flex; flex-direction:column }
 .bp .mast{ gap:20px; margin-top:12px }
-.bp .logo{ width:74px; height:74px; padding:8px; border:1px solid var(--hair); background:#fff; color:var(--ac); opacity:0 }
+.bp .logo{ width:74px; height:74px; padding:8px; border:1px solid var(--hair); background:var(--chip); color:var(--ac); opacity:0 }
 .bp .lg{ height:56px; min-width:56px }
 .bp.playing .logo{ animation:bpFade .5s ease forwards .45s }
 .bp .eb{ font-family:var(--mono); font-size:10.5px; font-weight:500; letter-spacing:.26em; text-transform:uppercase; color:var(--soft2); display:flex; align-items:center; gap:12px; opacity:0 }
@@ -163,7 +189,7 @@ p:last-child{ margin-bottom:0 }
   font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--ac); white-space:nowrap; opacity:0 }
 .bp.playing .dim-val{ animation:bpFade .4s ease forwards 1.5s }
 .bp .plates{ display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:minmax(0,1fr); gap:22px; flex:1; min-height:0 }
-.bp .plate{ border:1px solid var(--hair); background:rgba(255,255,255,.62); display:flex; flex-direction:column; clip-path:inset(0 100% 0 0) }
+.bp .plate{ border:1px solid var(--hair); background:var(--plate); display:flex; flex-direction:column; clip-path:inset(0 100% 0 0) }
 .bp.playing .plate{ animation:bpWipe .62s cubic-bezier(.35,.9,.25,1) forwards }
 .bp.playing .plate:nth-child(1){ animation-delay:1.26s }
 .bp.playing .plate:nth-child(2){ animation-delay:1.42s }
@@ -187,7 +213,7 @@ p:last-child{ margin-bottom:0 }
 .bp.playing .plate:nth-child(3) .row:nth-child(1){ animation-delay:2.22s }
 .bp.playing .plate:nth-child(3) .row:nth-child(2){ animation-delay:2.32s }
 .bp.playing .plate:nth-child(3) .row:nth-child(3){ animation-delay:2.42s }
-.bp .ricon{ flex:0 0 auto; width:32px; height:32px; border:1px solid var(--hair); background:#fff;
+.bp .ricon{ flex:0 0 auto; width:32px; height:32px; border:1px solid var(--hair); background:var(--chip);
   display:flex; align-items:center; justify-content:center; color:var(--ac) }
 .bp .rbody{ flex:1; min-width:0 }
 .bp .row-top{ display:flex; align-items:center }
@@ -195,7 +221,7 @@ p:last-child{ margin-bottom:0 }
 .bp .row-lead{ height:1px; background:var(--hair); width:12px; flex:0 0 auto }
 .bp .row-name{ font-family:var(--disp); font-weight:700; font-size:14.2px; letter-spacing:-.008em }
 .bp .row-out{ margin-top:5px; font-size:12px; line-height:1.44; color:var(--soft2) }
-.bp .row.hot{ background:rgba(219,0,99,.05); box-shadow:inset 3px 0 0 var(--ac) }
+.bp .row.hot{ background:var(--hot); box-shadow:inset 3px 0 0 var(--ac) }
 .bp .row.hot .row-n{ border-color:var(--ac); color:var(--ac) }
 .bp .row.hot .ricon{ border-color:var(--ac) }
 .bp .hot-flag{ position:absolute; right:15px; top:13px; font-family:var(--mono); font-size:8.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ac) }
@@ -203,8 +229,7 @@ p:last-child{ margin-bottom:0 }
 .bp .cta{ opacity:0 }
 .bp.playing .cta{ animation:bpFade .5s ease forwards 2.5s }
 .bp .cta-txt{ font-size:14.5px; color:var(--ink2) }
-.bp .cta-btn{ padding:13px 22px; border-radius:3px; font-size:13.5px; letter-spacing:-.005em;
-  box-shadow:0 8px 20px -10px var(--ac) }
+.bp .cta-btn{ padding:13px 22px; border-radius:3px; font-size:13.5px; letter-spacing:-.005em; box-shadow:var(--btn-shadow) }
 .bp .tblock{ border:1px solid var(--ink2); display:grid; grid-template-columns:auto auto; opacity:0 }
 .bp.playing .tblock{ animation:bpFade .5s ease forwards 2.55s }
 .bp .tblock span{ padding:8px 15px; border-right:1px solid var(--hair); border-bottom:1px solid var(--hair);
@@ -221,14 +246,29 @@ p:last-child{ margin-bottom:0 }
 /* ============================================================
    STYLE 02 — MARQUEE
    ============================================================ */
+/* Marquee at night or by day - the SAME block either way. Light and dark are
+   the Kit's own surfaces: put data-surface="L" or "D" on the .frame element. */
 .mq{
-  --ac:#db0063;
-  --ink2:#f5f5f7; --soft2:#a2a2ad; --mute:#63636e;
-  --bg2:#0a0a0c; --hair:rgba(255,255,255,.10);
+  --ac:        var(--brand);
+  --ink2:      var(--ink);
+  --soft2:     var(--ink-soft);
+  --mute:      var(--ink-faint);
+  --bg2:       var(--canvas);
+  --hair:      color-mix(in srgb, var(--ink) 13%, transparent);
+  --glow:      var(--brand-soft);
+  --card:      var(--paper);
+  --card-ink:  var(--paper-ink);
+  --card-soft: var(--paper-soft);
+  --card-mute: color-mix(in srgb, var(--paper-ink) 45%, var(--paper));
+  --card-line: var(--paper-line);
+  --chip:      color-mix(in srgb, var(--paper-ink) 4%, var(--paper));
+  --chip-line: var(--paper-line);
+  --sweep-hi:  var(--brand);
+  --card-edge: color-mix(in srgb, var(--ink) 10%, transparent);
   background:var(--bg2); font-family:var(--body); color:var(--ink2); line-height:1.5;
 }
 .mq::before{ content:""; position:absolute; inset:0; z-index:0;
-  background:radial-gradient(120% 68% at 50% -14%, rgba(219,0,99,.16), transparent 62%) }
+  background:radial-gradient(120% 68% at 50% -14%, var(--glow), transparent 62%) }
 .mq .rail{ position:absolute; left:0; right:0; z-index:4; height:44px; display:flex; align-items:center; justify-content:space-between;
   padding:0 40px; font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--mute); opacity:0 }
 .mq .rail.top{ top:0; border-bottom:1px solid var(--hair) }
@@ -262,26 +302,26 @@ p:last-child{ margin-bottom:0 }
 .mq.playing .col:nth-child(2){ animation-delay:1.72s }
 .mq.playing .col:nth-child(3){ animation-delay:1.94s }
 .mq .bar{ background:var(--ac); padding:12px 16px; display:flex; align-items:baseline; gap:12px }
-.mq .bar .n{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.2em; color:rgba(255,255,255,.72) }
-.mq .bar .nm{ font-family:var(--disp); font-weight:900; font-size:19px; letter-spacing:.01em; text-transform:uppercase; color:#fff }
+.mq .bar .n{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.2em; color:color-mix(in srgb, var(--ink-on-brand) 72%, transparent) }
+.mq .bar .nm{ font-family:var(--disp); font-weight:900; font-size:19px; letter-spacing:.01em; text-transform:uppercase; color:var(--ink-on-brand) }
 .mq .tag{ padding:13px 16px 15px; min-height:57px; font-size:13px; line-height:1.45; color:var(--soft2); border-bottom:1px solid var(--hair) }
 /* the steps sit on a white card under the phase bar — dark frame, light content */
-.mq .steps{ flex:1; display:flex; flex-direction:column; background:#fff }
-.mq .st{ position:relative; flex:1; padding:14px 16px; border-bottom:1px solid #e7e7ec; display:flex; gap:14px; align-items:center }
+.mq .steps{ flex:1; display:flex; flex-direction:column; background:var(--card); border:1px solid var(--card-edge) }
+.mq .st{ position:relative; flex:1; padding:14px 16px; border-bottom:1px solid var(--card-line); display:flex; gap:14px; align-items:center }
 .mq .st:last-child{ border-bottom:0 }
-.mq .sicon{ flex:0 0 auto; width:38px; height:38px; background:#f5f5f8; border:1px solid #e4e4ea;
+.mq .sicon{ flex:0 0 auto; width:38px; height:38px; background:var(--chip); border:1px solid var(--chip-line);
   display:flex; align-items:center; justify-content:center; color:var(--ac) }
 .mq .sbody{ flex:1; min-width:0 }
-.mq .st .num{ font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.2em; color:#9a9aa6 }
-.mq .st .nm{ font-family:var(--disp); font-weight:800; font-size:14px; letter-spacing:.005em; text-transform:uppercase; line-height:1.2; margin-top:5px; color:#101014 }
-.mq .st .out{ margin-top:6px; font-size:12.3px; line-height:1.44; color:#5c5c68 }
+.mq .st .num{ font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.2em; color:var(--card-mute) }
+.mq .st .nm{ font-family:var(--disp); font-weight:800; font-size:14px; letter-spacing:.005em; text-transform:uppercase; line-height:1.2; margin-top:5px; color:var(--card-ink) }
+.mq .st .out{ margin-top:6px; font-size:12.3px; line-height:1.44; color:var(--card-soft) }
 .mq .st.hot{ background:var(--ac) }
-.mq .st.hot .num{ color:rgba(255,255,255,.72) }
-.mq .st.hot .nm, .mq .st.hot .out{ color:#fff }
-.mq .st.hot .sicon{ background:#fff; border-color:#fff; color:var(--ac) }
-.mq .st .flag{ position:absolute; right:14px; top:13px; font-family:var(--mono); font-size:8.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.85) }
+.mq .st.hot .num{ color:color-mix(in srgb, var(--ink-on-brand) 72%, transparent) }
+.mq .st.hot .nm, .mq .st.hot .out{ color:var(--ink-on-brand) }
+.mq .st.hot .sicon{ background:var(--ink-on-brand); border-color:var(--ink-on-brand); color:var(--ac) }
+.mq .st .flag{ position:absolute; right:14px; top:13px; font-family:var(--mono); font-size:8.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:color-mix(in srgb, var(--ink-on-brand) 85%, transparent) }
 .mq .sweep{ position:absolute; top:0; bottom:0; width:120px; z-index:6; pointer-events:none; left:-160px;
-  background:linear-gradient(90deg, transparent, rgba(219,0,99,.30) 42%, var(--ac) 68%, rgba(255,255,255,.9) 76%, transparent 88%) }
+  background:linear-gradient(90deg, transparent, color-mix(in srgb, var(--brand) 30%, transparent) 42%, var(--ac) 68%, var(--sweep-hi) 76%, transparent 88%) }
 .mq.playing .sweep{ animation:mqSweep 1.45s cubic-bezier(.5,.05,.3,1) forwards 1.32s }
 @keyframes mqFade{ to{ opacity:1 } }
 @keyframes mqMask{ to{ clip-path:inset(0 0 0 0) } }
@@ -292,14 +332,30 @@ p:last-child{ margin-bottom:0 }
 /* ============================================================
    STYLE 03 — MONOLITH
    ============================================================ */
+/* Monolith at night or by day - the SAME block either way. Light and dark are
+   the Kit's own surfaces: put data-surface="L" or "D" on the .frame element. */
 .mo{
-  --ac:#db0063;
-  --ink2:#f2f3f5; --soft2:#9aa0ab; --mute:#666c78;
-  --bg2:#0d0f12; --slab:#15181d; --hair:rgba(255,255,255,.075);
+  --ac:         var(--brand);
+  --ink2:       var(--ink);
+  --soft2:      var(--ink-soft);
+  --mute:       var(--ink-faint);
+  --bg2:        var(--canvas);
+  --glow:       color-mix(in srgb, var(--ink) 5%, transparent);
+  --slab-bg:    var(--paper);
+  --slab-ink:   var(--paper-ink);
+  --slab-soft:  var(--paper-soft);
+  --slab-mute:  color-mix(in srgb, var(--paper-ink) 45%, var(--paper));
+  --slab-line:  var(--paper-line);
+  --slab-border: color-mix(in srgb, var(--ink) 10%, transparent);
+  --slab-shadow: var(--shadow-lg);
+  --chip:       color-mix(in srgb, var(--paper-ink) 4%, var(--paper));
+  --chip-line:  var(--paper-line);
+  --hot:        var(--brand-soft);
+  --btn-shadow: var(--shadow-md);
   background:var(--bg2); font-family:var(--body); color:var(--ink2); line-height:1.5;
 }
 .mo::before{ content:""; position:absolute; inset:0; z-index:0;
-  background:radial-gradient(90% 60% at 50% 8%, rgba(255,255,255,.045), transparent 60%) }
+  background:radial-gradient(90% 60% at 50% 8%, var(--glow), transparent 60%) }
 .mo .body{ position:relative; z-index:3; height:100%; padding:54px 58px 44px; display:flex; flex-direction:column }
 .mo .top{ display:flex; justify-content:space-between; align-items:flex-start; gap:36px }
 .mo .mast{ gap:20px; margin-top:13px }
@@ -320,7 +376,7 @@ p:last-child{ margin-bottom:0 }
 .mo .chip .wm{ font-family:var(--disp); font-weight:800; font-size:19px; letter-spacing:-.01em }
 .mo .chip .ct{ margin-top:7px; font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--mute) }
 .mo .slabs{ display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:minmax(0,1fr); gap:20px; flex:1; min-height:0; margin-top:30px }
-.mo .slab{ position:relative; background:#fff; border-radius:2px;
+.mo .slab{ position:relative; background:var(--slab-bg); border-radius:2px; border:1px solid var(--slab-border); box-shadow:var(--slab-shadow);
   display:flex; flex-direction:column; overflow:hidden; opacity:0; transform:translateY(26px) }
 .mo.playing .slab{ animation:moStand .68s cubic-bezier(.2,.95,.25,1) forwards }
 .mo.playing .slab:nth-child(1){ animation-delay:1.16s }
@@ -332,11 +388,11 @@ p:last-child{ margin-bottom:0 }
 .mo.playing .slab:nth-child(2) .seam{ animation-delay:1.76s }
 .mo.playing .slab:nth-child(3) .seam{ animation-delay:1.9s }
 .mo .slab-head{ padding:21px 22px 18px }
-.mo .slab-id{ font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:#98a0ae }
-.mo .slab-name{ font-family:var(--disp); font-weight:800; font-size:24px; letter-spacing:-.02em; margin-top:10px; color:#101014 }
-.mo .slab-tag{ margin-top:9px; font-size:12.8px; line-height:1.46; color:#5c6270; min-height:38px }
-.mo .slab-steps{ flex:1; display:flex; flex-direction:column; border-top:1px solid #e7e7ec }
-.mo .ms{ position:relative; flex:1; padding:14px 22px; border-bottom:1px solid #e7e7ec; opacity:0;
+.mo .slab-id{ font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--slab-mute) }
+.mo .slab-name{ font-family:var(--disp); font-weight:800; font-size:24px; letter-spacing:-.02em; margin-top:10px; color:var(--slab-ink) }
+.mo .slab-tag{ margin-top:9px; font-size:12.8px; line-height:1.46; color:var(--slab-soft); min-height:38px }
+.mo .slab-steps{ flex:1; display:flex; flex-direction:column; border-top:1px solid var(--slab-line) }
+.mo .ms{ position:relative; flex:1; padding:14px 22px; border-bottom:1px solid var(--slab-line); opacity:0;
   display:flex; align-items:center; gap:14px }
 .mo .ms:last-child{ border-bottom:0 }
 .mo.playing .ms{ animation:moFade .45s ease forwards }
@@ -350,13 +406,13 @@ p:last-child{ margin-bottom:0 }
 .mo.playing .slab:nth-child(3) .ms:nth-child(1){ animation-delay:2.28s }
 .mo.playing .slab:nth-child(3) .ms:nth-child(2){ animation-delay:2.38s }
 .mo.playing .slab:nth-child(3) .ms:nth-child(3){ animation-delay:2.48s }
-.mo .micon{ flex:0 0 auto; width:38px; height:38px; border-radius:2px; background:#f5f5f8; border:1px solid #e4e4ea;
+.mo .micon{ flex:0 0 auto; width:38px; height:38px; border-radius:2px; background:var(--chip); border:1px solid var(--chip-line);
   display:flex; align-items:center; justify-content:center; color:var(--ac) }
 .mo .mbody{ flex:1; min-width:0 }
 .mo .ms .n{ font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--ac) }
-.mo .ms .nm{ font-family:var(--disp); font-weight:700; font-size:14.4px; letter-spacing:-.01em; margin-top:5px; color:#101014 }
-.mo .ms .out{ margin-top:6px; font-size:12.2px; line-height:1.45; color:#5c5c68 }
-.mo .ms.hot{ background:rgba(219,0,99,.07) }
+.mo .ms .nm{ font-family:var(--disp); font-weight:700; font-size:14.4px; letter-spacing:-.01em; margin-top:5px; color:var(--slab-ink) }
+.mo .ms .out{ margin-top:6px; font-size:12.2px; line-height:1.45; color:var(--slab-soft) }
+.mo .ms.hot{ background:var(--hot) }
 .mo .ms.hot .micon{ border-color:var(--ac) }
 .mo .ms .flag{ position:absolute; right:18px; top:14px; font-family:var(--mono); font-size:8.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ac) }
 .mo .base{ height:2px; background:var(--ac); margin-top:24px; transform:scaleX(0); transform-origin:left }
@@ -367,8 +423,7 @@ p:last-child{ margin-bottom:0 }
 .mo .promise .txt{ flex:1; font-family:var(--disp); font-weight:500; font-size:15.5px; line-height:1.46; color:var(--ink2); max-width:62ch }
 .mo .cta{ flex:0 0 auto; margin-left:auto }
 .mo .cta-txt{ font-size:13px; color:var(--soft2) }
-.mo .cta-btn{ padding:14px 26px; border-radius:5px; font-size:14px; letter-spacing:-.005em;
-  box-shadow:0 12px 28px -14px var(--ac) }
+.mo .cta-btn{ padding:14px 26px; border-radius:5px; font-size:14px; letter-spacing:-.005em; box-shadow:var(--btn-shadow) }
 @keyframes moFade{ to{ opacity:1 } }
 @keyframes moRise{ from{ opacity:0; transform:translateY(12px) } to{ opacity:1; transform:none } }
 @keyframes moStand{ to{ opacity:1; transform:none } }
@@ -419,13 +474,14 @@ p:last-child{ margin-bottom:0 }
     <h2>What you're looking at</h2>
     <p>Below are three finished designs. Same system, same words, three different looks.</p>
     <p>The example is a made-up baby-sleep coach. It's there so you can see how a real system sits inside each design, instead of guessing from a blank template.</p>
-    <p>Your job on this page is simple. Pick the one that feels like your brand.</p>
+    <p>Every style comes in <strong>light and dark</strong> - and both are <em>your</em> two grounds, out of your Brand Kit. Use the switch above each one to flip it.</p>
+    <p>Your job on this page is simple. Pick the look, and pick the theme.</p>
   </section>
 
   <section>
     <h2>How this works</h2>
     <ol class="steps-how">
-      <li><h3>Choose a style</h3><p>Scroll through the three below and pick one. Go with the look, not the sample words — those get replaced with yours.</p></li>
+      <li><h3>Choose a style and a theme</h3><p>Scroll through the three below, flip each between light and dark, and pick one of the six. Go with the look, not the sample words — those get replaced with yours.</p></li>
       <li><h3>Hand over your details</h3><p>The builder asks for your Magic Formula™, your brand colour, your fonts and your business name. It asks one thing at a time.</p></li>
       <li><h3>Get your file</h3><p>You get one HTML file. Double-click it and it opens in any browser. Screenshot it for an ad, or put it on a page.</p></li>
     </ol>
@@ -437,7 +493,7 @@ p:last-child{ margin-bottom:0 }
       <ul>
         <li><b>Your locked Magic Formula™.</b> Three phase names, nine step names, and the one-line outcome for each step. If it isn't built yet, build it first — this tool won't write it for you.</li>
         <li><b>Your $Million Promise™.</b> It goes on the graphic word for word.</li>
-        <li><b>Your brand colour and fonts.</b> Straight from your Visual Style Guide. One colour is enough.</li>
+        <li><b>Your Brand Kit.</b> The <code>BRAND KIT:</code> line at the end of your Visual Style Guide - one word, like <code>sovereign</code>. It carries your colour, your fonts, your corners and your shadows, and it is the same one your slides, funnel pages and posts run on. You are not picking a colour here; you picked it once, there.</li>
         <li><b>A mark for your system.</b> Not your business logo — a small icon or mark that stands for this system on its own. It sits at the top, left of your system name. Send an SVG if you have one, a PNG if you don't. No mark yet? Say so, and you'll get a simple one built from your system's initials.</li>
         <li><b>Your business name.</b> It sits in the corner of the graphic.</li>
         <li><b>Your call to action, and the link it goes to.</b> A short line and a button label — "Ready for full nights?" and "Book a free sleep call". The link can point anywhere you like: a booking calendar, a checkout, an application form, a waitlist.</li>
@@ -474,17 +530,17 @@ p:last-child{ margin-bottom:0 }
         <div class="sty-id">Style 01</div>
         <h2>Blueprint <em>— precise and technical</em></h2>
       </div>
-      <button type="button" class="replay" data-play="s-bp">Play again</button>
+      <div class="sty-actions"><div class="theme-sw" data-for="s-bp"><button type="button" class="on" data-theme="light">Light</button><button type="button" data-theme="dark">Dark</button></div><button type="button" class="replay" data-play="s-bp">Play again</button></div>
     </div>
     <div class="sty-facts">
       <dl><dt>Best for</dt><dd>Work where being exact is the whole point. Attorneys, financial advisors, medical, technical consulting.</dd></dl>
       <dl><dt>The feel</dt><dd>An engineering drawing. Fine lines, measured, nothing shouted. The bar across the top is your promise timeline.</dd></dl>
-      <dl><dt>Use it on</dt><dd>Proposals, PDFs, printed handouts, slides. Prints well because it's light.</dd></dl>
+      <dl><dt>Use it on</dt><dd>Proposals, PDFs, printed handouts, slides. The light theme prints properly; the dark one is the classic blueprint — white lines on deep blue.</dd></dl>
     </div>
   </div>
 </div>
 <div class="wrap"><div class="fit">
-  <div class="frame bp" id="s-bp">
+  <div class="frame bp" data-surface="L" id="s-bp">
     <div class="grid"></div>
     <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
     <div class="sheet">
@@ -569,7 +625,7 @@ p:last-child{ margin-bottom:0 }
         <div class="sty-id">Style 02</div>
         <h2>Marquee <em>— loud and hard to scroll past</em></h2>
       </div>
-      <button type="button" class="replay" data-play="s-mq">Play again</button>
+      <div class="sty-actions"><div class="theme-sw" data-for="s-mq"><button type="button" data-theme="light">Light</button><button type="button" class="on" data-theme="dark">Dark</button></div><button type="button" class="replay" data-play="s-mq">Play again</button></div>
     </div>
     <div class="sty-facts">
       <dl><dt>Best for</dt><dd>Getting attention in a busy feed. Bold personal brands, live events, anyone running ads.</dd></dl>
@@ -579,7 +635,7 @@ p:last-child{ margin-bottom:0 }
   </div>
 </div>
 <div class="wrap"><div class="fit">
-  <div class="frame mq" id="s-mq">
+  <div class="frame mq" data-surface="D" id="s-mq">
     <div class="rail top"><span>A signature system</span><span><b>Gentle Nights</b></span></div>
     <div class="sweep"></div>
     <div class="body">
@@ -658,7 +714,7 @@ p:last-child{ margin-bottom:0 }
         <div class="sty-id">Style 03</div>
         <h2>Monolith <em>— quiet and premium</em></h2>
       </div>
-      <button type="button" class="replay" data-play="s-mo">Play again</button>
+      <div class="sty-actions"><div class="theme-sw" data-for="s-mo"><button type="button" data-theme="light">Light</button><button type="button" class="on" data-theme="dark">Dark</button></div><button type="button" class="replay" data-play="s-mo">Play again</button></div>
     </div>
     <div class="sty-facts">
       <dl><dt>Best for</dt><dd>Selling high-ticket. Coaches and consultants whose price does the talking, not the volume.</dd></dl>
@@ -668,7 +724,7 @@ p:last-child{ margin-bottom:0 }
   </div>
 </div>
 <div class="wrap"><div class="fit">
-  <div class="frame mo" id="s-mo">
+  <div class="frame mo" data-surface="D" id="s-mo">
     <div class="body">
       <div class="top">
         <div class="mast-col">
@@ -744,7 +800,7 @@ p:last-child{ margin-bottom:0 }
   <div class="next">
     <h2>Made your pick?</h2>
     <p>Open the Magic Formula™ Visual Builder and tell it which style you want. Use the name, not the number, so there's no mix-up.</p>
-    <div class="say">Build my Magic Formula™ Visual in the Monolith style.</div>
+    <div class="say">Build my Magic Formula™ Visual in the Monolith style, dark.</div>
     <p style="margin-top:16px">It'll take it from there, one question at a time.</p>
   </div>
 
@@ -779,6 +835,20 @@ p:last-child{ margin-bottom:0 }
   document.querySelectorAll("[data-play]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       play(document.getElementById(btn.getAttribute("data-play")));
+    });
+  });
+  // light / dark switch per style
+  document.querySelectorAll(".theme-sw").forEach(function (sw) {
+    var frame = document.getElementById(sw.getAttribute("data-for"));
+    sw.addEventListener("click", function (e) {
+      var btn = e.target.closest("button[data-theme]");
+      if (!btn) return;
+      var theme = btn.getAttribute("data-theme");
+      if (theme === "dark") { frame.setAttribute("data-surface", "D"); }
+      else { frame.setAttribute("data-surface", "L"); }
+      sw.querySelectorAll("button").forEach(function (b) { b.classList.remove("on"); });
+      btn.classList.add("on");
+      play(frame);
     });
   });
 

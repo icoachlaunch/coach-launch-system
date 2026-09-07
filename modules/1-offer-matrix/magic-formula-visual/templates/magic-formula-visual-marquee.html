@@ -7,11 +7,14 @@
   Fill every {{TOKEN}} below, then DELETE this comment block.
   Change nothing else. The CSS and the animation work as they are.
 
-  BRAND      {{ACCENT}} {{FONT_LINK}} {{FONT_DISPLAY}} {{FONT_BODY}} {{FONT_MONO}}
+  BRAND      {{BRAND_KIT_TOKENS}} {{FONT_LINK}} - both come from the client.s Brand Kit.
+             There is no colour to choose here - the Kit carries all of them.
   HEADER     {{SYSTEM_MARK}} {{EYEBROW}} {{SYSTEM_NAME}} {{SUBTITLE}}
   PHASES     {{PHASE_1_NAME}}..{{PHASE_3_NAME}}  {{PHASE_1_TAG}}..{{PHASE_3_TAG}}
   STEPS      {{STEP_1_NAME}}..{{STEP_9_NAME}}    {{STEP_1_OUT}}..{{STEP_9_OUT}}
              {{STEP_1_ICON}}..{{STEP_9_ICON}}    (inline <svg class="ic">)
+  SURFACE    {{SURFACE}} - the letter  L  (light) or  D  (dark). The grounds come
+             from the client.s Brand Kit, so this picks which of THEIR two it uses.
   HOT STEP   {{HOT_1}}..{{HOT_9}} - put the word  hot  on the ONE hot step,
              leave the other eight EMPTY. That step is the seed of the
              Event Magnet(TM).
@@ -28,10 +31,19 @@
 {{FONT_LINK}}
 <style>
 *{ box-sizing:border-box; margin:0; padding:0 }
+/* ---- THE CLIENT.S BRAND KIT --------------------------------------------
+   Replace the line below with the whole contents of
+     modules/0-foundations/visual-style/brand-kit/tokens/<their-kit>.css
+   minus its @import line (the font link already sits in <head>).
+   Every colour, font, corner and shadow in this file resolves through it.
+   Do NOT hand-write a colour anywhere in this template. ------------------ */
+{{BRAND_KIT_TOKENS}}
+
+/* the three font aliases this template uses, taken from the Kit */
 :root{
-  --mono:{{FONT_MONO}};
-  --disp:{{FONT_DISPLAY}};
-  --body:{{FONT_BODY}};
+  --mono:var(--font-mono);
+  --disp:var(--font-display);
+  --body:var(--font-body);
 }
 html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content:center; min-height:100vh }
 .frame{ position:relative; width:1320px; height:880px; overflow:hidden; transform-origin:center center; flex:0 0 auto }
@@ -51,11 +63,11 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 .frame .cta{ display:flex; flex-direction:column; align-items:flex-end; gap:9px; text-align:right }
 .frame .cta-txt{ font-family:var(--disp); font-weight:700; letter-spacing:-.01em; white-space:nowrap }
 .cta-btn{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--disp);
-  font-weight:800; white-space:nowrap; background:var(--ac); color:#fff; cursor:pointer;
+  font-weight:800; white-space:nowrap; background:var(--ac); color:var(--ink-on-brand); cursor:pointer;
   transition:transform .18s ease, box-shadow .18s ease, filter .18s ease }
 .cta-btn:hover{ transform:translateY(-2px); filter:brightness(1.07) }
 .cta-btn:active{ transform:translateY(0) }
-.cta-btn:focus-visible{ outline:2px solid #fff; outline-offset:3px }
+.cta-btn:focus-visible{ outline:none; box-shadow:var(--ring) }
 .cta-btn .ic{ width:16px; height:16px; stroke-width:2.1 }
 
 /* the hot-step flag only shows on the one step marked hot */
@@ -64,14 +76,31 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 /* ============================================================
    STYLE 02 — MARQUEE
    ============================================================ */
+/* Marquee at night or by day - the SAME block either way. Light and dark are
+   the Kit's own surfaces: put data-surface="L" or "D" on the .frame element.
+   The cards deliberately keep their own ground on both, which is what the
+   Kit's --paper family is for: a slab that stays paper on a dark stage. */
 .mq{
-  --ac:#db0063;
-  --ink2:#f5f5f7; --soft2:#a2a2ad; --mute:#63636e;
-  --bg2:#0a0a0c; --hair:rgba(255,255,255,.10);
+  --ac:        var(--brand);
+  --ink2:      var(--ink);
+  --soft2:     var(--ink-soft);
+  --mute:      var(--ink-faint);
+  --bg2:       var(--canvas);
+  --hair:      color-mix(in srgb, var(--ink) 13%, transparent);
+  --glow:      var(--brand-soft);
+  --card:      var(--paper);
+  --card-ink:  var(--paper-ink);
+  --card-soft: var(--paper-soft);
+  --card-mute: color-mix(in srgb, var(--paper-ink) 45%, var(--paper));
+  --card-line: var(--paper-line);
+  --chip:      color-mix(in srgb, var(--paper-ink) 4%, var(--paper));
+  --chip-line: var(--paper-line);
+  --sweep-hi:  var(--brand);
+  --card-edge: color-mix(in srgb, var(--ink) 10%, transparent);
   background:var(--bg2); font-family:var(--body); color:var(--ink2); line-height:1.5;
 }
 .mq::before{ content:""; position:absolute; inset:0; z-index:0;
-  background:radial-gradient(120% 68% at 50% -14%, rgba(219,0,99,.16), transparent 62%) }
+  background:radial-gradient(120% 68% at 50% -14%, var(--glow), transparent 62%) }
 .mq .rail{ position:absolute; left:0; right:0; z-index:4; height:44px; display:flex; align-items:center; justify-content:space-between;
   padding:0 40px; font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--mute); opacity:0 }
 .mq .rail.top{ top:0; border-bottom:1px solid var(--hair) }
@@ -105,26 +134,26 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 .mq.playing .col:nth-child(2){ animation-delay:1.72s }
 .mq.playing .col:nth-child(3){ animation-delay:1.94s }
 .mq .bar{ background:var(--ac); padding:12px 16px; display:flex; align-items:baseline; gap:12px }
-.mq .bar .n{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.2em; color:rgba(255,255,255,.72) }
-.mq .bar .nm{ font-family:var(--disp); font-weight:900; font-size:19px; letter-spacing:.01em; text-transform:uppercase; color:#fff }
+.mq .bar .n{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.2em; color:color-mix(in srgb, var(--ink-on-brand) 72%, transparent) }
+.mq .bar .nm{ font-family:var(--disp); font-weight:900; font-size:19px; letter-spacing:.01em; text-transform:uppercase; color:var(--ink-on-brand) }
 .mq .tag{ padding:13px 16px 15px; min-height:57px; font-size:13px; line-height:1.45; color:var(--soft2); border-bottom:1px solid var(--hair) }
 /* the steps sit on a white card under the phase bar — dark frame, light content */
-.mq .steps{ flex:1; display:flex; flex-direction:column; background:#fff }
-.mq .st{ position:relative; flex:1; padding:14px 16px; border-bottom:1px solid #e7e7ec; display:flex; gap:14px; align-items:center }
+.mq .steps{ flex:1; display:flex; flex-direction:column; background:var(--card); border:1px solid var(--card-edge) }
+.mq .st{ position:relative; flex:1; padding:14px 16px; border-bottom:1px solid var(--card-line); display:flex; gap:14px; align-items:center }
 .mq .st:last-child{ border-bottom:0 }
-.mq .sicon{ flex:0 0 auto; width:38px; height:38px; background:#f5f5f8; border:1px solid #e4e4ea;
+.mq .sicon{ flex:0 0 auto; width:38px; height:38px; background:var(--chip); border:1px solid var(--chip-line);
   display:flex; align-items:center; justify-content:center; color:var(--ac) }
 .mq .sbody{ flex:1; min-width:0 }
-.mq .st .num{ font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.2em; color:#9a9aa6 }
-.mq .st .nm{ font-family:var(--disp); font-weight:800; font-size:14px; letter-spacing:.005em; text-transform:uppercase; line-height:1.2; margin-top:5px; color:#101014 }
-.mq .st .out{ margin-top:6px; font-size:12.3px; line-height:1.44; color:#5c5c68 }
+.mq .st .num{ font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.2em; color:var(--card-mute) }
+.mq .st .nm{ font-family:var(--disp); font-weight:800; font-size:14px; letter-spacing:.005em; text-transform:uppercase; line-height:1.2; margin-top:5px; color:var(--card-ink) }
+.mq .st .out{ margin-top:6px; font-size:12.3px; line-height:1.44; color:var(--card-soft) }
 .mq .st.hot{ background:var(--ac) }
-.mq .st.hot .num{ color:rgba(255,255,255,.72) }
-.mq .st.hot .nm, .mq .st.hot .out{ color:#fff }
-.mq .st.hot .sicon{ background:#fff; border-color:#fff; color:var(--ac) }
-.mq .st .flag{ position:absolute; right:14px; top:13px; font-family:var(--mono); font-size:8.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.85) }
+.mq .st.hot .num{ color:color-mix(in srgb, var(--ink-on-brand) 72%, transparent) }
+.mq .st.hot .nm, .mq .st.hot .out{ color:var(--ink-on-brand) }
+.mq .st.hot .sicon{ background:var(--ink-on-brand); border-color:var(--ink-on-brand); color:var(--ac) }
+.mq .st .flag{ position:absolute; right:14px; top:13px; font-family:var(--mono); font-size:8.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:color-mix(in srgb, var(--ink-on-brand) 85%, transparent) }
 .mq .sweep{ position:absolute; top:0; bottom:0; width:120px; z-index:6; pointer-events:none; left:-160px;
-  background:linear-gradient(90deg, transparent, rgba(219,0,99,.30) 42%, var(--ac) 68%, rgba(255,255,255,.9) 76%, transparent 88%) }
+  background:linear-gradient(90deg, transparent, rgba(219,0,99,.30) 42%, var(--ac) 68%, var(--sweep-hi) 76%, transparent 88%) }
 .mq.playing .sweep{ animation:mqSweep 1.45s cubic-bezier(.5,.05,.3,1) forwards 1.32s }
 @keyframes mqFade{ to{ opacity:1 } }
 @keyframes mqMask{ to{ clip-path:inset(0 0 0 0) } }
@@ -148,7 +177,7 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 </style>
 </head>
 <body>
-<div class="frame mq">
+<div class="frame mq" data-surface="{{SURFACE}}">
   <div class="rail top"><span>{{EYEBROW}}</span><span><b>{{BRAND_NAME}}</b></span></div>
   <div class="sweep"></div>
   <div class="body">

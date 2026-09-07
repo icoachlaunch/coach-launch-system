@@ -159,8 +159,10 @@ Before building, confirm they have:
    the system name, and the subtitle. Missing? "Build it first in the Magic Formula™
    Builder, then come back." Do NOT write it here.
 2. **Their $Million Promise™** — needed for the Monolith style and for the subtitle.
-3. **Their brand basics** — one accent colour, display + body fonts, business name.
-   (From the Visual Style Guide and the Business Brand Profile.)
+3. **Their Brand Kit** — the `BRAND KIT: <name>` block at the end of their Visual Style
+   Guide. That one line carries their colour, their fonts, their corners and their
+   shadows. You do NOT ask for a hex code. You also want their business name and
+   website for the corner (from the Business Brand Profile).
 4. **A system mark** — a logo or icon for the SYSTEM. Optional; there is a fallback.
 5. **A CTA and a link** — what the button says and where it goes.
 
@@ -195,10 +197,18 @@ Never paraphrase their system into generic language. Use THEIR words.
 - Coach Launch · Matthew White
 
 ### The three styles — the ONLY styles that exist
-- **Blueprint** — light, precise, technical. An engineering drawing.
-- **Marquee** — dark, loud, high contrast. A broadcast title card.
-- **Monolith** — dark, quiet, premium. Three white slabs standing on the promise.
+- **Blueprint** — precise, technical. An engineering drawing.
+- **Marquee** — loud, high contrast. A broadcast title card.
+- **Monolith** — quiet, premium. Three slabs standing on the promise.
 Never invent a fourth style. Never blend two.
+
+### The two surfaces — every style has both
+These are not palettes you invent. They are the client's OWN two grounds, straight from
+their Brand Kit — so a light Blueprint and their light funnel page are the same white.
+- **L** — for print, documents, and light pages.
+- **D** — for screens, ads, social, and dark decks.
+Six combinations in total. The style sets the shape; the surface sets the ground it
+stands on. There is no third surface, and there is no colour to choose.
 
 ### A note on "phase" vs "stage"
 The graphic labels the three groups **Phase 01 / 02 / 03**. Some Magic Formula™
@@ -283,11 +293,24 @@ Ask for a mark for the SYSTEM — not their business logo. SVG preferred, PNG fi
 in their accent colour. Build it as inline SVG. Never leave the slot empty.
 `Locked: system mark = …`
 
-## STEP 5 — STYLE
-Ask which of the three they want: **Blueprint**, **Marquee**, or **Monolith**.
-Describe each in one line. Point them at the style gallery that ships with this tool
-if they want to see all three side by side. Require a real choice.
+## STEP 5 — STYLE, THEN THEME
+Two questions, one at a time.
+
+**5a. Which style?** **Blueprint**, **Marquee**, or **Monolith**. Describe each in one
+line. Point them at the style gallery that ships with this tool if they want to see all
+three side by side. Require a real choice.
 `Locked: style = …`
+
+**5b. Light or dark?** Every style comes in both.
+- **light** for print, documents, and white pages.
+- **dark** for screens, ads, social, and dark decks.
+
+If they're unsure, ask where the graphic is going first, then tell them which fits. If
+it's being printed, say light — a dark graphic eats ink and goes muddy.
+`Locked: theme = …`
+
+If they want both, build one, then offer to rebuild in the other theme at the end. It's
+the same answers and a one-word change.
 
 ## STEP 6 — ICONS
 Each step gets one icon, left of the step name. Three ways:
@@ -322,6 +345,10 @@ Never compress, never summarize, never drop the closing tags.
 >
 > The button is live — clicking it goes to the link you gave me.
 >
+> Want it in the other theme too? Say so and I'll rebuild it now — same answers, one
+> word changed. Most coaches keep both: the dark one for ads, the light one for
+> documents and print.
+>
 > Want a different look later? Run this again and pick another style. Your answers
 > stay the same; only the design changes.
 
@@ -345,10 +372,13 @@ If anything is over, go back and agree a shorter version. Never trim it silently
 - [ ] Exactly 3 phases and 9 steps.
 - [ ] Every name and line is theirs, word for word (RULE 3).
 - [ ] Exactly ONE step marked `hot`, and it matches their report.
+- [ ] The frame carries `data-surface="L"` or `"D"` — never both, never neither.
 - [ ] Zero `{{TOKEN}}` left in the file.
 - [ ] The data-contract comment is deleted.
 - [ ] Nine icons, all inline SVG, all the same style, no external URLs.
-- [ ] The accent colour appears in `--ac`.
+- [ ] `{{BRAND_KIT_TOKENS}}` is replaced by a real Kit file, and there is NOT ONE
+      hardcoded colour in the artwork. Search the output for `#` + a hex digit: the only
+      permitted hit is the lightbox background behind the frame.
 - [ ] The CTA `href` is their real URL.
 - [ ] ™ appears only where THEY put it (RULE 9).
 - [ ] No term from the TERMS NEVER TO USE list.
@@ -362,7 +392,7 @@ have that — do you want to add it, or should I leave it as is?" Never guess.
 
 **Format:** one self-contained HTML file — the chosen template, fully filled.
 
-**Must include:** every phase and step in their own words · their accent and fonts ·
+**Must include:** every phase and step in their own words · their Brand Kit tokens ·
 their system mark · one inline-SVG icon per step · the hot step marked · their
 business name · a working CTA button pointing at their URL · the animation intact ·
 the reduced-motion fallback (already in the template).
@@ -405,9 +435,12 @@ Replace every `{{TOKEN}}`, fill nothing else, and delete the leading
 `<!-- ==== MAGIC FORMULA™ VISUAL ... -->` data-contract comment from your output.
 
 **BRAND**
-- `{{ACCENT}}` — their one hex. It also appears as `--ac:` in the style block; set both.
-- `{{FONT_LINK}}` — a Google Fonts `<link>` for their fonts, or empty.
-- `{{FONT_DISPLAY}}` / `{{FONT_BODY}}` / `{{FONT_MONO}}` — full font stacks with fallbacks.
+- `{{BRAND_KIT_TOKENS}}` — the ENTIRE contents of their Kit file
+  (`brand-kit/tokens/<name>.css`), minus its `@import` line. Paste it verbatim. This is
+  the only place colour enters the file: `--ac`, the fonts, the corners and the shadows
+  all resolve through it. The old ACCENT slot is gone, and there is no hex to type.
+- `{{FONT_LINK}}` — the Google Fonts `<link>` for that Kit. Take the URL from the
+  `@import` line at the top of the Kit file, so the fonts always match the tokens.
 
 **HEADER**
 - `{{SYSTEM_MARK}}` — inline `<svg class="lg">` or `<img class="lg" src="…">`.
@@ -421,6 +454,11 @@ Replace every `{{TOKEN}}`, fill nothing else, and delete the leading
 - `{{PHASE_1_NAME}}`–`{{PHASE_3_NAME}}`, `{{PHASE_1_TAG}}`–`{{PHASE_3_TAG}}`
 - `{{STEP_1_NAME}}`–`{{STEP_9_NAME}}`, `{{STEP_1_OUT}}`–`{{STEP_9_OUT}}` (the SHORT lines)
 - `{{STEP_1_ICON}}`–`{{STEP_9_ICON}}` — a full inline `<svg class="ic" viewBox="0 0 24 24">…</svg>`
+
+**SURFACE**
+- `{{SURFACE}}` — the single letter `L` or `D`. It sits in the frame's `data-surface`
+  attribute and switches to the client's own light or dark ground. Nothing else changes
+  between the two, and neither is a palette you invent.
 
 **HOT STEP**
 - `{{HOT_1}}`–`{{HOT_9}}` — put the word `hot` on the ONE hot step. Leave the other
@@ -489,11 +527,14 @@ Pick by meaning. Keep all nine the same weight.
   Fill every {{TOKEN}} below, then DELETE this comment block.
   Change nothing else. The CSS and the animation work as they are.
 
-  BRAND      {{ACCENT}} {{FONT_LINK}} {{FONT_DISPLAY}} {{FONT_BODY}} {{FONT_MONO}}
+  BRAND      {{BRAND_KIT_TOKENS}} {{FONT_LINK}} - both come from the client.s Brand Kit.
+             There is no colour to choose here - the Kit carries all of them.
   HEADER     {{SYSTEM_MARK}} {{EYEBROW}} {{SYSTEM_NAME}} {{SUBTITLE}}
   PHASES     {{PHASE_1_NAME}}..{{PHASE_3_NAME}}  {{PHASE_1_TAG}}..{{PHASE_3_TAG}}
   STEPS      {{STEP_1_NAME}}..{{STEP_9_NAME}}    {{STEP_1_OUT}}..{{STEP_9_OUT}}
              {{STEP_1_ICON}}..{{STEP_9_ICON}}    (inline <svg class="ic">)
+  SURFACE    {{SURFACE}} - the letter  L  (light) or  D  (dark). The grounds come
+             from the client.s Brand Kit, so this picks which of THEIR two it uses.
   HOT STEP   {{HOT_1}}..{{HOT_9}} - put the word  hot  on the ONE hot step,
              leave the other eight EMPTY. That step is the seed of the
              Event Magnet(TM).
@@ -510,10 +551,19 @@ Pick by meaning. Keep all nine the same weight.
 {{FONT_LINK}}
 <style>
 *{ box-sizing:border-box; margin:0; padding:0 }
+/* ---- THE CLIENT.S BRAND KIT --------------------------------------------
+   Replace the line below with the whole contents of
+     modules/0-foundations/visual-style/brand-kit/tokens/<their-kit>.css
+   minus its @import line (the font link already sits in <head>).
+   Every colour, font, corner and shadow in this file resolves through it.
+   Do NOT hand-write a colour anywhere in this template. ------------------ */
+{{BRAND_KIT_TOKENS}}
+
+/* the three font aliases this template uses, taken from the Kit */
 :root{
-  --mono:{{FONT_MONO}};
-  --disp:{{FONT_DISPLAY}};
-  --body:{{FONT_BODY}};
+  --mono:var(--font-mono);
+  --disp:var(--font-display);
+  --body:var(--font-body);
 }
 html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content:center; min-height:100vh }
 .frame{ position:relative; width:1320px; height:880px; overflow:hidden; transform-origin:center center; flex:0 0 auto }
@@ -533,11 +583,11 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 .frame .cta{ display:flex; flex-direction:column; align-items:flex-end; gap:9px; text-align:right }
 .frame .cta-txt{ font-family:var(--disp); font-weight:700; letter-spacing:-.01em; white-space:nowrap }
 .cta-btn{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--disp);
-  font-weight:800; white-space:nowrap; background:var(--ac); color:#fff; cursor:pointer;
+  font-weight:800; white-space:nowrap; background:var(--ac); color:var(--ink-on-brand); cursor:pointer;
   transition:transform .18s ease, box-shadow .18s ease, filter .18s ease }
 .cta-btn:hover{ transform:translateY(-2px); filter:brightness(1.07) }
 .cta-btn:active{ transform:translateY(0) }
-.cta-btn:focus-visible{ outline:2px solid #fff; outline-offset:3px }
+.cta-btn:focus-visible{ outline:none; box-shadow:var(--ring) }
 .cta-btn .ic{ width:16px; height:16px; stroke-width:2.1 }
 
 /* the hot-step flag only shows on the one step marked hot */
@@ -546,19 +596,31 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 /* ============================================================
    STYLE 01 — BLUEPRINT
    ============================================================ */
+/* Blueprint on paper, or blueprint on ink - and it is the SAME block either way.
+   Light and dark are the Kit's own surfaces: put data-surface="L" or "D" on the
+   .frame element and every value below follows. No second palette to maintain. */
 .bp{
-  --ac:#db0063;
-  --ink2:#101720; --soft2:#4e5a6b; --mute:#8b95a4;
-  --pap:#eef1f4;
-  --hair:rgba(18,42,72,.20); --hair2:rgba(18,42,72,.10);
+  --ac:      var(--brand);
+  --ink2:    var(--ink);
+  --soft2:   var(--ink-soft);
+  --mute:    var(--ink-faint);
+  --pap:     var(--canvas);
+  --hair:    color-mix(in srgb, var(--ink) 24%, transparent);
+  --hair2:   color-mix(in srgb, var(--ink) 11%, transparent);
+  --grid1:   color-mix(in srgb, var(--ink)  6%, transparent);
+  --grid2:   color-mix(in srgb, var(--ink)  9%, transparent);
+  --plate:   color-mix(in srgb, var(--paper) 62%, transparent);
+  --chip:    var(--paper);
+  --hot:     var(--brand-soft);
+  --btn-shadow: var(--shadow-md);
   background:var(--pap); font-family:var(--body); color:var(--ink2); line-height:1.5;
 }
 .bp .grid{ position:absolute; inset:0; z-index:0; opacity:0;
   background-image:
-    linear-gradient(rgba(18,42,72,.055) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(18,42,72,.055) 1px,transparent 1px),
-    linear-gradient(rgba(18,42,72,.075) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(18,42,72,.075) 1px,transparent 1px);
+    linear-gradient(var(--grid1) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid1) 1px,transparent 1px),
+    linear-gradient(var(--grid2) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid2) 1px,transparent 1px);
   background-size:11px 11px, 11px 11px, 88px 88px, 88px 88px }
 .bp.playing .grid{ animation:bpFade .7s ease forwards }
 .bp .tick{ position:absolute; width:26px; height:26px; z-index:3; opacity:0 }
@@ -576,7 +638,7 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 .bp.playing .tick{ animation:bpSnap .34s cubic-bezier(.2,1.5,.4,1) forwards .35s }
 .bp .sheet{ position:relative; z-index:2; height:100%; padding:42px 56px 34px; display:flex; flex-direction:column }
 .bp .mast{ gap:20px; margin-top:12px }
-.bp .logo{ width:74px; height:74px; padding:8px; border:1px solid var(--hair); background:#fff; color:var(--ac); opacity:0 }
+.bp .logo{ width:74px; height:74px; padding:8px; border:1px solid var(--hair); background:var(--chip); color:var(--ac); opacity:0 }
 .bp .lg{ height:56px; min-width:56px }
 .bp.playing .logo{ animation:bpFade .5s ease forwards .45s }
 .bp .eb{ font-family:var(--mono); font-size:10.5px; font-weight:500; letter-spacing:.26em; text-transform:uppercase; color:var(--soft2); display:flex; align-items:center; gap:12px; opacity:0 }
@@ -597,7 +659,7 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
   font-family:var(--mono); font-size:12px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--ac); white-space:nowrap; opacity:0 }
 .bp.playing .dim-val{ animation:bpFade .4s ease forwards 1.5s }
 .bp .plates{ display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:minmax(0,1fr); gap:22px; flex:1; min-height:0 }
-.bp .plate{ border:1px solid var(--hair); background:rgba(255,255,255,.62); display:flex; flex-direction:column; clip-path:inset(0 100% 0 0) }
+.bp .plate{ border:1px solid var(--hair); background:var(--plate); display:flex; flex-direction:column; clip-path:inset(0 100% 0 0) }
 .bp.playing .plate{ animation:bpWipe .62s cubic-bezier(.35,.9,.25,1) forwards }
 .bp.playing .plate:nth-child(1){ animation-delay:1.26s }
 .bp.playing .plate:nth-child(2){ animation-delay:1.42s }
@@ -621,7 +683,7 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 .bp.playing .plate:nth-child(3) .row:nth-child(1){ animation-delay:2.22s }
 .bp.playing .plate:nth-child(3) .row:nth-child(2){ animation-delay:2.32s }
 .bp.playing .plate:nth-child(3) .row:nth-child(3){ animation-delay:2.42s }
-.bp .ricon{ flex:0 0 auto; width:32px; height:32px; border:1px solid var(--hair); background:#fff;
+.bp .ricon{ flex:0 0 auto; width:32px; height:32px; border:1px solid var(--hair); background:var(--chip);
   display:flex; align-items:center; justify-content:center; color:var(--ac) }
 .bp .rbody{ flex:1; min-width:0 }
 .bp .row-top{ display:flex; align-items:center }
@@ -629,7 +691,7 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 .bp .row-lead{ height:1px; background:var(--hair); width:12px; flex:0 0 auto }
 .bp .row-name{ font-family:var(--disp); font-weight:700; font-size:14.2px; letter-spacing:-.008em }
 .bp .row-out{ margin-top:5px; font-size:12px; line-height:1.44; color:var(--soft2) }
-.bp .row.hot{ background:rgba(219,0,99,.05); box-shadow:inset 3px 0 0 var(--ac) }
+.bp .row.hot{ background:var(--hot); box-shadow:inset 3px 0 0 var(--ac) }
 .bp .row.hot .row-n{ border-color:var(--ac); color:var(--ac) }
 .bp .row.hot .ricon{ border-color:var(--ac) }
 .bp .hot-flag{ position:absolute; right:15px; top:13px; font-family:var(--mono); font-size:8.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ac) }
@@ -637,8 +699,7 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 .bp .cta{ opacity:0 }
 .bp.playing .cta{ animation:bpFade .5s ease forwards 2.5s }
 .bp .cta-txt{ font-size:14.5px; color:var(--ink2) }
-.bp .cta-btn{ padding:13px 22px; border-radius:3px; font-size:13.5px; letter-spacing:-.005em;
-  box-shadow:0 8px 20px -10px var(--ac) }
+.bp .cta-btn{ padding:13px 22px; border-radius:3px; font-size:13.5px; letter-spacing:-.005em; box-shadow:var(--btn-shadow) }
 .bp .tblock{ border:1px solid var(--ink2); display:grid; grid-template-columns:auto auto; opacity:0 }
 .bp.playing .tblock{ animation:bpFade .5s ease forwards 2.55s }
 .bp .tblock span{ padding:8px 15px; border-right:1px solid var(--hair); border-bottom:1px solid var(--hair);
@@ -668,7 +729,7 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 </style>
 </head>
 <body>
-<div class="frame bp">
+<div class="frame bp" data-surface="{{SURFACE}}">
   <div class="grid"></div>
   <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
   <div class="sheet">
@@ -750,11 +811,14 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
   Fill every {{TOKEN}} below, then DELETE this comment block.
   Change nothing else. The CSS and the animation work as they are.
 
-  BRAND      {{ACCENT}} {{FONT_LINK}} {{FONT_DISPLAY}} {{FONT_BODY}} {{FONT_MONO}}
+  BRAND      {{BRAND_KIT_TOKENS}} {{FONT_LINK}} - both come from the client.s Brand Kit.
+             There is no colour to choose here - the Kit carries all of them.
   HEADER     {{SYSTEM_MARK}} {{EYEBROW}} {{SYSTEM_NAME}} {{SUBTITLE}}
   PHASES     {{PHASE_1_NAME}}..{{PHASE_3_NAME}}  {{PHASE_1_TAG}}..{{PHASE_3_TAG}}
   STEPS      {{STEP_1_NAME}}..{{STEP_9_NAME}}    {{STEP_1_OUT}}..{{STEP_9_OUT}}
              {{STEP_1_ICON}}..{{STEP_9_ICON}}    (inline <svg class="ic">)
+  SURFACE    {{SURFACE}} - the letter  L  (light) or  D  (dark). The grounds come
+             from the client.s Brand Kit, so this picks which of THEIR two it uses.
   HOT STEP   {{HOT_1}}..{{HOT_9}} - put the word  hot  on the ONE hot step,
              leave the other eight EMPTY. That step is the seed of the
              Event Magnet(TM).
@@ -771,10 +835,19 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 {{FONT_LINK}}
 <style>
 *{ box-sizing:border-box; margin:0; padding:0 }
+/* ---- THE CLIENT.S BRAND KIT --------------------------------------------
+   Replace the line below with the whole contents of
+     modules/0-foundations/visual-style/brand-kit/tokens/<their-kit>.css
+   minus its @import line (the font link already sits in <head>).
+   Every colour, font, corner and shadow in this file resolves through it.
+   Do NOT hand-write a colour anywhere in this template. ------------------ */
+{{BRAND_KIT_TOKENS}}
+
+/* the three font aliases this template uses, taken from the Kit */
 :root{
-  --mono:{{FONT_MONO}};
-  --disp:{{FONT_DISPLAY}};
-  --body:{{FONT_BODY}};
+  --mono:var(--font-mono);
+  --disp:var(--font-display);
+  --body:var(--font-body);
 }
 html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content:center; min-height:100vh }
 .frame{ position:relative; width:1320px; height:880px; overflow:hidden; transform-origin:center center; flex:0 0 auto }
@@ -794,11 +867,11 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 .frame .cta{ display:flex; flex-direction:column; align-items:flex-end; gap:9px; text-align:right }
 .frame .cta-txt{ font-family:var(--disp); font-weight:700; letter-spacing:-.01em; white-space:nowrap }
 .cta-btn{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--disp);
-  font-weight:800; white-space:nowrap; background:var(--ac); color:#fff; cursor:pointer;
+  font-weight:800; white-space:nowrap; background:var(--ac); color:var(--ink-on-brand); cursor:pointer;
   transition:transform .18s ease, box-shadow .18s ease, filter .18s ease }
 .cta-btn:hover{ transform:translateY(-2px); filter:brightness(1.07) }
 .cta-btn:active{ transform:translateY(0) }
-.cta-btn:focus-visible{ outline:2px solid #fff; outline-offset:3px }
+.cta-btn:focus-visible{ outline:none; box-shadow:var(--ring) }
 .cta-btn .ic{ width:16px; height:16px; stroke-width:2.1 }
 
 /* the hot-step flag only shows on the one step marked hot */
@@ -807,14 +880,31 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 /* ============================================================
    STYLE 02 — MARQUEE
    ============================================================ */
+/* Marquee at night or by day - the SAME block either way. Light and dark are
+   the Kit's own surfaces: put data-surface="L" or "D" on the .frame element.
+   The cards deliberately keep their own ground on both, which is what the
+   Kit's --paper family is for: a slab that stays paper on a dark stage. */
 .mq{
-  --ac:#db0063;
-  --ink2:#f5f5f7; --soft2:#a2a2ad; --mute:#63636e;
-  --bg2:#0a0a0c; --hair:rgba(255,255,255,.10);
+  --ac:        var(--brand);
+  --ink2:      var(--ink);
+  --soft2:     var(--ink-soft);
+  --mute:      var(--ink-faint);
+  --bg2:       var(--canvas);
+  --hair:      color-mix(in srgb, var(--ink) 13%, transparent);
+  --glow:      var(--brand-soft);
+  --card:      var(--paper);
+  --card-ink:  var(--paper-ink);
+  --card-soft: var(--paper-soft);
+  --card-mute: color-mix(in srgb, var(--paper-ink) 45%, var(--paper));
+  --card-line: var(--paper-line);
+  --chip:      color-mix(in srgb, var(--paper-ink) 4%, var(--paper));
+  --chip-line: var(--paper-line);
+  --sweep-hi:  var(--brand);
+  --card-edge: color-mix(in srgb, var(--ink) 10%, transparent);
   background:var(--bg2); font-family:var(--body); color:var(--ink2); line-height:1.5;
 }
 .mq::before{ content:""; position:absolute; inset:0; z-index:0;
-  background:radial-gradient(120% 68% at 50% -14%, rgba(219,0,99,.16), transparent 62%) }
+  background:radial-gradient(120% 68% at 50% -14%, var(--glow), transparent 62%) }
 .mq .rail{ position:absolute; left:0; right:0; z-index:4; height:44px; display:flex; align-items:center; justify-content:space-between;
   padding:0 40px; font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--mute); opacity:0 }
 .mq .rail.top{ top:0; border-bottom:1px solid var(--hair) }
@@ -848,26 +938,26 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 .mq.playing .col:nth-child(2){ animation-delay:1.72s }
 .mq.playing .col:nth-child(3){ animation-delay:1.94s }
 .mq .bar{ background:var(--ac); padding:12px 16px; display:flex; align-items:baseline; gap:12px }
-.mq .bar .n{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.2em; color:rgba(255,255,255,.72) }
-.mq .bar .nm{ font-family:var(--disp); font-weight:900; font-size:19px; letter-spacing:.01em; text-transform:uppercase; color:#fff }
+.mq .bar .n{ font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.2em; color:color-mix(in srgb, var(--ink-on-brand) 72%, transparent) }
+.mq .bar .nm{ font-family:var(--disp); font-weight:900; font-size:19px; letter-spacing:.01em; text-transform:uppercase; color:var(--ink-on-brand) }
 .mq .tag{ padding:13px 16px 15px; min-height:57px; font-size:13px; line-height:1.45; color:var(--soft2); border-bottom:1px solid var(--hair) }
 /* the steps sit on a white card under the phase bar — dark frame, light content */
-.mq .steps{ flex:1; display:flex; flex-direction:column; background:#fff }
-.mq .st{ position:relative; flex:1; padding:14px 16px; border-bottom:1px solid #e7e7ec; display:flex; gap:14px; align-items:center }
+.mq .steps{ flex:1; display:flex; flex-direction:column; background:var(--card); border:1px solid var(--card-edge) }
+.mq .st{ position:relative; flex:1; padding:14px 16px; border-bottom:1px solid var(--card-line); display:flex; gap:14px; align-items:center }
 .mq .st:last-child{ border-bottom:0 }
-.mq .sicon{ flex:0 0 auto; width:38px; height:38px; background:#f5f5f8; border:1px solid #e4e4ea;
+.mq .sicon{ flex:0 0 auto; width:38px; height:38px; background:var(--chip); border:1px solid var(--chip-line);
   display:flex; align-items:center; justify-content:center; color:var(--ac) }
 .mq .sbody{ flex:1; min-width:0 }
-.mq .st .num{ font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.2em; color:#9a9aa6 }
-.mq .st .nm{ font-family:var(--disp); font-weight:800; font-size:14px; letter-spacing:.005em; text-transform:uppercase; line-height:1.2; margin-top:5px; color:#101014 }
-.mq .st .out{ margin-top:6px; font-size:12.3px; line-height:1.44; color:#5c5c68 }
+.mq .st .num{ font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.2em; color:var(--card-mute) }
+.mq .st .nm{ font-family:var(--disp); font-weight:800; font-size:14px; letter-spacing:.005em; text-transform:uppercase; line-height:1.2; margin-top:5px; color:var(--card-ink) }
+.mq .st .out{ margin-top:6px; font-size:12.3px; line-height:1.44; color:var(--card-soft) }
 .mq .st.hot{ background:var(--ac) }
-.mq .st.hot .num{ color:rgba(255,255,255,.72) }
-.mq .st.hot .nm, .mq .st.hot .out{ color:#fff }
-.mq .st.hot .sicon{ background:#fff; border-color:#fff; color:var(--ac) }
-.mq .st .flag{ position:absolute; right:14px; top:13px; font-family:var(--mono); font-size:8.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.85) }
+.mq .st.hot .num{ color:color-mix(in srgb, var(--ink-on-brand) 72%, transparent) }
+.mq .st.hot .nm, .mq .st.hot .out{ color:var(--ink-on-brand) }
+.mq .st.hot .sicon{ background:var(--ink-on-brand); border-color:var(--ink-on-brand); color:var(--ac) }
+.mq .st .flag{ position:absolute; right:14px; top:13px; font-family:var(--mono); font-size:8.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:color-mix(in srgb, var(--ink-on-brand) 85%, transparent) }
 .mq .sweep{ position:absolute; top:0; bottom:0; width:120px; z-index:6; pointer-events:none; left:-160px;
-  background:linear-gradient(90deg, transparent, rgba(219,0,99,.30) 42%, var(--ac) 68%, rgba(255,255,255,.9) 76%, transparent 88%) }
+  background:linear-gradient(90deg, transparent, rgba(219,0,99,.30) 42%, var(--ac) 68%, var(--sweep-hi) 76%, transparent 88%) }
 .mq.playing .sweep{ animation:mqSweep 1.45s cubic-bezier(.5,.05,.3,1) forwards 1.32s }
 @keyframes mqFade{ to{ opacity:1 } }
 @keyframes mqMask{ to{ clip-path:inset(0 0 0 0) } }
@@ -891,7 +981,7 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 </style>
 </head>
 <body>
-<div class="frame mq">
+<div class="frame mq" data-surface="{{SURFACE}}">
   <div class="rail top"><span>{{EYEBROW}}</span><span><b>{{BRAND_NAME}}</b></span></div>
   <div class="sweep"></div>
   <div class="body">
@@ -973,11 +1063,14 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
   Fill every {{TOKEN}} below, then DELETE this comment block.
   Change nothing else. The CSS and the animation work as they are.
 
-  BRAND      {{ACCENT}} {{FONT_LINK}} {{FONT_DISPLAY}} {{FONT_BODY}} {{FONT_MONO}}
+  BRAND      {{BRAND_KIT_TOKENS}} {{FONT_LINK}} - both come from the client.s Brand Kit.
+             There is no colour to choose here - the Kit carries all of them.
   HEADER     {{SYSTEM_MARK}} {{EYEBROW}} {{SYSTEM_NAME}} {{SUBTITLE}}
   PHASES     {{PHASE_1_NAME}}..{{PHASE_3_NAME}}  {{PHASE_1_TAG}}..{{PHASE_3_TAG}}
   STEPS      {{STEP_1_NAME}}..{{STEP_9_NAME}}    {{STEP_1_OUT}}..{{STEP_9_OUT}}
              {{STEP_1_ICON}}..{{STEP_9_ICON}}    (inline <svg class="ic">)
+  SURFACE    {{SURFACE}} - the letter  L  (light) or  D  (dark). The grounds come
+             from the client.s Brand Kit, so this picks which of THEIR two it uses.
   HOT STEP   {{HOT_1}}..{{HOT_9}} - put the word  hot  on the ONE hot step,
              leave the other eight EMPTY. That step is the seed of the
              Event Magnet(TM).
@@ -994,10 +1087,19 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 {{FONT_LINK}}
 <style>
 *{ box-sizing:border-box; margin:0; padding:0 }
+/* ---- THE CLIENT.S BRAND KIT --------------------------------------------
+   Replace the line below with the whole contents of
+     modules/0-foundations/visual-style/brand-kit/tokens/<their-kit>.css
+   minus its @import line (the font link already sits in <head>).
+   Every colour, font, corner and shadow in this file resolves through it.
+   Do NOT hand-write a colour anywhere in this template. ------------------ */
+{{BRAND_KIT_TOKENS}}
+
+/* the three font aliases this template uses, taken from the Kit */
 :root{
-  --mono:{{FONT_MONO}};
-  --disp:{{FONT_DISPLAY}};
-  --body:{{FONT_BODY}};
+  --mono:var(--font-mono);
+  --disp:var(--font-display);
+  --body:var(--font-body);
 }
 html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content:center; min-height:100vh }
 .frame{ position:relative; width:1320px; height:880px; overflow:hidden; transform-origin:center center; flex:0 0 auto }
@@ -1017,11 +1119,11 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 .frame .cta{ display:flex; flex-direction:column; align-items:flex-end; gap:9px; text-align:right }
 .frame .cta-txt{ font-family:var(--disp); font-weight:700; letter-spacing:-.01em; white-space:nowrap }
 .cta-btn{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--disp);
-  font-weight:800; white-space:nowrap; background:var(--ac); color:#fff; cursor:pointer;
+  font-weight:800; white-space:nowrap; background:var(--ac); color:var(--ink-on-brand); cursor:pointer;
   transition:transform .18s ease, box-shadow .18s ease, filter .18s ease }
 .cta-btn:hover{ transform:translateY(-2px); filter:brightness(1.07) }
 .cta-btn:active{ transform:translateY(0) }
-.cta-btn:focus-visible{ outline:2px solid #fff; outline-offset:3px }
+.cta-btn:focus-visible{ outline:none; box-shadow:var(--ring) }
 .cta-btn .ic{ width:16px; height:16px; stroke-width:2.1 }
 
 /* the hot-step flag only shows on the one step marked hot */
@@ -1030,14 +1132,32 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 /* ============================================================
    STYLE 03 — MONOLITH
    ============================================================ */
+/* Monolith at night or by day - the SAME block either way. Light and dark are
+   the Kit's own surfaces: put data-surface="L" or "D" on the .frame element.
+   The slab deliberately keeps its own ground on both, which is what the Kit's
+   --paper family is for: a slab that stays paper on a dark stage. */
 .mo{
-  --ac:#db0063;
-  --ink2:#f2f3f5; --soft2:#9aa0ab; --mute:#666c78;
-  --bg2:#0d0f12; --slab:#15181d; --hair:rgba(255,255,255,.075);
+  --ac:         var(--brand);
+  --ink2:       var(--ink);
+  --soft2:      var(--ink-soft);
+  --mute:       var(--ink-faint);
+  --bg2:        var(--canvas);
+  --glow:       color-mix(in srgb, var(--ink) 5%, transparent);
+  --slab-bg:    var(--paper);
+  --slab-ink:   var(--paper-ink);
+  --slab-soft:  var(--paper-soft);
+  --slab-mute:  color-mix(in srgb, var(--paper-ink) 45%, var(--paper));
+  --slab-line:  var(--paper-line);
+  --slab-border: color-mix(in srgb, var(--ink) 10%, transparent);
+  --slab-shadow: var(--shadow-lg);
+  --chip:       color-mix(in srgb, var(--paper-ink) 4%, var(--paper));
+  --chip-line:  var(--paper-line);
+  --hot:        var(--brand-soft);
+  --btn-shadow: var(--shadow-md);
   background:var(--bg2); font-family:var(--body); color:var(--ink2); line-height:1.5;
 }
 .mo::before{ content:""; position:absolute; inset:0; z-index:0;
-  background:radial-gradient(90% 60% at 50% 8%, rgba(255,255,255,.045), transparent 60%) }
+  background:radial-gradient(90% 60% at 50% 8%, var(--glow), transparent 60%) }
 .mo .body{ position:relative; z-index:3; height:100%; padding:54px 58px 44px; display:flex; flex-direction:column }
 .mo .top{ display:flex; justify-content:space-between; align-items:flex-start; gap:36px }
 .mo .mast{ gap:20px; margin-top:13px }
@@ -1058,7 +1178,7 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 .mo .chip .wm{ font-family:var(--disp); font-weight:800; font-size:19px; letter-spacing:-.01em }
 .mo .chip .ct{ margin-top:7px; font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--mute) }
 .mo .slabs{ display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:minmax(0,1fr); gap:20px; flex:1; min-height:0; margin-top:30px }
-.mo .slab{ position:relative; background:#fff; border-radius:2px;
+.mo .slab{ position:relative; background:var(--slab-bg); border-radius:2px; border:1px solid var(--slab-border); box-shadow:var(--slab-shadow);
   display:flex; flex-direction:column; overflow:hidden; opacity:0; transform:translateY(26px) }
 .mo.playing .slab{ animation:moStand .68s cubic-bezier(.2,.95,.25,1) forwards }
 .mo.playing .slab:nth-child(1){ animation-delay:1.16s }
@@ -1070,11 +1190,11 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 .mo.playing .slab:nth-child(2) .seam{ animation-delay:1.76s }
 .mo.playing .slab:nth-child(3) .seam{ animation-delay:1.9s }
 .mo .slab-head{ padding:21px 22px 18px }
-.mo .slab-id{ font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:#98a0ae }
-.mo .slab-name{ font-family:var(--disp); font-weight:800; font-size:24px; letter-spacing:-.02em; margin-top:10px; color:#101014 }
-.mo .slab-tag{ margin-top:9px; font-size:12.8px; line-height:1.46; color:#5c6270; min-height:38px }
-.mo .slab-steps{ flex:1; display:flex; flex-direction:column; border-top:1px solid #e7e7ec }
-.mo .ms{ position:relative; flex:1; padding:14px 22px; border-bottom:1px solid #e7e7ec; opacity:0;
+.mo .slab-id{ font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--slab-mute) }
+.mo .slab-name{ font-family:var(--disp); font-weight:800; font-size:24px; letter-spacing:-.02em; margin-top:10px; color:var(--slab-ink) }
+.mo .slab-tag{ margin-top:9px; font-size:12.8px; line-height:1.46; color:var(--slab-soft); min-height:38px }
+.mo .slab-steps{ flex:1; display:flex; flex-direction:column; border-top:1px solid var(--slab-line) }
+.mo .ms{ position:relative; flex:1; padding:14px 22px; border-bottom:1px solid var(--slab-line); opacity:0;
   display:flex; align-items:center; gap:14px }
 .mo .ms:last-child{ border-bottom:0 }
 .mo.playing .ms{ animation:moFade .45s ease forwards }
@@ -1088,13 +1208,13 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 .mo.playing .slab:nth-child(3) .ms:nth-child(1){ animation-delay:2.28s }
 .mo.playing .slab:nth-child(3) .ms:nth-child(2){ animation-delay:2.38s }
 .mo.playing .slab:nth-child(3) .ms:nth-child(3){ animation-delay:2.48s }
-.mo .micon{ flex:0 0 auto; width:38px; height:38px; border-radius:2px; background:#f5f5f8; border:1px solid #e4e4ea;
+.mo .micon{ flex:0 0 auto; width:38px; height:38px; border-radius:2px; background:var(--chip); border:1px solid var(--chip-line);
   display:flex; align-items:center; justify-content:center; color:var(--ac) }
 .mo .mbody{ flex:1; min-width:0 }
 .mo .ms .n{ font-family:var(--mono); font-size:9.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--ac) }
-.mo .ms .nm{ font-family:var(--disp); font-weight:700; font-size:14.4px; letter-spacing:-.01em; margin-top:5px; color:#101014 }
-.mo .ms .out{ margin-top:6px; font-size:12.2px; line-height:1.45; color:#5c5c68 }
-.mo .ms.hot{ background:rgba(219,0,99,.07) }
+.mo .ms .nm{ font-family:var(--disp); font-weight:700; font-size:14.4px; letter-spacing:-.01em; margin-top:5px; color:var(--slab-ink) }
+.mo .ms .out{ margin-top:6px; font-size:12.2px; line-height:1.45; color:var(--slab-soft) }
+.mo .ms.hot{ background:var(--hot) }
 .mo .ms.hot .micon{ border-color:var(--ac) }
 .mo .ms .flag{ position:absolute; right:18px; top:14px; font-family:var(--mono); font-size:8.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ac) }
 .mo .base{ height:2px; background:var(--ac); margin-top:24px; transform:scaleX(0); transform-origin:left }
@@ -1105,14 +1225,12 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 .mo .promise .txt{ flex:1; font-family:var(--disp); font-weight:500; font-size:15.5px; line-height:1.46; color:var(--ink2); max-width:62ch }
 .mo .cta{ flex:0 0 auto; margin-left:auto }
 .mo .cta-txt{ font-size:13px; color:var(--soft2) }
-.mo .cta-btn{ padding:14px 26px; border-radius:5px; font-size:14px; letter-spacing:-.005em;
-  box-shadow:0 12px 28px -14px var(--ac) }
+.mo .cta-btn{ padding:14px 26px; border-radius:5px; font-size:14px; letter-spacing:-.005em; box-shadow:var(--btn-shadow) }
 @keyframes moFade{ to{ opacity:1 } }
 @keyframes moRise{ from{ opacity:0; transform:translateY(12px) } to{ opacity:1; transform:none } }
 @keyframes moStand{ to{ opacity:1; transform:none } }
 @keyframes moSeam{ to{ transform:scaleY(1) } }
 @keyframes moSpanX{ to{ transform:scaleX(1) } }
-
 @media (prefers-reduced-motion: reduce){
   .bp *, .mq *, .mo *{ animation:none !important; transition:none !important }
   .bp .grid, .bp .tick, .bp .eb, .bp .h1, .bp .sub, .bp .dim-val, .bp .row, .bp .logo, .bp .cta, .bp .tblock,
@@ -1129,7 +1247,7 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 </style>
 </head>
 <body>
-<div class="frame mo">
+<div class="frame mo" data-surface="{{SURFACE}}">
   <div class="body">
     <div class="top">
       <div class="mast-col">
