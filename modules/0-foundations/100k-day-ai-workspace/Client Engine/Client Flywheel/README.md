@@ -4,11 +4,11 @@
 All three steps are *in development*. Their folders are here so each asset has a home the day its
 builder ships in Coach Launch Academy™. Nothing to do yet.
 
-- `7-goliath-content/` — Step 7 · Goliath Content™ — your authority content engine
+- `goliath-content/` — Step 7 · Goliath Content™ — your authority content engine
   (10X output, zero overwhelm)
-- `8-pixie-dust-social/` — Step 8 · Pixie Dust Social™ — your organic social system
+- `pixie-dust-social/` — Step 8 · Pixie Dust Social™ — your organic social system
   (premium buyers for $5 a day)
-- `9-dragon-fire-ads/` — Step 9 · Dragon Fire Ads™ — your paid traffic system
+- `dragon-fire-ads/` — Step 9 · Dragon Fire Ads™ — your paid traffic system
   (fill every event on demand)
 
 **Needs first:** a working Money Magnet™ (Steps 4–6) — the traffic needs somewhere to go.

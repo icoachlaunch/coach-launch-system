@@ -21,6 +21,8 @@ close: TBD — set in the Money Model       (The Expert Close | The Strategy Clo
 | Products & Pricing | `Reference/products-and-pricing.md` | empty | 0 | — |
 | Competitive Landscape | `Reference/competitive-landscape.md` | empty | 0 | — |
 
+Add a row here for any Reference document of your own (see `Reference/README.md`).
+
 **Brand Kit installed:** none — `Reference/brand-kit/tokens/` is empty until the Visual Style Guide is built.
 
 ## The facts the AI must never re-ask
@@ -38,20 +40,20 @@ Fill these in as the Reference docs lock. One line each, verbatim from the sourc
 
 | Asset | Folder | Status |
 |---|---|---|
-| $Million Promise™ | `Client Engine/Offer Matrix/1a-million-promise/` | not started |
-| The Golden Avatar™ | `Client Engine/Offer Matrix/1b-golden-avatar/` | not started |
-| $Million Moment™ | `Client Engine/Offer Matrix/1c-million-moment/` | not started |
-| Magic Formula™ | `Client Engine/Offer Matrix/2a-magic-formula/` | not started |
-| Magic Formula™ Visual | `Client Engine/Offer Matrix/2b-magic-formula-visual/` | not started |
-| SCORE™ Card | `Client Engine/Offer Matrix/2c-score-card/` | not started |
-| Money Model | `Client Engine/Offer Matrix/3a-money-model/` | not started |
-| Red Diamond Offer™ Enrollment Doc | `Client Engine/Offer Matrix/3b-enrollment-doc/` | not started |
-| Event Magnet™ | `Client Engine/Offer Matrix/3c-event-magnet/` | not started |
-| Cash Flow Max™ | `Client Engine/Offer Matrix/3d-cash-flow-max/` | not started |
-| PASS™ Instrument | `Client Engine/Money Magnet/4a-pass-instrument/` | not started |
-| Sniper Presentation™ | `Client Engine/Money Magnet/4b-sniper-presentation/` | not started |
-| Sniper Presentation™ Slides | `Client Engine/Money Magnet/4c-sniper-presentation-slides/` | not started |
-| Cash Flow Engine™ funnel | `Client Engine/Money Magnet/5-cash-flow-engine/` | not started |
+| $Million Promise™ | `Client Engine/Offer Matrix/million-promise/` | not started |
+| The Golden Avatar™ | `Client Engine/Offer Matrix/golden-avatar/` | not started |
+| $Million Moment™ | `Client Engine/Offer Matrix/million-moment/` | not started |
+| Magic Formula™ | `Client Engine/Offer Matrix/magic-formula/` | not started |
+| Magic Formula™ Visual | `Client Engine/Offer Matrix/magic-formula-visual/` | not started |
+| SCORE™ Card | `Client Engine/Offer Matrix/score-card/` | not started |
+| Money Model | `Client Engine/Offer Matrix/money-model/` | not started |
+| Red Diamond Offer™ Enrollment Doc | `Client Engine/Offer Matrix/enrollment-doc/` | not started |
+| Event Magnet™ | `Client Engine/Offer Matrix/event-magnet/` | not started |
+| Cash Flow Max™ | `Client Engine/Offer Matrix/cash-flow-max/` | not started |
+| PASS™ Instrument | `Client Engine/Money Magnet/pass-instrument/` | not started |
+| Sniper Presentation™ | `Client Engine/Money Magnet/sniper-presentation/` | not started |
+| Sniper Presentation™ Slides | `Client Engine/Money Magnet/sniper-presentation-slides/` | not started |
+| Cash Flow Engine™ funnel | `Client Engine/Money Magnet/cash-flow-engine/` | not started |
 
 Statuses: `not started` → `draft` → `complete`. When one changes, change it here AND in `PROGRESS.md`.
 

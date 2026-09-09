@@ -20,7 +20,7 @@ Reference/         Your five Foundation documents — the truth everything reads
                    Plus brand-kit/ — your ONE installed Brand Kit (the look every asset uses).
 
 Client Engine/     Three folders — Offer Matrix, Money Magnet, Client Flywheel — and inside each,
-                   one folder per asset, numbered in build order. Every README says what goes in it.
+                   one folder per asset. Every README says what goes in it. It grows as you do.
 
 skills/            The delivered tools Claude runs from here — slides, funnel pages, your
                    Magic Formula™ graphic.

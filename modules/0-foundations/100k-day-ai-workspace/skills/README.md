@@ -25,9 +25,9 @@ asset folder the skill names.
 
 ## Where the outputs go
 
-- Slides → `Client Engine/Money Magnet/4c-sniper-presentation-slides/`
-- Funnel build prompts → `Client Engine/Money Magnet/5-cash-flow-engine/` (a folder per phase)
-- Magic Formula™ graphic → `Client Engine/Offer Matrix/2b-magic-formula-visual/`
+- Slides → `Client Engine/Money Magnet/sniper-presentation-slides/`
+- Funnel build prompts → `Client Engine/Money Magnet/cash-flow-engine/` (a folder per phase)
+- Magic Formula™ graphic → `Client Engine/Offer Matrix/magic-formula-visual/`
 
 ## Updates
 

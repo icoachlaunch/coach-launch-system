@@ -43,16 +43,16 @@ Reference/           THE TRUTH. Five documents every builder reads and never re-
   products-and-pricing.md · competitive-landscape.md
   brand-kit/         The ONE installed Brand Kit: tokens/<their-kit>.css + blocks.css + surfaces/
 
-Client Engine/       THE ASSETS. Three pillar folders; inside each, one folder per asset, in build order.
+Client Engine/       THE ASSETS. Three pillar folders; inside each, one folder per asset. Plain names — see GROWING.
   Offer Matrix/        Steps 1–3 · everything offer-related
-                       1a-million-promise/ · 1b-golden-avatar/ · 1c-million-moment/
-                       2a-magic-formula/ · 2b-magic-formula-visual/ · 2c-score-card/
-                       3a-money-model/ · 3b-enrollment-doc/ · 3c-event-magnet/ · 3d-cash-flow-max/
+                       million-promise/ · golden-avatar/ · million-moment/
+                       magic-formula/ · magic-formula-visual/ · score-card/
+                       money-model/ · enrollment-doc/ · event-magnet/ · cash-flow-max/
   Money Magnet/        Steps 4–6 · making the money
-                       4a-pass-instrument/ (+ sessions/) · 4b-sniper-presentation/ · 4c-sniper-presentation-slides/
-                       5-cash-flow-engine/ (a folder per funnel phase) · 6-genie-x-converter/ (in development)
+                       pass-instrument/ (+ sessions/) · sniper-presentation/ · sniper-presentation-slides/
+                       cash-flow-engine/ (a folder per funnel phase) · genie-x-converter/ (in development)
   Client Flywheel/     Steps 7–9 · traffic and marketing
-                       7-goliath-content/ · 8-pixie-dust-social/ · 9-dragon-fire-ads/ (all in development)
+                       goliath-content/ · pixie-dust-social/ · dragon-fire-ads/ (all in development)
 
 skills/              THE SKILLS. Delivered tools the AI runs from here (see SKILLS below).
 ```
@@ -146,32 +146,32 @@ Launch → Execute → Growth → Mastery — over 112 days.)
 ### Pillar 1 · Offer Matrix™ — the message and the offer only they can sell
 | Step | Folder | Produces | Needs first |
 |---|---|---|---|
-| 1a. $Million Promise™ | `Client Engine/Offer Matrix/1a-million-promise/` | The one-line marketing promise | Reference |
-| 1b. The Golden Avatar™ | `Client Engine/Offer Matrix/1b-golden-avatar/` | The deep buyer profile(s) | $Million Promise™ |
-| 1c. $Million Moment™ | `Client Engine/Offer Matrix/1c-million-moment/` | The system-discovery story | Promise + Avatar |
-| 2a. Magic Formula™ | `Client Engine/Offer Matrix/2a-magic-formula/` | The 3-phase, 9-step signature system | Step 1 |
-| 2b. Magic Formula™ Visual | `Client Engine/Offer Matrix/2b-magic-formula-visual/` | The animated graphic of it | Magic Formula™ + Brand Kit |
-| 2c. SCORE™ Card | `Client Engine/Offer Matrix/2c-score-card/` | The master content source (5 acts) | Step 1 + Magic Formula™ |
-| 3a. Money Model | `Client Engine/Offer Matrix/3a-money-model/` | Offer economics + the close | Steps 1–2 |
-| 3b. Red Diamond Offer™ Enrollment Doc | `Client Engine/Offer Matrix/3b-enrollment-doc/` | The long-form offer / sales letter | SCORE™ Card + Money Model |
-| 3c. The Event Magnet™ | `Client Engine/Offer Matrix/3c-event-magnet/` | The free lead magnet (hot step) | Magic Formula™ |
-| 3d. Cash Flow Max™ | `Client Engine/Offer Matrix/3d-cash-flow-max/` | The paid VIP + order-bump assets | Money Model |
+| 1a. $Million Promise™ | `Client Engine/Offer Matrix/million-promise/` | The one-line marketing promise | Reference |
+| 1b. The Golden Avatar™ | `Client Engine/Offer Matrix/golden-avatar/` | The deep buyer profile(s) | $Million Promise™ |
+| 1c. $Million Moment™ | `Client Engine/Offer Matrix/million-moment/` | The system-discovery story | Promise + Avatar |
+| 2a. Magic Formula™ | `Client Engine/Offer Matrix/magic-formula/` | The 3-phase, 9-step signature system | Step 1 |
+| 2b. Magic Formula™ Visual | `Client Engine/Offer Matrix/magic-formula-visual/` | The animated graphic of it | Magic Formula™ + Brand Kit |
+| 2c. SCORE™ Card | `Client Engine/Offer Matrix/score-card/` | The master content source (5 acts) | Step 1 + Magic Formula™ |
+| 3a. Money Model | `Client Engine/Offer Matrix/money-model/` | Offer economics + the close | Steps 1–2 |
+| 3b. Red Diamond Offer™ Enrollment Doc | `Client Engine/Offer Matrix/enrollment-doc/` | The long-form offer / sales letter | SCORE™ Card + Money Model |
+| 3c. The Event Magnet™ | `Client Engine/Offer Matrix/event-magnet/` | The free lead magnet (hot step) | Magic Formula™ |
+| 3d. Cash Flow Max™ | `Client Engine/Offer Matrix/cash-flow-max/` | The paid VIP + order-bump assets | Money Model |
 
 ### Pillar 2 · Money Magnet™ — fill the room and get paid
 | Step | Folder | Produces | Needs first |
 |---|---|---|---|
-| 4a. PASS™ Instrument | `Client Engine/Money Magnet/4a-pass-instrument/` | The Strategy Close diagnostic (+ `sessions/`, one report per session) | Magic Formula™ |
-| 4b. Sniper Presentation™ Script | `Client Engine/Money Magnet/4b-sniper-presentation/` | The live pitch script | SCORE™ Card · Money Model · Enrollment Doc |
-| 4c. Sniper Presentation™ Slides | `Client Engine/Money Magnet/4c-sniper-presentation-slides/` | The deck built from the Script (a skill) | Approved Script + Brand Kit |
-| 5. Cash Flow Engine™ | `Client Engine/Money Magnet/5-cash-flow-engine/` | The self-liquidating registration funnel (built in GHL AI Studio) | Event Magnet™ + Money Model + Cash Flow Max™ |
-| 6. Genie X Converter™ | `Client Engine/Money Magnet/6-genie-x-converter/` | Back-end follow-up messaging | *In development* |
+| 4a. PASS™ Instrument | `Client Engine/Money Magnet/pass-instrument/` | The Strategy Close diagnostic (+ `sessions/`, one report per session) | Magic Formula™ |
+| 4b. Sniper Presentation™ Script | `Client Engine/Money Magnet/sniper-presentation/` | The live pitch script | SCORE™ Card · Money Model · Enrollment Doc |
+| 4c. Sniper Presentation™ Slides | `Client Engine/Money Magnet/sniper-presentation-slides/` | The deck built from the Script (a skill) | Approved Script + Brand Kit |
+| 5. Cash Flow Engine™ | `Client Engine/Money Magnet/cash-flow-engine/` | The self-liquidating registration funnel (built in GHL AI Studio) | Event Magnet™ + Money Model + Cash Flow Max™ |
+| 6. Genie X Converter™ | `Client Engine/Money Magnet/genie-x-converter/` | Back-end follow-up messaging | *In development* |
 
 ### Pillar 3 · Client Flywheel™ — fill the machine
 | Step | Folder | Produces | Needs first |
 |---|---|---|---|
-| 7. Goliath Content™ | `Client Engine/Client Flywheel/7-goliath-content/` | Authority content engine | *In development* |
-| 8. Pixie Dust Social™ | `Client Engine/Client Flywheel/8-pixie-dust-social/` | Organic social system | *In development* |
-| 9. Dragon Fire Ads™ | `Client Engine/Client Flywheel/9-dragon-fire-ads/` | Paid traffic system | *In development* |
+| 7. Goliath Content™ | `Client Engine/Client Flywheel/goliath-content/` | Authority content engine | *In development* |
+| 8. Pixie Dust Social™ | `Client Engine/Client Flywheel/pixie-dust-social/` | Organic social system | *In development* |
+| 9. Dragon Fire Ads™ | `Client Engine/Client Flywheel/dragon-fire-ads/` | Paid traffic system | *In development* |
 
 **The Money Model (3a) sets the path** — the Accelerator phase (Launch / Execute / Growth / Mastery)
 and the close (**the Three Closes**: The Expert Close · The Strategy Close · The Deposit Close). That
@@ -272,6 +272,30 @@ Revise = same file, bump the version, add a row. **Exactly ONE canonical file pe
 - **Trademark ™** every coined system name on every mention — the pillars, the 9 steps, the Story
   parts, SCORE™, PASS™, Event Magnet™, Cash Flow Max™. NOT the company name "Coach Launch," NOT
   the phase words, NOT the five Reference document names.
+
+---
+
+## GROWING THE WORKSPACE — things that have no builder
+
+The folder names are plain on purpose — no numbers, no step codes — so the workspace can grow without
+anything being renamed. The build order lives in the roadmap above and in each pillar's README, not
+in the folder names. When the user brings something new:
+
+- **A new Coach Launch builder ships** → its asset gets a plain-named folder in its pillar, delivered
+  in the next kit. Nothing else moves.
+- **An asset of their own with no builder** (a book, a podcast, a case-study library, a workshop
+  outline) → ONE new folder in the pillar it serves — `Offer Matrix/` if it shapes the offer or the
+  message, `Money Magnet/` if it sells or converts, `Client Flywheel/` if it brings traffic or builds
+  an audience. Name it in lowercase-with-hyphens after the asset (`podcast/`, `case-studies/`). Write
+  its `README.md` in the same shape as the others (what goes here · how it gets built · needs first ·
+  feeds · file shape), and save the asset in it as one canonical file with the standard frontmatter.
+  Never inside another asset's folder; never loose in the pillar folder.
+- **Business information of their own** (certifications, team bios, policies, a guarantee, a client
+  list) → a new document in `Reference/`, beside the five, with the Reference frontmatter. Add a row
+  for it to the Reference table in `CONTEXT.md` so every session knows it exists. Reference is the
+  truth ABOUT the business; Client Engine™ is what's BUILT from it — keep that line clean.
+- **Unsure which pillar?** Ask what the thing is for — shaping the offer, making the sale, or finding
+  people — and place it once. Never create a fourth top-level folder; the three pillars hold everything.
 
 ---
 

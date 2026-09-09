@@ -117,7 +117,8 @@ foreach ($f in $textFiles) {
     # case-sensitive: the old folder was 'Foundations/'; live URLs legitimately contain '0-foundations/'
     if ($t -cmatch 'Foundations/')           { $fail += "$rel : stale 'Foundations/' path (the folder is Reference/ now)" }
     if ($t -match 'Client Engine/[1-9]-')     { $fail += "$rel : stale step-folder path (Client Engine holds the three pillar folders now)" }
-    if ($t -match 'pass-sessions/')          { $fail += "$rel : stale pass-sessions/ (sessions live in 4a-pass-instrument/sessions/)" }
+    if ($t -match 'Client Engine/(Offer Matrix|Money Magnet|Client Flywheel)/[1-9]') { $fail += "$rel : stale prefixed asset folder (asset folders carry plain names)" }
+    if ($t -match 'pass-sessions/')          { $fail += "$rel : stale pass-sessions/ (sessions live in pass-instrument/sessions/)" }
     if ($t -match 'PROJECT-INSTRUCTIONS')    { $fail += "$rel : mentions PROJECT-INSTRUCTIONS" }
     # legacy terms: ignore the paragraph that LISTS them as banned (it wraps over several lines),
     # and the house tool 'Money Model Builder'
@@ -138,7 +139,7 @@ foreach ($stub in 'business-brand-profile','brand-voice','visual-style-guide','p
 }
 $tok = Get-ChildItem -LiteralPath (Join-Path $top 'Reference\brand-kit\tokens') -File
 if (($tok | Where-Object { $_.Extension -eq '.css' }).Count -ne 0) { $fail += "tokens/ must ship EMPTY (one Kit is installed by the client)" }
-foreach ($must in 'README.md','CLAUDE.md','CONTEXT.md','PROGRESS.md','Reference\brand-kit\README.md','Reference\brand-kit\tokens\README.md','Client Engine\README.md','Client Engine\Offer Matrix\README.md','Client Engine\Money Magnet\README.md','Client Engine\Client Flywheel\README.md','skills\README.md',
+foreach ($must in 'README.md','CLAUDE.md','CONTEXT.md','PROGRESS.md','Reference\README.md','Reference\brand-kit\README.md','Reference\brand-kit\tokens\README.md','Client Engine\README.md','Client Engine\Offer Matrix\README.md','Client Engine\Money Magnet\README.md','Client Engine\Client Flywheel\README.md','skills\README.md',
                   'skills\sniper-presentation-slides\SKILL.md','skills\cash-flow-funnel-builder\SKILL.md','skills\magic-formula-visual\SKILL.md') {
   if (-not (Test-Path (Join-Path $top $must))) { $fail += "missing: $must" }
 }

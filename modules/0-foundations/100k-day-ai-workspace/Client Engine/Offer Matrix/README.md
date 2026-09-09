@@ -6,24 +6,24 @@ Ten assets across three steps, built in this order. Each folder's `README.md` sa
 which builder makes it, what it needs first and what it feeds.
 
 ## Step 1 · The $Million Story™ — be the voice in their head
-- `1a-million-promise/` — your one-line marketing promise
-- `1b-golden-avatar/` — your deep buyer profile(s)
-- `1c-million-moment/` — your system-discovery story
+- `million-promise/` — your one-line marketing promise
+- `golden-avatar/` — your deep buyer profile(s)
+- `million-moment/` — your system-discovery story
 
 **Needs first:** your five Reference docs.
 
 ## Step 2 · Magic Formula™ — make competition irrelevant
-- `2a-magic-formula/` — your 3-phase, 9-step signature system
-- `2b-magic-formula-visual/` — the animated graphic of it (a skill in `skills/`)
-- `2c-score-card/` — the SCORE™ Card, your master content source
+- `magic-formula/` — your 3-phase, 9-step signature system
+- `magic-formula-visual/` — the animated graphic of it (a skill in `skills/`)
+- `score-card/` — the SCORE™ Card, your master content source
 
 **Needs first:** Step 1, all three parts.
 
 ## Step 3 · Red Diamond Offer™ — offers they can't say no to
-- `3a-money-model/` — offer economics, your Accelerator phase and your close
-- `3b-enrollment-doc/` — the long-form offer / sales letter
-- `3c-event-magnet/` — the free lead magnet on your hot step
-- `3d-cash-flow-max/` — the VIP upsell + order bumps
+- `money-model/` — offer economics, your Accelerator phase and your close
+- `enrollment-doc/` — the long-form offer / sales letter
+- `event-magnet/` — the free lead magnet on your hot step
+- `cash-flow-max/` — the VIP upsell + order bumps
 
 **Needs first:** Steps 1–2. The Money Model (3a) sets the path for everything built after it.
 
