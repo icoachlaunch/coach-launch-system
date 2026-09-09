@@ -351,8 +351,8 @@ table.cl-table { width: 100%; border-collapse: collapse; font-size: 0.97rem; bac
 .cl-cta p.cta-next { margin: 1.2rem 0 0; font-size: .85rem; color: var(--text-dim); }
 
 /* ============================================================
-   FORMULA MAP — 3 PILLARS / 9 STEPS  ("you are here" journey marker)
-   Standard block shown near the top of every Formula-step guide.
+   ENGINE MAP — 3 PILLARS / 9 STEPS  ("you are here" journey marker)
+   Standard block shown near the top of every Engine-step guide.
    Add class .here to the current <div class="step"> to mark position.
    ============================================================ */
 .map-intro { text-align:center; font-size:1.05rem; color:var(--text-muted); max-width:640px; margin:0 auto 1.2rem; }

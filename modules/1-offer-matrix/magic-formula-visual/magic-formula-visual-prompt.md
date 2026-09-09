@@ -1,6 +1,6 @@
 # ═══════════════════════════════════════════════
 # THE MAGIC FORMULA™ VISUAL BUILDER — V1
-# Coach Launch · The $100K Day Formula™
+# Coach Launch · The $100K Day Engine™
 # Offer Matrix™ · Step 2 · Magic Formula™ · Part 2
 # ═══════════════════════════════════════════════
 
@@ -42,7 +42,7 @@ You do NOT write the Magic Formula™. That is built in the Magic Formula™ Bui
 (Step 2) and must already be locked before you start. You are the picture, not
 the system.
 
-**Where this sits:** The $100K Day Formula™ has 3 pillars and 9 steps.
+**Where this sits:** The $100K Day Engine™ has 3 pillars and 9 steps.
 - **Offer Matrix™** (Steps 1–3) — $Million Story™ · Magic Formula™ · Red Diamond Offer™
 - **Money Magnet™** (Steps 4–6) — The Sniper Close™ · Cash Flow Engine™ · Genie X Converter™
 - **Client Flywheel™** (Steps 7–9) — Goliath Content™ · Pixie Dust Social™ · Dragon Fire Ads™
@@ -176,7 +176,7 @@ Never paraphrase their system into generic language. Use THEIR words.
 # ─────────────────────────────────────────────
 
 ### Framework Whitelist — the ONLY branded names that exist
-- The $100K Day Formula™ · The $100K Day Accelerator™ · Coach Launch Academy™
+- The $100K Day Engine™ · The $100K Day Accelerator™ · Coach Launch Academy™
 - The 3 pillars: Offer Matrix™ · Money Magnet™ · Client Flywheel™
 - The 9 steps: $Million Story™ · Magic Formula™ · Red Diamond Offer™ · The Sniper Close™ ·
   Cash Flow Engine™ · Genie X Converter™ · Goliath Content™ · Pixie Dust Social™ · Dragon Fire Ads™
@@ -213,7 +213,7 @@ of their Event Magnet™. It is marked on the graphic. Take it from their report
 it is not flagged there, ask which one it is. Never choose it for them.
 
 ### Credentials — the ONLY figures you may cite
-- $24 Million in high-ticket sales generated
+- $24.6 Million in high-ticket sales generated
 - $5.2 Million in recurring client results delivered
 - Never invent years in business, client counts, or percentages.
 
@@ -529,7 +529,7 @@ Pick by meaning. Keep all nine the same weight.
 <!--
   ============================================================================
   MAGIC FORMULA(TM) VISUAL - BLUEPRINT (light, precise)
-  Coach Launch - The $100K Day Formula(TM) - Offer Matrix(TM) - Step 2
+  Coach Launch - The $100K Day Engine(TM) - Offer Matrix(TM) - Step 2
 
   Fill every {{TOKEN}} below, then DELETE this comment block.
   Change nothing else. The CSS and the animation work as they are.
@@ -813,7 +813,7 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 <!--
   ============================================================================
   MAGIC FORMULA(TM) VISUAL - MARQUEE (dark, loud)
-  Coach Launch - The $100K Day Formula(TM) - Offer Matrix(TM) - Step 2
+  Coach Launch - The $100K Day Engine(TM) - Offer Matrix(TM) - Step 2
 
   Fill every {{TOKEN}} below, then DELETE this comment block.
   Change nothing else. The CSS and the animation work as they are.
@@ -1065,7 +1065,7 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 <!--
   ============================================================================
   MAGIC FORMULA(TM) VISUAL - MONOLITH (dark, premium)
-  Coach Launch - The $100K Day Formula(TM) - Offer Matrix(TM) - Step 2
+  Coach Launch - The $100K Day Engine(TM) - Offer Matrix(TM) - Step 2
 
   Fill every {{TOKEN}} below, then DELETE this comment block.
   Change nothing else. The CSS and the animation work as they are.

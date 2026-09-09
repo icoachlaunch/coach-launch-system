@@ -3,7 +3,7 @@
 apply_formula_map.py — Coach Launch guide standard.
 
 Stamps the standard 3-Pillar / 9-Step formula MAP (with a crimson
-"You are here" marker on the current step) into a Formula-step guide,
+"You are here" marker on the current step) into an Engine-step guide,
 directly under the hero <header>.
 
 This is the SINGLE SOURCE OF TRUTH for the map's HTML. The map's CSS
@@ -89,7 +89,7 @@ def build_map(step, asset, intro):
     out = []
     out.append(MAP_START)
     out.append("  <section>")
-    out.append('    <p class="cl-eyebrow" style="text-align:center;">The $100K Day Formula™ · 3 Pillars · 9 Steps</p>')
+    out.append('    <p class="cl-eyebrow" style="text-align:center;">The $100K Day Engine™ · 3 Pillars · 9 Steps</p>')
     out.append(f'    <p class="map-intro">{intro}</p>')
     out.append('    <div class="map">')
     out.append('      <div class="map-grid">')

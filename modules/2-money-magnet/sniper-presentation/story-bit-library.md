@@ -1,6 +1,6 @@
 # ═══════════════════════════════════════════════
 # THE STORY-BIT LIBRARY
-# Coach Launch · The $100K Day Formula™
+# Coach Launch · The $100K Day Engine™
 # Money Magnet™ · Step 4 · The Sniper Close™ · Part 2 — The Sniper Presentation™
 # ───────────────────────────────────────────────
 # © 2026 Coach Launch. All rights reserved.
@@ -14,7 +14,7 @@
 # or replicate this library or any part of it; use it to build a competing product,
 # template, course, or tool; or remove or alter this notice.
 #
-# The $100K Day Formula™, The $100K Day Accelerator™, Coach Launch Academy™, and
+# The $100K Day Engine™, The $100K Day Accelerator™, Coach Launch Academy™, and
 # every framework and step name used here are trademarks of Coach Launch.
 # This licence is personal, non-transferable, and may be revoked.
 # ═══════════════════════════════════════════════

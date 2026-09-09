@@ -57,7 +57,7 @@
   #toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(20px); background:var(--cl-black); color:#fff; font-family:var(--font-display); font-weight:700; font-size:.85rem; padding:.7rem 1.2rem; border-radius:999px; opacity:0; pointer-events:none; transition:opacity .2s,transform .2s; z-index:100; }
   #toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
 
-  /* ---- dashboard Formula roadmap (Montserrat+Lato; dashboard-only, guides untouched) ---- */
+  /* ---- dashboard Engine roadmap (Montserrat+Lato; dashboard-only, guides untouched) ---- */
   .fx { position:relative; width:min(1440px,calc(100vw - 48px)); max-width:none; margin:2.6rem 0 0; margin-left:calc(50% - min(720px,calc(50vw - 24px))); border-radius:22px; overflow:hidden; padding:2.6rem 2.8rem 2.2rem; background:radial-gradient(60% 55% at 26% 12%,#ffe1ee 0%,transparent 60%),radial-gradient(55% 55% at 88% 96%,#e9e0fb 0%,transparent 62%),linear-gradient(160deg,#fff5f9 0%,#ffffff 45%,#f4effb 100%); border:1px solid #efe6ee; box-shadow:0 24px 60px rgba(80,20,60,.09); }
   .fx::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.55; background-image:linear-gradient(rgba(219,0,99,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(219,0,99,.05) 1px,transparent 1px); background-size:44px 44px; -webkit-mask-image:radial-gradient(72% 62% at 50% 36%,#000,transparent 86%); mask-image:radial-gradient(72% 62% at 50% 36%,#000,transparent 86%); }
   .fx-inner { position:relative; z-index:1; }
@@ -111,7 +111,7 @@
   .pb-steps span { font-family:var(--font-display); font-weight:700; font-size:.74rem; letter-spacing:.03em; text-transform:uppercase; color:#fff; background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.18); padding:.34rem .72rem; border-radius:999px; }
   @media (max-width:720px){ .pillar-banner .pb-inner { padding:1.4rem 1.2rem; } }
 
-  /* ---- Formula headline + sub-headline above the map ---- */
+  /* ---- Engine headline + sub-headline above the map ---- */
   .formula-lead { text-align:center; margin:2.8rem 0 .5rem; }
   .formula-headline { font-family:var(--font-display); font-weight:800; font-size:clamp(2rem,5.5vw,3rem); color:var(--cl-black); letter-spacing:-.02em; line-height:1.05; margin:0 0 .6rem; padding:0; border:0; }
   .formula-headline .hl { color:var(--cl-crimson); }
