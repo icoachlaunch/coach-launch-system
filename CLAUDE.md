@@ -1,7 +1,7 @@
 # CLAUDE.md — Coach Launch System · working map
 
 The single source of truth for Coach Launch builder prompts, companion guides, and the
-brand system. Brand: **Coach Launch** · System: **The $100K Day Formula™**. This file is the
+brand system. Brand: **Coach Launch** · System: **The $100K Day Engine™**. This file is the
 router — where things live and which skill to reach for. It loads every session, so it stays
 lean and points into the detailed docs instead of repeating them.
 
@@ -15,12 +15,14 @@ lean and points into the detailed docs instead of repeating them.
 
 ```
 modules/                     the deliverables — one folder per module, grouped by pillar
-├── 0-foundations/           Brand Profile · Visual Style · Brand Voice (built before the Formula)
+├── 0-foundations/           the five Foundations (Brand Profile · Visual Style · Brand Voice · Products & Pricing · Competitive Landscape) + the AI Workspace starter kit
 │   └── visual-style/brand-kit/   ★ THE DESIGN SYSTEM — six themes every visual thing reads from
 │       ├── tokens/<name>.css     Layer 1 · colour, type, corners, shadows. The ONLY place hexes live
 │       ├── blocks.css            Layer 2 · buttons, cards, lists, quotes, prices — zero hardcoded colour
 │       ├── surfaces/             Layer 3 · page.css · slide.css · social.css (one per medium)
 │       └── brand-kit.html        the client-facing "pick your look" gallery
+│   └── 100k-day-ai-workspace/    ★ the client STARTER KIT source (root docs · Reference/ · Client Engine/ · skills/).
+│                                 The zip is BUILT by scripts/build_workspace_kit.ps1 — never hand-edited
 ├── 1-offer-matrix/          Pillar 1 · Steps 1–3 (9 module folders: million-promise, golden-avatar,
 │                            million-moment, magic-formula, score-card, money-model, enrollment-doc,
 │                            event-magnet, cash-flow-max)
@@ -30,7 +32,6 @@ assets/coach-launch-guide.css  the ONE locked stylesheet every guide links to
 assets/agents images/          agent headshots for the portal (space in path → %20 in HTML)
 scripts/                     apply_formula_map.py (stamps the 3-pillar/9-step map) + helpers
 dashboard.html               the client Training Portal — the single entry point
-guides/                      legacy demo pages only
 ```
 
 Each module = its own self-contained folder: `modules/<pillar>/<module>/<module>-prompt.md`
@@ -79,6 +80,7 @@ Decide its class first, then drop it in the matching home.
 | Cash Flow Engine™ funnel pages (Step 5) | `modules/2-money-magnet/cash-flow-engine/SKILL.md` — the Funnel Builder. It reads the client's `BRAND KIT:` block and skins the phase templates in it (RULE 4: the Kit is the only look source). The 28 templates under `Funnel-templates/PHASE-*/` (Launch 6 · Execute 6 · Growth 7 · Mastery 9) are structural references and still carry their own hex — the skill does the skinning. A companion **setup guide per phase** (`phase-*-guide.html`) + the `funnel-examples.html` gallery sit alongside; all are surfaced in the dashboard's Step 5 (`#cashflow`). See memory `cash-flow-engine-funnel-approach` |
 | Magic Formula™ visual (Step 2) | `modules/1-offer-matrix/magic-formula-visual/` — templates take `{{BRAND_KIT_TOKENS}}` + `{{SURFACE}}` (`L`/`D`). Never a hex, never a font name |
 | A slide deck from a Sniper Presentation™ | `modules/2-money-magnet/sniper-presentation-slides/SKILL.md` |
+| The $100K Day AI Workspace starter kit (the client zip) | Edit the source at `modules/0-foundations/100k-day-ai-workspace/` (root docs, folder READMEs, stubs), then `powershell -File scripts/build_workspace_kit.ps1` — it copies the Brand Kit layers + the three delivered skills in, rewrites their relative links to live URLs, verifies, and zips. Never hand-edit the zip. Folder names are canon: `Reference/` (the five Foundations + `brand-kit/`), `Client Engine/` (one folder per asset), `skills/`. Builder prompts do NOT ship in the kit (they update in the portal) |
 | Generating images / headshots / avatars | `kie-image-gen` skill |
 | Making copy read human / removing AI tells | `humanizer` skill |
 | Any new/renamed prompt + guide | also wire it into `dashboard.html` **the same session** (standing rule, see `PROGRESS.md`) |
@@ -102,7 +104,7 @@ Decide its class first, then drop it in the matching home.
   same session (guide card + prompt buttons + embedded prompt JSON). The embedded JSON drifts
   silently — run `powershell -File scripts/sync_dashboard_prompts.ps1` to check, `-Apply` to fix.
   (`PROGRESS.md` standing rule)
-- **Formula map.** Every Formula-step (1–9) guide carries the 3-pillar/9-step map, stamped by
+- **Engine map.** Every Engine-step (1–9) guide carries the 3-pillar/9-step map, stamped by
   `scripts/apply_formula_map.py`. Foundations guides do not. (`PROGRESS.md` standing rule)
 - **Big-file editing.** `dashboard.html` is large + minified — edit via Python/.NET UTF-8
   (`UTF8Encoding($false)`), then verify ™ counts and 0 NUL bytes. This host has no real Python

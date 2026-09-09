@@ -2,7 +2,7 @@
 
 The single source of truth for Coach Launch builder prompts, companion guides, and the brand style system. Everything here is on-brand by default.
 
-Brand: **Coach Launch** · System: **The $100K Day Formula™** + **The $100K Day Accelerator™**
+Brand: **Coach Launch** · System: **The $100K Day Engine™** + **The $100K Day Accelerator™**
 
 ---
 
@@ -11,14 +11,13 @@ Brand: **Coach Launch** · System: **The $100K Day Formula™** + **The $100K Da
 ```
 coach-launch-system/
 ├── modules/                      Every module = its own folder (prompt + guide + extras), grouped by pillar
-│   ├── 0-foundations/            Brand Profile · Visual Style · Brand Voice (built before the Formula)
+│   ├── 0-foundations/            The five Foundations + the $100K Day AI Workspace starter kit (built by scripts/build_workspace_kit.ps1)
 │   ├── 1-offer-matrix/           Pillar 1 · Steps 1–3 — Million Story, Magic Formula, Red Diamond Offer (9 modules)
 │   └── 2-money-magnet/           Pillar 2 · Step 4+ — sniper-close, sniper-presentation (+ bits/), sniper-presentation-slides
 ├── assets/
 │   ├── coach-launch-guide.css    The locked stylesheet every guide links to
 │   └── agents images/            Agent headshots used on the portal
 ├── scripts/                      apply_formula_map.py (stamps the 3-pillar/9-step map onto guides) + helpers
-├── guides/                       Legacy demo pages only (million-story-guide, style-system)
 ├── dashboard.html                The Training Portal — the single entry point to every guide + prompt
 ├── PROGRESS.md                   Build log — read this FIRST; the source of truth for where the build is
 └── SETUP-GITHUB.md               One-time GitHub setup steps
@@ -44,7 +43,7 @@ Never restyle a guide by hand. The look lives in **one** stylesheet (`assets/coa
 ## Naming + layout
 
 Each module is its own folder under its pillar:
-`modules/<pillar>/<module>/<module>-guide.html` + `<module>-prompt.md` (plus any related files). The only grouping level is the pillar. Formula-step guides carry the shared CSS + the 3-pillar/9-step map (stamped by `scripts/apply_formula_map.py`).
+`modules/<pillar>/<module>/<module>-guide.html` + `<module>-prompt.md` (plus any related files). The only grouping level is the pillar. Engine-step guides carry the shared CSS + the 3-pillar/9-step map (stamped by `scripts/apply_formula_map.py`).
 
 ## How to view
 
