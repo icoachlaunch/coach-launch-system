@@ -95,7 +95,7 @@ structure because a table said so.
 1. **The Script** — stamped `cl_asset: sniper-presentation-script`, `status: approved`.
    The ONLY source of copy.
 2. **The mold library** — `coach-launch-molds.html`. The ONLY source of markup.
-3. **The Brand Kit** — `modules/0-foundations/visual-style/brand-kit/tokens/<name>.css`.
+3. **The Brand Kit** — `Reference/brand-kit/tokens/<name>.css`.
    The ONLY source of colour and type, and **not a slide asset** — it is the same file the
    client's funnel pages, ads and social posts read. `coach-launch-themes.html` is a preview
    of those six, built from them; it is not a second copy you may edit.
@@ -115,11 +115,11 @@ Everything else — the format, the close, the VIP Hour, the presenter, their sy
 read from the Script's stamp. You do not ask for what the file already tells you.
 
 **The theme is not a choice you make here either.** It was made once, upstream, in the client's
-**Visual Style Guide** (Brand Foundation 2), which ends with a block like this:
+**Visual Style Guide** (Foundation 2), which ends with a block like this:
 
 ```
 BRAND KIT: sovereign
-FILE: modules/0-foundations/visual-style/brand-kit/tokens/sovereign.css
+FILE: Reference/brand-kit/tokens/sovereign.css
 OVERRIDES: none
 ```
 
@@ -570,7 +570,7 @@ glance. Overflow → STOP and show the user (RULE 1). Never trim silently.
 
 ## THE THEMES — the client's Brand Kit, not a slide setting
 
-These six are the **Brand Kit**, at `modules/0-foundations/visual-style/brand-kit/tokens/`. They are
+These six are the **Brand Kit**. The client installs ONE of them at `Reference/brand-kit/tokens/<name>.css` in their AI Workspace (preview all six at the gallery URL below). They are
 the client's whole visual identity, not a deck skin — the same files their funnel pages, ads and
 social posts load. `coach-launch-themes.html` shows the six on real molds and is generated from
 them by `scripts/build_slide_kit.ps1`. **Never edit tokens in the slide module.** Edit the Kit and
@@ -782,7 +782,7 @@ posts rather than being its own island.
 
 **Haven't built the Guide yet?** Then pick from the six below — but know what you're picking. This
 isn't a deck theme; it's the look everything you publish will carry. Open
-`brand-kit/brand-kit.html` to see each one on a real funnel page, a real slide and a real post
+the Brand Kit gallery — https://icoachlaunch.github.io/coach-launch-system/modules/0-foundations/visual-style/brand-kit/brand-kit.html — to see each one on a real funnel page, a real slide and a real post
 side by side, or `coach-launch-themes.html` to see all six on real slides:
 
 • **Crimson** — the Coach Launch house look. Confident, modern, high contrast.

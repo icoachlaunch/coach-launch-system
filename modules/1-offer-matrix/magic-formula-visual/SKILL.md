@@ -192,7 +192,7 @@ Never paraphrase their system into generic language. Use THEIR words.
   Cash Flow Engine™ · Genie X Converter™ · Goliath Content™ · Pixie Dust Social™ · Dragon Fire Ads™
 - The 3 parts of the $Million Story™: $Million Promise™ · The Golden Avatar™ · $Million Moment™
 - Event Magnet™ — the free lead magnet the hot step seeds
-- The Brand Foundations: Business Brand Profile · Visual Style Guide · Brand Voice ·
+- The Foundations: Business Brand Profile · Visual Style Guide · Brand Voice ·
   Products & Pricing · Competitive Landscape
 - Coach Launch · Matthew White
 
@@ -436,7 +436,7 @@ Replace every `{{TOKEN}}`, fill nothing else, and delete the leading
 
 **BRAND**
 - `{{BRAND_KIT_TOKENS}}` — the ENTIRE contents of their Kit file
-  (`brand-kit/tokens/<name>.css`), minus its `@import` line. Paste it verbatim. This is
+  (`Reference/brand-kit/tokens/<name>.css`), minus its `@import` line. Paste it verbatim. This is
   the only place colour enters the file: `--ac`, the fonts, the corners and the shadows
   all resolve through it. The old ACCENT slot is gone, and there is no hex to type.
 - `{{FONT_LINK}}` — the Google Fonts `<link>` for that Kit. Take the URL from the
@@ -553,7 +553,7 @@ Pick by meaning. Keep all nine the same weight.
 *{ box-sizing:border-box; margin:0; padding:0 }
 /* ---- THE CLIENT.S BRAND KIT --------------------------------------------
    Replace the line below with the whole contents of
-     modules/0-foundations/visual-style/brand-kit/tokens/<their-kit>.css
+     Reference/brand-kit/tokens/<their-kit>.css
    minus its @import line (the font link already sits in <head>).
    Every colour, font, corner and shadow in this file resolves through it.
    Do NOT hand-write a colour anywhere in this template. ------------------ */
@@ -837,7 +837,7 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 *{ box-sizing:border-box; margin:0; padding:0 }
 /* ---- THE CLIENT.S BRAND KIT --------------------------------------------
    Replace the line below with the whole contents of
-     modules/0-foundations/visual-style/brand-kit/tokens/<their-kit>.css
+     Reference/brand-kit/tokens/<their-kit>.css
    minus its @import line (the font link already sits in <head>).
    Every colour, font, corner and shadow in this file resolves through it.
    Do NOT hand-write a colour anywhere in this template. ------------------ */
@@ -1089,7 +1089,7 @@ html,body{ background:#0b0b0d; display:flex; align-items:center; justify-content
 *{ box-sizing:border-box; margin:0; padding:0 }
 /* ---- THE CLIENT.S BRAND KIT --------------------------------------------
    Replace the line below with the whole contents of
-     modules/0-foundations/visual-style/brand-kit/tokens/<their-kit>.css
+     Reference/brand-kit/tokens/<their-kit>.css
    minus its @import line (the font link already sits in <head>).
    Every colour, font, corner and shadow in this file resolves through it.
    Do NOT hand-write a colour anywhere in this template. ------------------ */

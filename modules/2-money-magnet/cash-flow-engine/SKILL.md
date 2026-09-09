@@ -109,7 +109,7 @@ that fits where they are — or whichever they're comfortable running.
 2. **The upstream assets** — the client's own Coach Launch deliverables (Brand Profile, Event
    Magnet™, Money Model, offer, etc.). The ONLY source of **copy** — every `{SLOT}` is filled from
    a named asset, never from your imagination (Section F has the slot → asset map).
-3. **The Brand Kit** — `modules/0-foundations/visual-style/brand-kit/tokens/<name>.css`. The ONLY
+3. **The Brand Kit** — `Reference/brand-kit/tokens/<name>.css`. The ONLY
    source of **look** — colour, type, corners. The same file their slides, ads and posts read.
    You translate its tokens into plain brand instructions in the prompt, because GHL AI Studio
    reads words, not a CSS file.
@@ -182,7 +182,7 @@ wordsmith and never redesign. When a slot has no source asset, you STOP and ask 
   trust and legal disaster — the same reason every Coach Launch builder is whitelist-first.
 
 ### RULE 4 — THE BRAND KIT IS THE ONLY LOOK SOURCE
-- The theme was chosen ONCE, upstream, in the client's **Visual Style Guide** (Brand Foundation 2),
+- The theme was chosen ONCE, upstream, in the client's **Visual Style Guide** (Foundation 2),
   which ends with a `BRAND KIT: <name>` block. Ask for that block and use the Kit it names.
 - Translate the Kit's tokens into plain instructions in the prompt: the hero/brand colour, the
   display and body fonts, corner style, the accent. GHL AI Studio can't read the CSS — it needs
@@ -288,7 +288,7 @@ This tool needs, for the chosen phase:
    - **Money Model** (Step 3) — the price ladder, anchor price, total value, the close.
    - **Enrollment Doc** (Step 3) — the offer stack, guarantee, compliance/fine print.
    - **$Million Promise™ / Sniper Presentation™** — the core promise and proof language.
-3. **The Brand Kit** — `brand-kit/tokens/<name>.css`, the theme the Visual Style Guide named.
+3. **The Brand Kit** — `Reference/brand-kit/tokens/<name>.css`, the theme the Visual Style Guide named.
 
 **On start:** ask which **phase** (or which single page) they're building. Then read that phase's
 templates and confirm which upstream assets are available.
@@ -367,7 +367,7 @@ credentials) may be cited as SYSTEM proof. Every figure ON A PAGE comes from the
 assets. Invent nothing.
 
 ## THE BRAND KIT THEMES (the client's look, not a funnel setting)
-The six are at `modules/0-foundations/visual-style/brand-kit/tokens/`: **crimson** (house look),
+The six (the client installs ONE at `Reference/brand-kit/tokens/<name>.css` in their AI Workspace): **crimson** (house look),
 **ink** (editorial serif), **ember** (warm terracotta), **sovereign** (navy & gold), **voltage**
 (dark, electric), **meadow** (bright green). The Visual Style Guide's `BRAND KIT:` block names which
 one. Translate its tokens (`--brand`, `--font-display`, `--font-body`, corner radius, accent) into
