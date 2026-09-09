@@ -93,4 +93,4 @@ the how-to.
 ## The full guide
 
 The complete walkthrough — the why behind it and the step-by-step — lives in Coach Launch Academy™:
-**https://fast.coachlaunch.com**
+**https://portal.coachlaunch.com**
