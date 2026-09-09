@@ -17,6 +17,8 @@
   .setup-step .b { margin:0; }
   .kick { font-family:var(--font-display); font-weight:800; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--cl-crimson); }
   code.type-this { display:block; background:var(--cl-crimson-soft); border:1px dashed var(--cl-crimson); border-radius:var(--radius); padding:.9rem 1.1rem; margin:.7rem 0; font-size:.95rem; color:var(--cl-black); }
+  .tree { font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.9rem; line-height:1.55; color:var(--cl-black); background:var(--bg-panel); border:1px solid var(--border); border-left:4px solid var(--cl-crimson); border-radius:var(--radius); padding:1rem 1.2rem; margin:1.2rem 0; white-space:pre; overflow-x:auto; }
+  .tree .c { color:var(--text-muted); }
 </style>
 </head>
 <body>
@@ -25,10 +27,10 @@
   <!-- ============ HERO ============ -->
   <header class="cl-hero">
     <img class="cl-brand-logo" src="https://assets.cdn.filesafe.space/ybe7GTcbvnTIWFX0Hos9/media/66f909a24c8d5f82216f1acd.png" alt="Coach Launch">
-    <h1 class="formula-title">The <span class="hl">$100K</span> Day Formula™</h1>
+    <h1 class="formula-title">The <span class="hl">$100K</span> Day Engine™</h1>
     <div class="guide-name">The $100K Day <span class="hl">AI</span> Workspace</div>
     <p class="cl-eyebrow">Foundations · The Setup · Start Here</p>
-    <p class="subtitle">One place that holds everything the AI needs about your business — so every tool you use builds in your voice, for your offer, using your system. Set it up once; it works everywhere.</p>
+    <p class="subtitle">One folder that holds everything the AI needs about your business — your truth, your assets, your tools — so every tool you use builds in your voice, for your offer, using your system. Set it up once; it works everywhere.</p>
   </header>
 
   <!-- ============ WHAT IT IS ============ -->
@@ -42,7 +44,7 @@
     <p>Once it's set up, you never have to re-explain your business again.</p>
     <p>Every time you build something — an email, a page, a pitch, an ad — the AI already knows your voice, your offer, and your frameworks. It builds like <em>you</em>, not like a generic robot.</p>
 
-    <p>This is the very first thing you do — before the Formula, before anything.</p>
+    <p>This is the very first thing you do — before the Engine, before anything.</p>
     <p>It's the ground the whole system stands on.</p>
   </section>
 
@@ -75,35 +77,54 @@
     <div class="layer on"><h4>4. The Systems Layer ← this is the one</h4><p>One documented system that carries everything the AI needs — your voice, your offer, your frameworks, your numbers — into every session, automatically. This is what your AI Workspace <em>is</em>. Build it once, and every layer above it gets sharper.</p></div>
   </section>
 
-  <!-- ============ WHAT'S INSIDE ============ -->
+  <!-- ============ HOW IT'S PUT TOGETHER ============ -->
   <section>
-    <h2>What's Inside Your Workspace</h2>
-    <p>Three parts work together.</p>
+    <h2>How It's Put Together</h2>
+    <p>Four things, and each one has a job. Open the kit and this is what you'll see.</p>
 
-    <p><strong>1. The brain.</strong> A file called <code>PROJECT-INSTRUCTIONS.md</code>. It tells Claude how to run your workspace — how to start, what to load, and how to save your work so nothing gets lost.</p>
+    <div class="tree">100k-day-ai-workspace/
+├── README.md         <span class="c">how to set it up — for you</span>
+├── CLAUDE.md         <span class="c">the brain — how the AI runs the workspace, where things live, the rules</span>
+├── CONTEXT.md        <span class="c">your business at a glance — the AI keeps it current</span>
+├── PROGRESS.md       <span class="c">your build log — what's locked, what's next</span>
+│
+├── Reference/        <span class="c">THE TRUTH — your five Foundation docs, plus brand-kit/ (your one Kit)</span>
+├── Client Engine/    <span class="c">THE ASSETS — one folder for everything you build, grouped by step 1 to 9</span>
+└── skills/           <span class="c">THE TOOLS — slides, funnel pages, your Magic Formula™ graphic</span></div>
 
-    <p><strong>2. Your Foundations.</strong> Five short documents about your business — the ground truth everything pulls from. You build these first (about an hour), and this starter kit gives you a guided builder for each one.</p>
+    <p><strong>The four files at the top</strong> run the place. <code>README.md</code> is for you. <code>CLAUDE.md</code> is for the AI — it says where everything lives and how to behave. <code>CONTEXT.md</code> and <code>PROGRESS.md</code> are the memory: the AI updates them every time something gets built, so the next session starts already knowing.</p>
 
-    <p><strong>3. Your growing library.</strong> As you build each asset of The $100K Day Formula™ (each step has its own builder), you save it into the workspace. Over time, this folder <em>becomes</em> your entire business system — all in one place.</p>
+    <p><strong>Reference</strong> is the truth. Your five Foundation documents — who you are, how you look, how you sound, what you sell, who you're up against. Every builder reads from here and never asks you twice. Your Brand Kit lives in here too: the one file that decides your look everywhere.</p>
 
-    <div class="cl-callout tip">
-      <div class="cl-callout-title">▲ This is a starter kit</div>
-      <p>It sets up your Foundations. The Formula assets get added <em>as you build them</em> — the AI creates the right folder and files each one for you. Your workspace grows with you.</p>
+    <p><strong>Client Engine™</strong> is where the things you build go. One folder per asset, grouped by the step that builds it — your $Million Promise™, your Magic Formula™, your SCORE™ Card, your Event Magnet™, your Sniper Presentation™ and so on, through all nine steps. Every folder has a README that says exactly what goes in it.</p>
+
+    <p><strong>skills</strong> are the tools that build <em>from</em> your assets — your slide deck from your Script, your funnel pages from your Event Magnet™ and Money Model, your Magic Formula™ graphic from your system. You don't paste a skill; you tell Claude what you want and it opens the right one.</p>
+
+    <div class="cl-callout">
+      <div class="cl-callout-title">Where are the builders?</div>
+      <p>Not in the kit — on purpose. The builder prompts live in <strong>Coach Launch Academy™</strong>, your Training Portal, where they get improved over time.</p>
+      <p>When Claude says it's time to build something, you download that builder from the portal, paste it into the chat, and answer one question at a time. Claude saves the result into the right folder. Your folders never go stale when a builder improves.</p>
     </div>
   </section>
 
   <!-- ============ THE 5 FOUNDATIONS ============ -->
   <section>
-    <h2>Your Five Foundations</h2>
-    <p>These are the five documents you build first. Each has its own builder in the kit — a short, guided interview, one question at a time.</p>
+    <h2>Your Five Foundations Live in Reference</h2>
+    <p>These are the five documents you build first. Each has its own builder in Coach Launch Academy™ — a short, guided interview, one question at a time — and each saves over its stub in <code>Reference/</code>.</p>
     <ol class="cl-checklist">
-      <li><strong>Business Brand Profile</strong> — who you are, who you serve, where you're going.</li>
+      <li><strong>Business Brand Profile</strong> — what you believe, why you exist, where you're headed, where you operate.</li>
+      <li><strong>Visual Style Guide</strong> — your look. You pick one Brand Kit and install it in <code>Reference/brand-kit/</code>.</li>
       <li><strong>Brand Voice</strong> — how you write and speak, so the AI sounds like you.</li>
-      <li><strong>Visual Style Guide</strong> — your colors, fonts, logo, and look.</li>
       <li><strong>Products &amp; Pricing</strong> — what you sell, how you price it, how you deliver it.</li>
       <li><strong>Competitive Landscape</strong> — your market, your competitors, and your edge.</li>
     </ol>
-    <p>Do them in order. Each one makes the next builder — and every Formula step after — sharper.</p>
+    <p>Do them in order. Each one makes the next builder — and every Client Engine™ step after — sharper.</p>
+
+    <div class="cl-callout">
+      <div class="cl-callout-title">One Brand Kit, installed once</div>
+      <p>Your look isn't a list of colours you try to remember. It's a real file. In your Visual Style Guide you pick one of six Kits, save its file into <code>Reference/brand-kit/tokens/</code>, and every slide, page, ad and post reads from it.</p>
+      <p>That folder holds exactly one Kit. You can change it later — but you replace it, never keep two. Two Kits is two brands, and every tool has to guess which one is true.</p>
+    </div>
   </section>
 
   <!-- ============ SET IT UP IN CLAUDE ============ -->
@@ -115,15 +136,15 @@
     <div class="setup-step"><span class="n">1</span><p class="b">Unzip the kit somewhere easy to find (your Documents folder is perfect).</p></div>
     <div class="setup-step"><span class="n">2</span><p class="b">Open Claude and point it at the unzipped folder.</p></div>
     <div class="setup-step"><span class="n">3</span><p class="b">Start a new chat and type this:</p></div>
-    <code class="type-this">"I just set up my $100K Day AI Workspace. Read the PROJECT-INSTRUCTIONS.md file in this folder and walk me through the setup."</code>
-    <p>Claude reads the brain, checks your Foundations, and starts building with you — one step at a time. When a builder finishes, Claude saves the file straight into the right folder.</p>
+    <code class="type-this">"I just set up my $100K Day AI Workspace. Read the CLAUDE.md file in this folder and walk me through the setup."</code>
+    <p>Claude reads the brain, checks your Reference docs, and starts building with you — one step at a time. When a builder finishes, Claude saves the file straight into the right folder and updates your CONTEXT and PROGRESS.</p>
 
     <p class="kick">Option B — Claude Projects (claude.ai)</p>
     <div class="setup-step"><span class="n">1</span><p class="b">Go to claude.ai and create a new Project.</p></div>
-    <div class="setup-step"><span class="n">2</span><p class="b">Open <code>PROJECT-INSTRUCTIONS.md</code>, copy all of it, and paste it into the Project's instructions.</p></div>
+    <div class="setup-step"><span class="n">2</span><p class="b">Open <code>CLAUDE.md</code>, copy all of it, and paste it in as the Project's instructions.</p></div>
     <div class="setup-step"><span class="n">3</span><p class="b">Upload every other file from the kit into the Project, then start a chat:</p></div>
-    <code class="type-this">"I just set up my $100K Day AI Workspace. Use the PROJECT-INSTRUCTIONS and walk me through the setup."</code>
-    <p>Claude outputs each finished document in the chat. You copy it, paste it over the matching stub file, and re-upload it.</p>
+    <code class="type-this">"I just set up my $100K Day AI Workspace. Use the instructions and walk me through the setup."</code>
+    <p>Claude outputs each finished document in the chat. You copy it, paste it over the matching file, and re-upload it.</p>
   </section>
 
   <!-- ============ HOW IT GROWS ============ -->
@@ -131,7 +152,7 @@
     <h2>The One Rule That Keeps It Clean</h2>
     <p>As your workspace grows, one rule keeps it from turning into a mess:</p>
     <p><strong>One file per asset.</strong> You update the same file over time — you never make a "-v2" or a "-FINAL." When you improve something, Claude bumps the version and keeps a little history right inside the file.</p>
-    <p>That's it. One promise, one profile, one voice — each living in one place, always current.</p>
+    <p>That's it. One promise, one profile, one voice, one Kit — each living in one place, always current.</p>
   </section>
 
   <!-- ============ REMEMBER ============ -->
