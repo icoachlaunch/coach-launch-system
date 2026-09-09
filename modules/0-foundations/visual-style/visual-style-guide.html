@@ -34,7 +34,7 @@
     <img class="cl-brand-logo" src="https://assets.cdn.filesafe.space/ybe7GTcbvnTIWFX0Hos9/media/66f909a24c8d5f82216f1acd.png" alt="Coach Launch">
     <h1 class="formula-title">The <span class="hl">$100K</span> Day Engine™</h1>
     <div class="guide-name">Visual <span class="hl">Style</span> Guide</div>
-    <p class="cl-eyebrow">Brand Foundations · Foundation 2 of 5</p>
+    <p class="cl-eyebrow">Foundations · Foundation 2 of 5</p>
     <p class="subtitle">Pick one Brand Kit, once — and every slide, funnel page, ad and post you ever build reads its look from that one place.</p>
   </header>
 
@@ -78,7 +78,7 @@
   <section>
     <h2>Where It Fits</h2>
     <p>The Visual Style Guide is <strong>Foundation 2 of 5</strong> — built after your Business Brand Profile, because your look flows from your personality and your positioning.</p>
-    <p>There are five Brand Foundations. Together they're the ground The $100K Day Engine™ stands on.</p>
+    <p>There are five Foundations. Together they're the ground The $100K Day Engine™ stands on.</p>
 
     <div class="cl-table-wrap">
       <table class="cl-table">
@@ -278,33 +278,33 @@
     <p>When the Builder assembles your Visual Style Guide, the most important part isn't the colour table or the font names. It's three short lines at the top.</p>
 
     <div class="kit-block">BRAND KIT: sovereign
-FILE: modules/0-foundations/visual-style/brand-kit/tokens/sovereign.css
+FILE: Reference/brand-kit/tokens/sovereign.css
 OVERRIDES: none</div>
 
     <p>That block is what every downstream builder reads. When your Slides builder, your Funnel builder or your Magic Formula™ Visual asks what your brand looks like, you paste those three lines and it does the rest.</p>
 
     <p><strong>The first line</strong> names your Kit. One of the six, by its id.</p>
-    <p><strong>The second line</strong> is the real file your look lives in — the one global place. A builder that can load files loads it; one that can't reads the values from it.</p>
+    <p><strong>The second line</strong> is the real file your look lives in — the one global place. It sits in the Reference folder of your $100K Day AI Workspace, and you put it there yourself, once: download your Kit's file from the gallery and save it into <code>Reference/brand-kit/tokens/</code>. A builder that can load files loads it; one that can't reads the values from it.</p>
     <p><strong>The third line</strong> records anything you deliberately kept from your existing brand. For most people it says <em>none</em>. If you kept your own hero colour or your own fonts, it lists exactly those — and nothing else.</p>
 
     <div class="kit-block">BRAND KIT: sovereign
-FILE: modules/0-foundations/visual-style/brand-kit/tokens/sovereign.css
+FILE: Reference/brand-kit/tokens/sovereign.css
 OVERRIDES: --brand: #1b2a4a · --ink-on-brand: #ffffff</div>
 
     <p>That's a Sovereign brand that kept its own navy as the hero, with white text confirmed readable on it. Every builder that reads this applies the navy and leaves the rest of Sovereign exactly as shipped.</p>
 
     <div class="cl-callout">
       <div class="cl-callout-title">Where it lives</div>
-      <p>The block sits at the end of your Visual Style Guide, and your Guide is saved as <strong>visual-style-guide.md</strong> in the Reference folder of your $100K Day AI Workspace.</p>
+      <p>The block sits at the end of your Visual Style Guide, and your Guide is saved as <strong>visual-style-guide.md</strong> in the Reference folder of your $100K Day AI Workspace. Your Kit's file lives beside it, in <strong>Reference/brand-kit/tokens/</strong> — a folder that holds exactly one file.</p>
       <p>There is exactly one of these blocks in your business. If you ever find two, one of them is wrong.</p>
     </div>
 
     <p class="subhead">Three ways you'll use it</p>
     <p><strong>Running a builder.</strong> Paste the block when it asks. That's the whole hand-off. You never answer a colour question again.</p>
     <p><strong>Building a page yourself.</strong> Load three files, in this order — your Kit, the blocks, then the surface for the medium you're on — and use the blocks. They're already your colours.</p>
-    <div class="kit-block">&lt;link rel="stylesheet" href="brand-kit/tokens/sovereign.css"&gt;
-&lt;link rel="stylesheet" href="brand-kit/blocks.css"&gt;
-&lt;link rel="stylesheet" href="brand-kit/surfaces/page.css"&gt;</div>
+    <div class="kit-block">&lt;link rel="stylesheet" href="Reference/brand-kit/tokens/sovereign.css"&gt;
+&lt;link rel="stylesheet" href="Reference/brand-kit/blocks.css"&gt;
+&lt;link rel="stylesheet" href="Reference/brand-kit/surfaces/page.css"&gt;</div>
     <p><strong>Changing your look later.</strong> Change the one line naming your Kit, and everything follows. The next section covers how to do that without ending up with two.</p>
   </section>
 
@@ -479,7 +479,7 @@ OVERRIDES: --brand: #1b2a4a · --ink-on-brand: #ffffff</div>
 
   <!-- ============ FOOTER ============ -->
   <footer class="cl-foot">
-    <p>Coach Launch · The $100K Day Engine™ — Brand Foundations · Foundation 2 · Visual Style Guide</p>
+    <p>Coach Launch · The $100K Day Engine™ — Foundations · Foundation 2 · Visual Style Guide</p>
     <p>For Coach Launch clients. Built in Matthew White's voice.</p>
   </footer>
 
