@@ -38,20 +38,20 @@ Fill these in as the Reference docs lock. One line each, verbatim from the sourc
 
 | Asset | Folder | Status |
 |---|---|---|
-| $Million Promise™ | `Client Engine/1-million-story/million-promise/` | not started |
-| The Golden Avatar™ | `Client Engine/1-million-story/golden-avatar/` | not started |
-| $Million Moment™ | `Client Engine/1-million-story/million-moment/` | not started |
-| Magic Formula™ | `Client Engine/2-magic-formula/magic-formula/` | not started |
-| Magic Formula™ Visual | `Client Engine/2-magic-formula/magic-formula-visual/` | not started |
-| SCORE™ Card | `Client Engine/2-magic-formula/score-card/` | not started |
-| Money Model | `Client Engine/3-red-diamond-offer/money-model/` | not started |
-| Red Diamond Offer™ Enrollment Doc | `Client Engine/3-red-diamond-offer/enrollment-doc/` | not started |
-| Event Magnet™ | `Client Engine/3-red-diamond-offer/event-magnet/` | not started |
-| Cash Flow Max™ | `Client Engine/3-red-diamond-offer/cash-flow-max/` | not started |
-| PASS™ Instrument | `Client Engine/4-sniper-close/pass-instrument/` | not started |
-| Sniper Presentation™ | `Client Engine/4-sniper-close/sniper-presentation/` | not started |
-| Sniper Presentation™ Slides | `Client Engine/4-sniper-close/sniper-presentation-slides/` | not started |
-| Cash Flow Engine™ funnel | `Client Engine/5-cash-flow-engine/` | not started |
+| $Million Promise™ | `Client Engine/Offer Matrix/1a-million-promise/` | not started |
+| The Golden Avatar™ | `Client Engine/Offer Matrix/1b-golden-avatar/` | not started |
+| $Million Moment™ | `Client Engine/Offer Matrix/1c-million-moment/` | not started |
+| Magic Formula™ | `Client Engine/Offer Matrix/2a-magic-formula/` | not started |
+| Magic Formula™ Visual | `Client Engine/Offer Matrix/2b-magic-formula-visual/` | not started |
+| SCORE™ Card | `Client Engine/Offer Matrix/2c-score-card/` | not started |
+| Money Model | `Client Engine/Offer Matrix/3a-money-model/` | not started |
+| Red Diamond Offer™ Enrollment Doc | `Client Engine/Offer Matrix/3b-enrollment-doc/` | not started |
+| Event Magnet™ | `Client Engine/Offer Matrix/3c-event-magnet/` | not started |
+| Cash Flow Max™ | `Client Engine/Offer Matrix/3d-cash-flow-max/` | not started |
+| PASS™ Instrument | `Client Engine/Money Magnet/4a-pass-instrument/` | not started |
+| Sniper Presentation™ | `Client Engine/Money Magnet/4b-sniper-presentation/` | not started |
+| Sniper Presentation™ Slides | `Client Engine/Money Magnet/4c-sniper-presentation-slides/` | not started |
+| Cash Flow Engine™ funnel | `Client Engine/Money Magnet/5-cash-flow-engine/` | not started |
 
 Statuses: `not started` → `draft` → `complete`. When one changes, change it here AND in `PROGRESS.md`.
 

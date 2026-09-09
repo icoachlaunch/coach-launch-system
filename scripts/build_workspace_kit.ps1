@@ -116,6 +116,8 @@ foreach ($f in $textFiles) {
   if ($rel -notlike 'skills\*') {
     # case-sensitive: the old folder was 'Foundations/'; live URLs legitimately contain '0-foundations/'
     if ($t -cmatch 'Foundations/')           { $fail += "$rel : stale 'Foundations/' path (the folder is Reference/ now)" }
+    if ($t -match 'Client Engine/[1-9]-')     { $fail += "$rel : stale step-folder path (Client Engine holds the three pillar folders now)" }
+    if ($t -match 'pass-sessions/')          { $fail += "$rel : stale pass-sessions/ (sessions live in 4a-pass-instrument/sessions/)" }
     if ($t -match 'PROJECT-INSTRUCTIONS')    { $fail += "$rel : mentions PROJECT-INSTRUCTIONS" }
     # legacy terms: ignore the paragraph that LISTS them as banned (it wraps over several lines),
     # and the house tool 'Money Model Builder'
@@ -136,12 +138,14 @@ foreach ($stub in 'business-brand-profile','brand-voice','visual-style-guide','p
 }
 $tok = Get-ChildItem -LiteralPath (Join-Path $top 'Reference\brand-kit\tokens') -File
 if (($tok | Where-Object { $_.Extension -eq '.css' }).Count -ne 0) { $fail += "tokens/ must ship EMPTY (one Kit is installed by the client)" }
-foreach ($must in 'README.md','CLAUDE.md','CONTEXT.md','PROGRESS.md','Reference\brand-kit\README.md','Reference\brand-kit\tokens\README.md','Client Engine\README.md','skills\README.md',
+foreach ($must in 'README.md','CLAUDE.md','CONTEXT.md','PROGRESS.md','Reference\brand-kit\README.md','Reference\brand-kit\tokens\README.md','Client Engine\README.md','Client Engine\Offer Matrix\README.md','Client Engine\Money Magnet\README.md','Client Engine\Client Flywheel\README.md','skills\README.md',
                   'skills\sniper-presentation-slides\SKILL.md','skills\cash-flow-funnel-builder\SKILL.md','skills\magic-formula-visual\SKILL.md') {
   if (-not (Test-Path (Join-Path $top $must))) { $fail += "missing: $must" }
 }
 $readmes = Get-ChildItem -LiteralPath (Join-Path $top 'Client Engine') -Recurse -Directory | Where-Object { -not (Test-Path (Join-Path $_.FullName 'README.md')) }
 foreach ($d in $readmes) { $fail += ('Client Engine folder without README: ' + $d.FullName.Substring($top.Length + 1)) }
+$pillars = ((Get-ChildItem -LiteralPath (Join-Path $top 'Client Engine') -Directory | Select-Object -ExpandProperty Name | Sort-Object) -join '|')
+if ($pillars -ne 'Client Flywheel|Money Magnet|Offer Matrix') { $fail += "Client Engine must hold exactly the three pillar folders (got: $pillars)" }
 if ($fail.Count -gt 0) { $fail | ForEach-Object { Write-Host ("FAIL  " + $_) -ForegroundColor Red }; throw "kit verification failed ($($fail.Count))" }
 
 # ---- 5. zip (forward-slash entries, UTF-8 names) -----------------------------------------------

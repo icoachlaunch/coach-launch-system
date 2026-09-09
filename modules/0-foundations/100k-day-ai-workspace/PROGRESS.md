@@ -23,7 +23,7 @@ The order is the order. Each thing makes the next one sharper.
 | 4 | Products & Pricing | ⬜ | — | 0 |
 | 5 | Competitive Landscape | ⬜ | — | 0 |
 
-### Client Engine™ — Pillar 1 · Offer Matrix™
+### Client Engine™ — Pillar 1 · Offer Matrix™ (`Client Engine/Offer Matrix/`)
 | Step | Asset | Status | Locked on | Version |
 |---|---|---|---|---|
 | 1a | $Million Promise™ | ⬜ | — | — |
@@ -37,16 +37,16 @@ The order is the order. Each thing makes the next one sharper.
 | 3c | Event Magnet™ | ⬜ | — | — |
 | 3d | Cash Flow Max™ | ⬜ | — | — |
 
-### Client Engine™ — Pillar 2 · Money Magnet™
+### Client Engine™ — Pillar 2 · Money Magnet™ (`Client Engine/Money Magnet/`)
 | Step | Asset | Status | Locked on | Version |
 |---|---|---|---|---|
-| 4 · Part 1 | PASS™ Instrument (The Strategy Close) | ⬜ | — | — |
-| 4 · Part 2 | Sniper Presentation™ Script | ⬜ | — | — |
-| 4 · Part 3 | Sniper Presentation™ Slides | ⬜ | — | — |
+| 4a | PASS™ Instrument (The Strategy Close) | ⬜ | — | — |
+| 4b | Sniper Presentation™ Script | ⬜ | — | — |
+| 4c | Sniper Presentation™ Slides | ⬜ | — | — |
 | 5 | Cash Flow Engine™ funnel (GHL AI Studio) | ⬜ | — | — |
 | 6 | Genie X Converter™ | in development | — | — |
 
-### Client Engine™ — Pillar 3 · Client Flywheel™
+### Client Engine™ — Pillar 3 · Client Flywheel™ (`Client Engine/Client Flywheel/`)
 | Step | Asset | Status |
 |---|---|---|
 | 7 | Goliath Content™ | in development |

@@ -19,8 +19,8 @@ PROGRESS.md        Your build log — what's locked, what's next.
 Reference/         Your five Foundation documents — the truth everything reads from.
                    Plus brand-kit/ — your ONE installed Brand Kit (the look every asset uses).
 
-Client Engine/     One folder for every asset you build, grouped by step (1 to 9).
-                   Open any folder's README to see what goes in it and which builder makes it.
+Client Engine/     Three folders — Offer Matrix, Money Magnet, Client Flywheel — and inside each,
+                   one folder per asset, numbered in build order. Every README says what goes in it.
 
 skills/            The delivered tools Claude runs from here — slides, funnel pages, your
                    Magic Formula™ graphic.
@@ -43,9 +43,9 @@ That way your folders never go stale when a builder improves.
 1. **Reference first** (about an hour for all five):
    Business Brand Profile → Visual Style Guide (and install your Brand Kit) → Brand Voice
    → Products & Pricing → Competitive Landscape
-2. **Then your Client Engine™**, step by step — Steps 1 to 3 build your offer, 4 to 6 fill the
-   room and get paid, 7 to 9 fill the machine. Each step's folder README tells you what it needs
-   first.
+2. **Then your Client Engine™**, pillar by pillar — **Offer Matrix** (Steps 1 to 3) builds your
+   offer, **Money Magnet** (4 to 6) makes the money, **Client Flywheel** (7 to 9) brings the
+   traffic. Each asset folder's README tells you what it needs first.
 
 One rule to remember: **one file per asset.** You update the same file over time — never a "-v2" or
 "-FINAL." Claude handles the versioning for you.

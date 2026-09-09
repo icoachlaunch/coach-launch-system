@@ -43,13 +43,16 @@ Reference/           THE TRUTH. Five documents every builder reads and never re-
   products-and-pricing.md · competitive-landscape.md
   brand-kit/         The ONE installed Brand Kit: tokens/<their-kit>.css + blocks.css + surfaces/
 
-Client Engine/       THE ASSETS. One folder per thing they build, grouped by step.
-  1-million-story/     million-promise/ · golden-avatar/ · million-moment/
-  2-magic-formula/     magic-formula/ · magic-formula-visual/ · score-card/
-  3-red-diamond-offer/ money-model/ · enrollment-doc/ · event-magnet/ · cash-flow-max/
-  4-sniper-close/      pass-instrument/ · pass-sessions/ · sniper-presentation/ · sniper-presentation-slides/
-  5-cash-flow-engine/  the GHL AI Studio build prompts, a folder per funnel phase
-  6- … 9-              Genie X Converter™ · Goliath Content™ · Pixie Dust Social™ · Dragon Fire Ads™ (in development)
+Client Engine/       THE ASSETS. Three pillar folders; inside each, one folder per asset, in build order.
+  Offer Matrix/        Steps 1–3 · everything offer-related
+                       1a-million-promise/ · 1b-golden-avatar/ · 1c-million-moment/
+                       2a-magic-formula/ · 2b-magic-formula-visual/ · 2c-score-card/
+                       3a-money-model/ · 3b-enrollment-doc/ · 3c-event-magnet/ · 3d-cash-flow-max/
+  Money Magnet/        Steps 4–6 · making the money
+                       4a-pass-instrument/ (+ sessions/) · 4b-sniper-presentation/ · 4c-sniper-presentation-slides/
+                       5-cash-flow-engine/ (a folder per funnel phase) · 6-genie-x-converter/ (in development)
+  Client Flywheel/     Steps 7–9 · traffic and marketing
+                       7-goliath-content/ · 8-pixie-dust-social/ · 9-dragon-fire-ads/ (all in development)
 
 skills/              THE SKILLS. Delivered tools the AI runs from here (see SKILLS below).
 ```
@@ -143,30 +146,32 @@ Launch → Execute → Growth → Mastery — over 112 days.)
 ### Pillar 1 · Offer Matrix™ — the message and the offer only they can sell
 | Step | Folder | Produces | Needs first |
 |---|---|---|---|
-| 1a. $Million Promise™ | `Client Engine/1-million-story/million-promise/` | The one-line marketing promise | Reference |
-| 1b. The Golden Avatar™ | `Client Engine/1-million-story/golden-avatar/` | The deep buyer profile(s) | $Million Promise™ |
-| 1c. $Million Moment™ | `Client Engine/1-million-story/million-moment/` | The system-discovery story | Promise + Avatar |
-| 2a. Magic Formula™ | `Client Engine/2-magic-formula/magic-formula/` | The 3-phase, 9-step signature system | Step 1 |
-| 2b. Magic Formula™ Visual | `Client Engine/2-magic-formula/magic-formula-visual/` | The animated graphic of it | Magic Formula™ + Brand Kit |
-| 2c. SCORE™ Card | `Client Engine/2-magic-formula/score-card/` | The master content source (5 acts) | Step 1 + Magic Formula™ |
-| 3a. Money Model | `Client Engine/3-red-diamond-offer/money-model/` | Offer economics + the close | Steps 1–2 |
-| 3b. Red Diamond Offer™ Enrollment Doc | `Client Engine/3-red-diamond-offer/enrollment-doc/` | The long-form offer / sales letter | SCORE™ Card + Money Model |
-| 3c. The Event Magnet™ | `Client Engine/3-red-diamond-offer/event-magnet/` | The free lead magnet (hot step) | Magic Formula™ |
-| 3d. Cash Flow Max™ | `Client Engine/3-red-diamond-offer/cash-flow-max/` | The paid VIP + order-bump assets | Money Model |
+| 1a. $Million Promise™ | `Client Engine/Offer Matrix/1a-million-promise/` | The one-line marketing promise | Reference |
+| 1b. The Golden Avatar™ | `Client Engine/Offer Matrix/1b-golden-avatar/` | The deep buyer profile(s) | $Million Promise™ |
+| 1c. $Million Moment™ | `Client Engine/Offer Matrix/1c-million-moment/` | The system-discovery story | Promise + Avatar |
+| 2a. Magic Formula™ | `Client Engine/Offer Matrix/2a-magic-formula/` | The 3-phase, 9-step signature system | Step 1 |
+| 2b. Magic Formula™ Visual | `Client Engine/Offer Matrix/2b-magic-formula-visual/` | The animated graphic of it | Magic Formula™ + Brand Kit |
+| 2c. SCORE™ Card | `Client Engine/Offer Matrix/2c-score-card/` | The master content source (5 acts) | Step 1 + Magic Formula™ |
+| 3a. Money Model | `Client Engine/Offer Matrix/3a-money-model/` | Offer economics + the close | Steps 1–2 |
+| 3b. Red Diamond Offer™ Enrollment Doc | `Client Engine/Offer Matrix/3b-enrollment-doc/` | The long-form offer / sales letter | SCORE™ Card + Money Model |
+| 3c. The Event Magnet™ | `Client Engine/Offer Matrix/3c-event-magnet/` | The free lead magnet (hot step) | Magic Formula™ |
+| 3d. Cash Flow Max™ | `Client Engine/Offer Matrix/3d-cash-flow-max/` | The paid VIP + order-bump assets | Money Model |
 
 ### Pillar 2 · Money Magnet™ — fill the room and get paid
 | Step | Folder | Produces | Needs first |
 |---|---|---|---|
-| 4. The Sniper Close™ | `Client Engine/4-sniper-close/` | The PASS™ Instrument + sessions, the Sniper Presentation™ Script, the slides | Offer Matrix™ complete |
-| 5. Cash Flow Engine™ | `Client Engine/5-cash-flow-engine/` | The self-liquidating registration funnel (built in GHL AI Studio) | Event Magnet™ + Money Model + Cash Flow Max™ |
-| 6. Genie X Converter™ | `Client Engine/6-genie-x-converter/` | Back-end follow-up messaging | *In development* |
+| 4a. PASS™ Instrument | `Client Engine/Money Magnet/4a-pass-instrument/` | The Strategy Close diagnostic (+ `sessions/`, one report per session) | Magic Formula™ |
+| 4b. Sniper Presentation™ Script | `Client Engine/Money Magnet/4b-sniper-presentation/` | The live pitch script | SCORE™ Card · Money Model · Enrollment Doc |
+| 4c. Sniper Presentation™ Slides | `Client Engine/Money Magnet/4c-sniper-presentation-slides/` | The deck built from the Script (a skill) | Approved Script + Brand Kit |
+| 5. Cash Flow Engine™ | `Client Engine/Money Magnet/5-cash-flow-engine/` | The self-liquidating registration funnel (built in GHL AI Studio) | Event Magnet™ + Money Model + Cash Flow Max™ |
+| 6. Genie X Converter™ | `Client Engine/Money Magnet/6-genie-x-converter/` | Back-end follow-up messaging | *In development* |
 
 ### Pillar 3 · Client Flywheel™ — fill the machine
 | Step | Folder | Produces | Needs first |
 |---|---|---|---|
-| 7. Goliath Content™ | `Client Engine/7-goliath-content/` | Authority content engine | *In development* |
-| 8. Pixie Dust Social™ | `Client Engine/8-pixie-dust-social/` | Organic social system | *In development* |
-| 9. Dragon Fire Ads™ | `Client Engine/9-dragon-fire-ads/` | Paid traffic system | *In development* |
+| 7. Goliath Content™ | `Client Engine/Client Flywheel/7-goliath-content/` | Authority content engine | *In development* |
+| 8. Pixie Dust Social™ | `Client Engine/Client Flywheel/8-pixie-dust-social/` | Organic social system | *In development* |
+| 9. Dragon Fire Ads™ | `Client Engine/Client Flywheel/9-dragon-fire-ads/` | Paid traffic system | *In development* |
 
 **The Money Model (3a) sets the path** — the Accelerator phase (Launch / Execute / Growth / Mastery)
 and the close (**the Three Closes**: The Expert Close · The Strategy Close · The Deposit Close). That

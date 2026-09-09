@@ -1,37 +1,39 @@
 # Client Engine™ — every asset you build, in its place
 
-This is where your business system lives once it's built. One folder per asset, grouped by the step
-of The $100K Day Engine™ that builds it. Open any folder's `README.md` to see exactly what goes in
-it, which builder makes it, what it needs first, and what it feeds.
+This is where your business system lives once it's built. Three folders — one per pillar of
+The $100K Day Engine™ — and inside each, one folder per asset, numbered in the order you build them.
+Open any folder's `README.md` to see exactly what goes in it, which builder makes it, what it needs
+first, and what it feeds.
 
 ## The map
 
 ```
 Client Engine/
-├── 1-million-story/         Step 1 · The $Million Story™          Offer Matrix™ · Pillar 1
-│   ├── million-promise/       your one-line marketing promise
-│   ├── golden-avatar/         your deep buyer profile(s)
-│   └── million-moment/        your system-discovery story
-├── 2-magic-formula/         Step 2 · Magic Formula™
-│   ├── magic-formula/         your 3-phase, 9-step system
-│   ├── magic-formula-visual/  the animated graphic of it
-│   └── score-card/            the SCORE™ Card — your master content source
-├── 3-red-diamond-offer/     Step 3 · Red Diamond Offer™
-│   ├── money-model/           offer economics, phase, the close
-│   ├── enrollment-doc/        the long-form offer / sales letter
-│   ├── event-magnet/          the free lead magnet on your hot step
-│   └── cash-flow-max/         the VIP upsell + order bumps
-├── 4-sniper-close/          Step 4 · The Sniper Close™            Money Magnet™ · Pillar 2
-│   ├── pass-instrument/       the PASS™ Instrument (Part 1 · The Strategy Close)
-│   ├── pass-sessions/         one report per session you run
-│   ├── sniper-presentation/   the Sniper Presentation™ Script (Part 2)
-│   └── sniper-presentation-slides/   the deck built from it (Part 3 — a skill)
-├── 5-cash-flow-engine/      Step 5 · Cash Flow Engine™           the funnel, built in GHL AI Studio (a skill)
-├── 6-genie-x-converter/     Step 6 · Genie X Converter™          in development
-├── 7-goliath-content/       Step 7 · Goliath Content™            Client Flywheel™ · Pillar 3 · in development
-├── 8-pixie-dust-social/     Step 8 · Pixie Dust Social™          in development
-└── 9-dragon-fire-ads/       Step 9 · Dragon Fire Ads™            in development
+├── Offer Matrix/        Pillar 1 · Steps 1–3 · everything offer-related
+│   ├── 1a-million-promise/            your one-line marketing promise
+│   ├── 1b-golden-avatar/              your deep buyer profile(s)
+│   ├── 1c-million-moment/             your system-discovery story
+│   ├── 2a-magic-formula/              your 3-phase, 9-step system
+│   ├── 2b-magic-formula-visual/       the animated graphic of it (a skill)
+│   ├── 2c-score-card/                 the SCORE™ Card — your master content source
+│   ├── 3a-money-model/                offer economics, your phase, your close
+│   ├── 3b-enrollment-doc/             the long-form offer / sales letter
+│   ├── 3c-event-magnet/               the free lead magnet on your hot step
+│   └── 3d-cash-flow-max/              the VIP upsell + order bumps
+├── Money Magnet/        Pillar 2 · Steps 4–6 · making the money
+│   ├── 4a-pass-instrument/            the PASS™ Instrument (The Strategy Close) + sessions/, one report per session
+│   ├── 4b-sniper-presentation/        the Sniper Presentation™ Script
+│   ├── 4c-sniper-presentation-slides/ the deck built from it (a skill)
+│   ├── 5-cash-flow-engine/            the funnel, built in GHL AI Studio (a skill) — a folder per phase
+│   └── 6-genie-x-converter/           back-end follow-up (in development)
+└── Client Flywheel/     Pillar 3 · Steps 7–9 · traffic and marketing
+    ├── 7-goliath-content/             authority content engine (in development)
+    ├── 8-pixie-dust-social/           organic social system (in development)
+    └── 9-dragon-fire-ads/             paid traffic system (in development)
 ```
+
+The number on a folder is the step of The $100K Day Engine™ that builds it (1–9); the letter is the
+part within that step. Sorted, the folders read in build order.
 
 ## How it works
 
@@ -61,5 +63,5 @@ phase: [n/a | Launch | Execute | Growth | Mastery]
 | 1 | [date] | Initial build |
 ```
 
-The `phase:` field is set once your Money Model (Step 3) decides which $100K Day Accelerator™ phase
+The `phase:` field is set once your Money Model (3a) decides which $100K Day Accelerator™ phase
 you're in — Launch, Execute, Growth or Mastery. Until then it's `n/a`.
