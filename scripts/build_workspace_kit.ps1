@@ -1,7 +1,9 @@
 # build_workspace_kit.ps1 - assemble the client STARTER KIT zip from its sources.
 #
-# The kit that clients download (modules/0-foundations/100k-day-ai-workspace-starter-kit.zip) is
-# BUILT, never hand-edited. It went stale twice when it was a hand-made zip (it shipped "$24M" and a
+# The kit that clients download (modules/0-foundations/100k-day-client-engine-ai-kit.zip, which
+# unzips to the folder "$100K Day Client Engine AI Kit" - Matthew's name, 2026-09-09) is BUILT,
+# never hand-edited. The hosted filename stays URL-safe; the dashboard link's download attribute
+# hands the client the display name. It went stale twice when it was a hand-made zip (it shipped "$24M" and a
 # retired close name for a month). This script is the only way it gets made.
 #
 # SOURCES (single source of truth for each part):
@@ -26,10 +28,11 @@ $ErrorActionPreference = 'Stop'
 $root  = Split-Path -Parent $PSScriptRoot
 $src   = Join-Path $root 'modules\0-foundations\100k-day-ai-workspace'
 $kit   = Join-Path $root 'modules\0-foundations\visual-style\brand-kit'
-$zip   = Join-Path $root 'modules\0-foundations\100k-day-ai-workspace-starter-kit.zip'
+$zip   = Join-Path $root 'modules\0-foundations\100k-day-client-engine-ai-kit.zip'
+$kitFolder = '$100K Day Client Engine AI Kit'   # single-quoted: the $ is literal
 $live  = 'https://icoachlaunch.github.io/coach-launch-system/'
 $stage = Join-Path ([IO.Path]::GetTempPath()) ('cl-kit-' + [guid]::NewGuid().ToString('N').Substring(0,8))
-$top   = Join-Path $stage '100k-day-ai-workspace'
+$top   = Join-Path $stage $kitFolder
 $utf8  = New-Object Text.UTF8Encoding($false)
 $TM    = [string][char]0x2122
 
@@ -148,7 +151,7 @@ if (Test-Path $zip) { Remove-Item -LiteralPath $zip -Force }
 $archive = [IO.Compression.ZipFile]::Open($zip, [IO.Compression.ZipArchiveMode]::Create)
 try {
   foreach ($f in ($files | Sort-Object FullName)) {
-    $entry = '100k-day-ai-workspace/' + $f.FullName.Substring($top.Length + 1).Replace('\', '/')
+    $entry = $kitFolder + '/' + $f.FullName.Substring($top.Length + 1).Replace('\', '/')
     [IO.Compression.ZipFileExtensions]::CreateEntryFromFile($archive, $f.FullName, $entry, [IO.Compression.CompressionLevel]::Optimal) | Out-Null
   }
 } finally { $archive.Dispose() }
