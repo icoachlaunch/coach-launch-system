@@ -15,7 +15,7 @@ When the user says any variation of "I just set up my $100K Day AI Workspace," "
 setup," or "let's get started":
 
 1. Welcome them in one sentence and confirm you can see the workspace.
-2. **Read `CONTEXT.md` and `PROGRESS.md`.** They tell you what's built and what's next.
+2. **Read `CONTEXT.md`.** It tells you what's built, what's locked, and what's next (its `next:` line).
 3. **Check `Reference/`.** If any of the five documents still shows `status: empty` in its frontmatter,
    start there. Say: *"Let's start by building your Reference docs — the business truth the whole
    system runs on. There are five, and they take about an hour. Ready to start with your Business
@@ -35,8 +35,7 @@ exactly as written. Never ask the user to paste anything else, and never invent 
 ```
 README.md            How to set this up. For the human.
 CLAUDE.md            This file — how the AI runs the workspace.
-CONTEXT.md           The business at a glance. Keep it current after every save.
-PROGRESS.md          The build log — what's locked, what's next. Update it after every save.
+CONTEXT.md           The business at a glance + what's locked and what's next. Update it after every save.
 
 Reference/           THE TRUTH. Five documents every builder reads and never re-asks.
   business-brand-profile.md · brand-voice.md · visual-style-guide.md
@@ -116,8 +115,8 @@ One question per turn. Deeper coaching happens in Coach Launch Academy™.
 
 ### To save a finished asset
 The folder's README tells you the filename. Write the file (Claude Code / Cowork), or output it for
-the user to save (Claude Projects). Then **update `CONTEXT.md` and `PROGRESS.md`** — that's what
-makes the next session start already knowing.
+the user to save (Claude Projects). Then **update `CONTEXT.md`** — that's what makes the next
+session start already knowing.
 
 ### To update an asset
 Load the current file, make the change with the user, bump the version, add a revision-history row,
@@ -174,7 +173,7 @@ Launch → Execute → Growth → Mastery — over 112 days.)
 | 9. Dragon Fire Ads™ | `Client Engine/Client Flywheel/dragon-fire-ads/` | Paid traffic system | *In development* |
 
 **The Money Model (3a) sets the path** — the Accelerator phase (Launch / Execute / Growth / Mastery)
-and the close (**the Three Closes**: The Expert Close · The Strategy Close · The Deposit Close). That
+and the close (**the Three Closes**: The Strategy Close · The Membership Close · The Deposit Close). That
 path shapes event format, pricing, and which downstream assets matter most. Record it in `CONTEXT.md`
 and in the `phase:` frontmatter field once the Money Model completes.
 
@@ -257,7 +256,7 @@ phase: [n/a | Launch | Execute | Growth | Mastery]
 | 1 | [date] | Initial build |
 ```
 Revise = same file, bump the version, add a row. **Exactly ONE canonical file per asset.** Never
-`-v2` or `-FINAL`. Then update `CONTEXT.md` and `PROGRESS.md`.
+`-v2` or `-FINAL`. Then update `CONTEXT.md`.
 
 ### What NOT to do
 - **Never use legacy or other-brand terms.** Not "Fletcher," "MDM," "SCRIPT," "Customer Engine,"
@@ -303,7 +302,8 @@ in the folder names. When the user brings something new:
 
 This workspace grows with the business. Every time something is built or changed:
 1. Save the asset as its canonical `.md` in its folder.
-2. Update `CONTEXT.md` (the at-a-glance facts) and `PROGRESS.md` (the log + what's next).
+2. Update `CONTEXT.md` — the at-a-glance facts, the status tables and the `next:` line. The asset's
+   own Revision History table is the log, so nothing is written twice.
 3. Update a Reference doc whenever the business changes (new pricing, refined positioning).
 
 Every asset saved gives the AI more context for the next one. The workspace gets smarter the more

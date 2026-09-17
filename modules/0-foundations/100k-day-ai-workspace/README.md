@@ -13,8 +13,8 @@ works everywhere.
 ```
 README.md          ← you are here. How to set this up.
 CLAUDE.md          The brain. Tells Claude how to run your workspace — where things live, the rules.
-CONTEXT.md         Your business at a glance. Claude keeps it current so every session starts knowing.
-PROGRESS.md        Your build log — what's locked, what's next.
+CONTEXT.md         Your business at a glance — what's locked, what's next. Claude keeps it current
+                   so every session starts knowing.
 
 Reference/         Your five Foundation documents — the truth everything reads from.
                    Plus brand-kit/ — your ONE installed Brand Kit (the look every asset uses).

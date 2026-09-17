@@ -43,8 +43,8 @@ and in `CLAUDE.md`'s roadmap**, and Claude follows it. You never have to sort fo
 3. **Save the finished asset in its folder** under the filename the README names. One canonical
    file per asset. Update it over time — bump the version, add a revision-history row. Never a
    `-v2` or `-FINAL`.
-4. **Claude updates `CONTEXT.md` and `PROGRESS.md`** after every save, so the next session starts
-   already knowing what's built.
+4. **Claude updates `CONTEXT.md`** after every save, so the next session starts already knowing
+   what's built.
 
 ## Adding your own
 
