@@ -63,11 +63,10 @@
   <h2>1 · Pick your look</h2>
   <div class="k-themes" id="themes"></div>
 
-  <h2>2 · Check it on light, dark and your brand colour</h2>
+  <h2>2 · Check it on light and dark</h2>
   <div class="k-surf" id="surf">
     <button data-s="" aria-pressed="true">Light</button>
     <button data-s="D" aria-pressed="false">Dark</button>
-    <button data-s="A" aria-pressed="false">Brand</button>
   </div>
 
   <div class="k-panels">
@@ -212,6 +211,7 @@ const BODY = {
 const SURFACE_FILE = {page:'page', slide:'slide', social:'social', blocks:'page'};
 let theme = new URLSearchParams(location.search).get('theme') || 'crimson';
 let surf  = new URLSearchParams(location.search).get('surface') || '';
+if (surf !== 'D') surf = '';   // two surfaces in the picker: light (default) and dark
 
 function render(){
   for (const key of Object.keys(BODY)) {
