@@ -84,6 +84,7 @@ Decide its class first, then drop it in the matching home.
 | Generating images / headshots / avatars | `kie-image-gen` skill |
 | Making copy read human / removing AI tells | `humanizer` skill |
 | Any new/renamed prompt + guide | also wire it into `dashboard.html` **the same session** (standing rule, see `PROGRESS.md`) |
+| The portal access code (set · rotate · check) | `powershell -File scripts/set_portal_code.ps1` (random 6 digits) / `-Code 123456` / `-Verify 123456`. Stamps a salted PBKDF2 hash into `assets/gate.js`; rotating signs every remembered browser out. The code is **never written into the repo** (it is public) — hand it over in chat only |
 
 ## Standing conventions (always apply — full detail in the linked source)
 
@@ -111,3 +112,6 @@ Decide its class first, then drop it in the matching home.
   (MS-Store stub only) → prefer PowerShell + `[IO.File]`. (`PROGRESS.md` lessons)
 - **Golden rule.** Never invent frameworks/steps/prices/stats — ask. Never use legacy or
   other-brand terms (Fletcher, MDM, etc.). (`PROGRESS.md` canon)
+- **The portal code lives nowhere in the repo.** `dashboard.html` is gated by `assets/gate.js`, which holds only a
+  salted hash. Rotate with `scripts/set_portal_code.ps1`; never paste the code into PROGRESS.md, a guide, a commit
+  message or the dashboard. It is a deterrent on a public static site, not real access control — say so when asked.

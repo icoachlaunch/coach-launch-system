@@ -25,6 +25,8 @@ coach-launch-system/
 
 **Live portal:** <https://icoachlaunch.github.io/coach-launch-system/dashboard.html>
 
+The live portal sits behind a 6-digit access code (`assets/gate.js`). Set, rotate or check it with `powershell -File scripts/set_portal_code.ps1` — only a salted hash is stored; the code itself is never written into this (public) repo. Add `?lock` to the portal URL to sign a browser out.
+
 ## The one rule
 
 Never restyle a guide by hand. The look lives in **one** stylesheet (`assets/coach-launch-guide.css`). To build a new guide, copy an existing module guide, keep the CSS link exactly (`../../../assets/coach-launch-guide.css`), and fill in only the content. It's on-brand the moment it's created.
