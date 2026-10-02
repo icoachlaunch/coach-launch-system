@@ -73,6 +73,19 @@
   --track:        var(--track-display);
   --weight:       var(--weight-display);
   --eyebrow-track: var(--track-eyebrow);
+  /* ---- Pillars ----------------------------------------------
+     Three colours for a three-part system (the Magic Formula(TM)
+     System Diagram and anything else that needs three equal
+     tracks). Pillar 1 IS the brand. Pillars 2 and 3 differ in hue
+     AND lightness so the three read apart at a glance.
+     Each ships the ink that passes on it - never assume white.
+     Measured: p1 5.49:1  p2 5.67:1  p3 4.85:1       */
+  --pillar-1:      #1fa85c;
+  --pillar-1-ink:  #0b2114;
+  --pillar-2:      #1d6f8c;
+  --pillar-2-ink:  #ffffff;
+  --pillar-3:      #9c6616;
+  --pillar-3-ink:  #ffffff;
 }
 
 [data-surface=D] {
@@ -88,6 +101,8 @@
   --shadow-lg: 0 28px 66px rgba(0,0,0,.6);
 }
 
+/* Brand-colour band. Only the slide molds use it, for one peak slide — it is NOT a ground you
+   pick. The Kit's grounds are light and dark. */
 [data-surface=A] {
   --canvas:   var(--brand);
   --panel:    rgba(11,33,20,.10);

@@ -44,19 +44,18 @@ Guide (Foundation 2) walks you through choosing.
 
 ---
 
-## The three surfaces
+## The two grounds
 
-Every theme defines three grounds. Put `data-surface` on `<html>`, a section, or any wrapper,
+Every theme defines two grounds. Put `data-surface` on `<html>`, a section, or any wrapper,
 and everything inside re-reads its colours automatically.
 
 ```html
 <section>                       <!-- light: the default        -->
 <section data-surface="D">      <!-- dark band                 -->
-<section data-surface="A">      <!-- your brand colour         -->
 ```
 
-Use the accent surface sparingly — it is the loudest thing you have. On a page, one or two
-bands. On a deck, only the genuine peaks.
+Your brand colour is not a third ground. It is the accent — buttons, badges, one highlighted
+word — and that restraint is what keeps it the loudest thing you have.
 
 ---
 
@@ -137,7 +136,7 @@ brand shouldn't suddenly sprout white cards.
 1. **Never type a hex code outside a theme file.** If you need a colour that isn't a token,
    the system is missing a token — add it to all six themes, not to one page.
 2. **One theme per client, everywhere.** Not one for slides and another for the funnel.
-3. **The accent surface is a peak, not a decoration.**
+3. **Your hero colour is a peak, not a decoration** — buttons, badges, one highlighted word; never whole sections.
 4. **Type sizes come from the scale.** `--fs--1` through `--fs-4`. Don't set `font-size` in px.
 5. **Restraint with images.** Any block can sit over a photo via `.cl-bg`, and the veil keeps
    text readable. That doesn't mean every block should.
@@ -146,12 +145,12 @@ brand shouldn't suddenly sprout white cards.
 
 ## Accessibility
 
-Every theme is contrast-checked. All six pass WCAG AA for body text on light, dark and accent
-surfaces, and for their call-to-action buttons — except one documented ceiling:
+Every theme is contrast-checked. All six pass WCAG AA for body text on the light and dark
+grounds, and for their call-to-action buttons — except one documented ceiling:
 
-> **Ember's accent surface tops out at 4.06:1.** Its orange is mid-luminance, so no text colour
-> can do better. Headlines and buttons are fine there; body copy and captions are not. Put
-> those on the light or dark surface. This is written at the top of `tokens/ember.css`.
+> **Ember's orange tops out at 4.06:1.** It is mid-luminance, so no text colour on it can do
+> better. Button labels and headlines are fine; body copy and captions are not. Keep those on
+> the light or dark ground. This is written at the top of `tokens/ember.css`.
 
 `--ink-on-brand` exists because of this. White on gold, cyan or green is unreadable, so
 Sovereign, Voltage and Meadow put **dark** text on their brand colour. Never assume white.

@@ -95,7 +95,7 @@
 /* The highlighter. A full fill, not the classic bottom-half marker stripe.
    The stripe only works when the page behind the uncovered top half is light —
    on a dark surface (or a dark-first theme) the recoloured text sits on the dark
-   page and disappears. A full fill reads on all three surfaces and all six themes. */
+   page and disappears. A full fill reads on every surface and all six themes. */
 .cl-mark {
   background: var(--highlight);
   color: var(--ink-on-highlight);

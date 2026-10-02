@@ -1,10 +1,15 @@
 # ═══════════════════════════════════════════════
-# THE VISUAL STYLE GUIDE BUILDER — V4
+# THE VISUAL STYLE GUIDE BUILDER — V5
 # Coach Launch · The $100K Day Engine™
 # Foundations · Foundation 2 of 5 (the Visual Style Guide)
 # ═══════════════════════════════════════════════
 
 # CHANGELOG
+# V5 (2026-09-30): Two grounds, not three. The Kit's grounds are LIGHT and DARK (Matthew's call — the
+#   gallery's picker lost its Brand option on 2026-09-17; the builder now says the same). Step 6 no
+#   longer presents a brand-coloured ground, the colour table's hero-text row and the output's colour
+#   note say two moods, and the hero colour is taught as the accent (buttons, a highlighted word, a
+#   badge) — never a third ground. INTERNAL — never surface a version number to a client.
 # V4 (2026-09-09): RULE 9 — when they don't know, mark it and move on (the Profile's rule, now here):
 #   Step 1 (no feeling yet → pick the Kit by eye first), Step 2 (not attached to a colour → Path A,
 #   a clean slate is not a gap), Step 5 (no imagery style yet → UNVERIFIED, decide after ten posts);
@@ -564,9 +569,9 @@ showing you what you've got so you know what to ask for."
 > - **A photo layer** — any block can sit over an image, and it gets a wash over it automatically so
 >   your text stays readable on light and dark alike."
 
-**Say:** "There's one more thing worth knowing. Your Kit has **three grounds** — a light one, a dark
-one, and one that's your brand color. Same blocks, three moods. The brand-colored one is the loudest
-thing you own, so spend it on a peak — one or two bands on a page, not every second section."
+**Say:** "There's one more thing worth knowing. Your Kit has **two grounds** — a light one and a dark
+one. Same blocks, two moods. Your brand color isn't a third ground; it's the accent — buttons, one
+highlighted word, a badge — which is exactly what keeps it the loudest thing you own."
 
 **Ask:** "Anything here you'd want to change, or shall we lock the standard set?"
 
@@ -666,12 +671,11 @@ After the Ready Check passes, deliver this guide inline:
 > | Role | Hex | Used for |
 > |---|---|---|
 > | Hero | [hex] | Buttons, links, highlights |
-> | Text on your hero | [hex] | Button labels, text on brand-colored bands |
+> | Text on your hero | [hex] | Button labels, any text sitting on your hero color |
 > | Text | [hex] | Body text, headings |
 > | Background | [hex] | Page + card backgrounds |
 >
-> Your Kit also carries a dark ground and a brand-colored ground, so you have three moods
-> without picking three palettes.
+> Your Kit also carries a dark ground, so you have two moods without picking two palettes.
 >
 > ## Typography
 > - **Headings:** [display font] — Google Fonts, loaded by your Kit

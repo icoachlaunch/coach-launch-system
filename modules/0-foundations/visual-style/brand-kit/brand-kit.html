@@ -133,7 +133,7 @@ const BODY = {
   </section>`,
 
   slide: `
-  <div class="cl-stage"><div class="cl-slide cl-slide--center" data-surface="A">
+  <div class="cl-stage"><div class="cl-slide cl-slide--center">
     <p class="cl-eyebrow">The Big Shift</p>
     <h1 class="cl-h1">You don't have a traffic problem</h1>
     <p class="cl-lede">Wrong diagnosis, wrong fix.</p>
@@ -215,8 +215,8 @@ if (surf !== 'D') surf = '';   // two surfaces in the picker: light (default) an
 
 function render(){
   for (const key of Object.keys(BODY)) {
-    // the slide demo pins its own surface; the rest follow the toggle
-    const s = key === 'slide' ? '' : surf;
+    // every preview follows the toggle: light (default) or dark
+    const s = surf;
     const fr = document.getElementById('f-'+key);
     // Each theme has its own type scale, so content height differs per
     // theme. Measure after load rather than guessing a fixed height.

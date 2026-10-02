@@ -5,13 +5,13 @@
    FONTS: https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Karla:wght@400;700&display=swap
    ═══════════════════════════════════════════════════════════
 
-   CONTRAST CEILING — READ THIS BEFORE USING THE ACCENT SURFACE.
+   CONTRAST CEILING — READ THIS BEFORE PUTTING TEXT ON THE ORANGE.
    Pure white on this orange is 4.06:1, and that is the best ANY text can
    manage on it. It clears the bar for large text (headlines, button labels
    at 17px+ bold) but not for small text, and no colour choice fixes that —
    the orange is simply mid-luminance.
 
-   So on Ember's accent surface:
+   So on anything that sits on the orange (a button, a badge, the slide molds' brand band):
      · headlines and buttons — fine
      · body copy and captions — put them on the light or dark surface
    The faint text tier is collapsed to full white there on purpose. There is
@@ -81,6 +81,19 @@
   --track:        var(--track-display);
   --weight:       var(--weight-display);
   --eyebrow-track: var(--track-eyebrow);
+  /* ---- Pillars ----------------------------------------------
+     Three colours for a three-part system (the Magic Formula(TM)
+     System Diagram and anything else that needs three equal
+     tracks). Pillar 1 IS the brand. Pillars 2 and 3 differ in hue
+     AND lightness so the three read apart at a glance.
+     Each ships the ink that passes on it - never assume white.
+     Measured: p1 4.61:1  p2 4.86:1  p3 6.79:1       */
+  --pillar-1:      #d2582f;
+  --pillar-1-ink:  #1d0f08;
+  --pillar-2:      #157f74;
+  --pillar-2-ink:  #ffffff;
+  --pillar-3:      #7b4397;
+  --pillar-3-ink:  #ffffff;
 }
 
 [data-surface=D] {
@@ -96,6 +109,8 @@
   --shadow-lg: 0 30px 70px rgba(0,0,0,.6);
 }
 
+/* Brand-colour band. Only the slide molds use it, for one peak slide — it is NOT a ground you
+   pick. The Kit's grounds are light and dark. */
 [data-surface=A] {
   --canvas:   var(--brand);
   --panel:    rgba(255,250,246,.14);
