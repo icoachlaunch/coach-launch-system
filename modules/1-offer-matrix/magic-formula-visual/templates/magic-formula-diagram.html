@@ -1,0 +1,294 @@
+<!doctype html>
+<!--
+  ============================================================================
+  MAGIC FORMULA(TM) SYSTEM DIAGRAM
+  Coach Launch - The $100K Day Engine(TM) - Offer Matrix(TM) - Step 2
+
+  One page that shows the whole Magic Formula at a glance: the formula name,
+  the promise, three stages, nine steps, one call to action. 1560 wide; the
+  height follows the copy (950-1140).
+
+  Fill every {{TOKEN}}, then DELETE this comment block. Change nothing else.
+
+  BRAND     {{BRAND_KIT_TOKENS}} {{FONT_LINK}} {{SURFACE}} ( L or D )
+            The three pillar colours come straight from the Brand Kit
+            (--pillar-1/2/3 and their inks). Nothing to fill, nothing to pick.
+  HEADER    {{LOGO}} {{FORMULA_HEAD}} {{FORMULA_ACCENT}} {{TM}} {{DESCRIPTOR}}
+            {{BRAND_MARK}} {{BRAND_NAME}} {{BRAND_TAGLINE}} {{OFFER_LINE}}
+  PROMISE   {{PROMISE}} - keep it one sentence. Wrap the outcome phrase in
+            <em> to tint it.  {{PROMISE_SIZE}} - 42.5px statement (2 lines)
+            or 29.5px headline (1 line).
+  STAGES    {{STAGE_1_NAME}}..{{STAGE_3_NAME}}  {{STAGE_1_LINE}}..
+  STEPS     {{STEP_1_TITLE}}..{{STEP_9_TITLE}}      <= 3 words, one line
+            {{STEP_1_STRIP}}..                      <= 18 chars, one line
+            {{STEP_1_SENTENCE}}..                   14-26 words
+            {{STEP_1_PHRASE}}..                     2-5 words, the catchphrase
+            {{STEP_1_ICON}}..    a solid 17px glyph, fill="currentColor"
+            {{STEP_1_THUMB}}..   a NEW flat illustration of that step's
+                                 deliverable, built from the helper classes
+                                 below. Never reuse another client's.
+  CTA       {{CTA_NAME}} {{CTA_DETAIL}} {{CTA_SENTENCE}} {{CTA_BUTTON}} {{CTA_URL}}
+  PAGE      {{PAGE_TITLE}} {{BOARD_HEIGHT}} - raise the height rather than clip.
+
+  Every colour here comes from the client's Brand Kit. Never type a hex.
+  ============================================================================
+-->
+<html lang="en" data-surface="{{SURFACE}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{PAGE_TITLE}}</title>
+{{FONT_LINK}}
+<style>
+{{BRAND_KIT_TOKENS}}
+
+/* ---- the three pillars -------------------------------------------------
+   Straight from the Brand Kit. Each theme ships three pillar colours that
+   differ in hue AND lightness, and the ink that is measured to pass on each
+   one. Never substitute a hex here - change the theme's token file.        */
+:root{
+  --p1: var(--pillar-1);  --p1-ink: var(--pillar-1-ink);
+  --p2: var(--pillar-2);  --p2-ink: var(--pillar-2-ink);
+  --p3: var(--pillar-3);  --p3-ink: var(--pillar-3-ink);
+  --cta: var(--pos);
+  /* warm neutrals, derived from ink so they follow the surface */
+  --g1: color-mix(in oklab, var(--ink)  8%, var(--paper));
+  --g2: color-mix(in oklab, var(--ink) 14%, var(--paper));
+  --g3: color-mix(in oklab, var(--ink) 26%, var(--paper));
+  --g4: color-mix(in oklab, var(--ink) 46%, var(--paper));
+  --band: color-mix(in oklab, var(--ink) 92%, #000);
+}
+
+*{ box-sizing:border-box }
+body{
+  margin:0; display:flex; align-items:center; justify-content:center; min-height:100vh;
+  background:var(--panel);
+  background-image:radial-gradient(color-mix(in oklab, var(--ink) 7%, transparent) 1px, transparent 1px);
+  background-size:22px 22px;
+  font-family:var(--font-body); color:var(--ink); -webkit-font-smoothing:antialiased;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+}
+a{ color:inherit }
+
+/* ---- board ---- */
+.board{
+  position:relative; width:1560px; height:{{BOARD_HEIGHT}}px; flex:0 0 auto;
+  background:var(--canvas); border-radius:var(--r-lg); box-shadow:var(--shadow-lg);
+  padding:42px 44px; overflow:hidden; transform-origin:center center;
+}
+.glow{ position:absolute; border-radius:50%; pointer-events:none }
+.glow.a{ top:-140px; right:-140px; width:420px; height:420px;
+  background:radial-gradient(circle, color-mix(in oklab,var(--p1),transparent 88%), transparent 65%) }
+.glow.b{ bottom:-160px; left:-160px; width:460px; height:460px;
+  background:radial-gradient(circle, color-mix(in oklab,var(--p3),transparent 90%), transparent 65%) }
+.inner{ position:relative; z-index:1; display:flex; flex-direction:column; height:100% }
+
+/* ---- header ---- */
+.mk{ font-weight:900; letter-spacing:-.5px; text-transform:uppercase }
+.head{ display:flex; align-items:flex-start; justify-content:space-between; gap:30px }
+.head-l{ display:flex; align-items:center; gap:16px; min-width:0 }
+.logo{ width:84px; height:84px; border-radius:var(--r-md); flex:none; display:flex; align-items:center; justify-content:center; overflow:hidden }
+.fname{ font-size:57px; line-height:1 }
+.fname sup{ font-size:.3em; top:-1.1em; color:var(--p1) }
+.fdesc{ font-weight:700; font-size:12.5px; letter-spacing:.26em; text-transform:uppercase; color:var(--ink-faint); margin-top:9px }
+.head-r{ text-align:right; flex:none }
+.bmark{ width:34px; height:34px; border-radius:9px; display:inline-flex; align-items:center; justify-content:center;
+  background:linear-gradient(135deg,var(--p1),var(--p3)); color:var(--p1-ink); margin-bottom:7px }
+.bname{ font-weight:900; font-size:17px; letter-spacing:-.2px; text-transform:uppercase }
+.btag{ font-size:12.5px; color:var(--ink-soft); margin-top:3px }
+.boffer{ font-size:12px; color:var(--ink-faint); margin-top:5px }
+
+/* ---- promise band ---- */
+.band{ background:var(--band); border-radius:var(--r-md); position:relative; overflow:hidden }
+.promise{ margin-top:30px; padding:30px 44px; text-align:center }
+.promise .glowp{ position:absolute; inset:0; background:radial-gradient(60% 120% at 50% 0%, color-mix(in oklab,var(--p1),transparent 80%), transparent 70%) }
+.promise span{ position:relative; font-weight:700; color:#fff; font-size:{{PROMISE_SIZE}}; line-height:1.22; display:block }
+.promise em{ font-style:italic; color:color-mix(in oklab,var(--p1),#fff 58%) }
+
+/* ---- the three columns ---- */
+.cols{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:32px; flex:1; min-height:0 }
+.col{ display:flex; flex-direction:column; gap:24px }
+.phead{ border-radius:var(--r-md); padding:15px 18px; display:flex; align-items:center; gap:12px;
+  color:var(--a-ink); background:linear-gradient(135deg,var(--a),color-mix(in oklab,var(--a),#000 22%)) }
+.pnum{ width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,.18); border:2px solid rgba(255,255,255,.65);
+  display:flex; align-items:center; justify-content:center; font-weight:900; font-size:18.5px; flex:none }
+.pname{ font-weight:900; font-size:22px; letter-spacing:-.3px; text-transform:uppercase; line-height:1.05 }
+.pline{ font-size:12.5px; opacity:.92; margin-top:2px }
+
+/* ---- a step ---- */
+.comp{ display:grid; grid-template-columns:196px 1fr; gap:14px; align-items:start; position:relative; margin-left:9px;
+  --ad:color-mix(in oklab,var(--a),#000 25%); --at:color-mix(in oklab,var(--a),#fff 88%) }
+.badge{ position:absolute; top:-9px; left:-9px; width:27px; height:27px; border-radius:9px; background:var(--a);
+  color:var(--a-ink); font-weight:900; font-size:16.5px; display:flex; align-items:center; justify-content:center;
+  box-shadow:var(--shadow-sm); z-index:2 }
+.ws{ aspect-ratio:3/2; border-radius:10px; background:var(--paper); display:flex; flex-direction:column; overflow:hidden;
+  box-shadow:var(--shadow-md); border:1px solid color-mix(in oklab,var(--paper-ink) 12%, transparent) }
+.wsh{ background:var(--band); color:#fff; font-weight:900; font-size:11px; letter-spacing:.07em; text-transform:uppercase;
+  padding:5px 8px 5px 24px; display:flex; justify-content:space-between; align-items:center; gap:6px; flex:none }
+.wsdot{ width:6px; height:6px; border-radius:50%; background:var(--a); flex:none }
+.wsb{ flex:1; padding:9px; display:flex; gap:9px; align-items:stretch; min-height:0 }
+.ctitle{ display:flex; align-items:center; gap:9px }
+.ichip{ width:28px; height:28px; border-radius:8px; background:var(--at); color:var(--a);
+  display:flex; align-items:center; justify-content:center; flex:none }
+.cname{ font-weight:900; text-transform:uppercase; letter-spacing:-.4px; font-size:16.5px; line-height:1.1; white-space:nowrap }
+.cdesc{ font-size:15px; line-height:1.55; color:var(--ink-soft); margin-top:8px }
+.tag{ font-style:italic; font-weight:700; font-size:14.5px; padding:3px 11px; border-radius:var(--r-pill);
+  display:inline-block; margin-top:10px; background:var(--at); color:var(--ad) }
+
+/* ---- thumbnail helpers: build each illustration from these ---- */
+.fcol{ flex:1; display:flex; flex-direction:column; gap:6px; justify-content:center; min-width:0 }
+.frow{ display:flex; align-items:center; gap:5px }
+.fl{ height:4px; border-radius:3px; background:var(--g1); flex:1 }
+.flbl{ height:4px; border-radius:3px; background:var(--g3); width:34% }
+.cb{ width:8px; height:8px; border:1.5px solid var(--a); border-radius:2px; flex:none; box-sizing:border-box }
+.cbf{ background:var(--a) }
+.bar{ height:7px; border-radius:4px; background:linear-gradient(90deg,var(--a),color-mix(in oklab,var(--a),#fff 35%)) }
+.cell{ aspect-ratio:1; border-radius:2px; background:var(--g1) }
+.cellf{ background:var(--a); opacity:.75 }
+.obox{ border:1.5px solid var(--g3); border-radius:4px; background:var(--paper) }
+.ph{ border:2px dashed var(--g3); display:flex; align-items:center; justify-content:center;
+  font:700 10px var(--font-mono); color:var(--g4); letter-spacing:.08em; box-sizing:border-box }
+.lbl{ font-weight:900; font-size:8px; letter-spacing:.06em; text-transform:uppercase; color:var(--g4) }
+
+/* ---- CTA ---- */
+/* Three columns: who it is for | the pitch, centred | the button.
+   Sizes are the design system's, not invented. */
+.ctabar{ margin-top:30px; padding:26px 34px; display:grid; grid-template-columns:auto 1fr auto;
+  gap:30px; align-items:center; color:#fff; position:relative; overflow:hidden }
+.cta-glow{ position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(500px 140px at 85% 50%, color-mix(in oklab,var(--cta),transparent 75%), transparent) }
+.cta-l{ position:relative; min-width:0 }
+.cta-name{ font-weight:900; font-size:17.5px; letter-spacing:.06em; color:#fff; text-transform:uppercase }
+.cta-detail{ font-size:15px; line-height:1.4; color:rgba(255,255,255,.60); margin-top:3px }
+.cta-sent{ position:relative; text-align:center; font-size:19px; line-height:1.55;
+  max-width:720px; margin:0 auto; color:rgba(255,255,255,.90) }
+.cta-sent strong{ color:#fff }
+.cta-btn{ position:relative; display:inline-flex; align-items:center; gap:10px; text-decoration:none;
+  background:linear-gradient(135deg, color-mix(in oklab,var(--cta),#fff 14%), var(--cta));
+  color:#fff; font-weight:900; font-size:26.5px; padding:17px 42px; border-radius:14px; white-space:nowrap;
+  box-shadow:0 10px 24px -8px color-mix(in oklab,var(--cta),transparent 30%) }
+.cta-btn:focus-visible{ outline:none; box-shadow:var(--ring) }
+
+/* Printing. Browsers drop background colour by default, which would turn the
+   promise band, the phase bars and the CTA white - so force them to print. */
+@page{ size:landscape; margin:8mm }
+@media print{
+  body{ background:none; min-height:0; display:block; margin:0 }
+  .board{ transform:none !important; zoom:.66; box-shadow:none; border-radius:0; height:auto }
+  .cta-btn{ box-shadow:none }
+  .glow, .cta-glow{ display:none }
+}
+</style>
+</head>
+<body>
+
+<div class="board">
+  <div class="glow a"></div>
+  <div class="glow b"></div>
+  <div class="inner">
+
+    <!-- ============ HEADER ============ -->
+    <div class="head">
+      <div class="head-l">
+        <span class="logo">{{LOGO}}</span>
+        <div>
+          <div class="mk fname">{{FORMULA_HEAD}} <span style="color:var(--p1)">{{FORMULA_ACCENT}}</span><sup>{{TM}}</sup></div>
+          <div class="fdesc">{{DESCRIPTOR}}</div>
+        </div>
+      </div>
+      <div class="head-r">
+        <div class="bmark">{{BRAND_MARK}}</div>
+        <div class="bname">{{BRAND_NAME}}</div>
+        <div class="btag">{{BRAND_TAGLINE}}</div>
+        <div class="boffer">{{OFFER_LINE}}</div>
+      </div>
+    </div>
+
+    <!-- ============ PROMISE ============ -->
+    <div class="band promise">
+      <div class="glowp"></div>
+      <span>{{PROMISE}}</span>
+    </div>
+
+    <!-- ============ THREE STAGES ============ -->
+    <div class="cols">
+
+      <div class="col" style="--a:var(--p1);--a-ink:var(--p1-ink)">
+        <div class="phead"><span class="pnum">1</span><div><div class="pname">{{STAGE_1_NAME}}</div><div class="pline">{{STAGE_1_LINE}}</div></div></div>
+        <div class="comp"><span class="badge">1</span>
+          <div class="ws"><div class="wsh"><span>{{STEP_1_STRIP}}</span><span class="wsdot"></span></div><div class="wsb">{{STEP_1_THUMB}}</div></div>
+          <div><div class="ctitle"><span class="ichip">{{STEP_1_ICON}}</span><span class="cname">{{STEP_1_TITLE}}</span></div>
+            <div class="cdesc">{{STEP_1_SENTENCE}}</div><div class="tag">{{STEP_1_PHRASE}}</div></div></div>
+        <div class="comp"><span class="badge">2</span>
+          <div class="ws"><div class="wsh"><span>{{STEP_2_STRIP}}</span><span class="wsdot"></span></div><div class="wsb">{{STEP_2_THUMB}}</div></div>
+          <div><div class="ctitle"><span class="ichip">{{STEP_2_ICON}}</span><span class="cname">{{STEP_2_TITLE}}</span></div>
+            <div class="cdesc">{{STEP_2_SENTENCE}}</div><div class="tag">{{STEP_2_PHRASE}}</div></div></div>
+        <div class="comp"><span class="badge">3</span>
+          <div class="ws"><div class="wsh"><span>{{STEP_3_STRIP}}</span><span class="wsdot"></span></div><div class="wsb">{{STEP_3_THUMB}}</div></div>
+          <div><div class="ctitle"><span class="ichip">{{STEP_3_ICON}}</span><span class="cname">{{STEP_3_TITLE}}</span></div>
+            <div class="cdesc">{{STEP_3_SENTENCE}}</div><div class="tag">{{STEP_3_PHRASE}}</div></div></div>
+      </div>
+
+      <div class="col" style="--a:var(--p2);--a-ink:var(--p2-ink)">
+        <div class="phead"><span class="pnum">2</span><div><div class="pname">{{STAGE_2_NAME}}</div><div class="pline">{{STAGE_2_LINE}}</div></div></div>
+        <div class="comp"><span class="badge">4</span>
+          <div class="ws"><div class="wsh"><span>{{STEP_4_STRIP}}</span><span class="wsdot"></span></div><div class="wsb">{{STEP_4_THUMB}}</div></div>
+          <div><div class="ctitle"><span class="ichip">{{STEP_4_ICON}}</span><span class="cname">{{STEP_4_TITLE}}</span></div>
+            <div class="cdesc">{{STEP_4_SENTENCE}}</div><div class="tag">{{STEP_4_PHRASE}}</div></div></div>
+        <div class="comp"><span class="badge">5</span>
+          <div class="ws"><div class="wsh"><span>{{STEP_5_STRIP}}</span><span class="wsdot"></span></div><div class="wsb">{{STEP_5_THUMB}}</div></div>
+          <div><div class="ctitle"><span class="ichip">{{STEP_5_ICON}}</span><span class="cname">{{STEP_5_TITLE}}</span></div>
+            <div class="cdesc">{{STEP_5_SENTENCE}}</div><div class="tag">{{STEP_5_PHRASE}}</div></div></div>
+        <div class="comp"><span class="badge">6</span>
+          <div class="ws"><div class="wsh"><span>{{STEP_6_STRIP}}</span><span class="wsdot"></span></div><div class="wsb">{{STEP_6_THUMB}}</div></div>
+          <div><div class="ctitle"><span class="ichip">{{STEP_6_ICON}}</span><span class="cname">{{STEP_6_TITLE}}</span></div>
+            <div class="cdesc">{{STEP_6_SENTENCE}}</div><div class="tag">{{STEP_6_PHRASE}}</div></div></div>
+      </div>
+
+      <div class="col" style="--a:var(--p3);--a-ink:var(--p3-ink)">
+        <div class="phead"><span class="pnum">3</span><div><div class="pname">{{STAGE_3_NAME}}</div><div class="pline">{{STAGE_3_LINE}}</div></div></div>
+        <div class="comp"><span class="badge">7</span>
+          <div class="ws"><div class="wsh"><span>{{STEP_7_STRIP}}</span><span class="wsdot"></span></div><div class="wsb">{{STEP_7_THUMB}}</div></div>
+          <div><div class="ctitle"><span class="ichip">{{STEP_7_ICON}}</span><span class="cname">{{STEP_7_TITLE}}</span></div>
+            <div class="cdesc">{{STEP_7_SENTENCE}}</div><div class="tag">{{STEP_7_PHRASE}}</div></div></div>
+        <div class="comp"><span class="badge">8</span>
+          <div class="ws"><div class="wsh"><span>{{STEP_8_STRIP}}</span><span class="wsdot"></span></div><div class="wsb">{{STEP_8_THUMB}}</div></div>
+          <div><div class="ctitle"><span class="ichip">{{STEP_8_ICON}}</span><span class="cname">{{STEP_8_TITLE}}</span></div>
+            <div class="cdesc">{{STEP_8_SENTENCE}}</div><div class="tag">{{STEP_8_PHRASE}}</div></div></div>
+        <div class="comp"><span class="badge">9</span>
+          <div class="ws"><div class="wsh"><span>{{STEP_9_STRIP}}</span><span class="wsdot"></span></div><div class="wsb">{{STEP_9_THUMB}}</div></div>
+          <div><div class="ctitle"><span class="ichip">{{STEP_9_ICON}}</span><span class="cname">{{STEP_9_TITLE}}</span></div>
+            <div class="cdesc">{{STEP_9_SENTENCE}}</div><div class="tag">{{STEP_9_PHRASE}}</div></div></div>
+      </div>
+
+    </div>
+
+    <!-- ============ CTA ============ -->
+    <div class="band ctabar">
+      <div class="cta-glow"></div>
+      <div class="cta-l">
+        <div class="cta-name">{{CTA_NAME}}</div>
+        <div class="cta-detail">{{CTA_DETAIL}}</div>
+      </div>
+      <div class="cta-sent">{{CTA_SENTENCE}}</div>
+      <a class="cta-btn" href="{{CTA_URL}}" target="_blank" rel="noopener">{{CTA_BUTTON}}</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// Scale the 1560-wide board down to whatever window it is opened in.
+(function () {
+  var b = document.querySelector(".board");
+  function fit() {
+    var s = Math.min(window.innerWidth / 1600, window.innerHeight / (b.offsetHeight + 40), 1);
+    b.style.transform = "scale(" + s + ")";
+  }
+  fit();
+  window.addEventListener("resize", fit);
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(fit); }
+})();
+</script>
+</body>
+</html>
