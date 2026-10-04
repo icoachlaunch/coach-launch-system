@@ -22,3 +22,6 @@ Review/
 
 # build outputs — regenerate, never commit (claude.ai skill zips etc.)
 dist/
+
+# sample client outputs — local only, never committed, never on the dashboard (Matthew, 2026-10-04)
+modules/**/examples/
