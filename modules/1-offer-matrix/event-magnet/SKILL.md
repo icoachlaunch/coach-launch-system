@@ -1,3 +1,18 @@
+---
+name: event-magnet-builder
+description: >
+  The Event Magnet™ Builder — turns ONE hot step of a coach's Magic Formula™ into the spec for a
+  free, visual tool that pulls the right people toward their event, strategy session, membership or
+  application. Scores all nine steps so the client chooses from the whole board, builds the tool
+  panel by panel (the AI does the naming and structure, the client answers two questions), then
+  writes the event content that positions it in the room — the pain it solves, the walk-away, the
+  live teach, the curiosity gap into the full system, and the host lines. Outputs ONE markdown
+  document in two parts: PART A, a buildable panel spec for whoever makes the visual, and PART B,
+  the content that goes into the masterclass. Use whenever someone wants to build an Event Magnet™,
+  a lead tool, a scorecard, audit, cheat sheet, checklist, worksheet, planner or one-page canvas to
+  fill an event. It writes the spec and the positioning, never the finished artwork.
+---
+
 # ═══════════════════════════════════════════════
 # THE EVENT MAGNET™ BUILDER — V8
 # Coach Launch · The $100K Day Engine™
