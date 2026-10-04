@@ -56,15 +56,6 @@ There are two different kinds of "skill" here. Keep them separate.
    client receives. They don't auto-fire — this file's router tells Claude when to open them.
    - `modules/2-money-magnet/sniper-presentation-slides/SKILL.md` — turns a finished Sniper
      Presentation™ into an on-brand HTML slide deck (ships with the presentation module).
-   - `modules/1-offer-matrix/event-magnet/SKILL.md` — the Event Magnet™ Builder: one hot step of the
-     Magic Formula™ → a two-part spec (PART A the panel build spec, PART B the event content).
-
-   **A delivered SKILL.md that sits beside a `*-prompt.md` is that prompt plus YAML frontmatter.**
-   The prompt is the source of truth; the frontmatter is the only thing that lives in SKILL.md.
-   Two copies drift silently — `magic-formula-visual`'s had drifted 65 lines unnoticed, including a
-   step still asking clients for a hex code instead of their Brand Kit block. Check and fix with
-   `powershell -File scripts/sync_module_skills.ps1` (`-Apply` to rewrite, `-Only <module>` to scope it).
-   A SKILL.md with no sibling prompt is standalone and is left alone.
 
 **Adding a new skill:** a skill is just a folder with a `SKILL.md` (frontmatter `name` +
 `description`, then instructions). Place it by class: portable author tool → `~/.claude/skills/`;
@@ -89,7 +80,7 @@ Decide its class first, then drop it in the matching home.
 | Cash Flow Engine™ funnel pages (Step 5) | `modules/2-money-magnet/cash-flow-engine/SKILL.md` — the Funnel Builder. It reads the client's `BRAND KIT:` block and skins the phase templates in it (RULE 4: the Kit is the only look source). The 28 templates under `Funnel-templates/PHASE-*/` (Launch 6 · Execute 6 · Growth 7 · Mastery 9) are structural references and still carry their own hex — the skill does the skinning. A companion **setup guide per phase** (`phase-*-guide.html`) + the `funnel-examples.html` gallery sit alongside; all are surfaced in the dashboard's Step 5 (`#cashflow`). See memory `cash-flow-engine-funnel-approach` |
 | Magic Formula™ visual (Step 2) | `modules/1-offer-matrix/magic-formula-visual/` — templates take `{{BRAND_KIT_TOKENS}}` + `{{SURFACE}}` (`L`/`D`). Never a hex, never a font name |
 | A slide deck from a Sniper Presentation™ | `modules/2-money-magnet/sniper-presentation-slides/SKILL.md` |
-| An Event Magnet™ — a lead tool, scorecard, audit, cheat sheet or one-page canvas to fill an event | `modules/1-offer-matrix/event-magnet/SKILL.md` (same content as the module's prompt — edit the **prompt**, then `scripts/sync_module_skills.ps1 -Apply`) |
+| Packaging a builder prompt as a **claude.ai skill zip** (for Matthew to upload, not a repo artifact) | `powershell -File scripts/pack_claude_skill.ps1 -Module event-magnet` → `dist/event-magnet-builder.zip`. The prompt is the source; the frontmatter lives in the script. `dist/` is gitignored — regenerate, don't commit |
 | The $100K Day AI Workspace starter kit (the client zip) | Edit the source at `modules/0-foundations/100k-day-ai-workspace/` (root docs, folder READMEs, stubs), then `powershell -File scripts/build_workspace_kit.ps1` — it copies the Brand Kit layers + the three delivered skills in, rewrites their relative links to live URLs, verifies, and zips. Never hand-edit the zip. Folder names are canon: `Reference/` (the five Foundations + `brand-kit/`), `Client Engine/` (three pillar folders — `Offer Matrix/` · `Money Magnet/` · `Client Flywheel/` — one plain-named asset folder per step-part inside; clients add their own the same way), `skills/`. Builder prompts do NOT ship in the kit (they update in the portal) |
 | Generating images / headshots / avatars | `kie-image-gen` skill |
 | Making copy read human / removing AI tells | `humanizer` skill |

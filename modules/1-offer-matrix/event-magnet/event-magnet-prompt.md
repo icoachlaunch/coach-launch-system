@@ -32,15 +32,13 @@
 #   NOTE the wider drift this exposed, NOT fixed here: Money Model says "Part 1 of 2", Enrollment Doc
 #   "Part 3 of 4", Cash Flow Max "Part 5 of 5", and the SCORE™ Card places itself under Step 2 — four
 #   modules, three different totals for Step 3. Tagged in PROGRESS.
-#   (4) THE BUILDER NOW SHIPS AS A DELIVERED SKILL — modules/1-offer-matrix/event-magnet/SKILL.md,
-#   name event-magnet-builder. Same content as this prompt plus YAML frontmatter, matching the house
-#   pattern. Because two copies of 1,600 lines drift silently — magic-formula-visual's already had,
-#   65 lines, including a step still asking clients for a hex code instead of their Brand Kit block —
-#   this prompt is the SOURCE OF TRUTH and the skill is generated from it by
-#   scripts/sync_module_skills.ps1 (check by default, -Apply to rewrite, -Only <module> to scope).
-#   Registered in CLAUDE.md's delivered-skills list and task router. NOT added to the client kit:
-#   build_workspace_kit.ps1 still ships three skills, and builder prompts deliberately don't ship
-#   because they update in the portal.
+#   (4) A CLAUDE.AI SKILL ZIP, GENERATED FROM THIS PROMPT — not a skill living in the repo. Matthew's
+#   actual ask was "something I can use in claude.ai", not a SKILL.md in the module (a first pass added
+#   one plus a sync script; both removed). scripts/pack_claude_skill.ps1 -Module event-magnet wraps
+#   this prompt in YAML frontmatter and writes dist/event-magnet-builder.zip for upload at claude.ai
+#   -> Settings -> Capabilities -> Skills. This prompt is the only source; the frontmatter lives in
+#   the script; dist/ is gitignored, so the zip is regenerated, never committed. Note for whoever
+#   edits that script: save it UTF-8 WITH BOM, or PowerShell 5.1 reads it as ANSI and mangles the ™.
 #
 # V7 (2026-10): PART A BECOMES BUILDABLE — THE PANEL SPEC. Part A described the tool in prose
 #   ("sections, fields, checkboxes"), which still needed a human to interpret it into a layout. Matthew

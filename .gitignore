@@ -19,3 +19,6 @@ hdr
 # Local review folder - contains Matthew personal deck content (testimonials, prices).
 # The repo publishes to GitHub Pages, so this must NEVER be committed.
 Review/
+
+# build outputs — regenerate, never commit (claude.ai skill zips etc.)
+dist/
