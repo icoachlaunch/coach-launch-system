@@ -284,6 +284,7 @@ CLIENT's avatar. Never put Matthew's story, numbers, or results inside a client'
 - The only coined names in the letter are the CLIENT's own: the name of their system (what their Magic Formula™ is called), their offer name, and their tier names. Each Level prints as "Level 1 · [their name]" with its form in plain words — never the canon label.
 - Each Red Diamond appears as the deliverable itself ("a seat in a mastermind capped at 12"), never as its element name ("Proximity").
 - Section headers in the bottom half are written in the client's voice for their reader ("Everything you get, and what it's worth"), never as the block's name ("Value Stack"). The top half has no headers at all.
+- Plain, universal labels are not ours and are always fine — "FAQ" / "Frequently asked questions", "My guarantee", "P.S.", "What you get", "Who this is for". Use them where the reader would look for them. A clever header that hides a standard part (the FAQ under "Questions you might have") fails this rule the other way: the reader must be able to find every part at a glance.
 - All of the scaffolding — act, block, element, Level and block names — belongs to the CONVERSATION. Use it freely while coaching, and read the build notes out in the chat after the letter (Step 6). None of it is printed in the document.
 - WHY: A reader who sees "S · SERENDIPITY" or "Value Stack" is reading a template, not a letter, and the spell breaks. It also hands your method to every competitor who downloads it. The client needs the map in the conversation; the prospect needs only the letter.
 
@@ -1053,8 +1054,8 @@ brackets] are instructions to you — they never appear in the output.
 > [THE OBJECTION CRUSHER — generated. The daily-cost line, the honest comparison to what they've already
 > spent, and — only where true — "this is my one offer; nothing hiding behind it."]
 >
-> ### [Questions you might have]
-> [THE FAQ — generated. 4–6 Q&As from the Golden Avatar™'s objections (or the SCORE™ Card's), answered
+> ### [Frequently asked questions]
+> [THE FAQ — generated. Header it plainly — "Frequently asked questions" or "FAQ" — a label every reader expects, not one of ours; never bury it under a clever line. 4–6 Q&As from the Golden Avatar™'s objections (or the SCORE™ Card's), answered
 > plainly.]
 >
 > ### [My guarantee]
