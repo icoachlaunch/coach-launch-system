@@ -32,6 +32,7 @@ assets/coach-launch-guide.css  the ONE locked stylesheet every guide links to
 assets/agents images/          agent headshots for the portal (space in path → %20 in HTML)
 scripts/                     apply_formula_map.py (stamps the 3-pillar/9-step map) + helpers
 dashboard.html               the client Training Portal — the single entry point
+implementation.html          the Done-For-You checklist — Foundations → Event Magnet™ as one list + what we build (same gate; assets/implementation.css; Copy fetches the .md live, no embed to sync)
 ```
 
 Each module = its own self-contained folder: `modules/<pillar>/<module>/<module>-prompt.md`
