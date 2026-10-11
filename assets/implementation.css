@@ -46,7 +46,14 @@
 .ck-save { margin:.45rem 0 0; font-size:.78rem; color:var(--text-dim); font-family:var(--font-display); font-weight:700; }
 .ck-save code { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-weight:400; font-size:.78rem; background:var(--bg-tint); border:1px solid var(--border); border-radius:6px; padding:.08rem .4rem; color:var(--cl-mid); }
 
-/* a hand-off marker between steps: something we build from what they just made */
+/* rows WE build (numbered in the sequence, no tick): the same greens as dashboard.css .pill.live */
+:root { --impl-ok-bg:#e7f7ee; --impl-ok-line:#bfe8cd; --impl-ok-ink:#178048; }
+.ck-item.ours, .ck-item.ours:hover { background:var(--impl-ok-bg); border-color:var(--impl-ok-line); box-shadow:none; }
+.ck-item.ours .ck-check { cursor:default; }
+.ck-item.ours .ck-check .n { color:var(--impl-ok-ink); border-color:var(--impl-ok-ink); background:var(--cl-white); }
+.ck-item.ours .ck-desc { color:var(--cl-mid); }
+
+/* (legacy) the compact hand-off marker, no longer used */
 .ck-dfy { display:flex; align-items:center; gap:.6rem; margin:0 0 .7rem; padding:.55rem .9rem .55rem 1rem; border-left:3px solid var(--cl-crimson); background:var(--cl-crimson-soft); border-radius:0 var(--radius) var(--radius) 0; font-size:.88rem; color:var(--cl-mid); }
 .ck-dfy .t { flex:1 1 auto; }
 .ck-dfy b { font-family:var(--font-display); font-weight:800; font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--cl-crimson); white-space:nowrap; }
