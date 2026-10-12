@@ -1,0 +1,2614 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style id="cl-gate-css">body>*:not(#cl-gate){display:none!important}</style>
+<script src="../../../../../assets/gate.js"></script>
+<style>/* portal gate look, so it matches the Training Portal on a funnel page */
+#cl-gate{--cl-paper:#f5f5f5;--cl-crimson:#db0063;--cl-crimson-deep:#a80049;--cl-black:#111;--cl-white:#fff;--cl-mid:#555;--font-body:'Lato','Segoe UI',system-ui,sans-serif;--font-display:'Montserrat','Segoe UI',system-ui,sans-serif;--text:#26272b;--text-muted:#55565b;--text-dim:#8a8b90;--bg-panel:#fff;--bg-tint:#f5f6f7;--border:#e6e7ea;--radius:14px;--radius-sm:8px;--shadow:0 1px 2px rgba(17,17,17,.04),0 6px 20px rgba(17,17,17,.05)}
+#cl-gate .cl-logo .coach{color:#555;font-weight:500}#cl-gate .cl-logo .launch{color:#111;font-weight:800}</style>
+<meta name="robots" content="noindex, nofollow">
+<style class="cfe-kit" data-kit="ember">
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Karla:wght@400;700&display=swap");
+/* EMBER — warm and approachable. Burnt orange, round corners. White on orange is 4.06:1: large text only.
+   Transcribed from the published Coach Launch Brand Kit tokens (ember.css). Comments condensed. */
+
+:root, [data-surface=L] {
+--brand:#d2582f;--brand-deep:#b8481f;--brand-soft:rgba(210,88,47,.09);--ink-on-brand:#ffffff;
+--canvas:#fffaf6;--panel:#fdf3ec;--ink:#241a14;--ink-soft:#6b5648;--ink-faint:#7f6a5c;--line:#f0e0d3;
+--paper:#fffaf6;--paper-ink:#241a14;--paper-soft:#6b5648;--paper-line:#f0e0d3;--accent:var(--brand);
+--pos:#4f8a4a;--neg:#9e2718;--highlight:#ffd79a;--ink-on-highlight:#241a14;
+--bg-veil:rgba(255,250,246,.88);--ring:0 0 0 3px rgba(210,88,47,.35);
+--font-display:'Poppins',system-ui,sans-serif;--font-body:'Karla',system-ui,sans-serif;
+--weight-display:700;--weight-body:400;--weight-body-strong:700;--track-display:-.01em;--track-eyebrow:.2em;
+--leading-display:1.08;--leading-body:1.62;--scale:1.25;
+--r-lg:24px;--r-md:18px;--r-xs:8px;--r-pill:999px;--border-w:1px;
+--shadow-sm:0 2px 4px rgba(88,40,18,.07);--shadow-md:0 14px 34px rgba(88,40,18,.12);--shadow-lg:0 30px 70px rgba(88,40,18,.18);
+--pillar-1:#d2582f;--pillar-1-ink:#1d0f08;--pillar-2:#157f74;--pillar-2-ink:#ffffff;--pillar-3:#7b4397;--pillar-3-ink:#ffffff;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --track: var(--track-display); --weight: var(--weight-display); --eyebrow-track: var(--track-eyebrow);
+}
+[data-surface=D] {
+--canvas:#241a14;--panel:#2f221a;--ink:#fffaf6;--ink-soft:#c6b3a5;--ink-faint:#93806f;--line:#3d2d22;--bg-veil:rgba(36,26,20,.70);
+--shadow-sm:0 2px 4px rgba(0,0,0,.4);--shadow-md:0 14px 34px rgba(0,0,0,.5);--shadow-lg:0 30px 70px rgba(0,0,0,.6);
+}
+[data-surface=A] {
+--canvas:var(--brand);--panel:rgba(255,250,246,.14);--ink:var(--ink-on-brand);--ink-soft:rgba(255,250,246,.9);--ink-faint:#fffaf6;--line:rgba(255,250,246,.3);--accent:#fffaf6;--bg-veil:rgba(210,88,47,.86);--highlight:#fffaf6;--ink-on-highlight:var(--brand);--shadow-sm:none;--shadow-md:0 14px 34px rgba(0,0,0,.16);--shadow-lg:0 30px 70px rgba(0,0,0,.22);
+}
+
+</style>
+<style class="cfe-kit" data-kit="coach-launch" media="not all">
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap");
+/* ═══════════════════════════════════════════════════════════
+   COACH LAUNCH — the Coach Launch Brand Kit (custom, v1)
+   Clean, simple, built to convert. Calm page, loud button.
+   Source: the Coach Launch Design System (claude.ai/artifact/538dJp6YjNMLK5VB8gBV9r),
+   the same kit synced to Claude Design ("Coach Launch Brand").
+   FONTS: https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap
+   ═══════════════════════════════════════════════════════════
+
+   This file is the ONLY place the brand's colour and type live.
+   It keeps the Brand Kit's variable names (--brand, --canvas, --ink …),
+   so blocks.css, the page / slide / social surfaces and every builder
+   read it exactly as they read the six stock Kits. The kit's own
+   names (--crimson, --green, --surface-alt …) are defined too, so
+   work copied from Claude Design uses the same vocabulary.
+   The few look rules at the bottom are written ":root .cl-…" so they
+   win over blocks.css even though this file loads first.
+
+   Surfaces. Put data-surface on <html> or any wrapper:
+     (none) = the light off-white page (default — almost everything)
+     D      = dark band (rare: one final call-to-action band at most)
+     A      = crimson band (avoid — colour is saved for the button)   */
+
+
+
+:root, [data-surface=L] {
+  /* ---- The kit's own palette -------------------------------- */
+  --surface:        #ffffff;   /* white cards and fields                     */
+  --surface-alt:    #f7f7f5;   /* the warm off-white page                    */
+  --surface-dark:   #2b2b30;   /* rare dark band; dark grey secondary button */
+  --dark-edge:      #17171a;
+  --slate:          #3a414a;
+  --slate-deep:     #282c33;
+  --ink-muted:      #5c5c63;
+  --field:          #ced4db;
+  --field-soft:     #dfe3e8;
+  --crimson:        #d3004e;   /* THE action colour — CTA buttons only       */
+  --crimson-deep:   #850035;   /* hover / pressed; urgency bars              */
+  --crimson-edge:   #a8003e;   /* 5px bottom edge of crimson buttons         */
+  --crimson-soft:   #fbe6ee;
+  --on-crimson:     #ffffff;
+  --green:          #008a0e;   /* THE accent — pills, ticks, steps, guarantee */
+  --green-deep:     #008a0e;
+  --green-edge:     #006b0b;   /* green text on green-soft; green button edge */
+  --green-mid:      #54c45e;
+  --green-light:    #c3f7c8;
+  --green-soft:     #e3fae3;
+  --on-green:       #ffffff;
+  --yellow:         #ffe342;   /* rare                                       */
+  --yellow-soft:    #fffcde;   /* rare                                       */
+  --blue-soft:      #cfe4ff;   /* rare                                       */
+  --star:           #f5b400;   /* testimonial stars                          */
+  --warning-red:    #e81313;   /* warnings only — never a CTA                */
+  --link:           #0064ce;   /* text links + focus, so links never compete */
+
+  /* ---- Brand Kit contract (what blocks.css + surfaces read) -- */
+  --brand:            var(--crimson);
+  --brand-deep:       var(--crimson-deep);
+  --brand-edge:       var(--crimson-edge);
+  --brand-soft:       var(--crimson-soft);
+  --ink-on-brand:     #ffffff;   /* white on crimson 5.4:1 */
+
+  --canvas:           #f7f7f5;   /* the page                */
+  --panel:            #ffffff;   /* cards sit on the page   */
+  --ink:              #1f1f22;   /* 15:1 on the page        */
+  --ink-soft:         #5c5c63;   /* 6.3:1 on the page       */
+  --ink-faint:        #5c5c63;
+  --line:             #e6e6e1;   /* the 1px hairline        */
+
+  --paper:            #ffffff;
+  --paper-ink:        #1f1f22;
+  --paper-soft:       #5c5c63;
+  --paper-line:       #e6e6e1;
+  --accent:           var(--green);   /* eyebrow pills, numbers, markers */
+
+  --pos:              var(--green);
+  --neg:              var(--crimson); /* ✕ on "not for you" lists */
+  --highlight:        #ffcf057c;      /* the marker pen, behind 2–5 words */
+  --ink-on-highlight: #1f1f22;
+
+  --bg-veil:          rgba(247,247,245,.88);
+  --ring:             0 0 0 3px #0064ce;
+
+  /* ---- Type ------------------------------------------------- */
+  --font-sans:        Montserrat, "Helvetica Neue", Arial, sans-serif;
+  --font-display:     'Montserrat', system-ui, sans-serif;
+  --font-body:        'Montserrat', system-ui, sans-serif;
+  --font-mono:        ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --weight-display:   900;   /* H1 — Montserrat Black         */
+  --weight-heading:   700;   /* H2 / H3 — Montserrat Bold     */
+  --weight-cta:       800;   /* button labels                 */
+  --weight-body:      400;
+  --weight-body-strong: 700;
+  --track-display:    -.01em;
+  --track-eyebrow:    .14em;
+  --leading-display:  1.08;
+  --leading-body:     1.65;
+  --scale:            1.25;
+
+  /* ---- Shape ------------------------------------------------ */
+  --r-lg:   16px;   /* every card, the video frame   */
+  --r-md:   10px;   /* small cards, the guarantee    */
+  --r-sm:   6px;    /* buttons, inputs, badges       */
+  --r-xs:   6px;
+  --r-pill: 999px;  /* eyebrow pills, avatars only   */
+  --border-w: 1px;
+  --shadow-cta:  2px 2px 10px 2px #0000000c;
+  --shadow-card: 0 1px 2px 0 #1f1f220a, 0 12px 28px -14px #1f1f2226;
+  --shadow-lift: 0 40px 80px -36px #1f1f2259;
+  --shadow-sm:   var(--shadow-card);
+  --shadow-md:   var(--shadow-card);
+  --shadow-lg:   var(--shadow-lift);
+
+  /* ---- Space + width (the kit's own scale) ------------------- */
+  --space-2: 8px;  --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  --space-12: 48px; --space-24: 96px; --space-32: 128px;
+  --content: 640px;        /* the reading column          */
+  --content-wide: 880px;   /* grids, video, 3-up cards    */
+
+  /* ---- Back-compat aliases (slide molds) ---- */
+  --track:         var(--track-display);
+  --weight:        var(--weight-display);
+  --eyebrow-track: var(--track-eyebrow);
+}
+
+/* Dark band — rare, one final call-to-action at most. (Panel, soft and faint
+   tones are derived for the Kit surfaces; the kit itself defines only the band.) */
+[data-surface=D] {
+  --canvas:   #2b2b30;
+  --panel:    #36363c;
+  --ink:      #ffffff;
+  --ink-soft: #c9c9ce;
+  --ink-faint:#a0a0a8;
+  --line:     #45454c;
+  --accent:   #54c45e;
+  --highlight: #ffe342;           /* solid yellow — the see-through marker muddies on dark */
+  --ink-on-highlight: #1f1f22;
+  --bg-veil:  rgba(43,43,48,.72);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+  --shadow-md: 0 10px 30px rgba(0,0,0,.45);
+  --shadow-lg: 0 28px 70px rgba(0,0,0,.55);
+}
+
+/* Crimson band — avoid. Colour is saved for the button. */
+[data-surface=A] {
+  --canvas:   var(--crimson);
+  --panel:    rgba(255,255,255,.12);
+  --ink:      #ffffff;
+  --ink-soft: rgba(255,255,255,.88);
+  --ink-faint:rgba(255,255,255,.7);
+  --line:     rgba(255,255,255,.28);
+  --accent:   #ffffff;
+  --bg-veil:  rgba(211,0,78,.86);
+  --highlight: #ffffff;
+  --ink-on-highlight: var(--crimson);
+}
+
+/* ---- The Coach Launch look on the shared blocks ----------------
+   Kept here so blocks.css stays brand-free. These make the Kit's
+   generic blocks match the Coach Launch components. */
+:root .cl-h2, :root .cl-h3 { font-weight: var(--weight-heading); }
+:root .cl-h1, :root .cl-h2, :root .cl-h3 { text-transform: none; }
+:root .cl-btn {
+  border-radius: var(--r-sm);
+  border: 2px solid var(--brand);
+  border-bottom: 5px solid var(--brand-edge);
+  font-weight: var(--weight-cta);
+  box-shadow: var(--shadow-cta);
+}
+:root .cl-btn:hover { background: var(--brand); transform: translateY(-2px); box-shadow: 0 6px 14px rgba(31,31,34,.14); }
+:root .cl-btn--ghost { background: transparent; border-color: var(--ink); border-bottom-color: var(--ink); color: var(--ink); box-shadow: none; }
+:root .cl-badge { border-radius: var(--r-sm); }
+:root .cl-eyebrow { color: var(--green-edge); }
+:root [data-surface=D] .cl-eyebrow, :root [data-surface=A] .cl-eyebrow { color: var(--accent); }
+:root a:where(:not(.cl-btn)) { color: var(--link); }   /* beats page.css, but a page's own nav/menu styles still win */
+:root a.cl-btn { color: var(--ink-on-brand); }
+:root a.cl-btn--ghost { color: var(--ink); }
+
+</style>
+<style class="cfe-kit" data-kit="crimson" media="not all">
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Lato:wght@400;700&display=swap");
+/* CRIMSON — confident, modern, high-energy. White on crimson 5.0:1.
+   Transcribed from the published Coach Launch Brand Kit tokens (crimson.css). Comments condensed. */
+
+:root, [data-surface=L] {
+--brand:#db0063;--brand-deep:#a80049;--brand-soft:rgba(219,0,99,.08);--ink-on-brand:#ffffff;
+--canvas:#ffffff;--panel:#fafafb;--ink:#111111;--ink-soft:#55565b;--ink-faint:#6f7076;--line:#e6e7ea;
+--paper:#ffffff;--paper-ink:#111111;--paper-soft:#55565b;--paper-line:#e6e7ea;--accent:var(--brand);
+--pos:#1f9d57;--neg:#c0392b;--highlight:#ffe066;--ink-on-highlight:#111111;
+--bg-veil:rgba(255,255,255,.88);--ring:0 0 0 3px rgba(219,0,99,.35);
+--font-display:'Montserrat',system-ui,sans-serif;--font-body:'Lato',system-ui,sans-serif;
+--weight-display:800;--weight-body:400;--weight-body-strong:700;--track-display:-.02em;--track-eyebrow:.22em;
+--leading-display:1.06;--leading-body:1.6;--scale:1.25;
+--r-lg:16px;--r-md:12px;--r-xs:4px;--r-pill:999px;--border-w:1px;
+--shadow-sm:0 1px 2px rgba(17,17,17,.06);--shadow-md:0 8px 24px rgba(17,17,17,.08);--shadow-lg:0 24px 60px rgba(17,17,17,.14);
+--pillar-1:#db0063;--pillar-1-ink:#ffffff;--pillar-2:#4a3fb5;--pillar-2-ink:#ffffff;--pillar-3:#b3701e;--pillar-3-ink:#1a0a12;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --track: var(--track-display); --weight: var(--weight-display); --eyebrow-track: var(--track-eyebrow);
+}
+[data-surface=D] {
+--canvas:#101014;--panel:#191a21;--ink:#ffffff;--ink-soft:#b8b9c0;--ink-faint:#7e7f88;--line:#2a2b33;--bg-veil:rgba(16,16,20,.68);
+--shadow-sm:0 1px 2px rgba(0,0,0,.4);--shadow-md:0 10px 30px rgba(0,0,0,.5);--shadow-lg:0 28px 70px rgba(0,0,0,.6);
+}
+[data-surface=A] {
+--canvas:var(--brand);--panel:rgba(255,255,255,.12);--ink:var(--ink-on-brand);--ink-soft:rgba(255,255,255,.88);--ink-faint:rgba(255,255,255,.62);--line:rgba(255,255,255,.28);--accent:#ffffff;--bg-veil:rgba(219,0,99,.86);--highlight:#ffffff;--ink-on-highlight:var(--brand);--shadow-sm:none;--shadow-md:0 10px 30px rgba(0,0,0,.18);--shadow-lg:0 28px 70px rgba(0,0,0,.24);
+}
+
+</style>
+<style class="cfe-kit" data-kit="ink" media="not all">
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;600&display=swap");
+/* INK — editorial. Oxblood on warm paper, square corners, no shadows.
+   Transcribed from the published Coach Launch Brand Kit tokens (ink.css). Comments condensed. */
+
+:root, [data-surface=L] {
+--brand:#9e2b25;--brand-deep:#7a1f1b;--brand-soft:rgba(158,43,37,.08);--ink-on-brand:#fdf9f6;
+--canvas:#fbfaf8;--panel:#f4f1ec;--ink:#14110f;--ink-soft:#5b524a;--ink-faint:#7a7065;--line:#e2dbd2;
+--paper:#fbfaf8;--paper-ink:#14110f;--paper-soft:#5b524a;--paper-line:#e2dbd2;--accent:var(--brand);
+--pos:#4a6b3f;--neg:#b3402f;--highlight:#efd9a0;--ink-on-highlight:#14110f;
+--bg-veil:rgba(251,250,248,.88);--ring:0 0 0 3px rgba(158,43,37,.35);
+--font-display:'Playfair Display',Georgia,serif;--font-body:'Inter',system-ui,sans-serif;
+--weight-display:700;--weight-body:400;--weight-body-strong:600;--track-display:-.015em;--track-eyebrow:.3em;
+--leading-display:1.1;--leading-body:1.68;--scale:1.333;
+--r-lg:0px;--r-md:0px;--r-xs:0px;--r-pill:3px;--border-w:2px;
+--shadow-sm:none;--shadow-md:none;--shadow-lg:none;
+--pillar-1:#9e2b25;--pillar-1-ink:#ffffff;--pillar-2:#2f5d8c;--pillar-2-ink:#ffffff;--pillar-3:#6d6a1f;--pillar-3-ink:#ffffff;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --track: var(--track-display); --weight: var(--weight-display); --eyebrow-track: var(--track-eyebrow);
+}
+[data-surface=D] {
+--canvas:#14110f;--panel:#1e1a17;--ink:#fbfaf8;--ink-soft:#bdb3a7;--ink-faint:#877d72;--line:#332d27;--bg-veil:rgba(20,17,15,.70);
+}
+[data-surface=A] {
+--canvas:var(--brand);--panel:rgba(253,249,246,.1);--ink:var(--ink-on-brand);--ink-soft:rgba(253,249,246,.86);--ink-faint:rgba(253,249,246,.6);--line:rgba(253,249,246,.26);--accent:#fdf9f6;--bg-veil:rgba(158,43,37,.86);--highlight:#efd9a0;--ink-on-highlight:#14110f;
+}
+
+</style>
+<style class="cfe-kit" data-kit="meadow" media="not all">
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=Inter:wght@400;600&display=swap");
+/* MEADOW — calm, natural. Fresh green; text on green is dark forest (5.5:1).
+   Transcribed from the published Coach Launch Brand Kit tokens (meadow.css). Comments condensed. */
+
+:root, [data-surface=L] {
+--brand:#1fa85c;--brand-deep:#168145;--brand-soft:rgba(31,168,92,.09);--ink-on-brand:#0b2114;
+--canvas:#ffffff;--panel:#f3f9f5;--ink:#10231a;--ink-soft:#4e6357;--ink-faint:#64776b;--line:#dfeae3;
+--paper:#ffffff;--paper-ink:#10231a;--paper-soft:#4e6357;--paper-line:#dfeae3;--accent:var(--brand);
+--pos:#1fa85c;--neg:#c0392b;--highlight:#d8f2a8;--ink-on-highlight:#10231a;
+--bg-veil:rgba(255,255,255,.88);--ring:0 0 0 3px rgba(31,168,92,.35);
+--font-display:'Outfit',system-ui,sans-serif;--font-body:'Inter',system-ui,sans-serif;
+--weight-display:800;--weight-body:400;--weight-body-strong:600;--track-display:-.025em;--track-eyebrow:.2em;
+--leading-display:1.05;--leading-body:1.6;--scale:1.2;
+--r-lg:20px;--r-md:14px;--r-xs:6px;--r-pill:999px;--border-w:1px;
+--shadow-sm:0 2px 5px rgba(16,35,26,.06);--shadow-md:0 12px 30px rgba(16,35,26,.10);--shadow-lg:0 28px 66px rgba(16,35,26,.16);
+--pillar-1:#1fa85c;--pillar-1-ink:#0b2114;--pillar-2:#1d6f8c;--pillar-2-ink:#ffffff;--pillar-3:#9c6616;--pillar-3-ink:#ffffff;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --track: var(--track-display); --weight: var(--weight-display); --eyebrow-track: var(--track-eyebrow);
+}
+[data-surface=D] {
+--canvas:#10231a;--panel:#183024;--ink:#ffffff;--ink-soft:#a8bfb2;--ink-faint:#76907f;--line:#22392c;--bg-veil:rgba(16,35,26,.70);
+--shadow-sm:0 2px 5px rgba(0,0,0,.4);--shadow-md:0 12px 30px rgba(0,0,0,.5);--shadow-lg:0 28px 66px rgba(0,0,0,.6);
+}
+[data-surface=A] {
+--canvas:var(--brand);--panel:rgba(11,33,20,.10);--ink:var(--ink-on-brand);--ink-soft:rgba(11,33,20,.82);--ink-faint:rgba(11,33,20,.58);--line:rgba(11,33,20,.24);--accent:#0b2114;--bg-veil:rgba(31,168,92,.86);--highlight:#0b2114;--ink-on-highlight:var(--brand);--shadow-sm:none;--shadow-md:0 12px 30px rgba(11,33,20,.22);--shadow-lg:0 28px 66px rgba(11,33,20,.28);
+}
+
+</style>
+<style class="cfe-kit" data-kit="sovereign" media="not all">
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Lato:wght@400;700&display=swap");
+/* SOVEREIGN — premium and restrained. Navy and gold, Garamond serif, tight corners. Text on gold is NAVY (5.8:1).
+   Transcribed from the published Coach Launch Brand Kit tokens (sovereign.css). Comments condensed. */
+
+:root, [data-surface=L] {
+--brand:#b8912f;--brand-deep:#8f6f21;--brand-soft:rgba(184,145,47,.10);--ink-on-brand:#0f1c33;
+--canvas:#ffffff;--panel:#f6f8fb;--ink:#0f1c33;--ink-soft:#4a5872;--ink-faint:#626f86;--line:#dfe3ea;
+--paper:#ffffff;--paper-ink:#0f1c33;--paper-soft:#4a5872;--paper-line:#dfe3ea;--accent:var(--brand);
+--pos:#2f7d55;--neg:#a33a2e;--highlight:#f0e2b8;--ink-on-highlight:#0f1c33;
+--bg-veil:rgba(255,255,255,.88);--ring:0 0 0 3px rgba(184,145,47,.40);
+--font-display:'Cormorant Garamond',Georgia,serif;--font-body:'Lato',system-ui,sans-serif;
+--weight-display:700;--weight-body:400;--weight-body-strong:700;--track-display:-.005em;--track-eyebrow:.28em;
+--leading-display:1.08;--leading-body:1.65;--scale:1.333;
+--r-lg:6px;--r-md:4px;--r-xs:2px;--r-pill:999px;--border-w:1px;
+--shadow-sm:0 1px 2px rgba(15,28,51,.05);--shadow-md:0 10px 30px rgba(15,28,51,.09);--shadow-lg:0 26px 64px rgba(15,28,51,.16);
+--pillar-1:#b8912f;--pillar-1-ink:#0f1c33;--pillar-2:#27406b;--pillar-2-ink:#ffffff;--pillar-3:#8c2f45;--pillar-3-ink:#ffffff;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --track: var(--track-display); --weight: var(--weight-display); --eyebrow-track: var(--track-eyebrow);
+}
+[data-surface=D] {
+--canvas:#0d1728;--panel:#16223a;--ink:#ffffff;--ink-soft:#a9b6cb;--ink-faint:#7d8ca6;--line:#24334d;--bg-veil:rgba(13,23,40,.72);
+--shadow-sm:0 1px 2px rgba(0,0,0,.4);--shadow-md:0 10px 30px rgba(0,0,0,.5);--shadow-lg:0 26px 64px rgba(0,0,0,.6);
+}
+[data-surface=A] {
+--canvas:#0d1728;--panel:rgba(184,145,47,.12);--ink:#ffffff;--ink-soft:rgba(255,255,255,.84);--ink-faint:rgba(255,255,255,.58);--line:rgba(184,145,47,.4);--accent:#b8912f;--bg-veil:rgba(13,23,40,.80);--highlight:#b8912f;--ink-on-highlight:#0d1728;--shadow-sm:none;--shadow-md:0 10px 30px rgba(0,0,0,.5);--shadow-lg:0 26px 64px rgba(0,0,0,.6);
+}
+
+</style>
+<style class="cfe-kit" data-kit="voltage" media="not all">
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=IBM+Plex+Sans:wght@400;600&display=swap");
+/* VOLTAGE — dark-first, technical. Electric cyan; text on cyan is near-black (10:1). No light surface by design.
+   Transcribed from the published Coach Launch Brand Kit tokens (voltage.css). Comments condensed. */
+
+:root, [data-surface=L] {
+--brand:#21d4fd;--brand-deep:#12a8cc;--brand-soft:rgba(33,212,253,.10);--ink-on-brand:#04212b;
+--canvas:#131820;--panel:#1b232e;--ink:#eaf2f8;--ink-soft:#93a3b3;--ink-faint:#7a8794;--line:#26303c;
+--paper:#1b232e;--paper-ink:#eaf2f8;--paper-soft:#93a3b3;--paper-line:#26303c;--accent:var(--brand);
+--pos:#3ddc97;--neg:#ff5d73;--highlight:#f7e967;--ink-on-highlight:#131820;
+--bg-veil:rgba(19,24,32,.74);--ring:0 0 0 3px rgba(33,212,253,.40);
+--font-display:'Space Grotesk',system-ui,sans-serif;--font-body:'IBM Plex Sans',system-ui,sans-serif;
+--weight-display:700;--weight-body:400;--weight-body-strong:600;--track-display:-.02em;--track-eyebrow:.3em;
+--leading-display:1.04;--leading-body:1.6;--scale:1.25;
+--r-lg:8px;--r-md:6px;--r-xs:3px;--r-pill:999px;--border-w:1px;
+--shadow-sm:0 0 0 1px rgba(33,212,253,.10);--shadow-md:0 8px 30px rgba(0,0,0,.45);--shadow-lg:0 24px 70px rgba(0,0,0,.60);
+--pillar-1:#21d4fd;--pillar-1-ink:#04212b;--pillar-2:#4f46e5;--pillar-2-ink:#ffffff;--pillar-3:#c2219b;--pillar-3-ink:#ffffff;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --track: var(--track-display); --weight: var(--weight-display); --eyebrow-track: var(--track-eyebrow);
+}
+[data-surface=D] {
+--canvas:#080b0f;--panel:#12171e;--ink:#f2f8fc;--ink-soft:#8b9aa9;--ink-faint:#7c8996;--line:#1e262f;--bg-veil:rgba(8,11,15,.76);
+}
+[data-surface=A] {
+--canvas:var(--brand);--panel:rgba(4,33,43,.1);--ink:var(--ink-on-brand);--ink-soft:rgba(4,33,43,.82);--ink-faint:rgba(4,33,43,.58);--line:rgba(4,33,43,.26);--accent:#04212b;--bg-veil:rgba(33,212,253,.84);--highlight:#04212b;--ink-on-highlight:var(--brand);--shadow-sm:none;--shadow-md:0 8px 30px rgba(4,33,43,.25);--shadow-lg:0 24px 70px rgba(4,33,43,.3);
+}
+
+</style>
+<script>/* demo only: Brand Kit switcher — ?kit=<name>, remembered in this browser */
+(function(){var K='cfe-demo-kit',q=(location.search.match(/[?&]kit=([a-z-]+)/)||[])[1],k=q;
+try{if(q)localStorage.setItem(K,q);else k=localStorage.getItem(K);}catch(e){}
+window.cfeSetKit=function(n){var s=document.querySelectorAll('style.cfe-kit'),hit=false;
+for(var i=0;i<s.length;i++){if(s[i].getAttribute('data-kit')===n)hit=true;}
+if(!hit)n='ember';
+for(var j=0;j<s.length;j++){s[j].media=s[j].getAttribute('data-kit')===n?'all':'not all';}
+try{localStorage.setItem(K,n);}catch(e){}var sel=document.getElementById('cfe-demo-kit');if(sel)sel.value=n;};
+if(k)document.addEventListener('DOMContentLoaded',function(){cfeSetKit(k);});
+if(k){var s=document.querySelectorAll('style.cfe-kit');for(var i=0;i<s.length;i++){s[i].media=s[i].getAttribute('data-kit')===k?'all':'not all';}}
+})();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Full Calendar Challenge — Live challenge · $47</title>
+<meta name="description" content="In one day, build the referral system that books your next 20 new patients">
+<meta name="cfe-page" content="paid-registration">
+<style>
+
+/* ═══════════════════════════════════════════════════════════
+   THE BUILDING BLOCKS — Coach Launch Brand Kit · Layer 2
+   ═══════════════════════════════════════════════════════════
+
+   The small repeating pieces, defined ONCE. A button, a card, a tick
+   list, a testimonial, a price box. They read their colour, type and
+   shape from whichever theme file is loaded — so the same block looks
+   right on a funnel page, a slide and a social post without being
+   rebuilt for each one.
+
+   HOW TO USE IT
+     <link rel="stylesheet" href="tokens/sovereign.css">   <- Layer 1: the look
+     <link rel="stylesheet" href="blocks.css">             <- Layer 2: this file
+     <link rel="stylesheet" href="surfaces/page.css">      <- Layer 3: the medium
+
+   NOTHING IN THIS FILE NAMES A COLOUR, A FONT OR A PIXEL RADIUS.
+   If you find yourself typing a hex code here, it belongs in a theme.
+
+   THE TYPE SCALE
+     A surface sets --fs-base (the body size for that medium). The theme
+     sets --scale (the ratio between steps). Every heading size below is
+     computed from those two, so a page, a slide and a 1080px post share
+     one hierarchy at three different physical sizes.
+   ─────────────────────────────────────────────────────────── */
+
+:root {
+  --fs-base: 1rem;               /* a surface overrides this          */
+
+  --fs--1: calc(var(--fs-base) / var(--scale));
+  --fs-0:  var(--fs-base);
+  --fs-1:  calc(var(--fs-0) * var(--scale));
+  --fs-2:  calc(var(--fs-1) * var(--scale));
+  --fs-3:  calc(var(--fs-2) * var(--scale));
+  --fs-4:  calc(var(--fs-3) * var(--scale));
+
+  --sp-1: .35rem;  --sp-2: .6rem;   --sp-3: 1rem;
+  --sp-4: 1.5rem;  --sp-5: 2.25rem; --sp-6: 3.5rem;  --sp-7: 5rem;
+}
+
+/* ---------- text ------------------------------------------- */
+
+.cl-eyebrow {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs--1);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 var(--sp-2);
+}
+
+.cl-h1, .cl-h2, .cl-h3 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  letter-spacing: var(--track-display);
+  line-height: var(--leading-display);
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+  text-wrap: balance;
+}
+.cl-h1 { font-size: var(--fs-4); }
+.cl-h2 { font-size: var(--fs-3); }
+.cl-h3 { font-size: var(--fs-1); }
+
+.cl-lede {
+  font-family: var(--font-body);
+  font-size: var(--fs-1);
+  line-height: var(--leading-body);
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin: 0 0 var(--sp-4);
+  text-wrap: pretty;
+}
+
+.cl-body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-body);
+  font-size: var(--fs-0);
+  line-height: var(--leading-body);
+  color: var(--ink-soft);
+  max-width: 68ch;
+  margin: 0 0 var(--sp-3);
+}
+
+.cl-meta {
+  font-family: var(--font-body);
+  font-size: var(--fs--1);
+  line-height: 1.5;
+  color: var(--ink-faint);
+}
+
+/* accent-coloured run of text */
+.cl-hl { color: var(--accent); }
+
+/* The highlighter. A full fill, not the classic bottom-half marker stripe.
+   The stripe only works when the page behind the uncovered top half is light —
+   on a dark surface (or a dark-first theme) the recoloured text sits on the dark
+   page and disappears. A full fill reads on all three surfaces and all six themes. */
+.cl-mark {
+  background: var(--highlight);
+  color: var(--ink-on-highlight);
+  padding: .04em .22em;
+  border-radius: var(--r-xs);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.cl-rule {
+  border: 0;
+  border-top: var(--border-w) solid var(--line);
+  margin: var(--sp-5) 0;
+}
+
+/* ---------- the call to action ------------------------------ */
+
+.cl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs-0);
+  letter-spacing: .01em;
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  padding: .95em 1.9em;
+  border: var(--border-w) solid transparent;
+  border-radius: var(--r-pill);
+  background: var(--brand);
+  color: var(--ink-on-brand);
+  box-shadow: var(--shadow-sm);
+  transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+.cl-btn:hover  { background: var(--brand-deep); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.cl-btn:active { transform: translateY(0); }
+.cl-btn:focus-visible { outline: none; box-shadow: var(--ring); }
+
+.cl-btn--ghost {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--line);
+  box-shadow: none;
+}
+.cl-btn--ghost:hover { background: var(--brand-soft); border-color: var(--accent); box-shadow: none; }
+
+.cl-btn--block { display: flex; width: 100%; }
+
+/* the reassurance line that lives under a button */
+.cl-btn-note {
+  font-family: var(--font-body);
+  font-size: var(--fs--1);
+  color: var(--ink-faint);
+  margin-top: var(--sp-2);
+}
+
+/* ---------- containers -------------------------------------- */
+
+.cl-card {
+  background: var(--panel);
+  border: var(--border-w) solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--sp-4);
+}
+.cl-card--raised { box-shadow: var(--shadow-md); }
+.cl-card--feature { border-color: var(--accent); box-shadow: var(--shadow-lg); }
+
+.cl-callout {
+  background: var(--brand-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--r-xs);
+  padding: var(--sp-3) var(--sp-4);
+}
+
+.cl-badge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs--1);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  padding: .45em 1em;
+  border-radius: var(--r-pill);
+  background: var(--brand);
+  color: var(--ink-on-brand);
+}
+.cl-badge--quiet { background: var(--brand-soft); color: var(--accent); }
+
+/* ---------- lists ------------------------------------------- */
+
+.cl-list {
+  list-style: none;
+  margin: 0 0 var(--sp-4);
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-0);
+  line-height: var(--leading-body);
+  color: var(--ink-soft);
+}
+.cl-list li {
+  position: relative;
+  padding-left: 1.9em;
+  margin-bottom: var(--sp-2);
+}
+.cl-list li::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: var(--weight-body-strong);
+}
+.cl-list--tick  li::before { content: "\2713"; color: var(--pos); }
+.cl-list--cross li::before { content: "\2715"; color: var(--neg); }
+.cl-list--num { counter-reset: cl; }
+.cl-list--num li { counter-increment: cl; }
+.cl-list--num li::before {
+  content: counter(cl);
+  font-family: var(--font-display);
+  color: var(--accent);
+}
+
+/* ---------- before / after ---------------------------------- */
+
+.cl-compare {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--sp-4);
+}
+.cl-compare__side { border-top: 3px solid var(--line); padding-top: var(--sp-3); }
+.cl-compare__side--before { border-top-color: var(--neg); }
+.cl-compare__side--after  { border-top-color: var(--pos); }
+.cl-compare__title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs--1);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  margin: 0 0 var(--sp-3);
+}
+.cl-compare__side--before .cl-compare__title { color: var(--neg); }
+.cl-compare__side--after  .cl-compare__title { color: var(--pos); }
+
+/* ---------- proof ------------------------------------------- */
+
+.cl-stat { text-align: center; }
+.cl-stat__n {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs-4);
+  line-height: 1;
+  letter-spacing: var(--track-display);
+  color: var(--accent);
+}
+.cl-stat__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs--1);
+  color: var(--ink-faint);
+  margin-top: var(--sp-2);
+}
+
+.cl-quote {
+  background: var(--panel);
+  border: var(--border-w) solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--sp-4);
+  margin: 0;
+}
+.cl-quote__text {
+  font-family: var(--font-body);
+  font-size: var(--fs-0);
+  line-height: var(--leading-body);
+  color: var(--ink);
+  margin: 0 0 var(--sp-3);
+}
+.cl-quote__by {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-body);
+  font-size: var(--fs--1);
+  color: var(--ink-faint);
+}
+.cl-quote__by img {
+  width: 2.6em;
+  height: 2.6em;
+  border-radius: var(--r-pill);
+  object-fit: cover;
+  flex: 0 0 auto;
+}
+.cl-quote__name { font-weight: var(--weight-body-strong); color: var(--ink-soft); }
+
+/* ---------- the offer --------------------------------------- */
+
+.cl-price { text-align: center; }
+.cl-price__was {
+  font-family: var(--font-body);
+  font-size: var(--fs-0);
+  color: var(--ink-faint);
+  text-decoration: line-through;
+}
+.cl-price__now {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs-4);
+  line-height: 1;
+  letter-spacing: var(--track-display);
+  color: var(--ink);
+}
+.cl-price__terms {
+  font-family: var(--font-body);
+  font-size: var(--fs--1);
+  color: var(--ink-faint);
+  margin-top: var(--sp-2);
+}
+
+.cl-stack { list-style: none; margin: 0; padding: 0; }
+.cl-stack li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--sp-3);
+  font-family: var(--font-body);
+  font-size: var(--fs-0);
+  color: var(--ink-soft);
+  padding: var(--sp-2) 0;
+  border-bottom: var(--border-w) solid var(--line);
+}
+.cl-stack__value { font-weight: var(--weight-body-strong); color: var(--ink); white-space: nowrap; }
+.cl-stack__total {
+  border-bottom: 0;
+  padding-top: var(--sp-3);
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  color: var(--ink);
+}
+
+/* ---------- background image layer -------------------------- */
+/* Any block can sit over a photo. The veil keeps text readable and
+   adapts to the surface automatically.                            */
+
+.cl-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: center / cover no-repeat;
+}
+.cl-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg-veil);
+}
+.cl-over { position: relative; z-index: 1; }
+
+/* ---------- funnel pieces ----------------------------------- */
+/* Long-form registration and upsell pages need a few parts a slide never
+   does. They live here, not in one page, so every funnel gets them and
+   they change colour with the theme like everything else.            */
+
+/* the sticky strip across the top — dates, "LIVE", scarcity */
+.cl-announce {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--ink);
+  color: var(--canvas);
+  font-family: var(--font-body);
+  font-size: var(--fs--1);
+  text-align: center;
+  padding: var(--sp-2) var(--sp-3);
+}
+.cl-announce b { color: var(--canvas); }
+
+/* countdown — maximum-contrast pills, readable on any surface */
+.cl-countdown {
+  display: inline-flex;
+  gap: var(--sp-2);
+  align-items: flex-end;
+}
+.cl-countdown__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .3em;
+  background: var(--ink);
+  color: var(--canvas);
+  border-radius: var(--r-md);
+  padding: .5em .7em;
+  min-width: 3.2em;
+}
+.cl-countdown__n {
+  font-family: var(--font-mono);
+  font-size: var(--fs-1);
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.cl-countdown__label {
+  font-size: calc(var(--fs--1) * .8);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  opacity: .7;
+}
+
+/* labelled image placeholder — mandatory until real assets arrive */
+.cl-imgslot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 12rem;
+  padding: var(--sp-4);
+  border: 2px dashed var(--line);
+  border-radius: var(--r-lg);
+  background: var(--panel);
+  background-image: repeating-linear-gradient(
+    45deg, transparent 0 10px, var(--line) 10px 11px);
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: var(--fs--1);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.cl-imgslot--wide { aspect-ratio: 16 / 9; min-height: 0; }
+.cl-imgslot--tall { aspect-ratio: 3 / 4; min-height: 0; }
+
+/* the order bump in a checkout — must interrupt, not blend */
+.cl-bump {
+  border: 2px dashed var(--accent);
+  border-radius: var(--r-md);
+  background: var(--brand-soft);
+  padding: var(--sp-3) var(--sp-4);
+}
+.cl-bump__title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs-0);
+  color: var(--ink);
+  margin: 0 0 var(--sp-1);
+}
+
+/* FAQ — built on <details>, so it works with no JavaScript at all */
+.cl-faq { border-top: var(--border-w) solid var(--line); }
+.cl-faq details {
+  border-bottom: var(--border-w) solid var(--line);
+}
+.cl-faq summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) 0;
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs-0);
+  color: var(--ink);
+}
+.cl-faq summary::-webkit-details-marker { display: none; }
+.cl-faq summary::after {
+  content: "+";
+  flex: 0 0 auto;
+  font-size: var(--fs-1);
+  line-height: 1;
+  color: var(--accent);
+}
+.cl-faq details[open] summary::after { content: "\2212"; }
+.cl-faq summary:focus-visible { outline: none; box-shadow: var(--ring); }
+.cl-faq__a {
+  font-family: var(--font-body);
+  font-size: var(--fs-0);
+  line-height: var(--leading-body);
+  color: var(--ink-soft);
+  max-width: 68ch;
+  margin: 0 0 var(--sp-3);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PAGE — Coach Launch Brand Kit · Layer 3 (surface adapter)
+   For anything read in a browser at arm's length: funnel pages,
+   registration and thank-you pages, sales pages, long-form guides.
+   ═══════════════════════════════════════════════════════════
+
+   Load AFTER a theme and blocks.css. This file owns layout and the
+   base reading size for this medium — and nothing else. No colours,
+   no fonts, no radii. Those come from the theme.
+   ─────────────────────────────────────────────────────────── */
+
+:root {
+  /* the body size for a page; every heading scales up from here */
+  --fs-base: clamp(1rem, .95rem + .25vw, 1.125rem);
+
+  --maxw:        1120px;
+  --maxw-narrow:  760px;
+  --maxw-letter:  680px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: var(--weight-body);
+  font-size: var(--fs-0);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg, video { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--accent); }
+
+/* ---------- structure --------------------------------------- */
+
+.cl-section {
+  position: relative;
+  background: var(--canvas);
+  color: var(--ink);
+  padding-block: var(--sp-7);
+}
+.cl-section--tight { padding-block: var(--sp-5); }
+
+/* A band that flips surface mid-page. Put data-surface on the section
+   itself and every block inside it re-reads its colours. */
+.cl-section[data-surface] { background: var(--canvas); }
+
+.cl-container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--sp-4);
+}
+.cl-container--narrow { max-width: var(--maxw-narrow); }
+.cl-container--letter { max-width: var(--maxw-letter); }
+
+.cl-center { text-align: center; }
+.cl-center .cl-lede,
+.cl-center .cl-body { margin-inline: auto; }
+
+/* ---------- grids ------------------------------------------- */
+
+.cl-grid {
+  display: grid;
+  gap: var(--sp-4);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.cl-grid--2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.cl-grid--3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+/* desktop: always exactly 3 columns (never 4 on wide screens) */
+@media (min-width: 900px) { .cl-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.cl-split {
+  display: grid;
+  gap: var(--sp-6);
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 860px) {
+  .cl-split { grid-template-columns: 1fr 1fr; }
+  .cl-split--wide-left  { grid-template-columns: 1.3fr 1fr; }
+  .cl-split--wide-right { grid-template-columns: 1fr 1.3fr; }
+}
+
+/* ---------- hero -------------------------------------------- */
+
+.cl-hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--sp-7);
+}
+.cl-hero .cl-h1 { max-width: 18ch; }
+.cl-center.cl-hero .cl-h1 { max-width: 22ch; margin-inline: auto; }
+
+/* ---------- form -------------------------------------------- */
+
+.cl-field {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--fs-0);
+  color: var(--ink);
+  background: var(--canvas);
+  border: var(--border-w) solid var(--line);
+  border-radius: var(--r-md);
+  padding: .85em 1em;
+  margin-bottom: var(--sp-2);
+}
+.cl-field::placeholder { color: var(--ink-faint); }
+.cl-field:focus-visible { outline: none; border-color: var(--accent); box-shadow: var(--ring); }
+
+.cl-label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: var(--weight-body-strong);
+  font-size: var(--fs--1);
+  color: var(--ink-soft);
+  margin-bottom: var(--sp-1);
+}
+
+/* ---------- print ------------------------------------------- */
+
+@media print {
+  .cl-section { padding-block: var(--sp-4); break-inside: avoid; }
+  .cl-btn { display: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FUNNEL — Coach Launch Brand Kit · Layer 4 (Cash Flow Engine™ pages)
+   The pieces only event funnels need: popup registration, gate card,
+   agenda timeline, qualifier rows, letter card, upsell yes/no, order
+   form, plan picker, progress steps, booking slot, video slot.
+
+   Load AFTER a theme, blocks.css and surfaces/page.css.
+   Same rule as every other layer: NO colour, font or radius is typed
+   here. Everything reads the theme's tokens, so a funnel reskins by
+   swapping the one token file.
+   ─────────────────────────────────────────────────────────── */
+
+/* ---------- the two fixed standards (Matthew, 2026-10-05) ----
+   These hold on EVERY Kit, on purpose, so they are the only values here
+   that don't come from the theme:
+   · stars are always bright yellow
+   · every image carries a light drop shadow so it lifts off the page */
+:root {
+  --cfe-star: #ffc107;
+  --cfe-img-shadow: 0 6px 20px rgba(0,0,0,.14), 0 1px 3px rgba(0,0,0,.08);
+}
+/* testimonial and trust-row faces are the exception: flat, no shadow */
+.cl-imgslot, .cl-photo, .cl-video,
+.cl-section img:not(.cl-noshadow):not(.cl-avatar):not(.cl-face) { box-shadow: var(--cfe-img-shadow); }
+.cl-avatar, .cl-face { box-shadow: none; }
+
+/* testimonial: quote → photo + name → stars bottom-left */
+.cl-testimonial { display: flex; flex-direction: column; text-align: left; }
+.cl-testimonial .cl-quote__text { flex: 1 1 auto; }
+.cl-testimonial .cl-quote__by { margin-bottom: var(--sp-3); }
+.cl-testimonial .cl-stars { align-self: flex-start; font-size: var(--fs-1); }
+.cl-avatar {
+  flex: 0 0 auto; width: 4.2em; height: 4.2em; border-radius: 50%; object-fit: cover;
+  display: inline-grid; place-items: center;
+  border: 2px dashed var(--line); background: var(--panel);
+  font-family: var(--font-mono); font-size: calc(var(--fs--1) * .8); color: var(--ink-faint); text-transform: uppercase;
+}
+img.cl-avatar { border: 0; }
+
+/* ---------- section rhythm ---------------------------------- */
+.cl-section { padding-block: var(--sp-6); }
+.cl-section--panel { background: var(--panel); }
+.cl-section--tight { padding-block: var(--sp-5); }
+.cl-stack-y > * + * { margin-top: var(--sp-4); }
+.cl-cta-block { text-align: center; margin-top: var(--sp-5); }
+.cl-cta-block .cl-btn { font-size: var(--fs-1); }
+.cl-h2--center { text-align: center; margin-inline: auto; max-width: 24ch; }
+
+/* ---------- top bars ---------------------------------------- */
+.cl-announce .cl-countdown { vertical-align: middle; margin-left: var(--sp-2); }
+.cl-announce .cl-countdown__unit { background: var(--canvas); color: var(--ink); padding: .25em .5em; min-width: 2.6em; }
+.cl-announce .cl-countdown__n { font-size: var(--fs-0); }
+
+/* warning bar on upsell/downsell pages: "your order isn't complete" */
+.cl-warnbar {
+  background: #111111;   /* Matthew (board comment, 2026-10-07): black eyebrow, same as the event-details bar */
+  color: #ffffff;
+  border-bottom: 3px solid var(--accent);
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+  font-size: var(--fs--1);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: var(--sp-2) var(--sp-3);
+}
+
+/* progress steps: ① Order ✓ ② Upgrade ③ Confirmation */
+.cl-progress {
+  display: flex; justify-content: center; gap: var(--sp-3);
+  list-style: none; margin: 0; padding: var(--sp-3) var(--sp-3) 0;
+  font-family: var(--font-body); font-size: var(--fs--1); color: var(--ink-faint);
+}
+.cl-progress li { display: flex; align-items: center; gap: var(--sp-1); }
+.cl-progress li::before {
+  content: attr(data-n);
+  display: inline-grid; place-items: center;
+  width: 1.7em; height: 1.7em; border-radius: var(--r-pill);
+  border: var(--border-w) solid var(--line); font-weight: var(--weight-body-strong);
+}
+.cl-progress li[data-state=done]::before { content: "\2713"; background: var(--pos); border-color: var(--pos); color: var(--canvas); }
+.cl-progress li[data-state=now] { color: var(--ink); font-weight: var(--weight-body-strong); }
+.cl-progress li[data-state=now]::before { background: var(--brand); border-color: var(--brand); color: var(--ink-on-brand); }
+
+/* ---------- media slots -------------------------------------- */
+/* A video or image the operator swaps in. Until then it shows what goes there. */
+.cl-video { position: relative; aspect-ratio: 16 / 9; border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+.cl-video > iframe, .cl-video > video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.cl-video .cl-imgslot { position: absolute; inset: 0; min-height: 0; border-radius: inherit; }
+.cl-imgslot--round { aspect-ratio: 1; border-radius: var(--r-pill); min-height: 0; }
+.cl-imgslot--square { aspect-ratio: 1; min-height: 0; }
+.cl-photo { width: 100%; border-radius: var(--r-lg); object-fit: cover; }
+
+/* required image slots: before/after pair and the offer-stack visual */
+.cl-compare__img { aspect-ratio: 4 / 3; min-height: 0; margin: 0 0 var(--sp-3); }
+.cl-compare__img.cl-photo, img.cl-compare__img { object-fit: cover; width: 100%; border-radius: var(--r-lg); }
+.cl-compare__side--before .cl-compare__img { border-color: var(--neg); }
+.cl-compare__side--after  .cl-compare__img { border-color: var(--pos); }
+.cl-offer-visual { aspect-ratio: 16 / 10; min-height: 0; margin: 0 0 var(--sp-4); }
+img.cl-offer-visual { width: 100%; object-fit: contain; border: 0; background: none; }
+
+/* ---------- trust row --------------------------------------- */
+.cl-trust { display: flex; align-items: center; justify-content: center; gap: var(--sp-2); flex-wrap: wrap; font-family: var(--font-body); font-size: var(--fs--1); color: var(--ink-soft); margin-top: var(--sp-3); }
+.cl-stars { color: var(--cfe-star); letter-spacing: .1em; margin: 0; line-height: 1; }
+
+/* ---------- popup registration ------------------------------- */
+/* <div class="cl-modal" id="register" hidden> … </div>
+   Every [data-open="register"] opens it; the inline script handles it.
+   Without JavaScript the CTA falls back to #register (an anchor). */
+.cl-modal {
+  position: fixed; inset: 0; z-index: 100;
+  display: grid; place-items: center;
+  padding: var(--sp-3);
+  background: rgba(0,0,0,.6);
+}
+.cl-modal[hidden] { display: none; }
+.cl-modal__box {
+  position: relative; width: 100%; max-width: 460px; max-height: calc(100vh - 2rem); overflow: auto;
+  background: var(--paper); color: var(--paper-ink);
+  border-radius: var(--r-lg); box-shadow: var(--shadow-lg);
+  padding: var(--sp-5) var(--sp-4) var(--sp-4);
+  --ink: var(--paper-ink); --ink-soft: var(--paper-soft); --line: var(--paper-line); --canvas: var(--paper);
+}
+.cl-modal__close {
+  position: absolute; top: var(--sp-2); right: var(--sp-2);
+  width: 2.2em; height: 2.2em; border: 0; border-radius: var(--r-pill);
+  background: var(--panel); color: var(--ink-soft); font-size: var(--fs-0); cursor: pointer;
+}
+.cl-modal .cl-countdown { margin-bottom: var(--sp-3); }
+
+/* ---------- forms -------------------------------------------- */
+.cl-form { display: grid; gap: var(--sp-1); text-align: left; }
+.cl-form__row { display: grid; gap: var(--sp-2); grid-template-columns: 1fr 1fr; }
+.cl-form .cl-btn { margin-top: var(--sp-2); }
+.cl-consent { text-align: left; display: flex; gap: var(--sp-2); align-items: flex-start; font-family: var(--font-body); font-size: var(--fs--1); color: var(--ink-soft); margin: var(--sp-1) 0; }
+.cl-consent input { margin-top: .25em; accent-color: var(--brand); }
+.cl-fine { font-family: var(--font-body); font-size: calc(var(--fs--1) * .92); color: var(--ink-faint); line-height: 1.5; margin-top: var(--sp-2); }
+.cl-fine a { color: inherit; }
+
+/* ---------- qualifier rows ----------------------------------- */
+.cl-qualify { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-2); }
+.cl-qualify li {
+  display: grid; grid-template-columns: auto 1fr; gap: var(--sp-3); align-items: start;
+  padding: var(--sp-3) var(--sp-4); border-radius: var(--r-md);
+  font-family: var(--font-body); font-size: var(--fs-0); line-height: var(--leading-body); color: var(--ink-soft);
+}
+.cl-qualify li:nth-child(odd) { background: var(--panel); }
+.cl-qualify li::before {
+  content: "\2713"; display: grid; place-items: center;
+  width: 1.8em; height: 1.8em; border-radius: var(--r-pill);
+  background: var(--pos); color: var(--canvas); font-weight: 700;
+}
+.cl-qualify b { color: var(--ink); text-transform: uppercase; letter-spacing: .02em; }
+
+/* ---------- long-form letter --------------------------------- */
+.cl-letter { font-family: var(--font-body); font-size: var(--fs-1); line-height: var(--leading-body); color: var(--ink-soft); }
+.cl-letter p { margin: 0 0 var(--sp-3); }
+.cl-letter strong { color: var(--ink); }
+.cl-letter__from { font-size: var(--fs-0); color: var(--ink-faint); }
+.cl-letter .cl-pullquote, .cl-pullquote {
+  font-family: var(--font-display); font-weight: var(--weight-display);
+  font-size: var(--fs-2); line-height: var(--leading-display); letter-spacing: var(--track-display);
+  color: var(--ink); text-align: center; margin: var(--sp-5) auto; max-width: 24ch; text-wrap: balance;
+}
+/* letter on a card, floating on a dark band */
+.cl-lettercard {
+  background: var(--paper); color: var(--paper-ink);
+  border-radius: var(--r-lg); box-shadow: var(--shadow-lg);
+  padding: var(--sp-5) var(--sp-4);
+  --ink: var(--paper-ink); --ink-soft: var(--paper-soft); --line: var(--paper-line);
+}
+@media (min-width: 720px) { .cl-lettercard { padding: var(--sp-6); } }
+.cl-signature { font-family: var(--font-display); font-size: var(--fs-2); color: var(--ink); margin-top: var(--sp-4); }
+
+/* ---------- agenda / timeline -------------------------------- */
+.cl-timeline { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); }
+.cl-timeline li { position: relative; padding: 0 0 var(--sp-4) var(--sp-4); }
+.cl-timeline li::before {
+  content: ""; position: absolute; left: calc(-.5em - 1px); top: .35em;
+  width: 1em; height: 1em; border-radius: var(--r-pill);
+  background: var(--canvas); border: 3px solid var(--accent);
+}
+.cl-timeline__time { font-family: var(--font-mono); font-size: var(--fs--1); color: var(--accent); letter-spacing: .04em; }
+.cl-timeline__title { font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-1); color: var(--ink); margin: .15em 0 .3em; }
+.cl-timeline__break { font-family: var(--font-body); font-size: var(--fs--1); color: var(--ink-faint); font-style: italic; }
+.cl-timeline li.cl-timeline__break::before { border-color: var(--line); }
+
+/* day blocks (challenge schedule) */
+.cl-day { border: var(--border-w) solid var(--line); border-radius: var(--r-lg); overflow: hidden; }
+.cl-day__head { background: var(--panel); padding: var(--sp-3) var(--sp-4); display: flex; gap: var(--sp-3); align-items: baseline; flex-wrap: wrap; }
+.cl-day__body { padding: var(--sp-4); }
+
+/* ---------- host / bio --------------------------------------- */
+.cl-host { display: grid; gap: var(--sp-5); align-items: center; }
+@media (min-width: 860px) { .cl-host { grid-template-columns: 360px 1fr; } .cl-host--flip { grid-template-columns: 1fr 360px; } .cl-host--flip > :first-child { order: 2; } }
+.cl-tagline { font-family: var(--font-display); font-size: var(--fs-1); font-style: italic; color: var(--ink); margin: 0 0 var(--sp-3); }
+
+/* ---------- logistics strip ---------------------------------- */
+/* guarantee placed inside the offer box, under the CTA (paid ticket page) */
+.cl-guarantee--instack { margin-top: 2.4rem; margin-bottom: 0; }   /* Matthew, canvas 2026-10-07 */
+.cl-offerbox:has(.cl-guarantee--instack) { padding-bottom: 16px; }   /* Matthew, canvas 2026-10-07 */
+
+/* WHAT / WHEN / WHY — three standout boxed cards (Matthew, 2026-10-07: "in boxes like I had them before", same on ALL ticket pages) */
+.cl-facts { display: grid; gap: var(--sp-4); grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cl-fact { background: var(--paper); color: var(--paper-ink); border: var(--border-w) solid var(--paper-line); border-top: 4px solid var(--accent); border-radius: var(--r-md); box-shadow: var(--shadow-md); padding: var(--sp-4) var(--sp-4) var(--sp-5); text-align: center; }
+.cl-fact__k { font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-2); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.cl-fact__v { font-family: var(--font-body); font-size: var(--fs-1); color: var(--paper-ink); margin-top: var(--sp-2); line-height: 1.5; }
+@media (max-width: 760px) { .cl-facts { grid-template-columns: 1fr; gap: var(--sp-3); } }
+
+/* ---------- value stack box ---------------------------------- */
+.cl-offerbox {
+  background: var(--paper); color: var(--paper-ink);
+  border: 2px solid var(--accent); border-radius: var(--r-lg); box-shadow: var(--shadow-lg);
+  padding: var(--sp-5) var(--sp-4);
+  --ink: var(--paper-ink); --ink-soft: var(--paper-soft); --line: var(--paper-line);
+}
+.cl-offerbox--dashed { border-style: dashed; }
+.cl-stack__total .cl-stack__value { color: var(--accent); }
+
+/* ---------- upsell yes / no ---------------------------------- */
+.cl-yesno { display: grid; gap: var(--sp-3); justify-items: center; text-align: center; }
+.cl-decline {
+  font-family: var(--font-body); font-size: var(--fs--1); color: var(--ink-faint);
+  text-decoration: underline; text-underline-offset: 3px; max-width: 52ch; line-height: 1.5;
+  background: none; border: 0; cursor: pointer;
+}
+
+/* ---------- order form --------------------------------------- */
+.cl-order {
+  background: var(--paper); color: var(--paper-ink);
+  border: var(--border-w) solid var(--paper-line); border-radius: var(--r-lg); box-shadow: var(--shadow-md);
+  padding: var(--sp-4);
+  --ink: var(--paper-ink); --ink-soft: var(--paper-soft); --line: var(--paper-line); --canvas: var(--paper);
+}
+.cl-order__head { font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-1); color: var(--ink); margin: 0 0 var(--sp-3); }
+.cl-order__group { font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs--1); letter-spacing: var(--track-eyebrow); text-transform: uppercase; color: var(--ink-faint); margin: var(--sp-3) 0 var(--sp-2); }
+.cl-order__summary { display: grid; gap: var(--sp-1); border-top: var(--border-w) solid var(--line); padding-top: var(--sp-3); margin-top: var(--sp-3); font-family: var(--font-body); }
+.cl-order__summary div { display: flex; justify-content: space-between; color: var(--ink-soft); }
+.cl-order__summary .is-total { font-weight: var(--weight-body-strong); color: var(--ink); font-size: var(--fs-1); }
+.cl-paybox { border: 2px dashed var(--line); border-radius: var(--r-md); padding: var(--sp-3); font-family: var(--font-mono); font-size: var(--fs--1); color: var(--ink-faint); text-align: center; }
+.cl-bump label { display: flex; gap: var(--sp-2); align-items: flex-start; cursor: pointer; }
+.cl-bump input { margin-top: .3em; accent-color: var(--brand); width: 1.1em; height: 1.1em; }
+.cl-bump + .cl-bump { margin-top: var(--sp-2); }
+
+/* plan picker (membership / deposit vs pay-in-full) */
+.cl-plans { display: grid; gap: var(--sp-3); grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.cl-plan { position: relative; display: block; cursor: pointer; border: 2px solid var(--line); border-radius: var(--r-lg); padding: var(--sp-4); background: var(--paper); color: var(--paper-ink); }
+.cl-plan input { position: absolute; opacity: 0; }
+.cl-plan:has(input:checked) { border-color: var(--accent); box-shadow: var(--ring); }
+.cl-plan .cl-badge { position: absolute; top: calc(-1 * var(--sp-3)); right: var(--sp-3); }
+
+/* ---------- event gate card ---------------------------------- */
+.cl-gate { position: relative; max-width: 520px; margin: calc(-1 * var(--sp-7)) auto 0; z-index: 2; text-align: center; }
+.cl-gate .cl-imgslot--round { width: 112px; margin: calc(-1 * var(--sp-7)) auto var(--sp-3); border-width: 4px; }
+
+/* ---------- booking slot ------------------------------------- */
+.cl-embed { border: 2px dashed var(--line); border-radius: var(--r-lg); min-height: 520px; display: grid; place-items: center; text-align: center; padding: var(--sp-4); background: var(--panel); font-family: var(--font-mono); font-size: var(--fs--1); color: var(--ink-faint); }
+
+/* ---------- step cards (next steps, how it works) ------------ */
+.cl-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-3); counter-reset: step; }
+.cl-steps > li { counter-increment: step; display: grid; grid-template-columns: auto 1fr; gap: var(--sp-3); align-items: start; }
+.cl-steps > li::before {
+  content: counter(step); display: grid; place-items: center;
+  width: 2.2em; height: 2.2em; border-radius: var(--r-pill);
+  background: var(--brand); color: var(--ink-on-brand);
+  font-family: var(--font-display); font-weight: var(--weight-display);
+}
+
+/* ---------- footer ------------------------------------------- */
+.cl-footer { background: #111111; color: #b9b9b9; padding-block: var(--sp-5); text-align: center; font-family: var(--font-body); font-size: var(--fs--1); }
+.cl-footer nav { display: flex; justify-content: center; flex-wrap: wrap; align-items: center; gap: .4rem .6rem; margin-bottom: var(--sp-3); font-size: var(--fs-0); }
+.cl-footer a { color: #ffffff; text-decoration: underline; text-underline-offset: .18em; }
+.cl-footer a:hover { color: var(--accent); }
+.cl-footer__sep { color: #777777; }
+.cl-footer p { max-width: 72ch; margin: 0 auto; line-height: 1.55; }
+.cl-footer__legal strong { color: #ffffff; }
+
+/* ---------- small helpers ------------------------------------ */
+.cl-mt-0 { margin-top: 0; }
+.cl-mb-0 { margin-bottom: 0; }
+.cl-muted { color: var(--ink-faint); }
+.cl-strike { text-decoration: line-through; color: var(--ink-faint); }
+.cl-pos { color: var(--pos); }
+@media (max-width: 560px) { .cl-form__row { grid-template-columns: 1fr; } .cl-section { padding-block: var(--sp-6); } }
+
+
+/* ═══════════ CTA BUTTON — the Coach Launch standard ═══════════
+   Big, two-line, unmissable: action on line 1 with an arrow, the date on
+   line 2. Fills with --cta, which defaults to the Kit's brand colour.
+   A client can set a dedicated action colour on the OVERRIDES line:
+   --cta / --cta-deep / --ink-on-cta (contrast-checked like --brand). */
+.cl-cta {
+  display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: .3em;
+  min-width: min(100%, 22rem); padding: .95em 2.2em .85em;
+  background: var(--cta, var(--brand)); color: var(--ink-on-cta, var(--ink-on-brand));
+  border: 0; border-radius: max(var(--r-md), 10px);
+  text-decoration: none; text-align: center; cursor: pointer; line-height: 1.1;
+  box-shadow: 0 8px 20px -10px var(--cta, var(--brand)), 0 3px 0 0 var(--cta-deep, var(--brand-deep)), inset 0 1px 0 rgba(255,255,255,.18);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+.cl-cta:hover { transform: translateY(-2px); filter: brightness(1.06); box-shadow: 0 12px 26px -10px var(--cta, var(--brand)), 0 3px 0 0 var(--cta-deep, var(--brand-deep)), inset 0 1px 0 rgba(255,255,255,.18); }
+.cl-cta:active { transform: translateY(1px); box-shadow: 0 6px 16px -8px var(--cta, var(--brand)), 0 1px 0 0 var(--cta-deep, var(--brand-deep)); }
+.cl-cta:focus-visible { outline: none; box-shadow: var(--ring), 0 8px 20px -10px var(--cta, var(--brand)); }
+.cl-cta__main { font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-2); letter-spacing: -.01em; }
+.cl-cta__main::after { content: " \2192"; font-weight: 400; }
+.cl-cta__sub { font-family: var(--font-body); font-size: var(--fs--1); font-weight: var(--weight-body-strong); opacity: .92; }
+.cl-cta--block { display: flex; width: 100%; }
+@media (max-width: 560px) { .cl-cta { min-width: 100%; padding-inline: 1.2em; } .cl-cta__main { font-size: var(--fs-1); } }
+.cl-cta-stack { display: grid; justify-items: center; gap: var(--sp-2); margin-top: var(--sp-5); }
+.cl-privacy { font-family: var(--font-body); font-size: var(--fs--1); color: var(--ink-faint); margin: 0; }
+
+/* ═══════════ TRUST ROW — overlapping client faces + stars ═══════════ */
+.cl-trustrow { display: flex; align-items: center; justify-content: center; gap: var(--sp-3); flex-wrap: wrap; margin-top: var(--sp-2); }
+.cl-faces { display: flex; }
+.cl-face {
+  width: 3rem; height: 3rem; border-radius: 50%; object-fit: cover; /* faces are always round, on every Kit */
+  border: 3px solid var(--canvas); margin-left: -.85rem; background: var(--panel);
+  background-image: repeating-linear-gradient(45deg, transparent 0 6px, var(--line) 6px 7px);
+}
+.cl-face:first-child { margin-left: 0; }
+.cl-trustrow__text { display: grid; gap: .15em; text-align: left; line-height: 1.15; }
+.cl-trustrow__kicker { font-family: var(--font-body); font-size: var(--fs--1); color: var(--ink-soft); }
+.cl-trustrow__who { font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-1); color: var(--ink); }
+.cl-trustrow .cl-stars { font-size: var(--fs-0); }
+.cl-quote__by img.cl-avatar { width: 4.2em; height: 4.2em; }
+
+/* ═══════════ CONVERSION BLOCKS (2026-10-05) ═══════════ */
+/* hero: promise → video/image → countdown → CTA → proof → trust row (same order on every screen).
+   Phones: headline and spacing shrink so promise + video/image + countdown + button fit the first screen. */
+.cl-hero__stack { display: flex; flex-direction: column; align-items: center; }
+.cl-hero__stack > * { width: 100%; }
+.cl-hero__cta { margin-top: var(--sp-5); }
+
+/* countdown directly above the main CTA */
+.cl-herotimer { display: grid; justify-items: center; gap: var(--sp-1); }
+.cl-herotimer__label { margin: 0; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs--1); letter-spacing: var(--track-eyebrow); text-transform: uppercase; color: var(--ink-soft); }
+.cl-countdown--hero .cl-countdown__unit { min-width: 4.2em; padding: .55em .7em .45em; border-radius: var(--r-md); }
+.cl-countdown--hero .cl-countdown__n { font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-2); }
+
+@media (max-width: 640px) {
+  .cl-hero { padding-top: var(--sp-4); padding-bottom: var(--sp-5); }
+  .cl-hero .cl-eyebrow { font-size: calc(var(--fs--1) * .9); margin-bottom: var(--sp-1); }
+  .cl-hero .cl-h1 { font-size: clamp(1.45rem, 6.6vw, 1.85rem); line-height: 1.12; margin-bottom: var(--sp-1); }
+  .cl-hero .cl-lede { font-size: var(--fs-0); margin-bottom: var(--sp-3); line-height: 1.4; }
+  .cl-hero__cta { margin-top: var(--sp-3); gap: var(--sp-2); }
+  .cl-countdown--hero { gap: .35rem; }
+  .cl-countdown--hero .cl-countdown__unit { min-width: 3.4em; padding: .4em .5em .35em; }
+  .cl-countdown--hero .cl-countdown__n { font-size: var(--fs-1); }
+  .cl-hero .cl-cta { padding-block: .8em .7em; }
+}
+
+.cl-exit__img { min-height: 0; aspect-ratio: 16 / 10; margin: var(--sp-2) 0 var(--sp-3); }
+
+/* proof at the button: one real, specific result */
+.cl-proofline {
+  margin: var(--sp-1) 0 0; font-family: var(--font-body); font-size: var(--fs--1); font-weight: var(--weight-body-strong);
+  color: var(--ink); background: var(--panel); border-radius: var(--r-pill); padding: .4em 1em; display: inline-block; width: auto !important;
+}
+.cl-proofline::before { content: "\2713  "; color: var(--pos); }
+
+/* skimmability */
+.cl-discover { font-size: var(--fs-1); }
+.cl-letter__h { margin-top: var(--sp-5); }
+
+/* mobile-only sticky CTA */
+.cl-stickycta { display: none; }
+@media (max-width: 640px) {
+  .cl-stickycta {
+    display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    padding: var(--sp-2) var(--sp-3) calc(var(--sp-2) + env(safe-area-inset-bottom));
+    background: var(--bg-veil); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    box-shadow: 0 -6px 20px rgba(0,0,0,.12);
+    transform: translateY(110%); transition: transform .25s ease;
+  }
+  .cl-stickycta.is-on { transform: translateY(0); }
+  .cl-stickycta .cl-cta { padding-block: .7em .6em; }
+}
+/* hero media sized so the countdown + button reach the first screen on a laptop */
+.cl-hero__media { max-width: 640px; margin-inline: auto; }
+@media (min-width: 641px) { .cl-hero { padding-top: var(--sp-5); } .cl-hero .cl-lede { margin-bottom: var(--sp-4); } }
+/* short phones (iPhone SE and smaller, or with browser bars showing): drop the lede to keep the button on screen */
+@media (max-width: 640px) and (max-height: 700px) { .cl-hero .cl-lede { display: none; } .cl-hero .cl-h1 { margin-bottom: var(--sp-3); } }
+@media (max-width: 640px) and (max-height: 600px) { .cl-hero { padding-top: var(--sp-3); } .cl-hero .cl-h1 { font-size: 1.4rem; } .cl-herotimer__label { display: none; } }
+@media (min-width: 641px) { .cl-hero .cl-h1 { font-size: min(var(--fs-4), 3.1rem); } .cl-hero__media { max-width: 980px; } }
+
+/* CTA section (locked 2026-10-05): [hero only: countdown] → "Normally $X  Today it's free." → button → proof line → trust row.
+   No privacy line. */
+.cl-priceline { margin: 0; font-family: var(--font-body); font-size: var(--fs-0); font-weight: var(--weight-body-strong); color: var(--ink-soft); }
+.cl-priceline .cl-strike { font-weight: var(--weight-body); margin-right: .35em; }
+.cl-cta-stack .cl-proofline { margin-top: var(--sp-4); }   /* Matthew (canvas 2026-10-07): more air above the proof pill */
+/* on a panel-coloured section the pill needs the paper colour to stand out (Matthew, canvas) */
+.cl-section--panel .cl-proofline { background: var(--paper); }
+@media (max-width: 640px) { .cl-priceline { font-size: var(--fs--1); } }
+
+/* ═══════════ THE REAL PROBLEM — pain cards + reframe (2026-10-05) ═══════════ */
+.cl-pains__h { max-width: 22ch; }
+.cl-pains__sub { max-width: 54ch; }
+.cl-pains__sub strong { color: var(--ink); }
+.cl-pains { display: grid; gap: var(--sp-3); margin-top: var(--sp-4); }
+/* pain cards: 15px corners (Matthew's canvas edit) */
+.cl-pain {
+  background: var(--paper); color: var(--paper-ink);
+  border: var(--border-w) solid var(--line); border-left: 4px solid var(--accent);
+  border-radius: 15px; padding: var(--sp-4);
+  --ink: var(--paper-ink); --ink-soft: var(--paper-soft);
+}
+.cl-pain__label { margin: 0 0 var(--sp-2); font-family: var(--font-mono); font-size: calc(var(--fs--1) * .9); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.cl-pain__quote { margin: 0 0 var(--sp-2); font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-2); line-height: var(--leading-display); letter-spacing: var(--track-display); color: var(--ink); }
+.cl-pain__body { margin: 0; font-family: var(--font-body); font-size: var(--fs-0); line-height: var(--leading-body); color: var(--ink-soft); }
+.cl-pain__body strong { color: var(--ink); }
+
+.cl-reframe { margin-top: var(--sp-5); padding: var(--sp-5) var(--sp-4); border-radius: var(--r-lg); background: var(--canvas); color: var(--ink); text-align: center; box-shadow: var(--shadow-md); }
+.cl-reframe p { margin: 0; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-2); line-height: 1.2; letter-spacing: var(--track-display); }
+.cl-reframe__b { color: var(--accent); margin-top: .2em !important; }
+
+.cl-truth { margin-top: var(--sp-4); text-align: center; font-family: var(--font-body); font-size: var(--fs-1); line-height: var(--leading-body); color: var(--ink-soft); }
+.cl-truth p { margin: 0 auto var(--sp-2); max-width: 60ch; }
+.cl-truth strong { color: var(--ink); }
+@media (max-width: 640px) { .cl-pain { padding: var(--sp-3); } .cl-pain__quote { font-size: var(--fs-1); } .cl-reframe p { font-size: var(--fs-1); } .cl-truth { font-size: var(--fs-0); } }
+
+/* ═══════════ THE SOLUTION — Event Magnet™ showcase (2026-10-05) ═══════════ */
+.cl-pill { display: inline-block; padding: .4em 1.1em; margin: 0 0 var(--sp-3); border-radius: var(--r-pill); background: var(--brand-soft); border: var(--border-w) solid var(--accent); color: var(--accent); font-family: var(--font-mono); font-size: var(--fs--1); font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.cl-solution__h { font-size: var(--fs-4); margin-inline: auto; max-width: 20ch; }
+.cl-solution__sub { max-width: 56ch; margin-inline: auto; }
+.cl-solution__sub strong { color: var(--ink); }
+.cl-solution__img { width: 100%; aspect-ratio: 16 / 9; min-height: 0; max-width: 960px; margin: var(--sp-4) auto var(--sp-5); border-radius: var(--r-lg); }
+img.cl-solution__img { width: 100%; object-fit: cover; display: block; }
+.cl-solution__body { font-size: var(--fs-1); max-width: 54ch; margin-inline: auto; }
+.cl-solution__body strong { color: var(--ink); }
+.cl-solution__quote { margin: var(--sp-4) auto 0; max-width: 34ch; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-2); line-height: 1.25; color: var(--ink); }
+.cl-solution__quote em { font-style: normal; color: var(--accent); }
+@media (max-width: 640px) { .cl-solution__h { font-size: var(--fs-3); } .cl-solution__body { font-size: var(--fs-0); } .cl-solution__quote { font-size: var(--fs-1); } }
+
+/* host intro card — opens the long-form letter (2026-10-05) */
+.cl-hostcard { display: grid; grid-template-columns: auto 1fr; gap: var(--sp-4); align-items: center; padding: 15px var(--sp-5); margin: 0 0 var(--sp-5); background: var(--paper); border: var(--border-w) solid var(--line); border-radius: 15px; box-shadow: var(--shadow-md); }
+.cl-hostcard__photo { width: 96px; height: 96px; border-radius: 50%; display: grid; place-items: center; background: var(--panel); border: 2px dashed var(--line); font-family: var(--font-mono); font-size: 11px; color: var(--ink-faint); text-transform: uppercase; object-fit: cover; box-shadow: none; }
+img.cl-hostcard__photo { border: 0; }
+.cl-hostcard__name { margin: 0 0 .35em; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-1); color: var(--ink); }
+.cl-hostcard__quote { margin: 0; font-style: italic; font-size: var(--fs-0); line-height: 1.55; color: var(--ink-soft); }
+.cl-hostcard__quote strong { color: var(--accent); font-weight: 800; }
+@media (max-width: 640px) { .cl-hostcard { grid-template-columns: 1fr; text-align: center; padding: var(--sp-4); } .cl-hostcard__photo { margin-inline: auto; } }
+/* the long-form letter reads at up to 800px (Matthew's canvas edit, 2026-10-05) */
+.cl-letter.cl-container--letter { max-width: 800px; }
+
+/* countdown inside the registration popup */
+.cl-modal__timer { margin: 0 0 var(--sp-3); }
+.cl-modal__timer .cl-countdown--hero .cl-countdown__unit { min-width: 3.6em; padding: .45em .55em .4em; }
+.cl-modal__timer .cl-countdown--hero .cl-countdown__n { font-size: var(--fs-1); }
+
+/* ═════════ ASK CAMPAIGN (post-registration) ═════════ */
+.cl-confirm { padding-top: var(--sp-6); padding-bottom: var(--sp-6); }
+.cl-confirm__badge {
+  display: inline-flex; align-items: center; gap: .5em; margin: 0 auto;
+  padding: .45em 1em; border-radius: var(--r-pill);
+  background: color-mix(in srgb, var(--pos) 12%, transparent); color: var(--pos);
+  font-family: var(--font-body); font-weight: var(--weight-body-strong); font-size: var(--fs--1);
+}
+.cl-confirm__badge::before { content: "\2713"; display: inline-grid; place-items: center; width: 1.4em; height: 1.4em; border-radius: 50%; background: var(--pos); color: #fff; font-size: .85em; }
+.cl-confirm__once { margin: 0; font-family: var(--font-display); font-weight: var(--weight-display); color: var(--accent); font-size: var(--fs-1); }
+.cl-confirm__video { width: 100%; max-width: 760px; margin-inline: auto; }
+
+.cl-dontclose {
+  display: inline-block; margin-top: var(--sp-1); padding: .5em 1em; border-radius: var(--r-md);
+  background: var(--highlight); color: var(--ink-on-highlight);
+  font-family: var(--font-body); font-weight: var(--weight-body-strong); font-size: var(--fs--1);
+}
+
+.cl-tasks { list-style: none; margin: var(--sp-5) 0 0; padding: 0; display: grid; gap: var(--sp-4); counter-reset: task; }
+.cl-task {
+  counter-increment: task;
+  background: var(--paper); color: var(--paper-ink);
+  border: var(--border-w) solid var(--paper-line); border-top: 4px solid var(--brand);
+  border-radius: 15px; box-shadow: var(--shadow-md);
+  padding: var(--sp-5); display: grid; gap: var(--sp-3);
+}
+.cl-task__head { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 0 var(--sp-3); }
+.cl-task__head::before {
+  content: counter(task); grid-row: span 2;
+  display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 50%;
+  background: var(--brand); color: var(--ink-on-brand);
+  font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-2);
+}
+.cl-task__kicker { margin: 0; font-family: var(--font-mono); font-size: var(--fs--1); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.cl-task__kicker::after { content: " " counter(task); }
+.cl-task__title { margin: 0; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-2); line-height: var(--leading-display); letter-spacing: var(--track-display); color: var(--paper-ink); }
+.cl-task__body { margin: 0; font-family: var(--font-body); font-size: var(--fs-0); line-height: var(--leading-body); color: var(--paper-soft); }
+.cl-task .cl-cta-stack { margin-top: 0; }
+.cl-task .cl-herotimer { margin-top: var(--sp-1); }
+
+.cl-survey { gap: var(--sp-3); }
+.cl-survey__q { display: grid; }
+.cl-survey__label { font-family: var(--font-body); font-weight: var(--weight-body-strong); font-size: var(--fs-0); color: var(--paper-ink); }
+.cl-survey__help { margin: .2em 0 var(--sp-1); font-family: var(--font-body); font-size: var(--fs--1); color: var(--paper-soft); }
+.cl-survey .cl-field { margin-bottom: 0; background: var(--paper); color: var(--paper-ink); border-color: var(--paper-line); }
+.cl-survey textarea.cl-field { resize: vertical; min-height: 6.5em; line-height: 1.5; }
+.cl-survey select.cl-field {
+  appearance: none; -webkit-appearance: none; padding-right: 2.6em; cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, var(--paper-soft) 50%), linear-gradient(135deg, var(--paper-soft) 50%, transparent 50%);
+  background-position: calc(100% - 1.3em) 55%, calc(100% - 1em) 55%;
+  background-size: .32em .32em; background-repeat: no-repeat;
+}
+.cl-survey select.cl-field:invalid { color: var(--ink-faint); }
+.cl-survey .cl-cta { margin-top: var(--sp-1); }
+.cl-survey .cl-privacy { text-align: center; }
+
+@media (max-width: 640px) {
+  .cl-task { padding: var(--sp-4) var(--sp-3); }
+  .cl-task__head::before { width: 2.5rem; height: 2.5rem; font-size: var(--fs-1); }
+  .cl-task__title { font-size: var(--fs-1); }
+  .cl-confirm__once { font-size: var(--fs-0); }
+}
+
+/* ═════════ EVENT GATE ═════════ */
+.cl-gatetop { padding: var(--sp-4) 0; background: var(--canvas); }
+.cl-gatetop__h { margin: 0; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-2); letter-spacing: var(--track-display); color: var(--ink); }
+.cl-gatetop__sub { margin: .25em 0 0; font-family: var(--font-body); color: var(--ink-soft); }
+.cl-gatehero { padding-top: var(--sp-6); padding-bottom: calc(var(--sp-7) + 4rem); }
+.cl-gatehero .cl-h1 { margin-inline: auto; max-width: 20ch; }
+.cl-gatehero .cl-lede { margin: var(--sp-2) auto 0; max-width: 46ch; }
+.cl-gatewrap { padding-bottom: var(--sp-7); }
+.cl-gatecard {
+  position: relative; z-index: 2; max-width: 560px; margin: -4rem auto 0;
+  background: var(--paper); color: var(--paper-ink);
+  border: var(--border-w) solid var(--paper-line); border-radius: 15px; box-shadow: var(--shadow-lg);
+  padding: 0 var(--sp-5) var(--sp-5); display: grid; gap: var(--sp-3); justify-items: center;
+}
+.cl-gatecard__photo {
+  display: grid; place-items: center; overflow: hidden; object-fit: cover;
+  width: 112px; height: 112px; border-radius: 50%; margin-top: -56px;
+  border: 4px solid var(--paper); background: var(--panel);
+  font-family: var(--font-mono); font-size: var(--fs--1); color: var(--ink-faint);
+  box-shadow: none;
+}
+.cl-gatecard .cl-pill { margin: 0; }
+.cl-gatecard__how { margin: 0; font-family: var(--font-body); font-size: var(--fs-0); line-height: var(--leading-body); color: var(--paper-ink); width: 100%; padding: var(--sp-3) var(--sp-4); background: var(--brand-soft); border: 2px solid var(--accent); border-radius: 10px; }
+.cl-gatecard__how strong { color: var(--paper-ink); }
+.cl-gatecard__when { display: grid; gap: .2em; }
+.cl-gatecard__when p { margin: 0; font-family: var(--font-body); }
+.cl-gatecard__whenk { font-size: var(--fs--1); color: var(--paper-soft); }
+.cl-gatecard__whenv { font-family: var(--font-display) !important; font-weight: var(--weight-display); font-size: var(--fs-1); color: var(--paper-ink); }
+.cl-gatecard__early { font-size: var(--fs--1); color: var(--accent); font-weight: var(--weight-body-strong); }
+.cl-gatecard .cl-form { width: 100%; }
+.cl-gatecard .cl-field { background: var(--paper); color: var(--paper-ink); border-color: var(--paper-line); }
+.cl-gatecard__help { margin: 0; text-align: center; }
+@media (max-width: 640px) {
+  .cl-gatecard { padding: 0 var(--sp-3) var(--sp-4); }
+  .cl-gatehero { padding-top: var(--sp-5); padding-bottom: calc(var(--sp-5) + 4rem); }
+  .cl-gatetop__h { font-size: var(--fs-1); }
+}
+
+/* ═════════ REPLAY ═════════ */
+.cl-expirybar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-1) var(--sp-3);
+  padding: var(--sp-2) var(--sp-3); background: var(--canvas); color: var(--ink);
+  border-bottom: 3px solid var(--accent);
+}
+.cl-expirybar__label { font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs--1); letter-spacing: .08em; text-transform: uppercase; }
+.cl-expirybar .cl-countdown { gap: .35rem; align-items: center; }
+.cl-expirybar .cl-countdown__unit { flex-direction: row; align-items: baseline; gap: .15em; min-width: 0; padding: .3em .6em; border-radius: var(--r-md); background: var(--accent); color: var(--ink-on-brand); }
+.cl-expirybar .cl-countdown__n { font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-0); color: inherit; }
+.cl-expirybar .cl-countdown__label { font-size: .72em; font-weight: 700; letter-spacing: 0; text-transform: uppercase; color: inherit; opacity: .85; }
+
+.cl-replay { padding-top: var(--sp-6); }
+.cl-replay__video { width: 100%; max-width: 860px; margin-inline: auto; }
+
+.cl-chapters { list-style: none; margin: var(--sp-3) 0 0; padding: 0; display: grid; gap: var(--sp-1); }
+.cl-chapters li {
+  display: grid; grid-template-columns: 5.5em 1fr; align-items: center; gap: var(--sp-3);
+  padding: var(--sp-2) var(--sp-3); background: var(--paper); color: var(--paper-ink);
+  border: var(--border-w) solid var(--paper-line); border-left: 4px solid var(--accent); border-radius: 10px;
+}
+.cl-chapters__t { font-family: var(--font-mono); font-size: var(--fs--1); font-weight: 700; color: var(--accent); }
+.cl-chapters__title { font-family: var(--font-body); font-weight: var(--weight-body-strong); }
+
+.cl-offerbox .cl-h2 em { font-style: italic; color: var(--accent); }
+
+.cl-resources { list-style: none; margin: var(--sp-3) 0 0; padding: 0; display: grid; gap: var(--sp-1); }
+.cl-resources li { display: flex; justify-content: space-between; align-items: center; gap: var(--sp-3); padding: var(--sp-2) var(--sp-3); border: var(--border-w) solid var(--line); border-radius: 10px; background: var(--panel); }
+.cl-resources__name { font-family: var(--font-body); font-weight: var(--weight-body-strong); }
+.cl-resources__name::before { content: "\2713"; color: var(--pos); margin-right: .6em; }
+.cl-resources__get { font-family: var(--font-body); font-weight: var(--weight-body-strong); font-size: var(--fs--1); color: var(--accent); text-decoration: none; white-space: nowrap; }
+.cl-resources__get::after { content: " \2193"; }
+
+@media (max-width: 640px) {
+  .cl-chapters li { grid-template-columns: 4.6em 1fr; gap: var(--sp-2); }
+  .cl-expirybar__label { font-size: calc(var(--fs--1) * .9); }
+}
+
+/* ═════════ APPLICATION / BOOKING ═════════ */
+.cl-booking { display: grid; grid-template-columns: 280px 1fr; gap: var(--sp-4); max-width: 1000px; margin: var(--sp-4) auto 0; align-items: start; }
+.cl-callinfo {
+  background: var(--paper); color: var(--paper-ink); border: var(--border-w) solid var(--paper-line);
+  border-radius: 15px; box-shadow: var(--shadow-md); padding: var(--sp-4); display: grid; gap: var(--sp-1); justify-items: start;
+}
+.cl-callinfo__photo {
+  display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; overflow: hidden; object-fit: cover;
+  background: var(--panel); border: 2px dashed var(--line); font-family: var(--font-mono); font-size: 11px; color: var(--ink-faint); box-shadow: none; margin-bottom: var(--sp-1);
+}
+img.cl-callinfo__photo { border: 0; }
+.cl-callinfo p { margin: 0; }
+.cl-callinfo__host { font-family: var(--font-body); font-size: var(--fs--1); color: var(--paper-soft); }
+.cl-callinfo__name { font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-1); line-height: var(--leading-display); color: var(--paper-ink); }
+.cl-callinfo__facts { list-style: none; margin: var(--sp-2) 0 0; padding: 0; display: grid; gap: .45em; font-family: var(--font-body); font-size: var(--fs--1); color: var(--paper-soft); }
+.cl-booking__cal { min-height: 680px; background: var(--paper); border-radius: 15px; }
+.cl-embed--live { padding: 0; border: 0; overflow: hidden; box-shadow: var(--shadow-md); }
+.cl-embed--live iframe { width: 100%; min-height: 680px; height: 100%; border: 0; display: block; }
+.cl-booking__showup { max-width: 60ch; margin: var(--sp-4) auto 0; text-align: center; font-family: var(--font-body); font-weight: var(--weight-body-strong); font-size: var(--fs--1); color: var(--ink-soft); }
+@media (max-width: 860px) {
+  .cl-booking { grid-template-columns: 1fr; }
+  .cl-callinfo { justify-items: center; text-align: center; }
+  .cl-callinfo__facts { justify-items: center; }
+}
+
+/* ═════════ VIP UPSELL ═════════ */
+.cl-vip { padding-top: var(--sp-5); }
+.cl-vip__q { margin: 0; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-1); color: var(--accent); }
+.cl-vip__video { width: 100%; max-width: 760px; margin: 0 auto var(--sp-4); }
+.cl-vip__bullets { max-width: 620px; margin-inline: auto; font-size: var(--fs-1); }
+.cl-vip__testimonial { max-width: 620px; margin-inline: auto; }
+.cl-yesno { margin-top: var(--sp-4); }
+.cl-guarantee { display: grid; grid-template-columns: auto 1fr; gap: var(--sp-4); align-items: center; text-align: left; max-width: 660px; margin: 0 auto var(--sp-4); padding: var(--sp-4) var(--sp-5); border: 2px solid color-mix(in srgb, var(--pos) 35%, transparent); border-radius: 15px; background: color-mix(in srgb, var(--pos) 12%, #ffffff); color: #1a1a1a; }
+.cl-guarantee .cl-body { color: #333; }
+.cl-guarantee strong { color: #111; }
+.cl-seal { width: 112px; height: 112px; flex: none; filter: drop-shadow(0 4px 10px rgba(0,0,0,.15)); }
+.cl-seal__burst { fill: var(--pos); }
+.cl-seal__face { fill: color-mix(in srgb, var(--pos) 80%, #000); }
+.cl-seal__ring { fill: none; stroke: #fff; stroke-width: 2; stroke-dasharray: 3 3; opacity: .9; }
+.cl-seal__big { fill: #fff; font-family: var(--font-display); font-weight: 800; font-size: 30px; }
+.cl-seal__small { fill: #fff; font-family: var(--font-body); font-weight: 700; font-size: 7.4px; letter-spacing: .06em; }
+@media (max-width: 560px) { .cl-guarantee { grid-template-columns: 1fr; justify-items: center; text-align: center; } }
+.cl-guarantee .cl-body { margin: 0; }
+.cl-vip__secure { font-family: var(--font-body); font-weight: var(--weight-body-strong); font-size: var(--fs--1); color: var(--ink-soft); margin: var(--sp-1) 0 var(--sp-3); }
+.cl-vip__cart { min-height: 560px; background: var(--paper); border-radius: 15px; }
+.cl-vip__cart.cl-embed--live iframe { min-height: 560px; }
+
+/* ═════════ HERO HEADLINE WIDTH — max 3 lines on desktop (Matthew, 2026-10-05) ═════════ */
+@media (min-width: 641px) {
+  .cl-hero .cl-container--narrow { max-width: 1080px; }
+  .cl-hero .cl-h1, .cl-center.cl-hero .cl-h1, .cl-gatehero .cl-h1 { max-width: 980px; margin-inline: auto; }
+  .cl-hero .cl-lede, .cl-hero .cl-eyebrow, .cl-hero .cl-confirm__once, .cl-hero .cl-vip__q { max-width: 62ch; margin-inline: auto; }
+  .cl-gatehero .cl-container--narrow { max-width: 1080px; }
+}
+.cl-hero__stack > .cl-confirm__badge { width: auto; }
+
+/* ═════════ CONFIRMATION (receipt + access) ═════════ */
+.cl-receipt { max-width: 620px; margin-inline: auto; background: var(--paper); color: var(--paper-ink); border: var(--border-w) solid var(--paper-line); border-radius: 15px; box-shadow: var(--shadow-md); padding: var(--sp-4) var(--sp-5); font-family: var(--font-body); }
+.cl-receipt__k { margin: 0 0 var(--sp-2); font-family: var(--font-mono); font-size: var(--fs--1); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.cl-receipt__row { display: flex; justify-content: space-between; gap: var(--sp-3); padding: .65em 0; border-bottom: var(--border-w) solid var(--paper-line); color: var(--paper-soft); }
+.cl-receipt__row.is-total { border-bottom: 0; font-weight: var(--weight-body-strong); color: var(--paper-ink); font-size: var(--fs-1); }
+.cl-receipt__note { margin: var(--sp-2) 0 0; font-size: var(--fs--1); color: var(--paper-soft); }
+.cl-access { display: grid; gap: var(--sp-3); grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: var(--sp-4); }
+.cl-access__card { background: var(--paper); color: var(--paper-ink); border: var(--border-w) solid var(--paper-line); border-top: 4px solid var(--brand); border-radius: 15px; box-shadow: var(--shadow-md); padding: var(--sp-4); display: grid; gap: var(--sp-1); align-content: start; }
+.cl-access__k { margin: 0; font-family: var(--font-mono); font-size: var(--fs--1); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.cl-access__h { margin: 0; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-1); color: var(--paper-ink); }
+.cl-access__p { margin: 0; font-family: var(--font-body); color: var(--paper-soft); line-height: var(--leading-body); }
+.cl-access__link { margin-top: var(--sp-1); font-family: var(--font-body); font-weight: var(--weight-body-strong); color: var(--accent); text-decoration: none; }
+.cl-access__link::after { content: " \2192"; }
+
+/* ═════════ THANK-YOU PAGES: community box · email band · next steps · P.S. ═════════ */
+.cl-commbox { display: grid; grid-template-columns: 1.1fr 1fr; gap: var(--sp-4); align-items: center; padding: var(--sp-4) var(--sp-5); border: 2px dashed var(--accent); border-radius: 15px; }
+.cl-commbox__k { margin: 0 0 var(--sp-1); font-family: var(--font-mono); font-size: var(--fs--1); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.cl-commbox__h { margin: 0 0 var(--sp-3); font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-2); line-height: var(--leading-display); color: var(--ink); }
+.cl-commbox__img { aspect-ratio: 16 / 9; min-height: 0; width: 100%; border-radius: 12px; object-fit: cover; }
+.cl-emailband { background: var(--panel); }
+.cl-emailband .cl-h2 em { font-style: italic; color: var(--accent); }
+.cl-emailband .cl-lede { margin: var(--sp-2) auto 0; max-width: 62ch; }
+.cl-ns-wrap { display: grid; grid-template-columns: 260px 1fr; gap: var(--sp-5); max-width: 1040px; }
+.cl-ns-side p { margin: 0; }
+.cl-ns-side__name { font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-2); line-height: var(--leading-display); color: var(--accent); }
+.cl-ns-side__type { font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-1); color: var(--ink); margin-top: .2em !important; text-transform: capitalize; }
+.cl-ns-side__fun { margin-top: var(--sp-2) !important; font-family: var(--font-body); font-style: italic; color: var(--accent); }
+.cl-ns-main > .cl-eyebrow { margin: 0; }
+.cl-ns-main > .cl-h2 { margin: .2em 0 var(--sp-3); }
+.cl-ns { list-style: none; margin: 0; padding: 0; border-top: var(--border-w) solid var(--line); }
+.cl-ns__step { display: grid; grid-template-columns: 40px 1fr; gap: var(--sp-3); padding: var(--sp-4) 0; border-bottom: var(--border-w) solid var(--line); }
+.cl-ns__step:last-child { border-bottom: 0; }
+.cl-ns__icon { width: 34px; height: 34px; fill: none; stroke: var(--accent); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.cl-ns__h { margin: 0 0 var(--sp-1); font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-1); color: var(--ink); }
+.cl-ns__p { margin: 0 0 var(--sp-2); font-family: var(--font-body); color: var(--ink-soft); line-height: var(--leading-body); }
+.cl-ns__step .cl-cta { margin-top: var(--sp-1); }
+.cl-ns__timer { justify-items: start; margin: var(--sp-1) 0 var(--sp-2); }
+.cl-ps { display: grid; grid-template-columns: 48px 1fr; gap: var(--sp-3); align-items: start; }
+.cl-ps__star { width: 44px; height: 44px; fill: var(--cfe-star, #ffc107); stroke: color-mix(in srgb, var(--cfe-star, #ffc107) 70%, #000); stroke-width: .8; }
+.cl-ps__h { margin: 0 0 var(--sp-2); }
+.cl-ps__lead { margin: 0 0 var(--sp-2); font-family: var(--font-body); font-weight: var(--weight-body-strong); color: var(--ink); }
+.cl-ps .cl-list { margin-bottom: var(--sp-3); }
+@media (max-width: 760px) {
+  .cl-commbox { grid-template-columns: 1fr; padding: var(--sp-4) var(--sp-3); }
+  .cl-ns-wrap { grid-template-columns: 1fr; gap: var(--sp-3); }
+  .cl-ps { grid-template-columns: 1fr; }
+}
+/* Matthew's canvas edits (2026-10-05) */
+.cl-vip__videowrap { max-width: 900px; }
+.cl-vip__video { max-width: 900px; margin-bottom: 0; }
+.cl-emailband { background: #111111; }
+
+/* ═════════ MEMBERSHIP ═════════ */
+.cl-seal__big--sm { font-size: 24px; }
+.cl-member__diagram { aspect-ratio: 16 / 9; min-height: 0; width: 100%; max-width: 1040px; margin: var(--sp-3) auto 0; }
+.cl-member__stack li { align-items: flex-start; }
+.cl-member__group { font-family: var(--font-mono); font-size: var(--fs--1); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); padding-top: var(--sp-3) !important; }
+.cl-member__mod { width: 100%; }
+.cl-member__mod summary { display: flex; justify-content: space-between; gap: var(--sp-3); cursor: pointer; list-style: none; }
+.cl-member__mod summary::-webkit-details-marker { display: none; }
+.cl-member__mod summary strong::after { content: " \25BE"; color: var(--accent); font-size: .85em; }
+.cl-member__mod[open] summary strong::after { content: " \25B4"; }
+.cl-member__mod p { margin: var(--sp-1) 0 0; font-family: var(--font-body); font-size: var(--fs--1); color: var(--ink-soft); line-height: var(--leading-body); }
+.cl-member__spots { font-family: var(--font-mono); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .45em 1em; border-radius: var(--r-pill); background: var(--accent); color: var(--ink-on-brand); }
+.cl-member__plans { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); margin: var(--sp-4) 0 var(--sp-3); }
+.cl-member__plan { position: relative; background: var(--paper); color: var(--paper-ink); border: 2px solid var(--paper-line); border-radius: 15px; padding: var(--sp-4); text-align: center; box-shadow: var(--shadow-md); }
+.cl-member__plan.is-best { border-color: var(--accent); }
+.cl-member__plan p { margin: 0; }
+.cl-member__plank { font-family: var(--font-mono); font-size: var(--fs--1); letter-spacing: .14em; text-transform: uppercase; color: var(--paper-soft); }
+.cl-member__price { font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-3); color: var(--paper-ink); margin: .15em 0 !important; }
+.cl-member__price span { font-size: .45em; color: var(--paper-soft); font-weight: 400; }
+.cl-member__note { font-family: var(--font-body); font-size: var(--fs--1); color: var(--paper-soft); }
+.cl-member__save { position: absolute; top: -.9em; right: var(--sp-3); padding: .3em .8em; border-radius: var(--r-pill); background: var(--pos); color: #fff; font-family: var(--font-body); font-weight: 700; font-size: var(--fs--1); }
+.cl-member__pick { margin: 0 0 var(--sp-3); text-align: center; font-family: var(--font-body); font-weight: var(--weight-body-strong); font-size: var(--fs--1); color: var(--ink-soft); }
+.cl-member__cart { min-height: 640px; background: var(--paper); border-radius: 15px; }
+.cl-member__cart.cl-embed--live iframe { min-height: 640px; }
+.cl-member__proofvideo { width: 100%; max-width: 860px; margin: var(--sp-3) auto var(--sp-4); }
+.cl-member__quotes { max-width: 980px; margin-inline: auto; }
+@media (max-width: 640px) { .cl-member__plans { grid-template-columns: 1fr; } }
+
+/* ═════════ PASS (paid audit / strategy session) ═════════ */
+.cl-pass__video { width: 100%; max-width: 760px; margin-inline: auto; }
+.cl-pass__inside { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-5); align-items: center; max-width: 1040px; margin: var(--sp-4) auto 0; }
+.cl-pass__mock { aspect-ratio: 4 / 3; min-height: 0; width: 100%; }
+.cl-pass__inside .cl-list { font-size: var(--fs-1); }
+.cl-pass__bonus { display: grid; grid-template-columns: 120px 1fr; gap: var(--sp-4); align-items: center; }
+.cl-pass__bonusphoto { display: grid; place-items: center; width: 120px; height: 120px; border-radius: 50%; overflow: hidden; object-fit: cover; background: var(--panel); border: 2px dashed var(--line); font-family: var(--font-mono); font-size: 11px; color: var(--ink-faint); box-shadow: none; }
+img.cl-pass__bonusphoto { border: 0; }
+.cl-pass__bonus .cl-eyebrow, .cl-pass__bonus .cl-h3 { margin: 0 0 var(--sp-1); }
+.cl-pass__roi { background: var(--paper); color: var(--paper-ink); border: 2px solid var(--accent); border-radius: 15px; box-shadow: var(--shadow-lg); padding: var(--sp-5) var(--sp-4); }
+.cl-pass__roibig { margin: var(--sp-3) 0; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-4); line-height: 1.05; color: var(--pos); }
+.cl-pass__invest { margin: 0 0 var(--sp-3); font-family: var(--font-body); font-size: var(--fs-1); color: var(--paper-ink); }
+.cl-pass__credit { font-style: italic; }
+@media (max-width: 760px) { .cl-pass__inside, .cl-pass__bonus { grid-template-columns: 1fr; justify-items: center; text-align: center; } }
+
+/* ═════════ PAID REGISTRATION ═════════ */
+html { scroll-behavior: smooth; }
+.cl-whylow { max-width: 660px; margin: 0 auto var(--sp-5); padding: var(--sp-4); border: 2px dashed var(--accent); border-radius: 15px; background: var(--paper); color: var(--paper-ink); text-align: center; }
+.cl-whylow__k { margin: 0 0 var(--sp-2); font-family: var(--font-display); font-weight: var(--weight-display); color: var(--accent); }
+.cl-whylow .cl-body { margin: 0; color: var(--paper-soft); }
+.cl-finalclose__body { max-width: 62ch; margin: var(--sp-3) auto 0; text-align: left; }
+.cl-finalclose__sign { margin: var(--sp-4) 0 0; font-family: var(--font-body); font-style: italic; color: var(--ink-soft); }
+.cl-finalclose__sign strong { font-style: normal; color: var(--ink); }
+
+/* ═════════ LONG-FORM VIP (Phase 3) ═════════ */
+.cl-vipb { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-5); align-items: center; max-width: 1040px; margin-inline: auto; }
+.cl-vipb--flip > :first-child { order: 2; }
+.cl-vipb__img { aspect-ratio: 4 / 3; min-height: 0; width: 100%; }
+.cl-vipb .cl-pill { margin-bottom: var(--sp-2); }
+.cl-vipb__h { margin: 0 0 var(--sp-2); }
+.cl-vipb .cl-body p { margin: 0 0 var(--sp-2); }
+.cl-vipb__anchor { margin: var(--sp-2) 0 0; padding: var(--sp-2) var(--sp-3); border-left: 4px solid var(--accent); border-radius: 0 10px 10px 0; background: var(--brand-soft); font-family: var(--font-body); font-weight: var(--weight-body-strong); color: var(--ink); }
+.cl-vipshift { list-style: none; margin: var(--sp-3) 0; padding: 0; display: grid; gap: var(--sp-1); }
+.cl-vipshift li { display: grid; grid-template-columns: 1fr auto 1fr; gap: var(--sp-2); align-items: center; padding: var(--sp-2) var(--sp-3); background: var(--paper); color: var(--paper-ink); border: var(--border-w) solid var(--paper-line); border-radius: 10px; font-family: var(--font-body); }
+.cl-vipshift__old { color: var(--paper-soft); text-decoration: line-through; text-decoration-color: color-mix(in srgb, var(--neg) 60%, transparent); }
+.cl-vipshift__arrow { color: var(--accent); font-weight: 700; }
+.cl-vipshift strong { color: var(--pos); }
+.cl-vip__showcase { max-width: 980px; margin: var(--sp-3) auto 0; aspect-ratio: 16 / 9; min-height: 0; width: 100%; }
+@media (max-width: 760px) {
+  .cl-vipb { grid-template-columns: 1fr; }
+  .cl-vipb--flip > :first-child { order: 0; }
+  .cl-vipshift li { grid-template-columns: 1fr; text-align: center; }
+}
+
+/* ═════════ EVENT DETAILS BAR (paid page, black eyebrow at the very top) ═════════ */
+.cl-eventbar { background: #111111; color: #ffffff; padding: .55rem 0; }
+.cl-facts-strip { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .35rem 1.6rem; }
+.cl-facts-strip li { display: inline-flex; align-items: center; gap: .45em; font-family: var(--font-body); font-weight: var(--weight-body-strong); font-size: var(--fs--1); letter-spacing: .02em; color: #ffffff; white-space: nowrap; }
+.cl-facts-strip li.is-price { color: var(--accent); }
+.cl-facts-strip li.is-type { font-family: var(--font-display); font-weight: var(--weight-display); letter-spacing: .12em; text-transform: uppercase; }
+.cl-facts-strip svg { width: 1.1em; height: 1.1em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; opacity: .9; }
+@media (max-width: 640px) {
+  .cl-facts-strip { gap: .2rem .9rem; }
+  .cl-facts-strip li { font-size: calc(var(--fs--1) * .9); }
+  .cl-facts-strip li.is-price { display: none; }   /* the button already carries the price on phones */
+}
+
+/* ═════════ BUY-TODAY BONUS LINE (paid page) ═════════ */
+.cl-bonusline { max-width: 60ch; margin: var(--sp-3) auto 0; padding: var(--sp-2) var(--sp-3); border-radius: 10px; background: color-mix(in srgb, var(--pos) 12%, #ffffff); border: 2px solid color-mix(in srgb, var(--pos) 35%, transparent); font-family: var(--font-body); font-weight: var(--weight-body-strong); color: #1a1a1a; }
+.cl-bonusline__tag { display: inline-block; margin-right: .4em; padding: .15em .6em; border-radius: var(--r-pill); background: var(--pos); color: #fff; font-family: var(--font-mono); font-size: .8em; letter-spacing: .12em; text-transform: uppercase; }
+.cl-stack__bonus strong { color: var(--pos); }
+
+/* ═════════ VISUAL STORY — long-form letter as image/copy pairs (paid ticket page, Matthew 2026-10-07) ═════════ */
+.cl-story__h { text-align: center; max-width: 720px; margin-left: auto; margin-right: auto; }
+.cl-storypair { display: grid; grid-template-columns: 300px 1fr; gap: var(--sp-4) var(--sp-5); align-items: center; margin: var(--sp-4) 0; }
+.cl-storypair--flip { grid-template-columns: 1fr 300px; }
+.cl-storypair__img { aspect-ratio: 3 / 4;   /* Matthew (canvas 2026-10-07): 300 × 400 portrait */ min-height: 0; width: 100%; border-radius: 15px; object-fit: cover; }
+.cl-storypair__copy > p:first-child { margin-top: 0; }
+.cl-storypair__copy > p:last-child { margin-bottom: 0; }
+.cl-story__block { margin: var(--sp-4) 0; }
+.cl-story__pull { margin: var(--sp-5) auto; max-width: 760px; text-align: center; }
+@media (max-width: 720px) {
+  .cl-storypair, .cl-storypair--flip { grid-template-columns: 1fr; }
+  .cl-storypair--flip .cl-storypair__img { order: -1; }
+  .cl-storypair__img { max-width: 420px; margin: 0 auto; }
+}
+
+/* ═════════ THREE PROBLEMS — what the event solves, in order (replaces the timed run of show on the paid ticket page).
+   Stacked one on top of the other (Matthew, 2026-10-07): each card is a row — problem on the left, how we solve it + outcome on the right. ═════════ */
+.cl-problems { list-style: none; margin: var(--sp-5) auto 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: var(--sp-5); max-width: 980px; }
+.cl-problem { position: relative; background: var(--paper); color: var(--paper-ink); border: var(--border-w) solid var(--paper-line); border-radius: var(--r-md); box-shadow: var(--shadow-md); padding: var(--sp-5) var(--sp-5) var(--sp-4); display: grid; grid-template-columns: 1.1fr 1fr; gap: var(--sp-3) var(--sp-5); align-items: start; }
+.cl-problem__n { position: absolute; top: -22px; left: var(--sp-5); width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--ink-on-brand, #fff); font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-2); box-shadow: var(--shadow-sm); }
+.cl-problem__main { grid-column: 1; }
+.cl-problem__bens { margin: var(--sp-3) 0 0; color: var(--paper-ink); }
+.cl-problem__bens li { font-size: var(--fs-0); }
+.cl-problem__side { grid-column: 2; display: flex; flex-direction: column; gap: var(--sp-3); }
+.cl-problem__img { aspect-ratio: 16 / 9; min-height: 0; width: 100%; border-radius: 12px; object-fit: cover; }
+/* the card is paper even on the dark section: keep the placeholder light */
+.cl-problem .cl-imgslot { border-color: var(--paper-line); background-color: color-mix(in srgb, var(--paper-line) 45%, var(--paper)); background-image: repeating-linear-gradient(45deg, transparent 0 10px, var(--paper-line) 10px 11px); color: var(--paper-soft); }
+.cl-problem__k { margin: 0; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs--1); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.cl-problem__h { margin: 20px 0 0; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-3); line-height: var(--leading-display); color: var(--paper-ink); }
+.cl-problem__lbl { display: block; margin-bottom: .3em; font-family: var(--font-body); font-weight: var(--weight-body-strong); font-size: var(--fs--1); letter-spacing: .04em; text-transform: uppercase; color: var(--paper-soft); }
+.cl-problem__row .cl-body { color: var(--paper-ink); }
+.cl-problem__row--out { grid-column: 1 / -1; background: color-mix(in srgb, var(--pos) 10%, #ffffff); border: 1px solid color-mix(in srgb, var(--pos) 30%, transparent); border-radius: 12px; padding: var(--sp-3) var(--sp-4); margin-top: var(--sp-2); }
+.cl-problem__row--out .cl-problem__lbl { color: var(--pos); }
+@media (max-width: 760px) {
+  .cl-problem { grid-template-columns: 1fr; padding: var(--sp-5) var(--sp-4) var(--sp-4); }
+  .cl-problem__main, .cl-problem__side, .cl-problem__row--out { grid-column: 1; }
+}
+
+/* VIP long-form tidy (Matthew, 2026-10-07) */
+.cl-vippitch { max-width: 960px; }
+.cl-vippitch__h { font-size: min(var(--fs-3), 1.95rem); line-height: 1.2; }
+.cl-vip__cart { max-width: 660px; margin-inline: auto; }   /* same width as the guarantee box */
+[data-cfe="14-checkout"] .cl-guarantee { margin-top: var(--sp-4); }
+/* Phase 3 VIP hero spacing + philosophy image (Matthew, canvas 2026-10-07) */
+.cl-vip .cl-h1 { margin-top: 19px; }
+.cl-vip .cl-confirm__once { margin-top: 38px; margin-bottom: 17px; }
+[data-cfe="12-philosophy"] .cl-vipb__img { aspect-ratio: auto; width: 445px; max-width: 100%; height: 460px; justify-self: center; }
+/* PASS upsell (Phase 3 p3): long decline lines stay a readable width */
+.cl-hero .cl-cta-stack .cl-decline { display: inline-block; max-width: 640px; }
+
+/* ═════════ PASS UPSELL — inside cards · bonus · ROI box (modelled on Matthew's audit page, 2026-10-07) ═════════ */
+[data-cfe="05-inside"] .cl-pass__mock { aspect-ratio: 16 / 9; width: 100%; max-width: 760px; margin: var(--sp-4) auto 0; border-radius: 15px; }
+.cl-passcards { list-style: none; margin: var(--sp-4) 0 0; padding: 0; display: grid; gap: var(--sp-3); }
+.cl-passcards li { position: relative; background: var(--paper); color: var(--paper-ink); border-radius: 12px; box-shadow: var(--shadow-md); padding: var(--sp-3) var(--sp-4) var(--sp-3) 3.4rem; font-family: var(--font-body); font-size: var(--fs-0); line-height: 1.5; }
+.cl-passcards li::before { content: "\2713"; position: absolute; left: var(--sp-4); top: 50%; transform: translateY(-50%); width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--pos); color: #fff; font-size: .95rem; font-weight: 700; display: grid; place-items: center; }
+.cl-passcards li strong { color: var(--paper-ink); }
+.cl-pass__overwhelm { margin-top: var(--sp-4); color: var(--ink-soft); }
+[data-cfe="06-bonus"] .cl-eyebrow { margin-bottom: var(--sp-1); }
+[data-cfe="06-bonus"] .cl-h2 { margin-bottom: var(--sp-4); }
+[data-cfe="06-bonus"] .cl-pass__bonus { grid-template-columns: 260px 1fr; text-align: left; align-items: center; margin-bottom: var(--sp-4); }
+.cl-pass__bonusimg { aspect-ratio: 4 / 3; min-height: 0; width: 100%; border-radius: 15px; }
+.cl-pass__bonustext p { margin: 0 0 var(--sp-2); }
+.cl-pass__scenario { max-width: 62ch; margin: var(--sp-2) auto var(--sp-4); }
+.cl-roibox { max-width: 560px; margin: 0 auto; padding: var(--sp-4); background: var(--paper); color: var(--paper-ink); border: 2px solid var(--accent); border-radius: 15px; box-shadow: var(--shadow-lg); }
+.cl-roibox__head { margin: 0 0 var(--sp-3); font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs--1); letter-spacing: .06em; text-transform: uppercase; color: var(--paper-ink); }
+.cl-roibox__gain { background: color-mix(in srgb, var(--neg) 8%, #ffffff); border: 1px solid color-mix(in srgb, var(--neg) 30%, transparent); border-radius: 12px; padding: var(--sp-3); }
+.cl-roibox__invest { background: color-mix(in srgb, var(--pos) 10%, #ffffff); border: 1px solid color-mix(in srgb, var(--pos) 30%, transparent); border-radius: 12px; padding: var(--sp-3); }
+.cl-roibox__k { margin: 0; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs--1); letter-spacing: .08em; text-transform: uppercase; color: var(--paper-ink); }
+.cl-roibox__big { margin: 0; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-4); line-height: 1.05; color: var(--neg); }
+.cl-roibox__big--invest { color: var(--pos); }
+.cl-roibox__sub { margin: .25em 0 0; font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs--1); letter-spacing: .06em; text-transform: uppercase; color: var(--paper-soft); }
+.cl-roibox__arrows { margin: var(--sp-2) 0; text-align: left; color: var(--neg); font-weight: 700; letter-spacing: .3em; }
+.cl-roibox__ask { margin: var(--sp-3) 0 0; text-align: left; color: var(--paper-ink); }
+.cl-pass__talk { max-width: 62ch; margin: var(--sp-3) auto 0; text-align: left; }
+@media (max-width: 760px) { [data-cfe="06-bonus"] .cl-pass__bonus { grid-template-columns: 1fr; text-align: center; } .cl-pass__bonusimg { max-width: 360px; } }
+@media (min-width: 900px) { .cl-pass__insideh { white-space: nowrap; } }
+/* PASS upsell — Matthew's canvas edits ported (2026-10-07) */
+.cl-pass__bonusimg { aspect-ratio: 9 / 10; }
+.cl-roibox { max-width: 700px; width: 100%; border-style: dashed; }
+.cl-roibox__gain .cl-roibox__big { margin-top: 0; }
+.cl-roibox__gain .cl-roibox__sub { margin-top: .87em; }
+.cl-roibox__arrows { font-size: 32px; text-align: center; }
+.cl-roibox__ask { margin-top: 30px; }
+.cl-roibox + .cl-pass__talk { margin-top: 56px; }
+[data-cfe="09-final-offer"] .cl-offerbox--dashed { padding: 50px 58px; }
+[data-cfe="09-final-offer"] .cl-offerbox--dashed .cl-h2 { margin-top: 31px; }
+.cl-ns__embed { min-height: 220px; margin-top: var(--sp-2); }
+[data-cfe="07-guarantee"] .cl-guarantee, .cl-vip-guarantee { margin-top: 34px; }   /* Matthew, canvas 2026-10-08 (Phase 2 VIP) */
+/* dotted chevron row pointing down to the next block (VIP video → stack) — Matthew's reference, 2026-10-08 */
+.cl-chevrons { display: flex; justify-content: center; gap: 1.1rem; width: 100%; margin: var(--sp-3) auto 0; }
+.cl-chev { width: 54px; height: auto; fill: var(--accent); animation: cl-chev-pulse 1.6s ease-in-out infinite; }
+.cl-chev:nth-child(2n) { animation-delay: .2s; }
+.cl-chev:nth-child(3n) { animation-delay: .4s; }
+@keyframes cl-chev-pulse { 0%, 100% { transform: translateY(0); opacity: .85; } 50% { transform: translateY(5px); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .cl-chev { animation: none; } }
+@media (max-width: 640px) { .cl-chev:nth-child(n+5) { display: none; } }
+/* Phase 2 VIP hero: Matthew set it to 472px on the canvas (2026-10-08) — ported as tighter bottom padding, not a fixed height */
+[data-cfe="02-hero"].cl-vip:has(+ [data-cfe="03-video"]) { padding-bottom: 26px; }
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   VIP VISUALS — the five VIP deliverables as generated mockups (no image files).
+   Each .vv is a 4:3 card that scales with its container (em units from a 480px design).
+   Only the client's photos drop in: host-avatar (square headshot), host-action (16:9 action shot),
+   logo, testimonial-1..3 (attendee faces). Everything else is brand-kit tokens.
+   ═══════════════════════════════════════════════════════════════════════════════ */
+.vv { container-type: inline-size; width: 100%; }
+.vv__art { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 15px;
+  background: var(--panel); box-shadow: var(--shadow-md); font-size: calc(100cqw / 30); font-family: var(--font-body); color: var(--ink); isolation: isolate; }
+.vv__art * { box-sizing: border-box; }
+.vv .ph { background: color-mix(in srgb, var(--accent) 18%, var(--panel)); display: grid; place-items: center; text-align: center;
+  font-family: var(--font-mono); font-size: .55em; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); border: 1px dashed color-mix(in srgb, var(--accent) 40%, transparent); }
+.vv img { display: block; object-fit: cover; box-shadow: none !important; }
+.vv .vv-face { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; }
+.vv .vv-face img, .vv img.vv-face { width: 100%; height: 100%; border-radius: 50%; }
+.vv--pocket .vv-chathead img.vv-face, .vv--plusone .vv-name img.vv-face { width: 1.9em; height: 1.9em; }
+.vv--plusone .vv-name img.vv-face { width: 1.6em; height: 1.6em; }
+.vv .vv-pill { display: inline-flex; align-items: center; gap: .35em; padding: .3em .75em; border-radius: 999px;
+  font-family: var(--font-display); font-weight: var(--weight-display); font-size: .62em; letter-spacing: .06em; text-transform: uppercase; line-height: 1; }
+.vv .vv-pill--live { background: var(--neg); color: #fff; }
+.vv .vv-pill--live::before { content: ""; width: .55em; height: .55em; border-radius: 50%; background: #fff; animation: vv-blink 1.2s infinite; }
+.vv .vv-pill--accent { background: var(--accent); color: var(--ink-on-brand, #fff); }
+.vv .vv-pill--paper { background: var(--paper); color: var(--paper-ink); border: 1px solid var(--paper-line); }
+.vv .vv-title { font-family: var(--font-display); font-weight: var(--weight-display); line-height: 1.05; letter-spacing: -.01em; }
+@keyframes vv-blink { 50% { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) { .vv .vv-pill--live::before { animation: none; } }
+
+/* ── 1 · THE VIP PARTY — a live room: host tile + VIP tiles, evergreen (no dates) ─ */
+.vv--party .vv__art { background: radial-gradient(120% 90% at 50% 0%, color-mix(in srgb, var(--accent) 45%, #1a1a1a) 0%, #1a1a1a 60%); color: #fff; padding: .9em; display: flex; flex-direction: column; gap: .7em; }
+.vv--party .vv-confetti { position: absolute; inset: 0; width: 100%; height: 100%; fill: var(--accent); opacity: .9; pointer-events: none; }
+.vv--party .vv-confetti circle:nth-child(odd), .vv--party .vv-confetti rect:nth-child(3n) { fill: var(--pos); }
+.vv--party .vv-bar { position: relative; display: flex; align-items: center; gap: .6em; z-index: 2; }
+.vv--party .vv-bar__t { flex: 1; text-align: center; font-family: var(--font-display); font-weight: var(--weight-display); font-size: 1.05em; letter-spacing: -.01em; }
+.vv--party .vv-grid { position: relative; z-index: 2; flex: 1; display: grid; grid-template-columns: 1.45fr 1fr 1fr; grid-template-rows: repeat(2, 1fr); gap: .5em; min-height: 0; }
+.vv--party .vv-tile { position: relative; border-radius: .6em; overflow: hidden; background: #2a2a2a; border: .12em solid rgba(255,255,255,.08); }
+.vv--party .vv-tile--host { grid-row: 1 / span 2; border-color: var(--pos); box-shadow: 0 0 0 .18em color-mix(in srgb, var(--pos) 55%, transparent), 0 .6em 1.4em rgba(0,0,0,.4); }
+.vv--party .vv-tile .vv-face, .vv--party .vv-tile img.vv-face { width: 100%; height: 100%; border-radius: 0; }
+.vv--party .vv-tile .vv-face.ph { background: #3a2f2a; color: transparent; border: 0; border-radius: 0; }
+.vv--party .vv-tile__bg { position: absolute; inset: 0; width: 100%; height: 100%; background: #3a2f2a; border: 0; color: #8a7a70; }
+.vv--party .vv-tile__bg + .vv-tile__tag { }
+.vv--party .vv-tile__tag { position: absolute; left: .45em; bottom: .45em; display: inline-flex; align-items: center; gap: .3em; padding: .2em .55em; border-radius: .4em; background: rgba(0,0,0,.6); font-size: .58em; font-weight: 600; letter-spacing: .02em; backdrop-filter: blur(4px); }
+.vv--party .vv-tile--host .vv-tile__tag { font-size: .7em; }
+.vv--party .vv-mic { width: .75em; height: 1.1em; border-radius: .4em .4em .5em .5em; background: var(--pos); position: relative; display: inline-block; }
+.vv--party .vv-mic::after { content: ""; position: absolute; left: 50%; bottom: -.35em; width: .12em; height: .35em; background: var(--pos); transform: translateX(-50%); }
+.vv--party .vv-tile__speaking { position: absolute; right: .5em; top: .5em; display: flex; gap: .15em; align-items: flex-end; height: 1em; }
+.vv--party .vv-tile__speaking::before, .vv--party .vv-tile__speaking::after { content: ""; width: .22em; background: var(--pos); border-radius: 1em; height: .6em; animation: vv-eq .9s ease-in-out infinite alternate; }
+.vv--party .vv-tile__speaking::after { height: 1em; animation-delay: .3s; }
+@keyframes vv-eq { to { height: .3em; } }
+@media (prefers-reduced-motion: reduce) { .vv--party .vv-tile__speaking::before, .vv--party .vv-tile__speaking::after { animation: none; } }
+.vv--party .vv-foot { position: relative; z-index: 2; display: flex; align-items: center; justify-content: center; gap: .45em; font-size: .62em; color: rgba(255,255,255,.85); text-align: center; flex-wrap: wrap; }
+.vv--party .vv-foot__k { font-family: var(--font-display); font-weight: var(--weight-display); color: #fff; letter-spacing: .06em; text-transform: uppercase; }
+.vv--party .vv-foot__dot { opacity: .5; }
+
+/* ── 2 · COACHING IN YOUR POCKET — a phone with the host in a chat ─────────────── */
+/* ── Coaching In Your Pocket — WhatsApp-style thread on a full phone (Matthew's reference, 2026-10-08).
+   Portrait 3:4 card. App colours are fixed (it has to read as WhatsApp); the brand shows only in the access tag and the backdrop. */
+.vv--pocket .vv__art { aspect-ratio: 3 / 4; background: linear-gradient(170deg, color-mix(in srgb, var(--accent) 16%, var(--panel)), var(--panel) 55%, color-mix(in srgb, var(--accent) 10%, var(--panel))); display: grid; place-items: center; padding: 1.4em 0 1em; }
+.vv--pocket .vv-phone { position: relative; width: 19.4em; height: 37.2em; border-radius: 2.6em; background: #15181c; padding: 1.35em .55em .7em; box-shadow: 0 1.6em 2.4em -1em rgba(0,0,0,.45), 0 0 0 .08em #3a3f46 inset; }
+.vv--pocket .vv-phone::before { content: ""; position: absolute; left: -.22em; top: 7em; width: .22em; height: 2.6em; background: #2a2e34; border-radius: .2em 0 0 .2em; box-shadow: 0 3.6em 0 #2a2e34; }
+.vv--pocket .vv-phone::after { content: ""; position: absolute; right: -.22em; top: 9.4em; width: .22em; height: 3.6em; background: #2a2e34; border-radius: 0 .2em .2em 0; }
+.vv--pocket .vv-speaker { position: absolute; top: .55em; left: 50%; transform: translateX(-50%); width: 3.2em; height: .32em; border-radius: 1em; background: #2c3138; }
+.vv--pocket .vv-speaker::after { content: ""; position: absolute; left: 4.1em; top: -.12em; width: .55em; height: .55em; border-radius: 50%; background: #0b0d10; box-shadow: 0 0 0 .08em #2c3138 inset; }
+.vv--pocket .vv-screen { position: relative; width: 100%; height: 100%; border-radius: 1.6em; overflow: hidden; display: flex; flex-direction: column;
+  background: #e5ddd5; color: #111b21; font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+.vv--pocket .vv-status { display: flex; justify-content: space-between; align-items: center; padding: .55em 1em .15em 1.7em; background: #075e54; color: #fff; font-size: .6em; font-weight: 600; }
+.vv--pocket .vv-status .vv-sig { display: inline-flex; gap: .45em; align-items: center; }
+.vv--pocket .vv-status .vv-sig svg { height: .95em; width: auto; fill: #fff; display: block; }
+.vv--pocket .vv-wa-head { display: flex; align-items: center; gap: .45em; padding: .45em .6em .55em; background: #128c7e; color: #fff; }
+.vv--pocket .vv-wa-head .vv-back { font-size: 1.1em; line-height: 1; opacity: .95; }
+.vv--pocket .vv-wa-head .vv-face { width: 2.1em; height: 2.1em; flex: 0 0 auto; border: none; background: #e9edef; color: #128c7e; font-size: .5em; overflow: hidden; }
+.vv--pocket .vv-wa-head img.vv-face { width: 2.1em; height: 2.1em; font-size: 1em; }
+.vv--pocket .vv-wa-head > div { min-width: 0; }
+.vv--pocket .vv-wa-head strong { display: block; font-size: .72em; line-height: 1.15; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.vv--pocket .vv-wa-head span { display: block; font-size: .55em; opacity: .9; }
+.vv--pocket .vv-wa-head .vv-icons { margin-left: auto; display: flex; gap: .75em; align-items: center; flex: 0 0 auto; }
+.vv--pocket .vv-icons svg { width: 1.6em; height: 1.6em; fill: #fff; display: block; }
+.vv--pocket .vv-icons svg:last-child { width: 1.3em; }
+.vv--pocket .vv-msgs { padding: .6em .55em; display: flex; flex-direction: column; gap: .25em; flex: 1; }
+.vv--pocket .vv-day { align-self: center; background: #54bdeb; color: #fff; font-size: .55em; font-weight: 700; padding: .35em .9em; border-radius: .35em; margin: .5em 0; letter-spacing: .03em; }
+.vv--pocket .vv-msg { position: relative; max-width: 80%; padding: .4em .55em .45em; border-radius: .55em; font-size: .62em; line-height: 1.32; box-shadow: 0 1px 1px rgba(0,0,0,.12); }
+.vv--pocket .vv-msg--me { align-self: flex-end; background: #dcf8c6; }
+.vv--pocket .vv-msg--host { align-self: flex-start; background: #fff; }
+.vv--pocket .vv-msg--me + .vv-msg--host, .vv--pocket .vv-msg--host + .vv-msg--me { margin-top: .4em; }
+.vv--pocket .vv-msg--me.vv-tail::after, .vv--pocket .vv-msg--host.vv-tail::after { content: ""; position: absolute; top: 0; border: .42em solid transparent; }
+.vv--pocket .vv-msg--me.vv-tail { border-top-right-radius: .12em; }
+.vv--pocket .vv-msg--host.vv-tail { border-top-left-radius: .12em; }
+.vv--pocket .vv-msg--me.vv-tail::after { right: -.46em; border-top-color: #dcf8c6; border-left-color: #dcf8c6; }
+.vv--pocket .vv-msg--host.vv-tail::after { left: -.46em; border-top-color: #fff; border-right-color: #fff; }
+.vv--pocket .vv-meta { display: inline-flex; gap: .25em; align-items: center; float: right; margin: .6em 0 0 .6em; font-size: .78em; color: #8c8c8c; line-height: 1; }
+.vv--pocket .vv-msg--me .vv-meta b { color: #4fc3f7; font-weight: 600; letter-spacing: -.12em; }
+.vv--pocket .vv-wa-input { display: flex; align-items: center; gap: .4em; padding: .3em .45em .45em; }
+.vv--pocket .vv-wa-input .vv-field { flex: 1; background: #fff; border-radius: 999px; padding: .5em .7em; font-size: .62em; color: #8696a0; display: flex; align-items: center; gap: .55em; box-shadow: 0 1px 1px rgba(0,0,0,.1); }
+.vv--pocket .vv-wa-input .vv-field > span { flex: 1; }
+.vv--pocket .vv-wa-input .vv-field svg { width: 1.3em; height: 1.3em; color: #8696a0; flex: 0 0 auto; display: block; }
+.vv--pocket .vv-wa-input .vv-micbtn { width: 2.1em; height: 2.1em; border-radius: 50%; background: #00a884; display: grid; place-items: center; box-shadow: 0 .1em .25em rgba(0,0,0,.25); flex: 0 0 auto; }
+.vv--pocket .vv-wa-input .vv-micbtn i { width: .42em; height: .78em; border-radius: .3em; background: #fff; display: block; position: relative; }
+.vv--pocket .vv-wa-input .vv-micbtn i::after { content: ""; position: absolute; left: -.2em; right: -.2em; bottom: -.24em; height: .55em; border: .12em solid #fff; border-top: 0; border-radius: 0 0 .55em .55em; }
+.vv--pocket .vv-nav { display: flex; justify-content: space-around; align-items: center; padding: .4em 2em .55em; background: #fff; border-top: 1px solid #ddd; }
+.vv--pocket .vv-nav svg { width: 1.1em; height: 1.1em; color: #5f6368; display: block; }
+.vv--pocket .vv-tag { position: absolute; top: 1em; left: 1em; z-index: 2; }
+.vv--pocket .vv-floor { position: absolute; left: 50%; bottom: .35em; width: 17em; height: 1.1em; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(ellipse at center, rgba(0,0,0,.28), rgba(0,0,0,0) 70%); z-index: 0; }
+.vv--pocket .vv-phone { z-index: 1; }
+
+/* ── 3 · THE IMPLEMENTATION WORKBOOK — a spiral workbook with pages fanned behind ─ */
+.vv--workbook .vv__art { background: linear-gradient(160deg, var(--panel), color-mix(in srgb, var(--accent) 14%, var(--panel))); }
+.vv--workbook .vv-pages { position: absolute; inset: 0; display: grid; place-items: center; }
+.vv--workbook .vv-page { position: absolute; width: 11.5em; height: 15em; background: var(--paper); border-radius: .4em; box-shadow: 0 .6em 1.4em rgba(0,0,0,.18); padding: 1.2em 1em; }
+.vv--workbook .vv-page--b { transform: translate(4.2em, -.4em) rotate(7deg); }
+.vv--workbook .vv-page--c { transform: translate(-4.2em, .2em) rotate(-7deg); }
+.vv--workbook .vv-line { height: .32em; border-radius: 1em; background: var(--paper-line); margin: .45em 0; }
+.vv--workbook .vv-line--short { width: 60%; }
+.vv--workbook .vv-check { display: flex; align-items: center; gap: .35em; margin: .5em 0; }
+.vv--workbook .vv-check i { width: .8em; height: .8em; border-radius: .2em; border: 1px solid var(--pos); display: grid; place-items: center; font-style: normal; font-size: .6em; color: var(--pos); }
+.vv--workbook .vv-check .vv-line { flex: 1; margin: 0; }
+.vv--workbook .vv-cover { position: absolute; width: 11.5em; height: 15em; border-radius: .4em; background: var(--accent); color: var(--ink-on-brand, #fff); box-shadow: 0 1em 2em rgba(0,0,0,.28); padding: 1.6em 1.1em 1.1em 1.6em; display: flex; flex-direction: column; justify-content: space-between; transform: rotate(-3deg); }
+.vv--workbook .vv-spiral { position: absolute; left: .45em; top: .9em; bottom: .9em; width: .5em; display: flex; flex-direction: column; justify-content: space-between; }
+.vv--workbook .vv-spiral i { display: block; width: .5em; height: .5em; border-radius: 50%; background: #1a1a1a; box-shadow: inset 0 0 0 .12em #777; }
+.vv--workbook .vv-cover .vv-k { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .6em; letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+.vv--workbook .vv-cover .vv-title { font-size: 1.15em; margin-top: .3em; }
+.vv--workbook .vv-cover .vv-by { font-size: .62em; opacity: .9; }
+.vv--workbook .vv-cover .vv-logo { height: 1.3em; width: auto; max-width: 5em; object-fit: contain; }
+.vv--workbook .vv-cover .vv-logo.ph { width: 4em; height: 1.3em; background: rgba(255,255,255,.2); border-color: rgba(255,255,255,.4); color: rgba(255,255,255,.8); font-size: .45em; }
+
+/* ── 4 · THE RECORDINGS VAULT — a stack of session players + slides + cheat sheet ─ */
+.vv--vault .vv__art { background: #1a1a1a; color: #fff; padding: 1.1em; display: flex; flex-direction: column; gap: .55em; }
+.vv--vault .vv-head { display: flex; justify-content: space-between; align-items: center; }
+.vv--vault .vv-head .vv-title { font-size: 1.05em; }
+.vv--vault .vv-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .5em; flex: 1; }
+.vv--vault .vv-player { position: relative; border-radius: .5em; background: #2b2b2b; overflow: hidden; display: grid; place-items: center; }
+.vv--vault .vv-player img, .vv--vault .vv-player .ph { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .7; }
+.vv--vault .vv-player .ph { background: #3a2f2a; border: 0; color: transparent; }
+.vv--vault .vv-play { position: relative; width: 2em; height: 2em; border-radius: 50%; background: var(--accent); display: grid; place-items: center; box-shadow: 0 .3em .8em rgba(0,0,0,.4); }
+.vv--vault .vv-play::after { content: ""; border-left: .75em solid #fff; border-top: .45em solid transparent; border-bottom: .45em solid transparent; margin-left: .15em; }
+.vv--vault .vv-player b { position: absolute; left: .5em; bottom: .4em; font-family: var(--font-display); font-weight: var(--weight-display); font-size: .6em; letter-spacing: .06em; text-transform: uppercase; }
+.vv--vault .vv-player time { position: absolute; right: .5em; bottom: .4em; font-size: .55em; opacity: .8; }
+.vv--vault .vv-extras { display: grid; grid-template-columns: 1fr 1fr; gap: .5em; }
+.vv--vault .vv-doc { display: flex; align-items: center; gap: .55em; padding: .5em .65em; border-radius: .5em; background: #2b2b2b; font-size: .66em; }
+.vv--vault .vv-doc i { width: 1.6em; height: 2em; border-radius: .2em; background: var(--paper); position: relative; flex: 0 0 auto; }
+.vv--vault .vv-doc i::before, .vv--vault .vv-doc i::after { content: ""; position: absolute; left: .3em; right: .3em; height: .18em; background: var(--paper-line); border-radius: 1em; }
+.vv--vault .vv-doc i::before { top: .5em; } .vv--vault .vv-doc i::after { top: .95em; right: .7em; }
+.vv--vault .vv-doc span { line-height: 1.15; }
+.vv--vault .vv-doc small { display: block; opacity: .7; font-size: .85em; }
+
+/* ── 5 · BRING YOUR +1 — two VIP tickets fanned together ──────────────────────── */
+.vv--plusone .vv__art { background: linear-gradient(160deg, color-mix(in srgb, var(--pos) 16%, var(--panel)), var(--panel)); display: grid; place-items: center; }
+.vv--plusone .vv-ticket { position: absolute; width: 17em; height: 7em; border-radius: .7em; background: var(--paper); color: var(--paper-ink); box-shadow: 0 .8em 1.6em rgba(0,0,0,.2); display: grid; grid-template-columns: 4.6em 1fr; overflow: hidden; }
+.vv--plusone .vv-ticket--a { transform: translate(-1.4em, -3.2em) rotate(-5deg); }
+.vv--plusone .vv-ticket--b { transform: translate(1.6em, 3.4em) rotate(4deg); }
+.vv--plusone .vv-stub { background: var(--accent); color: var(--ink-on-brand, #fff); display: grid; place-items: center; border-right: .16em dashed var(--paper); }
+.vv--plusone .vv-ticket--b .vv-stub { background: var(--pos); }
+.vv--plusone .vv-stub b { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .95em; letter-spacing: .08em; writing-mode: vertical-rl; transform: rotate(180deg); }
+.vv--plusone .vv-body { padding: .7em .9em; display: flex; flex-direction: column; justify-content: space-between; }
+.vv--plusone .vv-k { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .55em; letter-spacing: .12em; text-transform: uppercase; color: var(--paper-soft); }
+.vv--plusone .vv-name { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .95em; line-height: 1.1; display: flex; align-items: center; gap: .45em; }
+.vv--plusone .vv-name .vv-face { width: 1.6em; height: 1.6em; flex: 0 0 auto; }
+.vv--plusone .vv-name .vv-face.ph { border-radius: 50%; font-size: .5em; }
+.vv--plusone .vv-meta { font-size: .6em; color: var(--paper-soft); }
+.vv--plusone .vv-ticket { overflow: visible; }
+.vv--plusone .vv-ticket .vv-stub, .vv--plusone .vv-ticket .vv-body { border-radius: inherit; }
+.vv--plusone .vv-ticket--b .vv-stub { border-radius: .7em 0 0 .7em; }
+.vv--plusone .vv-ticket--a { overflow: hidden; }
+.vv--plusone .vv-plus { position: absolute; right: -.9em; top: -.9em; width: 2.4em; height: 2.4em; border-radius: 50%; background: var(--pos); color: #fff; display: grid; place-items: center; font-family: var(--font-display); font-weight: var(--weight-display); font-size: 1.2em; box-shadow: 0 .4em 1em rgba(0,0,0,.25); z-index: 3; }
+
+/* ── THE STACK HERO — all five composed in one picture (16:9) ─────────────────── */
+.vv--stack { max-width: 980px; margin-inline: auto; }
+.vv--stack .vv__art { aspect-ratio: 16 / 9; background: linear-gradient(160deg, color-mix(in srgb, var(--accent) 14%, var(--panel)), var(--panel)); font-size: calc(100cqw / 60); box-shadow: var(--shadow-lg); }
+.vv--stack .vv-item { position: absolute; width: 17em; }
+.vv--stack .vv-item .vv__art { background: transparent; box-shadow: none; overflow: visible; }
+.vv--stack .vv-item--party .vv__art, .vv--stack .vv-item--vault .vv__art { background: #1a1a1a; box-shadow: 0 .8em 2em rgba(0,0,0,.28); overflow: hidden; }
+.vv--stack .vv-item .vv-tag { display: none; }
+.vv--stack .vv-item--party { left: 50%; transform: translateX(-50%); top: 1.2em; width: 26em; z-index: 3; }
+.vv--stack .vv-item--pocket { left: 1.2em; top: .7em; width: 10.5em; transform: rotate(-6deg); z-index: 2; }
+.vv--stack .vv-item--pocket .vv__art { background: none; box-shadow: none; padding: 0; aspect-ratio: auto; font-size: calc(100cqw / 19.4); }
+.vv--stack .vv-item--pocket .vv-floor { display: none; }
+.vv--stack .vv-item--pocket .vv-phone { margin: 0; }
+.vv--stack .vv-item--workbook { right: -1em; top: -.5em; width: 26em; transform: rotate(6deg); z-index: 2; }
+.vv--stack .vv-item--vault { left: 4em; bottom: 1em; width: 22em; transform: rotate(-3deg); z-index: 4; }
+.vv--stack .vv-item--plusone { right: 2em; bottom: -2em; width: 25em; transform: rotate(3deg); z-index: 4; }
+.vv--stack .vv-badge { position: absolute; left: 50%; bottom: 3.2em; transform: translateX(-50%); z-index: 5; font-size: 1.1em; box-shadow: 0 .4em 1em rgba(0,0,0,.25); }
+@media (max-width: 640px) { .vv--stack .vv__art { aspect-ratio: 4 / 3; } .vv--stack .vv-item--pocket, .vv--stack .vv-item--workbook { display: none; } .vv--stack .vv-item--party { left: 50%; transform: translateX(-50%); width: 28em; } }
+.vv img.ph { border: 0; background: none; }
+/* mockup inside a benefit block: no extra frame, let the card shadow show */
+.cl-vipb__vis { aspect-ratio: auto; }
+.cl-vipb__vis .vv__art { box-shadow: var(--shadow-md); }
+/* stack hero in the showcase section */
+.cl-section .vv--stack { margin-top: var(--sp-4); margin-bottom: var(--sp-2); }
+
+</style>
+</head>
+<body>
+
+<div class="cl-eventbar" data-cfe="01-event-bar">
+  <div class="cl-container">
+      <ul class="cl-facts-strip" aria-label="Event details">
+        <li class="is-type">Live challenge</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Mon 16 Nov @ 10am AEDT</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>3-day</li>
+        <li class="is-price"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 9V7a1 1 0 0 1 1-1h15a1 1 0 0 1 1 1v2a2 2 0 0 0 0 4v2a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1v-2a2 2 0 0 0 0-4z"/><path d="M14 6v10" stroke-dasharray="2 2"/></svg>Ticket $47</li>
+      </ul>
+  </div>
+</div>
+
+<header class="cl-section cl-hero cl-center" data-cfe="02-hero">
+  <div class="cl-container cl-container--narrow cl-hero__stack">
+    <p class="cl-eyebrow">For clinic owners who are tired of quiet weeks</p>
+    <h1 class="cl-h1">In one day, build the referral system that books your next 20 new patients</h1>
+    <p class="cl-lede">Without paying for ads or discounting your sessions.</p>
+    <div class="cl-video cl-hero__media" data-cfe-media="vsl">
+      <div class="cl-imgslot" style="width: 100%">Hero video or image · the challenge + Event Magnet™ bonus · 16:9</div>
+    </div>
+    <div class="cl-cta-stack cl-hero__cta">
+      <div class="cl-herotimer">
+        <p class="cl-herotimer__label">Live challenge starts in</p>
+        <div class="cl-countdown cl-countdown--hero" data-deadline="2026-11-16T10:00:00+11:00">
+          <span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="d">00</span><span class="cl-countdown__label">days</span></span>
+          <span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="h">00</span><span class="cl-countdown__label">hrs</span></span>
+          <span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="m">00</span><span class="cl-countdown__label">min</span></span>
+          <span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="s">00</span><span class="cl-countdown__label">sec</span></span>
+        </div>
+      </div>
+      <p class="cl-priceline"><strong class="cl-pos">Early-bird $47</strong> until Fri 13 Nov · then $97</p>
+      <a class="cl-cta" href="#checkout" data-cfe-cta="hero"><span class="cl-cta__main">Grab My Seat — $47</span><span class="cl-cta__sub">Mon 16 Nov @ 10am AEDT</span></a>
+      <p class="cl-privacy">Secure checkout · 30-day money-back guarantee</p>
+      <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+      <div class="cl-trustrow" data-cfe-optional="proof" data-cfe-needs-media>
+        <div class="cl-faces">
+          <img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%2812%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EAM%3C/text%3E%3C/svg%3E" alt="Sample Name" data-cfe-media="testimonial-1" loading="lazy"><img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%28200%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EBT%3C/text%3E%3C/svg%3E" alt="Sample Name" data-cfe-media="testimonial-2" loading="lazy"><img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%28140%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3ECR%3C/text%3E%3C/svg%3E" alt="Sample Name" data-cfe-media="testimonial-3" loading="lazy"><img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%28280%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EDP%3C/text%3E%3C/svg%3E" alt="Sample client 4" data-cfe-media="testimonial-4" loading="lazy"><img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%2840%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EES%3C/text%3E%3C/svg%3E" alt="Sample client 5" data-cfe-media="testimonial-5" loading="lazy"><img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%28330%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EFO%3C/text%3E%3C/svg%3E" alt="Sample client 6" data-cfe-media="testimonial-6" loading="lazy">
+        </div>
+        <div class="cl-trustrow__text">
+          <span class="cl-trustrow__kicker">Trusted by countless</span>
+          <span class="cl-trustrow__who">Clinic Owners</span>
+          <span class="cl-stars" aria-label="5 out of 5 stars">★★★★★</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="cl-section" data-cfe="04-qualifier">
+  <div class="cl-container cl-container--narrow">
+    <h2 class="cl-h2 cl-h2--center">This challenge is for you if…</h2>
+    <ul class="cl-qualify">
+      <li><span><b>You own a clinic,</b> and new-patient numbers swing month to month — then this is for you.</span></li>
+      <li><span><b>You're great at the work,</b> but marketing feels like a second job you never signed up for.</span></li>
+      <li><span><b>You want referrals on purpose,</b> not by luck — then this was made with you in mind.</span></li>
+    </ul>
+    <p class="cl-body cl-center" style="margin-top:var(--sp-4)">If you're not yet open for patients, start with the replay library instead — this day is about filling a calendar that already exists.</p>
+  </div>
+</section>
+
+<section class="cl-section cl-section--panel" data-cfe="04b-pains">
+  <div class="cl-container cl-container--narrow">
+    <h2 class="cl-h2 cl-h2--center cl-pains__h">Here's what's actually stopping your calendar from filling</h2>
+    <p class="cl-lede cl-center cl-pains__sub">After nine years running a booked-out clinic and training <strong>300+ clinic owners</strong>, there are 4 reasons referrals don't happen…</p>
+    <div class="cl-pains">
+      <article class="cl-pain">
+        <p class="cl-pain__label">01 · The awkward ask</p>
+        <h3 class="cl-pain__quote">“I don't know how to ask without sounding needy”</h3>
+        <p class="cl-pain__body">The treatment's going well. You think about asking for a referral, then the moment passes. Next patient. <strong>So you never ask — and they never think to.</strong></p>
+      </article>
+      <article class="cl-pain">
+        <p class="cl-pain__label">02 · The discount trap</p>
+        <h3 class="cl-pain__quote">“So I ran a first-visit special… again”</h3>
+        <p class="cl-pain__body">Discounts fill a quiet week, then leave you with patients who only come back for the next deal. <strong>You're paying to attract people who won't refer anyone.</strong></p>
+      </article>
+      <article class="cl-pain">
+        <p class="cl-pain__label">03 · The ad treadmill</p>
+        <h3 class="cl-pain__quote">“The ads work… until I switch them off”</h3>
+        <p class="cl-pain__body">Boosted posts and Google ads bring a trickle while you pay. Stop paying, the trickle stops. <strong>That's rent, not growth.</strong></p>
+      </article>
+      <article class="cl-pain" data-cfe-optional="pain-4">
+        <p class="cl-pain__label">04 · The lost referral</p>
+        <h3 class="cl-pain__quote">“They said they'd send their sister… she never booked”</h3>
+        <p class="cl-pain__body">A happy patient mentions you to someone. Nobody follows up, there's no card, no link, no next step. <strong>The referral was real — the system to catch it wasn't.</strong></p>
+      </article>
+    </div>
+    <div class="cl-reframe" data-surface="D">
+      <p class="cl-reframe__a">You don't have a marketing problem.</p>
+      <p class="cl-reframe__b">You have a referral system problem.</p>
+    </div>
+    <div class="cl-truth">
+      <p>The truth is, <strong>clinics that stay booked out don't market harder.</strong> They make referring easy, natural and expected — so their best patients send them the next ones, every single week.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cl-section" data-cfe="05-solution">
+  <div class="cl-container cl-container--narrow cl-center">
+    <p class="cl-pill">What we build together on the day</p>
+    <h2 class="cl-h2 cl-solution__h">Meet the Referral Ready Scorecard</h2>
+    <p class="cl-lede cl-solution__sub">The one-page check that shows exactly which 20 patients will refer you this month — <strong>filled in, live, during the challenge.</strong></p>
+  </div>
+  <div class="cl-container">
+    <div class="cl-imgslot cl-solution__img" data-cfe-media="event-magnet" style="width: 70%">Event Magnet™ image · the tool in use, shown as the solution · 16:9</div>
+  </div>
+  <div class="cl-container cl-container--narrow cl-center">
+    <p class="cl-body cl-solution__body">Score your active patients in ten minutes. <strong>The Scorecard ranks who to ask, when to ask and what to say</strong> — so referrals stop being luck and start being a list.</p>
+    <p class="cl-solution__quote" data-cfe-optional="proof">“I filled it in on my lunch break and <em>booked three referrals that week.</em>”</p>
+    <div class="cl-cta-stack">
+      <p class="cl-priceline"><strong class="cl-pos">Early-bird $47</strong> until Fri 13 Nov · then $97</p>
+      <a class="cl-cta" href="#checkout"><span class="cl-cta__main">Grab My Seat — $47</span><span class="cl-cta__sub">Mon 16 Nov @ 10am AEDT</span></a>
+      <p class="cl-privacy">Secure checkout · 30-day money-back guarantee</p>
+      <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+    </div>
+  </div>
+</section>
+
+<section class="cl-section cl-section--panel" data-cfe="05-letter">
+  <div class="cl-container cl-container--letter cl-letter" style="max-width: 900px">
+    <div class="cl-hostcard" data-cfe="06a-host-intro">
+      <img class="cl-hostcard__photo" src="../assets/examples/host-avatar-62ef0fe9.jpg" alt="Dana Cole" data-cfe-media="host-avatar" loading="lazy">
+      <div>
+        <p class="cl-hostcard__name">Dana Cole — 9 years running a booked-out clinic</p>
+        <p class="cl-hostcard__quote">“We help clinic owners with full-time practices <strong>fill their calendar with 20 new patients a month from referrals</strong> without paying for ads, discounting sessions or chasing cold leads.”</p>
+      </div>
+    </div>
+    <p class="cl-letter__from" style="margin-top:var(--sp-4)">From the desk of Dana Cole</p>
+    <h3 class="cl-h3 cl-letter__h cl-story__h">The most expensive moment in a clinic week</h3>
+    <div class="cl-storypair">
+      <div class="cl-imgslot cl-storypair__img" data-cfe-media="story-1">Story image 1 · the failure moment scene · 3:4 portrait</div>
+      <div class="cl-storypair__copy">
+        <p>For nine years I ran a two-room physio clinic. Some months were full. Some months I stared at a calendar full of gaps and wondered what I'd done wrong.</p>
+<p>I tried the website, the boosted posts, the first-visit discount. <strong>Each one helped for a week.</strong></p>
+      </div>
+    </div>
+    <div class="cl-story__block" data-cfe-optional="story-proof">
+      <p>A clinic owner told me last month: "We had our best quarter ever — and I didn't run a single ad." She'd simply given her happy patients a reason and a way to send their friends.</p>
+<p><strong>That's not a fluke. That's the pattern.</strong></p>
+    </div>
+    <p class="cl-pullquote cl-story__pull">“Quiet weeks aren't a marketing problem. They're a referral problem.”</p>
+    <div class="cl-storypair cl-storypair--flip" data-cfe-optional="absolution">
+      <div class="cl-storypair__copy">
+        <p>It's not your prices, your suburb, your website, or you. <strong>It's the referral gap</strong> — happy patients leave, mean to tell someone, and never do.</p>
+<p>There are three more leaks like it. We plug every one on the day.</p>
+      </div>
+      <div class="cl-imgslot cl-storypair__img" data-cfe-media="story-2">Story image 2 · the trap / root cause · 3:4 portrait</div>
+    </div>
+    <h3 class="cl-h3 cl-letter__h cl-story__h">Satisfied patients say thanks. Referred patients book.</h3>
+    <div class="cl-storypair">
+      <div class="cl-imgslot cl-storypair__img" data-cfe-media="story-3">Story image 3 · the method / the new way · 3:4 portrait</div>
+      <div class="cl-storypair__copy">
+        <p>Your best patients already know the people you want to treat. They just don't have a reason, or a simple way, to send them.</p>
+<p>Give them both and referrals stop being luck. They become a <strong>system that runs every week.</strong></p>
+      </div>
+    </div>
+    <div class="cl-story__block" data-cfe-optional="mechanism-depth">
+      <p>The order matters: ask at the moment they feel the result, not two weeks later.</p>
+<p>A friend's "you should see Dana" does the selling for you — <strong>nobody feels sold, they feel recommended.</strong></p>
+<p>And because it runs at the front desk, it works whether or not you remember to do it.</p>
+    </div>
+    <h3 class="cl-h3 cl-letter__h cl-story__h">Why one day is enough</h3>
+    <p>That's why this is one day, not a course. You build it with me, live, and you <strong>leave with it done</strong> — scripts written, the referral card designed, the follow-up loaded.</p>
+<p>Save your seat below.</p>
+    <div class="cl-cta-stack">
+      <p class="cl-priceline"><strong class="cl-pos">Early-bird $47</strong> until Fri 13 Nov · then $97</p>
+      <a class="cl-cta" href="#checkout"><span class="cl-cta__main">Grab My Seat — $47</span><span class="cl-cta__sub">Mon 16 Nov @ 10am AEDT</span></a>
+      <p class="cl-privacy">Secure checkout · 30-day money-back guarantee</p>
+      <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+    </div>
+  </div>
+</section>
+
+<section class="cl-section" data-surface="D" data-cfe="06-problems">
+  <div class="cl-container">
+    <p class="cl-eyebrow cl-center">What we solve on the day</p>
+    <h2 class="cl-h2 cl-h2--center">The three problems this challenge fixes — in order</h2>
+    <p class="cl-lede cl-center" style="margin-inline:auto">Every quiet week in a clinic comes down to three gaps. We close them one at a time, live, in this order.</p>
+    <ol class="cl-problems">
+      <li class="cl-problem">
+        <span class="cl-problem__n">1</span>
+        <div class="cl-problem__main">
+          <p class="cl-problem__k">Problem 1</p>
+          <h3 class="cl-problem__h">You don't know which patients would actually refer — so you ask nobody.</h3>
+          <ul class="cl-list cl-list--tick cl-problem__bens">
+            <li>Know exactly who to ask first</li>
+            <li>Use the patient records you already have</li>
+            <li>No cold outreach, no ads</li>
+          </ul>
+        </div>
+        <div class="cl-problem__side">
+          <div class="cl-imgslot cl-problem__img" data-cfe-media="problem-1">Image · problem 1 — what this part of the day looks like · 16:9</div>
+          <div class="cl-problem__row"><span class="cl-problem__lbl">How we solve it</span><p class="cl-body cl-mb-0">We map the 20 patients most likely to send you someone this month, using the records you already have.</p></div>
+        </div>
+        <div class="cl-problem__row cl-problem__row--out"><span class="cl-problem__lbl">You walk away with</span><p class="cl-body cl-mb-0"><strong>Your top-20 referrer list, ranked and ready to contact this week.</strong></p></div>
+      </li>
+      <li class="cl-problem">
+        <span class="cl-problem__n">2</span>
+        <div class="cl-problem__main">
+          <p class="cl-problem__k">Problem 2</p>
+          <h3 class="cl-problem__h">Asking for a referral feels awkward and salesy, so it never happens.</h3>
+          <ul class="cl-list cl-list--tick cl-problem__bens">
+            <li>Two sentences, said in the treatment room</li>
+            <li>Feels like care, not a pitch</li>
+            <li>Rehearsed so it comes out naturally</li>
+          </ul>
+        </div>
+        <div class="cl-problem__side">
+          <div class="cl-imgslot cl-problem__img" data-cfe-media="problem-2">Image · problem 2 — what this part of the day looks like · 16:9</div>
+          <div class="cl-problem__row"><span class="cl-problem__lbl">How we solve it</span><p class="cl-body cl-mb-0">We write the two-sentence ask that fits the treatment room and feels natural — then rehearse it.</p></div>
+        </div>
+        <div class="cl-problem__row cl-problem__row--out"><span class="cl-problem__lbl">You walk away with</span><p class="cl-body cl-mb-0"><strong>Your referral ask script, tested wording you'll actually use.</strong></p></div>
+      </li>
+      <li class="cl-problem">
+        <span class="cl-problem__n">3</span>
+        <div class="cl-problem__main">
+          <p class="cl-problem__k">Problem 3</p>
+          <h3 class="cl-problem__h">Even when someone means to refer you, there's nothing in their hand and no follow-up.</h3>
+          <ul class="cl-list cl-list--tick cl-problem__bens">
+            <li>Something physical in their hand</li>
+            <li>Follow-up that runs without you</li>
+            <li>Front desk does it on autopilot</li>
+          </ul>
+        </div>
+        <div class="cl-problem__side">
+          <div class="cl-imgslot cl-problem__img" data-cfe-media="problem-3">Image · problem 3 — what this part of the day looks like · 16:9</div>
+          <div class="cl-problem__row"><span class="cl-problem__lbl">How we solve it</span><p class="cl-body cl-mb-0">We build the referral card, the 3-text follow-up and the front-desk prompt together, in the room.</p></div>
+        </div>
+        <div class="cl-problem__row cl-problem__row--out"><span class="cl-problem__lbl">You walk away with</span><p class="cl-body cl-mb-0"><strong>A print-ready referral card and a follow-up sequence switched on before you leave.</strong></p></div>
+      </li>
+    </ol>
+    <div class="cl-cta-stack">
+      <p class="cl-priceline"><strong class="cl-pos">Early-bird $47</strong> until Fri 13 Nov · then $97</p>
+      <a class="cl-cta" href="#checkout"><span class="cl-cta__main">Grab My Seat — $47</span><span class="cl-cta__sub">Mon 16 Nov @ 10am AEDT</span></a>
+      <p class="cl-privacy">Secure checkout · 30-day money-back guarantee</p>
+      <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+    </div>
+  </div>
+</section>
+
+<section class="cl-section" data-cfe="07-deliverables">
+  <div class="cl-container cl-container--narrow">
+    <h2 class="cl-h2 cl-h2--center">By the end of the challenge, you'll have:</h2>
+    <ul class="cl-list cl-list--tick" style="font-size:var(--fs-1)">
+      <li><strong>Your top-20 referrer list</strong> — ranked and ready to contact this week</li>
+      <li><strong>Your referral ask script</strong> — tested wording for the treatment room</li>
+      <li><strong>A designed referral card</strong> — print-ready, in your clinic's colours</li>
+      <li><strong>A 3-text follow-up sequence</strong> — loaded and switched on before you leave</li>
+    </ul>
+    <div class="cl-cta-stack">
+      <p class="cl-priceline"><strong class="cl-pos">Early-bird $47</strong> until Fri 13 Nov · then $97</p>
+      <a class="cl-cta" href="#checkout"><span class="cl-cta__main">Grab My Seat — $47</span><span class="cl-cta__sub">Mon 16 Nov @ 10am AEDT</span></a>
+      <p class="cl-privacy">Secure checkout · 30-day money-back guarantee</p>
+      <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+    </div>
+  </div>
+</section>
+
+<section class="cl-section" data-surface="D" data-cfe="08-host">
+  <div class="cl-container">
+    <div class="cl-host">
+      <div class="cl-imgslot cl-imgslot--tall" data-cfe-media="host">Photo · Dana Cole · headshot</div>
+      <div>
+        <p class="cl-eyebrow">About your host</p>
+        <h2 class="cl-h2">Dana Cole</h2>
+        <p class="cl-tagline">“I filled my own clinic without a single ad.”</p>
+        <p class="cl-body">Dana ran a two-room physio clinic for nine years before teaching the referral system that kept it booked out. She now helps clinic owners build the same system in a day.</p>
+        <ul class="cl-list cl-list--tick">
+          <li>Owner of a booked-out clinic for 9 years</li>
+          <li>300+ clinic owners trained</li>
+          <li>Speaker at allied-health business events</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="cl-section" data-cfe="09-testimonials" data-cfe-optional="proof">
+  <div class="cl-container">
+    <h2 class="cl-h2 cl-h2--center">What people say after working with Dana</h2>
+    <div class="cl-grid cl-grid--3">
+      <figure class="cl-quote cl-testimonial">
+        <p class="cl-quote__text">“Eleven new patients in the first fortnight — all from one referral card.”</p>
+        <figcaption class="cl-quote__by">
+          <img class="cl-avatar" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%2812%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EAM%3C/text%3E%3C/svg%3E" alt="Photo of Sample Name" data-cfe-media="testimonial-1" loading="lazy">
+          <span><span class="cl-quote__name">Sample Name</span><br>Physio, Brisbane</span>
+        </figcaption>
+        <p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p>
+      </figure>
+      <figure class="cl-quote cl-testimonial">
+        <p class="cl-quote__text">“I finally stopped dreading the first week of the month.”</p>
+        <figcaption class="cl-quote__by">
+          <img class="cl-avatar" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%28200%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EBT%3C/text%3E%3C/svg%3E" alt="Photo of Sample Name" data-cfe-media="testimonial-2" loading="lazy">
+          <span><span class="cl-quote__name">Sample Name</span><br>Chiro, Auckland</span>
+        </figcaption>
+        <p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p>
+      </figure>
+      <figure class="cl-quote cl-testimonial">
+        <p class="cl-quote__text">“The script alone was worth the day. My team uses it every shift.”</p>
+        <figcaption class="cl-quote__by">
+          <img class="cl-avatar" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%28140%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3ECR%3C/text%3E%3C/svg%3E" alt="Photo of Sample Name" data-cfe-media="testimonial-3" loading="lazy">
+          <span><span class="cl-quote__name">Sample Name</span><br>Podiatrist, Perth</span>
+        </figcaption>
+        <p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p>
+      </figure>
+      <figure class="cl-quote cl-testimonial" data-cfe-optional="testimonial-4" data-cfe-requires="TESTIMONIAL_4">
+        <p class="cl-quote__text">“Booked 6 new patients the week after — all from one script.”</p>
+        <figcaption class="cl-quote__by">
+          <img class="cl-avatar" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%28280%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EDP%3C/text%3E%3C/svg%3E" alt="Photo of Sample client 4" data-cfe-media="testimonial-4" loading="lazy">
+          <span><span class="cl-quote__name">Sample client 4</span><br>Clinic owner</span>
+        </figcaption>
+        <p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p>
+      </figure>
+      <figure class="cl-quote cl-testimonial" data-cfe-optional="testimonial-5" data-cfe-requires="TESTIMONIAL_5">
+        <p class="cl-quote__text">“Best $27 I've spent on the clinic this year.”</p>
+        <figcaption class="cl-quote__by">
+          <img class="cl-avatar" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%2840%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EES%3C/text%3E%3C/svg%3E" alt="Photo of Sample client 5" data-cfe-media="testimonial-5" loading="lazy">
+          <span><span class="cl-quote__name">Sample client 5</span><br>Clinic owner</span>
+        </figcaption>
+        <p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p>
+      </figure>
+      
+    </div>
+    <div class="cl-cta-stack">
+      <p class="cl-priceline"><strong class="cl-pos">Early-bird $47</strong> until Fri 13 Nov · then $97</p>
+      <a class="cl-cta" href="#checkout"><span class="cl-cta__main">Grab My Seat — $47</span><span class="cl-cta__sub">Mon 16 Nov @ 10am AEDT</span></a>
+      <p class="cl-privacy">Secure checkout · 30-day money-back guarantee</p>
+      <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+    </div>
+  </div>
+</section>
+
+<section class="cl-section cl-section--panel" data-cfe="10-before-after">
+  <div class="cl-container">
+    <h2 class="cl-h2 cl-h2--center">What one challenge changes</h2>
+    <div class="cl-compare">
+      <div class="cl-compare__side cl-compare__side--before">
+        <p class="cl-compare__title">Before the challenge</p>
+        <div class="cl-imgslot cl-compare__img" data-cfe-media="before">Before image · the pain or problem, felt</div>
+        <ul class="cl-list cl-list--cross"><li>Gaps in the calendar mid-week</li><li>Paying for ads that stop when you stop</li><li>Discounting to fill slots</li><li>No idea where next month's patients come from</li></ul>
+      </div>
+      <div class="cl-compare__side cl-compare__side--after">
+        <p class="cl-compare__title">After the challenge</p>
+        <div class="cl-imgslot cl-compare__img" data-cfe-media="after">After image · the reward, how the result feels</div>
+        <ul class="cl-list cl-list--tick"><li>A weekly flow of referred patients</li><li>Growth that doesn't depend on ad spend</li><li>Full-price sessions, booked ahead</li><li>A system your front desk runs</li></ul>
+      </div>
+    </div>
+    <div class="cl-cta-stack">
+      <p class="cl-priceline"><strong class="cl-pos">Early-bird $47</strong> until Fri 13 Nov · then $97</p>
+      <a class="cl-cta" href="#checkout"><span class="cl-cta__main">Grab My Seat — $47</span><span class="cl-cta__sub">Mon 16 Nov @ 10am AEDT</span></a>
+      <p class="cl-privacy">Secure checkout · 30-day money-back guarantee</p>
+      <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+    </div>
+  </div>
+</section>
+
+<section class="cl-section" data-cfe="11-value-stack">
+  <div class="cl-container cl-container--narrow">
+    <div class="cl-offerbox">
+      <div class="cl-imgslot cl-offer-visual" data-cfe-media="offer-stack">Offer image · the whole offer in one visual — every item below, stacked</div>
+      <h2 class="cl-h2 cl-h2--center">Here's everything you get for $47</h2>
+      <ul class="cl-stack">
+        <li>the live 3-day challenge <span class="cl-stack__value">$197</span></li>
+        <li>Referral Map™ workbook <span class="cl-stack__value">$47</span></li>
+        <li>Front-desk script pack <span class="cl-stack__value">$97</span></li>
+        <li class="cl-stack__total">Total value <span class="cl-stack__value"><span class="cl-strike">$341</span> &nbsp;Today $47</span></li>
+      </ul>
+      <div class="cl-cta-stack">
+        <p class="cl-priceline"><strong class="cl-pos">Early-bird $47</strong> until Fri 13 Nov · then $97</p>
+        <a class="cl-cta cl-cta--block" href="#checkout"><span class="cl-cta__main">Grab My Seat — $47</span><span class="cl-cta__sub">Mon 16 Nov @ 10am AEDT</span></a>
+        <p class="cl-privacy">Secure checkout · 30-day money-back guarantee</p>
+      </div>
+    <div class="cl-guarantee cl-guarantee--instack" data-cfe-optional="guarantee">
+      <svg class="cl-seal" viewBox="0 0 120 120" role="img" aria-label="30-day money-back guarantee">
+        <path class="cl-seal__burst" d="M60.0 2.0 L65.8 8.3 L72.9 3.5 L77.2 10.9 L85.2 7.7 L87.7 16.0 L96.2 14.7 L96.8 23.2 L105.3 23.8 L104.0 32.3 L112.3 34.8 L109.1 42.8 L116.5 47.1 L111.7 54.2 L118.0 60.0 L111.7 65.8 L116.5 72.9 L109.1 77.2 L112.3 85.2 L104.0 87.7 L105.3 96.2 L96.8 96.8 L96.2 105.3 L87.7 104.0 L85.2 112.3 L77.2 109.1 L72.9 116.5 L65.8 111.7 L60.0 118.0 L54.2 111.7 L47.1 116.5 L42.8 109.1 L34.8 112.3 L32.3 104.0 L23.8 105.3 L23.2 96.8 L14.7 96.2 L16.0 87.7 L7.7 85.2 L10.9 77.2 L3.5 72.9 L8.3 65.8 L2.0 60.0 L8.3 54.2 L3.5 47.1 L10.9 42.8 L7.7 34.8 L16.0 32.3 L14.7 23.8 L23.2 23.2 L23.8 14.7 L32.3 16.0 L34.8 7.7 L42.8 10.9 L47.1 3.5 L54.2 8.3Z"/>
+        <circle class="cl-seal__face" cx="60" cy="60" r="46"/>
+        <circle class="cl-seal__ring" cx="60" cy="60" r="41"/>
+        <text class="cl-seal__big" x="60" y="58" text-anchor="middle">30</text>
+        <text class="cl-seal__small" x="60" y="72" text-anchor="middle">DAY MONEY-BACK</text>
+        <text class="cl-seal__small" x="60" y="82" text-anchor="middle">GUARANTEE</text>
+      </svg>
+      <p class="cl-body"><strong>30-day money-back guarantee.</strong> Apply one idea from the challenge. If your referrals don't measurably improve in 30 days, email us for a full refund — and keep everything.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="cl-section cl-section--panel" id="checkout" data-cfe="11b-checkout">
+  <div class="cl-container cl-container--narrow">
+    <div class="cl-whylow" data-cfe-optional="why-low">
+      <p class="cl-whylow__k">★ Real talk on why it's only $47 ★</p>
+      <p class="cl-body">Because most clinic owners who come to this go on to work with us. Keeping the ticket low means more of the right people get in the room — and this is the only place I teach this publicly.</p>
+    </div>
+    <h2 class="cl-h2 cl-h2--center">Grab your seat — $47</h2>
+    <p class="cl-center cl-vip__secure"><span aria-hidden="true">🔒</span> Secure checkout · confirmation and joining details emailed straight away</p>
+    <div class="cl-embed cl-vip__cart" data-cfe-media="ticket-order-form">Order form embed · GHL one-time product · The Full Calendar Challenge ticket $47 + order bumps</div>
+    <p class="cl-fine cl-center" data-cfe-optional="guarantee">One-time payment. Covered by our 30-day money-back guarantee.</p>
+  </div>
+</section>
+
+<section class="cl-section cl-section--tight cl-section--panel" data-cfe="12-logistics">
+  <div class="cl-container">
+    <div class="cl-facts">
+      <div class="cl-fact"><div class="cl-fact__k">What</div><div class="cl-fact__v">3-day live online challenge: The Full Calendar Challenge</div></div>
+      <div class="cl-fact"><div class="cl-fact__k">When</div><div class="cl-fact__v">Mon 16 Nov @ 10am AEDT — live only, block the time</div></div>
+      <div class="cl-fact"><div class="cl-fact__k">Why</div><div class="cl-fact__v">Leave with a referral system built, not a notebook of ideas.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cl-section" data-cfe="13-faq">
+  <div class="cl-container cl-container--narrow">
+    <h2 class="cl-h2 cl-h2--center">Quick answers before you grab your seat</h2>
+    <div class="cl-faq">
+      <details><summary>Is there a replay?</summary><p class="cl-faq__a">This is a live, one-day build — the ticket gets you the live seat. The full recording (kept for life), the slides and the one-page cheat sheet come with the VIP upgrade, which you'll see straight after you grab your seat.</p></details>
+      <details><summary>Why is it only $47? What's the catch?</summary><p class="cl-faq__a">No catch. The low price fills the room with the right clinic owners, and some of them choose to work with us afterwards. If it's not worth it, the 30-day guarantee covers you.</p></details>
+      <details><summary>Will you try to sell me something?</summary><p class="cl-faq__a">Yes, once. At the end I'll explain how you can work with me further. It's optional, and the challenge stands on its own.</p></details>
+      <details><summary>Do I get the workbook and templates?</summary><p class="cl-faq__a">Your ticket is the seat — think of it like the movie. The Implementation Workbook (the step-by-step instructions, the templates and Dana's worked example) is the popcorn: it's part of the VIP upgrade offered right after checkout.</p></details>
+      <details><summary>What should I bring?</summary><p class="cl-faq__a">Your laptop, your appointment book, and four hours without interruptions.</p></details>
+    </div>
+    <div class="cl-cta-stack">
+      <p class="cl-priceline"><strong class="cl-pos">Early-bird $47</strong> until Fri 13 Nov · then $97</p>
+      <a class="cl-cta" href="#checkout"><span class="cl-cta__main">Grab My Seat — $47</span><span class="cl-cta__sub">Mon 16 Nov @ 10am AEDT</span></a>
+      <p class="cl-privacy">Secure checkout · 30-day money-back guarantee</p>
+      <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+    </div>
+  </div>
+</section>
+
+<section class="cl-section cl-center" data-surface="D" data-cfe="13b-final-close">
+  <div class="cl-container cl-container--narrow">
+    <h2 class="cl-h2">Stop waiting for referrals. Start building them.</h2>
+    <div class="cl-body cl-finalclose__body">
+      <p>Your next 90 days end one of two ways.</p>
+<p>The same quiet weeks, the same ad spend, the same hoping. Or a referral system that books new patients while you treat the ones you have.</p>
+<p><strong>Your worst case is a $27 refund. Your best case is a full calendar.</strong></p>
+    </div>
+    <div class="cl-cta-stack">
+      <a class="cl-cta" href="#checkout"><span class="cl-cta__main">Grab My Seat — $47</span><span class="cl-cta__sub">Mon 16 Nov @ 10am AEDT</span></a>
+      <p class="cl-privacy">Secure checkout · 30-day money-back guarantee</p>
+    </div>
+    <p class="cl-finalclose__sign">See you at the challenge.<br><strong>— Dana Cole</strong></p>
+  </div>
+</section>
+
+<!-- FOOTER — identical on every page (Matthew, 2026-10-07): dark bar, link row, ONE disclaimers line -->
+<footer class="cl-footer" data-cfe="14-footer">
+  <div class="cl-container">
+    <nav aria-label="Footer"><a href="https://example.com">Home</a><span class="cl-footer__sep">|</span><a href="#terms">Terms</a><span class="cl-footer__sep">|</span><a href="#privacy">Privacy</a><span class="cl-footer__sep">|</span><a href="#disclaimer">Disclaimer</a><span class="cl-footer__sep">|</span><a href="mailto:hello@example.com">Contact</a></nav>
+    <p class="cl-footer__legal"><strong>Disclaimers:</strong> This site is not part of the Facebook website or Meta Platforms, Inc., and is not endorsed by Meta in any way. We use Google remarketing pixels and cookies to show our ads to people who have visited this site; opt out in Google's Ads Settings.<span data-cfe-optional="results-disclaimer"> Results vary. Testimonials reflect individual experiences and are not a guarantee.</span> · © 2026 Sample Clinic Growth Co. — All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="cl-modal" id="exit" hidden role="dialog" aria-modal="true" aria-labelledby="exit-title" data-cfe="15-exit-intent">
+  <div class="cl-modal__box cl-center">
+    <button class="cl-modal__close" type="button" data-close aria-label="Close">&times;</button>
+    <p class="cl-eyebrow">Wait — before you go</p>
+    <h2 class="cl-h3" id="exit-title">Your early-bird seat is $47 until Fri 13 Nov</h2>
+    <div class="cl-imgslot cl-exit__img" data-cfe-media="event-magnet">Event Magnet™ image · what we build on the day</div>
+    <p class="cl-body">After that it's $97. Grab your seat now and lock in the early-bird price.</p>
+    <div class="cl-cta-stack">
+      <a class="cl-cta cl-cta--block" href="#checkout" data-close><span class="cl-cta__main">Grab My Seat — $47</span><span class="cl-cta__sub">Mon 16 Nov @ 10am AEDT</span></a>
+      <p class="cl-privacy">Secure checkout · 30-day money-back guarantee</p>
+    </div>
+  </div>
+</div>
+
+<div class="cl-stickycta" data-cfe="16-sticky-cta" aria-hidden="true">
+  <a class="cl-cta cl-cta--block" href="#checkout" tabindex="-1"><span class="cl-cta__main">Grab My Seat — $47</span><span class="cl-cta__sub">Mon 16 Nov @ 10am AEDT</span></a>
+</div>
+
+<script>
+/* Cash Flow Engine™ funnel behaviour — popup + countdowns. No dependencies.
+   Popup:     <a href="#register" data-open="register">  +  <div class="cl-modal" id="register" hidden>
+   Countdown: <div class="cl-countdown" data-deadline="2026-11-12T09:00:00+11:00">   (fixed date)
+              <div class="cl-countdown" data-evergreen="15">                         (minutes, per visitor)
+              Units inside: <span class="cl-countdown__n" data-u="d|h|m|s"> */
+(function () {
+  document.addEventListener('click', function (e) {
+    var o = e.target.closest('[data-open]');
+    if (o) { var m = document.getElementById(o.getAttribute('data-open')); if (m) { e.preventDefault(); m.hidden = false; var f = m.querySelector('input'); if (f) f.focus(); } return; }
+    var c = e.target.closest('[data-close]');
+    if (c || e.target.classList.contains('cl-modal')) { var mm = e.target.closest('.cl-modal'); if (mm) mm.hidden = true; }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') document.querySelectorAll('.cl-modal').forEach(function (m) { m.hidden = true; }); });
+
+  /* mobile sticky CTA: on once the hero button has scrolled away */
+  var bar = document.querySelector('.cl-stickycta'), heroCta = document.querySelector('[data-cfe-cta=hero]');
+  if (bar && heroCta && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) {
+      var past = !en[0].isIntersecting && en[0].boundingClientRect.top < 0;
+      bar.classList.toggle('is-on', past); bar.setAttribute('aria-hidden', past ? 'false' : 'true');
+      var a = bar.querySelector('a'); if (a) a.tabIndex = past ? 0 : -1;
+    }).observe(heroCta);
+  }
+
+  /* exit intent (desktop): once per visitor, never after the registration popup has opened */
+  var exit = document.getElementById('exit'), seen = false;
+  function store(k, v) { try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (x) {} }
+  document.addEventListener('click', function (e) { if (e.target.closest('[data-open=register], a[href="#checkout"]')) { store('cfe-reg', '1'); if (exit) exit.hidden = true; } });
+  if (exit && window.matchMedia('(pointer: fine) and (min-width: 900px)').matches) {
+    document.addEventListener('mouseout', function (e) {
+      if (seen || e.relatedTarget || e.clientY > 10) return;
+      if (store('cfe-reg') || store('cfe-exit')) return;
+      if (document.querySelector('.cl-modal:not([hidden])')) return;
+      seen = true; store('cfe-exit', '1'); exit.hidden = false;
+    });
+  }
+
+  var timers = document.querySelectorAll('.cl-countdown[data-deadline], .cl-countdown[data-evergreen]');
+  timers.forEach(function (t, i) {
+    var end;
+    if (t.dataset.deadline) end = Date.parse(t.dataset.deadline);
+    else {
+      var mins = +t.dataset.evergreen, key = 'cfe-eg-' + location.pathname + '-' + mins;   /* every timer on the page shares one deadline */
+      try { end = +localStorage.getItem(key); } catch (x) {}
+      if (!end || end < Date.now() - 864e5) { end = Date.now() + mins * 6e4; try { localStorage.setItem(key, end); } catch (x) {} }
+    }
+    if (isNaN(end)) return;
+    function tick() {
+      var s = Math.max(0, Math.floor((end - Date.now()) / 1000)), v = { d: Math.floor(s / 86400), h: Math.floor(s % 86400 / 3600), m: Math.floor(s % 3600 / 60), s: s % 60 };
+      t.querySelectorAll('[data-u]').forEach(function (n) { n.textContent = String(v[n.dataset.u]).padStart(2, '0'); });
+    }
+    tick(); setInterval(tick, 1000);
+  });
+})();
+
+</script>
+
+<div id="cfe-demo" role="navigation" aria-label="Template demo">
+  <a href="../../funnel-examples.html">&larr; All pages</a>
+  <span>Phase 4 · Paid Ticket</span>
+  <label>Kit <select id="cfe-demo-kit" onchange="cfeSetKit(this.value)"><option value="ember">Ember</option><option value="coach-launch">Coach Launch</option><option value="crimson">Crimson</option><option value="ink">Ink</option><option value="meadow">Meadow</option><option value="sovereign">Sovereign</option><option value="voltage">Voltage</option></select></label>
+</div>
+<style>#cfe-demo{position:fixed;left:12px;bottom:12px;z-index:9000;display:flex;align-items:center;gap:10px;padding:6px 10px 6px 12px;
+background:#111;color:#fff;border-radius:999px;font:600 12px/1.2 system-ui,-apple-system,'Segoe UI',sans-serif;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+#cfe-demo a{color:#fff;text-decoration:none}#cfe-demo a:hover{text-decoration:underline}
+#cfe-demo span{opacity:.7}#cfe-demo select{font:inherit;color:#111;border-radius:999px;border:0;padding:3px 6px;margin-left:4px}
+@media (max-width:760px){#cfe-demo span{display:none}#cfe-demo{bottom:auto;top:8px;left:8px;opacity:.92}}</style>
+<script>(function(){try{var k=localStorage.getItem('cfe-demo-kit');if(k)document.getElementById('cfe-demo-kit').value=k;}catch(e){}})();</script>
+</body>
+</html>

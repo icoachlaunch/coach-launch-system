@@ -1,108 +1,129 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cash Flow Engine — Funnel Templates</title>
+<meta name="robots" content="noindex, nofollow">
+<style id="cl-gate-css">body>*:not(#cl-gate){display:none!important}</style>
+<script src="../../../assets/gate.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{--crimson:#db0063;--ink:#15161b;--muted:#5c5763;--line:#e7e3e9;--paper:#fff;--bg:#f6f5f8}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Lato',sans-serif;color:var(--ink);background:var(--bg);line-height:1.5}
+  #cl-gate{--cl-paper:#f5f5f5;--cl-crimson:#db0063;--cl-crimson-deep:#a80049;--cl-black:#111;--cl-white:#fff;--font-body:'Lato','Segoe UI',system-ui,sans-serif;--font-display:'Montserrat','Segoe UI',system-ui,sans-serif;--text:#26272b;--text-muted:#55565b;--text-dim:#8a8b90;--bg-panel:#fff;--bg-tint:#f5f6f7;--border:#e6e7ea;--radius:14px;--radius-sm:8px;--shadow:0 1px 2px rgba(17,17,17,.04),0 6px 20px rgba(17,17,17,.05)}
+  #cl-gate .cl-logo .coach{color:#555;font-weight:500}#cl-gate .cl-logo .launch{color:#111;font-weight:800}
   .wrap{max-width:1100px;margin:0 auto;padding:2.6rem 1.5rem 4rem}
   .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--crimson);margin-bottom:.7rem}
   .eyebrow::before{content:"";width:24px;height:2px;background:var(--crimson);border-radius:2px}
   h1{font-family:'Montserrat',sans-serif;font-weight:900;font-size:2.4rem;letter-spacing:-.02em;line-height:1.03}
   h1 .hl{color:var(--crimson)}
   .sub{color:var(--muted);font-size:1.02rem;margin-top:.55rem;max-width:680px}
-  /* four boxes */
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.3rem;margin-top:2rem;align-items:start}
+  .bar{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.4rem;margin-top:1.4rem}
+  .kit{display:flex;align-items:center;gap:.6rem;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .kit select{font-family:'Lato',sans-serif;font-size:.95rem;font-weight:700;text-transform:none;letter-spacing:0;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem}
+  .kit select:focus{outline:2px solid var(--crimson);outline-offset:2px}
+  .tag{font-size:.85rem;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.3rem;margin-top:1.6rem;align-items:start}
   .box{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1.4rem 1.5rem 1.5rem;box-shadow:0 6px 18px rgba(20,15,30,.05)}
   .box-head{display:flex;align-items:center;gap:.85rem;padding-bottom:1rem;margin-bottom:.6rem;border-bottom:1px solid var(--line)}
-  .box-num{flex:0 0 auto;width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#ff4d8f,var(--crimson));color:#fff;display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.2rem;box-shadow:0 8px 18px rgba(219,0,99,.2)}
+  .box-num{flex:0 0 auto;width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#ff4d8f,var(--crimson));color:#fff;display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.3rem}
   .box-tt{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.4rem;line-height:1.05}
   .box-tt small{display:block;font-family:'Lato',sans-serif;font-weight:700;font-size:.8rem;color:var(--muted);margin-top:.2rem}
   ol.list{list-style:none;counter-reset:s;margin:0;padding:0}
   ol.list li{counter-increment:s}
   ol.list a{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--ink);padding:.5rem .3rem;border-radius:8px;transition:background .12s,color .12s}
-  ol.list a:hover{background:#fff2f8;color:var(--crimson)}
-  ol.list a::before{content:counter(s);flex:0 0 auto;width:24px;height:24px;border-radius:6px;background:#15161b;color:#fff;display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.72rem}
+  ol.list a:hover,ol.list a:focus-visible{background:#fff2f8;color:var(--crimson);outline:none}
+  ol.list a::before{content:counter(s);flex:0 0 auto;width:24px;height:24px;border-radius:6px;background:#15161b;color:#fff;display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.75rem}
   ol.list a:hover::before{background:var(--crimson)}
   ol.list .nm{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95rem}
   ol.list .arrow{margin-left:auto;color:var(--crimson);font-weight:800;opacity:0;transition:opacity .12s}
-  ol.list a:hover .arrow{opacity:1}
-  .note{margin-top:1.6rem;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--crimson);border-radius:10px;padding:.9rem 1.15rem;font-size:.9rem;color:var(--muted);max-width:860px}
+  ol.list a:hover .arrow,ol.list a:focus-visible .arrow{opacity:1}
+  .note{margin-top:1.6rem;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--crimson);border-radius:10px;padding:.9rem 1.15rem;font-size:.9rem;color:var(--muted);max-width:760px}
   .note b{color:var(--ink)}
-  .guide-link{display:flex;align-items:center;gap:.45rem;margin-top:1rem;padding-top:.95rem;border-top:1px dashed var(--line);font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.01em;color:var(--crimson);text-decoration:none}
+  .guide-link{display:flex;align-items:center;gap:.45rem;margin-top:1rem;padding-top:.95rem;border-top:1px dashed var(--line);font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.02em;color:var(--crimson);text-decoration:none}
   .guide-link:hover{text-decoration:underline}
   .guide-link .arw{margin-left:auto;transition:transform .12s}
   .guide-link:hover .arw{transform:translateX(3px)}
-  @media(max-width:720px){.grid{grid-template-columns:1fr}}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}h1{font-size:1.9rem}}
 </style></head>
 <body><div class="wrap">
 
   <div class="eyebrow">Cash Flow Engine™ · Step 5</div>
   <h1>Funnel <span class="hl">Templates</span></h1>
-  <p class="sub">Each Accelerator phase is a complete funnel, in sequence. Open any page to preview the live template.</p>
+  <p class="sub">Each Accelerator phase is a complete funnel, in order. Open any page to see the live template with a fictional sample client. Pick a Brand Kit to see every page in that look.</p>
+  <div class="bar">
+    <label class="kit" for="kit">Brand Kit <select id="kit"><option value="ember">Ember</option><option value="coach-launch">Coach Launch</option><option value="crimson">Crimson</option><option value="ink">Ink</option><option value="meadow">Meadow</option><option value="sovereign">Sovereign</option><option value="voltage">Voltage</option></select></label>
+    <span class="tag">Your choice carries into every page you open.</span>
+  </div>
 
   <div class="grid">
 
     <div class="box">
-      <div class="box-head"><div class="box-num">1</div><div class="box-tt">Launch<small>The Workshop funnel · 6 pages</small></div></div>
+      <div class="box-head"><div class="box-num">1</div><div class="box-tt">Launch<small>Free workshop funnel · 5 pages</small></div></div>
       <ol class="list">
-        <li><a target="_blank" href="Funnel-templates/PHASE-1-LAUNCH/1-free-workshop-registration.html"><span class="nm">Free Workshop Registration</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-1-LAUNCH/2-ask-campaign.html"><span class="nm">Ask Campaign</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-1-LAUNCH/3-thank-you-page.html"><span class="nm">Thank-You</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-1-LAUNCH/4-event-gate-page.html"><span class="nm">Event Gate</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-1-LAUNCH/5-replay-page.html"><span class="nm">Replay</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-1-LAUNCH/6-application.html"><span class="nm">Application</span><span class="arrow">→</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-1-LAUNCH/1-free-workshop-registration.html"><span class="nm">Free Workshop Registration</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-1-LAUNCH/2-ask-campaign.html"><span class="nm">Ask Campaign · thank-you</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-1-LAUNCH/3-event-gate.html"><span class="nm">Event Gate</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-1-LAUNCH/4-replay.html"><span class="nm">Replay</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-1-LAUNCH/5-application.html"><span class="nm">Application</span><span class="arrow">&rarr;</span></a></li>
       </ol>
-      <a class="guide-link" href="phase-1-launch-guide.html">Read the Launch setup guide<span class="arw">→</span></a>
+      <a class="guide-link" href="phase-1-launch-guide.html">Read the Launch setup guide<span class="arw">&rarr;</span></a>
     </div>
 
     <div class="box">
-      <div class="box-head"><div class="box-num">2</div><div class="box-tt">Execute<small>The Free Masterclass funnel · 6 pages</small></div></div>
+      <div class="box-head"><div class="box-num">2</div><div class="box-tt">Execute<small>Free masterclass funnel · 8 pages</small></div></div>
       <ol class="list">
-        <li><a target="_blank" href="Funnel-templates/PHASE-2-EXECUTE/1-free-masterclass-registration.html"><span class="nm">Free Masterclass Registration</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-2-EXECUTE/2-vip-upsell-page.html"><span class="nm">VIP Upsell</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-2-EXECUTE/3-confirmation-page.html"><span class="nm">Confirmation</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-2-EXECUTE/4-event-gate-page.html"><span class="nm">Event Gate</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-2-EXECUTE/5-replay-page.html"><span class="nm">Replay</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-2-EXECUTE/6-pass-session.html"><span class="nm">PASS Session</span><span class="arrow">→</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-2-EXECUTE/1-free-masterclass-registration.html"><span class="nm">Free Masterclass Registration</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-2-EXECUTE/2-vip-upsell.html"><span class="nm">VIP Upsell · with cart</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-2-EXECUTE/3a-vip-confirmation.html"><span class="nm">VIP Confirmation</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-2-EXECUTE/3b-seat-confirmed.html"><span class="nm">Seat Confirmed</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-2-EXECUTE/4-event-gate.html"><span class="nm">Event Gate</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-2-EXECUTE/5-replay.html"><span class="nm">Replay</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-2-EXECUTE/6a-membership.html"><span class="nm">Close A · Membership</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-2-EXECUTE/6b-pass.html"><span class="nm">Close B · PASS™ session</span><span class="arrow">&rarr;</span></a></li>
       </ol>
-      <a class="guide-link" href="phase-2-execute-guide.html">Read the Execute setup guide<span class="arw">→</span></a>
+      <a class="guide-link" href="phase-2-execute-guide.html">Read the Execute setup guide<span class="arw">&rarr;</span></a>
     </div>
 
     <div class="box">
-      <div class="box-head"><div class="box-num">3</div><div class="box-tt">Growth<small>The Paid Masterclass funnel · 7 pages</small></div></div>
+      <div class="box-head"><div class="box-num">3</div><div class="box-tt">Growth<small>Paid masterclass funnel · 7 pages</small></div></div>
       <ol class="list">
-        <li><a target="_blank" href="Funnel-templates/PHASE-3-GROWTH/1-paid-masterclass-registration.html"><span class="nm">Paid Masterclass Registration</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-3-GROWTH/2-vip-upsell-page.html"><span class="nm">VIP Upsell</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-3-GROWTH/3-pass-upsell.html"><span class="nm">PASS Upsell</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-3-GROWTH/4-thank-you-page.html"><span class="nm">Thank-You</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-3-GROWTH/5-event-gate-page.html"><span class="nm">Event Gate</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-3-GROWTH/6-masterclass-replay-page.html"><span class="nm">Masterclass Replay</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-3-GROWTH/7-membership-offer-page.html"><span class="nm">Membership Offer</span><span class="arrow">→</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-3-GROWTH/1-paid-registration.html"><span class="nm">Paid Ticket</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-3-GROWTH/2-vip-upsell.html"><span class="nm">VIP Upsell · long-form</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-3-GROWTH/3-pass-upsell.html"><span class="nm">PASS™ Upsell</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-3-GROWTH/4-thank-you.html"><span class="nm">Thank-You</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-3-GROWTH/5-event-gate.html"><span class="nm">Event Gate</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-3-GROWTH/6-replay.html"><span class="nm">Replay</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-3-GROWTH/7-membership.html"><span class="nm">Membership</span><span class="arrow">&rarr;</span></a></li>
       </ol>
-      <a class="guide-link" href="phase-3-growth-guide.html">Read the Growth setup guide<span class="arw">→</span></a>
+      <a class="guide-link" href="phase-3-growth-guide.html">Read the Growth setup guide<span class="arw">&rarr;</span></a>
     </div>
 
     <div class="box">
-      <div class="box-head"><div class="box-num">4</div><div class="box-tt">Mastery<small>The Paid Challenge funnel · 9 pages</small></div></div>
+      <div class="box-head"><div class="box-num">4</div><div class="box-tt">Mastery<small>Paid challenge funnel · 9 pages</small></div></div>
       <ol class="list">
-        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/1-paid-challenge-registration.html"><span class="nm">Paid Challenge Registration</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/2-vip-upsell-page.html"><span class="nm">VIP Upsell</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/3-pass-upsell.html"><span class="nm">PASS Upsell</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/4-add-upsell.html"><span class="nm">Add-On Upsell</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/5-downsell.html"><span class="nm">Downsell</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/6-thank-you-page.html"><span class="nm">Thank-You</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/7-challenge-replay-page.html"><span class="nm">Challenge Replay</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/8-event-gate-page.html"><span class="nm">Event Gate</span><span class="arrow">→</span></a></li>
-        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/9-high-ticket-sales-page.html"><span class="nm">High-Ticket Sales</span><span class="arrow">→</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/1-paid-registration.html"><span class="nm">Paid Ticket</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/2-vip-upsell.html"><span class="nm">VIP Upsell · long-form</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/2b-vip-downsell.html"><span class="nm">VIP Downsell</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/3-pass-upsell.html"><span class="nm">PASS™ Upsell</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/4-upsell-2.html"><span class="nm">Upsell 2</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/5-thank-you.html"><span class="nm">Thank-You</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/6-event-gate.html"><span class="nm">Event Gate</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/7-replay.html"><span class="nm">Replay</span><span class="arrow">&rarr;</span></a></li>
+        <li><a target="_blank" href="Funnel-templates/PHASE-4-MASTERY/8-membership.html"><span class="nm">Membership</span><span class="arrow">&rarr;</span></a></li>
       </ol>
-      <a class="guide-link" href="phase-4-mastery-guide.html">Read the Mastery setup guide<span class="arw">→</span></a>
+      <a class="guide-link" href="phase-4-mastery-guide.html">Read the Mastery setup guide<span class="arw">&rarr;</span></a>
     </div>
 
   </div>
 
-  <p class="note"><b>How to use this.</b> Each box is a complete funnel for one Accelerator phase — open any page to preview the live template, or read that phase's <b>setup guide</b> for what it does and how to build it. You build the pages in <b>GHL AI Studio</b> with the <b>Cash Flow Engine™ Funnel Builder</b> skill, which writes a build prompt per page from your own upstream assets — it never invents copy or prices.</p>
-
-</div></body></html>
+  <p class="note"><b>Sample content.</b> Every page shows Dana Cole, a fictional clinic-owner coach, and example photos. In a client build the copy, prices, photos and Brand Kit all come from that client's own assets, and each page is a single standalone HTML file ready to paste into GHL.</p>
+</div>
+<script>
+(function(){var K='cfe-demo-kit',sel=document.getElementById('kit'),links=document.querySelectorAll('ol.list a');
+function apply(k){for(var i=0;i<links.length;i++){links[i].href=links[i].getAttribute('href').split('?')[0]+'?kit='+k;}}
+var k='ember';try{k=localStorage.getItem(K)||k;}catch(e){}
+sel.value=k;if(sel.value!==k){sel.value='ember';k='ember';}apply(k);
+sel.addEventListener('change',function(){try{localStorage.setItem(K,sel.value);}catch(e){}apply(sel.value);});})();
+</script>
+</body></html>
