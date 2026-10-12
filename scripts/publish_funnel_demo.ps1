@@ -19,10 +19,11 @@
 #>
 param(
   [Parameter(Mandatory = $true)][string]$Zip,
-  [string]$Repo = (Split-Path -Parent $PSScriptRoot),
+  [string]$Repo = '',
   [string]$Message = "Cash Flow Engine funnel demo: update pages"
 )
 $ErrorActionPreference = 'Stop'
+if (-not $Repo) { $Repo = Split-Path -Parent $PSScriptRoot }   # Windows PowerShell 5.1 can't use $PSScriptRoot in param defaults
 if (-not (Test-Path $Zip)) { throw "Zip not found: $Zip" }
 
 git -C $Repo pull --ff-only
