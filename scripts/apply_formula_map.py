@@ -51,7 +51,7 @@ STEP_BY_FILE = {
     "cash-flow-max":3, "cashflow-max":3,
     "sniper-close":4, "the-sniper-close":4, "sniper-presentation":4,
     "presentation-engine":4, "the-presentation-engine":4,
-    "cash-flow-engine":5, "cashflow-engine":5,
+    "cash-flow-engine":5, "cashflow-engine":5, "authority-detonator":5,
     "genie-x-converter":6, "genie-x":6,
     "goliath-content":7,
     "pixie-dust-social":8, "pixie-dust":8,

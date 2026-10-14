@@ -16,6 +16,8 @@ Three parts, built in order:
 ## Step 5 · Cash Flow Engine™ — profit before anyone shows up
 - `cash-flow-engine/` — your self-liquidating event funnel, built in GHL AI Studio with the Cash
   Flow Engine™ Funnel Builder (a skill in `skills/`). One folder per phase, made as you build it.
+- `authority-detonator/` — your Authority Detonator™ scripts: the show-up video on your thank-you page and the
+  VIP video on your VIP upsell page. The Builder writes them; you record them.
 
 **Needs first:** Step 3 (Event Magnet™, Money Model, Cash Flow Max™) and Step 4.
 

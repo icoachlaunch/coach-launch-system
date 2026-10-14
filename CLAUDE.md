@@ -27,7 +27,7 @@ modules/                     the deliverables — one folder per module, grouped
 │                            million-moment, magic-formula, score-card, money-model, enrollment-doc,
 │                            event-magnet, cash-flow-max)
 └── 2-money-magnet/          Pillar 2 · Step 4+ (sniper-close, sniper-presentation,
-                             sniper-presentation-slides [delivered skill], cash-flow-engine)
+                             sniper-presentation-slides [delivered skill], cash-flow-engine, authority-detonator)
 assets/coach-launch-guide.css  the ONE locked stylesheet every guide links to
 assets/agents images/          agent headshots for the portal (space in path → %20 in HTML)
 scripts/                     apply_formula_map.py (stamps the 3-pillar/9-step map) + helpers

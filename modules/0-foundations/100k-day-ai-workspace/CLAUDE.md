@@ -49,7 +49,7 @@ Client Engine/       THE ASSETS. Three pillar folders; inside each, one folder p
                        money-model/ · enrollment-doc/ · event-magnet/ · cash-flow-max/
   Money Magnet/        Steps 4–6 · making the money
                        pass-instrument/ (+ sessions/) · sniper-presentation/ · sniper-presentation-slides/
-                       cash-flow-engine/ (a folder per funnel phase) · genie-x-converter/ (in development)
+                       cash-flow-engine/ (a folder per funnel phase) · authority-detonator/ (the show-up video scripts) · genie-x-converter/ (in development)
   Client Flywheel/     Steps 7–9 · traffic and marketing
                        goliath-content/ · pixie-dust-social/ · dragon-fire-ads/ (all in development)
 
@@ -162,7 +162,8 @@ Launch → Execute → Growth → Mastery — over 112 days.)
 | 4a. PASS™ Instrument | `Client Engine/Money Magnet/pass-instrument/` | The Strategy Close diagnostic (+ `sessions/`, one report per session) | Magic Formula™ |
 | 4b. Sniper Presentation™ Script | `Client Engine/Money Magnet/sniper-presentation/` | The live pitch script | SCORE™ Card · Money Model · Enrollment Doc |
 | 4c. Sniper Presentation™ Slides | `Client Engine/Money Magnet/sniper-presentation-slides/` | The deck built from the Script (a skill) | Approved Script + Brand Kit |
-| 5. Cash Flow Engine™ | `Client Engine/Money Magnet/cash-flow-engine/` | The self-liquidating registration funnel (built in GHL AI Studio) | Event Magnet™ + Money Model + Cash Flow Max™ |
+| 5a. Cash Flow Engine™ funnel | `Client Engine/Money Magnet/cash-flow-engine/` | The self-liquidating registration funnel (built in GHL AI Studio) | Event Magnet™ + Money Model + Cash Flow Max™ |
+| 5b. Authority Detonator™ | `Client Engine/Money Magnet/authority-detonator/` | The show-up video scripts — one for the thank-you page, one for the VIP upsell page (you record them) | Event Magnet™ Spec + Money Model (+ Cash Flow Max™ for the VIP page) |
 | 6. Genie X Converter™ | `Client Engine/Money Magnet/genie-x-converter/` | Back-end follow-up messaging | *In development* |
 
 ### Pillar 3 · Client Flywheel™ — fill the machine
