@@ -36,3 +36,7 @@ status: draft | complete
 phase: [n/a | Launch | Execute | Growth | Mastery]
 ---
 ```
+
+## Also built in Step 7
+Your **Program Modules** — the nine Module Specs and their pages — save in `../program-modules/`
+(see its README). The Map plans what you publish; the modules are what your members work through.

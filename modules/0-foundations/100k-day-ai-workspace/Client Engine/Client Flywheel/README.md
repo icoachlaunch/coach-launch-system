@@ -3,6 +3,8 @@
 
 - `goliath-content/` — Step 7 · Goliath Content™ — your authority content engine
   (10X output, zero overwhelm). **Live:** the Goliath Content™ Map — your 210-title content plan.
+- `program-modules/` — Step 7 · Goliath Content™ · Part 2 — your nine Program Modules: one Module Spec per
+  step of your Magic Formula™ (**Live:** the Program Module Specs, step 1 of 2), then the finished pages (step 2).
 - `pixie-dust-social/` — Step 8 · Pixie Dust Social™ — your organic social system
   (premium buyers for $5 a day). *In development.*
 - `dragon-fire-ads/` — Step 9 · Dragon Fire Ads™ — your paid traffic system

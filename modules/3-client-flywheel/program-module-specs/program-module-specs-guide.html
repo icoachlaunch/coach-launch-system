@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coach Launch — How to Write Your Program Module Specs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/coach-launch-guide.css">
+<style>
+  .subhead { font-family:var(--font-display); font-weight:700; font-size:1.05rem; color:var(--cl-black); margin:1.6rem 0 .5rem; }
+  .formula-box { font-family:var(--font-display); font-weight:700; font-size:1.05rem; color:var(--cl-black); background:var(--cl-crimson-soft); border:1px dashed var(--cl-crimson); border-radius:var(--radius); padding:1.1rem 1.3rem; margin:1.4rem 0; text-align:center; line-height:1.6; }
+  .formula-box .v { color:var(--cl-crimson); }
+  .mistake { border:1px solid var(--border); border-left:4px solid #e08600; border-radius:var(--radius); padding:1.2rem 1.4rem; margin:1.4rem 0; background:var(--bg-panel); box-shadow:var(--shadow-sm); }
+  .mistake h4 { color:#b56b00; text-transform:none; letter-spacing:0; font-size:1.1rem; margin:0 0 .5rem; }
+  .mistake .fix { margin-top:.7rem; }
+  .mistake .fix b { color:#178048; }
+  .story-eg { border:1px solid var(--border); border-left:4px solid var(--cl-crimson); border-radius:var(--radius); padding:1.3rem 1.5rem; margin:1.4rem 0; background:var(--bg-panel); box-shadow:var(--shadow-sm); }
+  .story-eg p { margin:.55rem 0; }
+  .story-eg .land { font-family:var(--font-display); font-weight:700; color:var(--cl-black); }
+  .acthead { display:flex; align-items:baseline; gap:.6rem; flex-wrap:wrap; margin:.2rem 0 .6rem; }
+  .acthead .letter { font-family:var(--font-display); font-weight:800; color:#fff; background:var(--cl-crimson); border-radius:8px; padding:.1em .5em; font-size:1rem; line-height:1.2; }
+  .acthead .cnt { font-family:var(--font-display); font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--cl-mid); border:1px solid var(--border); border-radius:999px; padding:.2rem .6rem; }
+  .mini-label { font-family:var(--font-display); font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--cl-mid); }
+  .two-step { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.2rem 0; }
+  .two-step .box { border:1px solid var(--border); border-radius:var(--radius); padding:1.1rem 1.3rem; background:var(--bg-panel); box-shadow:var(--shadow-sm); }
+  .two-step .box.here { border-color:var(--cl-crimson); background:var(--cl-crimson-soft); }
+  .two-step .box h4 { margin:0 0 .4rem; text-transform:none; letter-spacing:0; font-size:1.05rem; color:var(--cl-black); }
+  .two-step .box p { margin:.35rem 0; }
+  @media (max-width:640px){ .two-step { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="cl-wrap">
+
+  <!-- ============ HERO ============ -->
+  <header class="cl-hero">
+    <img class="cl-brand-logo" src="https://assets.cdn.filesafe.space/ybe7GTcbvnTIWFX0Hos9/media/66f909a24c8d5f82216f1acd.png" alt="Coach Launch">
+    <h1 class="formula-title">The <span class="hl">$100K</span> Day Engine™</h1>
+    <div class="guide-name">Program Module <span class="hl">Specs</span></div>
+    <p class="cl-eyebrow">Client Flywheel™ · Step 7 · Goliath Content™ · Step 1 of 2</p>
+    <p class="subtitle">Nine one-page tools your members fill in — one for every step of your Magic Formula™. This is where the content gets written. The pages come next.</p>
+  </header>
+
+  <!-- ============ THE MAP (3 PILLARS / 9 STEPS) ============ -->
+  <section>
+    <p class="cl-eyebrow" style="text-align:center;">The $100K Day Engine™ · 3 Pillars · 9 Steps</p>
+    <p class="map-intro">Here's the whole system at a glance. Your <strong>Program Module Specs</strong> are built inside Step 7, the Goliath Content™ — the seventh step of the Client Flywheel™, the third pillar.</p>
+    <div class="map">
+      <div class="map-grid">
+
+        <div class="pillar">
+          <div class="pillar-cat"><span class="cnum">1</span><span class="cword">Offer</span></div>
+          <div class="pillar-bar">Offer Matrix™</div>
+          <div class="step"><span class="snum">1</span><div class="sname">$Million Story™</div><span class="stag">Be the voice in their head</span></div>
+          <div class="step"><span class="snum">2</span><div class="sname">Magic Formula™</div><span class="stag">Make competition irrelevant</span></div>
+          <div class="step"><span class="snum">3</span><div class="sname">Red Diamond Offer™</div><span class="stag">Offers they can't say no to</span></div>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-cat"><span class="cnum">2</span><span class="cword">Money</span></div>
+          <div class="pillar-bar">Money Magnet™</div>
+          <div class="step"><span class="snum">4</span><div class="sname">The Sniper Close™</div><span class="stag">The audience closes themselves</span></div>
+          <div class="step"><span class="snum">5</span><div class="sname">Cash Flow Engine™</div><span class="stag">Profit before anyone shows up</span></div>
+          <div class="step"><span class="snum">6</span><div class="sname">Genie X Converter™</div><span class="stag">Close sales while you sleep</span></div>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-cat"><span class="cnum">3</span><span class="cword">Clients</span></div>
+          <div class="pillar-bar">Client Flywheel™</div>
+          <div class="step here"><span class="snum">7</span><span class="here-tag">You are here</span><div class="sname">Goliath Content™</div><span class="stag">10X output, zero overwhelm</span></div>
+          <div class="step"><span class="snum">8</span><div class="sname">Pixie Dust Social™</div><span class="stag">Premium buyers for $5 a day</span></div>
+          <div class="step"><span class="snum">9</span><div class="sname">Dragon Fire Ads™</div><span class="stag">Fill every event on demand</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT IT IS ============ -->
+  <section>
+    <h2>What Is a Program Module?</h2>
+    <p class="cl-lead">A Program Module is a one-page tool your members fill in and walk away holding — built for one step of your Magic Formula™. Nine steps, nine modules. That's the backbone of your program.</p>
+
+    <p>You already know the shape. Your <strong>Event Magnet™</strong> is one step of your Magic Formula™, given away free: a one-page tool, incomplete on purpose, that ends on a paid next step.</p>
+    <p>A Program Module is the same kind of tool. But it's built for <em>every</em> step, for the people who've already paid.</p>
+    <p>It teaches the step in full. It produces the step's outcome. It hands the member to the next module. And its promise still sells.</p>
+
+    <div class="formula-box">One step <span class="v">×</span> one page <span class="v">×</span> one session <span class="v">= one thing they hold</span></div>
+
+    <p>This builder writes the <strong>Module Specs</strong>. A spec is everything that will be on the page — the panels, the rows, the result, the done-when list — plus the lesson that goes with it for your call or your video.</p>
+    <p>It works with you one module at a time. You confirm each one before the next.</p>
+
+    <div class="cl-stat">
+      <div class="num">9</div>
+      <div class="label">modules, in order — <strong>one per step</strong>, each named for its step. Every one fills in within 20 to 60 minutes and ends with something the member can hold up.</div>
+    </div>
+
+    <h3>What a Program Module is NOT</h3>
+    <p>It's not a lesson summary. A page they read is a lesson. A page they fill in is a tool.</p>
+    <p>It's not your slide deck. The slides teach. The module is what the teaching produces.</p>
+    <p>It's not an offer page. There's no price, no booking link and no second button on a module. The selling happens around it, not on it.</p>
+    <p>And it's not the artwork. This step writes the content. The finished pages in your brand are step 2.</p>
+  </section>
+
+  <!-- ============ WHERE IT FITS ============ -->
+  <section>
+    <h2>Where It Fits</h2>
+    <p>Your Program Modules are the second tool of <strong>Step 7 · Goliath Content™</strong> — the first step of the <strong>Client Flywheel™</strong>, the third pillar of The $100K Day Engine™.</p>
+    <p>The Goliath Content™ Map plans what you publish. The Program Modules are what your members work through once they're in.</p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Step 7</th><th>Tool</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td>Part 1</td><td>The Goliath Content™ Map</td><td>210 working titles — the content that fills the room</td></tr>
+          <tr class="is-here"><td><strong>Part 2 · Step 1 of 2</strong></td><td>Program Module Specs</td><td>The nine modules, written — <em>you are here</em></td></tr>
+          <tr><td>Part 2 · Step 2 of 2</td><td>Program Module Visual</td><td>The nine pages, built in your Brand Kit from the confirmed specs</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="subhead">What feeds in</p>
+    <ul class="cl-checklist">
+      <li><strong>Magic Formula™</strong> — required. Your system name, the three phases, the nine step names and outcomes. The spine of every module.</li>
+      <li><strong>Red Diamond Offer™ Enrollment Doc</strong> — strongly recommended. The member-facing version of each step, how your program runs (calls, cadence, tracker), and the offer above it.</li>
+      <li><strong>Your step walkthroughs</strong> — notes, transcripts, call recordings, slides. The best source for the teach: how you actually walk someone through each step, and what people get wrong.</li>
+      <li><strong>SCORE™ Card · $Million Promise™ · Golden Avatar™</strong> — your members' language and pains, the promise each step serves, your real proof.</li>
+      <li><strong>Event Magnet™ Spec(s)</strong> — if you've built one. Its panel names are already approved for that step; the module builds on them and goes deeper.</li>
+      <li><strong>Member results</strong> — if you have them. The proof on each page.</li>
+    </ul>
+    <p>Not needed here: your BRAND KIT block or your headshot. Those belong to step 2.</p>
+
+    <div class="cl-callout warning">
+      <div class="cl-callout-title">⚠ Don't start this before your Magic Formula™ is locked</div>
+      <p>Your nine steps are your nine modules. The module's name is the step's name, exactly as your Magic Formula™ writes it.</p>
+      <p>Change a step later and you rebuild that module. Lock the Formula first — then write the modules on top of it.</p>
+    </div>
+  </section>
+
+  <!-- ============ TWO STEPS ============ -->
+  <section>
+    <h2>Two Steps, Two Tools</h2>
+    <p>Your modules are built in two steps, on purpose. You finish the content before any artwork exists.</p>
+
+    <div class="two-step">
+      <div class="box here">
+        <h4>Step 1 · Program Module Specs</h4>
+        <p class="mini-label">This builder</p>
+        <p>Writes the nine Module Specs — what's on each page and the teach that goes with it. One module at a time. You confirm each.</p>
+        <p>You get nine <code>.md</code> files and one list of anything your documents didn't contain.</p>
+      </div>
+      <div class="box">
+        <h4>Step 2 · Program Module Visual</h4>
+        <p class="mini-label">Next, in a new chat</p>
+        <p>Reads the confirmed specs, your BRAND KIT block and your headshot, and builds the nine finished pages in your brand, one at a time.</p>
+        <p>You get each page as a printable PDF for your member pack or your course platform.</p>
+      </div>
+    </div>
+
+    <p>Why split it? Because design decisions made mid-sentence drag the words around to fit a picture that doesn't exist yet.</p>
+    <p>Get the words right. Then make them look like you.</p>
+  </section>
+
+  <!-- ============ THE PROBLEMS ============ -->
+  <section>
+    <h2>The Three Problems This Solves</h2>
+    <p>Most programs don't fail because the coach can't teach.</p>
+    <p>They fail because the member finishes a lesson with nothing in their hands. Here's what that looks like.</p>
+
+    <p class="subhead">1. The pile of videos</p>
+    <p>Your program is forty recordings in a members' area. Everyone starts. Almost nobody finishes.</p>
+    <p>Watching isn't doing. A module turns each step into a page they fill in — and a filled-in page is a step done.</p>
+
+    <p class="subhead">2. Every lesson teaches the whole system</p>
+    <p>Module 1 tries to explain all nine steps. The member leaves inspired and stuck.</p>
+    <p>A module teaches one step, produces that step's outcome, and names the next one. Nothing more. That's how people finish.</p>
+
+    <p class="subhead">3. The free tool is better than the paid one</p>
+    <p>Your Event Magnet™ is a sharp one-page tool. Then someone pays you — and gets slides.</p>
+    <p>The paid version should be the same kind of tool, nine times over, complete. Your modules are the proof that paying was the right call.</p>
+
+    <div class="cl-callout tip">
+      <div class="cl-callout-title">▲ The real truth — your members didn't pay for more to read</div>
+      <p>They paid to walk out with the thing done.</p>
+      <p>A module is a promise kept on a single page: do this, in this session, and you'll be holding this when you're finished.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOW YOU BUILD IT ============ -->
+  <section>
+    <h2>How You'll Build It</h2>
+    <p>The Builder does the heavy lifting. You make the calls. It runs in three stages.</p>
+
+    <p class="subhead">Stage 1 · Your Program Map</p>
+    <p>The Builder reads every document you bring — completely — and shows you all nine modules in one table: what the member makes at each step, the page layout, the structure, how many minutes it takes, and where the teaching will come from.</p>
+    <p>It asks you one question at most. You reply with changes, or "go."</p>
+
+    <p class="subhead">Stage 2 · One module at a time</p>
+    <p>For each module, in order: if your documents don't show how you teach that step, it asks you two quick questions. Then it offers five promise lines and you pick one. Then it writes the full Module Spec — the page, then the teach — and shows you a short summary.</p>
+    <p>Push back on anything and it rewrites only that. Say "next" for the next module, or "all" to write the rest straight through.</p>
+
+    <p class="subhead">Stage 3 · Your nine files</p>
+    <p>A final check, one list of anything your documents didn't contain, and your nine specs — <code>module-01-….md</code> to <code>module-09-….md</code>.</p>
+    <p>Then it hands you to step 2.</p>
+
+    <div class="formula-box"><span class="v">Map it. Write it. Confirm it.</span> Then make it look like you.</div>
+  </section>
+
+  <!-- ============ THE PROGRAM MAP ============ -->
+  <section>
+    <h2>The Program Map — All Nine at a Glance</h2>
+    <p>Before a single module is written, you see the whole program as nine rows.</p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Column</th><th>What it tells you</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Module</strong></td><td>The step's exact name. The module is never renamed.</td></tr>
+          <tr><td><strong>What the member makes</strong></td><td>The tangible output — from the step's outcome in your Magic Formula™.</td></tr>
+          <tr><td><strong>Layout</strong></td><td>One of nine page shapes, picked from what the member <em>does</em> at the step.</td></tr>
+          <tr><td><strong>Structure</strong></td><td>A Classic, B Sidebar or C Split — rotating, so no two pages in a row look alike.</td></tr>
+          <tr><td><strong>Minutes</strong></td><td>How long the page takes to fill in: 20 to 60. Real-world actions go in the done-when list.</td></tr>
+          <tr><td><strong>Teach source</strong></td><td>"Your walkthrough" if your own teaching is in the documents · "your documents" if the Enrollment Doc describes the how · "missing" if neither — the Builder asks you before writing that one.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="subhead">The nine layouts — picked by the verb, not the title</p>
+    <p>What does the member <em>do</em> at this step? That decides the shape of the page.</p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Layout</th><th>The member…</th><th>Typical steps</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Worksheet</strong></td><td>builds it — fields, a tension table, a fill-in sentence → a finished card</td><td>identity statements, offers, messages, plans written once</td></tr>
+          <tr><td><strong>Matrix</strong></td><td>places it — a 2 × 2 they plot their own items onto</td><td>choosing a niche, ranking relationships, fit decisions</td></tr>
+          <tr><td><strong>Calculator</strong></td><td>counts it — example row, calculated column, printed formula</td><td>pricing, client maths, activity targets</td></tr>
+          <tr><td><strong>Checklist</strong></td><td>ticks it — named rows, boxes, a count</td><td>profile upgrades, onboarding, readiness</td></tr>
+          <tr><td><strong>Script</strong></td><td>says it — five beat frames with blanks + "my version"</td><td>outreach messages, sales calls, introduction asks</td></tr>
+          <tr><td><strong>Workflow</strong></td><td>sequences it — start-here row, three stage cards, a timeline</td><td>pipelines, delivery plans, weekly rhythms</td></tr>
+          <tr><td><strong>Cheat Sheet</strong></td><td>references it — 3 × 3 entries: when + the line to use</td><td>objection answers, follow-up lines, prompts</td></tr>
+          <tr><td><strong>Scorecard</strong></td><td>scores it — named rows, 1–5, total with bands</td><td>reviews, readiness, "where am I now"</td></tr>
+          <tr><td><strong>Audit</strong></td><td>scores and prices it — setup strip, priced rows, rank</td><td>anything with a cost of inaction</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>When two fit, the Builder picks the one whose result is the step's deliverable. Two neighbours with the same layout need a reason.</p>
+
+    <p class="subhead">The three structures</p>
+    <p>A Classic on modules 1, 4 and 7. B Sidebar on 2, 5 and 8. C Split on 3, 6 and 9. An Audit is always B Sidebar, wherever it falls.</p>
+    <p>You don't pick these. They're there so a member flipping through nine pages never sees the same silhouette twice in a row.</p>
+  </section>
+
+  <!-- ============ ANATOMY ============ -->
+  <section>
+    <h2>Anatomy of a Module Spec</h2>
+    <p>Every spec has two parts. Part A is the page. Part B is the teach.</p>
+    <p>The headings are a contract — step 2 reads them to build the artwork — so they're never renamed, reordered or dropped. An empty one says <code>[none]</code>.</p>
+
+    <div class="acthead"><span class="letter">A</span><span class="cnt">The page · A1–A10</span></div>
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Block</th><th>What goes in it</th></tr></thead>
+        <tbody>
+          <tr><td><strong>A1 · The masthead</strong></td><td>The step name as the title, one accent word, the chosen promise as the subtitle — and the four promise options you didn't pick, kept for emails and posts.</td></tr>
+          <tr><td><strong>A2 · The instruction</strong></td><td>How to use the page in one or two lines. A key if it needs one. A line of reassurance where the input stings.</td></tr>
+          <tr><td><strong>A3 · The panels</strong></td><td>The work. Each panel has a label, one teaching line, a fill mechanism and its rows — in the layout's own shape.</td></tr>
+          <tr><td><strong>A4 · The result panel</strong></td><td>The one thing the page converges to. The deliverable, how it's derived, and the sticky labels.</td></tr>
+          <tr><td><strong>A5 · Where this fits</strong></td><td>The three phases and nine steps, and the "you are here" line that names the next module.</td></tr>
+          <tr><td><strong>A6 · The closing bar + next level</strong></td><td>The belief line in your words, the commitment lines (completed · signed · reviewed), one plain Next button — and, off the page, the higher-level pain and your next-level offer for the bridge line.</td></tr>
+          <tr><td><strong>A7 · The lockup</strong></td><td>Program name · your name · business.</td></tr>
+          <tr><td><strong>A8 · Layout &amp; hierarchy</strong></td><td>The structure, the hero panel you'll show on a call, and where the emphasis sits.</td></tr>
+          <tr><td><strong>A9 · The one-session win</strong></td><td>"In about X minutes, the member fills in the page and holds the deliverable."</td></tr>
+          <tr><td><strong>A10 · The Module Check</strong></td><td>Six checks, each with one line on why it passes.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="acthead"><span class="letter">B</span><span class="cnt">The teach · B1–B8</span></div>
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Block</th><th>What goes in it</th></tr></thead>
+        <tbody>
+          <tr><td><strong>B1 · Where they get stuck</strong></td><td>Three scenes from this step, in your members' words.</td></tr>
+          <tr><td><strong>B2 · The opening</strong></td><td>The first line of the lesson, and one line from your own story — only if it fits this step.</td></tr>
+          <tr><td><strong>B3 · The three teaching sections</strong></td><td>The how, in full. Each section runs the trap → the teaching point and exactly how → an image of it working.</td></tr>
+          <tr><td><strong>B4 · Done when</strong></td><td>Three or four tick items a member (or you) can see are done.</td></tr>
+          <tr><td><strong>B5 · The belief it breaks + proof</strong></td><td>The "I can't because…" and the truth that breaks it — with a real member result, or a flag until you have one.</td></tr>
+          <tr><td><strong>B6 · The one action</strong></td><td>One thing, done now, ending on an instruction. Then the hand-off to the next module, then one bridge line to your next-level offer.</td></tr>
+          <tr><td><strong>B6b · Use it to sell</strong></td><td>An email or post angle, and one line that sells the idea behind this step to someone outside the program.</td></tr>
+          <tr><td><strong>B7 · Common mistakes</strong></td><td>Three. They feed the traps in B3.</td></tr>
+          <tr><td><strong>B8 · For the call</strong></td><td>Delivery notes: a one-minute live exercise, a chat prompt, what to bring next time.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ THE PROMISE ============ -->
+  <section>
+    <h2>The Promise — Five Options, You Pick One</h2>
+    <p>Every module gets its own promise. It's your $Million Promise™, scaled down to what this one step delivers.</p>
+    <div class="formula-box"><span class="v">[specific result]</span> in <span class="v">[time]</span> — without <span class="v">[obstacle]</span></div>
+    <p>It's the subtitle on the page, and it's the line that sells the module before anyone fills it in. Never an instruction ("Use this worksheet to…"). Always a result.</p>
+
+    <p class="subhead">Why five</p>
+    <p>The Builder writes five that lead with different things, so the choice is real. It marks the strongest ★. You pick one by letter, edit one, or take the ★.</p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th></th><th>Leads with</th><th>Example shape <em>(fictional)</em></th></tr></thead>
+        <tbody>
+          <tr><td><strong>A</strong></td><td>The result the step produces</td><td>"Turn what you know into one priced offer in 45 minutes — without guessing your numbers."</td></tr>
+          <tr><td><strong>B</strong></td><td>The first win they'll feel fast</td><td>"Book your first sales calls this week — without cold-pitching strangers."</td></tr>
+          <tr><td><strong>C</strong></td><td>The obstacle it removes</td><td>"…in 40 minutes — without pushy closing."</td></tr>
+          <tr><td><strong>D</strong></td><td>The dream outcome they walk away with</td><td>"Know your first clients by name in 40 minutes — without building an audience first."</td></tr>
+          <tr><td><strong>E</strong></td><td>Who they become</td><td>"Step into the expert you already are in 30 minutes — without another course."</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The four you don't pick aren't wasted. They stay in the spec as ready-made email, ad and post hooks.</p>
+
+    <div class="cl-callout warning">
+      <div class="cl-callout-title">⚠ The obstacle is theirs, not invented</div>
+      <p>The "without" comes from your own documents — the fear your members actually name in your SCORE™ Card, your Golden Avatar™, your $Million Promise™.</p>
+      <p>No two modules share a promise. And a module never promises money the step can't produce on its own.</p>
+    </div>
+  </section>
+
+  <!-- ============ THE TEACH ============ -->
+  <section>
+    <h2>The Teach — Five Acts, No Pitch</h2>
+    <p>Part B is a lesson. And a lesson holds attention the same way a sales message does: people notice, they trust, they believe, they weigh it up, they act.</p>
+    <p>So the teach runs the five acts of your SCORE™ Framework, in order — in education mode. The how is taught in full, and the last act is an action, never a pitch.</p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Act</th><th>The member thinks…</th><th>Where it lives</th></tr></thead>
+        <tbody>
+          <tr><td>1 · Serendipity</td><td>"This lesson is about my problem, right now"</td><td>B1 the three struggles + the first line of B2</td></tr>
+          <tr><td>2 · Connection</td><td>"This person has been where I'm stuck"</td><td>B2 one line from your story — only if it fits this step</td></tr>
+          <tr><td>3 · Opportunity</td><td>"So that's how it's done"</td><td>B3 three teaching sections, the how in full</td></tr>
+          <tr><td>4 · Reality</td><td>"I can do this — and here's what it costs not to"</td><td>B5 the belief to break, with real proof</td></tr>
+          <tr><td>5 · Execution</td><td>"The next step is obvious"</td><td>B6 the one action · B4 done when</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="subhead">The test for every line</p>
+    <p>Could another coach in your space have written it? If yes, it needs your scene, your words or your numbers.</p>
+    <p>The Builder scores every act on exactly that question before it shows you the spec. Anything generic gets rewritten first.</p>
+
+    <div class="cl-callout tip">
+      <div class="cl-callout-title">▲ The bridge line is the only sell — and it comes after the action</div>
+      <p>No price, scarcity or offer anywhere inside the lesson. The member does the one action first.</p>
+      <p>Then one line names your next-level offer, exactly as your documents name it. That's the whole sell. It works because it comes last.</p>
+    </div>
+  </section>
+
+  <!-- ============ DONE WHEN ============ -->
+  <section>
+    <h2>Done When — The Finish Line You Can See</h2>
+    <p>Every module ends with three or four tick items. They're how a member — or you, on a call — knows the step is actually finished.</p>
+    <p>The rule: observable. Something you could check without asking how they feel.</p>
+
+    <div class="cl-compare">
+      <div class="col good"><span class="tag">✓ Observable</span><p>"5 conversations held this week"</p></div>
+      <div class="col bad"><span class="tag">✕ A feeling</span><p>"Feel clearer about my outreach"</p></div>
+    </div>
+
+    <p>Done when is also where the real-world actions live. The page plans and records them — the money collected, the posts published, the calls held. The ticks confirm they happened.</p>
+    <p>That's what keeps a page to one session. The work on the page takes 20 to 60 minutes. The work in the world takes as long as it takes — and gets ticked off when it's done.</p>
+  </section>
+
+  <!-- ============ THE MODULE CHECK ============ -->
+  <section>
+    <h2>The Module Check</h2>
+    <p>Six checks. All six pass or the spec isn't delivered. The Builder runs them as it writes, and prints one line per check saying why it passes.</p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>#</th><th>Check</th><th>Passes when…</th><th>Fails when…</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><strong>On-Step</strong></td><td>Built from this one step, titled with its exact name</td><td>Drifts into other steps, or the name is changed</td></tr>
+          <tr><td>2</td><td><strong>Visual</strong></td><td>Describes a page you can fill in, show on a call and hold up</td><td>A block of text</td></tr>
+          <tr><td>3</td><td><strong>A Tool, Not a Teach</strong></td><td>They fill it in and hold a finished thing</td><td>Notes, a lesson summary, a reading page</td></tr>
+          <tr><td>4</td><td><strong>One Session</strong></td><td>The page fills in 20–60 minutes; real-world actions sit in Done when</td><td>A week of work on the page itself</td></tr>
+          <tr><td>5</td><td><strong>Complete for the Step</strong></td><td>Produces the step's outcome from your Magic Formula™</td><td>Leaves the step half done, or stops at a teaser</td></tr>
+          <tr><td>6</td><td><strong>Hands Off</strong></td><td>Names the next module; the closing bar carries the belief, the commitment and a plain Next button; Part B bridges to the next level</td><td>An offer, price or booking on the page, or no next module</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Check 5 is the one that separates a module from an Event Magnet™. The magnet stops on purpose. The module finishes the step.</p>
+  </section>
+
+  <!-- ============ WORKED EXAMPLE ============ -->
+  <section>
+    <h2>A Worked Example</h2>
+    <p>Here's one module, from the map to the summary. <em>(Illustrative only — a made-up productivity coach with a made-up system, the "Calm CEO Method." Step 2 of that system is "The Sunday Reset." No real client implied.)</em></p>
+
+    <div class="story-eg">
+      <p><strong>On the Program Map</strong></p>
+      <p><strong>Module 2 · The Sunday Reset</strong> · Phase 1 · The member makes: <em>a one-page plan for the week ahead</em> · Layout: <strong>Workflow</strong> (they sequence it) · Structure: B Sidebar · 30 minutes · Teach source: your walkthrough</p>
+      <p class="land">Workflow, not Worksheet — because the member isn't writing a statement. They're putting Sunday, Monday and Friday in an order that holds.</p>
+    </div>
+
+    <div class="story-eg">
+      <p><strong>The five promises</strong></p>
+      <p><strong>A</strong> (the result) — "Plan your whole week in 30 minutes on a Sunday — without a list that's longer by Tuesday." ★</p>
+      <p><strong>B</strong> (the first win) — "Walk into Monday already knowing your first task — without a Sunday-night scramble."</p>
+      <p><strong>C</strong> (the obstacle) — "Keep Friday's deep work on Friday — without moving it to Monday again."</p>
+      <p><strong>D</strong> (the dream outcome) — "Close the laptop on Friday with nothing that can't wait — without working the weekend."</p>
+      <p><strong>E</strong> (who they become) — "Run your week instead of chasing it, in 30 minutes — without another app."</p>
+      <p class="land">★ A — it's the closest to what this coach's members actually say.</p>
+    </div>
+
+    <div class="story-eg">
+      <p><strong>The page, in short</strong></p>
+      <p><strong>Panel 1 · Start here</strong> — now vs target: hours I plan on Sunday today → the 30 I'm aiming for.</p>
+      <p><strong>Panel 2 · The three stages</strong> — Clear (what's left from last week) · Choose (the three results that matter this week) · Block (where each one lives on the calendar).</p>
+      <p><strong>Panel 3 · The timeline</strong> — Sunday 5pm → Monday 9am → Friday 3pm, in the program's own time.</p>
+      <p><strong>The Result</strong> — "My Week, Set": one page, three results, three blocks, and the first task of Monday written down.</p>
+      <p><strong>Done when</strong> — Sunday session held before 6pm · 3 deep-work blocks on the calendar · Monday's first task done before the inbox is opened · Friday's block still on Friday.</p>
+      <p><strong>Belief line</strong> — "A planned week is a promise you keep." — [the coach's name]</p>
+      <p><strong>Hands off to</strong> — Module 3 · [the next step], which uses the three blocks to protect the deep work.</p>
+    </div>
+
+    <div class="story-eg">
+      <p><strong>Where they get stuck (B1)</strong></p>
+      <p><strong>✕ Too high:</strong> "They struggle with time management."</p>
+      <p><strong>✓ Zoomed in:</strong> "The Sunday list that's dead by Tuesday" · "Friday's deep work, moved again" · "Email before the plan, every Monday."</p>
+      <p class="land">The first line is true of every step in the system. The three below are true of this one. That's the zoom-in test.</p>
+    </div>
+
+    <p>Notice what the Builder didn't do: rename the step, add a price, promise a result the step can't produce, or invent a member quote. The proof line in this example reads <code>[MISSING CONTENT — a member result for this step]</code> until the coach has one.</p>
+  </section>
+
+  <!-- ============ HARD RULES ============ -->
+  <section>
+    <h2>The Hard Rules</h2>
+    <p>The Builder holds you to every one of these.</p>
+    <p><strong>The module's name is the step's name.</strong> Exactly as your Magic Formula™ writes it, ™ included. Never renamed, never shortened, never a new name coined.</p>
+    <p><strong>Your documents are the truth.</strong> Everything in them is yours and already verified, so the Builder uses it as written and never asks you to confirm it. The only flag it writes is <code>[MISSING CONTENT — …]</code>, naming exactly what your documents don't contain. It never invents what's missing.</p>
+    <p><strong>Teach on the page, sell around it.</strong> No offer, price, booking link or second button on a module. The selling is the promise, the struggles — and the bridge line and email angle in Part B.</p>
+    <p><strong>A tool, not a lesson.</strong> The page is something they fill in and hold. The teaching lives in Part B; the page carries one teaching line per panel.</p>
+    <p><strong>One output.</strong> Every module converges to the step's one deliverable. Never a list of homework.</p>
+    <p><strong>Each module hands off to the next.</strong> What module 2 produces is module 3's starting input. Module 9 hands off to your members' ongoing rhythm.</p>
+    <p><strong>The headings are a contract.</strong> Step 2 reads them. They never change.</p>
+    <p><strong>Written to fit a page.</strong> Every slot has a word budget. Step names are the one thing never cut.</p>
+    <p><strong>Your numbers, not Matthew's.</strong> Matthew White's $24.6M and $5.2M are his credentials. They never go in your modules.</p>
+  </section>
+
+  <!-- ============ USING THE BUILDER ============ -->
+  <section>
+    <h2>Using the Program Module Specs Builder</h2>
+    <p>Here's the full run, start to finish.</p>
+    <ol>
+      <li><strong>Bring your documents.</strong> Your Magic Formula™ (required). Your Enrollment Doc. Any notes, transcripts, recordings or slides of you teaching each step. Your SCORE™ Card, $Million Promise™ and Golden Avatar™. Any Event Magnet™ Spec. Any member results. Paste them, upload them, or point the Builder at your workspace.</li>
+      <li><strong>Check what it found.</strong> The Builder echoes everything back — your steps, your program's mechanics, your next-level offer, where each step's teaching will come from. Fix anything out of date.</li>
+      <li><strong>Approve the Program Map.</strong> Nine rows. One question at most. Say "go."</li>
+      <li><strong>Module 1.</strong> If the teach source is missing, answer two questions in your own words. Pick a promise. Read Part A, say "go on," read Part B and the summary. Push back on anything, or say "next."</li>
+      <li><strong>Modules 2 to 9.</strong> Same beats, in order. Or say "all" and it writes the rest straight through with its ★ picks.</li>
+      <li><strong>Get your nine files.</strong> A final check, your missing-content list, and <code>module-01-….md</code> to <code>module-09-….md</code>.</li>
+      <li><strong>Go to step 2.</strong> New chat. Upload the nine specs, your BRAND KIT block and a headshot. Run the Program Module Visual.</li>
+    </ol>
+    <p>Save the specs in your $100K Day AI Workspace at <code>Client Engine/Client Flywheel/program-modules/</code>. Each one is the master copy of that module — change the spec, bump its version, never a -v2.</p>
+  </section>
+
+  <!-- ============ COMMON MISTAKES ============ -->
+  <section>
+    <h2>Common Mistakes &amp; Fixes</h2>
+    <p>Almost every program that doesn't get finished fails in one of these ways.</p>
+
+    <div class="mistake">
+      <h4>1. Writing the modules before the Magic Formula™ is locked</h4>
+      <p><strong>What it looks like:</strong> Nine modules on nine step names you're still changing.</p>
+      <p><strong>Why it happens:</strong> The program feels urgent, and the Formula feels finished enough.</p>
+      <p><strong>Why it costs you:</strong> Every renamed step is a rebuilt module — and a page in a member's hands with the old name on it.</p>
+      <p class="fix"><b>The fix:</b> Lock the Magic Formula™ first. The module's name is the step's name, and it never changes on its own.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>2. A module that's really a lesson</h4>
+      <p><strong>What it looks like:</strong> A page of paragraphs with a few lines to write on at the bottom.</p>
+      <p><strong>Why it happens:</strong> Teaching is comfortable. Designing something to fill in takes a different kind of thought.</p>
+      <p><strong>Why it costs you:</strong> Nobody walks out of a lesson summary holding anything. Check 3 fails.</p>
+      <p class="fix"><b>The fix:</b> One teaching line per panel. The rest is rows to fill. The teaching lives in Part B, on the call.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>3. Teaching the whole system inside Module 1</h4>
+      <p><strong>What it looks like:</strong> Module 1 explains all nine steps, and the member leaves inspired and stuck.</p>
+      <p><strong>Why it happens:</strong> You're proud of the system, and you want them to see it all.</p>
+      <p><strong>Why it costs you:</strong> Overview isn't progress. Module 1 should produce Step 1's outcome — nothing more.</p>
+      <p class="fix"><b>The fix:</b> One step per module. The whole system lives in A5, as a map, with "you are here" on it.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>4. Putting the offer on the page</h4>
+      <p><strong>What it looks like:</strong> A price, a booking link, or a "book your call" button in the closing bar.</p>
+      <p><strong>Why it happens:</strong> It feels like a missed chance not to sell while they're engaged.</p>
+      <p><strong>Why it costs you:</strong> A member mid-task who meets a price stops being a member and starts being a prospect again.</p>
+      <p class="fix"><b>The fix:</b> One plain Next button on the page. The next-level offer is sold in the bridge line on your call and the email angle in B6b.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>5. Done-when items you can't see</h4>
+      <p><strong>What it looks like:</strong> "Feel more confident about my pricing."</p>
+      <p><strong>Why it happens:</strong> Outcomes feel like feelings, and feelings are easy to write.</p>
+      <p><strong>Why it costs you:</strong> Neither of you can tell when the step is finished. The module never closes.</p>
+      <p class="fix"><b>The fix:</b> Something countable or checkable. "Three prices written on the card." "Five conversations held." Take them from the step's outcome.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>6. Filling a gap instead of flagging it</h4>
+      <p><strong>What it looks like:</strong> A member quote you don't have. A rate you never measured. A feature your program doesn't offer.</p>
+      <p><strong>Why it happens:</strong> A blank looks unfinished, and a plausible line looks done.</p>
+      <p><strong>Why it costs you:</strong> It's a false claim in your own program, with your name on it.</p>
+      <p class="fix"><b>The fix:</b> <code>[MISSING CONTENT — …]</code>, naming exactly what's missing. Supply it later; replace the flag; bump the version. A blank the member fills in beats a number you made up.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>7. Starting the artwork before the content is confirmed</h4>
+      <p><strong>What it looks like:</strong> A beautiful page for Module 1 — and a row name you now want to change.</p>
+      <p><strong>Why it happens:</strong> The pages are the exciting part.</p>
+      <p><strong>Why it costs you:</strong> Every content change now has to be made twice — in the spec and on the page — or the two drift apart.</p>
+      <p class="fix"><b>The fix:</b> Confirm all nine specs here first. Then step 2 builds from them, and a content change always goes back into the spec.</p>
+    </div>
+  </section>
+
+  <!-- ============ IS IT READY ============ -->
+  <section>
+    <h2>Is It Ready?</h2>
+    <p>The specs aren't scored out of 25. The documents they're built from were already scored and locked.</p>
+    <p>Instead, every spec passes the Module Check before you see it, and the set passes a Ready Check before you take it to step 2.</p>
+
+    <p class="subhead">Run your set through this</p>
+    <ul class="cl-checklist">
+      <li><strong>Nine, in order:</strong> one spec per step, each titled with the step's exact name.</li>
+      <li><strong>The full shape:</strong> A1–A10 and B1–B8 in every spec — nothing renamed, reordered or dropped.</li>
+      <li><strong>No two alike:</strong> structures rotate A · B · C; neighbours don't share a layout without a reason.</li>
+      <li><strong>One session each:</strong> every page fills in 20 to 60 minutes and converges to one deliverable.</li>
+      <li><strong>Done when is observable:</strong> three or four tick items you could check without asking.</li>
+      <li><strong>Nothing for sale on the page:</strong> no price, booking link or second button anywhere.</li>
+      <li><strong>Every module hands off:</strong> the next module is named; Module 9 hands off to the rhythm.</li>
+      <li><strong>Every promise is yours:</strong> unique, 95 characters or fewer, built on your own documents.</li>
+      <li><strong>Every number is real:</strong> it traces to your documents, or it's a blank the member fills in.</li>
+      <li><strong>Every gap is flagged:</strong> <code>[MISSING CONTENT — …]</code> where a document didn't hold the fact — never a guess.</li>
+      <li><strong>Nine files saved:</strong> <code>module-01-….md</code> to <code>module-09-….md</code> in <code>Client Engine/Client Flywheel/program-modules/</code>.</li>
+    </ul>
+    <p>Every box ticked? Your content is done. Open a new chat and build the pages.</p>
+  </section>
+
+  <!-- ============ NEXT STEP ============ -->
+  <section>
+    <div class="cl-cta">
+      <h2 class="cta-title">Ready to Build Your $100K Day Masterclass</h2>
+      <h3 class="cta-subtitle">The ultimate one-to-many client acquisition system</h3>
+      <p class="cta-sub">Use the Program Module Specs Builder tool in Coach Launch Academy™ to build yours with AI-guided tools and premium one-on-one consulting &amp; coaching.</p>
+      <a class="cta-btn" href="https://portal.coachlaunch.com" target="_blank" rel="noopener">Join the $100K Day Accelerator™</a>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING ============ -->
+  <section>
+    <div class="cl-quote">
+      <div class="q-title">Remember</div>
+      <p>Your members didn't pay for more to read. They paid to walk out with the thing done. Nine steps, nine pages, nine things they can hold — each one finishing the step before it and setting up the next. Write the content first, confirm it, then make it look like you. That's a program people finish.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="cl-foot">
+    <p>Coach Launch · The $100K Day Engine™ — Client Flywheel™ · Step 7 · Goliath Content™ · Program Module Specs</p>
+    <p>For Coach Launch clients. Built in Matthew White's voice.</p>
+  </footer>
+
+</div>
+</body>
+</html>
+<!-- end of guide -->

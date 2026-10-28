@@ -61,7 +61,8 @@ Fill these in as the Reference docs lock. One line each, verbatim from the sourc
 | 5a | Cash Flow Engine™ funnel (GHL AI Studio) | `Client Engine/Money Magnet/cash-flow-engine/` | not started | — | — |
 | 5b | Authority Detonator™ (show-up video scripts) | `Client Engine/Money Magnet/authority-detonator/` | not started | — | — |
 | 6 | Genie X Converter™ | `Client Engine/Money Magnet/genie-x-converter/` | in development | — | — |
-| 7 | Goliath Content™ Map | `Client Engine/Client Flywheel/goliath-content/` | not started | — | — |
+| 7a | Goliath Content™ Map | `Client Engine/Client Flywheel/goliath-content/` | not started | — | — |
+| 7b | Program Module Specs (nine) | `Client Engine/Client Flywheel/program-modules/` | not started | — | — |
 | 8 | Pixie Dust Social™ | `Client Engine/Client Flywheel/pixie-dust-social/` | in development | — | — |
 | 9 | Dragon Fire Ads™ | `Client Engine/Client Flywheel/dragon-fire-ads/` | in development | — | — |
 
