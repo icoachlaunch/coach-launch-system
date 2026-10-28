@@ -51,7 +51,7 @@ Client Engine/       THE ASSETS. Three pillar folders; inside each, one folder p
                        pass-instrument/ (+ sessions/) · sniper-presentation/ · sniper-presentation-slides/
                        cash-flow-engine/ (a folder per funnel phase) · authority-detonator/ (the show-up video scripts) · genie-x-converter/ (in development)
   Client Flywheel/     Steps 7–9 · traffic and marketing
-                       goliath-content/ · pixie-dust-social/ · dragon-fire-ads/ (all in development)
+                       goliath-content/ (the Goliath Content™ Map) · pixie-dust-social/ · dragon-fire-ads/ (in development)
 
 skills/              THE SKILLS. Delivered tools the AI runs from here (see SKILLS below).
 ```
@@ -169,7 +169,7 @@ Launch → Execute → Growth → Mastery — over 112 days.)
 ### Pillar 3 · Client Flywheel™ — fill the machine
 | Step | Folder | Produces | Needs first |
 |---|---|---|---|
-| 7. Goliath Content™ | `Client Engine/Client Flywheel/goliath-content/` | Authority content engine | *In development* |
+| 7. Goliath Content™ Map | `Client Engine/Client Flywheel/goliath-content/` | 210 working titles — the content plan (+ a CSV tracker) | $Million Promise™ · Golden Avatar™ · Magic Formula™ · SCORE™ Card |
 | 8. Pixie Dust Social™ | `Client Engine/Client Flywheel/pixie-dust-social/` | Organic social system | *In development* |
 | 9. Dragon Fire Ads™ | `Client Engine/Client Flywheel/dragon-fire-ads/` | Paid traffic system | *In development* |
 

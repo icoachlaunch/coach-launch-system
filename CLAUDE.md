@@ -26,8 +26,10 @@ modules/                     the deliverables — one folder per module, grouped
 ├── 1-offer-matrix/          Pillar 1 · Steps 1–3 (9 module folders: million-promise, golden-avatar,
 │                            million-moment, magic-formula, score-card, money-model, enrollment-doc,
 │                            event-magnet, cash-flow-max)
-└── 2-money-magnet/          Pillar 2 · Step 4+ (sniper-close, sniper-presentation,
+├── 2-money-magnet/          Pillar 2 · Step 4+ (sniper-close, sniper-presentation,
                              sniper-presentation-slides [delivered skill], cash-flow-engine, authority-detonator)
+└── 3-client-flywheel/       Pillar 3 · Step 7+ (goliath-content-map — the Goliath Content™ Map: 10 sections ×
+                             21 working titles, .md + CSV). Steps 8–9 not built yet
 assets/coach-launch-guide.css  the ONE locked stylesheet every guide links to
 assets/agents images/          agent headshots for the portal (space in path → %20 in HTML)
 scripts/                     apply_formula_map.py (stamps the 3-pillar/9-step map) + helpers
@@ -79,9 +81,10 @@ Decide its class first, then drop it in the matching home.
 | Restyling / branding a guide | **Never by hand** — edit `assets/coach-launch-guide.css` (the one stylesheet); pull tokens from `coach-launch-design` |
 | A brand-new UI / marketing page from scratch | `frontend-design` skill (+ `theme-factory` for a quick theme) |
 | Cash Flow Engine™ funnel pages (Step 5) | `modules/2-money-magnet/cash-flow-engine/SKILL.md` — the Funnel Builder. It reads the client's `BRAND KIT:` block and skins the phase templates in it (RULE 4: the Kit is the only look source). The 29 pages under `Funnel-templates/PHASE-*/` (Launch 5 · Execute 8 · Growth 7 · Mastery 9) are the **V2 demo build** (2026-10-12): built from the V2 templates by the funnel builder's `scripts/build_demo.py` (V2 is being built in the Skill builder project; this SKILL.md is still V1 until V2 ships). They carry the portal gate, a Brand Kit switcher (`?kit=`) and a fictional sample client; never hand-edit them — rebuild and publish with `scripts/publish_funnel_demo.ps1 -Zip <zip>`. A companion **setup guide per phase** (`phase-*-guide.html`) + the `funnel-examples.html` gallery sit alongside; all are surfaced in the dashboard's Step 5 (`#cashflow`). See memory `cash-flow-engine-funnel-approach` |
+| Goliath Content™ Map (Step 7) | `modules/3-client-flywheel/goliath-content-map/` — maps the client's SCORE™ Card across their Magic Formula™: per section 1 Goliath Roadmap™ + the Five Stones™ (one per SCORE™ act) + 15 Slingshot Hooks™ (an original set, 3 per act). Names locked by Matthew, 2026-10-29 |
 | Magic Formula™ visual (Step 2) | `modules/1-offer-matrix/magic-formula-visual/` — templates take `{{BRAND_KIT_TOKENS}}` + `{{SURFACE}}` (`L`/`D`). Never a hex, never a font name |
 | A slide deck from a Sniper Presentation™ | `modules/2-money-magnet/sniper-presentation-slides/SKILL.md` |
-| Packaging a builder prompt as a **claude.ai skill zip** (for Matthew to upload, not a repo artifact) | `powershell -File scripts/pack_claude_skill.ps1 -Module event-magnet` → `dist/event-magnet-builder.zip`. The prompt is the source; the frontmatter lives in the script. `dist/` is gitignored — regenerate, don't commit |
+| Packaging a builder prompt as a **claude.ai skill zip** (for Matthew to upload, not a repo artifact) | `powershell -File scripts/pack_claude_skill.ps1 -Module event-magnet` → `dist/event-magnet-builder.zip`; `-Module authority-detonator` → `dist/cl-authority-detonator.zip` (the `cl-` prefix = an internal Coach Launch skill). The prompt is the source; the frontmatter lives in the script. `dist/` is gitignored — regenerate, don't commit |
 | The $100K Day AI Workspace starter kit (the client zip) | Edit the source at `modules/0-foundations/100k-day-ai-workspace/` (root docs, folder READMEs, stubs), then `powershell -File scripts/build_workspace_kit.ps1` — it copies the Brand Kit layers + the three delivered skills in, rewrites their relative links to live URLs, verifies, and zips. Never hand-edit the zip. Folder names are canon: `Reference/` (the five Foundations + `brand-kit/`), `Client Engine/` (three pillar folders — `Offer Matrix/` · `Money Magnet/` · `Client Flywheel/` — one plain-named asset folder per step-part inside; clients add their own the same way), `skills/`. Builder prompts do NOT ship in the kit (they update in the portal) |
 | Generating images / headshots / avatars | `kie-image-gen` skill |
 | Making copy read human / removing AI tells | `humanizer` skill |

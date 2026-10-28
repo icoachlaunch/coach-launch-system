@@ -26,7 +26,7 @@ Client Engine/
 │   ├── cash-flow-engine/              Step 5 · the funnel, built in GHL AI Studio (a skill) — a folder per phase
 │   └── genie-x-converter/             Step 6 · back-end follow-up (in development)
 └── Client Flywheel/     Pillar 3 · Steps 7–9 · traffic and marketing
-    ├── goliath-content/               Step 7 · authority content engine (in development)
+    ├── goliath-content/               Step 7 · the Goliath Content™ Map — your 210-title content plan
     ├── pixie-dust-social/             Step 8 · organic social system (in development)
     └── dragon-fire-ads/               Step 9 · paid traffic system (in development)
 ```

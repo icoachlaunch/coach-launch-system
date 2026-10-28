@@ -1,17 +1,15 @@
 # Client Flywheel™ — Pillar 3 · Steps 7–9
 **Traffic and marketing** — fill the machine, so your Offer Matrix™ and Money Magnet™ never run dry.
 
-All three steps are *in development*. Their folders are here so each asset has a home the day its
-builder ships in Coach Launch Academy™. Nothing to do yet.
-
 - `goliath-content/` — Step 7 · Goliath Content™ — your authority content engine
-  (10X output, zero overwhelm)
+  (10X output, zero overwhelm). **Live:** the Goliath Content™ Map — your 210-title content plan.
 - `pixie-dust-social/` — Step 8 · Pixie Dust Social™ — your organic social system
-  (premium buyers for $5 a day)
+  (premium buyers for $5 a day). *In development.*
 - `dragon-fire-ads/` — Step 9 · Dragon Fire Ads™ — your paid traffic system
-  (fill every event on demand)
+  (fill every event on demand). *In development.*
 
-**Needs first:** a working Money Magnet™ (Steps 4–6) — the traffic needs somewhere to go.
+**Needs first:** your SCORE™ Card and Magic Formula™ for the Goliath Content™ Map. The traffic steps
+need a working Money Magnet™ (Steps 4–6) — the traffic needs somewhere to go.
 
 ---
 

@@ -53,7 +53,7 @@ STEP_BY_FILE = {
     "presentation-engine":4, "the-presentation-engine":4,
     "cash-flow-engine":5, "cashflow-engine":5, "authority-detonator":5,
     "genie-x-converter":6, "genie-x":6,
-    "goliath-content":7,
+    "goliath-content":7, "goliath-content-map":7,
     "pixie-dust-social":8, "pixie-dust":8,
     "dragon-fire-ads":9, "dragon-fire":9,
 }
@@ -66,6 +66,7 @@ ASSET_BY_FILE = {
     "enrollment-doc":"Enrollment Doc", "event-magnet":"Event Magnet™",
     "cash-flow-max":"Cash Flow Max™", "sniper-presentation":"Sniper Presentation™",
     "presentation-engine":"The Presentation Engine™",
+    "goliath-content-map":"Goliath Content™ Map",
 }
 
 MAP_START = "  <!-- ============ THE MAP (3 PILLARS / 9 STEPS) ============ -->"

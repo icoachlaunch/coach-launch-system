@@ -13,7 +13,8 @@ coach-launch-system/
 ├── modules/                      Every module = its own folder (prompt + guide + extras), grouped by pillar
 │   ├── 0-foundations/            The five Foundations + the $100K Day AI Workspace starter kit (built by scripts/build_workspace_kit.ps1)
 │   ├── 1-offer-matrix/           Pillar 1 · Steps 1–3 — Million Story, Magic Formula, Red Diamond Offer (9 modules)
-│   └── 2-money-magnet/           Pillar 2 · Step 4+ — sniper-close, sniper-presentation (+ bits/), sniper-presentation-slides, cash-flow-engine, authority-detonator
+│   ├── 2-money-magnet/           Pillar 2 · Step 4+ — sniper-close, sniper-presentation (+ bits/), sniper-presentation-slides, cash-flow-engine, authority-detonator
+│   └── 3-client-flywheel/        Pillar 3 · Step 7+ — goliath-content-map (Steps 8–9 not built yet)
 ├── assets/
 │   ├── coach-launch-guide.css    The locked stylesheet every guide links to
 │   └── agents images/            Agent headshots used on the portal
