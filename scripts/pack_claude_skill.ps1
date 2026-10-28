@@ -40,6 +40,21 @@ $skills = @{
   fill an event. It writes the spec and the positioning, never the finished artwork.
 '@
   }
+  'authority-detonator' = @{
+    name = 'cl-authority-detonator'
+    description = @'
+  The Authority Detonator™ Builder — writes the 5–12 minute show-up video script that plays the
+  moment someone registers for a coach's event, on their Cash Flow Engine™ funnel page. Two
+  placements, one job each: the Thank-You Page video (5–8 min, gets them in the room live) and the
+  VIP Upsell Page video (8–12 min, sells the VIP in full from the Cash Flow Max™ Blueprint). Built
+  from the client's Event Magnet™ Spec, Money Model and SCORE™ Card in six sections, one per turn:
+  Hook + Welcome · The Problem + Who I Am · Meet the Tool · The Three Problems, On the Tool ·
+  Why Live / How We Make This Even Better · Action. Evergreen, numerals, the tool is given on the
+  day, show don't tell. Operator-run by Matthew or the Coach Launch team. Use whenever someone wants
+  a thank-you page video, a VIP upsell video, a show-up video or an Authority Detonator™ script.
+  Outputs the client-facing script (title, six sections, shot notes) as .md, then a Google Doc or .docx.
+'@
+  }
 }
 
 if (-not $skills.ContainsKey($Module)) {
