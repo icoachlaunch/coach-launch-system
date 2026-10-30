@@ -139,7 +139,7 @@ Launch → Execute → Growth → Mastery — over 112 days.)
 | Business Brand Profile | `Reference/` | What they believe, why they exist, where they're headed, where they operate |
 | Visual Style Guide | `Reference/` + `Reference/brand-kit/` | Their look — the one Brand Kit everything reads |
 | Brand Voice | `Reference/` | How they write and speak |
-| Products & Pricing | `Reference/` | What they sell, prices, delivery, Accelerator phase |
+| Products & Pricing | `Reference/` | What they sell at three levels — membership · accelerator · proximity — with price points |
 | Competitive Landscape | `Reference/` | Their market, competitors, and edge |
 
 ### Pillar 1 · Offer Matrix™ — the message and the offer only they can sell

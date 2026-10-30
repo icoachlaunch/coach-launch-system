@@ -9,77 +9,390 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../../assets/coach-launch-guide.css">
 <style>
+  .part-head { display:flex; align-items:baseline; gap:.7rem; margin-top:2.8rem; padding-top:1.4rem; border-top:1px solid var(--border); }
+  .part-head .pill { font-family:var(--font-display); font-weight:800; font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:#fff; background:var(--cl-crimson); padding:.28rem .7rem; border-radius:999px; white-space:nowrap; }
+  .part-head h3 { margin:0; padding:0; border:0; }
   .subhead { font-family:var(--font-display); font-weight:700; font-size:1.05rem; color:var(--cl-black); margin:1.6rem 0 .5rem; }
-  .field { border:1px solid var(--border); border-left:4px solid var(--cl-crimson); border-radius:var(--radius); padding:1rem 1.25rem; margin:1rem 0; background:var(--bg-panel); box-shadow:var(--shadow-sm); }
-  .field h4 { margin:0 0 .35rem; text-transform:none; letter-spacing:0; font-size:1.05rem; }
+  .formula-box { font-family:var(--font-display); font-weight:700; font-size:1.12rem; color:var(--cl-black); background:var(--cl-crimson-soft); border:1px dashed var(--cl-crimson); border-radius:var(--radius); padding:1.1rem 1.3rem; margin:1.2rem 0; line-height:1.6; }
+  .formula-box .v { color:var(--cl-crimson); }
+  .mistake { border:1px solid var(--border); border-left:4px solid #e08600; border-radius:var(--radius); padding:1.2rem 1.4rem; margin:1.4rem 0; background:var(--bg-panel); box-shadow:var(--shadow-sm); }
+  .mistake h4 { color:#b56b00; text-transform:none; letter-spacing:0; font-size:1.1rem; margin:0 0 .5rem; }
+  .mistake .fix { margin-top:.7rem; }
+  .mistake .fix b { color:#178048; }
+  .story-eg { border:1px solid var(--border); border-left:4px solid var(--cl-crimson); border-radius:var(--radius); padding:1.3rem 1.5rem; margin:1.4rem 0; background:var(--bg-panel); box-shadow:var(--shadow-sm); }
+  .story-eg p { margin:.55rem 0; }
+  .story-eg .land { font-family:var(--font-display); font-weight:700; color:var(--cl-black); }
+  .ladder { border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; margin:1.4rem 0; box-shadow:var(--shadow-sm); }
+  .ladder .rung { display:grid; grid-template-columns:7.5rem 1fr; gap:1rem; padding:1rem 1.25rem; background:var(--bg-panel); border-top:1px solid var(--border); }
+  .ladder .rung:first-child { border-top:0; }
+  .ladder .rung.top { background:var(--cl-crimson-soft); }
+  .ladder .lv { font-family:var(--font-display); font-weight:800; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--cl-crimson); line-height:1.3; }
+  .ladder .lv b { display:block; font-size:1rem; letter-spacing:0; text-transform:none; color:var(--cl-black); margin-top:.15rem; }
+  .ladder .rung p { margin:.3rem 0; }
+  .ladder .band { font-family:var(--font-display); font-weight:700; color:var(--cl-black); }
+  @media (max-width:640px){ .ladder .rung { grid-template-columns:1fr; gap:.4rem; } }
 </style>
 </head>
 <body>
 <div class="cl-wrap">
 
+  <!-- ============ HERO ============ -->
   <header class="cl-hero">
     <img class="cl-brand-logo" src="https://assets.cdn.filesafe.space/ybe7GTcbvnTIWFX0Hos9/media/66f909a24c8d5f82216f1acd.png" alt="Coach Launch">
     <h1 class="formula-title">The <span class="hl">$100K</span> Day Engine™</h1>
     <div class="guide-name">Products &amp; <span class="hl">Pricing</span></div>
     <p class="cl-eyebrow">Foundations · Foundation 4 of 5</p>
-    <p class="subtitle">A simple, honest record of what you sell, what it costs, and how you deliver it — so everything the AI builds is grounded in your real offer.</p>
+    <p class="subtitle">Three offer levels, one ladder — your membership, your accelerator and your proximity offer, each named and priced, so every tool you build knows what you sell.</p>
   </header>
 
+  <!-- ============ WHAT IT IS ============ -->
   <section>
     <h2>What Is Your Products &amp; Pricing Doc?</h2>
-    <p class="cl-lead">It's the plain "what exists today" reference for your offer.</p>
-    <p>What do you sell? Roughly what does it cost? How do you deliver it? What are you working toward?</p>
-    <p>That's it. Not a business plan — a snapshot.</p>
-    <p>Every tool in your workspace pulls from it, so when the AI writes a page or a pitch, it uses <em>your</em> real offer and price, not a made-up one.</p>
-    <div class="cl-callout tip">
-      <div class="cl-callout-title">▲ This is not your pricing strategy</div>
-      <p>The deep pricing work — the math, the phase, the close — happens later in your <strong>Money Model</strong> (Step 3 of the Red Diamond Offer™). This doc is just the simple record everything else reads from. It gets sharper once the Money Model is done.</p>
+    <p class="cl-lead">It's the plain record of what you sell — laid out as three levels a client can climb, each one named and priced by you.</p>
+
+    <p>Most coaches start with one offer and a price they're not quite sure about.</p>
+    <p>That's fine as a start. It's a problem as a business, because one offer means every month starts from zero. A client buys once, gets a result, and leaves — and you go and find the next one.</p>
+
+    <p>This document fixes the shape. You lay out <strong>three levels</strong>: a membership at the bottom, a faster option in the middle, and closer access at the top. Each one a step up in price. Each one a step closer to you.</p>
+    <p>That's the ascension model. A client can start small, get a win, and climb — and the people who finish the upper levels fall back into the membership instead of walking away.</p>
+
+    <div class="cl-stat">
+      <div class="num">3</div>
+      <div class="label"><strong>Three levels. One ladder. Every price in one place.</strong> Your Money Model, your Enrollment Doc, your funnel pages and your presentation all read what you sell from this one document.</div>
+    </div>
+
+    <p>It matters because every tool downstream needs to know your prices, and none of them should have to ask you.</p>
+    <p>Write them down once, here, in the shape the whole system understands, and the AI stops guessing what you charge.</p>
+
+    <h3>What this document is NOT</h3>
+    <p>It's not your Money Model. The Money Model is Step 3 of the Engine — it picks your Accelerator phase, chooses which level is your core offer, runs the maths and <em>locks</em> the price. This document sets the <strong>price points</strong> the Money Model starts from.</p>
+    <p>It's not your offer. The value stack, the bonuses, the guarantee and the sales copy are your Red Diamond Offer™ Enrollment Doc. This is the list of what exists, not the pitch for it.</p>
+    <p>It's not a pricing strategy session. The Builder teaches you the model and tells you where prices usually land. It never sets a number for you, and it never moves one you've chosen.</p>
+    <p>It's not a business plan. Twenty minutes, thirteen questions, one document.</p>
+  </section>
+
+  <!-- ============ WHERE IT FITS ============ -->
+  <section>
+    <h2>Where It Fits</h2>
+    <p>Products &amp; Pricing is <strong>Foundation 4 of 5</strong> — built after your Brand Voice, before your Competitive Landscape.</p>
+    <p>There are five Foundations. Together they're the ground The $100K Day Engine™ stands on.</p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>Foundation</th><th>Asset</th><th>What it delivers</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Business Brand Profile</td><td>What you believe, why you exist, where you're going</td></tr>
+          <tr><td>2</td><td>Visual Style Guide</td><td>How your brand looks — your Brand Kit</td></tr>
+          <tr><td>3</td><td>Brand Voice</td><td>How your brand sounds — words, tone, rhythm</td></tr>
+          <tr class="is-here"><td><strong>4</strong></td><td>Products &amp; Pricing</td><td>What you sell, at three levels, and what each costs — <em>you are here</em></td></tr>
+          <tr><td>5</td><td>Competitive Landscape</td><td>Who else serves your people, and the lane you hold</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Upstream, nothing is required. If you've built your Business Brand Profile, the Builder reads it, so the document says "I" or "we" correctly.</p>
+    <p>Downstream, this is the document every price comes from.</p>
+    <p>Your <strong>Money Model</strong> reads your three levels, picks the core offer for your phase and locks its price. Your <strong>Red Diamond Offer™ Enrollment Doc</strong> prints the three levels at the bottom of your letter. <strong>Cash Flow Max™</strong>, your <strong>Cash Flow Engine™</strong> funnel pages and your <strong>Sniper Presentation™</strong> read the prices from here.</p>
+
+    <div class="cl-callout">
+      <div class="cl-callout-title">Price points here. The price gets locked in the Money Model.</div>
+      <p>This document asks what you charge today, or what you intend to. The Builder tells you where each level usually lands, and flags a number that sits well below that — once, and then it's your call.</p>
+      <p>The Money Model does the maths later: your phase, your event, your close, and whether the numbers clear the gate. It needs your Magic Formula™ first, which is why it isn't asked here.</p>
+    </div>
+
+    <div class="cl-callout warning">
+      <div class="cl-callout-title">⚠ What breaks if this is weak</div>
+      <p>With one offer and no ladder, every sale is a dead end. The client who finishes has nowhere to go but away.</p>
+      <p>With prices nobody wrote down, every builder has to stop and ask you — and you answer a little differently each time, so your funnel says one number and your presentation says another.</p>
+      <p>Lay out the three levels here, then build <strong>Foundation 5 · Competitive Landscape</strong>.</p>
     </div>
   </section>
 
-  <section>
-    <h2>What It Captures</h2>
-    <div class="field"><h4>Your products or services</h4><p>Each thing you sell (or plan to) — the name, a one-line description, who it's for, and the price. Pre-launch? Capture what you're planning and mark it "Planned."</p></div>
-    <div class="field"><h4>Your Accelerator phase &amp; close</h4><p>Which phase of The $100K Day Accelerator™ you're in — Launch, Execute, Growth, or Mastery — and which of the Three Closes you run (Strategy, Membership, or Deposit). Not set yet? It's decided in your Money Model.</p></div>
-    <div class="field"><h4>Your pricing</h4><p>Your current or planned prices — simply written down, not strategized.</p></div>
-    <div class="field"><h4>Your revenue goals</h4><p>A monthly target, an annual goal, or a number of clients you're working toward.</p></div>
-    <div class="field"><h4>Your delivery method</h4><p>How the thing actually gets delivered — 1-on-1, group, course, membership, live events, or a mix.</p></div>
-  </section>
-
+  <!-- ============ HOW YOU BUILD IT ============ -->
   <section>
     <h2>How You'll Build It</h2>
-    <p>The builder is a short, friendly interview — one question at a time.</p>
-    <p>It never coaches you on price or strategy. It just asks what's true today and writes it down cleanly. If you're still figuring things out, it captures where you are now, and you update it as things firm up.</p>
-    <p>Ten minutes, tops. Then you save it into your workspace and move on.</p>
-  </section>
+    <p>You build it in five moves. The Builder walks you through them one question at a time, tells you why each question matters, and shows you an example.</p>
 
-  <section>
-    <h2>Is It Ready?</h2>
-    <p>No score here — it's a simple record. It's done when:</p>
-    <ul class="cl-checklist">
-      <li>Your main offer (or planned offer) is named, with a one-line description and a price.</li>
-      <li>Your delivery method is clear.</li>
-      <li>Your revenue goal has a real number or milestone.</li>
-      <li>Your Accelerator phase and close are noted (or marked "set in the Money Model").</li>
-    </ul>
-    <p>That's enough. Keep it honest and current — update it whenever your offer or pricing changes.</p>
-  </section>
+    <ol class="cl-checklist">
+      <li><strong>What you sell today.</strong> You list everything, rough prices and all. The Builder places each thing on its level — or tells you it's a front-end product that sits below the ladder.</li>
+      <li><strong>Level 1 · your membership.</strong> What's in it, what it's called, and the annual-first price with the monthly worked back.</li>
+      <li><strong>Level 2 · your accelerator.</strong> Done-for-you or a 3-day event, what it's called, how long it runs, and its price point.</li>
+      <li><strong>Level 3 · your proximity offer.</strong> 1-on-1, retreat or mastermind, what it's called, how many seats, how long it runs, and its price point.</li>
+      <li><strong>Your revenue goal.</strong> One real number with a date, for the Money Model to work with.</li>
+    </ol>
 
-  <section>
-    <div class="cl-quote">
-      Your offer is the thing everything else sells. Write it down plainly, once, and every tool in your workspace stops guessing — and starts building around the real business you actually run.
+    <p>Thirteen questions. About twenty minutes. Then the Builder runs a Ready Check and hands you the document.</p>
+
+    <div class="cl-callout tip">
+      <div class="cl-callout-title">"I don't have that yet" is a real answer</div>
+      <p>Every client defines all three levels here — including the ones they don't sell yet. A level you haven't built is named, shaped and marked <strong>Planned</strong>. A price you haven't settled is marked <strong>TBD — set in the Money Model</strong>. A number you've guessed is marked <strong>UNVERIFIED</strong>.</p>
+      <p>A ladder with a Planned rung is a plan. A ladder with a missing rung is a gap nobody can build on. The Builder never pushes you to invent a price, and a marked unknown passes the Ready Check.</p>
     </div>
   </section>
 
+  <!-- ============ THE THREE LEVELS IN FULL ============ -->
+  <section>
+    <h2>The Three Levels, In Full</h2>
+    <p>Three levels, three fixed forms. You name each one and set each price. The forms don't change, because every tool downstream reads this document knowing exactly what a level means.</p>
+
+    <div class="ladder">
+      <div class="rung top">
+        <div class="lv">Level 3<b>Proximity</b></div>
+        <div><p><strong>1-on-1, a retreat, or a mastermind.</strong> Direct access to you, and a room of people already doing it. Seats are capped, because your time is the thing being sold.</p><p class="band">Usually $20,000 and up — some run to $100,000.</p></div>
+      </div>
+      <div class="rung">
+        <div class="lv">Level 2<b>Acceleration</b></div>
+        <div><p><strong>Done-for-you, or a 3-day accelerator.</strong> The same outcome, faster — because you do more of it for them, or they build it with you in three days.</p><p class="band">Usually $10,000 to $15,000 and up.</p></div>
+      </div>
+      <div class="rung">
+        <div class="lv">Level 1<b>Confidence</b></div>
+        <div><p><strong>Your membership.</strong> The trainings, the system, the community and lower-level coaching — a weekly coaching call is the classic shape. Sold annual first, monthly for those who can't.</p><p class="band">Usually around $5,000 a year, with the monthly worked back from it.</p></div>
+      </div>
+    </div>
+
+    <!-- LEVEL 1 -->
+    <div class="part-head"><span class="pill">Level 1</span><h3>Confidence — your membership</h3></div>
+    <p><strong>What it is.</strong> The foundation of your training and your coaching. Your trainings, your system, your community, and a lower level of coaching — most often a weekly group call. It's where a client gets confident that the system works, and confident in working with you.</p>
+    <p><strong>Why it matters.</strong> It's the floor of the whole business. It's what fills the room at your events, it's what a new client can say yes to, and it's what the upper levels fall back into when their term ends. Without it, every other sale ends when it ends.</p>
+    <p class="subhead">How to shape yours</p>
+    <p>Keep it to training, community and group coaching. Enough for a result; light enough that it doesn't compete with the levels above it.</p>
+    <p>Price it <strong>annual first</strong>. The year is the price you lead with. The monthly exists for the people who can't pay for the year, and you always show both.</p>
+    <div class="cl-compare">
+      <div class="col good"><span class="tag">✓ Do this</span><p>A training library, a weekly group coaching call, a private community — $5,000 a year, or about $556 a month for those who need it.</p></div>
+      <div class="col bad"><span class="tag">✕ Not that</span><p>A library of recordings with no calls and no community. That's a course. Nobody falls back into a course.</p></div>
+    </div>
+    <p><strong>The trap:</strong> putting everything in it. If the membership includes 1-on-1 access and done-for-you pieces, you've priced Level 3 work at Level 1 — and there's nothing left for anyone to climb to.</p>
+
+    <!-- LEVEL 2 -->
+    <div class="part-head"><span class="pill">Level 2</span><h3>Acceleration — faster</h3></div>
+    <p><strong>What it is.</strong> One of two forms. <strong>Done-for-you</strong>, where you or your team do the work for them. Or a <strong>3-day accelerator</strong> — a bootcamp-style event where they build the thing with you in three days. Either way the value is speed: the same outcome, sooner.</p>
+    <p><strong>Why it matters.</strong> It's the middle of the ladder — usually $10,000 to $15,000 and up — and it's where a lot of your cash comes from. It also gives the membership somewhere to send people who want to move faster than a weekly call allows.</p>
+    <p class="subhead">How to shape yours</p>
+    <p>Pick the form honestly. If you and your team deliver, it's done-for-you. If you'd rather get a room of people building together, it's the 3-day accelerator.</p>
+    <p>Give it a <strong>term</strong> — three months, three days plus ninety days of support, six months. And decide the fallback: when it ends, they continue in your membership.</p>
+    <div class="cl-compare">
+      <div class="col good"><span class="tag">✓ Do this</span><p>"A 3-day build, then ninety days of weekly check-ins — then they roll into the membership." A term, a fallback, a clear reason it's faster.</p></div>
+      <div class="col bad"><span class="tag">✕ Not that</span><p>"The membership, but with two calls a week." That's more of Level 1, not a faster route to the result.</p></div>
+    </div>
+    <p><strong>The trap:</strong> an accelerator with no end. If it never ends, it's a membership with a bigger price — and there's no moment where the client falls back into the real one.</p>
+
+    <!-- LEVEL 3 -->
+    <div class="part-head"><span class="pill">Level 3</span><h3>Proximity — closer</h3></div>
+    <p><strong>What it is.</strong> One of three forms: <strong>1-on-1</strong>, a <strong>retreat</strong>, or a <strong>mastermind</strong>. Direct access to you, and to a small group of people who are already getting the result. The top of the ladder.</p>
+    <p><strong>Why it matters.</strong> It's where your best clients want to be, and it's priced like it — $20,000 and up, as much as $100,000. Because it's your time, it's capped, and the cap is part of what makes it worth the price.</p>
+    <p class="subhead">How to shape yours</p>
+    <p>Pick the form, set the number of seats you can genuinely hold, give it a term, and decide the fallback — the membership, same as Level 2.</p>
+    <div class="cl-compare">
+      <div class="col good"><span class="tag">✓ Do this</span><p>"A mastermind, eight seats, twelve months, two in-person days a quarter and a monthly call with me — then the membership."</p></div>
+      <div class="col bad"><span class="tag">✕ Not that</span><p>"Unlimited 1-on-1, as many as sign up." Proximity means your time. Without a cap it isn't proximity, and it isn't sustainable.</p></div>
+    </div>
+    <p><strong>The trap:</strong> fixed deliverables with no access. If the client gets a set of outputs and never gets near you, that's Level 2 wearing a Level 3 price tag.</p>
+
+    <!-- THE FALLBACK -->
+    <div class="part-head"><span class="pill">The rule</span><h3>The Fallback — what makes the ladder compound</h3></div>
+    <p>The membership is the foundation, and <strong>both upper levels fall back onto it</strong>.</p>
+    <p>Your accelerator runs for its term — say three months. When it ends, the client's next step is the membership. Same for the mastermind or the 1-on-1 work when its year is up.</p>
+    <p>So a $10,000 sale doesn't end at $10,000. It turns into recurring revenue, and the business grows on top of itself instead of starting from zero every month.</p>
+    <p>The Builder records this as one line on each upper level: <em>Then: continues in [your membership].</em> If you want a different fallback, you can have it — the Builder will flag it once and record yours.</p>
+  </section>
+
+  <!-- ============ THE ANNUAL-FIRST MATHS ============ -->
+  <section>
+    <h2>The Annual-First Maths</h2>
+    <p>Your membership has two prices, always shown together. The year is the one you lead with. The year carries a saving on twelve months of the monthly.</p>
+    <p><strong>25% is the standard.</strong> You can choose your own saving — the Builder asks, records it, and uses it in the maths. What matters is that the year is clearly the better deal, so serious people pay up front.</p>
+
+    <div class="formula-box">
+      Annual = Monthly × 12 × <span class="v">(1 − saving)</span><br>
+      Monthly = Annual ÷ <span class="v">(12 × (1 − saving))</span>
+    </div>
+
+    <p>Start from whichever number you hold. If you know what the year should cost, the Builder works the monthly back. If you've only ever thought in monthly, give it that and it works the year forward.</p>
+
+    <div class="cl-table-wrap">
+      <table class="cl-table">
+        <thead><tr><th>You start with</th><th>At the standard 25%</th><th>Both prices shown</th></tr></thead>
+        <tbody>
+          <tr><td>$5,000 a year</td><td>$5,000 ÷ (12 × 0.75)</td><td>$5,000 a year, or about $556 a month</td></tr>
+          <tr><td>$6,000 a year</td><td>$6,000 ÷ (12 × 0.75)</td><td>$6,000 a year, or about $667 a month</td></tr>
+          <tr><td>$500 a month</td><td>$500 × 12 × 0.75</td><td>$4,500 a year, or $500 a month</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Round either number to something clean if you like — the Builder will offer, and the decision is yours.</p>
+
+    <div class="cl-callout">
+      <div class="cl-callout-title">Why annual first</div>
+      <p>The year front-loads twelve months of cash and removes the month-two decision entirely. Lead with the monthly and you've built a subscription people cancel; lead with the year and you've built a high-ticket offer paid over time.</p>
+    </div>
+  </section>
+
+  <!-- ============ WHAT YOU SELL TODAY ============ -->
+  <section>
+    <h2>What You Sell Today — the map</h2>
+    <p>Before the Builder teaches you the levels, it asks for everything already on your shelf. Then it places each thing.</p>
+    <p>A recurring offer with ongoing coaching and community sits at <strong>Level 1</strong>. A fixed-term offer where speed is the value — done-for-you, or a multi-day build — sits at <strong>Level 2</strong>. Direct-access work — 1-on-1, a retreat, a mastermind — sits at <strong>Level 3</strong>.</p>
+    <p>Anything that fits none of those — a low-ticket course, a book, a single workshop ticket — is recorded under <strong>Other — below the ladder</strong>. It's a front-end product, not a level. The Builder never invents a fourth rung to hold it.</p>
+    <p>Then the gaps show. Whatever level has nothing on it is the one you shape next and mark Planned. Most coaches find they already have one level without knowing it, and the other two are the plan.</p>
+  </section>
+
+  <!-- ============ REVENUE GOAL ============ -->
+  <section>
+    <h2>Your Revenue Goal</h2>
+    <p>Your Business Brand Profile keeps the picture of where you're headed. This document keeps the number.</p>
+    <p>Give it in whatever shape you hold it — monthly recurring, a yearly total, or a number of clients — and give it a date. A goal with a date is a plan; a goal without one is a wish.</p>
+    <p>If it's a number pulled from the air, say so. The Builder keeps it and marks it UNVERIFIED, and your Money Model will show you what it takes to get there.</p>
+  </section>
+
+  <!-- ============ WORKED EXAMPLE ============ -->
+  <section>
+    <h2>A Worked Example</h2>
+    <p>Two coaches, two starting points. Both end with three levels.</p>
+
+    <div class="story-eg">
+      <p class="land">A leadership coach with one offer.</p>
+      <p><strong>What she sells today:</strong> a six-month 1-on-1 programme, and nothing else. The Builder places it at Level 3 — direct access, fixed term — and shows two empty rungs beneath it.</p>
+      <p><strong>Level 1 · Planned:</strong> a membership — her frameworks as a training library, a weekly group call, a private community. $5,000 a year, about $556 a month. Named in her words.</p>
+      <p><strong>Level 2 · Planned:</strong> a 3-day accelerator where a small group builds their leadership plan with her, then ninety days of check-ins. Runs three months, then the membership. Price point $12,000.</p>
+      <p><strong>Level 3 · Live:</strong> her existing 1-on-1 programme. Six seats, six months, then the membership. $24,000.</p>
+      <p>Twenty minutes, and a one-offer business has a ladder — with the two rungs she doesn't sell yet named, shaped and marked Planned for her Money Model to price.</p>
+    </div>
+
+    <div class="story-eg">
+      <p class="land">A fitness coach pre-launch.</p>
+      <p><strong>What he sells today:</strong> nothing yet, and a $47 ebook he's thinking about. The Builder records the ebook under Other — below the ladder — and starts all three levels from a clean sheet.</p>
+      <p><strong>Level 1 · Planned:</strong> a membership with a training library, a weekly coaching call and a community. He only has a monthly in mind — $400 — so the Builder works the year forward at 25%: $3,600. That's under where memberships usually land, and the Builder says so once. He keeps it, for now, and the Money Model will test it.</p>
+      <p><strong>Level 2 · Planned:</strong> done-for-you — he writes the programme and the meal plans for them. Twelve weeks, then the membership. Price point: TBD — set in the Money Model.</p>
+      <p><strong>Level 3 · Planned:</strong> a quarterly retreat. Ten seats, UNVERIFIED until he's run one. Price point: TBD — set in the Money Model.</p>
+      <p>Three Planned rungs and two marked prices is a complete document. Nothing was invented, and every unknown is marked where the Money Model will pick it up.</p>
+    </div>
+
+    <p><em>(Illustrative examples — they show the level of decision, not numbers to copy.)</em></p>
+  </section>
+
+  <!-- ============ HARD RULES ============ -->
+  <section>
+    <h2>The Hard Rules</h2>
+    <p>These keep your ladder honest and readable by every tool after it. The Builder holds you to them.</p>
+    <p><strong>Level 1 is always a membership.</strong> Training, community and group coaching, paid annual or monthly. It is the thing everything else falls back into.</p>
+    <p><strong>Annual first, then monthly.</strong> You lead with the year. The monthly exists for those who can't pay for the year, and you show both every time.</p>
+    <p><strong>The saving is yours to set — 25% is the standard.</strong> The Builder records what you choose and uses it in the maths.</p>
+    <p><strong>Level 2 is done-for-you or a 3-day accelerator. Level 3 is 1-on-1, a retreat or a mastermind.</strong> The forms are fixed. The names and the prices are yours.</p>
+    <p><strong>Every upper level has a term and a fallback.</strong> It ends, and when it ends the client continues in your membership.</p>
+    <p><strong>No fourth rung.</strong> Whatever fits none of the three forms sits under Other — below the ladder. The Builder never stretches a form to fit it.</p>
+    <p><strong>A low price gets flagged once, never moved.</strong> The Builder tells you the usual band and what sits under it. The number you record is yours.</p>
+    <p><strong>Price points here; the price is locked in the Money Model.</strong> This document gives the Money Model a starting point that's yours.</p>
+    <p><strong>Nothing from another document.</strong> No phase, no close, no projections, no offer copy, no avatar, no competitors. Each Foundation owns its own questions.</p>
+    <p><strong>A marked unknown is fine.</strong> Planned, TBD — set in the Money Model, and UNVERIFIED are all real answers and all pass.</p>
+  </section>
+
+  <!-- ============ COMMON MISTAKES ============ -->
+  <section>
+    <h2>Common Mistakes &amp; Fixes</h2>
+    <p>Almost every ladder that doesn't compound falls into one of these.</p>
+
+    <div class="mistake">
+      <h4>1. A course instead of a membership</h4>
+      <p><strong>What it looks like:</strong> Level 1 is a library of recordings. No calls, no community.</p>
+      <p><strong>Why it happens:</strong> recordings are easy to make and feel like they scale.</p>
+      <p><strong>Why it costs you:</strong> nobody falls back into a course. When the accelerator ends there's nothing with a person in it to continue into, and the ladder stops compounding.</p>
+      <p class="fix"><b>The fix:</b> add the coaching layer — a weekly group call is the classic shape — and the community. Training alone is a product; training plus coaching plus community is a membership.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>2. Everything in the membership</h4>
+      <p><strong>What it looks like:</strong> 1-on-1 access, done-for-you pieces and unlimited calls, all inside the $5,000 membership.</p>
+      <p><strong>Why it happens:</strong> generosity, and the worry that a lean membership won't sell.</p>
+      <p><strong>Why it costs you:</strong> you've priced Level 3 work at Level 1, so there's nothing left to climb to — and you've filled your calendar at the cheapest price on the ladder.</p>
+      <p class="fix"><b>The fix:</b> keep Level 1 to training, community and group coaching. The closer access is what people climb for, and it's priced accordingly.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>3. Leading with the monthly</h4>
+      <p><strong>What it looks like:</strong> "$497 a month" on the page, with the yearly nowhere or buried.</p>
+      <p><strong>Why it happens:</strong> the monthly looks easier to say yes to.</p>
+      <p><strong>Why it costs you:</strong> you've built a subscription people cancel in month two, instead of a high-ticket offer paid over time. The cash that should land up front arrives in dribs.</p>
+      <p class="fix"><b>The fix:</b> annual first, every time, with the saving clear. Show the monthly beside it for the people who genuinely can't pay for the year.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>4. An accelerator that never ends</h4>
+      <p><strong>What it looks like:</strong> "Ongoing done-for-you support" at $12,000, with no term.</p>
+      <p><strong>Why it happens:</strong> ending something feels like losing the client.</p>
+      <p><strong>Why it costs you:</strong> with no end there's no fallback, so the $12,000 is the whole relationship — and you're delivering Level 2 work forever at a one-off price.</p>
+      <p class="fix"><b>The fix:</b> give it a term — three months, six, a year — and make the membership what continues. The sale becomes the start of recurring revenue, not the end of it.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>5. A fourth rung for the $47 product</h4>
+      <p><strong>What it looks like:</strong> "Level 0: the ebook" or "Level 1.5: the mini-course".</p>
+      <p><strong>Why it happens:</strong> you've got it, so it feels like it should be on the ladder.</p>
+      <p><strong>Why it costs you:</strong> every tool downstream reads three levels. A fourth confuses the Enrollment Doc, the funnel and the presentation, and makes the ladder look like a shop.</p>
+      <p class="fix"><b>The fix:</b> record it under Other — below the ladder. It can still exist. It just isn't a level.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>6. Pricing from fear</h4>
+      <p><strong>What it looks like:</strong> a membership at $1,200 a year, an accelerator at $3,000, because "my people can't afford more."</p>
+      <p><strong>Why it happens:</strong> the price feels like a judgement on you, so you lower it before anyone can object.</p>
+      <p><strong>Why it costs you:</strong> the maths won't clear in the Money Model, and you'll be delivering high-ticket work on low-ticket revenue.</p>
+      <p class="fix"><b>The fix:</b> the Builder tells you the usual band and flags a number well under it, once. You can keep your number — but hear the flag, and let the Money Model show you what it does to the maths before you commit.</p>
+    </div>
+
+    <div class="mistake">
+      <h4>7. Deciding your phase here</h4>
+      <p><strong>What it looks like:</strong> "I'm in Growth, so my core offer is the membership" — before the Magic Formula™ or the Money Model exist.</p>
+      <p><strong>Why it happens:</strong> the phases are on the roadmap, and it's tempting to place yourself early.</p>
+      <p><strong>Why it costs you:</strong> the phase is decided properly in the Money Model, from where you actually are. Guessing it here puts a guess at the root of every price decision after it.</p>
+      <p class="fix"><b>The fix:</b> lay out the three levels and their price points here. Let the Money Model pick the phase and the core offer when it has the Magic Formula™ to work with.</p>
+    </div>
+  </section>
+
+  <!-- ============ IS IT READY ============ -->
+  <section>
+    <h2>Is It Ready?</h2>
+    <p>This foundation isn't scored out of 25 — it's the truth about what you sell, written plainly. So it passes a Ready Check: every item a clear yes.</p>
+    <ul class="cl-checklist">
+      <li>Everything you sell today is listed in your words, and each thing sits on a level or under Other — below the ladder.</li>
+      <li>Level 1 is a membership, with what's in it, its name, and both prices — annual and monthly — with the saving recorded (or marked Planned, or TBD).</li>
+      <li>Level 2 is done-for-you or a 3-day accelerator, with what's in it, its name, a term, a fallback and a price point (or a marked unknown).</li>
+      <li>Level 3 is 1-on-1, a retreat or a mastermind, with what's in it, its name, its seats, a term, a fallback and a price point (or a marked unknown).</li>
+      <li>Any price well below its usual band was flagged to you once — and the number recorded is yours.</li>
+      <li>Both upper levels end, and both continue in your membership (or carry your own fallback, flagged).</li>
+      <li>Your revenue goal is a real number with a date, or a marked unknown.</li>
+      <li>Nothing from another document is in here — no phase, no close, no projections, no offer copy, no avatar, no competitors.</li>
+      <li>The document says "I" or "we" the way your Business Brand Profile does.</li>
+      <li>You could hand this to your Money Model tomorrow and it would know exactly what you sell.</li>
+    </ul>
+    <p>All boxes checked? Your Products &amp; Pricing doc is locked — and every tool in your workspace now knows what you sell.</p>
+  </section>
+
+  <!-- ============ NEXT STEP ============ -->
   <section>
     <div class="cl-cta">
       <h2 class="cta-title">Ready to Build Your $100K Day Masterclass</h2>
       <h3 class="cta-subtitle">The ultimate one-to-many client acquisition system</h3>
-      <p class="cta-sub">Use the Products &amp; Pricing Builder in your $100K Day AI Workspace, then build the whole system with the AI-guided tools and premium one-on-one coaching inside Coach Launch Academy™.</p>
+      <p class="cta-sub">Use the Products &amp; Pricing Builder tool in Coach Launch Academy™ to build yours with AI-guided tools and premium one-on-one consulting &amp; coaching.</p>
       <a class="cta-btn" href="https://portal.coachlaunch.com" target="_blank" rel="noopener">Join the $100K Day Accelerator™</a>
     </div>
   </section>
 
+  <!-- ============ CLOSING ============ -->
+  <section>
+    <div class="cl-quote">
+      <div class="q-title">Remember</div>
+      <p>One offer is a job. Three levels is a business — a place to start, a way to go faster, and a way to get closer, with the membership underneath catching everyone who finishes. Lay the ladder out once, write the prices down plainly, and every tool you build from here knows exactly what you sell.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="cl-foot">
+    <p>Coach Launch · The $100K Day Engine™ — Foundations · Foundation 4 · Products &amp; Pricing</p>
+    <p>For Coach Launch clients. Built in Matthew White's voice.</p>
+  </footer>
+
 </div>
 </body>
 </html>
+<!-- end of guide -->
