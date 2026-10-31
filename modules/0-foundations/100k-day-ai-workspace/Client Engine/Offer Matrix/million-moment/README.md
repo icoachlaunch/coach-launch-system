@@ -15,6 +15,9 @@ Your locked $Million Promise™ and Golden Avatar™.
 ## Feeds
 The Magic Formula™ (it formalises the system you named here) and the SCORE™ Card's story block.
 
+## Memory
+`NOTES.md`, beside the asset — the decisions and why, what was rejected, what's still open, one line per session. Claude reads it before touching this asset and adds to it after every save (it makes the file the first time). Only the status line goes in `CONTEXT.md`; the reasoning stays here.
+
 ## File shape
 ```
 ---

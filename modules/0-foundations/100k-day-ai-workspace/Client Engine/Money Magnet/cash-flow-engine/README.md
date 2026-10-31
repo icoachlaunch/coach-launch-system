@@ -8,3 +8,6 @@ Save those build prompts here — make a folder per phase as you build it (`phas
 **Needs first:** Step 3 (Event Magnet™, Money Model, Cash Flow Max™) and Step 4.
 
 Tell Claude *"build my Phase [N] funnel pages"* and it opens the skill. Save each finished build prompt in its phase folder here. Never a -v2.
+
+## Memory
+`NOTES.md`, beside the asset — the decisions and why, what was rejected, what's still open, one line per session. Claude reads it before touching this asset and adds to it after every save (it makes the file the first time). Only the status line goes in `CONTEXT.md`; the reasoning stays here.

@@ -15,6 +15,9 @@ Your locked Magic Formula™ and $Million Promise™.
 ## Feeds
 The Enrollment Doc, Cash Flow Max™, the Event Magnet™ CTA, the SCORE™ Card's close block, every funnel price. Record its phase in CONTEXT.md.
 
+## Memory
+`NOTES.md`, beside the asset — the decisions and why, what was rejected, what's still open, one line per session. Claude reads it before touching this asset and adds to it after every save (it makes the file the first time). Only the status line goes in `CONTEXT.md`; the reasoning stays here.
+
 ## File shape
 ```
 ---

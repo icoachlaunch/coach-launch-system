@@ -15,6 +15,9 @@ Your APPROVED Sniper Presentation™ Script and the BRAND KIT block from your Vi
 ## Feeds
 The room. This is what's on the screen at your $100K Day Masterclass.
 
+## Memory
+`NOTES.md`, beside the asset — the decisions and why, what was rejected, what's still open, one line per session. Claude reads it before touching this asset and adds to it after every save (it makes the file the first time). Only the status line goes in `CONTEXT.md`; the reasoning stays here.
+
 ## File shape
 ```
 ---

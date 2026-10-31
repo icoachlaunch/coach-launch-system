@@ -1,32 +1,12 @@
 # THE $100K DAY AI WORKSPACE — CLAUDE.md
 
-> The brain of this workspace. Read it first, every session.
+> The map. Read it first, every session — it says where everything lives and how each folder is used.
 > Brand: **Coach Launch** · System: **The $100K Day Engine™**
 
-This folder is the single source of truth about ONE business, built for AI to read. Everything the AI
-needs to build in this business's voice, for its offer, with its system, lives here — so the owner
-never re-explains their business to a machine again.
-
----
-
-## FIRST MESSAGE — HOW TO KICK OFF
-
-When the user says any variation of "I just set up my $100K Day AI Workspace," "walk me through the
-setup," or "let's get started":
-
-1. Welcome them in one sentence and confirm you can see the workspace.
-2. **Read `CONTEXT.md`.** It tells you what's built, what's locked, and what's next (its `next:` line).
-3. **Check `Reference/`.** If any of the five documents still shows `status: empty` in its frontmatter,
-   start there. Say: *"Let's start by building your Reference docs — the business truth the whole
-   system runs on. There are five, and they take about an hour. Ready to start with your Business
-   Brand Profile?"*
-4. If all five are complete, ask what they want to build next, using the roadmap below.
-5. **One question at a time.** Never dump a long list of options. Warm, guided conversation.
-
-**The builders are NOT in this workspace.** Every builder prompt lives in **Coach Launch Academy™**
-(the user's Training Portal), and it gets updated there. When it's time to run one, name the builder,
-tell the user to download it from their Training Portal and paste it into the chat, then run it
-exactly as written. Never ask the user to paste anything else, and never invent a builder.
+This folder is the single source of truth about ONE business, built for AI to read, so the owner never
+re-explains their business to a machine again. This file is short on purpose: it is the map, not the
+manual. Every folder carries its own `README.md` with the detail — read the README of the folder you
+are about to work in, and nothing more.
 
 ---
 
@@ -34,279 +14,112 @@ exactly as written. Never ask the user to paste anything else, and never invent 
 
 ```
 README.md            How to set this up. For the human.
-CLAUDE.md            This file — how the AI runs the workspace.
-CONTEXT.md           The business at a glance + what's locked and what's next. Update it after every save.
+CLAUDE.md            This file — the map. Light on purpose.
+CONTEXT.md           THE INDEX. The business at a glance, what's built, what's next. Always loaded. Kept short.
 
-Reference/           THE TRUTH. Five documents every builder reads and never re-asks.
-  business-brand-profile.md · brand-voice.md · visual-style-guide.md
+Reference/           THE TRUTH. Five documents every builder reads and never re-asks (+ their NOTES.md).
+  business-brand-profile.md · visual-style-guide.md · brand-voice.md
   products-and-pricing.md · competitive-landscape.md
   brand-kit/         The ONE installed Brand Kit: tokens/<their-kit>.css + blocks.css + surfaces/
 
-Client Engine/       THE ASSETS. Three pillar folders; inside each, one folder per asset. Plain names — see GROWING.
-  Offer Matrix/        Steps 1–3 · everything offer-related
-                       million-promise/ · golden-avatar/ · million-moment/
-                       magic-formula/ · magic-formula-visual/ · score-card/
-                       money-model/ · enrollment-doc/ · event-magnet/ · cash-flow-max/
-  Money Magnet/        Steps 4–6 · making the money
-                       pass-instrument/ (+ sessions/) · sniper-presentation/ · sniper-presentation-slides/
-                       cash-flow-engine/ (a folder per funnel phase) · authority-detonator/ (the show-up video scripts) · genie-x-converter/ (in development)
-  Client Flywheel/     Steps 7–9 · traffic and marketing
-                       goliath-content/ (the Goliath Content™ Map) · program-modules/ (the nine Program Modules) · pixie-dust-social/ · dragon-fire-ads/ (in development)
+Client Engine/       THE ASSETS. Three pillar folders; inside each, one folder per asset.
+  Offer Matrix/        Steps 1–3 · the message, the system, the offer
+  Money Magnet/        Steps 4–6 · filling the room and getting paid
+  Client Flywheel/     Steps 7–9 · content, social, traffic
+  <pillar>/<asset>/    README.md (what goes here) · <asset>.md (the asset) · NOTES.md (its memory)
 
-skills/              THE SKILLS. Delivered tools the AI runs from here (see SKILLS below).
+skills/              THE TOOLS. Delivered skills that build FROM the assets — open the SKILL.md and run it.
 ```
 
-Every folder has a `README.md` saying exactly what goes in it, which builder makes it, what it needs
-first and what it feeds. When in doubt, read the README of the folder you're about to save into.
+---
+
+## HOW EACH FOLDER IS USED
+
+**`Reference/` — the truth about the business.** Five Foundation documents, built first and in order,
+each with its builder from Coach Launch Academy™. The Visual Style Guide ends with the **`BRAND KIT:`
+block** every visual builder reads. The owner's own business facts (team, guarantee, credentials) go
+here too, as new documents beside the five. Nothing is built here — it is what everything is built FROM.
+→ `Reference/README.md` · `Reference/brand-kit/README.md`
+
+**`Client Engine/` — what's built from it.** One folder per asset, plain-named so the workspace grows
+without renaming. Each asset is ONE canonical `.md` (frontmatter + Revision History), saved under the
+filename its README names and revised in place — never `-v2`. The build order, what each asset needs
+first and what it feeds live in the pillar READMEs and each asset's README, not here.
+→ `Client Engine/README.md` · the pillar READMEs · the asset READMEs
+
+**`skills/` — the delivered tools.** Slides from the Sniper Presentation™ Script, funnel pages from the
+Event Magnet™ and Money Model, the Magic Formula™ graphic. Each `SKILL.md` names the assets it reads
+and the folder its output saves to. → `skills/README.md`
+
+**The builders are NOT here.** Every builder prompt lives in **Coach Launch Academy™** (the owner's
+Training Portal) and updates there. When it is time to build, name the builder, have the owner download
+it and paste it into the chat, then run it exactly as written. Never invent a builder.
 
 ---
 
-## WHAT THIS WORKSPACE IS
+## MEMORY — how the workspace remembers (three layers, nothing written twice)
 
-Three things, in order:
-
-1. **Reference** — five documents about the business: the Business Brand Profile, Brand Voice,
-   Visual Style Guide, Products & Pricing, and Competitive Landscape. These are the ground truth.
-   Everything else pulls from them. The Visual Style Guide ends with the **BRAND KIT block** — the
-   look every visual thing reads.
-2. **Client Engine™** — the user's growing library of built assets. Each step of The $100K Day
-   Engine™ has its own builder in Coach Launch Academy™; the finished asset is saved here, one
-   canonical `.md` per asset, in its own folder. Each feeds the next: the **$Million Promise™** shapes
-   the **Magic Formula™**, which feeds the **SCORE™ Card**, which powers the **Red Diamond Offer™**
-   and the **Sniper Close™**. Over time this folder becomes the complete system.
-3. **skills** — delivered tools that build FROM the assets: the Sniper Presentation™ Slides, the
-   Cash Flow Engine™ Funnel Builder, the Magic Formula™ Visual. The AI opens the right `SKILL.md`
-   and runs it.
-
-**The big idea (the Systems Layer).** Most people use AI at the Chat, Creation or Agent layer —
-retyping their business into every tool, every time. This workspace is the fourth layer: one
-documented system that carries everything the AI needs into every session. Set it up once; every
-output sounds like *them*, not generic.
-
----
-
-## HOW TO USE THIS WORKSPACE
-
-### If they're starting fresh
-Reference first, in this order, each with its builder from Coach Launch Academy™:
-
-1. **Business Brand Profile** → save over `Reference/business-brand-profile.md`
-2. **Visual Style Guide** → save over `Reference/visual-style-guide.md`, then install their one Kit
-   (see BRAND KIT below)
-3. **Brand Voice** → save over `Reference/brand-voice.md`
-4. **Products & Pricing** → save over `Reference/products-and-pricing.md`
-5. **Competitive Landscape** → save over `Reference/competitive-landscape.md`
-
-Then the Client Engine™, step by step, per the roadmap below.
-
-### If they already have work done
-Many coaches already have some of this — a promise in a Google Doc, an avatar in a PDF.
-
-1. They upload whatever they have (any format) and tell you what it is.
-2. You read it, identify which asset it is (confirm if unsure), and turn it into the canonical `.md`
-   with the standard frontmatter + revision history — version 1, status `draft`.
-3. Save it in the right folder under the canonical filename (the folder's README names it).
-4. **The `.md` is the source of truth from then on** — not the uploaded original.
-
-### To run a builder
-Name it, have the user download it from Coach Launch Academy™ and paste it, then run it exactly as
-written — including any quality gate or score it specifies. Don't add your own scoring or coaching.
-One question per turn. Deeper coaching happens in Coach Launch Academy™.
-
-### To save a finished asset
-The folder's README tells you the filename. Write the file (Claude Code / Cowork), or output it for
-the user to save (Claude Projects). Then **update `CONTEXT.md`** — that's what makes the next
-session start already knowing.
-
-### To update an asset
-Load the current file, make the change with the user, bump the version, add a revision-history row,
-write it back to the same file. Never a new filename.
-
-### To run a skill
-Open `skills/<name>/SKILL.md` and follow it. It will tell you which assets it reads from
-`Reference/` and `Client Engine/`. See SKILLS below.
-
----
-
-## THE $100K DAY ENGINE™ — THE ROADMAP
-
-3 pillars, 9 steps, each building on the last. (The **$100K Day Accelerator™** runs it in 4 phases —
-Launch → Execute → Growth → Mastery — over 112 days.)
-
-### Reference — the business truth (build these first)
-| Document | Where | What it captures |
-|---|---|---|
-| Business Brand Profile | `Reference/` | What they believe, why they exist, where they're headed, where they operate |
-| Visual Style Guide | `Reference/` + `Reference/brand-kit/` | Their look — the one Brand Kit everything reads |
-| Brand Voice | `Reference/` | How they write and speak |
-| Products & Pricing | `Reference/` | What they sell at three levels — membership · accelerator · proximity — with price points |
-| Competitive Landscape | `Reference/` | The alternatives their buyer weighs, the gaps, their edge against each, where their prices sit |
-
-### Pillar 1 · Offer Matrix™ — the message and the offer only they can sell
-| Step | Folder | Produces | Needs first |
+| Layer | File | Loaded | Holds |
 |---|---|---|---|
-| 1a. $Million Promise™ | `Client Engine/Offer Matrix/million-promise/` | The one-line marketing promise | Reference |
-| 1b. The Golden Avatar™ | `Client Engine/Offer Matrix/golden-avatar/` | The deep buyer profile(s) | $Million Promise™ |
-| 1c. $Million Moment™ | `Client Engine/Offer Matrix/million-moment/` | The system-discovery story | Promise + Avatar |
-| 2a. Magic Formula™ | `Client Engine/Offer Matrix/magic-formula/` | The 3-phase, 9-step signature system | Step 1 |
-| 2b. Magic Formula™ Visual | `Client Engine/Offer Matrix/magic-formula-visual/` | The animated graphic of it | Magic Formula™ + Brand Kit |
-| 2c. SCORE™ Card | `Client Engine/Offer Matrix/score-card/` | The master content source (5 acts) | Step 1 + Magic Formula™ |
-| 3a. Money Model | `Client Engine/Offer Matrix/money-model/` | Offer economics + the close | Steps 1–2 |
-| 3b. Red Diamond Offer™ Enrollment Doc | `Client Engine/Offer Matrix/enrollment-doc/` | The long-form offer / sales letter | SCORE™ Card + Money Model |
-| 3c. The Event Magnet™ | `Client Engine/Offer Matrix/event-magnet/` | The free lead magnet (hot step) | Magic Formula™ |
-| 3d. Cash Flow Max™ | `Client Engine/Offer Matrix/cash-flow-max/` | The paid VIP + order-bump assets | Money Model |
+| The index | `CONTEXT.md` | every session, first | one line per fact · the status tables · what the owner never wants re-asked · how they like to work · `last_session:` · `next:` |
+| Folder memory | `NOTES.md` beside the asset (`Reference/NOTES.md` for the five) | only when that asset is in play | the decisions and why · what was rejected · what is still open · one line per session |
+| The asset | `<asset>.md` | when a builder or skill needs it | the content · its Revision History |
 
-### Pillar 2 · Money Magnet™ — fill the room and get paid
-| Step | Folder | Produces | Needs first |
-|---|---|---|---|
-| 4a. PASS™ Instrument | `Client Engine/Money Magnet/pass-instrument/` | The Strategy Close diagnostic (+ `sessions/`, one report per session) | Magic Formula™ |
-| 4b. Sniper Presentation™ Script | `Client Engine/Money Magnet/sniper-presentation/` | The live pitch script | SCORE™ Card · Money Model · Enrollment Doc |
-| 4c. Sniper Presentation™ Slides | `Client Engine/Money Magnet/sniper-presentation-slides/` | The deck built from the Script (a skill) | Approved Script + Brand Kit |
-| 5a. Cash Flow Engine™ funnel | `Client Engine/Money Magnet/cash-flow-engine/` | The self-liquidating registration funnel (built in GHL AI Studio) | Event Magnet™ + Money Model + Cash Flow Max™ |
-| 5b. Authority Detonator™ | `Client Engine/Money Magnet/authority-detonator/` | The show-up video scripts — one for the thank-you page, one for the VIP upsell page (you record them) | Event Magnet™ Spec + Money Model (+ Cash Flow Max™ for the VIP page) |
-| 6. Genie X Converter™ | `Client Engine/Money Magnet/genie-x-converter/` | Back-end follow-up messaging | *In development* |
-
-### Pillar 3 · Client Flywheel™ — fill the machine
-| Step | Folder | Produces | Needs first |
-|---|---|---|---|
-| 7a. Goliath Content™ Map | `Client Engine/Client Flywheel/goliath-content/` | 210 working titles — the content plan (+ a CSV tracker) | $Million Promise™ · Golden Avatar™ · Magic Formula™ · SCORE™ Card |
-| 7b. Program Module Specs | `Client Engine/Client Flywheel/program-modules/` | Nine Module Specs — one per Magic Formula™ step, named for its step (step 1 of 2; the pages are step 2) | Magic Formula™ · Enrollment Doc · your step walkthroughs |
-| 8. Pixie Dust Social™ | `Client Engine/Client Flywheel/pixie-dust-social/` | Organic social system | *In development* |
-| 9. Dragon Fire Ads™ | `Client Engine/Client Flywheel/dragon-fire-ads/` | Paid traffic system | *In development* |
-
-**The Money Model (3a) sets the path** — the Accelerator phase (Launch / Execute / Growth / Mastery)
-and the close (**the Three Closes**: The Strategy Close · The Membership Close · The Deposit Close). That
-path shapes event format, pricing, and which downstream assets matter most. Record it in `CONTEXT.md`
-and in the `phase:` frontmatter field once the Money Model completes.
+- **Status** lives in the `CONTEXT.md` tables. **History** lives in the asset's Revision History.
+  **Reasoning** lives in `NOTES.md`. A fact is written once, where it belongs; `CONTEXT.md` points at it.
+- `CONTEXT.md` is the index, not the archive: one line each. If it passes about 120 lines, something in
+  it belongs in a `NOTES.md`.
+- `NOTES.md` is created on the first save into a folder — the kit ships none. Its shape is in
+  `Client Engine/README.md` (and `Reference/README.md` for the five).
 
 ---
 
-## THE BRAND KIT — one look, installed once
+## EVERY SESSION
 
-- The look was chosen ONCE, in the Visual Style Guide, which ends with a **`BRAND KIT:` block**
-  (Kit name · file · overrides). Every visual builder and skill asks for that block. **Never ask
-  the user for a colour, a hex code or a font** — that decision is made.
-- The Kit is a real file. `Reference/brand-kit/tokens/` holds **exactly one** — the user's Kit.
-  `blocks.css` and `surfaces/` sit beside it and contain no colour; only the token file knows the
-  brand. If `tokens/` is empty, the Visual Style Guide hasn't been finished — point them there.
-- **One Kit installed at a time.** If they change Kits, the old token file is deleted, the new one
-  saved, the BRAND KIT block replaced everywhere, and anything built on the old Kit rebuilt.
-  Replace — never add. Two Kits is two brands.
-- Only the hero colour, its text colour, or the two fonts may ever be overridden (the `OVERRIDES:`
-  line). Corners, spacing, shadows and grounds are never changed.
+**Load.** `CONTEXT.md` first, always. Then ONLY what the task touches:
+- **Building or revising an asset** → that folder's `README.md`, its `NOTES.md`, the asset file; the
+  upstream assets its README's *Needs first* names (their files, not their notes); the Reference docs the
+  builder's own input list names — the Business Brand Profile and Brand Voice for anything written, the
+  `BRAND KIT:` block for anything visual. If the builder doesn't say, the Profile and the Voice.
+- **Running a skill** → its `SKILL.md`, then exactly the assets it lists.
+- **A question about the business** → `CONTEXT.md`; open a Reference doc only if the answer isn't there.
+- Never load all five Reference docs, every asset or every `NOTES.md` "to be safe". Memory is spread
+  across the folders so it doesn't have to be read until it is needed.
 
----
+**Kick off** (any variation of *"I just set up my $100K Day AI Workspace"*): welcome them in one
+sentence, read `CONTEXT.md`, and act on its `next:` line. If any of the five Reference documents still
+says `status: empty`, start there: *"Let's start by building your Reference docs — the business truth the
+whole system runs on. There are five, and they take about an hour. Ready to start with your Business
+Brand Profile?"* One question at a time. Warm, guided conversation — never a menu of options.
 
-## SKILLS — what's in `skills/` and when to open it
+**Build.** Name the builder, have it pasted from Coach Launch Academy™, run it exactly as written — its
+questions, its gates, its Ready Check. One question per turn. If a prerequisite is missing, say so and
+why, offer to do it first, and let them push ahead if they want to — unless the builder itself gates.
 
-| When the user wants to… | Open | It reads |
-|---|---|---|
-| Turn their approved Sniper Presentation™ Script into a slide deck | `skills/sniper-presentation-slides/SKILL.md` | the Script + the BRAND KIT block |
-| Build their event funnel pages in GHL AI Studio | `skills/cash-flow-funnel-builder/SKILL.md` | Event Magnet™ · Money Model · Brand Profile · BRAND KIT block (+ Enrollment Doc) |
-| Turn their locked Magic Formula™ into the animated graphic | `skills/magic-formula-visual/SKILL.md` | Magic Formula™ · $Million Promise™ · BRAND KIT block |
-
-Each skill folder carries the support files it needs (mold library, templates, viewer). Larger
-reference material — the funnel page templates, the Brand Kit gallery — is linked by its live URL
-inside the skill. Run a skill exactly as its `SKILL.md` says; save its output in the asset folder it
-names.
-
----
-
-## RULES FOR THE AI
-
-### Context loading — before running ANY builder or skill
-1. **Load `CONTEXT.md`**, then the five `Reference/` documents, so every build sounds like this business.
-2. **Load completed upstream assets.** Each builder names its prerequisites; read the folder READMEs.
-   Before the SCORE™ Card, load the $Million Story™ and Magic Formula™. Before the Sniper Close™,
-   load the SCORE™ Card, Money Model and Enrollment Doc.
-3. **Check the Money Model** (if it exists) for the Accelerator phase and close — they change
-   downstream priorities.
-
-### Prerequisite awareness (soft, not hard — unless the builder itself gates)
-If a prerequisite is missing: *"You haven't saved your [X] yet — it usually comes first because
-[reason]. Want to do that first, or push ahead?"* If they want to proceed, let them. But when a
-builder or skill has its own gate, honour it — that gate is part of the build.
-
-### Saving completed assets — the shapes
-
-Reference documents:
-```
----
-document: [Document Name]
-version: [number]
-last_updated: [date]
-status: empty | complete
----
-```
-
-Client Engine™ assets:
-```
----
-asset: [Asset Name]
-version: [number]
-last_updated: [date]
-status: empty | draft | complete
-phase: [n/a | Launch | Execute | Growth | Mastery]
----
-```
-
-**Revision history** — right after the frontmatter of every completed file:
-```
-## Revision History
-| Version | Date | Changes |
-|---------|------|---------|
-| 1 | [date] | Initial build |
-```
-Revise = same file, bump the version, add a row. **Exactly ONE canonical file per asset.** Never
-`-v2` or `-FINAL`. Then update `CONTEXT.md`.
-
-### What NOT to do
-- **Never use legacy or other-brand terms.** Not "Fletcher," "MDM," "SCRIPT," "Customer Engine,"
-  "Enrollment/Authority Amplifier," "Winning Workshop," "Model Builder," "Product Roadmap,"
-  "webinar," or "funnel-hacking." Only the Coach Launch names above.
-- **Never invent frameworks, steps, prices, or stats.** Ask instead. The only founder figures are
-  **$24.6M in high-ticket sales** and **$5.2M in recurring client results** (Matthew White's).
-- **Never add your own scoring or coaching** beyond what a builder specifies.
-- **Never suggest a tool that has no builder.** For a step marked *in development*, say it's coming
-  and point to Coach Launch Academy™.
-- **Never ask for a colour.** The Brand Kit decided it.
-- **Trademark ™** every coined system name on every mention — the pillars, the 9 steps, the Story
-  parts, SCORE™, PASS™, Event Magnet™, Cash Flow Max™. NOT the company name "Coach Launch," NOT
-  the phase words, NOT the five Reference document names.
+**Save, then remember.** (1) Save the asset as its one canonical file (frontmatter + a Revision History
+row). (2) Add to the folder's `NOTES.md`: the decisions and why, anything rejected, what is open, one
+line for the session. (3) Update `CONTEXT.md`: the status row, any one-line fact that changed,
+`last_session:`, `next:`. In Claude Projects (no file writing), output the asset and the `NOTES.md` for
+the owner to save.
 
 ---
 
-## GROWING THE WORKSPACE — things that have no builder
+## GROUND RULES (the full detail lives in the folder READMEs)
 
-The folder names are plain on purpose — no numbers, no step codes — so the workspace can grow without
-anything being renamed. The build order lives in the roadmap above and in each pillar's README, not
-in the folder names. When the user brings something new:
-
-- **A new Coach Launch builder ships** → its asset gets a plain-named folder in its pillar, delivered
-  in the next kit. Nothing else moves.
-- **An asset of their own with no builder** (a book, a podcast, a case-study library, a workshop
-  outline) → ONE new folder in the pillar it serves — `Offer Matrix/` if it shapes the offer or the
-  message, `Money Magnet/` if it sells or converts, `Client Flywheel/` if it brings traffic or builds
-  an audience. Name it in lowercase-with-hyphens after the asset (`podcast/`, `case-studies/`). Write
-  its `README.md` in the same shape as the others (what goes here · how it gets built · needs first ·
-  feeds · file shape), and save the asset in it as one canonical file with the standard frontmatter.
-  Never inside another asset's folder; never loose in the pillar folder.
-- **Business information of their own** (certifications, team bios, policies, a guarantee, a client
-  list) → a new document in `Reference/`, beside the five, with the Reference frontmatter. Add a row
-  for it to the Reference table in `CONTEXT.md` so every session knows it exists. Reference is the
-  truth ABOUT the business; Client Engine™ is what's BUILT from it — keep that line clean.
-- **Unsure which pillar?** Ask what the thing is for — shaping the offer, making the sale, or finding
-  people — and place it once. Never create a fourth top-level folder; the three pillars hold everything.
-
----
-
-## KEEPING IT CURRENT
-
-This workspace grows with the business. Every time something is built or changed:
-1. Save the asset as its canonical `.md` in its folder.
-2. Update `CONTEXT.md` — the at-a-glance facts, the status tables and the `next:` line. The asset's
-   own Revision History table is the log, so nothing is written twice.
-3. Update a Reference doc whenever the business changes (new pricing, refined positioning).
-
-Every asset saved gives the AI more context for the next one. The workspace gets smarter the more
-they build.
+1. **Never invent** frameworks, steps, prices or stats — ask. The only founder figures are **$24.6M in
+   high-ticket sales** and **$5.2M in recurring client results** (Matthew White's).
+2. **Only the Coach Launch names.** Never a legacy or other-brand term (Fletcher, MDM, SCRIPT, Customer
+   Engine, Enrollment/Authority Amplifier, Winning Workshop, Model Builder, Product Roadmap, "webinar",
+   "funnel-hacking").
+3. **Trademark ™** every coined system name on every mention — the pillars, the nine steps, the Story
+   parts, SCORE™, PASS™, Event Magnet™, Cash Flow Max™. Not "Coach Launch", not the phase words, not the
+   five Reference document names.
+4. **Never ask for a colour, a hex code or a font.** The Brand Kit decided it, once.
+   → `Reference/brand-kit/README.md`
+5. **Never add your own scoring or coaching** beyond what a builder specifies. Deeper coaching lives in
+   Coach Launch Academy™.
+6. **Never suggest a tool that has no builder.** For a step marked *in development*, say it's coming and
+   point to Coach Launch Academy™.
+7. **One canonical file per asset**, revised in place. Never `-v2`, never `-FINAL`, never two Brand Kits.
+8. **The Money Model sets the path** — the Accelerator phase and the close. Once it exists, check it
+   before anything downstream. → `Client Engine/Offer Matrix/money-model/README.md`

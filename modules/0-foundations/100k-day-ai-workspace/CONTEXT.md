@@ -1,12 +1,15 @@
-# CONTEXT.md — the business at a glance
+# CONTEXT.md — the index
 
-> The AI reads this FIRST every session and updates it after every save. It is the one memory file:
-> the business facts, what's built, what's locked, what's next. Keep it short and current — it's the
-> summary, not the source. The sources are the files it points to.
+> The AI reads this FIRST every session and updates it after every save. It is the index, not the
+> archive: the business in one line per fact, what's built, what's locked, what's next, and how the owner
+> likes to work. Every line points at a source — the Reference doc, the asset file, or the folder's
+> `NOTES.md` where the reasoning lives. One line each. If this file passes about 120 lines, something in
+> it belongs in a `NOTES.md`.
 
 ```
 business: [name]                          status: workspace set up, nothing built yet
 last_updated: [date]
+last_session: [date] — [what happened, in a line]
 next: Business Brand Profile — run its builder from Coach Launch Academy™, save the result over
       Reference/business-brand-profile.md
 run_by: [solo | partnership | team]       pronoun: [I | we]   (from the Business Brand Profile)
@@ -14,6 +17,13 @@ brand_kit: [none yet]                     overrides: [none]   (from the Visual S
 accelerator_phase: TBD — set in the Money Model
 close: TBD — set in the Money Model       (The Strategy Close | The Membership Close | The Deposit Close)
 ```
+
+## How [name] likes to work
+
+Three to five lines, added as they come up — how they want to be spoken to, how much to show at once,
+what they always want checked. A preference in a line, never a transcript.
+
+- —
 
 ## Reference — the truth (five documents)
 
@@ -26,7 +36,8 @@ close: TBD — set in the Money Model       (The Strategy Close | The Membership
 | 5 | Competitive Landscape | `Reference/competitive-landscape.md` | empty | 0 | — |
 
 Build them in that order. Status matches the file's own frontmatter: `empty` → `complete`. Add a row
-here for any Reference document of your own (see `Reference/README.md`).
+here for any Reference document of your own (see `Reference/README.md`). The reasoning behind any of
+the five — what was decided and why — lives in `Reference/NOTES.md`, not here.
 
 **Brand Kit installed:** none — `Reference/brand-kit/tokens/` is empty until the Visual Style Guide is built.
 
@@ -69,8 +80,8 @@ Fill these in as the Reference docs lock. One line each, verbatim from the sourc
 
 Status matches the asset's own frontmatter: `not started` → `draft` → `complete`. `in development` means
 no builder yet — say it's coming and point to Coach Launch Academy™. When a status changes, change it
-here; the asset file's own Revision History table is the log. Add a row for any asset of your own (see
-`Client Engine/README.md`).
+here and nowhere else: the asset file's Revision History is the log, and its folder's `NOTES.md` holds
+the reasoning — neither is repeated here. Add a row for any asset of your own (see `Client Engine/README.md`).
 
 ## The one-line system (fill in as it locks)
 

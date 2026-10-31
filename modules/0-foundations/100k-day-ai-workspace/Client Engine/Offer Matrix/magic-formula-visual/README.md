@@ -15,6 +15,9 @@ Your locked Magic Formula™, your $Million Promise™, and the BRAND KIT block 
 ## Feeds
 Your ads, funnel pages and slide deck — the same system, drawn once.
 
+## Memory
+`NOTES.md`, beside the asset — the decisions and why, what was rejected, what's still open, one line per session. Claude reads it before touching this asset and adds to it after every save (it makes the file the first time). Only the status line goes in `CONTEXT.md`; the reasoning stays here.
+
 ## File shape
 ```
 ---

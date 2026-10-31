@@ -12,9 +12,9 @@ works everywhere.
 
 ```
 README.md          ← you are here. How to set this up.
-CLAUDE.md          The brain. Tells Claude how to run your workspace — where things live, the rules.
-CONTEXT.md         Your business at a glance — what's locked, what's next. Claude keeps it current
-                   so every session starts knowing.
+CLAUDE.md          The map. Tells Claude where everything lives and how each folder is used. Short on purpose.
+CONTEXT.md         The index. Your business at a glance — what's locked, what's next — one line per fact.
+                   Claude reads it first every session and keeps it current.
 
 Reference/         Your five Foundation documents — the truth everything reads from.
                    Plus brand-kit/ — your ONE installed Brand Kit (the look every asset uses).
@@ -28,6 +28,20 @@ skills/            The delivered tools Claude runs from here — slides, funnel 
 
 Every folder has a `README.md`. If you ever wonder where something goes, open the README of the
 folder you think it belongs in.
+
+## How your workspace remembers
+
+Three layers, each with one job, so nothing is written twice and no single file ever gets heavy:
+
+1. **`CONTEXT.md` — the index.** Your business at a glance: one line per fact, what's built, what's
+   next, how you like to work. Claude reads it first every session. It stays short.
+2. **`NOTES.md` — the memory beside each asset.** Every asset folder gets one the first time Claude
+   saves there: the decisions and why, what you turned down, what's still open, a line per session.
+   Claude reads it only when it's working on that asset — so the memory grows with every build, but
+   your sessions never start by reading all of it.
+3. **The asset file itself.** The finished thing, with its version history at the top.
+
+You don't maintain any of this. Claude writes it as you build. You just get an AI that already knows.
 
 ## Where the builders are
 
@@ -63,8 +77,9 @@ One rule to remember: **one file per asset.** You update the same file over time
    > "I just set up my $100K Day AI Workspace. Read the CLAUDE.md file in this folder and walk me
    > through the setup."
 
-Claude reads the brain, checks your Reference docs, and starts building with you — one step at a
-time. When a builder finishes, Claude writes the file straight into the right folder.
+Claude reads the map, checks your Reference docs, and starts building with you — one step at a
+time. When a builder finishes, Claude writes the file straight into the right folder, adds the
+decisions to that folder's `NOTES.md`, and updates `CONTEXT.md`.
 
 ### Option B — Claude Projects (claude.ai)
 
@@ -75,8 +90,9 @@ time. When a builder finishes, Claude writes the file straight into the right fo
 
    > "I just set up my $100K Day AI Workspace. Use the instructions and walk me through the setup."
 
-Claude outputs each finished document in the chat. You copy it, paste it over the matching file,
-and re-upload it to the Project.
+Claude outputs each finished document in the chat — and the folder's `NOTES.md` and the updated
+`CONTEXT.md` with it. You copy each one, paste it over the matching file, and re-upload it to the
+Project.
 
 ---
 

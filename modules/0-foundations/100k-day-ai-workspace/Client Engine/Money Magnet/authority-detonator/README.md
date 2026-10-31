@@ -19,3 +19,6 @@ Blueprint. Your SCORE™ Card makes it sharper; your Brand Voice makes it sound 
 
 **Feeds:** the Cash Flow Engine™ Funnel Builder (the page it plays on) and the Genie X Converter™ (the messages
 that point back to it).
+
+## Memory
+`NOTES.md`, beside the asset — the decisions and why, what was rejected, what's still open, one line per session. Claude reads it before touching this asset and adds to it after every save (it makes the file the first time). Only the status line goes in `CONTEXT.md`; the reasoning stays here.

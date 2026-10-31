@@ -35,3 +35,7 @@ Only the file in `tokens/` knows what colour your brand is. The other two layers
 - **Changing your Kit later?** Re-run the Visual Style Guide Builder's Kit step, delete the old file
   from `tokens/`, save the new one, and replace the BRAND KIT block in your guide. Then rebuild
   anything you made on the old Kit. Replace — never add.
+- **Only the hero colour, its text colour, or the two fonts may ever be overridden** — the `OVERRIDES:`
+  line of your BRAND KIT block. Corners, spacing, shadows and the two grounds are never changed.
+- **If `tokens/` is empty, the Visual Style Guide isn't finished.** Claude points you there — it never
+  picks a Kit for you, and never asks you for a colour.

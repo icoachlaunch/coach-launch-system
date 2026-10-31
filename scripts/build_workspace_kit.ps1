@@ -120,7 +120,7 @@ foreach ($f in $textFiles) {
     if ($t -match 'Client Engine/(Offer Matrix|Money Magnet|Client Flywheel)/[1-9]') { $fail += "$rel : stale prefixed asset folder (asset folders carry plain names)" }
     if ($t -match 'pass-sessions/')          { $fail += "$rel : stale pass-sessions/ (sessions live in pass-instrument/sessions/)" }
     if ($t -match 'PROJECT-INSTRUCTIONS')    { $fail += "$rel : mentions PROJECT-INSTRUCTIONS" }
-    if ($t -match 'PROGRESS\.md')            { $fail += "$rel : mentions PROGRESS.md (the kit has ONE memory file, CONTEXT.md - merged 2026-09-17)" }
+    if ($t -match 'PROGRESS\.md')            { $fail += "$rel : mentions PROGRESS.md (the kit's one always-loaded memory file is CONTEXT.md - merged 2026-09-17; folder memory is NOTES.md)" }
     # legacy terms: ignore the paragraph that LISTS them as banned (it wraps over several lines),
     # and the house tool 'Money Model Builder'
     $tt = ([regex]::Split($t, '\r?\n[ \t]*\r?\n') | Where-Object { $_ -notmatch '(?i)legacy' }) -join "`n`n"
@@ -144,11 +144,21 @@ foreach ($must in 'README.md','CLAUDE.md','CONTEXT.md','Reference\README.md','Re
                   'skills\sniper-presentation-slides\SKILL.md','skills\cash-flow-funnel-builder\SKILL.md','skills\magic-formula-visual\SKILL.md') {
   if (-not (Test-Path (Join-Path $top $must))) { $fail += "missing: $must" }
 }
-if (Test-Path (Join-Path $top 'PROGRESS.md')) { $fail += "PROGRESS.md must not ship - the kit has ONE memory file, CONTEXT.md (merged 2026-09-17)" }
+if (Test-Path (Join-Path $top 'PROGRESS.md')) { $fail += "PROGRESS.md must not ship - the kit's one always-loaded memory file is CONTEXT.md (merged 2026-09-17); folder memory is NOTES.md" }
 $readmes = Get-ChildItem -LiteralPath (Join-Path $top 'Client Engine') -Recurse -Directory | Where-Object { -not (Test-Path (Join-Path $_.FullName 'README.md')) }
 foreach ($d in $readmes) { $fail += ('Client Engine folder without README: ' + $d.FullName.Substring($top.Length + 1)) }
 $pillars = ((Get-ChildItem -LiteralPath (Join-Path $top 'Client Engine') -Directory | Select-Object -ExpandProperty Name | Sort-Object) -join '|')
 if ($pillars -ne 'Client Flywheel|Money Magnet|Offer Matrix') { $fail += "Client Engine must hold exactly the three pillar folders (got: $pillars)" }
+# memory architecture (Matthew, 2026-10-31): CONTEXT.md is the one ALWAYS-LOADED memory file (the index);
+# folder memory is a NOTES.md that Claude writes beside each asset in the client's own workspace. The kit
+# never ships a NOTES.md - so a kit update dropped over a workspace can never overwrite a client's notes -
+# and every asset README must tell Claude to keep one. CLAUDE.md is the map and stays light.
+foreach ($n in ($files | Where-Object { $_.Name -eq 'NOTES.md' })) { $fail += ('NOTES.md must not ship (Claude writes folder memory in the client workspace): ' + $n.FullName.Substring($top.Length + 1)) }
+$assetReadmes = Get-ChildItem -LiteralPath (Join-Path $top 'Client Engine') -Directory | ForEach-Object { Get-ChildItem -LiteralPath $_.FullName -Directory } | ForEach-Object { Join-Path $_.FullName 'README.md' }
+foreach ($r in $assetReadmes) { if ((Test-Path $r) -and ((Get-Content -LiteralPath $r -Raw -Encoding UTF8) -notmatch 'NOTES\.md')) { $fail += ('asset README without the NOTES.md memory section: ' + $r.Substring($top.Length + 1)) } }
+foreach ($r in 'CLAUDE.md','CONTEXT.md','README.md','Reference\README.md','Client Engine\README.md') { if ((Get-Content -LiteralPath (Join-Path $top $r) -Raw -Encoding UTF8) -notmatch 'NOTES\.md') { $fail += "$r : does not describe NOTES.md folder memory" } }
+$claudeLines = @(Get-Content -LiteralPath (Join-Path $top 'CLAUDE.md') -Encoding UTF8).Count
+if ($claudeLines -gt 130) { $fail += "CLAUDE.md is $claudeLines lines - it is the map and stays under 130; move detail into the folder READMEs (Matthew, 2026-10-31)" }
 if ($fail.Count -gt 0) { $fail | ForEach-Object { Write-Host ("FAIL  " + $_) -ForegroundColor Red }; throw "kit verification failed ($($fail.Count))" }
 
 # ---- 5. zip (forward-slash entries, UTF-8 names) -----------------------------------------------

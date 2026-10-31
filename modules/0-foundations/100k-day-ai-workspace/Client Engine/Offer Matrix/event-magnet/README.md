@@ -15,6 +15,9 @@ Your locked Magic Formula™ (hot step flagged) and $Million Promise™. Money M
 ## Feeds
 Your funnel pages (it carries the event's hook and core copy) and slide 1 of your deck.
 
+## Memory
+`NOTES.md`, beside the asset — the decisions and why, what was rejected, what's still open, one line per session. Claude reads it before touching this asset and adds to it after every save (it makes the file the first time). Only the status line goes in `CONTEXT.md`; the reasoning stays here.
+
 ## File shape
 ```
 ---

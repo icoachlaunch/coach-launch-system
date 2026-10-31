@@ -15,6 +15,9 @@ Step 1 complete — above all a locked $Million Promise™.
 ## Feeds
 The Magic Formula™ Visual, the SCORE™ Card, the Event Magnet™ (from the hot step), the PASS™ Instrument.
 
+## Memory
+`NOTES.md`, beside the asset — the decisions and why, what was rejected, what's still open, one line per session. Claude reads it before touching this asset and adds to it after every save (it makes the file the first time). Only the status line goes in `CONTEXT.md`; the reasoning stays here.
+
 ## File shape
 ```
 ---
