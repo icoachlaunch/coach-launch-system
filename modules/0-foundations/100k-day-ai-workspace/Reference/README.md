@@ -11,7 +11,7 @@ and never asks you twice. Five documents, one Brand Kit, and room for your own.
 | 2 | Visual Style Guide | `visual-style-guide.md` + your Kit in `brand-kit/` | Your look — the one Brand Kit everything reads |
 | 3 | Brand Voice | `brand-voice.md` | How you write and speak |
 | 4 | Products & Pricing | `products-and-pricing.md` | What you sell at three levels — membership · accelerator · proximity — with price points |
-| 5 | Competitive Landscape | `competitive-landscape.md` | Your market, competitors, and edge |
+| 5 | Competitive Landscape | `competitive-landscape.md` | The alternatives your buyer weighs, the gaps, your edge against each, where your prices sit |
 
 Build them in that order; each makes the next builder sharper. Each has its own builder in
 **Coach Launch Academy™** — download it from your Training Portal, paste it into a fresh chat, answer

@@ -140,7 +140,7 @@ Launch → Execute → Growth → Mastery — over 112 days.)
 | Visual Style Guide | `Reference/` + `Reference/brand-kit/` | Their look — the one Brand Kit everything reads |
 | Brand Voice | `Reference/` | How they write and speak |
 | Products & Pricing | `Reference/` | What they sell at three levels — membership · accelerator · proximity — with price points |
-| Competitive Landscape | `Reference/` | Their market, competitors, and edge |
+| Competitive Landscape | `Reference/` | The alternatives their buyer weighs, the gaps, their edge against each, where their prices sit |
 
 ### Pillar 1 · Offer Matrix™ — the message and the offer only they can sell
 | Step | Folder | Produces | Needs first |

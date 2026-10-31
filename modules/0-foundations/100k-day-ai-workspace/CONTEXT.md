@@ -40,6 +40,7 @@ Fill these in as the Reference docs lock. One line each, verbatim from the sourc
 - **Location & service area (and any limits):** —
 - **Voice in three words:** —
 - **What they sell today (the three levels · price points):** —
+- **Edge in a line (and the real competition):** —
 
 ## Client Engine™ — what's built, what's locked
 
