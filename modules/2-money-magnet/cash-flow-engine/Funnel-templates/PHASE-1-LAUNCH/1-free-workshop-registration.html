@@ -373,9 +373,9 @@ if(k){var s=document.querySelectorAll('style.cfe-kit');for(var i=0;i<s.length;i+
 })();</script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Full Calendar Workshop — Free Live workshop</title>
+<title>The Full Calendar Workshop — Live workshop · Thu 12 Nov</title>
 <meta name="description" content="In one day, build the referral system that books your next 20 new patients">
-<meta name="cfe-page" content="free-registration">
+<meta name="cfe-page" content="registration">
 <style>
 
 /* ═══════════════════════════════════════════════════════════
@@ -1879,6 +1879,112 @@ html { scroll-behavior: smooth; }
 /* Phase 2 VIP hero: Matthew set it to 472px on the canvas (2026-10-08) — ported as tighter bottom padding, not a fixed height */
 [data-cfe="02-hero"].cl-vip:has(+ [data-cfe="03-video"]) { padding-bottom: 26px; }
 
+/* ═══════════ DEPOSIT CLOSE — the price split (Matthew, 2026-10-17) ═══════════ */
+.cl-deposit__split { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-3); margin: 0 0 var(--sp-5); }
+.cl-deposit__part { background: var(--paper); color: var(--paper-ink); border: 2px solid var(--paper-line); border-radius: 15px; padding: var(--sp-4) var(--sp-3); text-align: center; box-shadow: var(--shadow-md); }
+.cl-deposit__part.is-today { border-color: var(--accent); }
+.cl-deposit__part p { margin: 0; }
+.cl-deposit__k { font-family: var(--font-mono); font-size: calc(var(--fs--1) * .9); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--paper-soft); }
+.cl-deposit__part.is-today .cl-deposit__k { color: var(--accent); }
+.cl-deposit__n { font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-3); line-height: 1.1; margin-top: .25em !important; color: var(--paper-ink); }
+.cl-deposit__t { font-size: var(--fs--1); color: var(--paper-soft); margin-top: .4em !important; }
+@media (max-width: 640px) { .cl-deposit__split { grid-template-columns: 1fr; } }
+
+/* CLIENT DOCUMENT IMAGES — the client's Magic Formula™ visual and Event Magnet™ tool are shown WHOLE, never cropped
+   (Matthew, 2026-10-22: "I need the entire image brought in"). Their own proportions win over the slot's 16:9. */
+img[data-cfe-media="system-diagram"], img[data-cfe-media="event-magnet"], img[data-cfe-media="event-magnet-tool"] {
+  aspect-ratio: auto !important; height: auto !important; object-fit: contain !important; background: transparent; }
+
+/* TRUST ROW placeholders — a face with no client photo yet shows a neutral silhouette, so the row is always visible (Matthew, 2026-10-22) */
+span.cl-face { background-color: color-mix(in srgb, var(--accent) 14%, var(--paper));
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='15' r='7' fill='%23a3a3a3'/%3E%3Cpath d='M6 38c1.5-8 7-12 14-12s12.5 4 14 12z' fill='%23a3a3a3'/%3E%3C/svg%3E");
+  background-size: 100% 100%; background-repeat: no-repeat; }
+
+/* ── 10 · BEFORE / AFTER — the transformation band (2026-10-22) ─────────────────────────────── */
+.cl-ba { background: radial-gradient(90% 70% at 50% 0%, color-mix(in srgb, var(--accent) 10%, var(--canvas)) 0%, var(--canvas) 70%); } /* light band (Matthew, 2026-10-22) */
+.cl-ba__pics { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-5); max-width: 1000px; margin: var(--sp-5) auto var(--sp-5); align-items: center; }
+.cl-ba__pic { position: relative; margin: 0; }
+.cl-ba__img, img.cl-ba__img { display: block; width: 100%; aspect-ratio: 4 / 3; min-height: 0; object-fit: cover; border-radius: var(--r-lg); }
+.cl-ba__pic--before .cl-ba__img { filter: grayscale(.85) brightness(.95); transform: scale(.94); opacity: .9; border: 2px solid color-mix(in srgb, var(--neg) 60%, transparent); }
+.cl-ba__pic--after .cl-ba__img { border: 3px solid var(--pos); box-shadow: 0 0 0 6px color-mix(in srgb, var(--pos) 22%, transparent), 0 18px 44px rgba(0,0,0,.14); }
+.cl-ba__tag { position: absolute; top: 14px; left: 14px; padding: .35em .9em; border-radius: 999px; font-family: var(--font-display); font-weight: var(--weight-display);
+  font-size: var(--fs--1); letter-spacing: .14em; text-transform: uppercase; color: #fff; }
+.cl-ba__tag--before { background: var(--neg); }
+.cl-ba__tag--after { background: var(--pos); }
+.cl-ba__arrow { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2; width: 64px; height: 64px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--accent); color: var(--ink-on-brand, #fff); font-size: 30px; font-weight: 800;
+  box-shadow: 0 0 0 6px var(--canvas), 0 10px 30px rgba(0,0,0,.4); }
+.cl-ba__rows { max-width: 1000px; margin: 0 auto var(--sp-5); display: grid; gap: var(--sp-2); }
+.cl-ba__head, .cl-ba__row { display: grid; grid-template-columns: 1fr 48px 1fr; align-items: stretch; gap: var(--sp-2); }
+.cl-ba__head span { font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs--1); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+.cl-ba__head span:last-child { color: var(--pos); }
+.cl-ba__before, .cl-ba__after { display: flex; gap: .7em; align-items: center; margin: 0; padding: .9em 1.1em; border-radius: 14px; line-height: 1.35; }
+.cl-ba__before { background: color-mix(in srgb, var(--ink) 4%, var(--canvas)); color: var(--ink-soft); border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent); }
+.cl-ba__after { background: color-mix(in srgb, var(--pos) 10%, var(--canvas)); color: var(--ink); font-weight: var(--weight-body-strong); border: 1px solid color-mix(in srgb, var(--pos) 55%, transparent); font-size: 1.04em; }
+.cl-ba__before i, .cl-ba__after i { flex: none; width: 1.6em; height: 1.6em; border-radius: 50%; display: grid; place-items: center; font-style: normal; font-weight: 800; font-size: .85em; color: #fff; }
+.cl-ba__before i { background: var(--neg); }
+.cl-ba__after i { background: var(--pos); }
+.cl-ba__to { display: grid; place-items: center; color: var(--accent); font-size: 1.5em; font-weight: 800; }
+/* Mobile (Matthew, 2026-10-22): never interleave — the whole BEFORE block (full-width picture + every before line),
+   a down arrow, then the whole AFTER block. The wrappers dissolve (display:contents) and order re-sequences the pieces. */
+@media (max-width: 720px) {
+  .cl-ba__grid { display: flex; flex-direction: column; gap: var(--sp-2); margin-top: var(--sp-4); }
+  .cl-ba__pics, .cl-ba__rows, .cl-ba__head, .cl-ba__row { display: contents; }
+  .cl-ba__pic--before { order: 1; margin-bottom: var(--sp-2); }
+  .cl-ba__head span:first-child { order: 2; }
+  .cl-ba__before { order: 3; }
+  .cl-ba__arrow { order: 4; position: static; transform: rotate(90deg); align-self: center; margin: var(--sp-3) 0; width: 52px; height: 52px; font-size: 24px; }
+  .cl-ba__pic--after { order: 5; margin-bottom: var(--sp-2); }
+  .cl-ba__head span:last-child { order: 6; }
+  .cl-ba__after { order: 7; }
+  .cl-ba__head span:nth-child(2), .cl-ba__to { display: none; }
+  .cl-ba__head span { text-align: center; }
+  .cl-ba__pic--before .cl-ba__img { transform: none; }
+  .cl-ba__grid + .cl-cta-stack { margin-top: var(--sp-5); }
+}
+.cl-ba__img.cl-imgslot { display: grid; place-items: center; padding: 3em 1.5em 1em; }
+.cl-solution__benefits { display: inline-grid; text-align: left; gap: .35em; margin: var(--sp-3) auto var(--sp-2); font-size: var(--fs-1); }
+
+/* ── HERO LAYOUT: 2-column ("split") — Matthew, 2026-10-23. Switch: --layout hero=split (values LAYOUT {"hero": "split"}).
+   Top, full width and centred: the avatar call-out (pill), the headline, the sub-headline.
+   Underneath, two columns: LEFT the event's name + one-line promise (HERO_EVENT_TITLE / HERO_EVENT_BLURB), the countdown,
+   price line, button, privacy line, proof and trust row; RIGHT the hero image/video with a "Live Event" badge under it.
+   Always on the light page background. Phones: one column — call-out, headline, sub-headline, event name, image, countdown, button. */
+.cl-hero__event, .cl-hero__live { display: none; }
+.cl-hero[data-layout="split"] .cl-hero__event { display: block; }
+.cl-hero[data-layout="split"] .cl-hero__live { display: inline-flex; }
+.cl-hero[data-layout="split"] .cl-hero__stack > .cl-eyebrow {
+  justify-self: center; width: auto; display: inline-block; margin-inline: auto; padding: .55em 1.3em; border: 1.5px solid var(--line, rgba(0,0,0,.18));
+  border-radius: 999px; background: var(--paper); }
+.cl-hero__eventname { margin: 0 0 var(--sp-2); font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--fs-2); line-height: 1.15; color: var(--ink); }
+.cl-hero__eventblurb { margin: 0; color: var(--ink-soft); font-size: var(--fs-1); line-height: 1.45; }
+.cl-hero .cl-hero__stack > .cl-hero__live { width: auto; align-self: center; }
+.cl-hero__live { align-items: center; gap: .55em; justify-self: center; margin-top: var(--sp-3); padding: .55em 1.4em; border-radius: 999px;
+  border: 1.5px solid var(--line, rgba(0,0,0,.18)); background: var(--paper); font-family: var(--font-display); font-weight: var(--weight-display); color: var(--ink); }
+.cl-hero__live span { width: .8em; height: .8em; border-radius: 50%; background: #e5243b; box-shadow: 0 0 0 .25em rgba(229,36,59,.18); animation: cl-live 1.6s ease-in-out infinite; }
+@keyframes cl-live { 50% { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) { .cl-hero__live span { animation: none; } }
+@media (max-width: 899px) {
+  .cl-hero[data-layout="split"] .cl-hero__event { margin: var(--sp-3) 0 var(--sp-3); }
+  .cl-hero[data-layout="split"] .cl-hero__eventblurb { font-size: var(--fs-0); }
+}
+@media (min-width: 900px) {
+  .cl-hero[data-layout="split"] .cl-hero__stack {
+    max-width: var(--maxw, 1120px); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    grid-template-areas: "eyebrow eyebrow" "h1 h1" "lede lede" "event media" "cta media" "cta live";
+    grid-template-rows: auto auto auto auto auto 1fr; column-gap: clamp(2rem, 4.5vw, 4.5rem); align-items: start; }
+  .cl-hero[data-layout="split"] .cl-hero__stack > .cl-eyebrow { grid-area: eyebrow; }
+  .cl-hero[data-layout="split"] .cl-hero__stack > .cl-h1 { grid-area: h1; max-width: 26ch; margin-inline: auto; font-size: min(var(--fs-5, 3.6rem), 3.4rem); }
+  .cl-hero[data-layout="split"] .cl-hero__stack > .cl-lede { grid-area: lede; max-width: 52ch; margin: 0 auto var(--sp-6); }
+  .cl-hero[data-layout="split"] .cl-hero__event { grid-area: event; text-align: left; }
+  .cl-hero[data-layout="split"] .cl-hero__media { grid-area: media; max-width: none; margin: 0; align-self: start; }
+  .cl-hero[data-layout="split"] .cl-hero__stack > .cl-hero__live { grid-area: live; align-self: start; justify-self: center; }
+  .cl-hero[data-layout="split"] .cl-hero__cta { grid-area: cta; justify-items: start; text-align: left; margin-top: var(--sp-4); }
+  .cl-hero[data-layout="split"] .cl-herotimer { justify-items: start; }
+  .cl-hero[data-layout="split"] .cl-trustrow { justify-content: flex-start; }
+  .cl-hero[data-layout="split"] .cl-hero__cta .cl-cta { min-width: min(100%, 26rem); }
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════════
    VIP VISUALS — the five VIP deliverables as generated mockups (no image files).
    Each .vv is a 4:3 card that scales with its container (em units from a 480px design).
@@ -1894,8 +2000,7 @@ html { scroll-behavior: smooth; }
 .vv img { display: block; object-fit: cover; box-shadow: none !important; }
 .vv .vv-face { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; }
 .vv .vv-face img, .vv img.vv-face { width: 100%; height: 100%; border-radius: 50%; }
-.vv--pocket .vv-chathead img.vv-face, .vv--plusone .vv-name img.vv-face { width: 1.9em; height: 1.9em; }
-.vv--plusone .vv-name img.vv-face { width: 1.6em; height: 1.6em; }
+.vv--pocket .vv-chathead img.vv-face { width: 1.9em; height: 1.9em; }
 .vv .vv-pill { display: inline-flex; align-items: center; gap: .35em; padding: .3em .75em; border-radius: 999px;
   font-family: var(--font-display); font-weight: var(--weight-display); font-size: .62em; letter-spacing: .06em; text-transform: uppercase; line-height: 1; }
 .vv .vv-pill--live { background: var(--neg); color: #fff; }
@@ -1935,8 +2040,8 @@ html { scroll-behavior: smooth; }
 /* ── 2 · COACHING IN YOUR POCKET — a phone with the host in a chat ─────────────── */
 /* ── Coaching In Your Pocket — WhatsApp-style thread on a full phone (Matthew's reference, 2026-10-08).
    Portrait 3:4 card. App colours are fixed (it has to read as WhatsApp); the brand shows only in the access tag and the backdrop. */
-.vv--pocket .vv__art { aspect-ratio: 3 / 4; background: linear-gradient(170deg, color-mix(in srgb, var(--accent) 16%, var(--panel)), var(--panel) 55%, color-mix(in srgb, var(--accent) 10%, var(--panel))); display: grid; place-items: center; padding: 1.4em 0 1em; }
-.vv--pocket .vv-phone { position: relative; width: 19.4em; height: 37.2em; border-radius: 2.6em; background: #15181c; padding: 1.35em .55em .7em; box-shadow: 0 1.6em 2.4em -1em rgba(0,0,0,.45), 0 0 0 .08em #3a3f46 inset; }
+.vv--pocket .vv__art { aspect-ratio: 3 / 4; background: radial-gradient(80% 70% at 50% 0%, color-mix(in srgb, var(--accent) 16%, var(--paper)) 0%, var(--panel) 72%); display: grid; place-items: center; padding: 1.4em 0 1em; }
+.vv--pocket .vv-phone { position: relative; width: 19.4em; height: 37.2em; border-radius: 2.6em; background: #15181c; padding: 1.35em .55em .7em; box-shadow: 0 1.6em 2.4em -1em rgba(0,0,0,.45), 0 0 0 .08em #4a5059 inset; }
 .vv--pocket .vv-phone::before { content: ""; position: absolute; left: -.22em; top: 7em; width: .22em; height: 2.6em; background: #2a2e34; border-radius: .2em 0 0 .2em; box-shadow: 0 3.6em 0 #2a2e34; }
 .vv--pocket .vv-phone::after { content: ""; position: absolute; right: -.22em; top: 9.4em; width: .22em; height: 3.6em; background: #2a2e34; border-radius: 0 .2em .2em 0; }
 .vv--pocket .vv-speaker { position: absolute; top: .55em; left: 50%; transform: translateX(-50%); width: 3.2em; height: .32em; border-radius: 1em; background: #2c3138; }
@@ -1981,84 +2086,252 @@ html { scroll-behavior: smooth; }
 .vv--pocket .vv-tag { position: absolute; top: 1em; left: 1em; z-index: 2; }
 .vv--pocket .vv-floor { position: absolute; left: 50%; bottom: .35em; width: 17em; height: 1.1em; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(ellipse at center, rgba(0,0,0,.28), rgba(0,0,0,0) 70%); z-index: 0; }
 .vv--pocket .vv-phone { z-index: 1; }
+.vv--pocket .vv-ptitle { position: absolute; left: 8.67em; top: 1.31em; z-index: 2; margin: 0; font-family: var(--font-body); font-weight: 700; font-size: 1.14em; line-height: 1; color: var(--accent); }
+.cl-vipb__vis .vv--pocket .vv__art { aspect-ratio: 30 / 43.7; }
 
-/* ── 3 · THE IMPLEMENTATION WORKBOOK — a spiral workbook with pages fanned behind ─ */
-.vv--workbook .vv__art { background: linear-gradient(160deg, var(--panel), color-mix(in srgb, var(--accent) 14%, var(--panel))); }
-.vv--workbook .vv-pages { position: absolute; inset: 0; display: grid; place-items: center; }
-.vv--workbook .vv-page { position: absolute; width: 11.5em; height: 15em; background: var(--paper); border-radius: .4em; box-shadow: 0 .6em 1.4em rgba(0,0,0,.18); padding: 1.2em 1em; }
-.vv--workbook .vv-page--b { transform: translate(4.2em, -.4em) rotate(7deg); }
-.vv--workbook .vv-page--c { transform: translate(-4.2em, .2em) rotate(-7deg); }
-.vv--workbook .vv-line { height: .32em; border-radius: 1em; background: var(--paper-line); margin: .45em 0; }
-.vv--workbook .vv-line--short { width: 60%; }
-.vv--workbook .vv-check { display: flex; align-items: center; gap: .35em; margin: .5em 0; }
-.vv--workbook .vv-check i { width: .8em; height: .8em; border-radius: .2em; border: 1px solid var(--pos); display: grid; place-items: center; font-style: normal; font-size: .6em; color: var(--pos); }
-.vv--workbook .vv-check .vv-line { flex: 1; margin: 0; }
-.vv--workbook .vv-cover { position: absolute; width: 11.5em; height: 15em; border-radius: .4em; background: var(--accent); color: var(--ink-on-brand, #fff); box-shadow: 0 1em 2em rgba(0,0,0,.28); padding: 1.6em 1.1em 1.1em 1.6em; display: flex; flex-direction: column; justify-content: space-between; transform: rotate(-3deg); }
-.vv--workbook .vv-spiral { position: absolute; left: .45em; top: .9em; bottom: .9em; width: .5em; display: flex; flex-direction: column; justify-content: space-between; }
-.vv--workbook .vv-spiral i { display: block; width: .5em; height: .5em; border-radius: 50%; background: #1a1a1a; box-shadow: inset 0 0 0 .12em #777; }
-.vv--workbook .vv-cover .vv-k { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .6em; letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
-.vv--workbook .vv-cover .vv-title { font-size: 1.15em; margin-top: .3em; }
-.vv--workbook .vv-cover .vv-by { font-size: .62em; opacity: .9; }
+/* ── 3 · THE SECRET TO MAKING IT STICK — tall flat-lay (sized to the copy beside it):
+       the Magic Formula one-pager (system-diagram) on top, the Event Magnet one-page tool (event-magnet-tool) below
+       with the host's worked example, and the hardcover workbook. Either sheet takes the client's real image
+       (landscape, ~1.4:1); otherwise both are drawn from slots. Hot step = MAGIC_FORMULA_HOT_STEP (1–9). ─ */
+.cl-vipb__vis .vv--workbook .vv__art { aspect-ratio: 15 / 23; }
+.vv--workbook .vv__art { background: radial-gradient(80% 70% at 50% 0%, color-mix(in srgb, var(--accent) 16%, var(--paper)) 0%, var(--panel) 72%); --s1: var(--accent); --s2: color-mix(in srgb, var(--accent) 55%, #3b2a7a); --s3: color-mix(in srgb, var(--accent) 45%, #8a6a12); }
+.vv--workbook .vv-k { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .4em; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.vv--workbook b { display: block; height: .3em; border-radius: 1em; background: var(--paper-line); }
+.vv--workbook b.s { width: 60%; }
+.vv--workbook .vv-map, .vv--workbook .vv-tool { position: absolute; background: var(--paper); color: var(--paper-ink); border-radius: .4em; box-shadow: 0 .9em 2em rgba(0,0,0,.5); }
+.vv--workbook .vv-map__in, .vv--workbook .vv-tool__in { position: absolute; inset: 0; border-radius: inherit; overflow: hidden; }
+.vv--workbook img.vv-map__in, .vv--workbook img.vv-tool__in { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.vv--workbook .vv-face { width: 2.2em; height: 2.2em; border-radius: 50%; flex: none; border: .12em solid var(--paper); box-shadow: 0 0 0 .1em var(--accent); }
+.vv--workbook .vv-face.ph { font-size: 1em; }
+.vv--workbook .vv__art img.vv-face { width: 2.2em; height: 2.2em; flex: none; }
+/* the Magic Formula one-pager */
+.vv--workbook .vv-map { left: 5.2em; top: 1.8em; width: 22.8em; height: 16.6em; transform: rotate(-2deg); z-index: 1; }
+.vv--workbook .vv-map__in { font-size: .832em; padding: 1em 1em .8em; display: flex; flex-direction: column; gap: .55em; }
+.vv--workbook .vv-mhead { display: flex; justify-content: space-between; align-items: center; gap: .6em; }
+.vv--workbook .vv-mhead .vv-title { font-size: 1.3em; text-transform: uppercase; }
+.vv--workbook .vv-mhead .vv-k { color: var(--paper-soft); margin-top: .2em; }
+.vv--workbook .vv-host { display: flex; align-items: center; gap: .4em; }
+.vv--workbook .vv-host { margin-right: 4.2em; }
+.vv--workbook .vv-host > span { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .42em; text-transform: uppercase; letter-spacing: .06em; }
+.vv--workbook .vv-band { background: #1c1c1c; border-radius: .35em; padding: .6em .9em; display: grid; gap: .3em; }
+.vv--workbook .vv-band b { background: rgba(255,255,255,.75); height: .38em; }
+.vv--workbook .vv-band b.s { background: color-mix(in srgb, var(--accent) 70%, #fff); width: 70%; }
+.vv--workbook .vv-stages { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5em; }
+.vv--workbook .vv-stage { display: grid; gap: .4em; }
+.vv--workbook .vv-sh { display: flex; align-items: center; gap: .35em; padding: .35em .45em; border-radius: .3em; color: #fff; }
+.vv--workbook .vv-stage--1 .vv-sh { background: var(--s1); } .vv--workbook .vv-stage--2 .vv-sh { background: var(--s2); } .vv--workbook .vv-stage--3 .vv-sh { background: var(--s3); }
+.vv--workbook .vv-sh i { flex: none; width: 1.1em; height: 1.1em; border-radius: 50%; border: .08em solid rgba(255,255,255,.8); display: grid; place-items: center; font-style: normal; font-family: var(--font-display); font-weight: var(--weight-display); font-size: .5em; }
+.vv--workbook .vv-sh p { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .46em; text-transform: uppercase; line-height: 1.05; }
+.vv--workbook .vv-card { position: relative; display: grid; grid-template-columns: 2.6em 1fr; gap: .35em; align-items: center; padding: .25em; border-radius: .3em; border: .08em solid var(--paper-line); background: var(--paper); }
+.vv--workbook .vv-thumb { height: 1.9em; border-radius: .2em; background: #fff; box-shadow: 0 .1em .25em rgba(0,0,0,.15); overflow: hidden; display: grid; grid-template-rows: .45em 1fr 1fr; gap: .15em; padding-bottom: .2em; }
+.vv--workbook .vv-thumb i { background: #1c1c1c; }
+.vv--workbook .vv-thumb b { height: .18em; margin: 0 .25em; }
+.vv--workbook .vv-ct { display: grid; gap: .16em; align-content: center; position: relative; }
+.vv--workbook .vv-ct b { height: .2em; }
+.vv--workbook .vv-ct b:first-of-type { height: .3em; background: color-mix(in srgb, var(--paper-ink) 70%, transparent); width: 75%; }
+.vv--workbook .vv-ct em { display: block; height: .4em; width: 55%; border-radius: 1em; background: color-mix(in srgb, var(--accent) 22%, var(--paper)); }
+.vv--workbook .vv-num { position: absolute; left: -3.25em; top: -.55em; width: 1.4em; height: 1.4em; border-radius: .25em; display: grid; place-items: center; font-style: normal; font-family: var(--font-display); font-weight: var(--weight-display); font-size: .42em; color: #fff; background: var(--s1); }
+.vv--workbook .vv-stage--2 .vv-num { background: var(--s2); } .vv--workbook .vv-stage--3 .vv-num { background: var(--s3); }
+.vv--workbook [data-hot="1"] [data-n="1"].vv-card, .vv--workbook [data-hot="2"] [data-n="2"].vv-card, .vv--workbook [data-hot="3"] [data-n="3"].vv-card, .vv--workbook [data-hot="4"] [data-n="4"].vv-card, .vv--workbook [data-hot="5"] [data-n="5"].vv-card, .vv--workbook [data-hot="6"] [data-n="6"].vv-card, .vv--workbook [data-hot="7"] [data-n="7"].vv-card, .vv--workbook [data-hot="8"] [data-n="8"].vv-card, .vv--workbook [data-hot="9"] [data-n="9"].vv-card { border-color: var(--accent); box-shadow: 0 0 0 .14em var(--accent), 0 .4em .9em rgba(0,0,0,.25); transform: scale(1.06); z-index: 2; }
+.vv--workbook [data-hot="1"] [data-n="1"].vv-card::after, .vv--workbook [data-hot="2"] [data-n="2"].vv-card::after, .vv--workbook [data-hot="3"] [data-n="3"].vv-card::after, .vv--workbook [data-hot="4"] [data-n="4"].vv-card::after, .vv--workbook [data-hot="5"] [data-n="5"].vv-card::after, .vv--workbook [data-hot="6"] [data-n="6"].vv-card::after, .vv--workbook [data-hot="7"] [data-n="7"].vv-card::after, .vv--workbook [data-hot="8"] [data-n="8"].vv-card::after, .vv--workbook [data-hot="9"] [data-n="9"].vv-card::after { content: "★ You start here"; position: absolute; right: -.3em; top: -.9em; white-space: nowrap; font-family: var(--font-display); font-weight: var(--weight-display); font-size: .38em; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--accent); padding: .3em .6em; border-radius: 1em; box-shadow: 0 .2em .4em rgba(0,0,0,.25); }
+.vv--workbook .vv-cta { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: .6em; background: #1c1c1c; border-radius: .35em; padding: .45em .6em; }
+.vv--workbook .vv-cta b { flex: 1; background: rgba(255,255,255,.6); max-width: 55%; }
+.vv--workbook .vv-cta i { width: 6em; height: 1.1em; border-radius: .3em; background: var(--pos); }
+.vv--workbook .vv-clip { position: absolute; top: -.5em; left: 50%; width: 3em; height: 1em; transform: translateX(-50%); border-radius: .25em .25em .1em .1em; background: linear-gradient(#d4d4d4, #8d8d8d); box-shadow: 0 .15em .3em rgba(0,0,0,.35); z-index: 2; }
+/* the Event Magnet one-page tool */
+.vv--workbook .vv-tool { left: 5.26em; top: 18.65em; width: 22.8em; height: 16.6em; transform: rotate(2.5deg); z-index: 2; }
+.vv--workbook .vv-tool__in { display: flex; flex-direction: column; }
+.vv--workbook .vv-thead { background: #1c1c1c; color: #fff; padding: .75em .9em .7em; display: flex; justify-content: space-between; align-items: center; gap: .6em; }
+.vv--workbook .vv-thead .vv-k { font-size: .34em; color: rgba(255,255,255,.75); }
+.vv--workbook .vv-thead > div { flex: 1; min-width: 0; }
+.vv--workbook .vv-thead .vv-title { font-size: 1em; margin: .2em 0 .35em; color: #fff; }
+.vv--workbook .vv-thead b { background: rgba(255,255,255,.45); width: 75%; height: .26em; }
+.vv--workbook .vv-tbody { flex: 1; display: grid; grid-template-columns: 6.4em 1fr; gap: .45em; padding: .55em .6em .4em; background: color-mix(in srgb, var(--paper-line) 35%, var(--paper)); }
+.vv--workbook .vv-struggles { display: grid; gap: .3em; }
+.vv--workbook .vv-strug { display: flex; gap: .3em; align-items: flex-start; background: var(--paper); border-radius: .25em; padding: .35em; box-shadow: 0 .08em .2em rgba(0,0,0,.08); }
+.vv--workbook .vv-strug i { font-style: normal; font-family: var(--font-display); font-weight: var(--weight-display); font-size: .36em; color: var(--neg); background: color-mix(in srgb, var(--neg) 12%, var(--paper)); padding: .2em .3em; border-radius: .2em; }
+.vv--workbook .vv-strug span { flex: 1; display: grid; gap: .2em; }
+.vv--workbook .vv-strug b { height: .22em; }
+.vv--workbook .vv-fix { display: grid; grid-template-rows: 1fr auto; gap: .35em; }
+.vv--workbook .vv-stops { display: grid; grid-template-columns: repeat(4, 1fr); gap: .3em; }
+.vv--workbook .vv-stop { position: relative; background: var(--paper); border-radius: .25em; padding: .35em .3em; border-top: .2em solid var(--accent); display: grid; align-content: start; gap: .25em; box-shadow: 0 .08em .2em rgba(0,0,0,.08); }
+.vv--workbook .vv-stop p { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .32em; text-transform: uppercase; letter-spacing: .06em; }
+.vv--workbook .vv-stop b { height: .2em; }
+.vv--workbook .vv-fill { position: absolute; right: .25em; bottom: .15em; font-family: var(--font-display); font-weight: var(--weight-display); font-size: .7em; color: var(--accent); transform: rotate(-8deg); }
+.vv--workbook .vv-result { display: flex; align-items: center; gap: .5em; background: #1c1c1c; color: #fff; border-radius: .3em; padding: .4em .6em; }
+.vv--workbook .vv-result p { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .38em; text-transform: uppercase; letter-spacing: .08em; }
+.vv--workbook .vv-result b { flex: 1; background: rgba(255,255,255,.45); }
+.vv--workbook .vv-result span { background: #ffe27a; color: #3a2e00; border-radius: .2em; padding: .05em .4em; font-family: var(--font-display); font-weight: var(--weight-display); font-size: .6em; }
+.vv--workbook .vv-strip { display: flex; align-items: center; gap: .5em; padding: .4em .6em .5em; border-top: .08em solid var(--paper-line); }
+.vv--workbook .vv-strip p { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .32em; text-transform: uppercase; letter-spacing: .08em; color: var(--paper-soft); white-space: nowrap; }
+.vv--workbook .vv-strip > div { flex: 1; display: grid; grid-template-columns: repeat(9, 1fr); gap: .2em; }
+.vv--workbook .vv-chip { height: 1.05em; border-radius: .2em; display: grid; place-items: center; font-style: normal; font-family: var(--font-display); font-weight: var(--weight-display); font-size: .4em; color: var(--paper-ink); background: var(--paper); border-top: .25em solid var(--s1); box-shadow: 0 .06em .15em rgba(0,0,0,.12); }
+.vv--workbook .vv-chip--2 { border-top-color: var(--s2); } .vv--workbook .vv-chip--3 { border-top-color: var(--s3); }
+.vv--workbook [data-hot="1"] [data-n="1"].vv-chip, .vv--workbook [data-hot="2"] [data-n="2"].vv-chip, .vv--workbook [data-hot="3"] [data-n="3"].vv-chip, .vv--workbook [data-hot="4"] [data-n="4"].vv-chip, .vv--workbook [data-hot="5"] [data-n="5"].vv-chip, .vv--workbook [data-hot="6"] [data-n="6"].vv-chip, .vv--workbook [data-hot="7"] [data-n="7"].vv-chip, .vv--workbook [data-hot="8"] [data-n="8"].vv-chip, .vv--workbook [data-hot="9"] [data-n="9"].vv-chip { background: var(--accent); color: #fff; transform: scale(1.15); }
+.vv--workbook .vv-sticky { position: absolute; right: -1em; top: -1.4em; width: 6.6em; padding: .65em .55em; background: #ffe27a; color: #3a2e00; font-family: var(--font-display); font-weight: var(--weight-display); font-size: .5em; line-height: 1.15; transform: rotate(8deg); box-shadow: 0 .4em .8em rgba(0,0,0,.3); z-index: 3; }
+/* the hardcover workbook with stage tabs */
+.vv--workbook .vv-book { position: absolute; left: .06em; top: 29em; width: 13.2em; height: 18em; transform: rotate(-7deg); z-index: 3; }
+.vv--workbook .vv-cover { position: absolute; inset: 0; border-radius: .25em .5em .5em .25em; padding: 1.3em 1em 1em 1.5em; display: flex; flex-direction: column; justify-content: space-between;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 88%, #fff) 0%, var(--accent) 45%, color-mix(in srgb, var(--accent) 70%, #000) 100%); color: var(--ink-on-brand, #fff);
+  box-shadow: inset .55em 0 0 rgba(0,0,0,.22), inset .7em 0 0 rgba(255,255,255,.12), inset 0 0 0 .35em color-mix(in srgb, var(--accent) 80%, #000), inset 0 0 0 .42em rgba(255,215,140,.55), 0 1.2em 2.4em rgba(0,0,0,.55); }
+.vv--workbook .vv-cover .vv-k { color: #ffe3a3; font-size: .5em; letter-spacing: .08em; line-height: 1.3; }
+.vv--workbook .vv-cover .vv-title { font-size: 1.45em; }
+.vv--workbook .vv-cover .vv-sub { margin-top: .5em; padding-top: .45em; border-top: .08em solid rgba(255,227,163,.6); font-family: var(--font-display); font-weight: var(--weight-display); font-size: .44em; letter-spacing: .12em; text-transform: uppercase; color: #ffe3a3; }
+.vv--workbook .vv-foot { display: flex; justify-content: space-between; align-items: flex-end; gap: .5em; }
+.vv--workbook .vv-cover .vv-by { font-size: .55em; opacity: .9; }
 .vv--workbook .vv-cover .vv-logo { height: 1.3em; width: auto; max-width: 5em; object-fit: contain; }
 .vv--workbook .vv-cover .vv-logo.ph { width: 4em; height: 1.3em; background: rgba(255,255,255,.2); border-color: rgba(255,255,255,.4); color: rgba(255,255,255,.8); font-size: .45em; }
+.vv--workbook .vv-tabs { position: absolute; right: -1.05em; top: 2.4em; z-index: -1; display: flex; flex-direction: column; gap: .35em; }
+.vv--workbook .vv-tabs i { width: 2.4em; height: 4.2em; border-radius: 0 .3em .3em 0; display: grid; place-items: center; justify-items: end; padding-right: .5em; font-style: normal; font-family: var(--font-display); font-weight: var(--weight-display); font-size: .5em; color: #fff; box-shadow: 0 .2em .4em rgba(0,0,0,.3); }
+.vv--workbook .vv-tabs i:nth-child(1) { background: var(--s1); filter: brightness(1.25); }
+.vv--workbook .vv-tabs i:nth-child(2) { background: var(--s2); }
+.vv--workbook .vv-tabs i:nth-child(3) { background: var(--s3); }
+/* seal + pen */
+.vv--workbook .vv-seal { position: absolute; right: 23.3em; top: .84em; width: 5em; height: 5em; border-radius: 50%; z-index: 4; display: grid; place-content: center; text-align: center; padding: .4em;
+  background: #ffe27a; color: #3a2e00; transform: rotate(12deg); box-shadow: 0 .4em 1em rgba(0,0,0,.35), inset 0 0 0 .2em #fff3c4; font-family: var(--font-display); font-weight: var(--weight-display); line-height: 1.05; text-transform: uppercase; }
+.vv--workbook .vv-seal span { font-size: .42em; }
+.vv--workbook .vv-seal b { display: block; height: auto; background: none; font-size: .66em; }
+.vv--workbook .vv-pen { position: absolute; left: 16.14em; bottom: 5.02em; width: 12em; height: .6em; border-radius: .3em .1em .1em .3em; z-index: 4; transform: rotate(-10deg);
+  background: linear-gradient(90deg, #d9d9d9 0 6%, #1f1f1f 6% 80%, var(--accent) 80% 84%, #1f1f1f 84%); box-shadow: 0 .35em .6em rgba(0,0,0,.45); }
+.vv--workbook .vv-pen::before { content: ""; position: absolute; left: -.9em; top: 0; border-style: solid; border-width: .3em .9em .3em 0; border-color: transparent #d9d9d9 transparent transparent; }
+/* in the stack composite: just the book + the tool, scaled into the 4:3 card */
 
 /* ── 4 · THE RECORDINGS VAULT — a stack of session players + slides + cheat sheet ─ */
-.vv--vault .vv__art { background: #1a1a1a; color: #fff; padding: 1.1em; display: flex; flex-direction: column; gap: .55em; }
-.vv--vault .vv-head { display: flex; justify-content: space-between; align-items: center; }
-.vv--vault .vv-head .vv-title { font-size: 1.05em; }
-.vv--vault .vv-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .5em; flex: 1; }
-.vv--vault .vv-player { position: relative; border-radius: .5em; background: #2b2b2b; overflow: hidden; display: grid; place-items: center; }
-.vv--vault .vv-player img, .vv--vault .vv-player .ph { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .7; }
-.vv--vault .vv-player .ph { background: #3a2f2a; border: 0; color: transparent; }
-.vv--vault .vv-play { position: relative; width: 2em; height: 2em; border-radius: 50%; background: var(--accent); display: grid; place-items: center; box-shadow: 0 .3em .8em rgba(0,0,0,.4); }
-.vv--vault .vv-play::after { content: ""; border-left: .75em solid #fff; border-top: .45em solid transparent; border-bottom: .45em solid transparent; margin-left: .15em; }
-.vv--vault .vv-player b { position: absolute; left: .5em; bottom: .4em; font-family: var(--font-display); font-weight: var(--weight-display); font-size: .6em; letter-spacing: .06em; text-transform: uppercase; }
-.vv--vault .vv-player time { position: absolute; right: .5em; bottom: .4em; font-size: .55em; opacity: .8; }
-.vv--vault .vv-extras { display: grid; grid-template-columns: 1fr 1fr; gap: .5em; }
-.vv--vault .vv-doc { display: flex; align-items: center; gap: .55em; padding: .5em .65em; border-radius: .5em; background: #2b2b2b; font-size: .66em; }
-.vv--vault .vv-doc i { width: 1.6em; height: 2em; border-radius: .2em; background: var(--paper); position: relative; flex: 0 0 auto; }
-.vv--vault .vv-doc i::before, .vv--vault .vv-doc i::after { content: ""; position: absolute; left: .3em; right: .3em; height: .18em; background: var(--paper-line); border-radius: 1em; }
-.vv--vault .vv-doc i::before { top: .5em; } .vv--vault .vv-doc i::after { top: .95em; right: .7em; }
-.vv--vault .vv-doc span { line-height: 1.15; }
-.vv--vault .vv-doc small { display: block; opacity: .7; font-size: .85em; }
+/* ── VIP #4 The Recordings Vault (v2, 2026-10-23): the same light stage as Pocket / Workbook / +1. A laptop opened on the
+   VIP Vault library (full recording playing, the sessions, the downloads), the cheat sheet and the slides on the desk in
+   front, a "For life" seal. 30em × 22.5em (4:3). In the offer stack only the laptop screen shows. */
+.vv--vault .vv__art { background: radial-gradient(80% 70% at 50% 0%, color-mix(in srgb, var(--accent) 16%, var(--paper)) 0%, var(--panel) 72%); color: var(--ink); }
+.vv--vault .vv-vtitle { position: absolute; left: 0; right: 0; top: .8em; margin: 0; text-align: center; font-family: var(--font-body); font-weight: 700; font-size: 1.14em; line-height: 1; color: var(--accent); }
+.vv--vault .vv-forever { position: absolute; left: .7em; top: .5em; z-index: 5; width: 4em; height: 4em; border-radius: 50%; display: grid; place-content: center; text-align: center; background: var(--pos); color: #fff; transform: rotate(-8deg);
+  box-shadow: 0 .4em 1em rgba(0,0,0,.28), inset 0 0 0 .2em rgba(255,255,255,.35); }
+.vv--vault .vv-forever b { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .95em; line-height: 1; }
+.vv--vault .vv-forever span { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .4em; letter-spacing: .08em; text-transform: uppercase; margin-top: .3em; }
+.vv--vault .vv-laptop { position: absolute; left: 4.6em; top: 2.75em; width: 20.8em; height: 12.9em; padding: .55em; border-radius: .9em .9em .2em .2em; background: #16171a;
+  box-shadow: 0 0 0 .12em #3a3c42, 0 1em 2em rgba(0,0,0,.28); z-index: 2; }
+.vv--vault .vv-lscreen { width: 100%; height: 100%; border-radius: .3em; overflow: hidden; background: #101114; color: #fff; display: flex; flex-direction: column; }
+.vv--vault .vv-lbase { position: absolute; left: 3.1em; top: 15.65em; width: 23.8em; height: .95em; z-index: 3; border-radius: .15em .15em .9em .9em;
+  background: linear-gradient(#d9dbe0, #a9adb5); box-shadow: 0 .6em 1.2em rgba(0,0,0,.22); }
+.vv--vault .vv-lbase::after { content: ""; position: absolute; left: 50%; top: 0; width: 4em; height: .35em; transform: translateX(-50%); border-radius: 0 0 .4em .4em; background: #8d929b; }
+.vv--vault .vv-lbar { display: flex; align-items: center; gap: .45em; padding: .5em .7em; font-size: .62em; border-bottom: .08em solid rgba(255,255,255,.08); }
+.vv--vault .vv-lbar b { font-family: var(--font-display); font-weight: var(--weight-display); letter-spacing: .08em; text-transform: uppercase; }
+.vv--vault .vv-lock { width: .95em; height: .8em; border-radius: .15em; background: var(--accent); position: relative; margin-top: .3em; }
+.vv--vault .vv-lock::before { content: ""; position: absolute; left: .17em; right: .17em; top: -.5em; height: .65em; border: .14em solid var(--accent); border-bottom: 0; border-radius: .5em .5em 0 0; }
+.vv--vault .vv-lpill { margin-left: auto; padding: .25em .7em; border-radius: 1em; background: color-mix(in srgb, var(--pos) 85%, #000); font-weight: 700; font-size: .9em; }
+.vv--vault .vv-lbody { flex: 1; display: grid; grid-template-columns: 1.75fr 1fr; gap: .45em; padding: .45em; min-height: 0; }
+.vv--vault .vv-feature { position: relative; border-radius: .35em; overflow: hidden; background: #2b2b2b; display: grid; place-items: center; }
+.vv--vault .vv-feature img, .vv--vault .vv-feature .ph, .vv--vault .vv-li img, .vv--vault .vv-li .ph { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.vv--vault .vv-feature .ph, .vv--vault .vv-li .ph { background: #3a2f2a; border: 0; color: transparent; }
+.vv--vault .vv-feature::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 45%, rgba(0,0,0,.78)); }
+.vv--vault .vv-play { position: relative; z-index: 2; width: 2.5em; height: 2.5em; border-radius: 50%; background: var(--accent); display: grid; place-items: center; box-shadow: 0 .3em .9em rgba(0,0,0,.45); }
+.vv--vault .vv-play::after { content: ""; border-left: .85em solid #fff; border-top: .52em solid transparent; border-bottom: .52em solid transparent; margin-left: .2em; }
+.vv--vault .vv-ftext { position: absolute; z-index: 2; left: .55em; right: .55em; bottom: .45em; font-size: .55em; }
+.vv--vault .vv-ftext b { display: block; font-family: var(--font-display); font-weight: var(--weight-display); font-size: 1em; margin-bottom: .45em; }
+.vv--vault .vv-prog { display: block; height: .32em; border-radius: 1em; background: rgba(255,255,255,.3); overflow: hidden; }
+.vv--vault .vv-prog i { display: block; width: 22%; height: 100%; background: var(--accent); }
+.vv--vault .vv-ftext time { display: block; margin-top: .35em; opacity: .8; }
+.vv--vault .vv-list { display: flex; flex-direction: column; gap: .35em; min-height: 0; }
+.vv--vault .vv-li { flex: 1; display: flex; align-items: center; gap: .4em; padding: .25em; border-radius: .3em; background: rgba(255,255,255,.06); min-height: 0; }
+.vv--vault .vv-li--on { background: color-mix(in srgb, var(--accent) 35%, #101114); box-shadow: inset 0 0 0 .08em var(--accent); }
+.vv--vault .vv-li > .ph, .vv--vault .vv-li > img { position: relative; inset: auto; flex: 0 0 2.6em; width: 2.6em; height: 100%; max-height: 1.7em; border-radius: .2em; }
+.vv--vault .vv-li p { margin: 0; font-size: .48em; line-height: 1.15; }
+.vv--vault .vv-li small { display: block; opacity: .7; }
+.vv--vault .vv-li--doc i { flex: 0 0 2.6em; height: 1.7em; border-radius: .2em; background: var(--paper); position: relative; }
+.vv--vault .vv-li--doc i::before { content: "PDF"; position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-display); font-weight: var(--weight-display); font-size: .5em; color: var(--accent); }
+.vv--vault .vv-sheet { position: absolute; z-index: 4; background: #fff; color: #1f1f1f; border-radius: .25em; box-shadow: 0 .5em 1.2em rgba(0,0,0,.22), 0 0 0 .05em rgba(0,0,0,.08); padding: .55em .6em; }
+.vv--vault .vv-sheet p { margin: 0; font-family: var(--font-display); font-weight: var(--weight-display); font-size: .62em; line-height: 1.1; color: var(--accent); }
+.vv--vault .vv-sheet small { display: block; font-size: .42em; line-height: 1.2; color: #555; margin: .2em 0 .45em; }
+.vv--vault .vv-sheet--cheat { left: .8em; top: 13.7em; width: 5.4em; height: 6.4em; transform: rotate(-7deg); }
+.vv--vault .vv-sheet--cheat i { display: block; height: .22em; margin-top: .42em; border-radius: 1em; background: #e3e3e3; }
+.vv--vault .vv-sheet--cheat i:nth-of-type(2n) { width: 75%; }
+.vv--vault .vv-sheet--cheat i:first-of-type { background: color-mix(in srgb, var(--accent) 45%, #fff); width: 55%; }
+.vv--vault .vv-sheet--slides { right: .8em; top: 14.6em; width: 6em; transform: rotate(6deg); }
+.vv--vault .vv-slide { display: block; position: relative; height: 2.6em; margin-bottom: .45em; border-radius: .2em; background: color-mix(in srgb, var(--accent) 22%, #fff); overflow: hidden; }
+.vv--vault .vv-slide i { position: absolute; left: .45em; height: .3em; border-radius: 1em; background: var(--accent); }
+.vv--vault .vv-slide i:first-child { top: .6em; width: 3.4em; } .vv--vault .vv-slide i:last-child { top: 1.2em; width: 2.2em; opacity: .5; }
+.vv--vault .vv-cap { position: absolute; left: 50%; bottom: .9em; z-index: 5; transform: translateX(-50%); white-space: nowrap; padding: .5em 1.1em; border-radius: 2em; background: var(--paper);
+  border: .08em solid var(--paper-line); color: var(--paper-ink); box-shadow: 0 .2em .6em rgba(0,0,0,.08); font-family: var(--font-display); font-weight: var(--weight-display); font-size: .62em; letter-spacing: .1em; text-transform: uppercase; }
 
-/* ── 5 · BRING YOUR +1 — two VIP tickets fanned together ──────────────────────── */
-.vv--plusone .vv__art { background: linear-gradient(160deg, color-mix(in srgb, var(--pos) 16%, var(--panel)), var(--panel)); display: grid; place-items: center; }
-.vv--plusone .vv-ticket { position: absolute; width: 17em; height: 7em; border-radius: .7em; background: var(--paper); color: var(--paper-ink); box-shadow: 0 .8em 1.6em rgba(0,0,0,.2); display: grid; grid-template-columns: 4.6em 1fr; overflow: hidden; }
-.vv--plusone .vv-ticket--a { transform: translate(-1.4em, -3.2em) rotate(-5deg); }
-.vv--plusone .vv-ticket--b { transform: translate(1.6em, 3.4em) rotate(4deg); }
-.vv--plusone .vv-stub { background: var(--accent); color: var(--ink-on-brand, #fff); display: grid; place-items: center; border-right: .16em dashed var(--paper); }
-.vv--plusone .vv-ticket--b .vv-stub { background: var(--pos); }
-.vv--plusone .vv-stub b { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .95em; letter-spacing: .08em; writing-mode: vertical-rl; transform: rotate(180deg); }
-.vv--plusone .vv-body { padding: .7em .9em; display: flex; flex-direction: column; justify-content: space-between; }
-.vv--plusone .vv-k { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .55em; letter-spacing: .12em; text-transform: uppercase; color: var(--paper-soft); }
-.vv--plusone .vv-name { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .95em; line-height: 1.1; display: flex; align-items: center; gap: .45em; }
-.vv--plusone .vv-name .vv-face { width: 1.6em; height: 1.6em; flex: 0 0 auto; }
-.vv--plusone .vv-name .vv-face.ph { border-radius: 50%; font-size: .5em; }
-.vv--plusone .vv-meta { font-size: .6em; color: var(--paper-soft); }
-.vv--plusone .vv-ticket { overflow: visible; }
-.vv--plusone .vv-ticket .vv-stub, .vv--plusone .vv-ticket .vv-body { border-radius: inherit; }
-.vv--plusone .vv-ticket--b .vv-stub { border-radius: .7em 0 0 .7em; }
-.vv--plusone .vv-ticket--a { overflow: hidden; }
-.vv--plusone .vv-plus { position: absolute; right: -.9em; top: -.9em; width: 2.4em; height: 2.4em; border-radius: 50%; background: var(--pos); color: #fff; display: grid; place-items: center; font-family: var(--font-display); font-weight: var(--weight-display); font-size: 1.2em; box-shadow: 0 .4em 1em rgba(0,0,0,.25); z-index: 3; }
+/* ── 5 · BRING YOUR +1 — two "VIP ACCESS" lanyard passes hanging down (modelled on Matthew's Cash Flow Engine VIP pass) ─ */
+.cl-vipb__vis .vv--plusone .vv__art { aspect-ratio: 30 / 39.6; }
+.vv--plusone .vv__art { background: radial-gradient(80% 70% at 50% 0%, color-mix(in srgb, var(--accent) 16%, var(--paper)) 0%, var(--panel) 72%); overflow: hidden; }
+.vv--plusone .vv-pass { position: absolute; width: 13.2em; }
+.vv--plusone .vv-pass p { margin: 0; }
+.vv--plusone .vv-pass--a { left: 1.1em; top: 6.4em; transform: rotate(-5deg); transform-origin: 50% -9em; z-index: 2; }
+.vv--plusone .vv-pass--b { left: 16.3em; top: 8.8em; transform: rotate(4deg); transform-origin: 50% -12em; z-index: 1; }
+/* lanyard: black strap running up out of frame, metal swivel clip, rivet through the slot */
+.vv--plusone .vv-strap { position: absolute; left: 50%; bottom: calc(100% - 1.6em); width: 1.5em; height: 20em; transform: translateX(-50%); border-radius: .2em; background: linear-gradient(90deg, #0d0d0d, #2a2a2a 45%, #111); box-shadow: 0 .3em .6em rgba(0,0,0,.35); }
+.vv--plusone .vv-clip { position: absolute; left: 50%; top: -2.6em; width: 1.9em; height: 2.6em; transform: translateX(-50%); border-radius: .35em .35em .25em .25em; background: linear-gradient(90deg, #8d8d8d, #f4f4f4 40%, #a9a9a9 70%, #6e6e6e); box-shadow: 0 .25em .5em rgba(0,0,0,.4); z-index: 3; }
+.vv--plusone .vv-clip::before { content: ""; position: absolute; left: 50%; top: .45em; width: .8em; height: .8em; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(circle at 35% 35%, #fff, #9a9a9a 60%, #555); box-shadow: 0 .1em .2em rgba(0,0,0,.5); }
+.vv--plusone .vv-clip i { position: absolute; left: 50%; bottom: -.9em; width: 1.2em; height: 1.3em; transform: translateX(-50%); border: .28em solid #b9b9b9; border-top: 0; border-radius: 0 0 .6em .6em; }
+/* the card */
+.vv--plusone .vv-card { position: relative; border-radius: .9em; overflow: hidden; color: #fff; text-align: center; display: flex; flex-direction: column; align-items: center; padding-top: 3.8em; min-height: 21.5em;
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px) 0 0 / .55em .55em,
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px) 0 0 / .55em .55em,
+    radial-gradient(120% 70% at 50% 30%, color-mix(in srgb, var(--accent) 40%, #0f1720) 0%, #0b0f14 70%);
+  box-shadow: 0 1.4em 2.6em rgba(0,0,0,.35), inset 0 0 0 .1em rgba(255,255,255,.12); }
+.vv--plusone .vv-slot { position: absolute; top: .7em; left: 50%; width: 2.6em; height: .55em; transform: translateX(-50%); border-radius: 1em; background: var(--panel); box-shadow: inset 0 .1em .2em rgba(0,0,0,.6); }
+.vv--plusone .vv-tab { position: absolute; top: 0; right: 0; padding: .45em .7em .4em .9em; border-radius: 0 0 0 .7em; background: rgba(255,255,255,.12); font-family: var(--font-display); font-weight: var(--weight-display); font-size: .7em; letter-spacing: .06em; text-transform: uppercase; }
+.vv--plusone .vv-sys { font-family: var(--font-display); font-weight: var(--weight-display); font-size: 1.1em; color: color-mix(in srgb, var(--pos) 70%, #9dff9d); padding: 0 1em; line-height: 1.1; }
+.vv--plusone .vv-type { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .7em; letter-spacing: .1em; text-transform: uppercase; margin: .15em 0 .9em; }
+.vv--plusone .vv-vip { font-family: var(--font-display); font-weight: var(--weight-display); font-size: 5.98em; line-height: .9; letter-spacing: -.02em; text-shadow: 0 .05em .2em rgba(0,0,0,.4); }
+.vv--plusone .vv-acc { font-family: var(--font-body); font-weight: 300; font-size: 1.55em; letter-spacing: .14em; text-transform: uppercase; line-height: 1; margin-top: .05em; }
+.vv--plusone .vv-logo { margin: 2.6em 0 2.4em; height: 1.2em; width: auto; max-width: 6em; object-fit: contain; }
+.vv--plusone .vv-logo.ph { width: 4.4em; height: 1.2em; background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.35); color: rgba(255,255,255,.75); font-size: .45em; }
+.vv--plusone .vv-valid { margin-top: auto; width: 100%; padding: .45em .5em; background: linear-gradient(#c9ccd1, #9ea3aa); color: #23272d; font-family: var(--font-display); font-weight: var(--weight-display); font-size: 1.12em; letter-spacing: .02em; text-transform: uppercase; white-space: nowrap; }
+.vv--plusone .vv-pass--b .vv-valid { background: linear-gradient(color-mix(in srgb, var(--accent) 80%, #fff), var(--accent)); color: #fff; font-size: .96em; padding: .5em .5em; }
+.vv--plusone .vv-bar { width: 100%; background: #fff; display: flex; justify-content: center; gap: .14em; padding: .7em .8em .9em; height: 3em; }
+.vv--plusone .vv-bar i { display: block; height: 100%; background: #111; }
+.vv--plusone .vv-plus { position: absolute; left: 12.4em; top: 28.9em; width: 5.4em; height: 5.4em; border-radius: 50%; z-index: 3; display: grid; place-content: center; text-align: center; background: var(--pos); color: #fff; box-shadow: 0 .5em 1.2em rgba(0,0,0,.35), inset 0 0 0 .22em rgba(255,255,255,.35); transform: rotate(-8deg); }
+.vv--plusone .vv-plus b { font-family: var(--font-display); font-weight: var(--weight-display); font-size: 1.8em; line-height: 1; }
+.vv--plusone .vv-plus span { font-family: var(--font-display); font-weight: var(--weight-display); font-size: .42em; letter-spacing: .08em; text-transform: uppercase; margin-top: .3em; }
+.vv--plusone .vv-cap { position: absolute; left: 50%; bottom: 1.3em; transform: translateX(-50%); white-space: nowrap; padding: .55em 1.2em; border-radius: 2em; background: var(--paper); border: .08em solid var(--paper-line); color: var(--paper-ink); box-shadow: 0 .2em .6em rgba(0,0,0,.08); font-family: var(--font-display); font-weight: var(--weight-display); font-size: .84em; letter-spacing: .14em; text-transform: uppercase; }
 
 /* ── THE STACK HERO — all five composed in one picture (16:9) ─────────────────── */
-.vv--stack { max-width: 980px; margin-inline: auto; }
-.vv--stack .vv__art { aspect-ratio: 16 / 9; background: linear-gradient(160deg, color-mix(in srgb, var(--accent) 14%, var(--panel)), var(--panel)); font-size: calc(100cqw / 60); box-shadow: var(--shadow-lg); }
-.vv--stack .vv-item { position: absolute; width: 17em; }
-.vv--stack .vv-item .vv__art { background: transparent; box-shadow: none; overflow: visible; }
-.vv--stack .vv-item--party .vv__art, .vv--stack .vv-item--vault .vv__art { background: #1a1a1a; box-shadow: 0 .8em 2em rgba(0,0,0,.28); overflow: hidden; }
+/* ── "THIS IS WHAT YOU GET" — the five VIP items on one dark stage, one scale family (redone 2026-10-21).
+       Stage = 60em × 33.75em. Party screen centre-back; phone front-left; Recordings Vault front-centre;
+       +1 passes hanging top-right; workbook bottom-right; price badge bottom-left. ─ */
+.vv--stack { max-width: 1040px; margin-inline: auto; }
+.vv--stack > .vv__art { aspect-ratio: 60 / 35.13; font-size: calc(100cqw / 60); box-shadow: var(--shadow-lg);
+  background: radial-gradient(80% 80% at 50% 0%, color-mix(in srgb, var(--accent) 16%, var(--paper)) 0%, var(--panel) 70%); }
+.vv--stack .vv-item { position: absolute; }
+.vv--stack .vv-item .vv__art { background: transparent; box-shadow: none; overflow: visible; border-radius: 0; }
 .vv--stack .vv-item .vv-tag { display: none; }
-.vv--stack .vv-item--party { left: 50%; transform: translateX(-50%); top: 1.2em; width: 26em; z-index: 3; }
-.vv--stack .vv-item--pocket { left: 1.2em; top: .7em; width: 10.5em; transform: rotate(-6deg); z-index: 2; }
-.vv--stack .vv-item--pocket .vv__art { background: none; box-shadow: none; padding: 0; aspect-ratio: auto; font-size: calc(100cqw / 19.4); }
-.vv--stack .vv-item--pocket .vv-floor { display: none; }
+/* party — the live room, centre back */
+.vv--stack .vv-item--party { left: 13.9em; top: 1.9em; width: 25.9em; z-index: 2; }
+.vv--stack .vv-item--party .vv__art { background: #1a1a1a; border-radius: .9em; overflow: hidden; box-shadow: 0 0 0 .14em #2c2c2c, 0 1.2em 2.4em rgba(0,0,0,.35); }
+/* pocket — the phone, front left */
+.vv--stack .vv-item--pocket { left: 3.69em; top: 5.6em; width: 11.4em; transform: rotate(-6deg); z-index: 3; }
+.vv--stack .vv-item--pocket .vv__art { background: none; padding: 0; aspect-ratio: auto; font-size: calc(100cqw / 19.4); }
+.vv--stack .vv-item--pocket .vv-floor, .vv--stack .vv-item--pocket .vv-ptitle { display: none; }
 .vv--stack .vv-item--pocket .vv-phone { margin: 0; }
-.vv--stack .vv-item--workbook { right: -1em; top: -.5em; width: 26em; transform: rotate(6deg); z-index: 2; }
-.vv--stack .vv-item--vault { left: 4em; bottom: 1em; width: 22em; transform: rotate(-3deg); z-index: 4; }
-.vv--stack .vv-item--plusone { right: 2em; bottom: -2em; width: 25em; transform: rotate(3deg); z-index: 4; }
-.vv--stack .vv-badge { position: absolute; left: 50%; bottom: 3.2em; transform: translateX(-50%); z-index: 5; font-size: 1.1em; box-shadow: 0 .4em 1em rgba(0,0,0,.25); }
-@media (max-width: 640px) { .vv--stack .vv__art { aspect-ratio: 4 / 3; } .vv--stack .vv-item--pocket, .vv--stack .vv-item--workbook { display: none; } .vv--stack .vv-item--party { left: 50%; transform: translateX(-50%); width: 28em; } }
+/* vault — the tablet, front centre */
+.vv--stack .vv-item--vault { left: 13.1em; top: 17.65em; width: 18.63em; transform: rotate(-2deg); z-index: 4; }
+.vv--stack .vv-item--vault .vv__art { background: #16171a; border-radius: .9em; overflow: hidden; box-shadow: 0 0 0 .14em #2c2c2c, 0 1.2em 2.4em rgba(0,0,0,.4); }
+.vv--stack .vv-item--vault :is(.vv-vtitle, .vv-forever, .vv-lbase, .vv-sheet, .vv-cap) { display: none; }
+.vv--stack .vv-item--vault .vv-laptop { inset: 0; width: auto; height: auto; padding: .5em; border-radius: .9em; box-shadow: none; }
+/* +1 — two passes hanging from the top edge, right */
+.vv--stack .vv-item--plusone { left: 39.29em; top: -1.67em; width: 12.6em; z-index: 4; }
+.vv--stack .vv-item--plusone .vv__art { aspect-ratio: 30 / 39.6; }
+.vv--stack .vv-item--plusone .vv-cap, .vv--stack .vv-item--plusone .vv-plus { display: none; }
+/* workbook — the hardcover book only, front right */
+/* workbook group — item sits at the stage origin, 30em wide, so its em = the stage em and the pieces use stage coordinates */
+.vv--stack .vv-item--workbook { left: -3.92em; top: -.4em; width: 30em; z-index: 3; pointer-events: none; }
+.vv--stack .vv-item--workbook .vv__art { aspect-ratio: auto; height: 1px; }
+.vv--stack .vv-item--workbook .vv-seal, .vv--stack .vv-item--workbook .vv-pen { display: none; }
+.vv--stack .vv-item--workbook .vv-map { left: 40.2em; top: 10.6em; transform: rotate(-4deg) scale(.76); transform-origin: top left; }
+.vv--stack .vv-item--workbook .vv-tool { left: 38.6em; top: 20.4em; transform: rotate(3deg) scale(.7); transform-origin: top left; }
+.vv--stack .vv-item--workbook .vv-book { left: 52.16em; top: 16.9em; width: 15.98em; height: 21.8em; transform: rotate(8deg) scale(.6); transform-origin: top left; }
+/* price badge */
+.vv--stack .vv-badge { position: absolute; left: 2.46em; bottom: 2.66em; z-index: 6; font-size: 1.15em; box-shadow: 0 .4em 1em rgba(0,0,0,.4); }
+@media (max-width: 640px) {
+  .vv--stack > .vv__art { aspect-ratio: 4 / 5; font-size: calc(100cqw / 30); }
+  .vv--stack .vv-item--party { left: 1.2em; top: 1.2em; width: 27.6em; }
+  .vv--stack .vv-item--pocket { left: 1.2em; top: 18.6em; width: 8.8em; }
+  .vv--stack .vv-item--vault { left: 11.4em; top: 22.2em; width: 17.4em; transform: rotate(-2deg); }
+  .vv--stack .vv-item--plusone, .vv--stack .vv-item--workbook { display: none; }
+  .vv--stack .vv-badge { left: 50%; transform: translateX(-50%); bottom: .7em; font-size: .9em; white-space: nowrap; }
+}
 .vv img.ph { border: 0; background: none; }
 /* mockup inside a benefit block: no extra frame, let the card shadow show */
 .cl-vipb__vis { aspect-ratio: auto; }
@@ -2066,18 +2339,45 @@ html { scroll-behavior: smooth; }
 /* stack hero in the showcase section */
 .cl-section .vv--stack { margin-top: var(--sp-4); margin-bottom: var(--sp-2); }
 
+/* real client images in the workbook sheets: the sheet takes the image's own height — nothing cropped (Matthew, 2026-10-22) */
+.vv--workbook .vv-map:has(> img.vv-map__in), .vv--workbook .vv-tool:has(> img.vv-tool__in) { height: auto; }
+.vv--workbook img.vv-map__in, .vv--workbook img.vv-tool__in { position: relative; inset: auto; display: block; width: 100%; height: auto; object-fit: contain; }
+
+/* Phase 2 short VIP page — Matthew's canvas nudges to its stack (P2 board, ported 2026-10-23; px at the 1040px stage, 1em = 17.33px) */
+@media (min-width: 641px) {
+  .cl-showcase--short .vv--stack .vv-item--pocket { left: 3.35em; top: 4.21em; }
+  .cl-showcase--short .vv--stack .vv-item--plusone { left: 41.71em; top: -.35em; width: 15.63em; }
+  .cl-showcase--short .vv--stack .vv-item--workbook .vv-map { left: 39.46em; top: 9.98em; }
+}
+
 </style>
 </head>
 <body>
+
+<div class="cl-eventbar" data-cfe="01-event-bar">
+  <div class="cl-container">
+      <ul class="cl-facts-strip" aria-label="Event details">
+        <li class="is-type">Live workshop</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Thu 12 Nov @ 10am AEDT</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>4-hour</li>
+        <li class="is-price"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 9V7a1 1 0 0 1 1-1h15a1 1 0 0 1 1 1v2a2 2 0 0 0 0 4v2a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1v-2a2 2 0 0 0 0-4z"/><path d="M14 6v10" stroke-dasharray="2 2"/></svg><span>Free · live online</span></li>
+      </ul>
+  </div>
+</div>
 
 <header class="cl-section cl-hero cl-center" data-cfe="02-hero">
   <div class="cl-container cl-container--narrow cl-hero__stack">
     <p class="cl-eyebrow">For clinic owners who are tired of quiet weeks</p>
     <h1 class="cl-h1">In one day, build the referral system that books your next 20 new patients</h1>
     <p class="cl-lede">Without paying for ads or discounting your sessions.</p>
+    <div class="cl-hero__event" data-cfe-optional="hero-event">
+      <h2 class="cl-hero__eventname">Join The Full Calendar Workshop</h2>
+      <p class="cl-hero__eventblurb">In one live workshop, walk away with a referral system that keeps your calendar full — without paying for ads.</p>
+    </div>
     <div class="cl-video cl-hero__media" data-cfe-media="vsl">
       <div class="cl-imgslot" style="width: 100%">Hero video or image · the workshop + Event Magnet™ bonus · 16:9</div>
     </div>
+    <p class="cl-hero__live" aria-hidden="true"><span></span>Live Event</p>
     <div class="cl-cta-stack cl-hero__cta">
       <div class="cl-herotimer">
         <p class="cl-herotimer__label">Live workshop starts in</p>
@@ -2088,13 +2388,13 @@ html { scroll-behavior: smooth; }
           <span class="cl-countdown__unit"><span class="cl-countdown__n" data-u="s">00</span><span class="cl-countdown__label">sec</span></span>
         </div>
       </div>
-      <p class="cl-priceline"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
-      <a class="cl-cta" href="#register" data-open="register" data-cfe-cta="hero"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
-      <p class="cl-privacy">Your information is 100% safe with us.</p>
-      <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
-      <div class="cl-trustrow" data-cfe-optional="proof" data-cfe-needs-media>
+      <p class="cl-priceline" data-cfe-optional="anchor" data-cfe-requires="EVENT_ANCHOR_VALUE"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
+<a class="cl-cta" href="#register" data-open="register" data-cfe-cta="hero"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
+<p class="cl-privacy">Your information is 100% safe with us.</p>
+<p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+      <div class="cl-trustrow">
         <div class="cl-faces">
-          <img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%2812%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EAM%3C/text%3E%3C/svg%3E" alt="Sample Name" data-cfe-media="testimonial-1" loading="lazy"><img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%28200%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EBT%3C/text%3E%3C/svg%3E" alt="Sample Name" data-cfe-media="testimonial-2" loading="lazy"><img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%28140%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3ECR%3C/text%3E%3C/svg%3E" alt="Sample Name" data-cfe-media="testimonial-3" loading="lazy"><img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%28280%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EDP%3C/text%3E%3C/svg%3E" alt="Sample client 4" data-cfe-media="testimonial-4" loading="lazy"><img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%2840%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EES%3C/text%3E%3C/svg%3E" alt="Sample client 5" data-cfe-media="testimonial-5" loading="lazy"><img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%28330%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EFO%3C/text%3E%3C/svg%3E" alt="Sample client 6" data-cfe-media="testimonial-6" loading="lazy">
+          <img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%2812%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EAM%3C/text%3E%3C/svg%3E" alt="Client photo" data-cfe-media="testimonial-1" loading="lazy"><img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%28200%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EBT%3C/text%3E%3C/svg%3E" alt="Client photo" data-cfe-media="testimonial-2" loading="lazy"><img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%28140%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3ECR%3C/text%3E%3C/svg%3E" alt="Client photo" data-cfe-media="testimonial-3" loading="lazy"><img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%28280%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EDP%3C/text%3E%3C/svg%3E" alt="Client photo" data-cfe-media="testimonial-4" loading="lazy"><img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%2840%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EES%3C/text%3E%3C/svg%3E" alt="Client photo" data-cfe-media="testimonial-5" loading="lazy"><img class="cl-face" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%28330%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EFO%3C/text%3E%3C/svg%3E" alt="Client photo" data-cfe-media="testimonial-6" loading="lazy">
         </div>
         <div class="cl-trustrow__text">
           <span class="cl-trustrow__kicker">Trusted by countless</span>
@@ -2175,7 +2475,7 @@ html { scroll-behavior: smooth; }
 
 <section class="cl-section" data-cfe="05-solution">
   <div class="cl-container cl-container--narrow cl-center">
-    <p class="cl-pill">The solution</p>
+    <p class="cl-pill">What we build together on the day</p>
     <h2 class="cl-h2 cl-solution__h">Meet the Referral Ready Scorecard</h2>
     <p class="cl-lede cl-solution__sub">The one-page check that shows exactly which 20 patients will refer you this month — <strong>filled in, live, during the workshop.</strong></p>
   </div>
@@ -2183,63 +2483,153 @@ html { scroll-behavior: smooth; }
     <div class="cl-imgslot cl-solution__img" data-cfe-media="event-magnet" style="width: 70%">Event Magnet™ image · the tool in use, shown as the solution · 16:9</div>
   </div>
   <div class="cl-container cl-container--narrow cl-center">
-    <p class="cl-body cl-solution__body">Score your active patients in ten minutes. <strong>The Scorecard ranks who to ask, when to ask and what to say</strong> — so referrals stop being luck and start being a list.</p>
+    <p class="cl-body cl-solution__body">One page that shows you <strong>exactly who will refer you this month</strong> — so new patients stop being luck and start being a list you can count on.</p>
+    <ul class="cl-list cl-list--tick cl-solution__benefits" data-cfe-optional="solution-benefits">
+      <li>Know which of your patients are ready to send you friends</li>
+      <li>Walk into Monday with a fuller calendar in sight</li>
+      <li>Grow without paying for ads or discounting your sessions</li>
+    </ul>
     <p class="cl-solution__quote" data-cfe-optional="proof">“I filled it in on my lunch break and <em>booked three referrals that week.</em>”</p>
     <div class="cl-cta-stack">
-      <p class="cl-priceline"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
-      <a class="cl-cta" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
-      <p class="cl-privacy">Your information is 100% safe with us.</p>
-      <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+      <p class="cl-priceline" data-cfe-optional="anchor" data-cfe-requires="EVENT_ANCHOR_VALUE"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
+<a class="cl-cta" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
+<p class="cl-privacy">Your information is 100% safe with us.</p>
+<p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
     </div>
   </div>
 </section>
 
 <section class="cl-section cl-section--panel" data-cfe="05-letter">
-  <div class="cl-container cl-container--letter cl-letter">
+  <div class="cl-container cl-container--letter cl-letter" style="max-width: 900px">
     <div class="cl-hostcard" data-cfe="06a-host-intro">
-      <div class="cl-hostcard__photo" data-cfe-media="host-avatar" role="img" aria-label="Dana Cole">photo</div>
+      <img class="cl-hostcard__photo" src="../assets/demo-photos/host-avatar-62ef0fe9.jpg" alt="Dana Cole" data-cfe-media="host-avatar" loading="lazy">
       <div>
         <p class="cl-hostcard__name">Dana Cole — 9 years running a booked-out clinic</p>
         <p class="cl-hostcard__quote">“We help clinic owners with full-time practices <strong>fill their calendar with 20 new patients a month from referrals</strong> without paying for ads, discounting sessions or chasing cold leads.”</p>
       </div>
     </div>
     <p class="cl-letter__from" style="margin-top:var(--sp-4)">From the desk of Dana Cole</p>
-    <h3 class="cl-h3 cl-letter__h">Where I was nine years ago</h3>
-    <p>For nine years I ran a two-room physio clinic. Some months were full. Some months I stared at a calendar full of gaps and wondered what I'd done wrong.</p>
-<p>I tried the website, the boosted posts, the first-visit discount. <strong>Each one helped for a week.</strong></p>
-    <p class="cl-pullquote">“Quiet weeks aren't a marketing problem. They're a referral problem.”</p>
-    <h3 class="cl-h3 cl-letter__h">It's a referral problem, not a marketing problem</h3>
-    <p>Your best patients already know the people you want to treat. They just don't have a reason, or a simple way, to send them.</p>
-<p>Give them both and referrals stop being luck. They become a <strong>system that runs every week.</strong></p>
-    <div class="cl-imgslot cl-imgslot--wide" data-cfe-media="story-1">Image · the host's story — where they were before they found the method</div>
-    <h3 class="cl-h3 cl-letter__h">Why one day is enough</h3>
-    <p>That's why this is one day, not a course. You build it with me, live, and you <strong>leave with it done</strong> — scripts written, the referral card designed, the follow-up loaded.</p>
-<p>Save your seat below.</p>
+    <h3 class="cl-h3 cl-letter__h cl-story__h">The quietest Tuesday of your month</h3>
+    <div class="cl-storypair">
+      <div class="cl-imgslot cl-storypair__img" data-cfe-media="letter-s">Letter image S · the moment they recognise themselves · 3:4 portrait</div>
+      <div class="cl-storypair__copy">
+        <p>If you've ever opened Tuesday's calendar, seen three empty slots and felt your stomach drop, this is for you.</p>
+<p>You're good at what you do. Your patients love you. <strong>And yet the calendar still depends on luck.</strong></p>
+<p>Here's what nobody tells clinic owners: the patients you want are already one conversation away from you.</p>
+      </div>
+    </div>
+    <p class="cl-pullquote cl-story__pull" data-cfe-optional="pull-quote">“Quiet weeks aren't a marketing problem. They're a referral problem.”</p>
+    <h3 class="cl-h3 cl-letter__h cl-story__h">I know that feeling, because I lived it for nine years</h3>
+    <div class="cl-storypair cl-storypair--flip">
+      <div class="cl-storypair__copy">
+        <p>For nine years I ran a two-room physio clinic. Some months were full. Some months I stared at the gaps and wondered what I was doing wrong.</p>
+<p>I tried the website, the boosted posts, the first-visit discount. <strong>Each one helped for a week — then I was back to hoping.</strong></p>
+<p>It wasn't my prices, my suburb or my skills. It was that my happiest patients left meaning to tell a friend, and never did.</p>
+      </div>
+      <div class="cl-imgslot cl-storypair__img" data-cfe-media="letter-c">Letter image C · the host before — the struggle they share · 3:4 portrait</div>
+    </div>
+    <h3 class="cl-h3 cl-letter__h cl-story__h">Satisfied patients say thanks. Referred patients book.</h3>
+    <div class="cl-storypair">
+      <div class="cl-imgslot cl-storypair__img" data-cfe-media="letter-o">Letter image O · the result, lived — what life looks like with it · 3:4 portrait</div>
+      <div class="cl-storypair__copy">
+        <p>The Referral Engine™ turns the goodwill you already have into <strong>a steady stream of new patients who arrive trusting you.</strong></p>
+<p>No ads to fund. No discounts to hold. No awkward asking — your patients do the recommending, because you've made it easy and natural.</p>
+<p>Imagine opening next month's calendar and seeing it filled by people who were sent to you.</p>
+      </div>
+    </div>
+    <h3 class="cl-h3 cl-letter__h cl-story__h">Two ways the next 90 days can go</h3>
+    <div class="cl-storypair cl-storypair--flip">
+      <div class="cl-storypair__copy">
+        <p>You can keep doing what you're doing — another promotion, another quiet Tuesday, another month of hoping.</p>
+<p>Or you can leave with a system that runs every week at your front desk, <strong>whether or not you remember to ask.</strong></p>
+<p>And if you're thinking "my patients aren't the type to refer" — that's exactly what the clinic owners who now get most of their bookings from referrals thought too.</p>
+      </div>
+      <div class="cl-imgslot cl-storypair__img" data-cfe-media="letter-r">Letter image R · the two futures — staying put vs the reward · 3:4 portrait</div>
+    </div>
+    <div class="cl-story__block" data-cfe-optional="letter-proof">
+      <p>A clinic owner told me last month: "We had our best quarter ever — and I didn't run a single ad."</p>
+<p><strong>That's not a fluke. That's the pattern.</strong></p>
+    </div>
+    <h3 class="cl-h3 cl-letter__h cl-story__h">Why one live session is enough</h3>
+    <div class="cl-storypair">
+      <div class="cl-imgslot cl-storypair__img" data-cfe-media="letter-e">Letter image E · the live room — their seat waiting · 3:4 portrait</div>
+      <div class="cl-storypair__copy">
+        <p>This isn't another course to finish. It's one live workshop where you <strong>leave with your referral system done</strong> — ready for your front desk on Monday.</p>
+<p>Save yours below.</p>
+      </div>
+    </div>
     <div class="cl-cta-stack">
-      <p class="cl-priceline"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
-      <a class="cl-cta" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
-      <p class="cl-privacy">Your information is 100% safe with us.</p>
-      <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+      <p class="cl-priceline" data-cfe-optional="anchor" data-cfe-requires="EVENT_ANCHOR_VALUE"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
+<a class="cl-cta" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
+<p class="cl-privacy">Your information is 100% safe with us.</p>
+<p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
     </div>
   </div>
 </section>
 
-<section class="cl-section" data-surface="D" data-cfe="06-agenda">
-  <div class="cl-container cl-container--narrow">
-    <p class="cl-eyebrow cl-center">The run of show</p>
-    <h2 class="cl-h2 cl-h2--center">Here's how the workshop runs</h2>
-    <ol class="cl-timeline">
-      <li><div class="cl-timeline__time">10:00</div><div class="cl-timeline__title">Find your hidden referrers</div><p class="cl-body cl-mb-0">Map the 20 patients most likely to send you someone this month.</p></li>
-      <li><div class="cl-timeline__time">11:00</div><div class="cl-timeline__title">Write the ask</div><p class="cl-body cl-mb-0">The two-sentence script that makes referring feel natural, not salesy.</p></li>
-      <li class="cl-timeline__break">30-minute break</li>
-      <li><div class="cl-timeline__time">12:00</div><div class="cl-timeline__title">Build it live</div><p class="cl-body cl-mb-0">Your referral card, text sequence and front-desk prompt — built in the room.</p></li>
-      <li><div class="cl-timeline__time">1:15</div><div class="cl-timeline__title">Live Q&amp;A and hot seats</div><p class="cl-body cl-mb-0">Bring your clinic. We'll fix your system on the spot.</p></li>
+<section class="cl-section" data-surface="D" data-cfe="06-problems">
+  <div class="cl-container">
+    <p class="cl-eyebrow cl-center">What we solve on the day</p>
+    <h2 class="cl-h2 cl-h2--center">The three problems this workshop fixes — in order</h2>
+    <p class="cl-lede cl-center" style="margin-inline:auto">Every quiet week in a clinic comes down to three gaps. We close them one at a time, live, in this order.</p>
+    <ol class="cl-problems">
+      <li class="cl-problem">
+        <span class="cl-problem__n">1</span>
+        <div class="cl-problem__main">
+          <p class="cl-problem__k">Problem 1</p>
+          <h3 class="cl-problem__h">You don't know which patients would actually refer — so you ask nobody.</h3>
+          <ul class="cl-list cl-list--tick cl-problem__bens">
+            <li>Know exactly who to ask first</li>
+            <li>Use the patient records you already have</li>
+            <li>No cold outreach, no ads</li>
+          </ul>
+        </div>
+        <div class="cl-problem__side">
+          <div class="cl-imgslot cl-problem__img" data-cfe-media="problem-1">Image · problem 1 — what this part of the day looks like · 16:9</div>
+          <div class="cl-problem__row"><span class="cl-problem__lbl">How we solve it</span><p class="cl-body cl-mb-0">We map the 20 patients most likely to send you someone this month, using the records you already have.</p></div>
+        </div>
+        <div class="cl-problem__row cl-problem__row--out"><span class="cl-problem__lbl">You walk away with</span><p class="cl-body cl-mb-0"><strong>Your top-20 referrer list, ranked and ready to contact this week.</strong></p></div>
+      </li>
+      <li class="cl-problem">
+        <span class="cl-problem__n">2</span>
+        <div class="cl-problem__main">
+          <p class="cl-problem__k">Problem 2</p>
+          <h3 class="cl-problem__h">Asking for a referral feels awkward and salesy, so it never happens.</h3>
+          <ul class="cl-list cl-list--tick cl-problem__bens">
+            <li>Two sentences, said in the treatment room</li>
+            <li>Feels like care, not a pitch</li>
+            <li>Rehearsed so it comes out naturally</li>
+          </ul>
+        </div>
+        <div class="cl-problem__side">
+          <div class="cl-imgslot cl-problem__img" data-cfe-media="problem-2">Image · problem 2 — what this part of the day looks like · 16:9</div>
+          <div class="cl-problem__row"><span class="cl-problem__lbl">How we solve it</span><p class="cl-body cl-mb-0">We write the two-sentence ask that fits the treatment room and feels natural — then rehearse it.</p></div>
+        </div>
+        <div class="cl-problem__row cl-problem__row--out"><span class="cl-problem__lbl">You walk away with</span><p class="cl-body cl-mb-0"><strong>Your referral ask script, tested wording you'll actually use.</strong></p></div>
+      </li>
+      <li class="cl-problem">
+        <span class="cl-problem__n">3</span>
+        <div class="cl-problem__main">
+          <p class="cl-problem__k">Problem 3</p>
+          <h3 class="cl-problem__h">Even when someone means to refer you, there's nothing in their hand and no follow-up.</h3>
+          <ul class="cl-list cl-list--tick cl-problem__bens">
+            <li>Something physical in their hand</li>
+            <li>Follow-up that runs without you</li>
+            <li>Front desk does it on autopilot</li>
+          </ul>
+        </div>
+        <div class="cl-problem__side">
+          <div class="cl-imgslot cl-problem__img" data-cfe-media="problem-3">Image · problem 3 — what this part of the day looks like · 16:9</div>
+          <div class="cl-problem__row"><span class="cl-problem__lbl">How we solve it</span><p class="cl-body cl-mb-0">We build the referral card, the 3-text follow-up and the front-desk prompt together, in the room.</p></div>
+        </div>
+        <div class="cl-problem__row cl-problem__row--out"><span class="cl-problem__lbl">You walk away with</span><p class="cl-body cl-mb-0"><strong>A print-ready referral card and a follow-up sequence switched on before you leave.</strong></p></div>
+      </li>
     </ol>
     <div class="cl-cta-stack">
-      <p class="cl-priceline"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
-      <a class="cl-cta" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
-      <p class="cl-privacy">Your information is 100% safe with us.</p>
-      <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+      <p class="cl-priceline" data-cfe-optional="anchor" data-cfe-requires="EVENT_ANCHOR_VALUE"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
+<a class="cl-cta" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
+<p class="cl-privacy">Your information is 100% safe with us.</p>
+<p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
     </div>
   </div>
 </section>
@@ -2254,10 +2644,10 @@ html { scroll-behavior: smooth; }
       <li><strong>A 3-text follow-up sequence</strong> — loaded and switched on before you leave</li>
     </ul>
     <div class="cl-cta-stack">
-      <p class="cl-priceline"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
-      <a class="cl-cta" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
-      <p class="cl-privacy">Your information is 100% safe with us.</p>
-      <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+      <p class="cl-priceline" data-cfe-optional="anchor" data-cfe-requires="EVENT_ANCHOR_VALUE"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
+<a class="cl-cta" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
+<p class="cl-privacy">Your information is 100% safe with us.</p>
+<p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
     </div>
   </div>
 </section>
@@ -2269,12 +2659,14 @@ html { scroll-behavior: smooth; }
       <div>
         <p class="cl-eyebrow">About your host</p>
         <h2 class="cl-h2">Dana Cole</h2>
-        <p class="cl-tagline">“I filled my own clinic without a single ad.”</p>
-        <p class="cl-body">Dana ran a two-room physio clinic for nine years before teaching the referral system that kept it booked out. She now helps clinic owners build the same system in a day.</p>
+        <p class="cl-tagline">“She filled her own clinic without a single ad.”</p>
+        <p class="cl-body">Dana Cole spent nine years running a two-room physio clinic that stayed booked out — without a single ad. <strong>She did it by turning happy patients into a steady flow of referrals.</strong>
+
+Now she helps clinic owners build the same system in a day, so they can stop chasing new patients and get back to treating them.</p>
         <ul class="cl-list cl-list--tick">
-          <li>Owner of a booked-out clinic for 9 years</li>
-          <li>300+ clinic owners trained</li>
-          <li>Speaker at allied-health business events</li>
+          <li>Kept her own clinic booked out for 9 years — on referrals, not ads</li>
+          <li>Has helped 300+ clinic owners fill their calendars from referrals</li>
+          <li>Trusted speaker at allied-health business events</li>
         </ul>
       </div>
     </div>
@@ -2311,36 +2703,62 @@ html { scroll-behavior: smooth; }
         </figcaption>
         <p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p>
       </figure>
+      <figure class="cl-quote cl-testimonial" data-cfe-optional="testimonial-4" data-cfe-requires="TESTIMONIAL_4">
+        <p class="cl-quote__text">“Booked 6 new patients the week after — all from one script.”</p>
+        <figcaption class="cl-quote__by">
+          <img class="cl-avatar" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%28280%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EDP%3C/text%3E%3C/svg%3E" alt="Photo of Sample client 4" data-cfe-media="testimonial-4" loading="lazy">
+          <span><span class="cl-quote__name">Sample client 4</span><br>Clinic owner</span>
+        </figcaption>
+        <p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p>
+      </figure>
+      <figure class="cl-quote cl-testimonial" data-cfe-optional="testimonial-5" data-cfe-requires="TESTIMONIAL_5">
+        <p class="cl-quote__text">“Best $27 I've spent on the clinic this year.”</p>
+        <figcaption class="cl-quote__by">
+          <img class="cl-avatar" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2096%2096%27%3E%3Crect%20width%3D%2796%27%20height%3D%2796%27%20fill%3D%27hsl%2840%2C45%25%2C62%25%29%27/%3E%3Ctext%20x%3D%2748%27%20y%3D%2760%27%20font-family%3D%27Arial%27%20font-size%3D%2736%27%20font-weight%3D%27700%27%20fill%3D%27white%27%20text-anchor%3D%27middle%27%3EES%3C/text%3E%3C/svg%3E" alt="Photo of Sample client 5" data-cfe-media="testimonial-5" loading="lazy">
+          <span><span class="cl-quote__name">Sample client 5</span><br>Clinic owner</span>
+        </figcaption>
+        <p class="cl-stars" aria-label="5 out of 5 stars">★★★★★</p>
+      </figure>
+      
     </div>
     <div class="cl-cta-stack">
-      <p class="cl-priceline"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
-      <a class="cl-cta" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
-      <p class="cl-privacy">Your information is 100% safe with us.</p>
-      <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+      <p class="cl-priceline" data-cfe-optional="anchor" data-cfe-requires="EVENT_ANCHOR_VALUE"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
+<a class="cl-cta" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
+<p class="cl-privacy">Your information is 100% safe with us.</p>
+<p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
     </div>
   </div>
 </section>
 
-<section class="cl-section cl-section--panel" data-cfe="10-before-after">
+<section class="cl-section cl-ba" data-cfe="10-before-after">
   <div class="cl-container">
+    <p class="cl-eyebrow cl-center">The transformation</p>
     <h2 class="cl-h2 cl-h2--center">What one workshop changes</h2>
-    <div class="cl-compare">
-      <div class="cl-compare__side cl-compare__side--before">
-        <p class="cl-compare__title">Before the workshop</p>
-        <div class="cl-imgslot cl-compare__img" data-cfe-media="before">Before image · the pain or problem, felt</div>
-        <ul class="cl-list cl-list--cross"><li>Gaps in the calendar mid-week</li><li>Paying for ads that stop when you stop</li><li>Discounting to fill slots</li><li>No idea where next month's patients come from</li></ul>
-      </div>
-      <div class="cl-compare__side cl-compare__side--after">
-        <p class="cl-compare__title">After the workshop</p>
-        <div class="cl-imgslot cl-compare__img" data-cfe-media="after">After image · the reward, how the result feels</div>
-        <ul class="cl-list cl-list--tick"><li>A weekly flow of referred patients</li><li>Growth that doesn't depend on ad spend</li><li>Full-price sessions, booked ahead</li><li>A system your front desk runs</li></ul>
-      </div>
+    <div class="cl-ba__grid">
+    <div class="cl-ba__pics">
+      <figure class="cl-ba__pic cl-ba__pic--before">
+        <div class="cl-imgslot cl-ba__img" data-cfe-media="before">Before image · the pain or problem, felt · 4:3</div>
+        <figcaption class="cl-ba__tag cl-ba__tag--before">Before</figcaption>
+      </figure>
+      <span class="cl-ba__arrow" aria-hidden="true">→</span>
+      <figure class="cl-ba__pic cl-ba__pic--after">
+        <div class="cl-imgslot cl-ba__img" data-cfe-media="after">After image · the reward, how the result feels · 4:3</div>
+        <figcaption class="cl-ba__tag cl-ba__tag--after">After</figcaption>
+      </figure>
+    </div>
+    <div class="cl-ba__rows">
+      <div class="cl-ba__head"><span>Before the workshop</span><span></span><span>After the workshop</span></div>
+        <div class="cl-ba__row"><p class="cl-ba__before"><i aria-hidden="true">✕</i><span>Gaps in the calendar mid-week</span></p><span class="cl-ba__to" aria-hidden="true">→</span><p class="cl-ba__after"><i aria-hidden="true">✓</i><span>A weekly flow of referred patients</span></p></div>
+        <div class="cl-ba__row"><p class="cl-ba__before"><i aria-hidden="true">✕</i><span>Paying for ads that stop when you stop</span></p><span class="cl-ba__to" aria-hidden="true">→</span><p class="cl-ba__after"><i aria-hidden="true">✓</i><span>Growth that doesn't depend on ad spend</span></p></div>
+        <div class="cl-ba__row"><p class="cl-ba__before"><i aria-hidden="true">✕</i><span>Discounting to fill slots</span></p><span class="cl-ba__to" aria-hidden="true">→</span><p class="cl-ba__after"><i aria-hidden="true">✓</i><span>Full-price sessions, booked ahead</span></p></div>
+        <div class="cl-ba__row"><p class="cl-ba__before"><i aria-hidden="true">✕</i><span>No idea where next month's patients come from</span></p><span class="cl-ba__to" aria-hidden="true">→</span><p class="cl-ba__after"><i aria-hidden="true">✓</i><span>A system your front desk runs</span></p></div>
+    </div>
     </div>
     <div class="cl-cta-stack">
-      <p class="cl-priceline"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
-      <a class="cl-cta" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
-      <p class="cl-privacy">Your information is 100% safe with us.</p>
-      <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+      <p class="cl-priceline" data-cfe-optional="anchor" data-cfe-requires="EVENT_ANCHOR_VALUE"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
+<a class="cl-cta" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
+<p class="cl-privacy">Your information is 100% safe with us.</p>
+<p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
     </div>
   </div>
 </section>
@@ -2349,23 +2767,27 @@ html { scroll-behavior: smooth; }
   <div class="cl-container cl-container--narrow">
     <div class="cl-offerbox">
       <div class="cl-imgslot cl-offer-visual" data-cfe-media="offer-stack">Offer image · the whole offer in one visual — every item below, stacked</div>
+      
       <h2 class="cl-h2 cl-h2--center">Everything you get — free</h2>
       <ul class="cl-stack">
         <li>The live 4-hour workshop <span class="cl-stack__value">$497</span></li>
         <li>Referral script and card templates <span class="cl-stack__value">$197</span></li>
         <li>Referral follow-up text sequence <span class="cl-stack__value">$97</span></li>
-        <li class="cl-stack__total">Total value <span class="cl-stack__value"><span class="cl-strike">$791</span> &nbsp;Free</span></li>
+        <li class="cl-stack__total">Total value <span class="cl-stack__value"><span class="cl-strike">$791</span> &nbsp;<span>Free</span></span></li>
       </ul>
       <p class="cl-body" style="margin-top:var(--sp-4)">It's free because the best way to show you what working with me looks like is to help you first. If you want more help afterwards, I'll tell you how — once, at the end. No pressure either way.</p>
       <div class="cl-cta-stack">
-        <p class="cl-priceline"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
-        <a class="cl-cta cl-cta--block" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
-        <p class="cl-privacy">Your information is 100% safe with us.</p>
-        <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+        <p class="cl-priceline" data-cfe-optional="anchor" data-cfe-requires="EVENT_ANCHOR_VALUE"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
+<a class="cl-cta cl-cta--block" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
+<p class="cl-privacy">Your information is 100% safe with us.</p>
+<p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
       </div>
+    
     </div>
   </div>
 </section>
+
+
 
 <section class="cl-section cl-section--tight cl-section--panel" data-cfe="12-logistics">
   <div class="cl-container">
@@ -2382,17 +2804,34 @@ html { scroll-behavior: smooth; }
     <h2 class="cl-h2 cl-h2--center">Quick answers before you grab your seat</h2>
     <div class="cl-faq">
       <details><summary>Is there a replay?</summary><p class="cl-faq__a">No. This is a live event, and the people who show up get the breakthroughs. A recording is only available with the VIP upgrade.</p></details>
+      
       <details><summary>Why is it free? What's the catch?</summary><p class="cl-faq__a">Because helping you first is the best way to earn your trust. No catch, no card.</p></details>
       <details><summary>Will you try to sell me something?</summary><p class="cl-faq__a">Yes, once. At the end I'll explain how you can work with me further. It's optional, and the workshop stands on its own.</p></details>
       <details><summary>Do I need a big patient list?</summary><p class="cl-faq__a">No. Fifty active patients is plenty to start.</p></details>
       <details><summary>What should I bring?</summary><p class="cl-faq__a">Your laptop, your appointment book, and four hours without interruptions.</p></details>
     </div>
     <div class="cl-cta-stack">
-      <p class="cl-priceline"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
-      <a class="cl-cta" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
-      <p class="cl-privacy">Your information is 100% safe with us.</p>
-      <p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
+      <p class="cl-priceline" data-cfe-optional="anchor" data-cfe-requires="EVENT_ANCHOR_VALUE"><span class="cl-strike">Normally $497</span> <strong class="cl-pos">Today it's free.</strong></p>
+<a class="cl-cta" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
+<p class="cl-privacy">Your information is 100% safe with us.</p>
+<p class="cl-proofline" data-cfe-optional="proof">11 new patients in 14 days from one referral card</p>
     </div>
+  </div>
+</section>
+
+<section class="cl-section cl-center" data-surface="D" data-cfe="13b-final-close">
+  <div class="cl-container cl-container--narrow">
+    <h2 class="cl-h2">Stop waiting for referrals. Start building them.</h2>
+    <div class="cl-body cl-finalclose__body">
+      <p>Your next 90 days end one of two ways.</p>
+<p>The same quiet weeks, the same ad spend, the same hoping. Or a referral system that books new patients while you treat the ones you have.</p>
+<p><strong>Your worst case is a $27 refund. Your best case is a full calendar.</strong></p>
+    </div>
+    <div class="cl-cta-stack">
+      <a class="cl-cta" href="#register" data-open="register"><span class="cl-cta__main">Save My FREE Seat</span><span class="cl-cta__sub">Thu 12 Nov @ 10am AEDT</span></a>
+<p class="cl-privacy">Your information is 100% safe with us.</p>
+    </div>
+    <p class="cl-finalclose__sign">See you at the workshop.<br><strong>— Dana Cole</strong></p>
   </div>
 </section>
 
@@ -2403,6 +2842,8 @@ html { scroll-behavior: smooth; }
     <p class="cl-footer__legal"><strong>Disclaimers:</strong> This site is not part of the Facebook website or Meta Platforms, Inc., and is not endorsed by Meta in any way. We use Google remarketing pixels and cookies to show our ads to people who have visited this site; opt out in Google's Ads Settings.<span data-cfe-optional="results-disclaimer"> Results vary. Testimonials reflect individual experiences and are not a guarantee.</span> · © 2026 Sample Clinic Growth Co. — All rights reserved.</p>
   </div>
 </footer>
+
+
 
 <div class="cl-modal" id="exit" hidden role="dialog" aria-modal="true" aria-labelledby="exit-title" data-cfe="15-exit-intent">
   <div class="cl-modal__box cl-center">
@@ -2484,7 +2925,7 @@ html { scroll-behavior: smooth; }
 
 <div id="cfe-demo" role="navigation" aria-label="Template demo">
   <a href="../../funnel-examples.html">&larr; All pages</a>
-  <span>Phase 1 · Free Workshop Registration</span>
+  <span>Phase 1 · Free Registration</span>
   <label>Kit <select id="cfe-demo-kit" onchange="cfeSetKit(this.value)"><option value="ember">Ember</option><option value="coach-launch">Coach Launch</option><option value="crimson">Crimson</option><option value="ink">Ink</option><option value="meadow">Meadow</option><option value="sovereign">Sovereign</option><option value="voltage">Voltage</option></select></label>
 </div>
 <style>#cfe-demo{position:fixed;left:12px;bottom:12px;z-index:9000;display:flex;align-items:center;gap:10px;padding:6px 10px 6px 12px;
