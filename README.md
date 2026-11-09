@@ -20,11 +20,29 @@ coach-launch-system/
 │   └── agents images/            Agent headshots used on the portal
 ├── scripts/                      apply_formula_map.py (stamps the 3-pillar/9-step map onto guides) + helpers
 ├── dashboard.html                The Training Portal — the single entry point to every guide + prompt
-├── PROGRESS.md                   Build log — read this FIRST; the source of truth for where the build is
-└── SETUP-GITHUB.md               One-time GitHub setup steps
+├── PROGRESS.md                   The "now" file — read this FIRST (internal, never published)
+├── PROGRESS-archive.md           Every old session log, word for word — searched, never read whole (internal)
+└── NOTES.md                      Beside each module (+ NOTES-portal.md here): its decisions + history (internal)
 ```
 
 **Live portal:** <https://icoachlaunch.github.io/coach-launch-system/dashboard.html>
+
+## Where it lives and how it goes live
+
+```
+G:\Shared drives\CLIENT ENGINE\product-development\cl-engine-builder-prompts   ← edit here (no .git)
+        │  scripts\publish.ps1 — run by hand
+        ▼
+C:\Users\Focus Account\coach-launch-system                                    ← git lives here; never edit
+        ▼
+github.com/icoachlaunch/coach-launch-system  →  the live portal
+```
+
+Git never lives on Google Drive (Drive corrupts `.git` folders). Nothing goes live until it's published:
+
+- `powershell -ExecutionPolicy Bypass -File scripts\publish.ps1` — **dry run** (the default): lists what would go live. Commits nothing.
+- `… scripts\publish.ps1 -Go -Message "what changed"` — commits and pushes. Live a minute or two later.
+- `… scripts\publish.ps1 -FromGitHub` — brings changes pushed straight to GitHub (e.g. by `publish_funnel_demo.ps1`) back into Drive. A file changed in both places is listed, never overwritten.
 
 The live portal sits behind a 6-digit access code (`assets/gate.js`). Set, rotate or check it with `powershell -File scripts/set_portal_code.ps1` — only a salted hash is stored; the code itself is never written into this (public) repo. Add `?lock` to the portal URL to sign a browser out.
 

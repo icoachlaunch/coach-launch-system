@@ -16,6 +16,11 @@
   What it does: pulls, replaces Funnel-templates/ wholesale (so removed pages disappear),
   copies the gallery and any doc files, commits, pushes. Live a minute or two later at
   https://icoachlaunch.github.io/coach-launch-system/modules/2-money-magnet/cash-flow-engine/funnel-examples.html
+
+  Since 2026-11-09 the repo is edited on Google Drive with NO .git there; git lives in the local clone
+  C:\Users\Focus Account\coach-launch-system (the default -Repo below). This script pushes straight from
+  the clone, so AFTERWARDS bring the new pages back into Drive:
+      powershell -ExecutionPolicy Bypass -File scripts\publish.ps1 -FromGitHub
 #>
 param(
   [Parameter(Mandatory = $true)][string]$Zip,
@@ -23,7 +28,8 @@ param(
   [string]$Message = "Cash Flow Engine funnel demo: update pages"
 )
 $ErrorActionPreference = 'Stop'
-if (-not $Repo) { $Repo = Split-Path -Parent $PSScriptRoot }   # Windows PowerShell 5.1 can't use $PSScriptRoot in param defaults
+if (-not $Repo) { $Repo = 'C:\Users\Focus Account\coach-launch-system' }   # the local clone - git never lives on Drive
+if (-not (Test-Path (Join-Path $Repo '.git'))) { throw "No git clone at $Repo - pass -Repo." }
 if (-not (Test-Path $Zip)) { throw "Zip not found: $Zip" }
 
 git -C $Repo pull --ff-only
@@ -37,12 +43,12 @@ try {
   $srcTpl = Join-Path $tmp "$mod\Funnel-templates"
   if (-not (Test-Path $srcTpl)) { throw "Zip has no $mod\Funnel-templates - wrong zip?" }
 
-  # doc files ride along only if nobody has changed the repo since the zip was built
-  $base = ''
-  if (Test-Path (Join-Path $tmp '.base')) { $base = (Get-Content (Join-Path $tmp '.base') -Raw).Trim() }
-  $docs = @('PROGRESS.md', 'CLAUDE.md') | Where-Object { Test-Path (Join-Path $tmp $_) }
-  if ($docs.Count -gt 0 -and $base -ne $head) {
-    throw "The repo moved on since this zip was built ($base -> $head). Pages are fine, but the doc edits would overwrite newer work. Rebuild the zip from the current repo."
+  # Since 2026-11-09 PROGRESS.md and CLAUDE.md are internal: they live on Drive only and are never
+  # published. If the zip carries them, they are NOT copied - fold their notes into Drive by hand
+  # (the module's NOTES.md + PROGRESS.md), then run publish.ps1 -FromGitHub for the pages.
+  $docs = @()
+  foreach ($d in @('PROGRESS.md', 'CLAUDE.md')) {
+    if (Test-Path (Join-Path $tmp $d)) { Write-Warning "$d in the zip was skipped (internal doc). Merge its notes on Drive by hand." }
   }
 
   $dstTpl = Join-Path $Repo "$mod\Funnel-templates"
@@ -55,7 +61,7 @@ try {
   }
 } finally { Remove-Item $tmp -Recurse -Force -ErrorAction SilentlyContinue }
 
-git -C $Repo add -A -- "modules/2-money-magnet/cash-flow-engine" scripts PROGRESS.md CLAUDE.md
+git -C $Repo add -A -- "modules/2-money-magnet/cash-flow-engine" scripts
 $staged = git -C $Repo diff --cached --name-only
 if (-not $staged) { Write-Host "Nothing changed - already up to date."; exit 0 }
 if (-not (git -C $Repo config user.email)) {

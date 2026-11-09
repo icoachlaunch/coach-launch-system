@@ -370,3 +370,20 @@ table.cl-table { width: 100%; border-collapse: collapse; font-size: 0.97rem; bac
 .step.here .snum { background:var(--cl-crimson); }
 .step .here-tag { display:inline-block; background:var(--cl-crimson); color:#fff; font-family:var(--font-display); font-weight:800; font-size:.56rem; letter-spacing:.07em; text-transform:uppercase; padding:.12em .45em; border-radius:999px; margin-bottom:.3rem; }
 @media (max-width:720px){ .map-grid { grid-template-columns:1fr; } }
+
+/* Stacked table - OPT-IN via <table class="cl-table stack"> with data-label on every <td>.
+   Desktop: a normal .cl-table. Phones: each row becomes a card and each cell shows its column label,
+   so a reading table (question / why / example) never needs a sideways scroll. Added 2026-11-01. */
+@media (max-width: 640px) {
+  .cl-table-wrap:has(> .cl-table.stack) { overflow-x: visible; }
+  .cl-table.stack thead { display: none; }
+  .cl-table.stack, .cl-table.stack tbody, .cl-table.stack tr, .cl-table.stack td { display: block; width: 100%; box-sizing: border-box; }
+  .cl-table.stack tr { border-top: 3px solid var(--cl-crimson); padding: 0.35rem 0 0.5rem; }
+  .cl-table.stack tr:first-child { border-top: none; }
+  .cl-table.stack td { border-top: none; padding: 0.55rem 1rem; }
+  .cl-table.stack td::before {
+    content: attr(data-label); display: block;
+    font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.06em; font-size: 0.7rem; color: var(--cl-crimson); margin-bottom: 0.2rem;
+  }
+}

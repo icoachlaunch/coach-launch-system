@@ -25,3 +25,12 @@ dist/
 
 # sample client outputs — local only, never committed, never on the dashboard (Matthew, 2026-10-04)
 modules/**/examples/
+
+# Internal docs — private, never published (Matthew, 2026-11-09). They live on Drive and in the private
+# client-engine backup; scripts/publish.ps1 also strips them before every publish.
+/PROGRESS.md
+/PROGRESS-archive.md
+/CHANGELOG.md
+/CLAUDE.md
+NOTES.md
+NOTES-*.md
