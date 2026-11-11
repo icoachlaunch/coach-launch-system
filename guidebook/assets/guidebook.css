@@ -412,3 +412,23 @@ a.toc-home, a.map-step, a.ch, a.brand { color: var(--ink); }
   .shell { display: block; padding: 0; }
   .page { border: 0; box-shadow: none; padding: 0; }
 }
+
+/* ---------- The access gate (assets/gate.js) ----------
+   gate.js was written for the old dashboard's colour names. Map them onto this
+   Kit's tokens, on the gate only, so the code box and button are visible. */
+#cl-gate {
+  --cl-paper: var(--paper);
+  --cl-white: var(--surface);
+  --cl-black: var(--ink);
+  --cl-crimson: var(--crimson);
+  --cl-crimson-deep: var(--brand-deep);
+  --bg-panel: var(--surface);
+  --bg-tint: var(--surface-alt);
+  --border: var(--line);
+  --text: var(--ink);
+  --text-dim: var(--ink-soft);
+  --text-muted: var(--ink-muted);
+  --radius: var(--r-lg);
+  --radius-sm: var(--r-sm);
+  --shadow: var(--shadow-card);
+}
