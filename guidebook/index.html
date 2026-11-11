@@ -107,7 +107,8 @@
     h += '<div class="grp"><div class="grp-hd">' + (g.icon ? '<img src="../assets/icons/' + g.icon + '.svg" alt="">' : '') +
          '<div><h3>' + esc(g.name) + '</h3>' + (g.blurb ? '<p>' + esc(g.blurb) + '</p>' : '') + '</div></div><div class="chs">';
     g.items.forEach(function (it) {
-      var inner = '<small>' + esc(it.label) + '</small><b>' + esc(it.title) + '</b><span class="ch-ft"><span class="st st--' + it.status + '">' + ST[it.status] +
+      var inner = (it.icon ? '<img class="ch-ic" src="../assets/icons/' + it.icon + '.svg" alt="">' : '') +
+                  '<small>' + esc(it.label) + '</small><b>' + esc(it.title) + '</b><span class="ch-ft"><span class="st st--' + it.status + '">' + ST[it.status] +
                   '</span><span class="kind">' + (it.tool === 'skill' ? 'Skill' : 'Prompt') + '</span></span>';
       h += it.status === 'live' ? '<a class="ch" href="' + it.slug + '.html">' + inner + '</a>' : '<div class="ch is-soon">' + inner + '</div>';
     });
