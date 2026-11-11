@@ -1,5 +1,5 @@
 # Money Model
-**Step 3 · Red Diamond Offer™ · Part 1 · Offer Matrix™**
+**Step 3 · the Money Model · Offer Matrix™**
 
 ## What goes here
 `money-model.md` — your offer economics — Accelerator phase, price, the math, and which of the Three Closes you run.

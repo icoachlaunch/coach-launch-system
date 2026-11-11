@@ -1,5 +1,5 @@
 # Event Magnet™
-**Step 3 · Red Diamond Offer™ · Part 3 · Offer Matrix™**
+**Step 3 · the Event Magnet™ · Offer Matrix™**
 
 ## What goes here
 `event-magnet.md` — the free, visual lead magnet built on your hot step — the fuse that fills your event.

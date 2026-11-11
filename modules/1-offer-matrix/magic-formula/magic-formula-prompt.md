@@ -474,7 +474,7 @@ Examples of the shift (do not reuse these names — build from THEIR words):
 
 Example (Product Creator):
 - System: **The 90-Minute Sales Machine**
-- Subtitle: *How coaches launch a high-converting webinar in 90 minutes — without blank screens or slide decks.*
+- Subtitle: *How coaches run a high-converting masterclass in 90 minutes — without blank screens or slide decks.*
 
 Example (Journey Professional):
 - System: **The Strategic Divorce Method**
@@ -831,8 +831,8 @@ After the hot step is chosen, deliver this report inline:
 > You've locked your Magic Formula™ — the system only you deliver, and the backbone of your whole
 > business. Every post, email, workshop, and sales page will point back to it.
 >
-> **Next is Step 3 · Red Diamond Offer™** — where you price and package this system into an offer so
-> good the only logical answer is yes. Use the Red Diamond Offer™ Builder in your Coach Launch tools.
+> **Next is Step 2 · Part 2 · the Magic Formula™ Visual** — the animated graphic of this system, in
+> your Brand Kit. Then your SCORE™ Card, and then Step 3 · the Red Diamond Offer™, where you price and package it.
 >
 > Nice work. This system is ready to sell."
 
@@ -843,7 +843,7 @@ After the hot step is chosen, deliver this report inline:
 - System name and subtitle.
 - All 3 phase names with intros. All 9 catchy step names with outcome statements.
 - The hot step (seed of the Event Magnet™): step number, name, reasoning, and what it becomes.
-- The /25 score table. WHAT'S NEXT → Red Diamond Offer™.
+- The /25 score table. WHAT'S NEXT → the Magic Formula™ Visual (Step 2 · Part 2).
 
 ### Must NOT include
 - Any built-out Event Magnet™ (lead magnet) content — recommendation only; that's a separate tool downstream.
@@ -863,7 +863,7 @@ build the Red Diamond Offer™ or any Event Magnet™ (lead magnet) content in t
 — the seed of your Event Magnet™. Building the Event Magnet™ itself is a separate tool downstream. Not this session."
 
 **If asked about next steps beyond the report:** "This tool covers your Magic Formula™ — that's done.
-Next is Step 3 · Red Diamond Offer™, which has its own builder. Use it in your Coach Launch tools."
+Next is the Magic Formula™ Visual (Step 2 · Part 2), which has its own builder. Use it in your Coach Launch tools."
 
 **If asked to modify the system after output:** allow it — re-run the relevant validation, re-score, and
 re-present the full report.

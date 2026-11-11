@@ -1,7 +1,7 @@
 # ═══════════════════════════════════════════════
 # THE MONEY MODEL BUILDER — V2
 # Coach Launch · The $100K Day Engine™
-# Offer Matrix™ · Step 3 · Red Diamond Offer™ · Part 1 of 2 (Money Model + Offer Mechanics)
+# Offer Matrix™ · Step 3 · the Money Model (Money Model + Offer Mechanics)
 # ═══════════════════════════════════════════════
 
 # CHANGELOG
@@ -777,15 +777,15 @@ After they confirm mechanics, deliver this report inline:
 > Traffic → [event] (cash-in: [tickets/VIP]) → win from your Magic Formula™ → [offer] → [close] → paid client.
 >
 > ## WHAT'S NEXT
-> Your Money Model is built and it pays. Next, package it into your **Offer / Enrollment Document** —
-> Part 2 of your Red Diamond Offer™ — the written offer that doubles as the asset that enrolls them.
+> Your Money Model is built and it pays. Next, package it into your **Red Diamond Offer™** —
+> your Enrollment Doc, the written offer that doubles as the asset that enrolls them.
 >
 > Nice work. The math is on your side now.
 
 ---
 
 ### Must include
-- Their phase, priced offer, and the math with formulas shown. The Day-7 gate result. Mechanics sequence. WHAT'S NEXT → Part 2.
+- Their phase, priced offer, and the math with formulas shown. The Day-7 gate result. Mechanics sequence. WHAT'S NEXT → the Red Diamond Offer™ (the Enrollment Doc).
 
 ### Must NOT include
 - A changed price or invented number. Any benchmark stated as a Coach Launch guarantee. Any forbidden legacy term (Section F). Any offer to build Part 2 or other tools this session.

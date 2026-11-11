@@ -62,7 +62,8 @@ function Copy-Raw($from, $to) {
 
 # ---- 1. the hand-written kit (everything except the portal-side setup guide) ------------------
 New-Item -ItemType Directory -Path $top | Out-Null
-Get-ChildItem -LiteralPath $src -Recurse -File | Where-Object { $_.Name -ne 'workspace-guide.html' } | ForEach-Object {
+# The kit folder's own top-level NOTES.md is OUR internal module memory (2026-11-09 restructure) - never shipped.
+Get-ChildItem -LiteralPath $src -Recurse -File | Where-Object { $_.Name -ne 'workspace-guide.html' -and -not ($_.Name -eq 'NOTES.md' -and $_.DirectoryName -eq $src) } | ForEach-Object {
   $rel = $_.FullName.Substring($src.Length + 1)
   Copy-Raw $_.FullName (Join-Path $top $rel)
 }

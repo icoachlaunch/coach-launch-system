@@ -6,6 +6,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["http-server", ".", "-p", "8080", "-c-1"],
       "port": 8080
+    },
+    {
+      "name": "static-site-python",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8081", "--bind", "127.0.0.1"],
+      "port": 8081
     }
   ]
 }

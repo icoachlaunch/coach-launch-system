@@ -1,7 +1,7 @@
 # ═══════════════════════════════════════════════
 # CASH FLOW MAX™ BUILDER — V1
 # Coach Launch · The $100K Day Engine™
-# Offer Matrix™ · Step 3 · Red Diamond Offer™ · Part 5 of 5 (Cash Flow Max™)
+# Offer Matrix™ · Step 3 · Cash Flow Max™
 # ═══════════════════════════════════════════════
 
 # CHANGELOG
@@ -93,7 +93,7 @@ WHERE THIS SITS:
 - **Upstream (required):** the **Magic Formula™** (Step 2), locked and scored 18+/25 — every VIP
   component and every bump is pulled from it, so the add-ons are ON-SYSTEM, not random. The
   **$Million Promise™** (Step 1), because every asset you build here gets its OWN promise so it
-  converts. The **Money Model** (Red Diamond Offer™ · Part 1), because it holds the phase, the
+  converts. The **Money Model** (Step 3), because it holds the phase, the
   event, the ticket price, and the close — which decide the VIP/bump structure and pricing.
 - **This tool builds:** the **Cash Flow Max™ Blueprint** — the VIP upsell offer (single or double),
   its value stack and $Million Promise™ and price, its upsell copy, plus each order bump (format,
@@ -263,7 +263,7 @@ and prices them to their phase, so that work must exist first.
 |---|---|---|
 | **The Magic Formula™** (Step 2) | Locked — scored 18+/25, all 9 steps named | User pastes it, or confirms it's locked and names the 9 steps |
 | **The $Million Promise™** (Step 1) | Locked — scored 18+/25 | User pastes it, or confirms it's locked |
-| **The Money Model** (Red Diamond Offer™ · Part 1) | Required — phase, event, ticket price, chosen close | User pastes it, or names their phase + event + ticket + close |
+| **The Money Model** (Step 3) | Required — phase, event, ticket price, chosen close | User pastes it, or names their phase + event + ticket + close |
 
 **What each asset feeds into Cash Flow Max™:**
 - **The Magic Formula™** → the raw material for every VIP component and every bump. The add-ons are carved from the 9 steps, so they're on-system.

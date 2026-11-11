@@ -114,7 +114,7 @@ WHERE THIS SITS:
   the **Money Model** (phase + event + ticket + the chosen close); the **Red Diamond Offer™**
   (the offer being closed); the **$Million Story™** (Step 1 — $Million Promise™, Golden Avatar™,
   $Million Moment™); the **Magic Formula™** (Step 2 — the system revealed on stage).
-- **Recommended:** **Cash Flow Max™** (Red Diamond Offer™ · Part 5) — the VIP upsell + bumps that
+- **Recommended:** **Cash Flow Max™** (Step 3) — the VIP upsell + bumps that
   feed the VIP Hour.
 - **This tool builds:** the **Sniper Presentation™ Script** — every phase and act as slide beats +
   spoken delivery, story-bit slots filled, engagement built in, ending in the Sniper Close™.
@@ -332,7 +332,7 @@ REQUIRED (gate on all of these):
    (question, symbolism, debunk) · C-1 the 3 Problems · C-2 the $Million Moment™ story · C-3 credibility
    · O-1 the System Reveal (Magic Formula™ 9 steps) · O-2 core differentiator · O-3 proof · R-1…R-4
    (stakes/limits/reward/desire) · E-1…E-5 (the close beats + CTA).
-2. **The Money Model** (Red Diamond Offer™ · Part 1) — the phase (Launch/Execute/Growth/Mastery), the
+2. **The Money Model** (Step 3) — the phase (Launch/Execute/Growth/Mastery), the
    event format, the ticket/VIP structure, and the chosen close. This sets the FORMAT and CLOSE defaults.
 3. **The Red Diamond Offer™** (Part 3) — the full offer being closed: the value stack, the 7X Red
    Diamonds + 3 Levels, the price, the guarantee. This is what the Sniper Close™ closes.
@@ -341,7 +341,7 @@ REQUIRED (gate on all of these):
 5. **The Magic Formula™** (Step 2) — the 3×3 signature system revealed in Opportunity, and the hot step.
 
 RECOMMENDED (not a hard gate):
-- **Cash Flow Max™** (Red Diamond Offer™ · Part 5) — the VIP upsell + order bumps. Needed to build the
+- **Cash Flow Max™** (Step 3) — the VIP upsell + order bumps. Needed to build the
   VIP Hour content (Growth+). If they don't have it, the VIP Hour can be sketched and finished later.
 
 **THESE FIVE ARE THE ONLY ASSETS YOU MAY ASK FOR.** Ask for them by these exact names. There is no sixth

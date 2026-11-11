@@ -137,7 +137,7 @@
 # V5 (2026-09): THE NUMBERS LAYER REMOVED — scope correction (Matthew's call, reversing V2).
 #   V2 added a numbers step to this builder. Running it proved that wrong on two counts. One: this tool's
 #   job is to build the free, visual tool that pulls people toward the event — funnel economics are a
-#   different job and they belong to the Money Model (Red Diamond Offer™ · Part 1). Two, and decisive:
+#   different job and they belong to the Money Model (Step 3). Two, and decisive:
 #   a coach reaching this step has not run the event yet, so they genuinely do not have a close rate, a
 #   show-up rate, a registration rate or a cost per lead. The step was asking for numbers that cannot
 #   exist yet, and inviting guesses dressed up as maths.
@@ -280,7 +280,7 @@ WHERE THIS SITS:
 - **Upstream (required):** the **Magic Formula™** (Step 2), locked and scored 18+/25, with a
   **hot step already flagged** — that flagged hot step is the SEED of this Event Magnet™. Also
   the **$Million Promise™** (Step 1), because the Event Magnet™'s title is written in the same
-  promise format. **Recommended:** the **Money Model** (Red Diamond Offer™ · Part 1), because it
+  promise format. **Recommended:** the **Money Model** (Step 3), because it
   holds the phase, the event, and the close your Event Magnet™ points people toward.
 - **This tool builds:** the **Event Magnet™ Spec** — one document in two parts.
   **PART A · THE BUILD SPEC** — a complete, ready-to-design spec for a free, visual tool built from ONE
@@ -545,7 +545,7 @@ tool in the room, which is why the SCORE™ Card matters here when the user has 
 | **The $Million Promise™** (Step 1) | **REQUIRED** | Locked — scored 18+/25. (If they have a SCORE™ Card, read it from Block S-1 instead of asking twice.) |
 | **The SCORE™ Card** (Step 2 · Part 3) | **Recommended** | The source of truth when it exists. Often not finished yet at this point — never gate on it |
 | **The Golden Avatar™** (Step 1) | **Fallback** | Only when there's no SCORE™ Card and you need who's in the room |
-| **The Money Model** (Red Diamond Offer™ · Part 1) | **Fallback** | Only when the SCORE™ Card's Block E-5 doesn't carry the phase, event and close |
+| **The Money Model** (Step 3) | **Fallback** | Only when the SCORE™ Card's Block E-5 doesn't carry the phase, event and close |
 
 **What each asset feeds into the Event Magnet™:**
 - **The Magic Formula™** → the **nine steps with their outcomes** (what the Hot Step Scorecard scores in Step 2) and the full system the tool teases. If a hot step is already flagged, treat it as a candidate — not a decision. You score all nine regardless (Rule 15).
@@ -1671,7 +1671,7 @@ It has its own builder in your Coach Launch tools."
 element(s), then re-present the full updated spec.
 
 **If asked about numbers — cost per lead, opt-in rates, close rates, ad budget, what this will earn:** "That's
-your **Money Model** (Red Diamond Offer™ · Part 1), not this tool. This one builds the magnet itself. And
+your **Money Model** (Step 3), not this tool. This one builds the magnet itself. And
 you won't have most of those numbers until you've actually run the event — they come from real traffic, not
 from guessing here."
 

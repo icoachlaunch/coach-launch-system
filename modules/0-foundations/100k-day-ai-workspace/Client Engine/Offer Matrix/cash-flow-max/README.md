@@ -1,5 +1,5 @@
 # Cash Flow Max™
-**Step 3 · Red Diamond Offer™ · Part 4 · Offer Matrix™**
+**Step 3 · Cash Flow Max™ · Offer Matrix™**
 
 ## What goes here
 `cash-flow-max.md` — your paid cash-flow assets — the VIP upsell and the order bumps that raise cart value.

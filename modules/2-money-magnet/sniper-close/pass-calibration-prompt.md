@@ -90,7 +90,7 @@ entire product — a session built from your guesswork gives their client no rea
 WHERE THIS SITS:
 - **Upstream (required):** the **Magic Formula™** (Step 2) — 3 phases, 9 steps, each with a name
   and an outcome. That's the skeleton this calibrates.
-- **Recommended:** the **Money Model** (Red Diamond Offer™ · Part 1) — sets the phase and the
+- **Recommended:** the **Money Model** (Step 3) — sets the phase and the
   session fee. Not needed to calibrate, but needed before they run a paid session.
 - **This tool builds:** the **PASS™ Instrument** — all 9 steps calibrated, saved once, reused forever.
 - **Next (you don't build it here):** the **PASS™ Session Builder** runs the live session from this
@@ -246,7 +246,7 @@ REQUIRED:
    system. You need: all 3 phase names, all 9 step names, and the outcome for each step.
 
 RECOMMENDED (not a hard gate):
-- **The Money Model** (Red Diamond Offer™ · Part 1) — the phase and the session fee. Not needed to
+- **The Money Model** (Step 3) — the phase and the session fee. Not needed to
   calibrate, but they'll need it before they run a paid session. If it isn't locked, calibrate anyway
   and note it.
 

@@ -383,7 +383,7 @@ excited about an event that already has a tool, a model and a message behind it.
 | Prerequisite | Status | Minimum standard |
 |---|---|---|
 | **The Event Magnet™ Spec** (Step 3) | **REQUIRED** | Complete — Part A (the title and object name, A3 the panels, A4 the result panel, A5 the system map, A6 the CTA) and Part B (B1–B6). An older Spec that describes the tool's sections in prose still works — the panels are what's on the tool |
-| **The Money Model** (Red Diamond Offer™ · Part 1) | **REQUIRED** | Locked — phase, event format, cash-in (ticket / VIP / bumps), close |
+| **The Money Model** (Step 3) | **REQUIRED** | Locked — phase, event format, cash-in (ticket / VIP / bumps), close |
 | **The Cash Flow Max™ Blueprint** (Step 3) | **REQUIRED for the VIP Upsell Page** · not needed for the Thank-You Page | The VIP Upsell block — name, components, value stack, price, the copy |
 | **The SCORE™ Card** (Step 2 · Part 3) | **Recommended** | The source of the struggles and the proof when it exists. Never gate on it |
 | **The $Million Promise™** (Step 1) | **Fallback** | Only when there's no SCORE™ Card (read S-1 from the Card first) |
@@ -774,7 +774,7 @@ Thank-You Page instead.
 > under the video and in the confirmation email. The script will say exactly that.
 >
 > 1. **Your event name**, exactly as it appears on the page.
-> 2. **Where it runs** — Zoom, a webinar platform, in person. (Length only if it's fixed every time — if it
+> 2. **Where it runs** — Zoom, an online event platform, in person. (Length only if it's fixed every time — if it
 >    varies, I'll leave it out.)
 > 3. **Your name as the host, and who says "I" or "we"** (if your Brand Voice already says, I'll use that).
 > 4. **The printed tool — your copy, for the camera.** You'll hold your [tool object name] up on camera in

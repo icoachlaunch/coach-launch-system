@@ -1,5 +1,5 @@
 # Red Diamond Offer™ Enrollment Doc
-**Step 3 · Red Diamond Offer™ · Part 2 · Offer Matrix™**
+**Step 3 · Red Diamond Offer™ · the Enrollment Doc · Offer Matrix™**
 
 ## What goes here
 `enrollment-doc.md` — the long-form offer / sales letter that packages your Money Model and enrolls the client.

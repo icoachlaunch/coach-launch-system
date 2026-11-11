@@ -98,7 +98,7 @@ WHERE THIS SITS:
 - **This tool builds:** your Products & Pricing document — what you sell today, mapped onto the three
   levels; each level with its form, its name, what's in it, its term and fallback, and its price point
   (or a marked unknown); and your revenue goal.
-- **Downstream:** the **Money Model** (Step 3 · the Red Diamond Offer™ · Part 1) reads your levels and
+- **Downstream:** the **Money Model** (Step 3) reads your levels and
   price points, picks the core offer for your phase and runs the maths — it LOCKS the price, this tool
   sets the price points. The **Red Diamond Offer™ Enrollment Doc** prints your three levels as the
   last block of the letter — from here. **Cash Flow Max™**, your **Cash Flow Engine™** funnel pages
@@ -899,7 +899,7 @@ build notes, no version of this tool. The inline markers `Planned`, `TBD — set
 >
 > ## How to Use This
 > This is the source of truth for every price in [my / our] business.
-> - **The Money Model** (Step 3 · Red Diamond Offer™ · Part 1) reads these levels and price points, picks the
+> - **The Money Model** (Step 3) reads these levels and price points, picks the
 >   core offer for [my / our] phase and locks its price. Bring this document to it.
 > - **The Red Diamond Offer™ Enrollment Doc** prints the three levels at the bottom of the letter — from here.
 > - **Cash Flow Max™**, the **Cash Flow Engine™** funnel pages and the **Sniper Presentation™** read the
