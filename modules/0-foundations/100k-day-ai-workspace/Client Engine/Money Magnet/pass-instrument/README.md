@@ -1,8 +1,8 @@
 # PASS™ Instrument
-**Step 4 · The Sniper Close™ · Part 1 · The Strategy Close · Money Magnet™**
+**Step 4 · The Sniper Close™ · Part 1 · The PASS™ Close · Money Magnet™**
 
 ## What goes here
-`pass-instrument.md` — the diagnostic you run in every Paid Audit Strategy Session — nine steps, scored out of 45.
+`pass-instrument.md` — the diagnostic you run in every PASS™ Session (Paid Audit or Strategy Session — The PASS™ Close) — nine steps, scored out of 45.
 
 One canonical file, updated over time. Bump the version and add a revision-history row when it changes. Never a `-v2` or `-FINAL`.
 

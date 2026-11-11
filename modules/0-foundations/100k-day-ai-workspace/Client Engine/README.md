@@ -21,7 +21,7 @@ Client Engine/
 │   ├── event-magnet/                  Step 3 · the free lead magnet on your hot step
 │   └── cash-flow-max/                 Step 3 · the VIP upsell + order bumps
 ├── Money Magnet/        Pillar 2 · Steps 4–6 · making the money
-│   ├── pass-instrument/               Step 4 · the PASS™ Instrument (The Strategy Close) + sessions/
+│   ├── pass-instrument/               Step 4 · the PASS™ Instrument (The PASS™ Close) + sessions/
 │   ├── sniper-presentation/           Step 4 · the Sniper Presentation™ Script
 │   ├── sniper-presentation-slides/    Step 4 · the deck built from it (a skill)
 │   ├── cash-flow-engine/              Step 5 · the funnel, built in GHL AI Studio (a skill) — a folder per phase
@@ -141,7 +141,8 @@ folder's `NOTES.md` says *why*.
 
 **The Money Model (Step 3) sets the path.** It decides which $100K Day Accelerator™ phase you're in —
 Launch, Execute, Growth or Mastery (the Accelerator runs all four over 112 days) — and your close
-(**the Three Closes**: The Strategy Close · The Membership Close · The Deposit Close). That path shapes
+(**the Four Closes**, one new close per phase: The ASK™ Close · The JOIN™ Close · The PASS™ Close ·
+The SEAL™ Close). That path shapes
 your event format, your pricing and which downstream assets matter most. Once the Money Model is
 complete, Claude records the phase and close in `CONTEXT.md` and in each new asset's `phase:` field.
 Until then it's `n/a`.

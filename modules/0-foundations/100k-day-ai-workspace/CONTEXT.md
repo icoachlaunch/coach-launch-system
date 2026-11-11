@@ -15,7 +15,7 @@ next: Business Brand Profile — run its builder from Coach Launch Academy™, s
 run_by: [solo | partnership | team]       pronoun: [I | we]   (from the Business Brand Profile)
 brand_kit: [none yet]                     overrides: [none]   (from the Visual Style Guide's BRAND KIT block)
 accelerator_phase: TBD — set in the Money Model
-close: TBD — set in the Money Model       (The Strategy Close | The Membership Close | The Deposit Close)
+close: TBD — set in the Money Model       (The ASK™ Close | The JOIN™ Close | The PASS™ Close | The SEAL™ Close)
 ```
 
 ## How [name] likes to work
@@ -67,7 +67,7 @@ Fill these in as the Reference docs lock. One line each, verbatim from the sourc
 | 3b | Red Diamond Offer™ Enrollment Doc | `Client Engine/Offer Matrix/enrollment-doc/` | not started | — | — |
 | 3c | Event Magnet™ | `Client Engine/Offer Matrix/event-magnet/` | not started | — | — |
 | 3d | Cash Flow Max™ | `Client Engine/Offer Matrix/cash-flow-max/` | not started | — | — |
-| 4a | PASS™ Instrument (The Strategy Close) | `Client Engine/Money Magnet/pass-instrument/` | not started | — | — |
+| 4a | PASS™ Instrument (The PASS™ Close) | `Client Engine/Money Magnet/pass-instrument/` | not started | — | — |
 | 4b | Sniper Presentation™ Script | `Client Engine/Money Magnet/sniper-presentation/` | not started | — | — |
 | 4c | Sniper Presentation™ Slides | `Client Engine/Money Magnet/sniper-presentation-slides/` | not started | — | — |
 | 5a | Cash Flow Engine™ funnel (GHL AI Studio) | `Client Engine/Money Magnet/cash-flow-engine/` | not started | — | — |

@@ -21,9 +21,10 @@ START NOW.
 === END INSTRUCTIONS ===
 
 # ═══════════════════════════════════════════════
-# THE SNIPER PRESENTATION™ SLIDES — BUILDER — V2
+# THE SNIPER PRESENTATION™ SLIDES — BUILDER — V3
 # Coach Launch · The $100K Day Engine™
 # Money Magnet™ · Step 4 · The Sniper Close™ · Part 3 — the Slides
+# V3 (2026-11-12): the Four Closes (ASK™ · JOIN™ · PASS™ · SEAL™) replace the Three Closes, per the $100K Day Accelerator™ Framework.
 # ───────────────────────────────────────────────
 # © 2026 Coach Launch. All rights reserved.
 #
@@ -297,7 +298,7 @@ From the **Script**, extract the stamp and the body:
 cl_asset: sniper-presentation-script
 format: [masterclass | challenge-3day]
 phase: [Launch | Execute | Growth | Mastery]
-close: [strategy-free | strategy-paid | membership | deposit]
+close: [ask | join | pass | seal]
 vip_hour: [start | end | none]
 status: approved
 approved_date: [date]
@@ -382,9 +383,11 @@ THIS TOOL'S OWN TERMS:
 
 SCORE™ act words and the block labels stay PLAIN — no ™.
 
-## THE THREE CLOSES (canon — never invent a fourth)
+## THE FOUR CLOSES (canon — never invent a fifth)
 
-**The Strategy Close** (free or paid) · **The Membership Close** · **The Deposit Close**.
+**The ASK™ Close** (the free application call) · **The JOIN™ Close** (the Membership Close, from the
+room) · **The PASS™ Close** (the paid session) · **The SEAL™ Close** (the Deposit Close).
+The ladder: ASK™ → JOIN™ → PASS™ → SEAL™, per the $100K Day Accelerator™ Framework.
 The Script's stamp says which one ran. You never choose it and never change it.
 
 ## THE SCRIPT DECIDES THE DECK
@@ -466,12 +469,15 @@ covered. Both come from the Script's DAY headers — never invented.
 
 | Stamp | Slide 25 | Slide 26 |
 |---|---|---|
-| `strategy-free` | 15-stat — the offer price | 19-cta — the session name, that it's free, and the promise that carries it: they leave with a written plan whether they work with you or not |
-| `strategy-paid` | 15-stat — the offer price | 19-cta — as above, plus the session fee and that it comes off their first payment |
-| `membership` | 13-card-grid, `data-cells="2"` — monthly and annual at the 25% saving, side by side | 19-cta — the join steps, and the onboarding call promised IN the ask |
-| `deposit` | 15-stat — the **FULL price**, never the deposit | 19-cta — the deposit that reserves the place, that it comes off the total, and that it's non-refundable |
+| `ask` | 15-stat — the offer price | 19-cta — the free application call: apply, book the call, and the sale happens on the call |
+| `join` | 13-card-grid, `data-cells="2"` — monthly and annual at the 25% saving, side by side | 19-cta — the join steps, and the enrollment call promised IN the ask |
+| `pass` | 15-stat — the offer price | 19-cta — the PASS™ Session name, the session fee and that it comes off their first payment, and the promise that carries it: they leave with a written plan whether they work with you or not |
+| `seal` | 15-stat — the **FULL price**, never the deposit | 19-cta — the deposit that reserves the place, that it comes off the total, that it's non-refundable, and the onboarding call that follows |
 
-⚠️ For the Deposit Close the full price leads and the deposit follows. Lead with the deposit and
+An older Script may carry an old stamp: read `strategy-free` as `ask`, `strategy-paid` as `pass`,
+`membership` as `join`, and `deposit` as `seal`.
+
+⚠️ For The SEAL™ Close the full price leads and the deposit follows. Lead with the deposit and
 it reads as a trick; lead with the price and it reads as a courtesy. Never reorder these two.
 
 **`vip_hour:`** adds a `20-divider` (**A**) block — `start` places it before slide 1, `end` after
@@ -503,7 +509,7 @@ Every mold is a complete standalone 16:9 document in `coach-launch-molds.html`, 
 | `10-framework` | their Magic Formula™, Process | 3–9, set `data-cells` |
 | `11-split-compare` | enemy/guide, Hell→Heaven, Two Identities, Fork | 5 per column |
 | `12-belief` | belief → truth rows; objection → handle rows | 5 rows |
-| `13-card-grid` | parallel items; the Membership two-price | 2–6, set `data-cells` |
+| `13-card-grid` | parallel items; the JOIN™ two-price | 2–6, set `data-cells` |
 | `14-proof` | real client results only | 3 cards |
 | `15-stat` | one big real number; the Price | 1 number |
 | `16-engagement` | the Confidence Check | 1 line + prompt |
@@ -693,7 +699,7 @@ input, strip and replace with the Coach Launch equivalent.
 - "AI Presentation Engine," "The Presentation Engine" (as a brand) → **Sniper Presentation™ Slides**
 - "Slide Builder," "theme file," "plan table" as *brand* names → they are generic here; the brand is **Sniper Presentation™ Slides**
 - "Aaron," "Aaron Fletcher," "Fletcher Method," "Customer Engine," "Customer Engine Academy" → the members' area is **Coach Launch Academy™**
-- "The Expert Close" → retired; the closes are **The Strategy Close · The Membership Close · The Deposit Close**
+- "The Expert Close," "The Strategy Close," "The Membership Close," "The Deposit Close," "the Three Closes" → retired; the closes are the Four Closes: **The ASK™ Close · The JOIN™ Close · The PASS™ Close · The SEAL™ Close**
 - "SCRIPT," "SCRIPT VSL," "VSL," "the 8 Buying Beliefs," "Mortar" → **SCORE™ Card** / **Sniper Presentation™**
 - "MDM," "Million Dollar Message" → **$Million Promise™**
 - "Product Roadmap," "Model Builder," "Supersystem" → **Magic Formula™** / **Money Model**
@@ -767,7 +773,7 @@ All three read. Here's what I'm building:
 
 **Script:** [filename] — a [Masterclass / 3-Day Challenge] Sniper Presentation™ Script for
 [presenter] / [system]. Approved [date].
-**Close:** [The Strategy Close (free/paid) / The Membership Close / The Deposit Close].
+**Close:** [The ASK™ Close / The JOIN™ Close / The PASS™ Close / The SEAL™ Close].
 **VIP Hour:** [at the start / at the end / none].
 **Phases:** WHO ([n] beats) → WHAT ([n]) → WHY ([n]) → WHEN ([n]). [n] story bits.
 **Libraries:** twenty molds, six themes.
@@ -984,7 +990,7 @@ MUST NOT INCLUDE:
 - **Iteration is welcome.** They can rebuild in a new brand, or rebuild the slides affected by a
   Script edit. Re-run the Quality Check each time.
 - **Never break canon:** the three pillars, nine steps, the four phases, the two formats, and the
-  Three Closes are fixed. Use the user's numbers and words; never override their locked assets.
+  Four Closes are fixed. Use the user's numbers and words; never override their locked assets.
 
 ---
 

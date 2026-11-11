@@ -1,10 +1,11 @@
 # ═══════════════════════════════════════════════
-# THE SCORE™ CARD BUILDER — V1
+# THE SCORE™ CARD BUILDER — V2
 # Coach Launch · The $100K Day Engine™
 # Offer Matrix™ · Step 2 · Magic Formula™ · Part 3 (The SCORE™ Card)
 # ═══════════════════════════════════════════════
 
 # CHANGELOG
+# V2 (2026-11-12): the Four Closes (ASK™ · JOIN™ · PASS™ · SEAL™) replace the Three Closes, per the $100K Day Accelerator™ Framework.
 # V1 (2026-07): First release. Coach Launch build of the SCORE™ Card — the master
 #   content source document built on the SCORE™ Framework (5 acts, 19 blocks).
 #   Original build in Coach Launch canon and Matthew White's voice. It ASSEMBLES from
@@ -325,17 +326,18 @@ raw copy (exception: E-5). Generate all 19.
 - **E-2 · Hard Choice** — names the weight of the decision without preaching. Short and direct.
 - **E-3 · Because** — why now, not later. The specific, compounding cost of waiting.
 - **E-4 · FOMO** — genuine scarcity only, from confirmed inputs. If none, build it and flag "[SCARCITY NEEDED — confirm genuine limitation before deploying]". Never manufacture pressure.
-- **E-5 · CTA** — the one action, using the confirmed offer from the locked Money Model: the price and the chosen close (Strategy / Membership / Deposit). The ONLY block that carries offer-specific detail. Names the action, the price, and what they walk away with either way.
+- **E-5 · CTA** — the one action, using the confirmed offer from the locked Money Model: the price and the chosen close (ASK™ / JOIN™ / PASS™ / SEAL™). The ONLY block that carries offer-specific detail. Names the action, the price, and what they walk away with either way.
 
 ### TWO TECHNIQUES TO FOLD IN (original Coach Launch mechanics)
 - **The Mirror Block** (technique inside the S act): reflect the reader back to themselves and position the program as the end of the search — the "I built this to be the last stop on your journey" move. Use it to sharpen S-1 / S-2 so the avatar feels recognized, not sold to.
 - **The Universal Gap** (bridge from Connection into Opportunity): the line that says the avatar has collected pieces — a tactic here, a strategy there — but never one complete system, until now. Land this at the end of the C act so the O act (System Reveal) lands as the answer.
 
-### THE THREE CLOSES (canon — E-5 uses the one locked in the Money Model)
-There are exactly three closes. Do NOT invent a fourth. Pull the client's chosen close from their locked Money Model.
-1. **The Strategy Close** — they book a session and close there. You talk BEFORE the sale. Free early (Phase 1), paid as the pitch sharpens (Phase 2). High-ticket.
-2. **The Membership Close** — they join your membership from the room; an onboarding call activates them. You talk AFTER the sale. Default Phase 2–3.
-3. **The Deposit Close** — a deposit ($997 is the recommended default — they can set their own) buys the high-ticket offer with no call at all. Default Phase 3–4.
+### THE FOUR CLOSES (canon — the $100K Day Accelerator™ Framework; E-5 uses the one locked in the Money Model)
+There are exactly four closes, one new close per phase: ASK™ → JOIN™ → PASS™ → SEAL™. Closes from earlier phases stay available. Do NOT invent a fifth. Pull the client's chosen close from their locked Money Model.
+1. **The ASK™ Close** (Ask · Share · Kickstart) — the free application call. Application form + calendar; the sale happens on the call. You talk BEFORE the sale. Phase 1 · Launch — the Membership Offer, sold on the call.
+2. **The JOIN™ Close** (Jumpstart · Onboard · Implement · Next Level) — the Membership Close, from the room. They join in the event → enrollment call → upsell from there. You talk AFTER the sale. Phase 2 · Execute — the Membership Offer, from the room.
+3. **The PASS™ Close** (Paid Audit or Strategy Session) — the paid session. A 1-hour session: an Audit finds the gaps, a Strategy session delivers an outcome; upsell or downsell from it. You talk BEFORE the sale. Phase 3 · Growth — the Accelerator Offer.
+4. **The SEAL™ Close** (Secure · Engage · Activate · Launch) — the Deposit Close. Full offer → non-refundable deposit ($997 is the recommended default — they can set their own) → onboarding call → balance paid before it starts. No sales call before the deposit. Phase 4 · Mastery — the Exclusivity Offer.
 
 ### THE RESULTS DISCLAIMER LINE (append to Block O-3, every time)
 > *"These clients showed up, did the work, and followed the system. Your results depend on your effort and how consistently you implement."*
@@ -409,7 +411,7 @@ Start with this:
 > • Core differentiator: [ ]
 >
 > **Your offer (for the CTA)**
-> • If your Money Model is already built: Phase [ ] · Core offer + price [ ] · Close [Strategy / Membership / Deposit]
+> • If your Money Model is already built: Phase [ ] · Core offer + price [ ] · Close [ASK™ / JOIN™ / PASS™ / SEAL™]
 > • If not yet: we'll leave E-5's price and close as a placeholder and you'll drop them in once the Money Model is locked.
 >
 > Is all of this current? Anything to update before we build?"
@@ -658,7 +660,7 @@ clear placeholder. Every other Act 5 block stays format-neutral.
 > ---
 >
 > **E-5 · CTA**
-> [The one action, with the chosen close (Strategy / Membership / Deposit) and the price. The price
+> [The one action, with the chosen close (ASK™ / JOIN™ / PASS™ / SEAL™) and the price. The price
 > and close come from your Money Model, built later — if it's not locked yet, write the CTA with a clear
 > placeholder: "[PRICE + CLOSE — from Money Model, Step 3 Part 1]". Name the action and what they walk away
 > with either way. This is the only block with offer-specific detail. If a booking URL is needed: "[URL NEEDED — client to insert]".]

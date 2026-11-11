@@ -2,7 +2,7 @@
 **Step 3 · the Money Model · Offer Matrix™**
 
 ## What goes here
-`money-model.md` — your offer economics — Accelerator phase, price, the math, and which of the Three Closes you run.
+`money-model.md` — your offer economics — Accelerator phase, price, the math, and which of the Four Closes you run (The ASK™ Close · The JOIN™ Close · The PASS™ Close · The SEAL™ Close — one new close per Accelerator phase).
 
 One canonical file, updated over time. Bump the version and add a revision-history row when it changes. Never a `-v2` or `-FINAL`.
 

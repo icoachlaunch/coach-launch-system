@@ -58,6 +58,6 @@ reach for the whole jungle. Let me show you what's waiting when you let go."
 ---
 
 ### Placement notes
-A money/price-objection bit for the close — pairs with any of the three closes at the
+A money/price-objection bit for the close — pairs with any of the Four Closes at the
 price-reveal moment. High-participation; lean into the call-and-response. Keep the
 Pirsig credit in so it's clearly a retold parable, not lifted verbatim.

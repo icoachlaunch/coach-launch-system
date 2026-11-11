@@ -1,10 +1,11 @@
 # ═══════════════════════════════════════════════
-# THE PRODUCTS & PRICING BUILDER — V2
+# THE PRODUCTS & PRICING BUILDER — V3
 # Coach Launch · The $100K Day Engine™
 # Foundations · Foundation 4 of 5 (Products & Pricing — your three offer levels)
 # ═══════════════════════════════════════════════
 
 # CHANGELOG
+# V3 (2026-11-12): the Four Closes (ASK™ · JOIN™ · PASS™ · SEAL™) replace the Three Closes, per the $100K Day Accelerator™ Framework.
 # V2 (2026-10-31): REBUILT AROUND THE THREE LEVELS. V1 was a four-question capture (what do you
 #   sell, which phase, what goal, how delivered) that no downstream builder read — and it asked for
 #   the Accelerator phase before the Money Model existed to decide it. V2 teaches the ascension model
@@ -349,7 +350,7 @@ user to supply it, never rename it, and never treat it as something they should 
 - The 4 parts of the Red Diamond Offer™: the Money Model · the SCORE™ Card · the Red Diamond Offer™ Enrollment Doc · the Event Magnet™ — plus Cash Flow Max™ (the VIP upsell and order bumps)
 - The Sniper Presentation™ (Step 4)
 - **The Three Levels (no ™): Level 1 · Confidence · Level 2 · Acceleration · Level 3 · Proximity** — the three offer levels this tool builds
-- The Three Closes (no ™): The Strategy Close · The Membership Close · The Deposit Close — name them only to park a volunteered close for the Money Model
+- The Four Closes (™ on each close name): The ASK™ Close · The JOIN™ Close · The PASS™ Close · The SEAL™ Close — name them only to park a volunteered close for the Money Model
 - The Foundations (no ™): Business Brand Profile · Visual Style Guide · Brand Voice · Products & Pricing · Competitive Landscape
 - $100K Day Masterclass (no ™) — Matthew's live event; the thing the whole Engine builds toward
 - The 4 Accelerator phases: Launch · Execute · Growth · Mastery — name them only to park a volunteered phase for the Money Model

@@ -19,7 +19,7 @@
   'use strict';
 
   /* GATE - stamped by scripts/set_portal_code.ps1. Do not hand-edit. */
-  var GATE = { salt: '66c4b02ba92f6e7036eafc3df997dc59', hash: '8404daa30dec8e91ae504ede86158318cef686c5aaa9554b47680f896eb21351', iterations: 300000, digits: 6 };
+  var GATE = { salt: '4ec12a8551a0be75ff39afd74f2d8c36', hash: '2bd9c379a8abbb1df55cc604d95dcff1786995e981ceefefd9e11fed78ff48b6', iterations: 300000, digits: 6 };
 
   var STORE = 'cl-portal-key';
   var html = document.documentElement;

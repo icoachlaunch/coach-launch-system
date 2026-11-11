@@ -393,7 +393,7 @@ learn to fly."
 ### Placement notes
 Belief-break for the fear-of-the-dip / fear-of-hard objection — strong just before the
 offer. Positions high-touch support (the "mother eagle") as the risk-remover, so it
-pairs naturally with the Strategy and Deposit closes.
+pairs naturally with The PASS™ Close and The SEAL™ Close.
 
 ---
 
@@ -461,7 +461,7 @@ the mountain — the missing variable — right before the close.
 
 ### Placement notes
 A core close-primer whenever the offer is high-touch (coaching/consulting) — pairs with
-the Strategy and Deposit closes. Run it just before the Value Stack / offer reveal.
+The PASS™ Close and The SEAL™ Close. Run it just before the Value Stack / offer reveal.
 
 ---
 
@@ -525,7 +525,7 @@ reach for the whole jungle. Let me show you what's waiting when you let go."
 ---
 
 ### Placement notes
-A money/price-objection bit for the close — pairs with any of the three closes at the
+A money/price-objection bit for the close — pairs with any of the Four Closes at the
 price-reveal moment. High-participation; lean into the call-and-response. Keep the
 Pirsig credit in so it's clearly a retold parable, not lifted verbatim.
 

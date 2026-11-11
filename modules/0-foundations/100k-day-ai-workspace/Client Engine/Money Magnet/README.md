@@ -6,7 +6,7 @@ it feeds.
 
 ## Step 4 · The Sniper Close™ — the audience closes themselves
 Three parts, built in order:
-- `pass-instrument/` — your PASS™ Instrument (Part 1 · The Strategy Close), with a `sessions/`
+- `pass-instrument/` — your PASS™ Instrument (Part 1 · The PASS™ Close), with a `sessions/`
   folder inside it for one client report per session you run
 - `sniper-presentation/` — the Sniper Presentation™ Script (Part 2)
 - `sniper-presentation-slides/` — the deck built from that Script (Part 3 — a skill in `skills/`)

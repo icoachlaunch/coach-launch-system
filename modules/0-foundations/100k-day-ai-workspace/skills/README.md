@@ -9,7 +9,7 @@ builder prompt; you tell Claude what you want, and `CLAUDE.md` sends it to the r
 | Skill | What it builds | It reads |
 |---|---|---|
 | `sniper-presentation-slides/` | Your slide deck, from your approved Sniper Presentation™ Script — one offline file you present from your laptop | the Script + your BRAND KIT block |
-| `cash-flow-funnel-builder/` | Your event funnel pages, as one GHL AI Studio build prompt per page, in funnel order | Event Magnet™ · Money Model · Brand Profile · BRAND KIT block |
+| `cash-flow-funnel-builder/` | Your event funnel pages (V3), each one a standalone HTML page in your Brand Kit, built page by page with your OK and reviewed on a Design board. Install it from `cl-cash-flow-funnel-builder-v3.zip` in the Guidebook's Cash Flow Engine™ chapter | Event Magnet™ · Money Model · Brand Profile · BRAND KIT block |
 | `magic-formula-visual/` | The animated graphic of your Magic Formula™ — screenshot it for an ad, embed it on a page, drop it in a deck | Magic Formula™ · $Million Promise™ · BRAND KIT block |
 
 Each folder carries what its skill needs to run — the slide mold library and viewer, the funnel phase
@@ -26,7 +26,7 @@ asset folder the skill names.
 ## Where the outputs go
 
 - Slides → `Client Engine/Money Magnet/sniper-presentation-slides/`
-- Funnel build prompts → `Client Engine/Money Magnet/cash-flow-engine/` (a folder per phase)
+- Funnel pages → `Client Engine/Money Magnet/cash-flow-engine/` (a folder per phase)
 - Magic Formula™ graphic → `Client Engine/Offer Matrix/magic-formula-visual/`
 
 ## Updates
