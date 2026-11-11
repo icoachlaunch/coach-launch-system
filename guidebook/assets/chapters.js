@@ -36,7 +36,8 @@ window.CL_GUIDE = {
       { slug: 'the-closes',                 label: 'Step 4 · Part 1', title: 'The Closes',                        icon: 'sniper-close',      status: 'live' },
       { slug: 'sniper-presentation',        label: 'Step 4 · Part 2', title: 'The Sniper Presentation™',        icon: 'sniper-presentation',      status: 'live' },
       { slug: 'sniper-presentation-slides', label: 'Step 4 · Part 3', title: 'The Sniper Presentation™ Slides', icon: 'sniper-presentation-slides',      status: 'live', tool: 'skill' },
-      { slug: 'cash-flow-engine',           label: 'Step 5',               title: 'Cash Flow Engine™',                icon: 'cashflow-engine',   status: 'live', tool: 'skill' },
+      { slug: 'cash-flow-engine',           label: 'Step 5 · Part 1',             title: 'Cash Flow Engine™',                icon: 'cashflow-engine',   status: 'live', tool: 'skill' },
+      { slug: 'video-scripts',              label: 'Step 5 · Part 2', title: 'Your Funnel Video Scripts',        icon: 'video-scripts',     status: 'live', tool: 'skill' },
       { slug: 'genie-x-converter',          label: 'Step 6',               title: 'Genie X Converter™',               icon: 'genie-x-converter', status: 'later' }
     ]},
     { name: 'Client Flywheel™', icon: 'client-flywheel', blurb: 'Pillar 3 · Steps 7–9 · fill the machine.', items: [

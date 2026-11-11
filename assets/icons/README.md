@@ -54,3 +54,4 @@ Originals are in `../100K-day-formula-icons/` and `CLIENT ENGINE/Reference/syste
 | `sniper-presentation-slides.svg` | The Sniper Presentation™ Slides | Presentation Board Graph |
 | `program-modules.svg` | Your Program Modules | Book Library |
 | `program-module-visual.svg` | Program Module Visuals | Design Process Layout 1 |
+| `video-scripts.svg` | Your Funnel Video Scripts | Video File Camera |
