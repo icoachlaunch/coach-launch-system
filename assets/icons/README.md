@@ -28,7 +28,7 @@ them looking like one family. **Never mix in another set or style, never recolou
 | `genie-x-converter.svg` | Step 6 · Genie X Converter™ | genie-x-converter (in development) |
 | `goliath-content.svg` | Step 7 · Goliath Content™ | goliath-content-map |
 | `pixie-dust-social.svg` | Step 8 · Pixie Dust Social™ | pixie-dust-social (in development) |
-| `dragon-fire-ads.svg` | Step 9 · Dragon Fire Ads™ | dragon-fire-ads (in development) |
+| `dragon-fire-ads.svg` | Step 9 · Dragon Fire Ads™ | dragon-fire-ads |
 
 Originals are in `../100K-day-formula-icons/` and `CLIENT ENGINE/Reference/system-icons/`.
 
@@ -53,3 +53,4 @@ Originals are in `../100K-day-formula-icons/` and `CLIENT ENGINE/Reference/syste
 | `sniper-presentation.svg` | The Sniper Presentation™ | Presentation Microphone Podium |
 | `sniper-presentation-slides.svg` | The Sniper Presentation™ Slides | Presentation Board Graph |
 | `program-modules.svg` | Your Program Modules | Book Library |
+| `program-module-visual.svg` | Program Module Visuals | Design Process Layout 1 |

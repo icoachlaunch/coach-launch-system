@@ -42,8 +42,9 @@ window.CL_GUIDE = {
     { name: 'Client Flywheel™', icon: 'client-flywheel', blurb: 'Pillar 3 · Steps 7–9 · fill the machine.', items: [
       { slug: 'goliath-content-map', label: 'Step 7', title: 'The Goliath Content™ Map', icon: 'goliath-content',   status: 'live' },
       { slug: 'program-modules',     label: 'Step 7', title: 'Your Program Modules',          icon: 'program-modules',   status: 'live' },
+      { slug: 'program-module-visual', label: 'Step 7 · Part 2', title: 'Program Module Visuals', icon: 'program-module-visual', status: 'live', tool: 'skill' },
       { slug: 'pixie-dust-social',   label: 'Step 8', title: 'Pixie Dust Social™',       icon: 'pixie-dust-social', status: 'later' },
-      { slug: 'dragon-fire-ads',     label: 'Step 9', title: 'Dragon Fire Ads™',         icon: 'dragon-fire-ads',   status: 'later' }
+      { slug: 'dragon-fire-ads',     label: 'Step 9', title: 'Dragon Fire Ads™',         icon: 'dragon-fire-ads',   status: 'live', tool: 'skill' }
     ]}
   ]
 };
