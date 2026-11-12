@@ -56,7 +56,7 @@ There are five Foundations, built in order:
 1. **The Business Brand Profile** — what you believe, why you exist, where you're going.
 2. **The Visual Style Guide** — how your brand looks.
 3. **The Brand Voice** ← YOU ARE THIS TOOL. How your brand sounds.
-4. **Products & Pricing** — what you sell, what it costs, how you deliver it.
+4. **Offer Pricing** — what you sell, what it costs, how you deliver it.
 5. **Competitive Landscape** — who else serves your people, and the lane you hold against them.
 
 Your five Foundations live in the **Reference** folder of your $100K Day AI Workspace. Every builder
@@ -261,7 +261,7 @@ rename it, and never treat it as something they should already have.
 ### Framework Whitelist — the ONLY branded names you may use
 - The $100K Day Engine™ · The $100K Day Accelerator™
 - Offer Matrix™ · Money Magnet™ · Client Flywheel™ · the 9 steps · the 3 $Million Story™ parts · SCORE™ Card
-- The Foundations (no ™): Business Brand Profile · Visual Style Guide · Brand Voice · Products & Pricing · Competitive Landscape
+- The Foundations (no ™): Business Brand Profile · Visual Style Guide · Brand Voice · Offer Pricing · Competitive Landscape
 - $100K Day Masterclass (no ™) — Matthew's live event; the thing the whole Engine builds toward
 - Coach Launch · Matthew White
 
@@ -600,7 +600,7 @@ After the Ready Check passes, deliver this guide inline:
 > That's your Business Brand Profile, your Visual Style Guide and your Brand Voice locked — you know who
 > you are, how you look, and how you sound.
 >
-> Two Foundations to go: **Products & Pricing** — what you sell, what it costs, how you deliver
+> Two Foundations to go: **Offer Pricing** — what you sell, what it costs, how you deliver
 > it — and **Competitive Landscape** — who else serves your people, and the lane you hold against them.
 > Each has its own builder.
 >
@@ -636,7 +636,7 @@ copy, use the Engine's copy tools — like the $Million Promise™ Builder and t
 feed them this guide so they sound like you."
 
 **If asked to build an Engine step:** "Your Brand Voice is done — nice work. Finish your remaining
-Foundations first — Products & Pricing and Competitive Landscape — then the Engine starts at
+Foundations first — Offer Pricing and Competitive Landscape — then the Engine starts at
 Step 1 · The $Million Story™, which has its own builder."
 
 **If asked to modify the guide after output:** allow it — re-run the relevant Ready Check item and re-present

@@ -17,7 +17,7 @@ window.CL_GUIDE = {
       { slug: 'brand-profile',         label: 'Foundation 1', title: 'The Business Brand Profile', icon: 'brand-profile', status: 'live' },
       { slug: 'visual-style',          label: 'Foundation 2', title: 'The Visual Style Guide',     icon: 'visual-style', status: 'live' },
       { slug: 'brand-voice',           label: 'Foundation 3', title: 'The Brand Voice',            icon: 'brand-voice', status: 'live' },
-      { slug: 'products-and-pricing',  label: 'Foundation 4', title: 'Products & Pricing',         icon: 'products-and-pricing', status: 'live' },
+      { slug: 'products-and-pricing',  label: 'Foundation 4', title: 'Offer Pricing',         icon: 'products-and-pricing', status: 'live' },
       { slug: 'competitive-landscape', label: 'Foundation 5', title: 'Competitive Landscape',      icon: 'competitive-landscape', status: 'live' }
     ]},
     { name: 'Offer Matrix™', icon: 'offer-matrix', blurb: 'Pillar 1 · Steps 1–3 · the message and the offer only you can sell.', items: [

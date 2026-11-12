@@ -32,7 +32,7 @@ what they always want checked. A preference in a line, never a transcript.
 | 1 | Business Brand Profile | `Reference/business-brand-profile.md` | empty | 0 | — |
 | 2 | Visual Style Guide | `Reference/visual-style-guide.md` | empty | 0 | — |
 | 3 | Brand Voice | `Reference/brand-voice.md` | empty | 0 | — |
-| 4 | Products & Pricing | `Reference/products-and-pricing.md` | empty | 0 | — |
+| 4 | Offer Pricing | `Reference/products-and-pricing.md` | empty | 0 | — |
 | 5 | Competitive Landscape | `Reference/competitive-landscape.md` | empty | 0 | — |
 
 Build them in that order. Status matches the file's own frontmatter: `empty` → `complete`. Add a row

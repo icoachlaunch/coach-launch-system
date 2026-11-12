@@ -10,7 +10,7 @@ and never asks you twice. Five documents, one Brand Kit, one notes file, and roo
 | 1 | Business Brand Profile | `business-brand-profile.md` | What you believe, why you exist, where you're headed, where you operate |
 | 2 | Visual Style Guide | `visual-style-guide.md` + your Kit in `brand-kit/` | Your look — the one Brand Kit everything reads |
 | 3 | Brand Voice | `brand-voice.md` | How you write and speak |
-| 4 | Products & Pricing | `products-and-pricing.md` | What you sell at three levels — membership · accelerator · proximity — with price points |
+| 4 | Offer Pricing | `products-and-pricing.md` | What you sell at three levels — membership · accelerator · proximity — with price points |
 | 5 | Competitive Landscape | `competitive-landscape.md` | The alternatives your buyer weighs, the gaps, your edge against each, where your prices sit |
 
 Build them in that order; each makes the next builder sharper. Each has its own builder in

@@ -56,7 +56,7 @@ That way your folders never go stale when a builder improves.
 
 1. **Reference first** (about an hour for all five):
    Business Brand Profile → Visual Style Guide (and install your Brand Kit) → Brand Voice
-   → Products & Pricing → Competitive Landscape
+   → Offer Pricing → Competitive Landscape
 2. **Then your Client Engine™**, pillar by pillar — **Offer Matrix** (Steps 1 to 3) builds your
    offer, **Money Magnet** (4 to 6) makes the money, **Client Flywheel** (7 to 9) brings the
    traffic. Each asset folder's README tells you what it needs first.

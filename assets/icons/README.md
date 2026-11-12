@@ -40,7 +40,7 @@ Originals are in `../100K-day-formula-icons/` and `CLIENT ENGINE/Reference/syste
 | `brand-profile.svg` | The Business Brand Profile | Business Card 1 |
 | `visual-style.svg` | The Visual Style Guide | Color Painting Palette |
 | `brand-voice.svg` | The Brand Voice | Share Megaphone |
-| `products-and-pricing.svg` | Products & Pricing | Tag Dollar Price |
+| `products-and-pricing.svg` | Offer Pricing | Tag Dollar Price |
 | `competitive-landscape.svg` | Competitive Landscape | Board Game Chess Knight |
 | `million-promise.svg` | The $Million Promise™ | Business Deal Handshake |
 | `golden-avatar.svg` | The Golden Avatar™ | Job Candidate Target 1 |

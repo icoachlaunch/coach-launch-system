@@ -193,7 +193,7 @@ Never paraphrase their system into generic language. Use THEIR words.
 - The 3 parts of the $Million Story™: $Million Promise™ · The Golden Avatar™ · $Million Moment™
 - Event Magnet™ — the free lead magnet the hot step seeds
 - The Foundations: Business Brand Profile · Visual Style Guide · Brand Voice ·
-  Products & Pricing · Competitive Landscape
+  Offer Pricing · Competitive Landscape
 - Coach Launch · Matthew White
 
 ### The three styles — the ONLY styles that exist

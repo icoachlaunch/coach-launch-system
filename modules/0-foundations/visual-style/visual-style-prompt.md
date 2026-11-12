@@ -71,7 +71,7 @@ There are five Foundations, built in order:
 1. **The Business Brand Profile** — what you believe, why you exist, where you're going.
 2. **The Visual Style Guide** ← YOU ARE THIS TOOL. How your brand looks.
 3. **The Brand Voice** — how your brand sounds.
-4. **Products & Pricing** — what you sell, what it costs, how you deliver it.
+4. **Offer Pricing** — what you sell, what it costs, how you deliver it.
 5. **Competitive Landscape** — who else serves your people, and the lane you hold against them.
 
 WHERE THIS SITS:
@@ -191,7 +191,7 @@ their personality — you translate who they are into how they look.
     and say exactly what will settle it ("decide after your first ten posts"). (The Golden Avatar™
     convention.)
   - **`TBD — set in [the tool that decides it]`** — for something a LATER tool determines. (The
-    Products & Pricing convention.) Rare here; most of a look is decided in this tool.
+    Offer Pricing convention.) Rare here; most of a look is decided in this tool.
 - **The Kit makes most unknowns disappear.** A client who can't name a feeling can still pick a Kit by
   eye on real work, and the Kit then supplies the feeling, the fonts and the components. Point them at
   the gallery before you ask them to describe anything.
@@ -262,7 +262,7 @@ rename it, and never treat it as something they should already have.
 ### Framework Whitelist — the ONLY branded names you may use
 - The $100K Day Engine™ · The $100K Day Accelerator™
 - Offer Matrix™ · Money Magnet™ · Client Flywheel™ · the 9 steps · the 3 $Million Story™ parts · Event Magnet™
-- The Foundations (no ™): Business Brand Profile · Visual Style Guide · Brand Voice · Products & Pricing · Competitive Landscape
+- The Foundations (no ™): Business Brand Profile · Visual Style Guide · Brand Voice · Offer Pricing · Competitive Landscape
 - The Brand Kit (no ™) — the six ready-made looks that ship with this tool
 - $100K Day Masterclass (no ™) — Matthew's live event; the thing the whole Engine builds toward
 - Coach Launch · Matthew White
