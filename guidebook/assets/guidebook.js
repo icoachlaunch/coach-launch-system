@@ -107,34 +107,42 @@
       { name: 'Pixie Dust Social™', href: '', desc: '100X your circle of influence and grow a hungry buyer audience on autopilot', tag: '100X Rapid Audience Builder' },
       { name: 'Dragon Fire Ads™', href: 'dragon-fire-ads.html', desc: 'Ad machine that fills every event with premium buyers with little or ZERO ad cost', tag: 'Fill Every Event On Demand' } ] }
   ];
+  /* The map is Matthew's own image (assets/codex/engine-codex.png, 1472 × 646, cropped from the Codex design).
+     BOX = each step's card on that image, in its pixels [x, y, w, h], steps 1–9. A link sits over every built
+     step, and a "You are here" ring over the page's own step. Re-crop the image → re-measure these. */
+  var CODEX_IMG = { src: 'assets/codex/engine-codex.png', w: 1472, h: 646 };
+  var BOX = [[100, 133, 440, 152], [100, 295, 440, 152], [100, 455, 440, 152],
+             [546, 128, 440, 154], [546, 288, 440, 154], [546, 450, 440, 152],
+             [990, 128, 442, 154], [990, 288, 442, 154], [990, 450, 442, 152]];
+  function pos(b) {
+    return 'left:' + (b[0] / CODEX_IMG.w * 100).toFixed(2) + '%;top:' + (b[1] / CODEX_IMG.h * 100).toFixed(2) +
+           '%;width:' + (b[2] / CODEX_IMG.w * 100).toFixed(2) + '%;height:' + (b[3] / CODEX_IMG.h * 100).toFixed(2) + '%';
+  }
   function renderCodex() {
     $$('[data-codex]').forEach(function (box) {
       var here = parseInt(box.getAttribute('data-here') || '0', 10) || 0;
-      var full = box.getAttribute('data-codex') === 'full';
       var note = box.getAttribute('data-note');
-      var n = 0, hereName = '';
-      var h = '<div class="codex-frame"><div class="codex-side" aria-hidden="true"><span>Wealth Rewired Codex</span></div><div class="codex-grid">';
-      CODEX.forEach(function (p, pi) {
-        h += '<div class="codex-col codex-col--' + (pi + 1) + '"><div class="codex-pillar"><b>' + (pi + 1) + '</b><span><strong>' + esc(p.name) + '</strong><small>' + esc(p.sub) + '</small></span><img src="' + ICONS + p.icon + '.svg" alt=""></div>';
+      var n = 0, hereName = '', marks = '';
+      CODEX.forEach(function (p) {
         p.steps.forEach(function (s) {
-          n++;
-          var on = n === here; if (on) hereName = s.name;
-          var inner = '<span class="codex-thumb"><img src="assets/codex/step-' + n + '.png" alt="" loading="lazy"></span>' +
-            '<span class="codex-txt"><strong><span class="codex-n">' + n + ' · </span>' + esc(s.name) + '</strong><span class="codex-desc">' + esc(s.desc) + '</span><em>“' + esc(s.tag) + '”</em></span>' +
-            (on ? '<span class="codex-here">You are here</span>' : '');
-          var cls = 'codex-step' + (on ? ' is-here' : '') + (s.href ? '' : ' is-dev');
-          h += s.href && !on ? '<a class="' + cls + '" href="' + s.href + '">' + inner + '</a>'
-                             : '<div class="' + cls + '"' + (on ? ' aria-current="step"' : '') + '>' + inner + '</div>';
+          var b = BOX[n]; n++;
+          if (n === here) { hereName = s.name; marks += '<span class="codex-mark" style="' + pos(b) + '"><b>You are here</b></span>'; }
+          else if (s.href) marks += '<a class="codex-hit" href="' + s.href + '" style="' + pos(b) + '" aria-label="Step ' + n + ': ' + esc(s.name) + '"></a>';
         });
-        h += '</div>';
       });
-      h += '</div></div>';
+      var alt = 'The $100K Day Engine™, the Wealth Rewired Codex: three pillars, nine steps. Offer Matrix™: $Million Story™, Magic Formula™, Red Diamond Offer™. ' +
+                'Money Magnet™: Sniper Close™ Sequence, Cash Flow Engine™, Genie X Converter™. Client Flywheel™: Goliath Content™, Pixie Dust Social™, Dragon Fire Ads™.';
+      var h = '<div class="codex-scroll"><div class="codex-img"><img src="' + CODEX_IMG.src + '" width="' + CODEX_IMG.w + '" height="' + CODEX_IMG.h + '" alt="' + esc(alt) + '">' + marks + '</div></div>';
       var cap = note || (here ? 'You are at Step ' + here + ', ' + hereName + '.' : '');
       if (cap) h += '<p class="figcap"><b>The $100K Day Engine™.</b> ' + esc(cap) + '</p>';
-      box.className = 'codex' + (full ? ' codex--full' : '');
-      box.setAttribute('aria-label', 'The $100K Day Engine™: 3 pillars and 9 steps.' + (here ? ' You are at Step ' + here + ', ' + hereName + '.' : ''));
+      box.className = 'codex';
       box.setAttribute('role', 'group');
+      box.setAttribute('aria-label', 'The $100K Day Engine™: 3 pillars and 9 steps.' + (here ? ' You are at Step ' + here + ', ' + hereName + '.' : ''));
       box.innerHTML = h;
+      /* On a phone the image scrolls sideways: open it on the page's own step. */
+      var sc = $('.codex-scroll', box), mk = $('.codex-mark', box), im = $('.codex-img img', box);
+      function centre() { if (sc && mk && sc.scrollWidth > sc.clientWidth) sc.scrollLeft = Math.max(0, mk.offsetLeft - 12); }
+      if (im && !im.complete) im.addEventListener('load', centre); else centre();
     });
   }
 
