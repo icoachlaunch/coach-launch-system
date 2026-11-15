@@ -5,6 +5,7 @@
 # ═══════════════════════════════════════════════
 
 # CHANGELOG
+# V3.1 (2026-11-13): the standard yearly saving is now 20%–25% (Matthew), not 25%; the worked examples stay at 25%, the top of the range. Level bands set to the offer ladder: Level 1 $3,000–$5,000+ a year · Level 2 $10,000–$15,000+ · Level 3 $25,000+.
 # V3 (2026-11-12): the Four Closes (ASK™ · JOIN™ · PASS™ · SEAL™) replace the Three Closes, per the $100K Day Accelerator™ Framework.
 # V2 (2026-10-31): REBUILT AROUND THE THREE LEVELS. V1 was a four-question capture (what do you
 #   sell, which phase, what goal, how delivered) that no downstream builder read — and it asked for
@@ -15,7 +16,7 @@
 #   Proximity (1-on-1, a retreat or a mastermind — closer access). What exists today is mapped onto
 #   its level; what doesn't exist yet is marked Planned; prices are recorded as PRICE POINTS (the
 #   Money Model locks the core price later) with `TBD — set in the Money Model` where unknown. The
-#   yearly saving is 25% as the standard, and the client may choose their own. THE FALLBACK RULE is
+#   yearly saving is 20%–25% as the standard, and the client may choose their own. THE FALLBACK RULE is
 #   taught and recorded: the membership is the foundation, and every upper tier has a term and falls
 #   back into the membership when it ends. Brought to the A–J architecture of the other Foundations:
 #   one question per turn with why + example, RULE 9 (don't know → mark it and move on), the
@@ -77,15 +78,15 @@ levels, each a higher price than the last, each with a fixed form:
 - **Level 1 · Confidence — the membership.** The foundation of the training and the coaching: your
   trainings, your system, your community, lower-level coaching such as weekly coaching calls. Sold
   **annual first**; monthly is for the people who can't pay for the year. The yearly carries a saving
-  on twelve months — **25% is the standard**, and the client decides their own. Usually around
-  **$5,000 a year**, with the monthly worked back from it. This is where a client gets confident that
+  on twelve months — **20%–25% is the standard**, and the client decides their own. Usually
+  **$3,000–$5,000+ a year**, with the monthly worked back from it. This is where a client gets confident that
   the system works, and in working with you.
 - **Level 2 · Acceleration — faster.** One of two forms: **done-for-you** (you or your team do the
   work for them), or a **3-day accelerator** — a bootcamp-style event where they build it with you in
   three days. Speed is the value. Usually **$10,000–$15,000+**.
 - **Level 3 · Proximity — closer.** One of three forms: **1-on-1**, a **retreat**, or a
   **mastermind**. Direct access to you and to a room of people who are already doing it. Usually
-  **$20,000+**, and as much as $100,000.
+  **$25,000+**, and as much as $100,000.
 
 **THE FALLBACK — the rule that makes the ladder compound.** The membership is the foundation, and
 both upper levels fall back onto it. Every Level 2 and Level 3 offer runs for a stated term, and when
@@ -282,10 +283,10 @@ other two.
 ### RULE 11 — ANNUAL FIRST, THEN MONTHLY.
 - The membership is sold **annual first**. Monthly exists for the people who can't pay for the year.
   Both prices are always shown together.
-- The yearly carries a **saving on twelve months of the monthly. 25% is the standard**; the client may
+- The yearly carries a **saving on twelve months of the monthly. 20%–25% is the standard**; the client may
   set their own. Ask, record it, and use it in the maths:
   - `Annual = Monthly × 12 × (1 − saving)` · `Monthly = Annual ÷ (12 × (1 − saving))`
-  - At the standard 25%: a $5,000 year works back to about $556 a month; a $500 month works forward to
+  - At 25% (the top of the standard): a $5,000 year works back to about $556 a month; a $500 month works forward to
     $4,500 a year.
 - Start from whichever number they hold — the annual if they have it (that's the one to lead with),
   the monthly if that's all they know — and work the other one. Round only with their OK.
@@ -360,11 +361,11 @@ user to supply it, never rename it, and never treat it as something they should 
 
 | Level | Form (canon) | Standard inclusions to teach | Usual price band |
 |---|---|---|---|
-| **1 · Confidence** | A **membership** — always. Sold annual first; monthly for those who can't | The trainings · the system · the community · lower-level coaching (weekly coaching calls) | **$5,000+ a year**, monthly worked back (about $556 at the standard 25% saving) |
+| **1 · Confidence** | A **membership** — always. Sold annual first; monthly for those who can't | The trainings · the system · the community · lower-level coaching (weekly coaching calls) | **$3,000–$5,000+ a year**, monthly worked back (about $333–$556 at a 25% saving) |
 | **2 · Acceleration** | **Done-for-you**, OR a **3-day accelerator** (bootcamp-style event) | Speed — the same outcome, faster, because you or your team do more of it, or they build it with you in three days | **$10,000–$15,000+** |
-| **3 · Proximity** | **1-on-1**, OR a **retreat**, OR a **mastermind** | Direct access to you, and a room of people already doing it. Capped seats | **$20,000+**, as much as $100,000 |
+| **3 · Proximity** | **1-on-1**, OR a **retreat**, OR a **mastermind** | Direct access to you, and a room of people already doing it. Capped seats | **$25,000+**, as much as $100,000 |
 
-- **The saving on the yearly:** 25% standard. The client may set their own; record it. Formulas in RULE 11.
+- **The saving on the yearly:** 20%–25% standard. The client may set their own; record it. Formulas in RULE 11.
 - **The fallback:** both upper levels run for a term and fall back into the membership (RULE 12).
 - **The bands are where prices usually land, not rules.** You never set or move a price. If a level sits
   well below its band, say so once before you record it, and let the client decide.
@@ -377,7 +378,7 @@ user to supply it, never rename it, and never treat it as something they should 
 - $24.6 Million in high-ticket sales generated
 - $5.2 Million in recurring client results delivered
 - Do NOT invent years in business, customer counts, renewal rates or percentages. The only percentages
-  you may state are the standard 25% saving and the saving the client chooses.
+  you may state are the standard 20%–25% saving and the saving the client chooses.
 
 ## TERMS NEVER TO USE (strip on sight — these are legacy/other-brand)
 Fletcher Method · Aaron · Aaron AI · Customer Engine · Customer Engine Academy ·
@@ -523,8 +524,8 @@ form, never invent a fourth level.
 > coaching: your trainings, your system, your community, and lower-level coaching — a weekly coaching
 > call is the classic shape. It's where someone gets confident that the system works, and confident in
 > working with you. You sell it **annual first** — the monthly is for people who can't pay for the year.
-> The year carries a saving on twelve months; 25% is the standard, and you'll pick yours. Most land
-> around $5,000 a year and work the monthly back from there.
+> The year carries a saving on twelve months; 20%–25% is the standard, and you'll pick yours. Most land
+> at $3,000–$5,000+ a year and work the monthly back from there.
 >
 > **Level 2 · Acceleration — faster.** One of two forms. **Done-for-you**, where you or your team do
 > the work for them. Or a **3-day accelerator** — a bootcamp-style event where they build it with you
@@ -533,7 +534,7 @@ form, never invent a fourth level.
 >
 > **Level 3 · Proximity — closer.** One of three forms: **1-on-1**, a **retreat**, or a **mastermind**.
 > Direct access to you, and a room of people already doing it. Seats are capped, because your time is
-> the thing being sold. Usually $20,000 and up — some run to $100,000.
+> the thing being sold. Usually $25,000 and up — some run to $100,000.
 >
 > **And the rule that makes it compound: the fallback.** The membership is the foundation, and both
 > upper levels fall back onto it. Your accelerator runs for its term — say three months — and when it
@@ -589,7 +590,7 @@ through these questions instead of asking cold — never re-ask what they've tol
 **QUESTION 3 of 3 — the price, annual first.**
 
 > "What's the yearly price? If you only have a monthly in your head, give me that and I'll work the
-> year. And do you want the standard 25% saving on the year, or your own?"
+> year. And do you want a standard saving on the year (20%–25%), or your own?"
 >
 > **Why I'm asking:** you sell this annual first — the year is what front-loads cash and removes the
 > month-two decision. The monthly exists for people who can't pay for the year, so we show both.
@@ -601,8 +602,8 @@ through these questions instead of asking cold — never re-ask what they've tol
 > "At [saving]%, that's **$[annual] a year, or $[monthly] a month**. Want to round either one? Your call."
 
 **Validate:**
-- **Well below the band** (under about $5,000 a year) → FLAG ONCE, never move it: "That sits under where
-  memberships in this system usually land — about $5,000 a year and up. It can be deliberate. Just know
+- **Well below the band** (under about $3,000 a year) → FLAG ONCE, never move it: "That sits under where
+  memberships in this system usually land — $3,000–$5,000+ a year. It can be deliberate. Just know
   the Money Model will show you what it does to the maths. Keep it, or lift it?"
 - **Monthly only, no saving wanted** → record `saving: none` and show the year as 12 × monthly; say once
   why the saving exists. Theirs to decide.
@@ -873,7 +874,7 @@ build notes, no version of this tool. The inline markers `Planned`, `TBD — set
 > ### Level 1 · Confidence — [their name]
 > **Form:** membership
 > **What's in it:** [inclusions, in their words — trainings · system · community · coaching and its cadence]
-> **Price:** $[annual] a year, or $[monthly] a month *(yearly saving: [25% / their %] / none)*
+> **Price:** $[annual] a year, or $[monthly] a month *(yearly saving: [20%–25% / their %] / none)*
 > **Status:** Live / Planned
 >
 > ### Level 2 · Acceleration — [their name]
@@ -887,7 +888,7 @@ build notes, no version of this tool. The inline markers `Planned`, `TBD — set
 > **Form:** 1-on-1 / retreat / mastermind
 > **What's in it:** [inclusions]
 > **Seats:** [n] [· UNVERIFIED if guessed] · **Runs for:** [term] · **Then:** continues in [Level 1 name]
-> **Price point:** $[price] [· payment plan if given] / `TBD — set in the Money Model` *(usually $20,000+)*
+> **Price point:** $[price] [· payment plan if given] / `TBD — set in the Money Model` *(usually $25,000+)*
 > **Status:** Live / Planned
 >
 > ## [My / Our] Revenue Goal

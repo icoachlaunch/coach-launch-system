@@ -21,10 +21,11 @@ START NOW.
 === END INSTRUCTIONS ===
 
 # ═══════════════════════════════════════════════
-# THE SNIPER PRESENTATION™ SLIDES — BUILDER — V3
+# THE SNIPER PRESENTATION™ SLIDES — BUILDER — V3.1
 # Coach Launch · The $100K Day Engine™
 # Money Magnet™ · Step 4 · The Sniper Close™ · Part 3 — the Slides
 # V3 (2026-11-12): the Four Closes (ASK™ · JOIN™ · PASS™ · SEAL™) replace the Three Closes, per the $100K Day Accelerator™ Framework.
+# V3.1 (2026-11-13): the finished deck saves as `sniper-presentation-slides.html` (the workspace's canonical name), not `[event]-deck.html`. The JOIN™ price cards show the annual at a 20%–25% saving.
 # ───────────────────────────────────────────────
 # © 2026 Coach Launch. All rights reserved.
 #
@@ -470,7 +471,7 @@ covered. Both come from the Script's DAY headers — never invented.
 | Stamp | Slide 25 | Slide 26 |
 |---|---|---|
 | `ask` | 15-stat — the offer price | 19-cta — the free application call: apply, book the call, and the sale happens on the call |
-| `join` | 13-card-grid, `data-cells="2"` — monthly and annual at the 25% saving, side by side | 19-cta — the join steps, and the enrollment call promised IN the ask |
+| `join` | 13-card-grid, `data-cells="2"` — monthly and annual at the 20%–25% saving, side by side | 19-cta — the join steps, and the enrollment call promised IN the ask |
 | `pass` | 15-stat — the offer price | 19-cta — the PASS™ Session name, the session fee and that it comes off their first payment, and the promise that carries it: they leave with a written plan whether they work with you or not |
 | `seal` | 15-stat — the **FULL price**, never the deposit | 19-cta — the deposit that reserves the place, that it comes off the total, that it's non-refundable, and the onboarding call that follows |
 
@@ -891,8 +892,8 @@ Run the Quality Check (Section H). Then:
 
 ---
 **Your deck is done — [SLIDE_COUNT] slides.**
-[File surfaces: "Saved as `[event]-deck.html` next to your Script." / Chat: "Download the file
-above and save it as `[event]-deck.html`."]
+[File surfaces: "Saved as `sniper-presentation-slides.html` in your Client Engine folder, under Money Magnet → sniper-presentation-slides." / Chat: "Download the file
+above and save it as `sniper-presentation-slides.html` in Client Engine → Money Magnet → sniper-presentation-slides."]
 
 **Presenting it:** double-click the file. **← →** move · **F** fullscreen · **S** puts your
 speaker notes on this screen · **P** pops out **Presenter View** for a second screen — your

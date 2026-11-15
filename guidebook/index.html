@@ -41,6 +41,7 @@
       <p class="sec-num">Start here</p>
       <h2>How to Use <span class="hl">This Guide</span></h2>
       <p>Each chapter teaches one piece of your business and hands you the AI tool that builds it with you. Go in order, because every piece is built on the one before.</p>
+      <p>New here? Start with <a href="how-it-works.html">How It Works</a>: four short pages on what you're building, the four phases you grow through, the offers and closes, and the numbers behind them.</p>
       <div class="howto">
         <div><em>1</em><b>Read the chapter</b><p>Why it works, the framework, the right and wrong versions, and a worked example.</p></div>
         <div><em>2</em><b>Run the builder</b><p>Copy the prompt, paste it into a new chat in Claude or ChatGPT, and answer one question at a time.</p></div>
@@ -52,26 +53,7 @@
       <p class="sec-num">The system</p>
       <h2>Three Pillars, <span class="hl">Nine Steps</span></h2>
       <p>The $100K Day Engine™ runs in three pillars. Before Step 1, you build your five Foundations: the business truth every builder reads.</p>
-      <div class="map" role="img" aria-label="The $100K Day Engine™: 3 pillars and 9 steps.">
-        <div class="map-col">
-          <div class="map-hd"><img src="../assets/icons/offer-matrix.svg" alt="">Offer Matrix™</div>
-          <a class="map-step" href="million-promise.html"><em>1</em><span>$Million Story™<small>Be the voice in their head</small></span></a>
-          <a class="map-step" href="magic-formula.html"><em>2</em><span>Magic Formula™<small>Make competition irrelevant</small></span></a>
-          <a class="map-step" href="money-model.html"><em>3</em><span>Red Diamond Offer™<small>Offers they can't say no to</small></span></a>
-        </div>
-        <div class="map-col">
-          <div class="map-hd"><img src="../assets/icons/money-magnet.svg" alt="">Money Magnet™</div>
-          <a class="map-step" href="the-closes.html"><em>4</em><span>The Sniper Close™<small>The audience closes themselves</small></span></a>
-          <a class="map-step" href="cash-flow-engine.html"><em>5</em><span>Cash Flow Engine™<small>Profit before anyone shows up</small></span></a>
-          <div class="map-step"><em>6</em><span>Genie X Converter™<small>Close sales while you sleep</small></span></div>
-        </div>
-        <div class="map-col">
-          <div class="map-hd"><img src="../assets/icons/client-flywheel.svg" alt="">Client Flywheel™</div>
-          <a class="map-step" href="goliath-content-map.html"><em>7</em><span>Goliath Content™<small>10X output, zero overwhelm</small></span></a>
-          <div class="map-step"><em>8</em><span>Pixie Dust Social™<small>Premium buyers for $5 a day</small></span></div>
-          <a class="map-step" href="dragon-fire-ads.html"><em>9</em><span>Dragon Fire Ads™<small>Fill every event on demand</small></span></a>
-        </div>
-      </div>
+      <div data-codex="full"></div>
     </section>
 
     <section class="sec" id="chapters" data-toc="Every chapter">
@@ -89,7 +71,7 @@
       <div class="cta-act"><a class="btn" href="https://go.coachlaunch.com/dfy-offer" target="_blank" rel="noopener">APPLY NOW</a></div>
     </div>
 
-    <p class="updated">Last updated 2026-11-12</p>
+    <p class="updated">Last updated 2026-11-13</p>
   </main>
 </div>
 
@@ -107,7 +89,7 @@
     g.items.forEach(function (it) {
       var inner = (it.icon ? '<img class="ch-ic" src="../assets/icons/' + it.icon + '.svg" alt="">' : '') +
                   '<small>' + esc(it.label) + '</small><b>' + esc(it.title) + '</b><span class="ch-ft"><span class="st st--' + it.status + '">' + ST[it.status] +
-                  '</span><span class="kind">' + (it.tool === 'skill' ? 'Skill' : 'Prompt') + '</span></span>';
+                  '</span><span class="kind">' + (it.tool === 'skill' ? 'Skill' : it.tool === 'none' ? 'Read' : 'Prompt') + '</span></span>';
       h += it.status === 'live' ? '<a class="ch" href="' + it.slug + '.html">' + inner + '</a>' : '<div class="ch is-soon">' + inner + '</div>';
     });
     h += '</div></div>';

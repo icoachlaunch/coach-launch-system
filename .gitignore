@@ -34,3 +34,9 @@ modules/**/examples/
 /CLAUDE.md
 NOTES.md
 NOTES-*.md
+
+# Source transcripts of other speakers' talks — research only, never published (Matthew, 2026-11-16).
+modules/**/_source-examples/
+
+# Held back until Matthew reviews it (2026-11-16). Delete this line to publish it.
+modules/2-money-magnet/sniper-presentation/story-companion.md

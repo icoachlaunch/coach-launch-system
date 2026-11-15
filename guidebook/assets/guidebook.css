@@ -212,16 +212,36 @@ a.toc-item:hover { background: var(--surface-alt); }
 .band--3 { background: var(--yellow-soft); color: var(--ink); }
 .band--1 { background: var(--crimson-soft); color: var(--crimson-deep); }
 
-/* Engine map (3 pillars, 9 steps) */
-.map { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 22px 0 8px; }
-.map-col { background: var(--surface-alt); border-radius: var(--r-md); padding: 12px; }
-.map-hd { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-weight: 800; font-size: .84rem; color: var(--ink); margin-bottom: 10px; }
-.map-hd img { width: 30px; height: 30px; }
-.map-step { display: flex; gap: 8px; align-items: baseline; background: var(--surface); border-radius: var(--r-sm); padding: 8px 10px; margin-top: 6px; font-size: .8rem; line-height: 1.3; color: var(--ink); text-decoration: none; }
-.map-step em { font-style: normal; font-family: var(--font-mono); font-size: .7rem; color: var(--ink-soft); }
-.map-step small { display: block; font-size: .7rem; color: var(--ink-soft); }
-.map-step.is-here { background: var(--green-soft); box-shadow: inset 0 0 0 1.5px var(--green); }
-.here-tag { display: inline-block; margin-top: 4px; font-size: .6rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--on-green); background: var(--green); border-radius: var(--r-pill); padding: 1px 7px; }
+/* Engine map: the Wealth Rewired Codex (3 pillars, 9 steps). Built by guidebook.js from [data-codex]. */
+.codex { display: block; margin: 26px 0 4px; }
+.codex-frame { display: grid; grid-template-columns: 30px minmax(0, 1fr); background: var(--crimson); border-radius: var(--r-lg); padding: 7px 7px 7px 0; box-shadow: var(--shadow-card); }
+.codex-side { display: flex; align-items: center; justify-content: center; }
+.codex-side span { writing-mode: vertical-rl; transform: rotate(180deg); color: var(--on-crimson); font-weight: 900; font-size: .72rem; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; }
+.codex-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; background: var(--surface); border-radius: var(--r-md); padding: 10px; }
+.codex-col { min-width: 0; }
+.codex-pillar { display: flex; align-items: center; gap: 8px; min-height: 52px; padding: 7px 8px 7px 9px; border-radius: var(--r-md); background: var(--crimson); color: var(--on-crimson); }
+.codex-col--2 .codex-pillar { background: var(--crimson-deep); }
+.codex-col--3 .codex-pillar { background: var(--surface-dark); }
+.codex-pillar b { flex: none; display: grid; place-items: center; width: 24px; height: 24px; border: 2px solid currentColor; border-radius: 50%; font-size: .74rem; font-weight: 900; }
+.codex-pillar > span { min-width: 0; flex: 1; }
+.codex-pillar strong { color: inherit; display: block; font-weight: 900; font-size: .8rem; line-height: 1.1; text-transform: uppercase; letter-spacing: -.01em; }
+.codex-pillar small { display: block; margin-top: 2px; font-size: .62rem; line-height: 1.25; opacity: .92; }
+.codex-pillar img { flex: none; width: 30px; height: 30px; padding: 3px; border-radius: 50%; background: var(--surface); }
+.codex-step { position: relative; display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 8px; align-items: center; margin-top: 7px; padding: 5px; border-radius: var(--r-md); color: var(--ink); text-decoration: none; transition: background .15s; }
+a.codex-step:hover { background: var(--surface-alt); }
+.codex-thumb img { display: block; width: 100%; height: auto; border-radius: var(--r-sm); }
+.codex-txt { min-width: 0; }
+.codex-txt strong { color: var(--ink); display: block; font-weight: 900; font-size: .7rem; line-height: 1.15; text-transform: uppercase; }
+.codex-n, .codex-desc { display: none; }
+.codex-txt em { display: inline-block; margin-top: 4px; padding: 2px 7px; border-radius: var(--r-pill); background: var(--crimson-soft); color: var(--crimson-deep); font-weight: 700; font-size: .6rem; line-height: 1.3; }
+.codex-col--3 .codex-txt em { background: var(--field-soft); color: var(--ink); }
+.codex-step.is-here { background: var(--green-soft); box-shadow: inset 0 0 0 2px var(--green); }
+.codex-here { position: absolute; top: -8px; right: 6px; padding: 1px 7px; border-radius: var(--r-pill); background: var(--green); color: var(--on-green); font-size: .56rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.codex + .figcap, .codex .figcap { margin-top: 8px; }
+/* Home: the full Codex, with each step's description */
+.codex--full .codex-step { grid-template-columns: 112px minmax(0, 1fr); align-items: start; }
+.codex--full .codex-txt strong { font-size: .78rem; }
+.codex--full .codex-desc { display: block; margin-top: 3px; font-size: .72rem; line-height: 1.4; color: var(--ink-soft); }
 .figcap { font-size: .84rem; color: var(--ink-soft); margin: 6px 0 0; }
 .figcap b { color: var(--ink); }
 
@@ -371,7 +391,60 @@ a.ch:hover { box-shadow: var(--shadow-card); transform: translateY(-2px); }
 /* The Kit colours every link blue with :root a:where(...) (0,1,1).
    Links that are menus or cards restate their colour at the same weight. */
 a.toc-item { color: var(--slate); }
-a.toc-home, a.map-step, a.ch, a.brand { color: var(--ink); }
+a.toc-home, a.ch, a.brand { color: var(--ink); }
+
+/* ---------- How It Works pages (2026-11-13) ---------- */
+/* A funnel drawn as a flow: money-in steps in crimson, the close in ink */
+.flow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 14px 0 6px; }
+.flow span { padding: 6px 10px; border-radius: var(--r-sm); background: var(--surface-alt); font-size: .8rem; font-weight: 700; line-height: 1.3; color: var(--ink); }
+.flow span.is-money { background: var(--crimson-soft); color: var(--crimson-deep); box-shadow: inset 0 0 0 1.5px var(--crimson); }
+.flow span.is-close { background: var(--ink); color: var(--surface); }
+.flow i { font-style: normal; font-weight: 700; color: var(--ink-soft); }
+.flow-key { display: flex; flex-wrap: wrap; gap: 14px; margin: 4px 0 18px; font-size: .76rem; color: var(--ink-soft); }
+.flow-key b { display: inline-block; width: 12px; height: 12px; margin-right: 5px; vertical-align: -1px; border-radius: 3px; background: var(--surface-alt); }
+.flow-key b.is-money { background: var(--crimson-soft); box-shadow: inset 0 0 0 1.5px var(--crimson); }
+.flow-key b.is-close { background: var(--ink); }
+/* A phase's header card */
+.phase-hd { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 16px; align-items: center; margin: 8px 0 18px; padding: 16px 18px; border-radius: var(--r-lg); background: var(--surface-dark); color: var(--surface); }
+.phase-hd > b { display: grid; place-items: center; width: 70px; height: 70px; border-radius: 50%; background: var(--crimson); color: var(--on-crimson); font-weight: 900; font-size: 2rem; }
+.phase-hd small { display: block; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
+.phase-hd strong { display: block; color: inherit; font-weight: 900; font-size: 1.35rem; line-height: 1.15; margin: 2px 0 4px; }
+.phase-hd span { display: block; font-size: .9rem; opacity: .9; }
+/* Key facts as a two-column list */
+.kv { display: grid; grid-template-columns: 150px minmax(0, 1fr); margin: 14px 0 18px; border-top: 1px solid var(--line); }
+.kv dt, .kv dd { margin: 0; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: .92rem; line-height: 1.45; }
+.kv dt { padding-right: 12px; font-weight: 700; font-size: .8rem; color: var(--ink-soft); }
+/* The ladder table: the phase columns get equal room */
+.rows--ladder td:first-child { white-space: nowrap; }
+.rows--ladder th:not(:first-child) { color: var(--ink); }
+/* The calculator */
+.calc { margin: 22px 0; padding: 20px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--surface); }
+.calc-phases { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; margin-bottom: 18px; }
+.calc-phases button { padding: 10px 6px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--surface-alt); font: inherit; font-size: .8rem; font-weight: 700; line-height: 1.25; color: var(--ink); cursor: pointer; }
+.calc-phases button small { display: block; font-size: .68rem; font-weight: 600; color: var(--ink-soft); }
+.calc-phases button.is-on { background: var(--surface-dark); border-color: var(--surface-dark); color: var(--surface); }
+.calc-phases button.is-on small { color: inherit; opacity: .8; }
+.calc-phases button:focus-visible, .calc input:focus-visible { outline: none; box-shadow: var(--ring); }
+.calc fieldset { margin: 0 0 14px; padding: 0; border: 0; }
+.calc legend { margin-bottom: 8px; font-size: .74rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+.calc-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; }
+.calc-f[hidden] { display: none; }
+.calc-f label { display: block; margin-bottom: 4px; font-size: .8rem; font-weight: 700; line-height: 1.3; color: var(--ink); }
+.calc-in { display: flex; align-items: center; border: 1px solid var(--field); border-radius: var(--r-sm); background: var(--surface); }
+.calc-in span { padding: 0 9px; font-size: .85rem; font-weight: 700; color: var(--ink-soft); }
+.calc-in input { flex: 1; min-width: 0; padding: 9px 10px; border: 0; border-radius: var(--r-sm); background: transparent; font: inherit; font-size: .95rem; color: var(--ink); }
+.calc-in span + input { padding-left: 0; }
+.calc-f small { display: block; margin-top: 3px; font-size: .7rem; line-height: 1.35; color: var(--ink-soft); }
+.calc-out { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 18px 0 12px; }
+.calc-tile { padding: 12px; border-radius: var(--r-md); background: var(--surface-alt); }
+.calc-tile small { display: block; font-size: .72rem; font-weight: 700; color: var(--ink-soft); }
+.calc-tile b { display: block; margin-top: 2px; font-weight: 900; font-size: 1.3rem; line-height: 1.2; color: var(--ink); }
+.calc-tile.is-key { background: var(--green-soft); }
+.calc-tile.is-key b { color: var(--green-edge); }
+.calc-goal { margin: 6px 0 4px; font-size: .9rem; }
+.calc-bar { height: 8px; margin-top: 6px; border-radius: var(--r-pill); background: var(--surface-alt); overflow: hidden; }
+.calc-bar i { display: block; height: 100%; width: 0; border-radius: var(--r-pill); background: var(--green); transition: width .3s; }
+.calc-note { margin: 10px 0 0; font-size: .82rem; color: var(--ink-soft); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1180px) {
@@ -390,7 +463,7 @@ a.toc-home, a.map-step, a.ch, a.brand { color: var(--ink); }
   .hero { grid-template-columns: minmax(0, 1fr); }
   .hero-art { display: none; }
   .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .map, .cards3, .howto { grid-template-columns: minmax(0, 1fr); }
+  .cards3, .howto { grid-template-columns: minmax(0, 1fr); }
   .cta { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 560px) {
@@ -406,6 +479,27 @@ a.toc-home, a.map-step, a.ch, a.brand { color: var(--ink); }
   .hl, .slot { white-space: normal; }
   .term .def { left: 0; transform: none; }
   .hl::before { display: none; }
+}
+/* Narrow: the Codex keeps its three pillars side by side, picture on top, name below */
+@media (max-width: 640px) {
+  .codex-frame { grid-template-columns: minmax(0, 1fr); padding: 5px; }
+  .codex-side { display: none; }
+  .codex-grid { gap: 6px; padding: 6px; }
+  .codex-pillar { flex-direction: column; justify-content: center; gap: 3px; min-height: 0; padding: 7px 4px; text-align: center; }
+  .codex-pillar b, .codex-pillar img, .codex-pillar small { display: none; }
+  .codex-pillar strong { font-size: .62rem; }
+  .codex-step, .codex--full .codex-step { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 3px; margin-top: 6px; text-align: center; }
+  .codex-txt strong, .codex--full .codex-txt strong { font-size: .56rem; }
+  .codex-txt em, .codex--full .codex-desc { display: none; }
+  .calc { padding: 14px; }
+  .calc-phases { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .calc-grid { grid-template-columns: minmax(0, 1fr); }
+  .calc-out { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kv { grid-template-columns: minmax(0, 1fr); }
+  .kv dt { padding-bottom: 0; border-bottom: 0; }
+  .phase-hd { grid-template-columns: 50px minmax(0, 1fr); gap: 12px; padding: 14px; }
+  .phase-hd > b { width: 50px; height: 50px; font-size: 1.4rem; }
+  .codex-here { top: auto; bottom: -7px; left: 50%; right: auto; transform: translateX(-50%); white-space: nowrap; font-size: .5rem; }
 }
 @media print {
   .topbar, .toc-wrap, .otp-wrap, .tool-btns, .endnav, .modal { display: none !important; }

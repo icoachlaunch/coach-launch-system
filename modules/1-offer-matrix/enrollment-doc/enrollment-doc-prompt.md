@@ -5,6 +5,7 @@
 # ═══════════════════════════════════════════════
 
 # CHANGELOG
+# V5.1 (2026-11-13): the standard yearly saving on the membership is now 20%–25% (Matthew), not 25%. Usual bands set to the offer ladder: Level 1 $3K–$5K+ a year · Level 2 $10K–$15K+ · Level 3 $25K+.
 # V5 (2026-11-12): the Four Closes (ASK™ · JOIN™ · PASS™ · SEAL™) replace the Three Closes, per the $100K Day Accelerator™ Framework.
 # V4 (2026-10-31): READS THE 3 LEVELS FROM OFFER PRICING. The Foundation now carries the client's
 #   three levels — names, forms, inclusions, terms and fallbacks, prices (or TBD), the saving they chose —
@@ -429,10 +430,10 @@ the LAST block of the letter, after the P.P.S. — the last thing the reader see
 body sells the ONE core offer the Money Model priced; the ladder at the end shows the range. The client names
 each level and sets each price (never invent them) — and when they have built Offer Pricing, the
 levels are already there: read them, confirm them, and ask only for what is missing. The form of each level is canon:
-- **Level 1 · Confidence** — ALWAYS a **membership**: the trainings, the system and the community / group coaching, paid **monthly or yearly — both always shown together**, the yearly priced at a saving on twelve months — **25% is the standard**, or the saving the client set in Offer Pricing (Annual = Monthly × 12 × (1 − saving)). The entry tier: enough to trust it works and get moving.
+- **Level 1 · Confidence** — ALWAYS a **membership**: the trainings, the system and the community / group coaching, paid **monthly or yearly — both always shown together**, the yearly priced at a saving on twelve months — **20%–25% is the standard**, or the saving the client set in Offer Pricing (Annual = Monthly × 12 × (1 − saving)). The entry tier: enough to trust it works and get moving.
 - **Level 2 · Acceleration** — ONE of two forms: **done-for-you** (you or your team do the work for them), or a **3-day accelerator** — a bootcamp-style event where they build it with you in three days. Results faster.
 - **Level 3 · Proximity** — ONE of three forms: **1-on-1**, a **retreat**, or a **mastermind**. Direct access to you. The highest-value tier.
-**Usual price bands (canon — Matthew, 2026-10-04):** Level 1 is usually **$5K+ a year** (so roughly $550+ a month, since the yearly is twelve months less 25%) · Level 2 is usually **$10K–$15K+** · Level 3 is **$20K+, and as much as $100K**. These are where the client's prices should land. You never set or move a price (Rule 4) — but if a level sits well below its band, say so before you build, and let the client decide.
+**Usual price bands (canon — Matthew, 2026-10-04; the ladder 2026-11-13):** Level 1 is usually **$3K–$5K+ a year** (the monthly worked back from it at a 20%–25% saving) · Level 2 is usually **$10K–$15K+** · Level 3 is **$25K+, and as much as $100K**. These are where the client's prices should land. You never set or move a price (Rule 4) — but if a level sits well below its band, say so before you build, and let the client decide.
 Ask which form the client runs at Levels 2 and 3 — never assume. Mark which level carries the Money Model's core price; that is the offer the letter's body sells.
 NOTE: "Proximity" is intentionally BOTH a Red Diamond (element #2) AND the name of Level 3 — because
 proximity to you is the core value of the top tier. That's by design, not a conflict. Do not rename either.
@@ -644,11 +645,11 @@ usual band, never set it (Rule 4). Then go straight to the ladder confirmation b
 > "Now your **3 Levels** — the three ways someone can work with you, lowest to highest. They go at the very
 > bottom of your letter, after the P.S., so the last thing your reader sees is the whole ladder. Each level
 > has a fixed form. You name it and you price it. For reference, these usually land at: Level 1 around $5K+
-> a year, Level 2 around $10K–$15K+, Level 3 $20K+ (some run to $100K). Your prices are yours — I'll flag it
+> a year, Level 2 around $10K–$15K+, Level 3 $25K+ (some run to $100K). Your prices are yours — I'll flag it
 > if one sits well below its band, that's all.
 >
 > **Level 1 · Confidence — your membership.** Your trainings, your system and your community or group
-> coaching, paid monthly or yearly. I'll show both; the yearly is priced at a saving on twelve months — 25% as standard, or the saving you set (monthly ×
+> coaching, paid monthly or yearly. I'll show both; the yearly is priced at a saving on twelve months — 20%–25% as standard, or the saving you set (monthly ×
 > 12 × (1 − saving)). What's in your membership, what's it called, and what's the monthly price?
 >
 > **Level 2 · Acceleration — one of two forms.** Either done-for-you (you or your team do it for them), or a
@@ -665,11 +666,11 @@ usual band, never set it (Rule 4). Then go straight to the ladder confirmation b
 ---
 
 After they answer, present the ladder (Level · the client's name · its form · what's in it · price), lowest
-to highest, with the yearly price computed (monthly × 12 × (1 − saving) — 25% standard, or theirs from Offer Pricing) and both ways to pay shown for Level 1.
+to highest, with the yearly price computed (monthly × 12 × (1 − saving) — 20%–25% standard, or theirs from Offer Pricing) and both ways to pay shown for Level 1.
 Confirm which level carries the Money Model's core price; flag any mismatch. Push back on a Level 1 that isn't
 a membership, a Level 2 that isn't done-for-you or a 3-day accelerator, or a Level 3 that isn't 1-on-1, a
-retreat or a mastermind — the forms are canon (Rule 9). If a level sits well below its usual band ($5K+ a year ·
-$10K–$15K+ · $20K+), say so plainly and let them decide — never move the number yourself (Rule 4). Then:
+retreat or a mastermind — the forms are canon (Rule 9). If a level sits well below its usual band ($3K–$5K+ a year ·
+$10K–$15K+ · $25K+), say so plainly and let them decide — never move the number yourself (Rule 4). Then:
 
 > "Here's your ladder: [Level 1 · name — membership — $X a month or $Y a year / Level 2 · name — done-for-you
 > or 3-day accelerator — $ / Level 3 · name — 1-on-1, retreat or mastermind — $]. Your core offer is **Level
@@ -992,7 +993,7 @@ Do NOT assemble until every REQUIRED block exists and is approved:
 | Block | Built in | Required? |
 |---|---|---|
 | 7X Red Diamonds | Step 1 | YES — at least the real ones, specific |
-| 3 Levels | Step 2 | YES — always, in their canon forms: Level 1 a membership (monthly + yearly, the yearly at the client's saving — 25% standard) · Level 2 done-for-you or a 3-day accelerator · Level 3 1-on-1, a retreat or a mastermind |
+| 3 Levels | Step 2 | YES — always, in their canon forms: Level 1 a membership (monthly + yearly, the yearly at the client's saving — 20%–25% standard) · Level 2 done-for-you or a 3-day accelerator · Level 3 1-on-1, a retreat or a mastermind |
 | Fast Acting Bonus | Step 3 | YES (flag if no genuine deadline) |
 | Value Stack | Step 3 | YES — always |
 | Fork in the Road | Step 4 | YES — always |
@@ -1019,7 +1020,7 @@ first. A vague Red Diamond, a vague Value Stack, or a fuzzy guarantee is worse t
 
 **The offer layer (generated here)**
 - 7X Red Diamonds: only the real ones, each with a specific, deliverable detail — none faked.
-- 3 Levels: in their canon forms — Level 1 a membership showing monthly AND yearly (yearly = monthly × 12 × (1 − saving), 25% standard); Level 2 done-for-you or a 3-day accelerator; Level 3 1-on-1, a retreat or a mastermind — the client's names, contents and exact prices, lowest to highest; the core Money Model price sits on its named level; a level well below its usual band ($5K+ a year · $10K–$15K+ · $20K+) was flagged to the client before the build, never silently accepted or moved; printed as the LAST block of the letter.
+- 3 Levels: in their canon forms — Level 1 a membership showing monthly AND yearly (yearly = monthly × 12 × (1 − saving), 20%–25% standard); Level 2 done-for-you or a 3-day accelerator; Level 3 1-on-1, a retreat or a mastermind — the client's names, contents and exact prices, lowest to highest; the core Money Model price sits on its named level; a level well below its usual band ($3K–$5K+ a year · $10K–$15K+ · $25K+) was flagged to the client before the build, never silently accepted or moved; printed as the LAST block of the letter.
 - Fast Acting Bonus: real bonus, genuine deadline.
 - Value Stack: real deliverables and values, complete system as one line, Red Diamonds as line items, total makes the price feel small, nothing inflated.
 - Fork in the Road: a true damaging admission AND specific, niche-true qualifiers.

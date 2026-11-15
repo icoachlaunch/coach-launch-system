@@ -5,7 +5,7 @@ on-brand HTML slide deck you present from your own laptop. No PowerPoint, no des
 
 ## What's in this kit
 1. **guide.html** — the companion guide (what it is, the kit, the copy rule, the full plan table, presenter view, setup, images, tips).
-2. **SKILL.md** — the builder skill (the "brain"). Install at `.claude/skills/sniper-presentation-slides/SKILL.md`, or paste into any chat.
+2. **SKILL.md** — the builder skill (the "brain"). Install at `skills/sniper-presentation-slides/SKILL.md` in your $100K Day AI Workspace, or paste into any chat.
 3. **coach-launch-molds.html** — the **mold library** (structure): twenty designed slide molds, each a complete standalone 16:9 document stamped with a `data-type` and `data-slot` markers. Open it in a browser to see every mold in light, dark, and accent. The builder clones from here and never writes markup of its own.
 4. **coach-launch-themes.html** — the **theme library** (skin): six themes — Crimson, Ink, Ember, Sovereign, Voltage, Meadow — each rendered on three real slides so the client picks by eye.
 5. **slide-viewer.html** — the Slide Viewer: a single-file, offline deck player (← → move · F fullscreen · S speaker notes · P pop-out Presenter View · T timer). Ships with a **worked sample deck** built from the molds — a standard Masterclass Script mapped beat by beat, which lands at 35 slides: placeholder copy only, and every slide's presenter notes explain the beat it sits on, so the sample doubles as a walkthrough of the plan table. Press **P** to read them.

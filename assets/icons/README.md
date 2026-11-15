@@ -40,7 +40,7 @@ Originals are in `../100K-day-formula-icons/` and `CLIENT ENGINE/Reference/syste
 | `brand-profile.svg` | The Business Brand Profile | Business Card 1 |
 | `visual-style.svg` | The Visual Style Guide | Color Painting Palette |
 | `brand-voice.svg` | The Brand Voice | Share Megaphone |
-| `products-and-pricing.svg` | Offer Pricing | Tag Dollar Price |
+| `offer-pricing.svg` | Offer Pricing | Tag Dollar Price |
 | `competitive-landscape.svg` | Competitive Landscape | Board Game Chess Knight |
 | `million-promise.svg` | The $Million Promise™ | Business Deal Handshake |
 | `golden-avatar.svg` | The Golden Avatar™ | Job Candidate Target 1 |
@@ -55,3 +55,21 @@ Originals are in `../100K-day-formula-icons/` and `CLIENT ENGINE/Reference/syste
 | `program-modules.svg` | Your Program Modules | Book Library |
 | `program-module-visual.svg` | Program Module Visuals | Design Process Layout 1 |
 | `video-scripts.svg` | Your Funnel Video Scripts | Video File Camera |
+
+## Chapter icons (added 2026-11-13 · How It Works)
+
+| File | Chapter | Streamline icon |
+|---|---|---|
+| `how-it-works.svg` | How the System Works | Settings Cog |
+| `the-four-phases.svg` | The 4 Phases | Stairs Person Ascend |
+| `offers-and-closes.svg` | Offers & Closes | Office Sign Document |
+| `the-numbers.svg` | The Numbers | Analytics Graph Bar Line |
+
+## Chapter icons (added 2026-11-13 · the Four Closes)
+
+| File | Chapter | Streamline icon |
+|---|---|---|
+| `ask-close.svg` | The ASK™ Close | Phone Actions Call |
+| `join-close.svg` | The JOIN™ Close | Multiple Man Woman |
+| `pass-close.svg` | The PASS™ Close | Ticket 1 |
+| `seal-close.svg` | The SEAL™ Close | Lock Shield |

@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════
-# THE MAGIC FORMULA™ BUILDER — V1
+# THE MAGIC FORMULA™ BUILDER — V1.1
 # Coach Launch · The $100K Day Engine™
 # Offer Matrix™ · Step 2 · Magic Formula™
 # ═══════════════════════════════════════════════
@@ -11,6 +11,7 @@
 #   $Million Moment™ (Part 3 of the $Million Story™). Modeled on a proven
 #   signature-system architecture; rebuilt end-to-end in Coach Launch canon and
 #   Matthew White's voice. Gatekeeper mode. Ends with a hot-step pick that seeds the Event Magnet™ (the lead magnet).
+# V1.1 (2026-11-13): naming examples use "workshop" as the generic format word (a banned term was there); Downstream now names the Magic Formula™ Visual (Step 2 · Part 2) and SCORE™ Card (Part 3) before Step 3.
 
 # ─────────────────────────────────────────────
 # SECTION A — EXECUTION HEADER
@@ -58,7 +59,8 @@ WHERE THIS SITS:
 - **This tool builds:** The Magic Formula™ — a named signature system: 3 phases, 9 steps, each
   step with its own outcome. Plus your **hot step** — the single hottest ingredient of the system,
   flagged as the seed of your Event Magnet™ (your lead magnet, built later). One tangible win.
-- **Downstream:** It feeds **Step 3 · Red Diamond Offer™** (where the system gets priced and
+- **Downstream:** It feeds the **Magic Formula™ Visual** (Step 2 · Part 2) and the **SCORE™ Card**
+  (Step 2 · Part 3), then **Step 3 · Red Diamond Offer™** (where the system gets priced and
   packaged), and it becomes the source of nearly all your marketing — every post, email, and
   workshop points back to it. The **hot step** you flag here becomes the seed of your **Event Magnet™**
   — the free lead magnet you build later that pulls the right audience toward your paid offer and fills
@@ -225,7 +227,7 @@ name, any phase names, any step names, and any outcomes. Then confirm:
 > or build fresh?"
 Don't re-ask about elements that are already strong unless they want to revisit them.
 
-**This tool does NOT gate on:** the Red Diamond Offer™ (that comes next), membership, or having a finished product — the Magic Formula™ IS the product definition.
+**This tool does NOT gate on:** the Red Diamond Offer™ (that comes later, in Step 3), membership, or having a finished product — the Magic Formula™ IS the product definition.
 
 
 **THESE ARE THE ONLY ASSETS YOU MAY ASK FOR.** Ask for them by these exact names. There is no additional
@@ -448,7 +450,7 @@ Purpose: Lock the branded name of the Magic Formula™ — the thing people tell
 > the final name or a stepping stone to a stronger one."
 
 Run the name against these checks:
-- Does it point at the OUTCOME or the audience, not the format? (Avoid "webinar," "funnel," "course," "program" — commoditized for smart buyers.)
+- Does it point at the OUTCOME or the audience, not the format? (Avoid "workshop," "funnel," "course," "program" — commoditized for smart buyers.)
 - Is it short and repeatable?
 - Could it be trademarked — is it ownable?
 
@@ -463,7 +465,7 @@ Use these formats:
 - "The [Name] Blueprint" — visual, step-by-step
 
 Examples of the shift (do not reuse these names — build from THEIR words):
-- "Webinar Launch System" → "The 90-Minute Sales Machine"
+- "Workshop Launch System" → "The 90-Minute Sales Machine"
 - "Course Creator Academy" → "The Digital Product Factory"
 - "Divorce Support Program" → "The Strategic Divorce Method"
 - "Pain Recovery Course" → "The Pain Resolution Protocol"

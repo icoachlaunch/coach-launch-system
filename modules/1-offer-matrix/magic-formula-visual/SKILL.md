@@ -9,9 +9,10 @@ description: >
 ---
 
 # ═══════════════════════════════════════════════
-# THE MAGIC FORMULA™ VISUAL BUILDER — V1
+# THE MAGIC FORMULA™ VISUAL BUILDER — V1.1
 # Coach Launch · The $100K Day Engine™
 # Offer Matrix™ · Step 2 · Magic Formula™ · Part 2
+# V1.1 (2026-11-13): saves as `magic-formula-visual.html` (the workspace's canonical name), not `my-magic-formula.html`.
 # ═══════════════════════════════════════════════
 
 === INSTRUCTIONS FOR AI ===
@@ -337,7 +338,7 @@ end with `[CONTINUE] — say 'next' for the rest`, and resume exactly where you 
 Never compress, never summarize, never drop the closing tags.
 
 ## STEP 9 — DELIVER
-> **Save it as `my-magic-formula.html` and double-click it.** It opens in any browser.
+> **Save it as `magic-formula-visual.html` (in your Client Engine folder, under Offer Matrix → magic-formula-visual) and double-click it.** It opens in any browser.
 >
 > **For an ad or a post:** open it and take a screenshot.
 > **For a page:** upload the file, or paste the code into your page builder.

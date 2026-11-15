@@ -21,6 +21,18 @@
   G.groups.forEach(function (g) { g.items.forEach(function (it) { it.group = g.name; all.push(it); }); });
   var counted = all.filter(function (it) { return it.status !== 'later'; });
 
+  /* ---------- Renamed chapters: carry this browser's ticks across (2026-11-13) ---------- */
+  (function () {
+    var MOVED = { 'products-and-pricing': 'offer-pricing' };
+    Object.keys(MOVED).forEach(function (from) {
+      var to = MOVED[from], d = load(KEY_DONE, []);
+      if (d.indexOf(from) > -1) save(KEY_DONE, d.filter(function (s) { return s !== from; }).concat(d.indexOf(to) > -1 ? [] : [to]));
+      var a = load('clg:act:' + from, null);
+      if (a && !load('clg:act:' + to, null)) save('clg:act:' + to, a);
+      try { localStorage.removeItem('clg:act:' + from); } catch (e) {}
+    });
+  })();
+
   /* ---------- Done state ---------- */
   function doneList() { return load(KEY_DONE, []); }
   function setDone(slug, on) {
@@ -73,6 +85,57 @@
     });
     var cur = $('.toc-item.is-here', nav);
     if (cur && cur.scrollIntoView) { var top = cur.offsetTop - 120; nav.scrollTop = top > 0 ? top : 0; }
+  }
+
+  /* ---------- The Engine map: the Wealth Rewired Codex ----------
+     One copy for every page. A page asks for it with
+     <div data-codex data-here="N" data-note="..."></div>   (N = 1-9, or 0 for "before Step 1")
+     <div data-codex="full"></div>                          (home: adds each step's description)
+     Words are word for word from Matthew's Codex design:
+     CLIENT ENGINE/Client Engine/Offer Matrix/magic-formula-visual/. Pictures: assets/codex/step-N.png. */
+  var CODEX = [
+    { name: 'Offer Matrix™', sub: 'An offer the room can’t say no to', icon: 'offer-matrix', steps: [
+      { name: '$Million Story™', href: 'million-promise.html', desc: 'A brand story, message & promise that makes your ideal client stop and say “that’s me”', tag: 'Be The Voice In Their Head' },
+      { name: 'Magic Formula™', href: 'magic-formula.html', desc: 'Unique ingredients that make you irreplaceable and the competition almost irrelevant', tag: 'Make Competition Irrelevant' },
+      { name: 'Red Diamond Offer™', href: 'money-model.html', desc: 'Offer so irresistible the only logical answer is YES! Raising prices becomes natural', tag: 'Offers They Can’t Say No To' } ] },
+    { name: 'Money Magnet™', sub: 'Where the money gets made', icon: 'money-magnet', steps: [
+      { name: 'Sniper Close™ Sequence', href: 'the-closes.html', desc: 'Zero pressure closing sequence so precise — your audience closes themselves', tag: 'Audience Closes Themselves' },
+      { name: 'Cash Flow Engine™', href: 'cash-flow-engine.html', desc: 'Instant cashflow — collect revenue from registrations before the event even starts', tag: 'Cash Flow From Your Funnel' },
+      { name: 'Genie X Converter™', href: '', desc: 'Show-up, follow-up and nurture sequence — and close sales while you sleep', tag: 'Close Sales While You Sleep' } ] },
+    { name: 'Client Flywheel™', sub: 'Consistent buyers, ready to invest', icon: 'client-flywheel', steps: [
+      { name: 'Goliath Content™', href: 'goliath-content-map.html', desc: 'AI-powered content flywheel that produces scripts, emails, posts and ads at scale', tag: '10X Output. Zero Overwhelm' },
+      { name: 'Pixie Dust Social™', href: '', desc: '100X your circle of influence and grow a hungry buyer audience on autopilot', tag: '100X Rapid Audience Builder' },
+      { name: 'Dragon Fire Ads™', href: 'dragon-fire-ads.html', desc: 'Ad machine that fills every event with premium buyers with little or ZERO ad cost', tag: 'Fill Every Event On Demand' } ] }
+  ];
+  function renderCodex() {
+    $$('[data-codex]').forEach(function (box) {
+      var here = parseInt(box.getAttribute('data-here') || '0', 10) || 0;
+      var full = box.getAttribute('data-codex') === 'full';
+      var note = box.getAttribute('data-note');
+      var n = 0, hereName = '';
+      var h = '<div class="codex-frame"><div class="codex-side" aria-hidden="true"><span>Wealth Rewired Codex</span></div><div class="codex-grid">';
+      CODEX.forEach(function (p, pi) {
+        h += '<div class="codex-col codex-col--' + (pi + 1) + '"><div class="codex-pillar"><b>' + (pi + 1) + '</b><span><strong>' + esc(p.name) + '</strong><small>' + esc(p.sub) + '</small></span><img src="' + ICONS + p.icon + '.svg" alt=""></div>';
+        p.steps.forEach(function (s) {
+          n++;
+          var on = n === here; if (on) hereName = s.name;
+          var inner = '<span class="codex-thumb"><img src="assets/codex/step-' + n + '.png" alt="" loading="lazy"></span>' +
+            '<span class="codex-txt"><strong><span class="codex-n">' + n + ' · </span>' + esc(s.name) + '</strong><span class="codex-desc">' + esc(s.desc) + '</span><em>“' + esc(s.tag) + '”</em></span>' +
+            (on ? '<span class="codex-here">You are here</span>' : '');
+          var cls = 'codex-step' + (on ? ' is-here' : '') + (s.href ? '' : ' is-dev');
+          h += s.href && !on ? '<a class="' + cls + '" href="' + s.href + '">' + inner + '</a>'
+                             : '<div class="' + cls + '"' + (on ? ' aria-current="step"' : '') + '>' + inner + '</div>';
+        });
+        h += '</div>';
+      });
+      h += '</div></div>';
+      var cap = note || (here ? 'You are at Step ' + here + ', ' + hereName + '.' : '');
+      if (cap) h += '<p class="figcap"><b>The $100K Day Engine™.</b> ' + esc(cap) + '</p>';
+      box.className = 'codex' + (full ? ' codex--full' : '');
+      box.setAttribute('aria-label', 'The $100K Day Engine™: 3 pillars and 9 steps.' + (here ? ' You are at Step ' + here + ', ' + hereName + '.' : ''));
+      box.setAttribute('role', 'group');
+      box.innerHTML = h;
+    });
   }
 
   /* ---------- Mobile menu ---------- */
@@ -219,5 +282,5 @@
     });
   }
 
-  renderToc(); paintDone(); wireMenu(); renderOtp(); wireReadbar(); readTime(); wirePrompt(); wireActions(); wireSearch();
+  renderCodex(); renderToc(); paintDone(); wireMenu(); renderOtp(); wireReadbar(); readTime(); wirePrompt(); wireActions(); wireSearch();
 })();

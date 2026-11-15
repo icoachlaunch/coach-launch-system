@@ -10,6 +10,12 @@
 window.CL_GUIDE = {
   title: 'The $100K Day Engine™ Guidebook',
   groups: [
+    { name: 'How It Works', icon: '100kday-engine', blurb: 'Read these first: what you build, how it grows, and the numbers behind it.', items: [
+      { slug: 'how-it-works',      label: 'How it works · 1', title: 'How the System Works', icon: 'how-it-works',      status: 'live', tool: 'none' },
+      { slug: 'the-four-phases',   label: 'How it works · 2', title: 'The 4 Phases',         icon: 'the-four-phases',   status: 'live', tool: 'none' },
+      { slug: 'offers-and-closes', label: 'How it works · 3', title: 'Offers & Closes',      icon: 'offers-and-closes', status: 'live', tool: 'none' },
+      { slug: 'the-numbers',       label: 'How it works · 4', title: 'The Numbers',          icon: 'the-numbers',       status: 'live', tool: 'none' }
+    ]},
     { name: 'Start Here', items: [
       { slug: 'ai-workspace', label: 'Start here', title: 'Your $100K Day AI Workspace', icon: 'ai-workspace', status: 'live' }
     ]},
@@ -17,7 +23,7 @@ window.CL_GUIDE = {
       { slug: 'brand-profile',         label: 'Foundation 1', title: 'The Business Brand Profile', icon: 'brand-profile', status: 'live' },
       { slug: 'visual-style',          label: 'Foundation 2', title: 'The Visual Style Guide',     icon: 'visual-style', status: 'live' },
       { slug: 'brand-voice',           label: 'Foundation 3', title: 'The Brand Voice',            icon: 'brand-voice', status: 'live' },
-      { slug: 'products-and-pricing',  label: 'Foundation 4', title: 'Offer Pricing',         icon: 'products-and-pricing', status: 'live' },
+      { slug: 'offer-pricing',         label: 'Foundation 4', title: 'Offer Pricing',              icon: 'offer-pricing', status: 'live' },
       { slug: 'competitive-landscape', label: 'Foundation 5', title: 'Competitive Landscape',      icon: 'competitive-landscape', status: 'live' }
     ]},
     { name: 'Offer Matrix™', icon: 'offer-matrix', blurb: 'Pillar 1 · Steps 1–3 · the message and the offer only you can sell.', items: [
@@ -34,6 +40,10 @@ window.CL_GUIDE = {
     ]},
     { name: 'Money Magnet™', icon: 'money-magnet', blurb: 'Pillar 2 · Steps 4–6 · fill the room and get paid.', items: [
       { slug: 'the-closes',                 label: 'Step 4 · Part 1', title: 'The Closes',                        icon: 'sniper-close',      status: 'live' },
+      { slug: 'ask-close',                  label: 'Step 4 · Close 1', title: 'The ASK™ Close',                    icon: 'ask-close',         status: 'live', tool: 'none' },
+      { slug: 'join-close',                 label: 'Step 4 · Close 2', title: 'The JOIN™ Close',                   icon: 'join-close',        status: 'live', tool: 'none' },
+      { slug: 'pass-close',                 label: 'Step 4 · Close 3', title: 'The PASS™ Close',                   icon: 'pass-close',        status: 'live', tool: 'none' },
+      { slug: 'seal-close',                 label: 'Step 4 · Close 4', title: 'The SEAL™ Close',                   icon: 'seal-close',        status: 'live', tool: 'none' },
       { slug: 'sniper-presentation',        label: 'Step 4 · Part 2', title: 'The Sniper Presentation™',        icon: 'sniper-presentation',      status: 'live' },
       { slug: 'sniper-presentation-slides', label: 'Step 4 · Part 3', title: 'The Sniper Presentation™ Slides', icon: 'sniper-presentation-slides',      status: 'live', tool: 'skill' },
       { slug: 'cash-flow-engine',           label: 'Step 5 · Part 1',             title: 'Cash Flow Engine™',                icon: 'cashflow-engine',   status: 'live', tool: 'skill' },
