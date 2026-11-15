@@ -132,9 +132,9 @@
       });
       var alt = 'The $100K Day Engine™, the Wealth Rewired Codex: three pillars, nine steps. Offer Matrix™: $Million Story™, Magic Formula™, Red Diamond Offer™. ' +
                 'Money Magnet™: Sniper Close™ Sequence, Cash Flow Engine™, Genie X Converter™. Client Flywheel™: Goliath Content™, Pixie Dust Social™, Dragon Fire Ads™.';
-      var h = '<div class="codex-scroll"><div class="codex-img"><img src="' + CODEX_IMG.src + '" width="' + CODEX_IMG.w + '" height="' + CODEX_IMG.h + '" alt="' + esc(alt) + '">' + marks + '</div></div>';
+      var h = '<div class="codex-title"><img src="' + ICONS + '100kday-engine.svg" alt=""><span>$100K Day <em>Engine</em>®</span></div><div class="codex-scroll"><div class="codex-img"><img src="' + CODEX_IMG.src + '" width="' + CODEX_IMG.w + '" height="' + CODEX_IMG.h + '" alt="' + esc(alt) + '">' + marks + '</div></div>';
       var cap = note || (here ? 'You are at Step ' + here + ', ' + hereName + '.' : '');
-      if (cap) h += '<p class="figcap"><b>The $100K Day Engine™.</b> ' + esc(cap) + '</p>';
+      if (cap) h += '<p class="figcap">' + esc(cap) + '</p>';
       box.className = 'codex';
       box.setAttribute('role', 'group');
       box.setAttribute('aria-label', 'The $100K Day Engine™: 3 pillars and 9 steps.' + (here ? ' You are at Step ' + here + ', ' + hereName + '.' : ''));

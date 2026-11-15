@@ -214,6 +214,9 @@ a.toc-item:hover { background: var(--surface-alt); }
 
 /* Engine map: Matthew's Wealth Rewired Codex image (assets/codex/engine-codex.png). Built by guidebook.js from [data-codex]. */
 .codex { display: block; margin: 26px 0 4px; }
+.codex-title { display: flex; align-items: center; gap: 14px; margin: 0 0 14px; font-family: var(--font-display); font-weight: 900; font-size: clamp(1.9rem, 4.2vw, 3rem); line-height: 1; letter-spacing: -.02em; text-transform: uppercase; color: var(--ink); }
+.codex-title img { flex: none; width: 1.5em; height: 1.5em; }
+.codex-title em { font-style: normal; color: var(--crimson); }
 .codex-scroll { overflow-x: auto; border-radius: var(--r-lg); scrollbar-width: thin; }
 .codex-img { position: relative; line-height: 0; }
 .codex-img img { display: block; width: 100%; height: auto; border-radius: var(--r-lg); }
