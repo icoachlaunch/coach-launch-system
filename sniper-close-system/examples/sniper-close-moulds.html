@@ -8,6 +8,7 @@
   THE SNIPER CLOSE™ SLIDE MOULDS · v0.1 · © 2026 Coach Launch
   One file, three layers. Change LAYER 1 and every slide follows.
     LAYER 1 · TOKENS    your colours and fonts. The ONLY place a colour or a font is written.
+                        (The sample colours are teal. Yours go in their place.)
     LAYER 2 · SURFACES  light and dark. Every mould works on both.
     LAYER 3 · MOULDS    thirteen slide shapes. Each one does one job.
   Keys: arrows / space / click = next · N = your notes · F = full screen · G = see every slide at once
@@ -15,17 +16,19 @@
 <style>
 /* ============ LAYER 1 · TOKENS ============ */
 :root {
-  --brand: #0f766e;            /* your main colour (this sample is teal: swap it for yours) */
+  --brand: #0f766e;            /* your main colour: used for blocks, bars and buttons */
   --ink-on-brand: #ffffff;     /* text that sits ON your main colour: white, or near-black if your colour is light */
-  --light-bg: #ffffff;  --light-ink: #10201f;  --light-soft: #eef4f3;  --light-line: #cfdedc;
-  --dark-bg: #0b1615;   --dark-ink: #ffffff;   --dark-soft: #152624;   --dark-line: #2c4441;
+  --brand-on-light: #0f766e;   /* your main colour used as WORDS on the light background: must be dark enough to read */
+  --brand-on-dark: #2dd4bf;    /* your main colour used as WORDS on the dark background: must be light enough to read */
+  --light-bg: #ffffff;  --light-ink: #14141a;  --light-soft: #f1f1f3;  --light-line: #d9d9df;
+  --dark-bg: #0e0e12;   --dark-ink: #ffffff;   --dark-soft: #1c1c23;   --dark-line: #33333d;
   --font-head: "Poppins", "Trebuchet MS", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
   --font-body: "Inter", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
 }
 
 /* ============ LAYER 2 · SURFACES ============ */
-.s-light { --bg: var(--light-bg); --ink: var(--light-ink); --soft: var(--light-soft); --line: var(--light-line); }
-.s-dark  { --bg: var(--dark-bg);  --ink: var(--dark-ink);  --soft: var(--dark-soft);  --line: var(--dark-line); }
+.s-light { --bg: var(--light-bg); --ink: var(--light-ink); --soft: var(--light-soft); --line: var(--light-line); --accent: var(--brand-on-light); }
+.s-dark  { --bg: var(--dark-bg);  --ink: var(--dark-ink);  --soft: var(--dark-soft);  --line: var(--dark-line); --accent: var(--brand-on-dark); }
 
 /* ============ THE STAGE (do not change) ============ */
 * { box-sizing: border-box; }
@@ -39,8 +42,8 @@ html, body { height: 100%; margin: 0; background: #000; }
 .slide h1 { font-size: 68px; line-height: 1.05; font-weight: 800; letter-spacing: -.01em; text-wrap: balance; }
 .slide h2 { font-size: 46px; line-height: 1.1; font-weight: 800; margin-bottom: 30px; text-wrap: balance; }
 .slide p { margin: 18px 0 0; max-width: 900px; }
-.eyebrow { font-size: 18px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--brand); margin-bottom: 18px; }
-.hl { color: var(--brand); }
+.eyebrow { font-size: 18px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+.hl { color: var(--accent); }
 .ask { position: absolute; left: 0; right: 0; bottom: 0; min-height: 66px; padding: 14px 90px; display: flex; align-items: center; gap: 18px;
   background: var(--brand); color: var(--ink-on-brand); font-family: var(--font-head); font-weight: 700; font-size: 23px; line-height: 1.2; }
 .ask b { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; opacity: .8; white-space: nowrap; }
@@ -68,13 +71,13 @@ body.show-notes .notes { display: block; }
 .m-compare .col { background: var(--soft); border-radius: 18px; padding: 28px 30px; }
 .m-compare .col + .col { background: transparent; border: 3px solid var(--brand); }
 .m-compare h3 { font-size: 20px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }
-.m-compare .col + .col h3 { color: var(--brand); }
+.m-compare .col + .col h3 { color: var(--accent); }
 .m-compare ul { margin: 0; padding-left: 22px; font-size: 26px; line-height: 1.35; }
 /* story — one line on screen; the story is in your notes */
-.m-story::before { content: "\201C"; font: 800 190px/0.7 var(--font-head); color: var(--brand); display: block; height: 96px; }
+.m-story::before { content: "\201C"; font: 800 190px/0.7 var(--font-head); color: var(--accent); display: block; height: 96px; }
 .m-story h1 { font-size: 58px; max-width: 1000px; }
 /* image — words on the left, your picture on the right */
-.m-image { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.slide.m-image.is-on, body.is-sheet .slide.m-image { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
 .m-image .imgbox { height: 440px; border: 3px dashed var(--line); border-radius: 18px; display: grid; place-items: center; text-align: center;
   padding: 24px; font: 700 20px var(--font-head); letter-spacing: .06em; opacity: .75; }
 .m-image .imgbox img { max-width: 100%; max-height: 100%; border-radius: 12px; }
@@ -93,7 +96,7 @@ body.show-notes .notes { display: block; }
 /* proof — real results only, up to three */
 .m-proof .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 20px; }
 .m-proof .card { background: var(--soft); border-radius: 18px; padding: 28px 26px; }
-.m-proof .card b { display: block; font: 800 34px/1.1 var(--font-head); color: var(--brand); }
+.m-proof .card b { display: block; font: 800 34px/1.1 var(--font-head); color: var(--accent); }
 .m-proof .card span { display: block; margin-top: 12px; font-size: 21px; opacity: .85; }
 /* stack — everything in your offer */
 .m-stack .lines { display: grid; gap: 8px; }
@@ -102,7 +105,7 @@ body.show-notes .notes { display: block; }
 .m-stack .line.total { background: var(--brand); color: var(--ink-on-brand); font-weight: 800; }
 /* price — one number */
 .m-price { align-items: flex-start; }
-.m-price .big { font-size: 190px; line-height: 1; font-weight: 800; color: var(--brand); }
+.m-price .big { font-size: 190px; line-height: 1; font-weight: 800; color: var(--accent); }
 /* steps — the one thing to do, in up to four steps */
 .m-steps ol { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 18px; }
 .m-steps li { counter-increment: s; position: relative; padding-left: 78px; font-size: 32px; line-height: 1.25; min-height: 56px; display: flex; align-items: center; }
