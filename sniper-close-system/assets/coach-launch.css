@@ -1,0 +1,177 @@
+/* ═══════════════════════════════════════════════════════════
+   COACH LAUNCH — the Coach Launch Brand Kit (custom, v1)
+   Clean, simple, built to convert. Calm page, loud button.
+   Source: the Coach Launch Design System (claude.ai/artifact/538dJp6YjNMLK5VB8gBV9r),
+   the same kit synced to Claude Design ("Coach Launch Brand").
+   FONTS: https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap
+   ═══════════════════════════════════════════════════════════
+
+   This file is the ONLY place the brand's colour and type live.
+   It keeps the Brand Kit's variable names (--brand, --canvas, --ink …),
+   so blocks.css, the page / slide / social surfaces and every builder
+   read it exactly as they read the six stock Kits. The kit's own
+   names (--crimson, --green, --surface-alt …) are defined too, so
+   work copied from Claude Design uses the same vocabulary.
+   The few look rules at the bottom are written ":root .cl-…" so they
+   win over blocks.css even though this file loads first.
+
+   Surfaces. Put data-surface on <html> or any wrapper:
+     (none) = the light off-white page (default — almost everything)
+     D      = dark band (rare: one final call-to-action band at most)
+     A      = crimson band (avoid — colour is saved for the button)   */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap");
+
+:root, [data-surface=L] {
+  /* ---- The kit's own palette -------------------------------- */
+  --surface:        #ffffff;   /* white cards and fields                     */
+  --surface-alt:    #f7f7f5;   /* the warm off-white page                    */
+  --surface-dark:   #2b2b30;   /* rare dark band; dark grey secondary button */
+  --dark-edge:      #17171a;
+  --slate:          #3a414a;
+  --slate-deep:     #282c33;
+  --ink-muted:      #5c5c63;
+  --field:          #ced4db;
+  --field-soft:     #dfe3e8;
+  --crimson:        #d3004e;   /* THE action colour — CTA buttons only       */
+  --crimson-deep:   #850035;   /* hover / pressed; urgency bars              */
+  --crimson-edge:   #a8003e;   /* 5px bottom edge of crimson buttons         */
+  --crimson-soft:   #fbe6ee;
+  --on-crimson:     #ffffff;
+  --green:          #008a0e;   /* THE accent — pills, ticks, steps, guarantee */
+  --green-deep:     #008a0e;
+  --green-edge:     #006b0b;   /* green text on green-soft; green button edge */
+  --green-mid:      #54c45e;
+  --green-light:    #c3f7c8;
+  --green-soft:     #e3fae3;
+  --on-green:       #ffffff;
+  --yellow:         #ffe342;   /* rare                                       */
+  --yellow-soft:    #fffcde;   /* rare                                       */
+  --blue-soft:      #cfe4ff;   /* rare                                       */
+  --star:           #f5b400;   /* testimonial stars                          */
+  --warning-red:    #e81313;   /* warnings only — never a CTA                */
+  --link:           #0064ce;   /* text links + focus, so links never compete */
+
+  /* ---- Brand Kit contract (what blocks.css + surfaces read) -- */
+  --brand:            var(--crimson);
+  --brand-deep:       var(--crimson-deep);
+  --brand-edge:       var(--crimson-edge);
+  --brand-soft:       var(--crimson-soft);
+  --ink-on-brand:     #ffffff;   /* white on crimson 5.4:1 */
+
+  --canvas:           #f7f7f5;   /* the page                */
+  --panel:            #ffffff;   /* cards sit on the page   */
+  --ink:              #1f1f22;   /* 15:1 on the page        */
+  --ink-soft:         #5c5c63;   /* 6.3:1 on the page       */
+  --ink-faint:        #5c5c63;
+  --line:             #e6e6e1;   /* the 1px hairline        */
+
+  --paper:            #ffffff;
+  --paper-ink:        #1f1f22;
+  --paper-soft:       #5c5c63;
+  --paper-line:       #e6e6e1;
+  --accent:           var(--green);   /* eyebrow pills, numbers, markers */
+
+  --pos:              var(--green);
+  --neg:              var(--crimson); /* ✕ on "not for you" lists */
+  --highlight:        #ffcf057c;      /* the marker pen, behind 2–5 words */
+  --ink-on-highlight: #1f1f22;
+
+  --bg-veil:          rgba(247,247,245,.88);
+  --ring:             0 0 0 3px #0064ce;
+
+  /* ---- Type ------------------------------------------------- */
+  --font-sans:        Montserrat, "Helvetica Neue", Arial, sans-serif;
+  --font-display:     'Montserrat', system-ui, sans-serif;
+  --font-body:        'Montserrat', system-ui, sans-serif;
+  --font-mono:        ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --weight-display:   900;   /* H1 — Montserrat Black         */
+  --weight-heading:   700;   /* H2 / H3 — Montserrat Bold     */
+  --weight-cta:       800;   /* button labels                 */
+  --weight-body:      400;
+  --weight-body-strong: 700;
+  --track-display:    -.01em;
+  --track-eyebrow:    .14em;
+  --leading-display:  1.08;
+  --leading-body:     1.65;
+  --scale:            1.25;
+
+  /* ---- Shape ------------------------------------------------ */
+  --r-lg:   16px;   /* every card, the video frame   */
+  --r-md:   10px;   /* small cards, the guarantee    */
+  --r-sm:   6px;    /* buttons, inputs, badges       */
+  --r-xs:   6px;
+  --r-pill: 999px;  /* eyebrow pills, avatars only   */
+  --border-w: 1px;
+  --shadow-cta:  2px 2px 10px 2px #0000000c;
+  --shadow-card: 0 1px 2px 0 #1f1f220a, 0 12px 28px -14px #1f1f2226;
+  --shadow-lift: 0 40px 80px -36px #1f1f2259;
+  --shadow-sm:   var(--shadow-card);
+  --shadow-md:   var(--shadow-card);
+  --shadow-lg:   var(--shadow-lift);
+
+  /* ---- Space + width (the kit's own scale) ------------------- */
+  --space-2: 8px;  --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  --space-12: 48px; --space-24: 96px; --space-32: 128px;
+  --content: 640px;        /* the reading column          */
+  --content-wide: 880px;   /* grids, video, 3-up cards    */
+
+  /* ---- Back-compat aliases (slide molds) ---- */
+  --track:         var(--track-display);
+  --weight:        var(--weight-display);
+  --eyebrow-track: var(--track-eyebrow);
+}
+
+/* Dark band — rare, one final call-to-action at most. (Panel, soft and faint
+   tones are derived for the Kit surfaces; the kit itself defines only the band.) */
+[data-surface=D] {
+  --canvas:   #2b2b30;
+  --panel:    #36363c;
+  --ink:      #ffffff;
+  --ink-soft: #c9c9ce;
+  --ink-faint:#a0a0a8;
+  --line:     #45454c;
+  --accent:   #54c45e;
+  --highlight: #ffe342;           /* solid yellow — the see-through marker muddies on dark */
+  --ink-on-highlight: #1f1f22;
+  --bg-veil:  rgba(43,43,48,.72);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.4);
+  --shadow-md: 0 10px 30px rgba(0,0,0,.45);
+  --shadow-lg: 0 28px 70px rgba(0,0,0,.55);
+}
+
+/* Crimson band — avoid. Colour is saved for the button. */
+[data-surface=A] {
+  --canvas:   var(--crimson);
+  --panel:    rgba(255,255,255,.12);
+  --ink:      #ffffff;
+  --ink-soft: rgba(255,255,255,.88);
+  --ink-faint:rgba(255,255,255,.7);
+  --line:     rgba(255,255,255,.28);
+  --accent:   #ffffff;
+  --bg-veil:  rgba(211,0,78,.86);
+  --highlight: #ffffff;
+  --ink-on-highlight: var(--crimson);
+}
+
+/* ---- The Coach Launch look on the shared blocks ----------------
+   Kept here so blocks.css stays brand-free. These make the Kit's
+   generic blocks match the Coach Launch components. */
+:root .cl-h2, :root .cl-h3 { font-weight: var(--weight-heading); }
+:root .cl-h1, :root .cl-h2, :root .cl-h3 { text-transform: none; }
+:root .cl-btn {
+  border-radius: var(--r-sm);
+  border: 2px solid var(--brand);
+  border-bottom: 5px solid var(--brand-edge);
+  font-weight: var(--weight-cta);
+  box-shadow: var(--shadow-cta);
+}
+:root .cl-btn:hover { background: var(--brand); transform: translateY(-2px); box-shadow: 0 6px 14px rgba(31,31,34,.14); }
+:root .cl-btn--ghost { background: transparent; border-color: var(--ink); border-bottom-color: var(--ink); color: var(--ink); box-shadow: none; }
+:root .cl-badge { border-radius: var(--r-sm); }
+:root .cl-eyebrow { color: var(--green-edge); }
+:root [data-surface=D] .cl-eyebrow, :root [data-surface=A] .cl-eyebrow { color: var(--accent); }
+:root a:where(:not(.cl-btn, .cl-cta)) { color: var(--link); }   /* beats page.css, but a page's own nav/menu styles still win */
+:root a.cl-btn { color: var(--ink-on-brand); }
+:root a.cl-cta { color: var(--ink-on-cta, var(--ink-on-brand)); }
+:root a.cl-btn--ghost { color: var(--ink); }
