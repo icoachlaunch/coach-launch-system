@@ -15,6 +15,19 @@ window.CL_GUIDE = {
    ]
   },
   {
+   "name": "Examples",
+   "items": [
+    {
+     "slug": "example-moulds",
+     "label": "Example",
+     "title": "The Slide Moulds",
+     "num": "◆",
+     "status": "live",
+     "tool": "none"
+    }
+   ]
+  },
+  {
    "name": "Part 1 · The System",
    "items": [
     {
@@ -34,10 +47,18 @@ window.CL_GUIDE = {
      "tool": "none"
     },
     {
-     "slug": "02-immersion-equals-conversion",
+     "slug": "02-the-score-framework",
      "label": "Chapter 2",
-     "title": "Immersion = Conversion",
+     "title": "The SCORE™ Framework",
      "num": "2",
+     "status": "live",
+     "tool": "none"
+    },
+    {
+     "slug": "03-immersion-equals-conversion",
+     "label": "Chapter 3",
+     "title": "Immersion = Conversion",
+     "num": "3",
      "status": "live",
      "tool": "none"
     }
@@ -47,50 +68,50 @@ window.CL_GUIDE = {
    "name": "Part 2 · The Mechanisms",
    "items": [
     {
-     "slug": "03-one-piece-whole-system",
-     "label": "Chapter 3",
-     "title": "One Piece, Whole System",
-     "num": "3",
-     "status": "live",
-     "tool": "none"
-    },
-    {
-     "slug": "04-the-event-magnet",
+     "slug": "04-one-piece-whole-system",
      "label": "Chapter 4",
-     "title": "The Event Magnet™",
+     "title": "One Piece, Whole System",
      "num": "4",
      "status": "live",
      "tool": "none"
     },
     {
-     "slug": "05-engagement",
+     "slug": "05-the-event-magnet",
      "label": "Chapter 5",
-     "title": "Engagement",
+     "title": "The Event Magnet™",
      "num": "5",
      "status": "live",
      "tool": "none"
     },
     {
-     "slug": "06-open-loops",
+     "slug": "06-engagement",
      "label": "Chapter 6",
-     "title": "Open Loops",
+     "title": "Engagement",
      "num": "6",
      "status": "live",
      "tool": "none"
     },
     {
-     "slug": "07-the-token",
+     "slug": "07-open-loops",
      "label": "Chapter 7",
-     "title": "The Token",
+     "title": "Open Loops",
      "num": "7",
      "status": "live",
      "tool": "none"
     },
     {
-     "slug": "08-stories-that-sell",
+     "slug": "08-the-token",
      "label": "Chapter 8",
-     "title": "Stories That Sell",
+     "title": "The Token",
      "num": "8",
+     "status": "live",
+     "tool": "none"
+    },
+    {
+     "slug": "09-stories-that-sell",
+     "label": "Chapter 9",
+     "title": "Stories That Sell",
+     "num": "9",
      "status": "live",
      "tool": "none"
     }
@@ -100,34 +121,34 @@ window.CL_GUIDE = {
    "name": "Part 3 · The Presentation",
    "items": [
     {
-     "slug": "09-phase-1-who",
-     "label": "Chapter 9",
-     "title": "Phase 1 · WHO",
-     "num": "9",
-     "status": "live",
-     "tool": "none"
-    },
-    {
-     "slug": "10-phase-2-what",
+     "slug": "10-phase-1-who",
      "label": "Chapter 10",
-     "title": "Phase 2 · WHAT",
+     "title": "Phase 1 · WHO",
      "num": "10",
      "status": "live",
      "tool": "none"
     },
     {
-     "slug": "11-phase-3-why",
+     "slug": "11-phase-2-what",
      "label": "Chapter 11",
-     "title": "Phase 3 · WHY",
+     "title": "Phase 2 · WHAT",
      "num": "11",
      "status": "live",
      "tool": "none"
     },
     {
-     "slug": "12-phase-4-when",
+     "slug": "12-phase-3-why",
      "label": "Chapter 12",
-     "title": "Phase 4 · WHEN",
+     "title": "Phase 3 · WHY",
      "num": "12",
+     "status": "live",
+     "tool": "none"
+    },
+    {
+     "slug": "13-phase-4-when",
+     "label": "Chapter 13",
+     "title": "Phase 4 · WHEN",
+     "num": "13",
      "status": "live",
      "tool": "none"
     }
@@ -137,42 +158,42 @@ window.CL_GUIDE = {
    "name": "Part 4 · The Delivery",
    "items": [
     {
-     "slug": "13-how-to-tell-a-story",
-     "label": "Chapter 13",
-     "title": "How to Tell a Story",
-     "num": "13",
-     "status": "live",
-     "tool": "none"
-    },
-    {
-     "slug": "14-slides-or-no-slides",
+     "slug": "14-how-to-tell-a-story",
      "label": "Chapter 14",
-     "title": "Slides or No Slides",
+     "title": "How to Tell a Story",
      "num": "14",
      "status": "live",
      "tool": "none"
     },
     {
-     "slug": "15-tonality-energy-and-pacing",
+     "slug": "15-slides-or-no-slides",
      "label": "Chapter 15",
-     "title": "Tonality, Energy and Pacing",
+     "title": "Slides or No Slides",
      "num": "15",
      "status": "live",
      "tool": "none"
     },
     {
-     "slug": "16-timing",
+     "slug": "16-tonality-energy-and-pacing",
      "label": "Chapter 16",
-     "title": "Timing",
+     "title": "Tonality, Energy and Pacing",
      "num": "16",
      "status": "live",
      "tool": "none"
     },
     {
-     "slug": "17-running-the-virtual-room",
+     "slug": "17-timing",
      "label": "Chapter 17",
-     "title": "Running the Virtual Room",
+     "title": "Timing",
      "num": "17",
+     "status": "live",
+     "tool": "none"
+    },
+    {
+     "slug": "18-running-the-virtual-room",
+     "label": "Chapter 18",
+     "title": "Running the Virtual Room",
+     "num": "18",
      "status": "live",
      "tool": "none"
     }
@@ -182,18 +203,18 @@ window.CL_GUIDE = {
    "name": "Part 5 · The Close",
    "items": [
     {
-     "slug": "18-the-four-closes",
-     "label": "Chapter 18",
+     "slug": "19-the-four-closes",
+     "label": "Chapter 19",
      "title": "The Four Closes",
-     "num": "18",
+     "num": "19",
      "status": "live",
      "tool": "none"
     },
     {
-     "slug": "19-the-close-sequence",
-     "label": "Chapter 19",
+     "slug": "20-the-close-sequence",
+     "label": "Chapter 20",
      "title": "The Close Sequence",
-     "num": "19",
+     "num": "20",
      "status": "live",
      "tool": "none"
     }
@@ -203,18 +224,18 @@ window.CL_GUIDE = {
    "name": "Part 6 · Build It",
    "items": [
     {
-     "slug": "20-build-your-presentation",
-     "label": "Chapter 20",
+     "slug": "21-build-your-presentation",
+     "label": "Chapter 21",
      "title": "Build Your Presentation",
-     "num": "20",
+     "num": "21",
      "status": "live",
      "tool": "none"
     },
     {
-     "slug": "21-the-other-eight-steps",
-     "label": "Chapter 21",
+     "slug": "22-the-other-eight-steps",
+     "label": "Chapter 22",
      "title": "The Other Eight Steps",
-     "num": "21",
+     "num": "22",
      "status": "live",
      "tool": "none"
     }

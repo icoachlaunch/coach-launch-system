@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sniper Close™ Slide Moulds</title>
+<!--
+  THE SNIPER CLOSE™ SLIDE MOULDS · v0.1 · © 2026 Coach Launch
+  One file, three layers. Change LAYER 1 and every slide follows.
+    LAYER 1 · TOKENS    your colours and fonts. The ONLY place a colour or a font is written.
+    LAYER 2 · SURFACES  light and dark. Every mould works on both.
+    LAYER 3 · MOULDS    thirteen slide shapes. Each one does one job.
+  Keys: arrows / space / click = next · N = your notes · F = full screen · G = see every slide at once
+-->
+<style>
+/* ============ LAYER 1 · TOKENS ============ */
+:root {
+  --brand: #0f766e;            /* your main colour (this sample is teal: swap it for yours) */
+  --ink-on-brand: #ffffff;     /* text that sits ON your main colour: white, or near-black if your colour is light */
+  --light-bg: #ffffff;  --light-ink: #10201f;  --light-soft: #eef4f3;  --light-line: #cfdedc;
+  --dark-bg: #0b1615;   --dark-ink: #ffffff;   --dark-soft: #152624;   --dark-line: #2c4441;
+  --font-head: "Poppins", "Trebuchet MS", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+}
+
+/* ============ LAYER 2 · SURFACES ============ */
+.s-light { --bg: var(--light-bg); --ink: var(--light-ink); --soft: var(--light-soft); --line: var(--light-line); }
+.s-dark  { --bg: var(--dark-bg);  --ink: var(--dark-ink);  --soft: var(--dark-soft);  --line: var(--dark-line); }
+
+/* ============ THE STAGE (do not change) ============ */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; background: #000; }
+.deck { position: fixed; inset: 0; overflow: hidden; }
+.slide { position: absolute; left: 50%; top: 50%; width: 1280px; height: 720px; margin: -360px 0 0 -640px;
+  display: none; flex-direction: column; justify-content: center; padding: 70px 90px 120px;
+  background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 28px; line-height: 1.4; overflow: hidden; }
+.slide.is-on { display: flex; }
+.slide h1, .slide h2, .slide h3, .eyebrow, .big { font-family: var(--font-head); margin: 0; }
+.slide h1 { font-size: 68px; line-height: 1.05; font-weight: 800; letter-spacing: -.01em; text-wrap: balance; }
+.slide h2 { font-size: 46px; line-height: 1.1; font-weight: 800; margin-bottom: 30px; text-wrap: balance; }
+.slide p { margin: 18px 0 0; max-width: 900px; }
+.eyebrow { font-size: 18px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--brand); margin-bottom: 18px; }
+.hl { color: var(--brand); }
+.ask { position: absolute; left: 0; right: 0; bottom: 0; min-height: 66px; padding: 14px 90px; display: flex; align-items: center; gap: 18px;
+  background: var(--brand); color: var(--ink-on-brand); font-family: var(--font-head); font-weight: 700; font-size: 23px; line-height: 1.2; }
+.ask b { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; opacity: .8; white-space: nowrap; }
+.count { position: fixed; right: 14px; top: 10px; z-index: 5; font: 600 13px var(--font-body); color: #fff; opacity: .55; }
+.notes { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; max-height: 42%; overflow: auto; padding: 18px 26px;
+  background: rgba(12,12,16,.96); color: #fff; font: 400 19px/1.5 var(--font-body); white-space: pre-wrap; display: none; }
+body.show-notes .notes { display: block; }
+
+/* ============ LAYER 3 · MOULDS ============ */
+/* cover — the first slide */
+.m-cover h1 { font-size: 78px; }
+.m-cover .who { position: absolute; left: 90px; bottom: 44px; font: 800 20px var(--font-head); letter-spacing: .04em; }
+/* divider — the start of a phase. Always your main colour */
+.m-divider { background: var(--brand); color: var(--ink-on-brand); }
+.m-divider .eyebrow { color: inherit; opacity: .8; }
+.m-divider h1 { font-size: 150px; }
+/* statement — one bold line */
+.m-statement h1 { max-width: 1000px; }
+/* list — up to five short lines */
+.m-list ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.m-list li { position: relative; padding-left: 44px; font-size: 32px; line-height: 1.25; }
+.m-list li::before { content: ""; position: absolute; left: 0; top: 11px; width: 20px; height: 20px; border-radius: 50%; background: var(--brand); }
+/* compare — two columns: the old way and the new way */
+.m-compare .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+.m-compare .col { background: var(--soft); border-radius: 18px; padding: 28px 30px; }
+.m-compare .col + .col { background: transparent; border: 3px solid var(--brand); }
+.m-compare h3 { font-size: 20px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px; }
+.m-compare .col + .col h3 { color: var(--brand); }
+.m-compare ul { margin: 0; padding-left: 22px; font-size: 26px; line-height: 1.35; }
+/* story — one line on screen; the story is in your notes */
+.m-story::before { content: "\201C"; font: 800 190px/0.7 var(--font-head); color: var(--brand); display: block; height: 96px; }
+.m-story h1 { font-size: 58px; max-width: 1000px; }
+/* image — words on the left, your picture on the right */
+.m-image { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.m-image .imgbox { height: 440px; border: 3px dashed var(--line); border-radius: 18px; display: grid; place-items: center; text-align: center;
+  padding: 24px; font: 700 20px var(--font-head); letter-spacing: .06em; opacity: .75; }
+.m-image .imgbox img { max-width: 100%; max-height: 100%; border-radius: 12px; }
+/* system — your whole method, one cell per step */
+.m-system .cells { display: grid; grid-template-columns: repeat(var(--n, 3), 1fr); gap: 16px; }
+.m-system .cell { background: var(--soft); border-radius: 16px; padding: 22px 20px; min-height: 150px; }
+.m-system .cell b { display: block; font: 800 26px/1.15 var(--font-head); }
+.m-system .cell span { display: block; margin-top: 8px; font-size: 20px; line-height: 1.3; opacity: .85; }
+.m-system .cell.is-done { background: var(--brand); color: var(--ink-on-brand); }
+.m-system .cell.is-done::before { content: "\2713  DONE TODAY"; display: block; font: 800 13px var(--font-head); letter-spacing: .12em; margin-bottom: 8px; }
+/* rows — belief and truth, or objection and answer */
+.m-rows .rows { display: grid; gap: 12px; }
+.m-rows .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.m-rows .row > div { border-radius: 14px; padding: 16px 22px; font-size: 25px; line-height: 1.25; background: var(--soft); }
+.m-rows .row > div + div { background: var(--brand); color: var(--ink-on-brand); font-weight: 700; }
+/* proof — real results only, up to three */
+.m-proof .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 20px; }
+.m-proof .card { background: var(--soft); border-radius: 18px; padding: 28px 26px; }
+.m-proof .card b { display: block; font: 800 34px/1.1 var(--font-head); color: var(--brand); }
+.m-proof .card span { display: block; margin-top: 12px; font-size: 21px; opacity: .85; }
+/* stack — everything in your offer */
+.m-stack .lines { display: grid; gap: 8px; }
+.m-stack .line { display: flex; justify-content: space-between; gap: 24px; padding: 12px 22px; border-radius: 12px; background: var(--soft); font-size: 25px; }
+.m-stack .line b { font-family: var(--font-head); white-space: nowrap; }
+.m-stack .line.total { background: var(--brand); color: var(--ink-on-brand); font-weight: 800; }
+/* price — one number */
+.m-price { align-items: flex-start; }
+.m-price .big { font-size: 190px; line-height: 1; font-weight: 800; color: var(--brand); }
+/* steps — the one thing to do, in up to four steps */
+.m-steps ol { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 18px; }
+.m-steps li { counter-increment: s; position: relative; padding-left: 78px; font-size: 32px; line-height: 1.25; min-height: 56px; display: flex; align-items: center; }
+.m-steps li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 56px; height: 56px; border-radius: 50%;
+  background: var(--brand); color: var(--ink-on-brand); font: 800 28px/56px var(--font-head); text-align: center; }
+
+/* ============ SEE EVERY SLIDE AT ONCE (press G) ============ */
+body.is-sheet { background: #24242b; overflow: auto; }
+body.is-sheet .deck { position: static; display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 26px 18px; padding: 26px; overflow: visible; }
+body.is-sheet .tile { cursor: pointer; }
+body.is-sheet .tile .frame { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; }
+body.is-sheet .slide { display: flex; left: 0; top: 0; margin: 0; transform-origin: 0 0; }
+body.is-sheet .tile small { display: block; margin-top: 7px; font: 600 13px var(--font-body); color: #c9c9d2; }
+body.is-sheet .count, body.is-sheet .notes { display: none; }
+</style>
+</head>
+<body class="is-sheet">
+
+<div class="deck">
+
+<!-- ========== cover ========== -->
+<section class="slide m-cover s-dark" data-mould="cover" data-notes="Your notes for this slide go here. Press N to show or hide them.">
+  <p class="eyebrow">A live masterclass</p>
+  <h1>Your promise goes here, in <span class="hl">one line</span></h1>
+  <p class="who">YOUR BUSINESS NAME</p>
+</section>
+<section class="slide m-cover s-light" data-mould="cover">
+  <p class="eyebrow">A live masterclass</p>
+  <h1>Your promise goes here, in <span class="hl">one line</span></h1>
+  <p class="who">YOUR BUSINESS NAME</p>
+</section>
+
+<!-- ========== divider ========== -->
+<section class="slide m-divider s-dark" data-mould="divider">
+  <p class="eyebrow">Phase 1</p>
+  <h1>WHO</h1>
+</section>
+<section class="slide m-divider s-light" data-mould="divider">
+  <p class="eyebrow">Phase 2</p>
+  <h1>WHAT</h1>
+</section>
+
+<!-- ========== statement ========== -->
+<section class="slide m-statement s-dark" data-mould="statement" data-ask="Give me a YES in the chat if that's you.">
+  <h1>One bold line, and <span class="hl">nothing else</span></h1>
+</section>
+<section class="slide m-statement s-light" data-mould="statement" data-ask="Give me a YES in the chat if that's you.">
+  <h1>One bold line, and <span class="hl">nothing else</span></h1>
+</section>
+
+<!-- ========== list ========== -->
+<section class="slide m-list s-dark" data-mould="list" data-ask="Type ME if that's you.">
+  <h2>This is for you if…</h2>
+  <ul><li>A short line, in their words</li><li>A second short line</li><li>A third short line</li></ul>
+</section>
+<section class="slide m-list s-light" data-mould="list" data-ask="Type ME if that's you.">
+  <h2>This is for you if…</h2>
+  <ul><li>A short line, in their words</li><li>A second short line</li><li>A third short line</li></ul>
+</section>
+
+<!-- ========== compare ========== -->
+<section class="slide m-compare s-dark" data-mould="compare" data-ask="Type WHOLE if that's you.">
+  <h2>Two kinds of people</h2>
+  <div class="cols">
+    <div class="col"><h3>The old way</h3><ul><li>What it looks like</li><li>What it costs</li></ul></div>
+    <div class="col"><h3>The new way</h3><ul><li>What it looks like</li><li>What it gives</li></ul></div>
+  </div>
+</section>
+<section class="slide m-compare s-light" data-mould="compare" data-ask="Type WHOLE if that's you.">
+  <h2>Two kinds of people</h2>
+  <div class="cols">
+    <div class="col"><h3>The old way</h3><ul><li>What it looks like</li><li>What it costs</li></ul></div>
+    <div class="col"><h3>The new way</h3><ul><li>What it looks like</li><li>What it gives</li></ul></div>
+  </div>
+</section>
+
+<!-- ========== story ========== -->
+<section class="slide m-story s-dark" data-mould="story" data-ask="Type DECIDER in the chat.">
+  <h1>The one line they'll repeat goes here.</h1>
+</section>
+<section class="slide m-story s-light" data-mould="story" data-ask="Type DECIDER in the chat.">
+  <h1>The one line they'll repeat goes here.</h1>
+</section>
+
+<!-- ========== image ========== -->
+<section class="slide m-image s-dark" data-mould="image" data-ask="Who wants this? Give me a YES.">
+  <div><p class="eyebrow">Stay to the end and it's yours</p><h2>The name of your tool</h2><p>One line on what it does.</p></div>
+  <div class="imgbox">[YOUR EVENT MAGNET™ GOES HERE]</div>
+</section>
+<section class="slide m-image s-light" data-mould="image" data-ask="Who wants this? Give me a YES.">
+  <div><p class="eyebrow">Stay to the end and it's yours</p><h2>The name of your tool</h2><p>One line on what it does.</p></div>
+  <div class="imgbox">[YOUR EVENT MAGNET™ GOES HERE]</div>
+</section>
+
+<!-- ========== system ========== -->
+<section class="slide m-system s-dark" data-mould="system" data-ask="Type SEE IT if you can see why that matters.">
+  <h2>Your whole method</h2>
+  <div class="cells" style="--n:4">
+    <div class="cell is-done"><b>Step one</b><span>What it gets them</span></div>
+    <div class="cell"><b>Step two</b><span>What it gets them</span></div>
+    <div class="cell"><b>Step three</b><span>What it gets them</span></div>
+    <div class="cell"><b>Step four</b><span>What it gets them</span></div>
+  </div>
+</section>
+<section class="slide m-system s-light" data-mould="system" data-ask="Type SEE IT if you can see why that matters.">
+  <h2>Your whole method</h2>
+  <div class="cells" style="--n:4">
+    <div class="cell is-done"><b>Step one</b><span>What it gets them</span></div>
+    <div class="cell"><b>Step two</b><span>What it gets them</span></div>
+    <div class="cell"><b>Step three</b><span>What it gets them</span></div>
+    <div class="cell"><b>Step four</b><span>What it gets them</span></div>
+  </div>
+</section>
+
+<!-- ========== rows ========== -->
+<section class="slide m-rows s-dark" data-mould="rows" data-ask="Type YES if you've believed one of these.">
+  <h2>What you've been told</h2>
+  <div class="rows">
+    <div class="row"><div>The belief, in their words</div><div>The truth, in yours</div></div>
+    <div class="row"><div>A second belief</div><div>The truth</div></div>
+  </div>
+</section>
+<section class="slide m-rows s-light" data-mould="rows" data-ask="Type YES if you've believed one of these.">
+  <h2>What you've been told</h2>
+  <div class="rows">
+    <div class="row"><div>The belief, in their words</div><div>The truth, in yours</div></div>
+    <div class="row"><div>A second belief</div><div>The truth</div></div>
+  </div>
+</section>
+
+<!-- ========== proof ========== -->
+<section class="slide m-proof s-dark" data-mould="proof" data-ask="Who wants a result like that? Type ME.">
+  <h2>Real results</h2>
+  <div class="cards">
+    <div class="card"><b>The result</b><span>Who it was, and how long it took</span></div>
+    <div class="card"><b>The result</b><span>Who it was, and how long it took</span></div>
+  </div>
+</section>
+<section class="slide m-proof s-light" data-mould="proof" data-ask="Who wants a result like that? Type ME.">
+  <h2>Real results</h2>
+  <div class="cards">
+    <div class="card"><b>The result</b><span>Who it was, and how long it took</span></div>
+    <div class="card"><b>The result</b><span>Who it was, and how long it took</span></div>
+  </div>
+</section>
+
+<!-- ========== stack ========== -->
+<section class="slide m-stack s-dark" data-mould="stack" data-ask="Type the one you want most.">
+  <h2>Everything you get</h2>
+  <div class="lines">
+    <div class="line"><span>The first thing in your offer</span></div>
+    <div class="line"><span>The second thing in your offer</span></div>
+    <div class="line"><span>The third thing in your offer</span></div>
+    <div class="line total"><span>The name of your offer</span></div>
+  </div>
+</section>
+<section class="slide m-stack s-light" data-mould="stack" data-ask="Type the one you want most.">
+  <h2>Everything you get</h2>
+  <div class="lines">
+    <div class="line"><span>The first thing in your offer</span></div>
+    <div class="line"><span>The second thing in your offer</span></div>
+    <div class="line"><span>The third thing in your offer</span></div>
+    <div class="line total"><span>The name of your offer</span></div>
+  </div>
+</section>
+
+<!-- ========== price ========== -->
+<section class="slide m-price s-dark" data-mould="price">
+  <p class="eyebrow">Your investment</p>
+  <div class="big">$0,000</div>
+</section>
+<section class="slide m-price s-light" data-mould="price">
+  <p class="eyebrow">Your investment</p>
+  <div class="big">$0,000</div>
+</section>
+
+<!-- ========== steps ========== -->
+<section class="slide m-steps s-dark" data-mould="steps" data-ask="Type DONE when you've done it.">
+  <h2>Here's what to do now</h2>
+  <ol><li>Click the button under this video</li><li>Pick a time that suits you</li><li>Type DONE in the chat</li></ol>
+</section>
+<section class="slide m-steps s-light" data-mould="steps" data-ask="Type DONE when you've done it.">
+  <h2>Here's what to do now</h2>
+  <ol><li>Click the button under this video</li><li>Pick a time that suits you</li><li>Type DONE in the chat</li></ol>
+</section>
+
+</div>
+
+<div class="count"></div>
+<div class="notes"></div>
+
+<script>
+/* THE VIEWER (do not change) */
+(function () {
+  var deck = document.querySelector('.deck'), body = document.body;
+  var slides = [].slice.call(deck.querySelectorAll('.slide'));
+  var count = document.querySelector('.count'), notes = document.querySelector('.notes'), at = 0;
+  slides.forEach(function (s) {
+    var a = s.getAttribute('data-ask');
+    if (a) { var d = document.createElement('div'); d.className = 'ask'; d.innerHTML = '<b>Ask the room</b><span></span>'; d.lastChild.textContent = a; s.appendChild(d); }
+  });
+  function fit() {
+    if (body.classList.contains('is-sheet')) {
+      slides.forEach(function (s) { var f = s.parentNode; s.style.transform = 'scale(' + (f.clientWidth / 1280) + ')'; });
+    } else {
+      var k = Math.min(innerWidth / 1280, innerHeight / 720);
+      slides.forEach(function (s) { s.style.transform = 'scale(' + k + ')'; });
+    }
+  }
+  function show(i) {
+    at = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach(function (s, n) { s.classList.toggle('is-on', n === at); });
+    count.textContent = (at + 1) + ' / ' + slides.length;
+    notes.textContent = slides[at].getAttribute('data-notes') || 'No notes for this slide.';
+  }
+  function sheet(on) {
+    body.classList.toggle('is-sheet', on);
+    slides.forEach(function (s, n) {
+      var inTile = s.parentNode.classList.contains('frame');
+      if (on && !inTile) {
+        var t = document.createElement('div'), f = document.createElement('div'), c = document.createElement('small');
+        t.className = 'tile'; f.className = 'frame';
+        c.textContent = (n + 1) + ' · ' + (s.getAttribute('data-mould') || 'slide') + (s.classList.contains('s-dark') ? ' · dark' : ' · light');
+        deck.insertBefore(t, s); f.appendChild(s); t.appendChild(f); t.appendChild(c);
+        t.addEventListener('click', function (e) { e.stopPropagation(); sheet(false); show(n); });
+      } else if (!on && inTile) {
+        var tile = s.parentNode.parentNode; deck.insertBefore(s, tile); deck.removeChild(tile);
+      }
+    });
+    if (!on) show(at);
+    fit();
+  }
+  document.addEventListener('keydown', function (e) {
+    var k = e.key.toLowerCase();
+    if (k === 'g') { sheet(!body.classList.contains('is-sheet')); return; }
+    if (k === 'f') { if (document.fullscreenElement) document.exitFullscreen(); else if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(function () {}); return; }
+    if (k === 'n') { body.classList.toggle('show-notes'); return; }
+    if (body.classList.contains('is-sheet')) return;
+    if (k === 'arrowright' || k === ' ' || k === 'pagedown') { e.preventDefault(); show(at + 1); }
+    if (k === 'arrowleft' || k === 'pageup') { e.preventDefault(); show(at - 1); }
+  });
+  deck.addEventListener('click', function () { if (!body.classList.contains('is-sheet')) show(at + 1); });
+  addEventListener('resize', fit);
+  sheet(body.classList.contains('is-sheet'));
+  show(0);
+})();
+</script>
+</body>
+</html>
