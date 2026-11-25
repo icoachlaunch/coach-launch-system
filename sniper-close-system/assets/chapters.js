@@ -3,6 +3,18 @@ window.CL_GUIDE = {
  "title": "The Sniper Close™ System",
  "groups": [
   {
+   "name": "Start Building",
+   "items": [
+    {
+     "slug": "launch-kit",
+     "label": "The kit",
+     "title": "Sniper Close™ Launch Kit",
+     "num": "★",
+     "status": "live"
+    }
+   ]
+  },
+  {
    "name": "Part 1 · The System",
    "items": [
     {
@@ -205,18 +217,6 @@ window.CL_GUIDE = {
      "num": "21",
      "status": "live",
      "tool": "none"
-    }
-   ]
-  },
-  {
-   "name": "Start Building",
-   "items": [
-    {
-     "slug": "launch-kit",
-     "label": "The kit",
-     "title": "Sniper Close™ Launch Kit",
-     "num": "★",
-     "status": "live"
     }
    ]
   }
